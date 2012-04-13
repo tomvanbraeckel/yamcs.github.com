@@ -1,0 +1,170 @@
+body, #latest{
+	box-shadow:2px 2px 4px #aaaaaa;
+}
+
+#latest{
+	position:absolute;
+	top:220px;
+	right:-140px;
+	width:100px;
+	padding:10px;
+	font-weight:bold;
+	text-align:center;
+	background:#336699;
+	color:#ffffff;
+	border-radius:12px;
+}
+
+#latest p{
+	text-align:center;
+}
+
+#latest button{
+	width:80px;
+	margin:10px auto;
+}
+
+/*== logo ==*/
+
+#logo{
+	width:120px;
+	height:100px;
+	margin-right:20px;
+}
+
+#header{
+	position:relative;
+	margin-bottom:60px;
+}
+
+#header hgroup{
+	position:absolute;
+	top:0;
+	right:0;
+	z-index:999;
+	padding-top:5px;
+	padding-right:10;
+	text-align:right;
+}
+
+#header h1{
+	font-size:3.5em;
+}
+
+#header h2{
+	font-size:2em;
+}
+
+/*== navigation ==*/
+
+#nav{
+	position:absolute;
+	z-index:999;
+	top:40px;
+	left:0;
+	width:120px;
+}
+
+#nav ul{
+	margin:0px;
+	padding:0px;
+}
+
+#nav li{
+	display:block;
+}
+
+#nav a{
+	display:block;
+	margin:2px 0px;
+	padding:6px 4px 4px 8px;
+	font-size:1.2em;
+	text-shadow:1px 1px 2px #ffffff;
+}
+
+#nav a,#nav a:visited{
+	color:#336699;
+}
+
+#nav a.current{
+	background: #336699;
+	color:#ffffff;
+	border-radius:8px;
+}
+
+/*== footer ==*/
+
+#footer{
+	border-top:1px dotted #cccccc;
+}
+
+#footer p{
+	padding-right:10px;
+	font-style:italic;
+	font-size:0.9em;
+	text-align:right;
+}
+
+/*== main content ==*/
+
+#main{
+	position:relative;
+	margin:40px 0 60px;
+}
+
+
+#content{
+	margin-left:150px;
+	padding:0 10px;
+}
+
+#content h2{
+	font-size:2.8em;
+	font-family:Monospace;
+}
+
+#content article{
+	margin-bottom:30px;
+}
+
+#content time{
+	display:block;
+	text-align:right;
+	font-style:italic;
+	color:#045491;
+}
+
+#content p, #content li{
+	font-size:1.2em;
+}
+
+#content li li{
+	font-size:1em;
+}
+
+#introduction{
+	margin-bottom:40px;
+}
+
+#introduction p{
+	font-size:1.5em;
+}
+
+#busoc img, #sas img, #esa img{
+	float:left;
+	margin:0 10px 5px 0;
+}
+
+/*============================================================================*/
+
+.features img{
+	width:360px;
+	height:240px;
+	display:block;
+	margin:10px auto 40px;
+}
+
+#newArchitecture{
+	width:100%;
+	max-width:100%;
+}
