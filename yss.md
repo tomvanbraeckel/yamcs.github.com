@@ -49,6 +49,7 @@ Detailed installation instructions can be found at [https://docs.docker.com/comp
 
 2. Build YSS.
 
+        $ cd yss
         $ docker-compose build
 		
     The command outputs its progress until it completes.
