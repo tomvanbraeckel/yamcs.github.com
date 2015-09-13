@@ -1,0 +1,26 @@
+<div class="sidebar">
+  {% if page.url contains '/docs' %}
+    <span class="sidebar-item" href="/docs/server/fundamentals">Yamcs Server</span>
+    {% if page.url contains '/docs/server/fundamentals' %}
+      <span class="sidebar-item-2">Fundamentals</span>
+    {% else %}
+      <a class="sidebar-link-2" href="/docs/server/fundamentals">Fundamentals</a>
+    {% endif %}
+    <br><br>
+
+    <span class="sidebar-item" href="/docs/studio/installation">Yamcs Studio</span>
+    {% if page.url contains '/docs/studio/installation' %}
+      <span class="sidebar-item-2">Installation</span>
+    {% else %}
+      <a class="sidebar-link-2" href="/docs/studio/installation">Installation</a>
+    {% endif %}
+  {% endif %}
+
+
+    {% if page.url contains '/docs' and p.url contains '/docs' %}
+      <a href="/docs/server/fundamentals" style="padding-left: 1em;">Fundamentals</a><br>
+      <a href="/docs/studio/installation/" style="padding-left: 1em;">Yamcs Studio Installation</a><br>
+      <a href="/docs/studio/installation/" style="padding-left: 1em;">Yamcs Studio Installation</a><br>
+      <br>
+		{% endif %}
+</div>

@@ -1,0 +1,11 @@
+# Site settings
+title: Yamcs
+email: info@yamcs.org
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://www.yamcs.org" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+
+kramdown:
+  input: GFM
