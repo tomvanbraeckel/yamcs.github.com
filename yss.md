@@ -40,10 +40,12 @@ Detailed installation instructions can be found at [https://docs.docker.com/comp
 		
 ## Run the Yamcs Simulation System (YSS)
 
-1. In your terminal, navigate to the `yamcs/contrib/yss` directory
+1. Get the YSS configuration.
 
-    This directory includes a `docker-compose.yml` configuration that
-    links a basic yamcs server together with a sample simulator.
+        $ curl -sSL http://www.yamcs.org/yss.sh | sh
+
+    This will create a directory `yss` under your current working directory with some configuration files
+    needed to link the Yamcs container with the Simulator container.
 
 2. Build YSS.
 
@@ -51,10 +53,14 @@ Detailed installation instructions can be found at [https://docs.docker.com/comp
 		
     The command outputs its progress until it completes.
 
-4. Start your YSS configuration with compose.
+4. Start your YSS deployment with compose.
 
-        $ docker-compose up   
-	
+        $ docker-compose up
+    
+    This will launch both Yamcs and the Simulator in the foreground. You should see some log messages and the phrase  *yamcsstartup success* near the bottom.
+    
+     When you're done with testing and want to shutdown both servers, just `CTRL-c` this process. Later on, whenever you want the servers back up again, run `docker-compose up` -- you no longer need any of the other commands.
+
 ## Explore a bit
 
 We now have a working yamcs server receiving and recording telemetry from a simulator. To get a better peek at what's happening we will now install Yamcs Studio -- a rich desktop client for Yamcs.
