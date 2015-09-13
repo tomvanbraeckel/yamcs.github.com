@@ -19,10 +19,10 @@ Running YSS is easy and straight-forward, but there are a few requirements you'l
 Detailed installation instructions can be found at [https://docs.docker.com/installation/](https://docs.docker.com/installation/). For example, on Ubuntu 14.04 LTS the simplest install would be something like:
 
     $ curl -sSL https://get.docker.com/ | sh
+    
+Docker's official documentation also explains how to set up `docker` so that you don't need to prepend every command with `sudo`, which we definitely recommend. Further instructions presume that `docker` was configured as such, and will no longer mention the use of `sudo`.
 
-Verify correct installation by running `sudo docker -v`.
-
-Docker's official documentation also explains how to set up `docker` so that you don't need to prepend every command with `sudo`. Further instructions presume that `docker` was configured as such, and will no longer mention the use of `sudo`. 
+Verify correct installation by running `docker -v`. 
 
 ## Install Docker Compose
 
@@ -37,8 +37,12 @@ Detailed installation instructions can be found at [https://docs.docker.com/comp
 2. Add executable permissions to the binary.
 
         $ sudo chmod +x /usr/local/bin/docker-compose
+        
+Verify correct installation by running `docker-compose -v`. Any problems related to this latest command usually have to do with either not having started the docker daemon (for some platforms this is automatically configured, for others not), or by not having added your user to the `docker` group. Please ask a yamcs developer for further assistance specific to your platform if you get stuck on this.
 		
 ## Run the Yamcs Simulation System (YSS)
+
+With all the preparations done, we now get to the real meat of running a Yamcs instance in a box (well, container).
 
 1. Get the YSS configuration.
 
@@ -47,15 +51,9 @@ Detailed installation instructions can be found at [https://docs.docker.com/comp
     This will create a directory `yss` under your current working directory with some configuration files
     needed to link the Yamcs container with the Simulator container.
 
-2. Build YSS.
+2. Start your YSS deployment with compose.
 
         $ cd yss
-        $ docker-compose build
-		
-    The command outputs its progress until it completes.
-
-4. Start your YSS deployment with compose.
-
         $ docker-compose up
     
     This will launch both Yamcs and the Simulator in the foreground. You should see some log messages and the phrase  *yamcsstartup success* near the bottom.
