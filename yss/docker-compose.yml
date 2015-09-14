@@ -6,5 +6,5 @@ yamcs:
    links:
       - simulator
 simulator:
-   image: fqqb/simulator
+   image: yamcs/simulator
    restart: always

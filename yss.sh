@@ -1,6 +1,6 @@
 #!/bin/sh
 
-BASE_URL="https://fqqb.github.io"
+BASE_URL="http://www.yamcs.org"
 
 set -e
 /bin/echo -n "Downloading YSS configuration to `pwd`/yss..... "
