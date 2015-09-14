@@ -14,6 +14,9 @@ The YSS configuration is very simplistic by design, showcasing only core functio
 
 Running YSS is easy and straight-forward, but there are a few requirements you'll need to make sure your system has before you start. In particular this showcase uses `docker` and `docker-compose` to run container images that are prebuilt by the core Yamcs development team, and updated together with every Yamcs release.
 
+* TOC
+{:toc}
+
 ## Install Docker
 
 Detailed installation instructions can be found at [https://docs.docker.com/installation/](https://docs.docker.com/installation/). For example, on Ubuntu 14.04 LTS the simplest install would be something like:
@@ -40,7 +43,7 @@ Detailed installation instructions can be found at [https://docs.docker.com/comp
         
 Verify correct installation by running `docker-compose -v`. Any problems related to this latest command usually have to do with either not having started the docker daemon (for some platforms this is automatically configured, for others not), or by not having added your user to the `docker` group. Please ask a yamcs developer for further assistance specific to your platform if you get stuck on this.
 		
-## Run the Yamcs Simulation System (YSS)
+## Run Yamcs and the Simulator
 
 With all the preparations done, we now get to the real meat of running a Yamcs instance in a box (well, container).
 
@@ -60,6 +63,70 @@ With all the preparations done, we now get to the real meat of running a Yamcs i
     
      When you're done with testing and want to shutdown both servers, just `CTRL-c` this process. Later on, whenever you want the servers back up again, run `docker-compose up` -- you no longer need any of the other commands.
 
-## Explore a bit
+## Run Yamcs Studio
 
-We now have a working yamcs server receiving and recording telemetry from a simulator. To get a better peek at what's happening we will now install Yamcs Studio -- a rich desktop client for Yamcs.
+We now have a working Yamcs Server receiving and recording telemetry from a Simulator. To get a better peek at what's happening we will now launch Yamcs Studio -- a rich desktop client for Yamcs. Make sure you have Yamcs Studio installed (refer to [these instructions](/docs/studio/installation)). From the menu choose `File > Connect...` and fill in these details:
+
+![YSS Connection](/assets/yss-connect.png){: .center-image }
+
+Soon after clicking the `Connect` button, you should notice the processor in the top bar being updated to `realtime`. Now, open a sample display by clicking on `Bookmarks` in the top bar and choosing for example `Flight Data`. When you run this display for a while it might look like this (the simulator will loop forever).
+
+![YSS Flight Data](/assets/yss-flight-data.png){: .center-image }
+
+**Note:** these YSS displays are not perfect. There are many non-sensical things in them. Most widgets are backed by TM from the simulator, but some widgets are unconnected, others use locally simulated values using in-display functions. We plan on improving this sample project in the short term.
+
+### Components
+Let's look at this last screen again, as we shortly go over its components
+
+![YSS Flight Data](/assets/yss-flight-data-annotated.png){: .center-image }
+
+1. Processor Info
+    This zone holds two status indicators. The first indicator light shows the processor that Yamcs Studio is currently listening to. Yamcs supports many concurrent processors (realtime, replay channels). By default Yamcs Studio will always connect to `realtime`. In our case we know that this is backed by an ever-looping simulator.
+    
+    Next to that we see a second indicator which currently shows the processor time as provided by Yamcs. The simulator outputs generation times equal to the local system clock. If however we were to start a replay of archived data, we would notice this time adjusting to the location of our replay channel.  
+
+2. Perspective Switcher
+    When you launch Yamcs Studio it will open in `OPI Runtime` mode (OPI means Operator Interface). With the perspective switcher you can switch Yamcs Studio to the `OPI Editor` mode. Doing so will store and close your current arrangement of windows and views, and will open a different arrangement that is optimised for editing displays.
+    
+    Note that it is possible to make builds of Yamcs Studio that include *only* the runtime perspective. This can significantly improve UX during operations.
+
+3. Display Tabs
+    Displays open in different tabs. These are not normal tabs, though. By clicking and dragging these tabs we can easily create split screens, or different tab stacks. We can also drag a tab out of its parent window into a new window. In fact, Yamcs Studio is highly optimised for multi-monitor systems. Window layouts are restored even through restarts of Yamcs Studio.
+
+4. Display Zoom
+    The YSS displays are configured in such a way that they automatically stretch (while preserving aspect ratio) to fit the available screen space. This behaviour can be turned on or off by the display author. Regardless of this setting, as a display user we can always zoom in or out of the display using these controls.
+
+5. Operator Displays
+    This area contains displays that were authored in the `OPI Editor` perspective. Displays contain any number of widgets. Most widgets can be connected to TM, which will also make them alarm-sensitive. In practice this means that they will be highlighted with different decorations depending on the alarm level. There are also things like button widgets which can for example open other displays, or launch a telecommand, or open dialog boxes, etc. All widgets are highly customisable using scripts and/or rules (rules are a user-friendly layer on top of scripts). We are in the process of documenting and expanding the library of functions that can be called from scripts.
+   
+6. Built-In Displays
+    Yamcs Studio comes with an array of built-in displays that offer more dynamic views on different aspects of Yamcs. These built-in displays (or *Views*, as we call them inside Yamcs Studio) include such things as commanding, event logging, alarm overviews (upcoming) and archive insight.
+
+### OPI Editor
+Finally, let us now have a quick look at the OPI Editor. In the top right, change your copy of Yamcs Studio to `OPI Editor` mode (in case you don't see it, choose it from the dialog that pops up when clicking the plus-icon). 
+
+![OPI Editor Perspective](/assets/yss-opi-editor-perspective.png){: .center-image }
+
+Your window arrangement changes to something like this.
+
+![OPI Editor](/assets/opi-editor.png){: .center-image }
+
+In the left navigator, expand the YSS project and open for example our `FlightData.opi` by right-clicking and choosing `Open With > OPI Editor`.
+
+**Note:** we are aware that right-clicking it is slightly annoying. The left-click action by default opens the OPI file with OPI Runtime. Once you've successfully opened an OPI with the OPI Editor the left-click action will from that point always open it with the OPI Editor, as it remembers its last handler. We definitely want to improve the user experience here. But for now, please bear with us as we do the needed development work.
+
+The window layout can be decomposed like this:
+
+![Edit FlightData.opi](/assets/yss-opi-editor-flight-data-annotated.png){: .center-image }
+
+1. Navigator
+
+2. Editor Area
+
+3. Outline
+
+4. Toolbar
+
+5. Properties
+
+6. Palette
