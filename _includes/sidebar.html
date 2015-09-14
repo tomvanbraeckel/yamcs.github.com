@@ -14,13 +14,7 @@
     {% else %}
       <a class="sidebar-link-2" href="/docs/studio/installation">Installation</a>
     {% endif %}
+  {% else %}
+    {% include master-sidebar.html %}
   {% endif %}
-
-
-    {% if page.url contains '/docs' and p.url contains '/docs' %}
-      <a href="/docs/server/fundamentals" style="padding-left: 1em;">Fundamentals</a><br>
-      <a href="/docs/studio/installation/" style="padding-left: 1em;">Yamcs Studio Installation</a><br>
-      <a href="/docs/studio/installation/" style="padding-left: 1em;">Yamcs Studio Installation</a><br>
-      <br>
-		{% endif %}
 </div>

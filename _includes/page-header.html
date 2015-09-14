@@ -2,10 +2,11 @@
 
  <div class="container">
    <ul class="network-nav nav">
-     {% for page in site.pages %}
-       {% if page.title and page.top %}
-         <li><a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
-       {% endif %}
+     {% assign pages = site.pages | sort:"weight"  %}
+     {% for p in pages %}
+     	 {% if p.title and p.top %}
+         <li><a class="page-link{% if page.url contains p.url %} active{% endif %}" href="{{ p.url }}">{{ p.title }}</a></li>
+   	   {% endif %}
      {% endfor %}
      <li>
        <a href="https://github.com/yamcs">
