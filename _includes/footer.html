@@ -3,10 +3,17 @@
   <div class="container">
     <div class="footer-inset">
       <div class="footer-col-wrapper">
-        <div class="footer-col  footer-col-1">
+        <div class="footer-col footer-col-1">
           <ul class="contact-list">
             <li>&copy; {{ site.time | date: '%Y' }} Space Applications Services</li>
-            <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+            <li>
+              <a
+                  id="site_m"
+                  data-m1="eWFtY3M="
+                  data-m2="QHNwYWNlYXBwbGljYXRpb25zLmNvbQ=="
+                  href="#">
+               </a>
+            </li>
           </ul>
         </div>
 
@@ -20,5 +27,13 @@
     </div>
 
   </div>
+  <script>
+    (function () {
+      var emailEl = document.getElementById('site_m');
+      var v = atob(emailEl.getAttribute('data-m1')) + atob(emailEl.getAttribute('data-m2'));
+      emailEl.setAttribute('hr' + 'ef', 'ma' + 'ilt' + 'o:' + v);
+      emailEl.innerText = v;
+    })();
+  </script>
 
 </footer>

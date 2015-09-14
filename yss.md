@@ -144,7 +144,7 @@ The window layout can be decomposed like this:
     
     * In editing mode
     * In runtime mode in a Standalone window
-    * In runtime mode Within the workbench itself (this will split your window to make room for it)
+    * In runtime mode within the workbench itself (this will split your window to make room for it)
     * In a new window using the green launch button in the toolbar
     
        
