@@ -1,6 +1,7 @@
 ---
 layout: default
 permalink: /docs/studio/installation/
+title: Yamcs Studio Installation
 ---
 
 ## Yamcs Studio Installation
