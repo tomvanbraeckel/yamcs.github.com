@@ -120,13 +120,33 @@ The window layout can be decomposed like this:
 ![Edit FlightData.opi](/assets/yss-opi-editor-flight-data-annotated.png){: .center-image }
 
 1. Navigator
+    The navigator contains all projects within the current workspace. In general a project is at the same level as a mission, but this is not strictly necessary. When we launch Yamcs Studio with a new workspace, it will always automatically create the `YSS` project. Once you have added your own project, you can remove `YSS` and it won't be autocreated anymore.
+    
+    A project contains Operator Displays (`*.opi`), images, color profiles (`*.def`), custom scripts (`*.js` or `*.py`), etc. Familiarise yourself with the right-click option as you go about opening displays. Displays can be opened in a few different modes within the OPI Editor.
+    
+    * In editing mode
+    * In runtime mode in a Standalone window
+    * In runtime mode Within the workbench itself (this will split your window to make room for it)
+    * In a new window using the green launch button in the toolbar
+    
+       
+        It is useful to have all these options when you're in the process of editing and testing displays with realtime telemetry, but do pay attention to treat the OPI Editor like an editor, not like a runtime viewer. During operations you should switch back to the OPI Runtime.
 
 2. Editor Area
+    This area contains tabs for every OPI that was opened for editing. This offers familiar editing controls. Widgets can be selected, grouped, dragged and deleted to your personal taste.
 
 3. Outline
+    The Outline view gives a hierarchical breakdown of all the widgets within the currently active editor tab. It is useful for finding back widgets. Widgets that were named will be easily identifiable. 
 
 4. Toolbar
+    The toolbar offers a set of controls. This includes general *Save* functionality, as well as handy features like grid toggling or space distribution among different widgets.
 
 5. Properties
+    This view shows the properties of widgets (or of the display itself). Notable properties include the `PV Name` which allows you to connect a widget with a specific Yamcs parameter (with autocompletion support). Other properties allow the display author to greatly tweak default widget behaviour. And in cases where the properties are not sufficient, we can always escape to more customization options using scripts and rules (there are properties for adding these as well). 
 
 6. Palette
+    The palette contains the widgets that are available in your copy of Yamcs Studio. Select a widget from the Palette, and then click somewhere in the editor area to place it down. 
+
+When you're done doing changes, make sure to save them (`File > Save All`). You can now test out your changes by clicking the launch button ![Test Runtime](/assets/opi-editor-launch.png) from the toolbar.
+
+This will open a new runtime window (notice it uses the OPI Runtime perspective). If you leave this window open, and you save more changes, do a right-click in your display tab and choose `Refresh OPI`. You will do this a lot as you go about editing displays. You can also refresh by hitting `F5`, but make sure that your display actually has focus (for example by clicking somewhere in the editor before hitting `F5`.
