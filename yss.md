@@ -69,21 +69,24 @@ We now have a working Yamcs Server receiving and recording telemetry from a Simu
 
 ![YSS Connection](/assets/yss-connect.png){: .center-image }
 
-Soon after clicking the `Connect` button, you should notice the processor in the top bar being updated to `realtime`. Now, open a sample display by clicking on `Bookmarks` in the top bar and choosing for example `Flight Data`. When you run this display for a while it might look like this (the simulator will loop forever).
+Soon after clicking the `Connect` button, you should notice the processor in the top bar being updated to `realtime`.
+
+### OPI Runtime
+Now, open a sample display by clicking on `Bookmarks` in the top bar and choosing for example `Flight Data`. When you run this display for a while it might look like this (the simulator will loop forever).
 
 ![YSS Flight Data](/assets/yss-flight-data.png){: .center-image }
 
 **Note:** these YSS displays are not perfect. There are many non-sensical things in them. Most widgets are backed by TM from the simulator, but some widgets are unconnected, others use locally simulated values using in-display functions. We plan on improving this sample project in the short term.
 
-### Components
-Let's look at this last screen again, as we shortly go over its components
+#### TM Monitoring
+Let's look at this last screen again, as we shortly go over its components.
 
 ![YSS Flight Data](/assets/yss-flight-data-annotated.png){: .center-image }
 
 1. Processor Info
     This zone holds two status indicators. The first indicator light shows the processor that Yamcs Studio is currently listening to. Yamcs supports many concurrent processors (realtime, replay channels). By default Yamcs Studio will always connect to `realtime`. In our case we know that this is backed by an ever-looping simulator.
     
-    Next to that we see a second indicator which currently shows the processor time as provided by Yamcs. The simulator outputs generation times equal to the local system clock. If however we were to start a replay of archived data, we would notice this time adjusting to the location of our replay channel.  
+    Next to that we see a second indicator which currently shows the processor time as provided by Yamcs. The simulator outputs generation times equal to the local system clock. If however we were to start a replay of archived data, we would notice this time adjusting to the location of our replay channel.
 
 2. Perspective Switcher
     When you launch Yamcs Studio it will open in `OPI Runtime` mode (OPI means Operator Interface). With the perspective switcher you can switch Yamcs Studio to the `OPI Editor` mode. Doing so will store and close your current arrangement of windows and views, and will open a different arrangement that is optimised for editing displays.
@@ -101,6 +104,21 @@ Let's look at this last screen again, as we shortly go over its components
    
 6. Built-In Displays
     Yamcs Studio comes with an array of built-in displays that offer more dynamic views on different aspects of Yamcs. These built-in displays (or *Views*, as we call them inside Yamcs Studio) include such things as commanding, event logging, alarm overviews (upcoming) and archive insight.
+
+#### TC Commanding
+Yamcs Studio ships with a few built-in displays for commanding payloads.
+
+* Command Stack
+    The Command Stack allows operators to prepare stacks of commands for manual command issuing. The process is intentionally click-heavy to make sure that operators are aware of what they are doing.
+
+* Command History
+    The Command History keeps track of all commands that were issued using Yamcs (not just by yourself, but by anyone). By default it only lists realtime commands, but it is possible to also load an archived range of data from the server. 
+
+* Command Queues
+    This view allows controlling the yamcs queues from the point of view of Yamcs Server. With sufficient privileges, queues can be blocked or disabled.
+    
+While these views work fine, we are not done bulking them up with features, and also offer different solutions for automated procedures.
+
 
 ### OPI Editor
 Finally, let us now have a quick look at the OPI Editor. In the top right, change your copy of Yamcs Studio to `OPI Editor` mode (in case you don't see it, choose it from the dialog that pops up when clicking the plus-icon). 
@@ -139,7 +157,7 @@ The window layout can be decomposed like this:
     The Outline view gives a hierarchical breakdown of all the widgets within the currently active editor tab. It is useful for finding back widgets. Widgets that were named will be easily identifiable. 
 
 4. Toolbar
-    The toolbar offers a set of controls. This includes general *Save* functionality, as well as handy features like grid toggling or space distribution among different widgets.
+    The toolbar offers context-sensitive controls. This includes general *Save* functionality, as well as handy features like grid toggling or space distribution among different widgets.
 
 5. Properties
     This view shows the properties of widgets (or of the display itself). Notable properties include the `PV Name` which allows you to connect a widget with a specific Yamcs parameter (with autocompletion support). Other properties allow the display author to greatly tweak default widget behaviour. And in cases where the properties are not sufficient, we can always escape to more customization options using scripts and rules (there are properties for adding these as well). 
