@@ -30,7 +30,7 @@ For development purposes, all the software can run on a developer computer or la
     * Various other project specific protocols like DaSS (Columbus Ground Segment specific protocol), PaCTS (EGSE software used by some of the Columbus payloads)
 * Custom protocols can be easily added
 * Comfortable packet structure definition, partially implementing the [XTCE standard](http://www.xtce.org)
-* Compatible with the [Unified Synoptic System (USS)](http://www.e-columbus.de/projects/uss)
+* Compatible with the Unified Synoptic System (USS)
 * Telemetry replay, scientific data extraction, profiling, and offline analysis
 * Detailed packet and parameter inspection
 * Remote and cascaded connectivity from external science users or other centers
