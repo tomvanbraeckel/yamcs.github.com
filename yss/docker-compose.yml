@@ -6,5 +6,5 @@ yamcs:
    links:
       - simulator
 simulator:
-   image: yamcs/simulator
+   image: yamcs/simulator:0.28.0
    restart: always
