@@ -14,6 +14,13 @@
     {% else %}
       <a class="sidebar-link-2" href="/docs/studio/installation">Installation</a>
     {% endif %}
+    <br>
+
+    {% if page.url contains '/docs/studio/log' %}
+      <span class="sidebar-item-2">Capturing Log Output</span>
+    {% else %}
+      <a class="sidebar-link-2" href="/docs/studio/log">Capturing Log Output</a>
+    {% endif %}
   {% else %}
     {% include master-sidebar.html %}
   {% endif %}
