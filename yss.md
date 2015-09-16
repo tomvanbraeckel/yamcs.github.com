@@ -10,7 +10,7 @@ Yamcs deployment details can vary greatly from mission to mission. To present an
 
 # Yamcs Simulation System (YSS)
 
-The YSS configuration is very simplistic by design, showcasing only core functionality. In the backend, it includes just two servers: **Yamcs** and a basic **Simulator**. These servers are set-up to exchange TM and TC. In the frontend, we connect sample operator displays that were authored in **Yamcs Studio**, as well as a selection of built-in displays (Archive, Command Stack, etc.). From Yamcs Studio we can send commands to Yamcs, which in turn will verify and issue them to the Simulator.
+The YSS configuration is simple by design, showcasing only core functionality. In the backend, it includes just two servers: **Yamcs** and a generic landing **Simulator**. These servers are set-up to exchange TM and TC. In the frontend, we connect sample operator displays that were authored in **Yamcs Studio**, as well as a selection of built-in displays (Archive, Command Stack, etc.). From Yamcs Studio we can send commands to Yamcs, which in turn will verify and issue them to the Simulator.
 
 Running YSS is easy and straight-forward, but there are a few requirements you'll need to make sure your system has before you start. In particular this showcase uses `docker` and `docker-compose` to run container images that are prebuilt by the core Yamcs development team, and updated together with every Yamcs release.
 
@@ -45,7 +45,7 @@ Verify correct installation by running `docker-compose -v`. Any problems related
 		
 ## Run Yamcs and the Simulator
 
-With all the preparations done, we now get to the real meat of running a Yamcs instance in a box (well, container).
+With all the preparations done, we now get to run a Yamcs instance in a box (well, container).
 
 1. Get the YSS configuration.
 
@@ -59,7 +59,7 @@ With all the preparations done, we now get to the real meat of running a Yamcs i
         $ cd yss
         $ docker-compose up
     
-    This will launch both Yamcs and the Simulator in the foreground. You should see some log messages and the phrase  *yamcsstartup success* near the bottom.
+    This will download, then launch both Yamcs and the Simulator in the foreground. You should see some log messages and the phrase  *yamcsstartup success* near the bottom.
     
      When you're done with testing and want to shutdown both servers, just `CTRL-c` this process. Later on, whenever you want the servers back up again, run `docker-compose up` -- you no longer need any of the other commands.
 
@@ -79,7 +79,7 @@ Now, open a sample display by clicking on `Bookmarks` in the top bar and choosin
 **Note:** these YSS displays are not perfect. There are many non-sensical things in them. Most widgets are backed by TM from the simulator, but some widgets are unconnected, others use locally simulated values using in-display functions. We plan on improving this sample project in the short term.
 
 #### TM Monitoring
-Let's look at this last screen again, as we shortly go over its components.
+Let's look at this last screen again, as we shortly address its components.
 
 ![YSS Flight Data](/assets/yss-flight-data-annotated.png){: .center-image }
 
