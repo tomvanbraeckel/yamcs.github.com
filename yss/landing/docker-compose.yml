@@ -1,0 +1,10 @@
+yamcs:
+   build: "."
+   ports:
+      - "5445:5445"
+      - "8090:8090"
+   links:
+      - simulator
+simulator:
+   image: "yamcs/simulator:0.28.1"
+   restart: always
