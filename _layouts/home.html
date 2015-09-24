@@ -8,16 +8,13 @@
     {% include big-header.html %}
 
     <div id="content">
-      <div class="container">
-        {% include master-sidebar.html %}
-        <div class="main">
+      <div class="container small">
+        <div class="main{% if page.sidebar %} with-sidebar{% endif %}">
           {{ content }}
         </div>
       </div>
     </div>
 
     {% include footer.html %}
-
   </body>
-
 </html>

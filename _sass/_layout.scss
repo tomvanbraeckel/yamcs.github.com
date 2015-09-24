@@ -1,146 +1,146 @@
 .site-header {
-    background: #eee;
-    color: #543729;
-    padding: 10px 0;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-    border-bottom: 1px solid #e8e8e8;
+  background: #eee;
+  color: #543729;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e8e8e8;
 }
 
 .site-title {
-    font-size: 26px;
-    line-height: 56px;
-    letter-spacing: -1px;
-    margin-bottom: 0;
-    float: left;
+  font-size: 26px;
+  line-height: 56px;
+  letter-spacing: -1px;
+  margin-bottom: 0;
+  float: left;
 
-    &,
-    &:visited {
-        color: $grey-color-dark;
-    }
+  &,
+  &:visited {
+    color: $grey-color-dark;
+  }
 }
 
 .page-title {
-    font-size: 24px;
-    font-weight: bold;
-    letter-spacing: -0.025em;
-    margin: 0;
-    padding: 0;
-    padding-top: 30px;
-    padding-left: 220px;
-    color: #222;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: -0.025em;
+  margin: 0;
+  padding: 0;
+  padding-top: 30px;
+  padding-left: 220px;
+  color: #222;
 }
 
 .page-logo {
-    height: 20px;
+  height: 20px;
 }
 
 .center-image {
-    margin: 0 auto;
-    display: block;
+  margin: 0 auto;
+  display: block;
 }
 
 .sidebar {
-    .sidebar-link {
-        display: block;
-        border-radius: 5px;
-        padding: 5px 10px;
+  .sidebar-link {
+    display: block;
+    border-radius: 5px;
+    padding: 5px 10px;
 
-        &.active {
-            background-color: $grey-color-light;
-        }
+    &.active {
+      background-color: $grey-color-light;
     }
+  }
 
-    .sidebar-item {
-        display: block;
-        border-radius: 5px;
-        padding: 5px 10px;
-        background-color: $grey-color-light;
+  .sidebar-item {
+    display: block;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: $grey-color-light;
+  }
+
+  .sidebar-link-2 {
+    padding-left: 1em;
+
+    &.active {
+      text-decoration: none;
+      font-weight: bold;
     }
+  }
 
-    .sidebar-link-2 {
-        padding-left: 1em;
-
-        &.active {
-            text-decoration: none;
-            font-weight: bold;
-        }
-    }
-
-    .sidebar-item-2 {
-        /*font-weight: bold;*/
-        color: #222;
-        margin-left: 1em;
-    }
+  .sidebar-item-2 {
+    /*font-weight: bold;*/
+    color: #222;
+    margin-left: 1em;
+  }
 }
 
 .site-nav {
-    float: right;
-    line-height: 56px;
+  float: right;
+  line-height: 56px;
+
+  .menu-icon {
+    display: none;
+  }
+
+  .page-link {
+    color: $text-color;
+    line-height: $base-line-height;
+
+    // Gaps between nav items, but not on the first one
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+  }
+
+  @include media-query($on-palm) {
+    position: absolute;
+    top: 9px;
+    right: 30px;
+    background-color: $background-color;
+    border: 1px solid $grey-color-light;
+    border-radius: 5px;
+    text-align: right;
 
     .menu-icon {
-        display: none;
+      display: block;
+      float: right;
+      width: 36px;
+      height: 26px;
+      line-height: 0;
+      padding-top: 10px;
+      text-align: center;
+
+      > svg {
+        width: 18px;
+        height: 15px;
+
+        path {
+          fill: $grey-color-dark;
+        }
+      }
+    }
+
+    .trigger {
+      clear: both;
+      display: none;
+    }
+
+    &:hover .trigger {
+      display: block;
+      padding-bottom: 5px;
     }
 
     .page-link {
-        color: $text-color;
-        line-height: $base-line-height;
-
-        // Gaps between nav items, but not on the first one
-        &:not(:first-child) {
-            margin-left: 20px;
-        }
+      display: block;
+      padding: 5px 10px;
     }
-
-    @include media-query($on-palm) {
-        position: absolute;
-        top: 9px;
-        right: 30px;
-        background-color: $background-color;
-        border: 1px solid $grey-color-light;
-        border-radius: 5px;
-        text-align: right;
-
-        .menu-icon {
-            display: block;
-            float: right;
-            width: 36px;
-            height: 26px;
-            line-height: 0;
-            padding-top: 10px;
-            text-align: center;
-
-            > svg {
-                width: 18px;
-                height: 15px;
-
-                path {
-                    fill: $grey-color-dark;
-                }
-            }
-        }
-
-        .trigger {
-            clear: both;
-            display: none;
-        }
-
-        &:hover .trigger {
-            display: block;
-            padding-bottom: 5px;
-        }
-
-        .page-link {
-            display: block;
-            padding: 5px 10px;
-        }
-    }
+  }
 }
 
 ul.contact-list {
-    list-style: none;
-    margin-left: 0;
-    font-size: smaller;
+  list-style: none;
+  margin-left: 0;
+  font-size: smaller;
 }
 
 .page-subheader {
@@ -152,73 +152,76 @@ ul.contact-list {
 }
 
 .footer-inset .text {
-    font-size: smaller;
+  font-size: smaller;
 }
 
 .site-footer {
-    padding: $spacing-unit 0;
+  padding: $spacing-unit 0;
 }
 
 .footer-inset {
+  border-top: 1px solid $grey-color-light;
+  padding-top: 0.5em;
+
+  &.with-sidebar {
     margin-left: 230px;
-    border-top: 1px solid $grey-color-light;
-    padding-top: 0.5em;
+  }
 }
 
 .footer-col-wrapper {
-    font-size: 15px;
-    color: $grey-color;
-    margin-left: -$spacing-unit / 2;
-    @extend %clearfix;
+  font-size: 15px;
+  color: $grey-color;
+  margin-left: -$spacing-unit / 2;
+  @extend %clearfix;
 }
 
 .footer-col {
-    float: left;
-    margin-bottom: $spacing-unit / 2;
-    padding-left: $spacing-unit / 2;
+  float: left;
+  margin-bottom: $spacing-unit / 2;
+  padding-left: $spacing-unit / 2;
 }
 
 .footer-col-1 {
-    width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-    width:         calc(35% - (#{$spacing-unit} / 2));
+  width: -webkit-calc(35% - (#{$spacing-unit} / 2));
+  width:         calc(35% - (#{$spacing-unit} / 2));
 }
 
 .footer-col-2 {
-    width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-    width:         calc(20% - (#{$spacing-unit} / 2));
+  width: -webkit-calc(20% - (#{$spacing-unit} / 2));
+  width:         calc(20% - (#{$spacing-unit} / 2));
 }
 
 .footer-col-3 {
-    width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-    width:         calc(45% - (#{$spacing-unit} / 2));
+  width: -webkit-calc(45% - (#{$spacing-unit} / 2));
+  width:         calc(45% - (#{$spacing-unit} / 2));
 }
 
 @include media-query($on-laptop) {
-    .footer-col-1,
-    .footer-col-2 {
-        width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-        width:         calc(50% - (#{$spacing-unit} / 2));
-    }
+  .footer-col-1,
+  .footer-col-2 {
+    width: -webkit-calc(50% - (#{$spacing-unit} / 2));
+    width:         calc(50% - (#{$spacing-unit} / 2));
+  }
 
-    .footer-col-3 {
-        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-        width:         calc(100% - (#{$spacing-unit} / 2));
-    }
+  .footer-col-3 {
+    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+    width:         calc(100% - (#{$spacing-unit} / 2));
+  }
 }
 
 @include media-query($on-palm) {
-    .footer-col {
-        float: none;
-        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-        width:         calc(100% - (#{$spacing-unit} / 2));
-    }
+  .footer-col {
+    float: none;
+    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+    width:         calc(100% - (#{$spacing-unit} / 2));
+  }
 }
 
 .sidebar {
-    position: absolute;
-    left: 10px;
-    top: 0;
-    width: 200px;
+  position: absolute;
+  left: 10px;
+  top: 0;
+  width: 200px;
 }
 
 a img.page-logo {

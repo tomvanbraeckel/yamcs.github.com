@@ -4,6 +4,7 @@ title: Up & Running
 permalink: /running/
 weight: 20
 top: yes
+sidebar: no
 ---
 
 Yamcs deployment details can vary greatly from mission to mission. To present an overall feel of the core system, we have created a sample configuration, which we call the **Yamcs Simulation System (YSS)**.

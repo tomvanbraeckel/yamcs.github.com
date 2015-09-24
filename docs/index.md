@@ -4,6 +4,7 @@ layout: default
 permalink: /docs/
 weight: 10
 top: yes
+sidebar: yes
 ---
 
 > _We are in the process of migrating and bundling our documentation from various sources that were built up in the past. Until this migration is finished, documentation on here may feel somewhat lacking._

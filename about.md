@@ -4,13 +4,10 @@ title: About
 permalink: /about/
 weight: 5
 top: yes
+sidebar: no
 ---
 
 Yamcs is being used day to day by several entities for realtime operations, and specifically on International Space Station missions.
-
-* B.USOC
-* Space Applications
-* ESA
 
 <p>&nbsp;</p>
 

@@ -4,21 +4,22 @@
   {% include head.html %}
 
   <body>
-
     {% include page-header.html %}
 
     <div id="content">
-      <div class="container">
-        {% include sidebar.html %}
-        <div class="main">
-          {% include page-subheader.html %}
+      <div class="container{% if page.sidebar == false %} small{% endif %}">
+        {% if page.sidebar %}
+          {% include sidebar.html %}
+        {% endif %}
+        <div class="main{% if page.sidebar %} with-sidebar{% endif %}">
+          {% if page.sidebar %}
+            {% include page-subheader.html %}
+          {% endif %}
           {{ content }}
         </div>
       </div>
     </div>
 
     {% include footer.html %}
-
   </body>
-
 </html>

@@ -1,7 +1,7 @@
 <footer class="site-footer">
 
-  <div class="container">
-    <div class="footer-inset">
+  <div class="container{% if page.sidebar == false %} small{% endif %}">
+    <div class="footer-inset{% if page.sidebar %} with-sidebar{% endif %}">
       <div class="footer-col-wrapper">
         <div class="footer-col footer-col-1">
           <ul class="contact-list">

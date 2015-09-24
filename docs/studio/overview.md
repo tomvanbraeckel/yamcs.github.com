@@ -2,6 +2,7 @@
 layout: default
 permalink: /docs/studio/overview/
 title: Overview
+sidebar: yes
 ---
 
 ## Overview

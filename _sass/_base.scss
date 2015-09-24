@@ -133,6 +133,10 @@ pre {
     max-width: 1000px;
     margin: 0 auto;
     padding: 5px 10px;
+
+    &.small {
+      max-width: 700px;
+    }
 }
 
 .container .brand {
@@ -228,7 +232,10 @@ pre {
 }
 
 .main {
+
+  &.with-sidebar {
     margin-left: 230px;
+  }
 }
 
 %clearfix {
