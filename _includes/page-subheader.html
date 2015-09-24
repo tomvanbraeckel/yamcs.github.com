@@ -7,5 +7,12 @@
   {% if page.url contains '/docs/studio' %}
     <a href="/docs/">Docs</a> /
     <a href="/docs/studio/">Yamcs Studio</a>
+
+    {% for p in site.data.sidebar.guides.studio %}
+      {% if p.url == page.url %}
+        / <span class="active">{{ p.title }}</span>
+      {% endif %}
+    {% endfor %}
+
   {% endif %}
 </div>
