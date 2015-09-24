@@ -10,14 +10,10 @@
     </div>
 
     <ul class="network-nav nav">
-      {% assign pages = site.pages | sort:"weight"  %}
-      {% for p in pages %}
-     	  {% if p.title and p.top %}
-          <li><a class="page-link{% if page.url contains p.url %} active{% endif %}" href="{{ p.url }}">{{ p.title }}</a></li>
-   	    {% endif %}
+      {% for p in site.data.structure %}
+        <li><a class="page-link{% if page.url contains p.url %} active{% endif %}" href="{{ p.url }}">{{ p.title }}</a></li>
       {% endfor %}
     </ul>
-
     <div style="clear:both;"></div>
   </div>
 </header>

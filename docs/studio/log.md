@@ -1,7 +1,6 @@
 ---
 layout: default
 permalink: /docs/studio/log/
-title: Capturing Log Output
 sidebar: yes
 ---
 

@@ -1,7 +1,6 @@
 ---
 layout: default
 permalink: /docs/server/fundamentals/
-title: Fundamentals
 sidebar: yes
 ---
 

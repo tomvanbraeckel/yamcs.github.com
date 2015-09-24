@@ -1,9 +1,6 @@
 ---
 layout: default
-title: Up & Running
 permalink: /running/
-weight: 20
-top: yes
 sidebar: no
 ---
 

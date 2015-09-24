@@ -163,11 +163,15 @@ ul.contact-list {
 }
 
 .page-subheader {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #e8e8e8;
   padding-top: 5px;
   padding-bottom: 5px;
   font-size: smaller;
   margin-bottom: 10px;
+}
+
+#content {
+  min-height: 600px;
 }
 
 .footer-inset .text {

@@ -1,9 +1,6 @@
 ---
 layout: default
-title: About
 permalink: /about/
-weight: 5
-top: yes
 sidebar: no
 ---
 

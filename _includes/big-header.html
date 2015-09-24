@@ -1,20 +1,15 @@
 <header class="site-header">
+  <div class="container">
+    <ul class="network-nav nav">
+      {% for p in site.data.structure %}
+        <li><a class="page-link{% if page.url contains p.url %} active{% endif %}" href="{{ p.url }}">{{ p.title }}</a></li>
+   	  {% endfor %}
+    </ul>
 
- <div class="container">
-   <ul class="network-nav nav">
-     {% assign pages = site.pages | sort:"weight"  %}
-     {% for p in pages %}
-     	 {% if p.title and p.top %}
-         <li><a class="page-link{% if page.url contains p.url %} active{% endif %}" href="{{ p.url }}">{{ p.title }}</a></li>
-   	   {% endif %}
-     {% endfor %}
-  </ul>
-
-  <div class="brand">
-    <img class="logo" src="{{ site.baseurl }}/assets/curve.png">
-    <h1>Yamcs</h1>
-    <h3 class="tagline">Modern, Lightweight, Scalable<br>Mission Control System</h3>
+    <div class="brand">
+      <img class="logo" src="{{ site.baseurl }}/assets/curve.png">
+      <h1>Yamcs</h1>
+      <h3 class="tagline">Modern, Lightweight, Scalable<br>Mission Control System</h3>
+    </div>
   </div>
- </div>
-
 </header>

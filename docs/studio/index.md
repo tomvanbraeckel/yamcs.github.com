@@ -1,7 +1,6 @@
 ---
 layout: default
 permalink: /docs/studio/
-title: Yamcs Studio User Guide
 sidebar: yes
 ---
 
