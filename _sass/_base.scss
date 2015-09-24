@@ -1,6 +1,3 @@
-/**
- * Reset some basic elements
- */
 body, h1, h2, h3, h4, h5, h6,
 p, blockquote, pre, hr,
 dl, dd, ol, ul, figure {
@@ -8,11 +5,6 @@ dl, dd, ol, ul, figure {
     padding: 0;
 }
 
-
-
-/**
- * Basic styling
- */
 body {
     font-family: $base-font-family;
     font-size: $base-font-size;
@@ -35,22 +27,12 @@ ul, ol, dl, figure,
     margin-bottom: $spacing-unit / 2;
 }
 
-
-
-/**
- * Images
- */
 img {
     max-width: 100%;
     vertical-align: middle;
     border: 0;
 }
 
-
-
-/**
- * Figures
- */
 figure > img {
     display: block;
 }
@@ -59,11 +41,6 @@ figcaption {
     font-size: $small-font-size;
 }
 
-
-
-/**
- * Lists
- */
 ul, ol {
     margin-left: $spacing-unit;
 }
@@ -75,20 +52,10 @@ li {
     }
 }
 
-
-
-/**
- * Headings
- */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
 }
 
-
-
-/**
- * Links
- */
 a {
     color: darken($brand-color, 15%);
     text-decoration: none;
@@ -103,11 +70,6 @@ a {
     }
 }
 
-
-
-/**
- * Blockquotes
- */
 blockquote {
     color: $grey-color;
     border-left: 4px solid $grey-color-light;
@@ -121,11 +83,6 @@ blockquote {
     }
 }
 
-
-
-/**
- * Code formatting
- */
 pre,
 code {
     font-size: 15px;
@@ -149,11 +106,6 @@ pre {
     }
 }
 
-
-
-/**
- * Wrapper
- */
 .wrapper {
     max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
     max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
@@ -176,7 +128,7 @@ pre {
     position: relative;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 0 10px;
+    padding: 5px 10px;
 }
 
 .container .brand {
@@ -224,34 +176,57 @@ pre {
     margin: 0;
 }
 
+.yamcs-header {
+    float: left;
+
+    a {
+        text-decoration: none;
+    }
+
+    a.hover {
+        text-decoration: none;
+    }
+
+    h3 {
+        display: inline;
+        font-size: 16px;
+        font-weight: bold;
+        color: #3e4981;
+    }
+}
+
 .network-nav {
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 2; /* on top of brand */
     font-weight: bold;
     font-size: 16px;
+    position: relative;
+    display: inline;
+    float: right;
+    z-index: 2; /* to capture clicks from under brand */
 }
 
 .network-nav li {
-    float: left;
+    display: inline;
 }
 
 .network-nav a {
-    display: block;
     color: #222;
     font-weight: 300;
     padding: 0.2em 15px;
     border-radius: 4px;
 }
 
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
 .main {
     margin-left: 230px;
 }
 
-/**
- * Clearfix
- */
 %clearfix {
 
     &:after {
@@ -261,11 +236,6 @@ pre {
     }
 }
 
-
-
-/**
- * Icons
- */
 .icon {
 
     > svg {

@@ -9,12 +9,13 @@ top: yes
 Yamcs deployment details can vary greatly from mission to mission. To present an overall feel of the core system, we have created a sample configuration, which we call the **Yamcs Simulation System (YSS)**.
 
 # Yamcs Simulation System (YSS)
+{:.no-toc}
 
 The YSS configuration is simple by design, showcasing only core functionality. In the backend, it includes just two servers: **Yamcs** and a generic **Simulator**. These servers are set-up to exchange TM and TC. In the frontend, we connect sample operator displays that were authored in **Yamcs Studio**, as well as a selection of built-in displays (Archive, Command Stack, etc.). From Yamcs Studio we can send commands to Yamcs, which in turn will verify and issue them to the Simulator.
 
 Running YSS is easy and straight-forward, but there are a few requirements you'll need to make sure your system has before you start. In particular this showcase uses `docker` and `docker-compose` to run container images that are prebuilt by the core Yamcs development team, and updated together with every Yamcs release.
 
-* TOC
+* TOC 
 {:toc}
 
 ## Install Docker

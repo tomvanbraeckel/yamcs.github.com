@@ -1,13 +1,10 @@
-/**
- * Site header
- */
 .site-header {
     background: #eee;
     color: #543729;
     padding: 10px 0;
-    min-height: 180px;
     margin-bottom: 20px;
     box-sizing: border-box;
+    border-bottom: 1px solid #e8e8e8;
 }
 
 .site-title {
@@ -24,7 +21,7 @@
 }
 
 .page-title {
-    font-size: 64px;
+    font-size: 24px;
     font-weight: bold;
     letter-spacing: -0.025em;
     margin: 0;
@@ -35,11 +32,7 @@
 }
 
 .page-logo {
-    display: block;
-    height: 123px;
-    position: absolute;
-    left: 30px;
-    top: 15px;
+    height: 20px;
 }
 
 .center-image {
@@ -154,11 +147,6 @@ ul.contact-list {
     font-size: smaller;
 }
 
-
-
-/**
- * Site footer
- */
 .site-footer {
     padding: $spacing-unit 0;
 }

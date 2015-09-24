@@ -1,9 +1,9 @@
 <div class="sidebar">
   {% assign pages = site.pages | sort:"weight"  %}
   {% for p in pages %}
-  	{% if p.title and p.top %}
-		<a class="sidebar-link{% if page.url contains p.url %} active{% endif %}" href="{{ p.url }}">{{ p.title }}</a>
-	{% endif %}
+    {% if p.title and p.top %}
+      <a class="sidebar-link{% if page.url contains p.url %} active{% endif %}" href="{{ p.url }}">{{ p.title }}</a>
+    {% endif %}
   {% endfor %}
   <br>
   <a href="https://github.com/yamcs" style="padding-left: 10px">
