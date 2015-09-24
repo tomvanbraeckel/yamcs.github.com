@@ -40,6 +40,25 @@
   display: block;
 }
 
+.icon-grid {
+
+}
+
+.icon-wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 80px;
+  border: 1px solid #3e4981;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+
+  .icon {
+    line-height: 80px;
+  }
+}
+
 .sidebar {
   .sidebar-link {
     display: block;
