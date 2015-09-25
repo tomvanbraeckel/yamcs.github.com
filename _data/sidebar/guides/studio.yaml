@@ -1,11 +1,21 @@
 - title: Introduction
-  url: /docs/studio/
+  items:
+    - title: Overview
+      url: /docs/studio/overview/
+    - title: Installation
+      url: /docs/studio/installation/
 
-- title: Installation
-  url: /docs/studio/installation/
+- title: OPI Runtime
+  items:
+    - title: Overview
+      url: /docs/studio/OPI_Runtime/
 
-- title: Overview
-  url: /docs/studio/overview/
+- title: OPI Editor
+  items:
+    - title: Overview
+      url: /docs/studio/OPI_Editor/
 
-- title: Capturing Log Output
-  url: /docs/studio/log/
+- title: Troubleshooting
+  items:
+    - title: Capturing Log Output
+      url: /docs/studio/log/

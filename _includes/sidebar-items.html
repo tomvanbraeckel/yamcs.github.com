@@ -1,0 +1,11 @@
+{% if include.items %}
+  <ul class="items">
+  {% for item in include.items %}
+    {% if page.url == item.url %}
+      <li><span class="sidebar-item-2">{{ item.title }}</span></li>
+    {% else %}
+      <li><a class="sidebar-link-2" href="{{ item.url }}">{{ item.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+  </ul>
+{% endif %}

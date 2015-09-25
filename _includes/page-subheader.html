@@ -12,12 +12,18 @@
 
   {% if page.url contains '/docs/studio' %}
     <a href="/docs/">Docs</a> /
-    <a href="/docs/studio/">Yamcs Studio</a>
+    {% if page.url == '/docs/studio/' %}
+      Yamcs Studio User Guide
+    {% else %}
+      <a href="/docs/studio/">Yamcs Studio User Guide</a>
+    {% endif %}
 
-    {% for p in site.data.sidebar.guides.studio %}
-      {% if p.url == page.url %}
-        / <span class="active">{{ p.title }}</span>
-      {% endif %}
+    {% for chapter in site.data.sidebar.guides.studio %}
+      {% for item in chapter.items %}
+        {% if item.url == page.url %}
+          / <span class="active">{{ item.title | replace:'_',' ' }}</span>
+        {% endif %}
+      {% endfor %}
     {% endfor %}
   {% endif %}
 </div>

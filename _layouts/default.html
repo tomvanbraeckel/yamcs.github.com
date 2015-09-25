@@ -8,9 +8,15 @@
 
     <div id="content">
       <div class="container{% if page.sidebar == false %} small{% endif %}">
-        {% if page.sidebar %}
-          {% include sidebar.html %}
+
+        {% if page.sidebar and page.url contains '/docs/server' %}
+          {% include sidebar.html structure=site.data.sidebar.guides.server %}
         {% endif %}
+
+        {% if page.sidebar and page.url contains '/docs/studio' %}
+          {% include sidebar.html structure=site.data.sidebar.guides.studio %}
+        {% endif %}
+
         <div class="main{% if page.sidebar %} with-sidebar{% endif %}">
           {% if page.sidebar %}
             {% include page-subheader.html %}
@@ -21,5 +27,6 @@
     </div>
 
     {% include footer.html %}
+    <script src="/js/site.js"></script>
   </body>
 </html>

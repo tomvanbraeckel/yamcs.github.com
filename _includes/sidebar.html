@@ -1,23 +1,29 @@
-<div class="sidebar">
-  <!--span class="sidebar-item" href="/docs/studio/installation">Yamcs Studio</span-->
+<div id="sidebar" class="sidebar">
+  {% for link in include.structure %}
 
-  {% if page.url contains '/docs/server' %}
-    {% for link in site.data.sidebar.guides.server %}
-      {% if page.url == link.url %}
-        <span class="sidebar-item">{{ link.title }}</span>
+    {% comment %}
+      Open for other ideas that work on github too (i.e. no plugins)
+      here we just check all nested pages, to determine expansion state
+    {% endcomment %}
+
+    {% assign expand=false %}
+    {% for item in link.items %}
+      {% if item.url == page.url %}
+        {% assign expand=true %}
       {% else %}
-        <a class="sidebar-link" href="{{ link.url }}">{{ link.title }}</a>
+        {% for item_j in item.items %}
+          {% if item_j.url == page.url %}
+            {% assign expand=true %}
+          {% endif %}
+        {% endfor %}
       {% endif %}
     {% endfor %}
-  {% endif %}
 
-  {% if page.url contains '/docs/studio' %}
-      {% for link in site.data.sidebar.guides.studio %}
-        {% if page.url == link.url %}
-          <span class="sidebar-item">{{ link.title }}</span>
-        {% else %}
-          <a class="sidebar-link" href="{{ link.url }}">{{ link.title }}</a>
-        {% endif %}
-      {% endfor %}
-  {% endif %}
+    <div class="sidebar-item {% if expand %}expanded{% else %}collapsed{% endif %}">
+      <span class="sidebar-item-hdr">{{ link.title }}</span>
+
+      {% include sidebar-items.html items=link.items %}
+    </div>
+
+  {% endfor %}
 </div>

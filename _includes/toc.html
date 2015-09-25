@@ -1,0 +1,16 @@
+<div class="toc">
+  <ol>
+    {% for chapter in include.structure %}
+      <li>
+        {{ chapter.title }}
+        {% if chapter.items %}
+          <ol>
+            {% for item in chapter.items %}
+              <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+            {% endfor %}
+          </ol>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ol>
+</div>
