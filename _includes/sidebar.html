@@ -19,11 +19,11 @@
       {% endif %}
     {% endfor %}
 
-    <div class="sidebar-item {% if expand %}expanded{% else %}collapsed{% endif %}">
-      <span class="sidebar-item-hdr">{{ link.title }}</span>
+<div class="sidebar-item {% if expand %}expanded{% else %}collapsed{% endif %}">
+  <span class="sidebar-item-hdr">{{ link.title }}</span>
 
-      {% include sidebar-items.html items=link.items %}
-    </div>
+  {% include sidebar-items.html items=link.items %}
+</div>
 
-  {% endfor %}
+{% endfor %}
 </div>

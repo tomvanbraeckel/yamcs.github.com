@@ -5,25 +5,26 @@
     - title: Installation
       url: /docs/studio/installation/
 
-- title: OPI Runtime
+- title: Run Displays
   items:
     - title: Overview
       url: /docs/studio/OPI_Runtime/
-    - title: Views
-      items:
-        - title: Archive
-          url: /docs/studio/Archive/
-        - title: Event Log
-          url: /docs/studio/Event_Log/
-        - title: Command Stack
-          url: /docs/studio/Command_Stack/
-        - title: Command History
-          url: /docs/studio/Command_History/
 
-- title: OPI Editor
+- title: Edit Displays
   items:
     - title: Overview
       url: /docs/studio/OPI_Editor/
+
+- title: Views
+  items:
+    - title: Archive
+      url: /docs/studio/Archive/
+    - title: Event Log
+      url: /docs/studio/Event_Log/
+    - title: Command Stack
+      url: /docs/studio/Command_Stack/
+    - title: Command History
+      url: /docs/studio/Command_History/
 
 - title: Troubleshooting
   items:
