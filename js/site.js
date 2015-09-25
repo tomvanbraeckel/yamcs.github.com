@@ -10,9 +10,11 @@
 
     document.addEventListener('DOMContentLoaded', function() {
         var sidebarEl = document.getElementById('sidebar');
-        sidebarEl.onclick = function(e) {
-            if (e.target.className.indexOf('sidebar-item-hdr') > -1) {
-                toggleSidebarItem(e.target.parentNode);
+        if (sidebarEl) {
+            sidebarEl.onclick = function(e) {
+                if (e.target.className.indexOf('sidebar-item-hdr') > -1) {
+                    toggleSidebarItem(e.target.parentNode);
+                }
             }
         }
     });

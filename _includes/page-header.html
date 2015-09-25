@@ -11,9 +11,13 @@
 
     <ul class="network-nav nav">
       {% for p in site.data.structure %}
-        <li><a class="page-link{% if page.url contains p.url %} active{% endif %}" href="{{ p.url }}">{{ p.title }}</a></li>
+        <li>
+          <a class="page-link{% if p.special %} special{% endif %}{% if page.url contains p.url %} active{% endif %}" href="{{ p.url }}">
+            {{ p.title }}
+          </a>
+        </li>
       {% endfor %}
     </ul>
-    <div style="clear:both;"></div>
   </div>
+  <div style="clear:both;"></div>
 </header>
