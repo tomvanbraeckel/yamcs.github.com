@@ -6,7 +6,31 @@
         {% if chapter.items %}
           <ol>
             {% for item in chapter.items %}
-              <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+              {% assign exists=false %}
+              {% for p in site.pages %}
+                {% if p.url == item.url %}
+                  {% assign exists=true %}
+                {% endif %}
+              {% endfor %}
+              <li>
+                <a href="{{ item.url }}"{% if exists == false %}class="broken"{% endif %}>{{ item.title }}</a>
+
+                {% if item.items %}
+                  <ol>
+                    {% for item_j in item.items %}
+                      {% assign exists=false %}
+                      {% for p in site.pages %}
+                        {% if p.url == item.url %}
+                          {% assign exists=true %}
+                        {% endif %}
+                      {% endfor %}
+                      <li>
+                        <a href="{{ item_j.url }}"{% if exists == false %}class="broken"{% endif %}>{{ item_j.title }}</a>
+                      </li>
+                    {% endfor %}
+                  </ol>
+                {% endif %}
+              </li>
             {% endfor %}
           </ol>
         {% endif %}

@@ -106,6 +106,10 @@
     margin-left: 0;
   }
 
+  ul.items > li > ul {
+    list-style-image: url('/assets/chevron-right.png');
+  }
+
   .sidebar-item.collapsed ul.items {
     display: none;
   }

@@ -1,11 +1,43 @@
 {% if include.items %}
   <ul class="items">
-  {% for item in include.items %}
-    {% if page.url == item.url %}
-      <li><span class="sidebar-item-2">{{ item.title }}</span></li>
-    {% else %}
-      <li><a class="sidebar-link-2" href="{{ item.url }}">{{ item.title }}</a></li>
-    {% endif %}
-  {% endfor %}
+    {% for item in include.items %}
+      <li>
+        {% if page.url == item.url %}
+          <span class="sidebar-item-2">{{ item.title }}</span>
+        {% else %}
+          {% assign exists=false %}
+          {% for p in site.pages %}
+            {% if p.url == item.url %}
+              {% assign exists=true %}
+            {% endif %}
+          {% endfor %}
+          <a class="sidebar-link-2{% if exists == false %} broken{% endif %}" href="{{ item.url }}">
+            {{ item.title }}
+          </a>
+        {% endif %}
+
+        {% if item.items %}
+          <ul>
+            {% for item_j in item.items %}
+              {% if page.url == item_j.url %}
+                <li><span class="sidebar-item-3">{{ item_j.title }}</span></li>
+              {% else %}
+                <li>
+                  {% assign exists=false %}
+                  {% for p in site.pages %}
+                    {% if p.url == item_j.url %}
+                      {% assign exists=true %}
+                    {% endif %}
+                  {% endfor %}
+                  <a class="sidebar-link-3{% if exists == false %} broken{% endif %}" href="{{ item_j.url }}">
+                    {{ item_j.title }}
+                  </a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
   </ul>
 {% endif %}
