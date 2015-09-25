@@ -3,7 +3,7 @@ layout: home
 sidebar: no
 ---
 
-In mission control centers, a major part of the ground segment is the front-end and back-end software which is used to assist payload and system operators in their daily tasks. Yamcs (which can be understood as either 'Yet another mission control system' or as a sweet potato) is a software package that positions itself as a lightweight alternative to traditional heavyweight Mission Control Systems.
+In mission control centers, a major part of the ground segment is the front-end and back-end software which is used to assist payload and system operators in their daily tasks. Yamcs (short for *Yet another mission control system*) is a software package that positions itself as a lightweight alternative to traditional heavyweight Mission Control Systems.
 
 Yamcs is a cost-efficient suite of tools for spacecraft, payload and ground segment operations preparation, execution and spacecraft AIT.
 
