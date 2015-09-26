@@ -1,4 +1,5 @@
 <div id="sidebar" class="sidebar">
+  <div style="border-bottom: 1px solid #e8e8e8; padding-bottom: 0.5em; margin-bottom: 1em; font-weight: 400; text-align: center;">Yamcs Studio User Guide</div>
   {% for link in include.structure %}
 
     {% comment %}
@@ -10,20 +11,22 @@
     {% for item in link.items %}
       {% if item.url == page.url %}
         {% assign expand=true %}
+        {% break %}
       {% else %}
         {% for item_j in item.items %}
           {% if item_j.url == page.url %}
             {% assign expand=true %}
+            {% break %}
           {% endif %}
         {% endfor %}
       {% endif %}
     {% endfor %}
 
-<div class="sidebar-item {% if expand %}expanded{% else %}collapsed{% endif %}">
-  <span class="sidebar-item-hdr">{{ link.title }}</span>
+    <div class="sidebar-item {% if expand %}active expanded{% else %}collapsed{% endif %}">
+      <span class="sidebar-item-hdr">{{ link.title }}</span>
 
-  {% include sidebar-items.html items=link.items %}
-</div>
+      {% include sidebar-items.html items=link.items %}
+    </div>
 
-{% endfor %}
+  {% endfor %}
 </div>

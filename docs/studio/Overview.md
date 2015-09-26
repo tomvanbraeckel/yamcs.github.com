@@ -1,6 +1,6 @@
 ---
 layout: default
 sidebar: yes
-permalink: /docs/studio/OPI_Editor/
+permalink: /docs/studio/Overview/
 ---
 

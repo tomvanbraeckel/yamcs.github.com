@@ -1,0 +1,40 @@
+body {
+  counter-reset: h2counter;
+  overflow: visible;
+}
+
+h1.toc {
+  counter-reset: h2counter;
+}
+
+h2.toc:before {
+  content: counter(h2counter) ".\0000a0\0000a0";
+  counter-increment: h2counter;
+  counter-reset: h3counter;
+}
+
+h2.toc.nocount:before {
+  content: none;
+  counter-increment: none;
+}
+
+h3.toc:before {
+  content: counter(h2counter) "." counter(h3counter) ".\0000a0\0000a0";
+  counter-increment: h3counter;
+}
+
+h3.toc.nocount:before {
+  content: none;
+  counter-increment: none;
+}
+
+pre {
+  white-space: pre-wrap;
+  overflow: hidden;
+}
+
+@media print {
+  .newpage {
+    page-break-before: always;
+  }
+}

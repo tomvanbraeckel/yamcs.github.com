@@ -1,7 +1,5 @@
 - title: Introduction
   items:
-    - title: Overview
-      url: /docs/studio/overview/
     - title: Installation
       url: /docs/studio/installation/
 
@@ -13,7 +11,7 @@
 - title: Edit Displays
   items:
     - title: Overview
-      url: /docs/studio/OPI_Editor/
+      url: /docs/studio/Overview/
 
 - title: Views
   items:
@@ -29,4 +27,4 @@
 - title: Troubleshooting
   items:
     - title: Capturing Log Output
-      url: /docs/studio/log/
+      url: /docs/studio/Capturing_Log_Output/

@@ -1,0 +1,33 @@
+---
+layout: print
+permalink: /docs/studio/print/
+---
+
+{% comment %}
+  Assumptions:
+   - Only structure in studio.yaml is part of TOC, and only these items are numbered headings!
+   - Actual PDF-generation is done regularly with a tool like wkhtmltopdf. This to bypass
+     github pages' no-plugin rule.
+{% endcomment %}
+
+<h1 class="toc nocount">Yamcs Studio User Guide</h1>
+
+<h2 class="toc nocount">Table of Contents</h2>
+{% include toc.html structure=site.data.sidebar.guides.studio %}
+
+{% for chapter in site.data.sidebar.guides.studio %}
+  <h2 class="toc{% if true %} newpage{% endif %}">{{ chapter.title }}</h2>
+
+  {% if chapter.items %}
+    {% for item in chapter.items %}
+      {% for p in site.pages %}
+        {% if p.url == item.url %}
+          <h3 class="toc">{{ item.title }}</h3>
+          {{ p.content }}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  {% endif %}
+
+{% endfor %}
