@@ -7,25 +7,43 @@
           <ol>
             {% for item in chapter.items %}
               {% assign exists=false %}
+              {% assign p_i=false %}
               {% for p in site.pages %}
                 {% if p.url == item.url %}
                   {% assign exists=true %}
+                  {% assign p_i=p %}
+                  {% break %}
                 {% endif %}
               {% endfor %}
               <li>
-                <a href="{{ item.url }}"{% if exists == false %}class="broken"{% endif %}>{{ item.title }}</a>
+                <a href="{{ item.url }}"{% if exists == false %}class="broken"{% endif %}>
+                  {% if exists %}
+                    {{ p_i.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}
+                  {% else %}
+                    {{ item.url }}
+                  {% endif %}
+                </a>
 
                 {% if item.items %}
                   <ol>
                     {% for item_j in item.items %}
                       {% assign exists=false %}
+                      {% assign p_j=false %}
                       {% for p in site.pages %}
                         {% if p.url == item.url %}
                           {% assign exists=true %}
+                          {% assign p_j=p %}
+                          {% break %}
                         {% endif %}
                       {% endfor %}
                       <li>
-                        <a href="{{ item_j.url }}"{% if exists == false %}class="broken"{% endif %}>{{ item_j.title }}</a>
+                        <a href="{{ item_j.url }}"{% if exists == false %}class="broken"{% endif %}>
+                          {% if exists %}
+                            {{ p_j.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}
+                          {% else %}
+                            {{ item_j.url }}
+                          {% endif %}
+                        </a>
                       </li>
                     {% endfor %}
                   </ol>

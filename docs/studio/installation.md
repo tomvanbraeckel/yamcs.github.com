@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /docs/studio/installation/
+permalink: /docs/studio/Installation/
 sidebar: yes
 ---
 

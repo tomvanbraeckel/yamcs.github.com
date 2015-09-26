@@ -1,13 +1,12 @@
 <div class="page-subheader">
   {% if page.url contains '/docs/server' %}
     <a href="/docs/">Docs</a> /
-    <a href="/docs/server/">Yamcs Server</a>
-
-    {% for p in site.data.sidebar.guides.server %}
-      {% if p.url == page.url %}
-        / <span class="active">{{ p.title }}</span>
-      {% endif %}
-    {% endfor %}
+    {% if page.url == '/docs/server/' %}
+      Yamcs Server User Guide
+    {% else %}
+      <a href="/docs/server/">Yamcs Server User Guide</a>
+      / <span class="active">{{ page.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}</span>
+    {% endif %}
   {% endif %}
 
   {% if page.url contains '/docs/studio' %}
@@ -16,14 +15,9 @@
       Yamcs Studio User Guide
     {% else %}
       <a href="/docs/studio/">Yamcs Studio User Guide</a>
+      / <span class="active">{{ page.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}</span>
     {% endif %}
-
-    {% for chapter in site.data.sidebar.guides.studio %}
-      {% for item in chapter.items %}
-        {% if item.url == page.url %}
-          / <span class="active">{{ item.title | replace:'_',' ' }}</span>
-        {% endif %}
-      {% endfor %}
-    {% endfor %}
   {% endif %}
+
+
 </div>

@@ -3,17 +3,25 @@
     {% for item in include.items %}
       <li>
         {% if page.url == item.url %}
-          <span class="sidebar-item-2 active">{{ item.title }}</span>
+          <span class="sidebar-item-2 active">
+            {{ page.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}
+          </span>
         {% else %}
           {% assign exists=false %}
+          {% assign p_i=false %}
           {% for p in site.pages %}
             {% if p.url == item.url %}
               {% assign exists=true %}
+              {% assign p_i=p %}
               {% break %}
             {% endif %}
           {% endfor %}
           <a class="sidebar-link-2{% if exists == false %} broken{% endif %}" href="{{ item.url }}">
-            {{ item.title }}
+            {% if exists %}
+              {{ p_i.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}
+            {% else %}
+              {{ item.url }}
+            {% endif %}
           </a>
         {% endif %}
 
@@ -21,18 +29,28 @@
           <ul>
             {% for item_j in item.items %}
               {% if page.url == item_j.url %}
-                <li><span class="sidebar-item-3 active">{{ item_j.title }}</span></li>
+                <li>
+                  <span class="sidebar-item-3 active">
+                    {{ page.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}
+                  </span>
+                </li>
               {% else %}
                 <li>
                   {% assign exists=false %}
+                  {% assign p_j=false %}
                   {% for p in site.pages %}
                     {% if p.url == item_j.url %}
                       {% assign exists=true %}
+                      {% assign p_j=p %}
                       {% break %}
                     {% endif %}
                   {% endfor %}
                   <a class="sidebar-link-3{% if exists == false %} broken{% endif %}" href="{{ item_j.url }}">
-                    {{ item_j.title }}
+                    {% if exists %}
+                      {{ p_j.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}
+                    {% else %}
+                      {{ p.url }}
+                    {% endif %}
                   </a>
                 </li>
               {% endif %}

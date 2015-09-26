@@ -67,6 +67,11 @@
   /*padding-top: 30px;*/
   border-right: 1px solid #e8e8e8;
 
+  li > a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
 
   .sidebar-link {
     display: block;
@@ -110,13 +115,14 @@
     padding-bottom: 0.3em;
     text-decoration: none;
     color: #222;
+    font-size: smaller;
 
     &:hover {
       background-color: #efefef;
     }
 
     &.active {
-      font-weight: bold;
+      font-weight: 400;
       border-left: 2px solid #3e4981;
     }
   }
@@ -126,9 +132,10 @@
     color: #222;
     display: block;
     padding-left: 1em;
+    font-size: smaller;
 
     &.active {
-      font-weight: bold;
+      font-weight: 400;
       border-left: 2px solid #3e4981;
     }
   }
