@@ -1,38 +1,48 @@
 #!/bin/sh 
 set -e
+
+BASEURL="http://localhost:4000/docs/studio"
+TITLE="Yamcs Studio User Guide"
+
 wkhtmltopdf \
-    --title "Yamcs Studio User Guide" \
+    --title "$TITLE" \
     --margin-top 10mm \
     --margin-bottom 50mm \
-    http://localhost:4000/docs/studio/print_title.html \
+    "$BASEURL/print_title.html" \
     --print-media-type \
-    --footer-html http://localhost:4000/docs/studio/print_title_footer.html \
-    "Yamcs Studio User Guide_1_cover.pdf"
+    --footer-html "$BASEURL/print_title_footer.html" \
+    "${TITLE}_cover.pdf"
 
 wkhtmltopdf \
-    --title "Yamcs Studio User Guide" \
+    --title "$TITLE" \
     --margin-top 10mm \
-    --margin-bottom 10mm \
-    cover http://localhost:4000/docs/studio/print_title_inner.html \
-    http://localhost:4000/docs/studio/print/ \
+    --margin-bottom 15mm \
+    cover "$BASEURL/print_title_inner.html" \
+    "${TITLE}_precontent.pdf"
+
+wkhtmltopdf \
+    --title "$TITLE" \
+    --margin-top 10mm \
+    --margin-bottom 15mm \
+    toc \
+    --disable-smart-shrinking \
+    --xsl-style-sheet toc.xsl \
+    "$BASEURL/print/" \
     --disable-internal-links \
     --disable-external-links \
-    --default-header \
-    --header-left "Yamcs Studio User Guide" \
-    --header-spacing 5 \
-    --header-font-name "Helvetica" \
-    --header-font-size 10 \
+    --footer-html "$BASEURL/print_footer.html" \
     --print-media-type \
-    --zoom 0.8 \
-    "Yamcs Studio User Guide_2_content.pdf"
+    --zoom 0.9 \
+    "${TITLE}_content.pdf"
 
-#echo "" | ps2pdf -sPAPERSIZE=a4 - Yamcs\ Studio\ User\ Guide_blank.pdf
+#echo "" | ps2pdf -sPAPERSIZE=a4 - ${TITLE}_blank.pdf
 
-gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile="Yamcs Studio User Guide.pdf" \
-    "Yamcs Studio User Guide_1_cover.pdf" \
-    "Yamcs Studio User Guide_2_content.pdf"
+gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile="${TITLE}.pdf" \
+    "${TITLE}_cover.pdf" \
+    "${TITLE}_precontent.pdf" \
+    "${TITLE}_content.pdf"
 
-rm -f Yamcs\ Studio\ User\ Guide_*.pdf
+rm "$TITLE"_*.pdf
 
 exiftool \
     -Author="Space Applications Services" \
@@ -45,4 +55,4 @@ exiftool \
     -keywords="tm" \
     -keywords="tc" \
     -overwrite_original \
-    "Yamcs Studio User Guide.pdf"
+    "${TITLE}.pdf"
