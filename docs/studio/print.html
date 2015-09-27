@@ -22,7 +22,7 @@ permalink: /docs/studio/print/
     {% for item in chapter.items %}
       {% for p in site.pages %}
         {% if p.url == item.url %}
-          <h3 class="toc">{{ item.title }}</h3>
+          <h3 class="toc">{{ p.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}</h3>
           {{ p.content }}
           {% break %}
         {% endif %}
