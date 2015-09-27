@@ -38,8 +38,18 @@ pre {
     page-break-before: always;
   }
 
-  body {
+  /*body {
     font-size: 10px;
     line-height: 1.5em;
-  }
+  }*/
 }
+
+a {
+  text-decoration: none;
+  color: #3e4982;
+}
+
+a:visited {
+  color: #3e4982;
+}
+

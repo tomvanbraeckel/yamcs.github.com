@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
     <title>
       {% if page.layout == 'home' %}
         {{ site.title }}
@@ -12,21 +13,21 @@
           {{ page.title }} | Yamcs
         {% else %}
           {{ site.title }}
-        {% endif %}
-      {% endif %}
-    </title>
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/print.css">
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  </head>
+{% endif %}
+{% endif %}
+</title>
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/print.css">
+<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+</head>
 
-  <body>
-    <div id="content">
-      <div class="container">
-        <div class="main">
-          {{ content }}
-        </div>
-      </div>
-    </div>
-  </body>
+<body>
+<div id="content">
+<div class="container">
+<div class="main">
+  {{ content }}
+</div>
+</div>
+</div>
+</body>
 </html>
