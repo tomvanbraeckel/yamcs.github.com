@@ -9,12 +9,17 @@
     <div id="content">
       <div class="container{% if page.sidebar == false %} small{% endif %}">
 
+        {% assign structure=false %}
         {% if page.sidebar and page.url contains '/docs/server' %}
-          {% include sidebar.html structure=site.data.sidebar.guides.server %}
+          {% assign structure=site.data.sidebar.guides.server %}
         {% endif %}
 
         {% if page.sidebar and page.url contains '/docs/studio' %}
-          {% include sidebar.html structure=site.data.sidebar.guides.studio %}
+          {% assign structure=site.data.sidebar.guides.studio %}
+        {% endif %}
+
+        {% if structure %}
+          {% include sidebar.html structure=structure %}
         {% endif %}
 
         <div class="main{% if page.sidebar %} with-sidebar{% endif %}">
@@ -22,6 +27,8 @@
             {% include page-subheader.html %}
           {% endif %}
           <h3>
+            {% include next-link.html structure=structure %}
+
             {% if page.title %}
               {{ page.title }}
             {% else %}
@@ -29,6 +36,8 @@
             {% endif %}
           </h3>
           {{ content }}
+
+          {% include next-link.html structure=structure %}
         </div>
       </div>
     </div>

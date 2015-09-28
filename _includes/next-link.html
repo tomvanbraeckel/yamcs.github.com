@@ -1,0 +1,43 @@
+{% assign grabnext=false %}
+{% assign nextitem=false %}
+{% for p in structure %}
+  {% if grabnext %}
+    {% if nextitem==false %}
+      {% assign nextpage=p %}
+    {% endif %}
+    {% break %}
+  {% endif %}
+
+  {% if p.url == page.url %}
+    {% assign grabnext=true %}
+  {% endif %}
+  {% for item_i in p.items %}
+    {% if grabnext %}
+      {% assign nextitem=item_i %}
+      {% break %}
+    {% endif %}
+    {% if item_i.url == page.url %}
+      {% assign grabnext=true %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+{% if nextitem %}
+  {% assign nextpage=false %}
+  {% for p in site.pages %}
+    {% if p.url == nextitem.url %}
+      {% assign nextpage=p %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+  <div class="next-link">
+    <a href="{{ nextpage.url }}">
+      {% if nextpage.title %}
+        {{ nextpage.title }}
+      {% else %}
+        {{ nextpage.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}
+      {% endif %}
+      &#xbb;
+    </a>
+  </div>
+{% endif %}

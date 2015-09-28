@@ -9,12 +9,12 @@ Yamcs started as a server software first and foremost. While it initially starte
 
 Along the way, standalone client GUIs were developed as the need arose. This includes Archive Browser, Event Viewer, Packet Viewer and Yamcs Monitor. These tools are being used in many missions.
 
-For many years, however, the main thing that was felt missing the Yamcs software stack, was a display solution. And this is where Yamcs Studio comes into play.
+For many years, however, the main thing that was felt missing from the Yamcs software stack, was a display solution. And this is where Yamcs Studio comes into play.
 
 #### Yamcs Studio
-Yamcs Studio is a desktop frontend to Yamcs. Its main attraction is the display software, but it also includes other facets that cover TC commanding and insight into various runtime aspects of Yamcs. In fact, most of our legacy client GUIs have also been ported into Yamcs Studio (with the exception of the Packet Viewer), for an integrated solution.
+Yamcs Studio is a desktop frontend to Yamcs. Its main attraction is its support for operator displays, but it also includes other facets that cover TC commanding and insight into various runtime aspects of Yamcs. In fact, most of our legacy client GUIs have also been ported into Yamcs Studio (with the exception of the Packet Viewer), for an integrated solution.
 
-Yamcs can be made to integrate with other display softwares (and in fact, this is often the case in long-term missions where Yamcs was added in the mix after the project's initial conception), but there are advantages to working with Yamcs Studio:
+Yamcs can be made to integrate with display software other than Yamcs Studio (and in fact, this is often the case in long-running missions where Yamcs was added in the mix after the project's initial conception), but there are advantages to working with Yamcs Studio:
 
 * Increased semantical coherence
 * Single point of contact
@@ -27,6 +27,6 @@ Yamcs Studio is an Eclipse RCP application, and builds upon Open Source software
 The main programming language is Java 8.
 
 #### License
-Yamcs Studio follows a similar licensing scheme as Yamcs Server. The core of Yamcs Studio is open-source and licensed under the Eclipse Public License. Mission-specific extensions can be developed on a case-by-case basis and under proprietary licenses.
+Yamcs Studio follows a similar licensing scheme as Yamcs Server. The core of Yamcs Studio is open-source and licensed under the Eclipse Public License. Mission-specific extensions can be developed on a case-by-case basis and under custom licenses.
 
 We believe that having an open-source core, is not only fun and exciting, but that this increases the quality of our products and benefits all of our customers equally.

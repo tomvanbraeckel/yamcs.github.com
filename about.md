@@ -2,9 +2,8 @@
 layout: default
 permalink: /about/
 sidebar: no
+title: About Yamcs
 ---
-
-## About Yamcs
 
 Yamcs is being used day to day by several entities for realtime operations, and specifically on International Space Station missions. Its main stakeholders are:
 
