@@ -22,8 +22,10 @@ wkhtmltopdf \
 
 wkhtmltopdf \
     --title "$TITLE" \
-    --margin-top 10mm \
-    --margin-bottom 15mm \
+    --margin-top 20mm \
+    --margin-bottom 20mm \
+    --margin-left 20mm \
+    --margin-right 20mm \
     toc \
     --disable-smart-shrinking \
     --xsl-style-sheet toc.xsl \
@@ -37,7 +39,7 @@ wkhtmltopdf \
 
 #echo "" | ps2pdf -sPAPERSIZE=a4 - ${TITLE}_blank.pdf
 
-gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile="${TITLE}.pdf" \
+gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile="assets/${TITLE}.pdf" \
     "${TITLE}_cover.pdf" \
     "${TITLE}_precontent.pdf" \
     "${TITLE}_content.pdf"
@@ -55,4 +57,4 @@ exiftool \
     -keywords="tm" \
     -keywords="tc" \
     -overwrite_original \
-    "${TITLE}.pdf"
+    "assets/${TITLE}.pdf"
