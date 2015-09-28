@@ -1,14 +1,14 @@
 - title: Introduction
   items:
+    - url: /docs/studio/Overview/
     - url: /docs/studio/Installation/
 
-- title: Run Displays
+- title: Running Displays
   items:
     - url: /docs/studio/OPI_Runtime/
 
-- title: Edit Displays
-  items:
-    - url: /docs/studio/Overview/
+- title: Editing Displays
+  items: []
 
 - title: Views
   items:

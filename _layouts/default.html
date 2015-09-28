@@ -21,7 +21,13 @@
           {% if page.sidebar %}
             {% include page-subheader.html %}
           {% endif %}
-          <h3>{{ page.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}</h3>
+          <h3>
+            {% if page.title %}
+              {{ page.title }}
+            {% else %}
+              {{ page.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}
+            {% endif %}
+          </h3>
           {{ content }}
         </div>
       </div>
