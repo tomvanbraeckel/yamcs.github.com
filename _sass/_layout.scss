@@ -360,3 +360,14 @@ a img.page-logo {
 a:hover img.page-logo {
   opacity: 0.4;
 }
+
+.hint {
+  background: url('/assets/idea.png') 0em 0.5em no-repeat;
+  border-top: 1px solid #eef;
+  border-bottom: 1px solid #eef;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 40px;
+  margin-left: 0.5em;
+  font-size: smaller;
+}

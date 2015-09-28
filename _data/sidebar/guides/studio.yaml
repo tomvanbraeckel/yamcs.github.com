@@ -2,13 +2,16 @@
   items:
     - url: /docs/studio/Overview/
     - url: /docs/studio/Installation/
+    - url: /docs/studio/First_Steps/
 
 - title: Running Displays
   items:
     - url: /docs/studio/OPI_Runtime/
 
 - title: Editing Displays
-  items: []
+  items:
+    - url: /docs/studio/Resource_Management/
+    - url: /docs/studio/Rules_&_Scripts/
 
 - title: Views
   items:
