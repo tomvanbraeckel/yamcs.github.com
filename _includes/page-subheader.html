@@ -2,7 +2,7 @@
   {% if page.url contains '/docs/server' %}
     <a href="/docs/">Docs</a> /
     {% if page.url == '/docs/server/' %}
-      Yamcs Server User Guide
+      Yamcs Server Manual
     {% else %}
       <a href="/docs/server/">Yamcs Server User Guide</a>
       / <span class="active">{{ page.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}</span>
