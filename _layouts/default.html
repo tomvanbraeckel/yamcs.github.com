@@ -29,7 +29,7 @@
           {% if page.sidebar %}
             {% include page-subheader.html %}
           {% endif %}
-          <h3>
+          <h1>
             {% include next-link.html structure=structure %}
 
             {% if page.title %}
@@ -37,7 +37,7 @@
             {% else %}
               {{ page.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}
             {% endif %}
-          </h3>
+          </h1>
           {{ content }}
 
           <p>&nbsp;</p>

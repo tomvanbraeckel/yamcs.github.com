@@ -115,7 +115,7 @@
           </div>
         </div>
       </td>
-      <td class="page {$type}" style="width: 10px;">
+      <td class="page {$type}" style="width: 20px;">
         <a>
           <xsl:attribute name="href"><xsl:value-of select="@link"/></xsl:attribute>
           <xsl:value-of select="@page" />
