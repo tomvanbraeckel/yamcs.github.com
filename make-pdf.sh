@@ -1,23 +1,24 @@
 #!/bin/sh 
 set -e
 
-BASEURL="http://localhost:4000/docs/studio"
+DOCSURL="http://localhost:4000/docs"
+BASEURL="$DOCSURL/studio"
 TITLE="Yamcs Studio User Guide"
 
 wkhtmltopdf \
     --title "$TITLE" \
     --margin-top 10mm \
     --margin-bottom 50mm \
-    "$BASEURL/print_title.html" \
+    "$BASEURL/print/titlepage/" \
     --print-media-type \
-    --footer-html "$BASEURL/print_title_footer.html" \
+    --footer-html "$BASEURL/print/titlefooter/" \
     "${TITLE}_cover.pdf"
 
 wkhtmltopdf \
     --title "$TITLE" \
     --margin-top 10mm \
     --margin-bottom 15mm \
-    cover "$BASEURL/print_title_inner.html" \
+    cover "$BASEURL/print/titleinner/" \
     "${TITLE}_precontent.pdf"
 
 wkhtmltopdf \
@@ -29,10 +30,10 @@ wkhtmltopdf \
     toc \
     --disable-smart-shrinking \
     --xsl-style-sheet toc.xsl \
-    "$BASEURL/print/" \
+    "$BASEURL/print/content/" \
     --disable-internal-links \
     --disable-external-links \
-    --footer-html "$BASEURL/print_footer.html" \
+    --footer-html "$BASEURL/print/pagefooter/" \
     --print-media-type \
     --zoom 0.9 \
     "${TITLE}_content.pdf"
