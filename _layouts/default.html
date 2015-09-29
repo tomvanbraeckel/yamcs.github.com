@@ -10,16 +10,19 @@
       <div class="container{% if page.sidebar == false %} small{% endif %}">
 
         {% assign structure=false %}
+        {% assign title='' %}
         {% if page.sidebar and page.url contains '/docs/server' %}
           {% assign structure=site.data.sidebar.guides.server %}
+          {% assign title='Yamcs Server User Guide' %}
         {% endif %}
 
         {% if page.sidebar and page.url contains '/docs/studio' %}
           {% assign structure=site.data.sidebar.guides.studio %}
+          {% assign title='Yamcs Studio User Guide' %}
         {% endif %}
 
         {% if structure %}
-          {% include sidebar.html structure=structure %}
+          {% include sidebar.html structure=structure title=title %}
         {% endif %}
 
         <div class="main{% if page.sidebar %} with-sidebar{% endif %}">
