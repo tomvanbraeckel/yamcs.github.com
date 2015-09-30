@@ -1,7 +1,7 @@
 ---
 layout: default
 sidebar: yes
-permalink: /docs/studio/Connecting_with_Yamcs/
+permalink: /docs/studio/Connecting_to_Yamcs/
 ---
 
 Yamcs Studio is a client application that's meant to be connected with Yamcs Server.
@@ -12,7 +12,7 @@ To configure a Yamcs connection, select **File > Connect...**. This will open th
 
 ![Connections](/assets/studio/connections.png){: .center-image }
 
-Click the plus icon ![Add Server](/assets/studio/icons/server_add.png) to add a server connection, or click the remove icon ![Remove Server](/assets/studio/icons/server_remove.png) to remove the selected server connection.
+Click ![Add Server](/assets/studio/icons/server_add.png){:inline-image} **Add Server** to add a server connection, or ![Remove Server](/assets/studio/icons/server_remove.png){:inline-image} **Remove Server** to remove the selected server connection.
 
 ### Connection Properties
 The right panel contains editable details for the selected server connection. We document the available properties below, but if you're unsure what to fill in, ask details to the person that is responsible for installing Yamcs at your site.

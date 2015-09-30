@@ -8,7 +8,7 @@ The Command Stack allows operators to prepare stacks of commands for manual comm
 
 When you issue commands from Yamcs Studio, these are queued to Yamcs Server, which will perform any further steps.   
 
-We plan to bring many improvements to this view for improved editing, but it is usable in its current state.
+We plan to bring many improvements to this view for better editing, but it is usable in its current state.
 
 * TOC
 {:toc}
@@ -73,7 +73,7 @@ Click **Finish** to append your command to the end of your current stack.
 
 You can review your provided arguments by double clicking the command. To remove the selected command from the stack select ![Delete](/assets/studio/icons/remove.png){: .inline-image} **Delete**. Clear the entire stack with ![Delete All](/assets/studio/icons/removeall.png){: .inline-image} **Delete All**.
 
-If a stacked command does not pass static validation checks (sometimes referred to as SPTVs -- Static PreTransmission Validation) it will be marked with error indicators. This will prevent the user from attempting further execution of the stack until the error is resolved.
+If a stacked command does not pass static validation checks (sometimes referred to as SPTVs -- Static PreTransmission Verification) it will be marked with error indicators. This will prevent the user from attempting further execution of the stack until the error is resolved.
 
 ![Stack in Error](/assets/studio/stack-in-error.png){: .center-image }
 
