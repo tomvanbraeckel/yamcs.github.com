@@ -12,9 +12,10 @@ function compose_pdf() {
         --quiet \
         --margin-top 10mm \
         --margin-bottom 50mm \
-        "$BASEURL/print/titlepage/" \
+        "$BASEURL/pdf/titlepage/" \
         --print-media-type \
-        --footer-html "$BASEURL/print/titlefooter/" \
+        --exclude-from-outline \
+        --footer-html "$BASEURL/pdf/titlefooter/" \
         "${TITLE}_cover.pdf"
 
     wkhtmltopdf \
@@ -22,14 +23,15 @@ function compose_pdf() {
         --quiet \
         --margin-top 10mm \
         --margin-bottom 15mm \
-        cover "$BASEURL/print/titleinner/" \
+        cover "$BASEURL/pdf/titleinner/" \
+        --exclude-from-outline \
         "${TITLE}_precontent.pdf"
 
-    # Image quality is not optimal. Below flags seem to have no effect other than
-    # increasing the file size
-    # --image-quality 600 \
-    # --image-dpi 1800 \
-
+    # Image quality is not optimal. Below image-flags seem to have little effect other than
+    # increasing the file size :-(
+    # There's a few more things to try. wkhtmltopdf renders to a 800x600 viewport, we could
+    # try increasing that, in hopes to get around some bad internal image resizing function.
+    # (most of our images are automatically css-resized to 100% of the available width)
     wkhtmltopdf \
         --title "$TITLE" \
         --quiet \
@@ -37,16 +39,18 @@ function compose_pdf() {
         --margin-bottom 20mm \
         --margin-left 20mm \
         --margin-right 20mm \
+        --image-quality 1200 \
+        --image-dpi 1800 \
         toc \
+        --exclude-from-outline \
         --disable-smart-shrinking \
         --xsl-style-sheet toc.xsl \
-        "$BASEURL/print/content/" \
+        "$BASEURL/pdf/content/" \
         --disable-smart-shrinking \
         --disable-internal-links \
         --disable-external-links \
-        --footer-html "$BASEURL/print/pagefooter/" \
+        --footer-html "$BASEURL/pdf/pagefooter/" \
         --print-media-type \
-        --zoom 0.9 \
         "${TITLE}_content.pdf"
 
     # echo "" | ps2pdf -sPAPERSIZE=a4 - ${TITLE}_blank.pdf

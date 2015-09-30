@@ -86,51 +86,53 @@
 
   <xsl:template match="outline:item">
     <xsl:param name="type" />
-    <tr class="{$type}">
-      <td style="width: 20px;">
-        <xsl:if test="$type='chapter'">
+    <xsl:if test="@title!='Table of Contents'">
+      <tr class="{$type}">
+        <td style="width: 20px;">
+          <xsl:if test="$type='chapter'">
+            <a>
+              <xsl:attribute name="href"><xsl:value-of select="@link"/></xsl:attribute>
+              <span class="chapterno"></span>
+            </a>
+          </xsl:if>
+        </td>
+        <td>
+          <div class="item">
+            <a class="{$type}">
+              <xsl:if test="@link">
+                <xsl:attribute name="href"><xsl:value-of select="@link"/></xsl:attribute>
+              </xsl:if>
+              <xsl:if test="@backLink">
+                <xsl:attribute name="name"><xsl:value-of select="@backLink"/></xsl:attribute>
+              </xsl:if>
+              <xsl:value-of select="@title" />
+            </a>
+          </div>
+          <div class="dotwrap">
+            <div class="dots" dir="rtl"> <!-- rtl to keep dots aligned across lines -->
+              <xsl:if test="$type='chapter'">
+                . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+              </xsl:if>
+            </div>
+          </div>
+        </td>
+        <td class="page {$type}" style="width: 20px;">
           <a>
             <xsl:attribute name="href"><xsl:value-of select="@link"/></xsl:attribute>
-            <span class="chapterno"></span>
+            <xsl:value-of select="@page" />
           </a>
-        </xsl:if>
-      </td>
-      <td>
-        <div class="item">
-          <a class="{$type}">
-            <xsl:if test="@link">
-              <xsl:attribute name="href"><xsl:value-of select="@link"/></xsl:attribute>
-            </xsl:if>
-            <xsl:if test="@backLink">
-              <xsl:attribute name="name"><xsl:value-of select="@backLink"/></xsl:attribute>
-            </xsl:if>
-            <xsl:value-of select="@title" />
-          </a>
-        </div>
-        <div class="dotwrap">
-          <div class="dots" dir="rtl"> <!-- rtl to keep dots aligned across lines -->
-            <xsl:if test="$type='chapter'">
-              . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            </xsl:if>
-          </div>
-        </div>
-      </td>
-      <td class="page {$type}" style="width: 20px;">
-        <a>
-          <xsl:attribute name="href"><xsl:value-of select="@link"/></xsl:attribute>
-          <xsl:value-of select="@page" />
-        </a>
-      </td>
-    </tr>
+        </td>
+      </tr>
 
-    <xsl:if test="$type='chapter'">
-      <xsl:apply-templates select="outline:item">
-        <xsl:with-param name="type">heading</xsl:with-param>
-      </xsl:apply-templates>
-    </xsl:if>
+      <xsl:if test="$type='chapter'">
+        <xsl:apply-templates select="outline:item">
+          <xsl:with-param name="type">heading</xsl:with-param>
+        </xsl:apply-templates>
+      </xsl:if>
 
-    <xsl:if test="$type='chapter'">
-      <tr><td class="chapterblock">&#160;</td></tr>
+      <xsl:if test="$type='chapter'">
+        <tr><td class="chapterblock">&#160;</td></tr>
+      </xsl:if>
     </xsl:if>
   </xsl:template>
 

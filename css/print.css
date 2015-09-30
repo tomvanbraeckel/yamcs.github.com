@@ -1,16 +1,30 @@
 body {
-  counter-reset: h2counter;
   overflow: visible;
+  counter-reset: h1counter;
 }
 
 h1.toc {
   counter-reset: h2counter;
 }
 
-h2.toc:before {
-  content: 'Chapter\0000a0\0000a0' counter(h2counter) ".\0000a0\0000a0";
-  counter-increment: h2counter;
+h1.toc:before {
+  content: 'Chapter\0000a0\0000a0' counter(h1counter) ".\0000a0\0000a0";
+  counter-increment: h1counter;
+  counter-reset: h2counter;
+}
+
+h1.toc.nocount:before {
+  content: none;
+  counter-increment: none;
+}
+
+h2.toc {
   counter-reset: h3counter;
+}
+
+h2.toc:before {
+  content: counter(h1counter) "." counter(h2counter) ".\0000a0\0000a0";
+  counter-increment: h2counter;
 }
 
 h2.toc.nocount:before {
@@ -19,7 +33,7 @@ h2.toc.nocount:before {
 }
 
 h3.toc:before {
-  content: counter(h2counter) "." counter(h3counter) ".\0000a0\0000a0";
+  content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) ".\0000a0\0000a0";
   counter-increment: h3counter;
 }
 
@@ -38,10 +52,10 @@ pre {
     page-break-before: always;
   }
 
-  /*body {
-    font-size: 10px;
-    line-height: 1.5em;
-  }*/
+  body {
+    font-size: 11px;
+    /*line-height: 1.5em;*/
+  }
 }
 
 a {
@@ -52,4 +66,3 @@ a {
 a:visited {
   color: #3e4982;
 }
-

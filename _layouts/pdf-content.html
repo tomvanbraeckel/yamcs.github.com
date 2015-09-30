@@ -26,12 +26,12 @@
       <div class="container">
         <div class="main">
           {% for chapter in site.data.sidebar.guides[page.guide] %}
-            <h2 class="toc{% if forloop.first == false %} newpage{% endif %}">{{ chapter.title }}</h2>
+            <h1 class="toc{% if forloop.first == false %} newpage{% endif %}">{{ chapter.title }}</h1>
             {% if chapter.items %}
               {% for item in chapter.items %}
                 {% for p in site.pages %}
                   {% if p.url == item.url %}
-                    <h3 class="toc">{{ p.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}</h3>
+                    <h2 class="toc">{{ p.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}</h2>
                     {{ p.content }}
                     {% break %}
                   {% endif %}

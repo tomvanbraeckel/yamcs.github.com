@@ -1,5 +1,5 @@
 ---
 layout: pdf-content
-permalink: /docs/server/print/content/
+permalink: /docs/server/pdf/content/
 guide: server
 ---
