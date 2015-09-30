@@ -31,7 +31,13 @@
               {% for item in chapter.items %}
                 {% for p in site.pages %}
                   {% if p.url == item.url %}
-                    <h2 class="toc">{{ p.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}</h2>
+                    <h2 class="toc{% if forloop.first == false %} newpage{% endif %}">
+                      {% if p.title %}
+                        {{ p.title }}
+                      {% else %}
+                        {{ p.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}
+                      {% endif %}
+                    </h2>
                     {{ p.content }}
                     {% break %}
                   {% endif %}
