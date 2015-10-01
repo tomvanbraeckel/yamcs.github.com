@@ -12,7 +12,7 @@ It will by default only show commands that were received on the realtime process
 
 Clear your view by clicking ![Import](/assets/studio/icons/clear.png){: .inline-image} **Clear**. You can always import the cleared commands again at a later moment.
 
-When Yamcs Studio becomes aware af a new command that was issued by Yamcs, it will automatically select and reveal it. You can prevent this default behaviour by toggling the ![Scroll Lock](/assets/studio/icons/lock_co.png){: .inline-image} **Scroll Lock**.
+When Yamcs Studio becomes aware of a new command that was issued by Yamcs, it will automatically select and reveal it. You can prevent this default behaviour by toggling the ![Scroll Lock](/assets/studio/icons/lock_co.png){: .inline-image} **Scroll Lock**.
 
 The displayed columns are as follows.
 

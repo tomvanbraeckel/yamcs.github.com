@@ -148,25 +148,25 @@ Realtime speed indicates that data is replayed at the same speed it was recorded
 
 When the **Loop Replay** is ticked, the replay will wrap around and automatically restart from the beginning. Otherwise, the replay stops when it ends at the stop time.
 
-To create the channel, the Create button is pressed. One or more client must be selected which will then be assigned to the new channel.
+To create the channel, click **Create**. One or more clients must be selected which will then be assigned to the new channel.
 
 
 #### Command Queue Control
-The Command Queue Control window can be opened either from the main Yamcs Monitor window by double-clicking on a channel name. The Command Queue Control only makes sense for channels which have commanding enabled.
+The Command Queue Control window can be opened either from the main Yamcs Monitor window by double-clicking on a channel name. The Command Queue Control only makes sense for processors which have commanding enabled.
 
 ![Command Queue Control](/assets/tools/command-queues.png){: .center-image }
 
 The window is split into two panels:
 
-* The upper panel contains a list with all the defined command queues. The queue name, the current state and the number of commands that are currently in the queue is displayed. Right-clicking on a command queue opens a menu giving the possibility to change the state of the queue. 
+* The upper panel contains a list with all the defined command queues. The queue name, the current state and the number of commands that are currently in the queue is displayed. Right-clicking on a command queue opens a menu with the possibility to change the state of the queue. 
 
-    In addition to setting the new state of the queue, the following additional actions happen if changing the state of a blocked queue:
+    In addition to setting the new state of the queue, the following additional actions happen when changing the state of a blocked queue:
     
-    *  blocked -&gt; disabled: all the commands in the queue will be automatically rejected.
-    * blocked -&gt; enabled: all the commands in the queue will be automatically sent
+    * blocked &#8594; disabled: all the commands in the queue will be automatically rejected;
+    * blocked &#8594; enabled: all the commands in the queue will be automatically sent.
     <br>
 
-* The bottom panel contains the list of commands currently present in the queue selected in the upper panel. For each command the queue name, the command id, the user that has sent the command and the command string are display. The list is of course empty if the selected queue is not in the state blocked.
+* The bottom panel contains the list of commands currently present in the queue selected in the upper panel. For each command the queue name, the command id, the user that has sent the command and the command string are display. The list is empty if the selected queue is not in the state blocked.
 
     Right-clicking on a command gives the possibility to **Send** or **Reject** the command.
 

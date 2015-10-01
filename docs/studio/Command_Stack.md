@@ -8,7 +8,7 @@ The Command Stack allows operators to prepare stacks of commands for manual comm
 
 When you issue commands from Yamcs Studio, these are queued to Yamcs Server, which will perform any further steps.   
 
-We plan to bring many improvements to this view for better editing, but it is usable in its current state.
+We're keen on bringing many improvements to this view for better editing, but it is usable in its current state.
 
 * TOC
 {:toc}
