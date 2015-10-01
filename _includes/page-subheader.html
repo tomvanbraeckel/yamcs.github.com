@@ -19,6 +19,16 @@
     {% endif %}
   {% endif %}
 
+  {% if page.url contains '/docs/tools' %}
+    <a href="/docs/">Docs</a> /
+    {% if page.url == '/docs/tools/' %}
+      Yamcs Client Tools Guide
+    {% else %}
+      <a href="/docs/tools/">Yamcs Client Tools Guide</a>
+      / <span class="active">{{ page.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}</span>
+    {% endif %}
+  {% endif %}
+
   {% if page.pdflink %}
     <div style="float: right;">
       <a href="{{ page.pdflink }}">Download PDF</a>

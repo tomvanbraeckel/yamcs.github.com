@@ -92,3 +92,19 @@ exiftool \
     -keywords="tc" \
     -overwrite_original \
     "assets/${TITLE}.pdf"
+
+TITLE="Yamcs Client Tools Guide"
+compose_pdf "$DOCSURL/tools" "$TITLE"
+exiftool \
+    -Author="Space Applications Services" \
+    -Subject="User Guide" \
+    -keywords="yamcs" \
+    -keywords="client" \
+    -keywords="tools" \
+    -keywords="mission" \
+    -keywords="control" \
+    -keywords="system" \
+    -keywords="tm" \
+    -keywords="tc" \
+    -overwrite_original \
+    "assets/${TITLE}.pdf"

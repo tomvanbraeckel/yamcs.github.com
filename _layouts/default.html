@@ -21,6 +21,11 @@
           {% assign title='Yamcs Studio User Guide' %}
         {% endif %}
 
+        {% if page.sidebar and page.url contains '/docs/tools' %}
+          {% assign structure=site.data.sidebar.guides.tools %}
+          {% assign title='Yamcs Client Tools Guide' %}
+        {% endif %}
+
         {% if structure %}
           {% include sidebar.html structure=structure title=title %}
         {% endif %}
