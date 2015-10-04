@@ -1,11 +1,14 @@
 <div class="page-subheader">
+
+  {% assign structure=false %}
+
   {% if page.url contains '/docs/server' %}
     <a href="/docs/">Docs</a> /
     {% if page.url == '/docs/server/' %}
       Yamcs Server Manual
     {% else %}
+      {% assign structure=site.data.sidebar.guides.server %}
       <a href="/docs/server/">Yamcs Server User Guide</a>
-      / <span class="active">{{ page.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}</span>
     {% endif %}
   {% endif %}
 
@@ -14,8 +17,8 @@
     {% if page.url == '/docs/studio/' %}
       Yamcs Studio User Guide
     {% else %}
+      {% assign structure=site.data.sidebar.guides.studio %}
       <a href="/docs/studio/">Yamcs Studio User Guide</a>
-      / <span class="active">{{ page.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}</span>
     {% endif %}
   {% endif %}
 
@@ -24,9 +27,28 @@
     {% if page.url == '/docs/tools/' %}
       Yamcs Client Tools Guide
     {% else %}
+      {% assign structure=site.data.sidebar.guides.tools %}
       <a href="/docs/tools/">Yamcs Client Tools Guide</a>
-      / <span class="active">{{ page.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}</span>
     {% endif %}
+  {% endif %}
+
+  {% if structure %}
+    {% for chapter in structure %}
+      {% for item_i in chapter.items %}
+        {% if item_i.url == page.url %}
+
+          {% for p in site.pages %}
+            {% if p.url == chapter.url %}
+              / <a href="{{ p.url }}">{{ p.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}</a>
+              {% break %}
+            {% endif %}
+          {% endfor %}
+          {% break %}
+
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+    / <span class="active">{{ page.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}</span>
   {% endif %}
 
   {% if page.pdflink %}

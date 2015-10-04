@@ -97,6 +97,11 @@ code {
 
 code {
   padding: 1px 5px;
+
+  &.config-file {
+    white-space: pre-wrap;
+    font-size: smaller;
+  }
 }
 
 pre {
