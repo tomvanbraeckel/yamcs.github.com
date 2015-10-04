@@ -29,6 +29,8 @@
     - url: /docs/studio/Command_Stack/
     - url: /docs/studio/Command_History/
     - url: /docs/studio/Command_Queues/
+    - url: /docs/studio/Yamcs_Clients/
+    - url: /docs/studio/Data_Links/
 
 - url: /docs/studio/Troubleshooting/
   items:

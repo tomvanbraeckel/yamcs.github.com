@@ -54,3 +54,7 @@ Again you can modify the views in this perspective to your heart's content, but 
 Notice, as you go back to the OPI Runtime perspective, that your earlier view arrangement is nicely restored.
 
 If at any time you want to reset your perspective to the defaults, select **Window > Reset Perspective...**.
+
+<div class="hint">
+    Some people prefer to have a separate window for every perspective. To do so, select <strong>Window > New Window</strong>. This action will duplicate your current window. You can then switch the new window to a different perspective, without impacting your original window.
+</div>
