@@ -44,7 +44,7 @@ When a widget is backed by a PV, it will be decorated according to its runtime s
     </tr>
 </table>
 
-Note that the color-information for alarms is currently not as rich as it could be. Yamcs parameters support five different levels of alarms, as well as a range of special monitoring values. This information is transformed using the following mapping:
+Note that the color information for alarms is currently not as rich as it could be. Yamcs parameters support five different levels of alarms, as well as a range of special monitoring values. This information is for now transformed using the following mapping:
 
 <table class="inline nostretch">
     <tr>
@@ -94,10 +94,8 @@ Note that the color-information for alarms is currently not as rich as it could 
     </tr>
 </table>
 
-The original Yamcs alarm state can however still be viewed by right clicking and opening **PV Info**.
-
-### Library
-We limit ourselves to liting the default widgets. Their runtime behaviour should be fairly straightforward. Their various properties are detailed in [Widget Properties](/docs/studio/Widget_Properties/), when we address the OPI Editor.
+### Catalogue
+We limit ourselves to just listing the default widgets. Their runtime behaviour should be fairly straightforward. The various properties are detailed in [Widget Properties](/docs/studio/Widget_Properties/), when we address the OPI Editor.
 
 #### Graphics
 
@@ -125,7 +123,7 @@ We limit ourselves to liting the default widgets. Their runtime behaviour should
     <tr>
         <td width="33%"><img src="/assets/studio/icons/widgets/LED.png">LED</td>
         <td width="33%"><img src="/assets/studio/icons/widgets/ProgressBar.gif">Progress Bar</td>
-        <td width="33%"><img src="/assets/studio/icons/widgets/XYGraph.gif">XY Graph</td>
+        <td width="33%"><img src="/assets/studio/icons/widgets/XYGraph.gif">XY Graph&#185;</td>
     </tr>
     <tr>
         <td><img src="/assets/studio/icons/widgets/imageBooleanindicator.gif">Image Boolean Indicator</td>
@@ -143,6 +141,8 @@ We limit ourselves to liting the default widgets. Their runtime behaviour should
         <td></td>
     </tr>
 </table>
+
+&#185; Clear the view on this widget by right-clicking on it and selecting **Clear Graph**. If you want advanced controls, like zooming, activate the toolbar by right-clicking on your widget and selecting **Show/Hide Graph Toolbar**.
 
 #### Controls
 
