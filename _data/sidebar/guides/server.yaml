@@ -1,28 +1,28 @@
-- title: Introduction
+- url: /docs/server/Introduction/
   items:
     - url: /docs/server/Fundamentals/
     - url: /docs/server/Installation/
 
-- title: Data Links
+- url: /docs/server/Data_Links/
   items:
     - url: /docs/server/TM_Providers/
     - url: /docs/server/PP_Providers/
     - url: /docs/server/TC_Uplinkers/
 
-- title: Mission Database
+- url: /docs/server/Mission_Database/
   items:
     - url: /docs/server/TM_Loaders/
     - url: /docs/server/PP_Loaders/
     - url: /docs/server/TC_Loaders/
 
-- title: Telemetry Processing
+- url: /docs/server/Telemetry_Processing/
   items:
     - url: /docs/server/Packet_Telemetry/
     - url: /docs/server/Algorithms/
     - url: /docs/server/Alarms/
     - url: /docs/server/Commanding/
 
-- title: Security
+- url: /docs/server/Security/
   items:
     - url: /docs/server/Authentication/
     - url: /docs/server/Authorization/

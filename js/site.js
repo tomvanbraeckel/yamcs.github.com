@@ -8,7 +8,7 @@
         }
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
+/*    document.addEventListener('DOMContentLoaded', function() {
         var sidebarEl = document.getElementById('sidebar');
         if (sidebarEl) {
             sidebarEl.onclick = function(e) {
@@ -17,5 +17,5 @@
                 }
             }
         }
-    });
+    });*/
 })();

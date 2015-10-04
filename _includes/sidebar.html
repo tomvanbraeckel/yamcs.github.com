@@ -8,22 +8,31 @@
     {% endcomment %}
 
     {% assign expand=false %}
-    {% for item in link.items %}
-      {% if item.url == page.url %}
-        {% assign expand=true %}
-        {% break %}
-      {% else %}
-        {% for item_j in item.items %}
-          {% if item_j.url == page.url %}
-            {% assign expand=true %}
-            {% break %}
-          {% endif %}
-        {% endfor %}
-      {% endif %}
-    {% endfor %}
+    {% if link.url == page.url %}
+      {% assign expand=true %}
+    {% else %}
+      {% for item in link.items %}
+        {% if item.url == page.url %}
+          {% assign expand=true %}
+          {% break %}
+        {% else %}
+          {% for item_j in item.items %}
+            {% if item_j.url == page.url %}
+              {% assign expand=true %}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
 
     <div class="sidebar-item {% if expand %}active expanded{% else %}collapsed{% endif %}">
-      <span class="sidebar-item-hdr">{{ link.title }}</span>
+      {% for p in site.pages %}
+        {% if p.url == link.url %}
+          <a class="sidebar-item-hdr" href="{{ p.url }}">{{ p.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}</a>
+          {% break %}
+        {% endif %}
+      {% endfor %}
 
       {% include sidebar-items.html items=link.items %}
     </div>

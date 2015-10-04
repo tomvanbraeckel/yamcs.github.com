@@ -1,4 +1,4 @@
-- title: Introduction
+- url: /docs/studio/Introduction/
   items:
     - url: /docs/studio/Overview/
     - url: /docs/studio/Installation/
@@ -6,11 +6,11 @@
     - url: /docs/studio/Understanding_the_User_Interface/
     - url: /docs/studio/Connecting_to_Yamcs/
 
-- title: Running Displays
+- url: /docs/studio/Running_Displays/
   items:
     - url: /docs/studio/OPI_Runtime_Perspective/
 
-- title: Editing Displays
+- url: /docs/studio/Editing_Displays/
   items:
     - url: /docs/studio/OPI_Editor_Perspective/
     - url: /docs/studio/Resource_Management/
@@ -18,7 +18,7 @@
     - url: /docs/studio/Rules_&_Scripts/
     - url: /docs/studio/Theming/
 
-- title: Views
+- url: /docs/studio/Views/
   items:
     - url: /docs/studio/Archive/
     - url: /docs/studio/Event_Log/
@@ -27,6 +27,6 @@
     - url: /docs/studio/Command_History/
     - url: /docs/studio/Command_Queues/
 
-- title: Troubleshooting
+- url: /docs/studio/Troubleshooting/
   items:
     - url: /docs/studio/Capturing_Log_Output/

@@ -1,6 +1,4 @@
-- title: Client Tools
-  items:
-    - url: /docs/tools/Yamcs_Monitor/
-    - url: /docs/tools/Archive_Browser/
-    - url: /docs/tools/Event_Viewer/
-    - url: /docs/tools/PP_Simulation/
+- url: /docs/tools/Yamcs_Monitor/
+- url: /docs/tools/Archive_Browser/
+- url: /docs/tools/Event_Viewer/
+- url: /docs/tools/PP_Simulation/

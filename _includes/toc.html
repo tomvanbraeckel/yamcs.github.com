@@ -2,7 +2,12 @@
   <ol>
     {% for chapter in include.structure %}
       <li>
-        {{ chapter.title }}
+        {% for p in site.pages %}
+          {% if p.url == chapter.url %}
+            <a href="{{ p.url }}">{{ p.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}</a>
+            {% break %}
+          {% endif %}
+        {% endfor %}
         {% if chapter.items %}
           <ol>
             {% for item in chapter.items %}
