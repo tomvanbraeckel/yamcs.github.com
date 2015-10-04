@@ -58,7 +58,7 @@ pre {
   }
 }
 
-#markdown-toc {
+#markdown-toc, .chaptertoc {
   display: none;
 }
 

@@ -45,6 +45,28 @@
           </h1>
           {{ content }}
 
+          {% if page.chapter %}
+            <div class="chaptertoc">
+              <br>In this chapter:<br>
+              {% for chapter in structure %}
+                {% if chapter.url == page.url %}
+                  <ul>
+                  {% for item_i in chapter.items %}
+                    {% for p in site.pages %}
+                      {% if p.url == item_i.url %}
+                        <li>
+                          <a href="{{ p.url }}">{{ p.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}</a>
+                        </li>
+                        {% break %}
+                      {% endif %}
+                    {% endfor %}
+                  {% endfor %}
+                  </ul>
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endif %}
+
           <p>&nbsp;</p>
           {% include next-link.html structure=structure %}
         </div>
