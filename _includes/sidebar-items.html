@@ -4,7 +4,11 @@
       <li>
         {% if page.url == item.url %}
           <span class="sidebar-item-2 active">
-            {{ page.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}
+            {% if page.title %}
+              {{ page.title }}
+            {% else %}
+              {{ page.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}
+            {% endif %}
           </span>
         {% else %}
           {% assign exists=false %}
@@ -18,7 +22,11 @@
           {% endfor %}
           <a class="sidebar-link-2{% if exists == false %} broken{% endif %}" href="{{ item.url }}">
             {% if exists %}
-              {{ p_i.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}
+              {% if p_i.title %}
+                {{ p_i.title }}
+              {% else %}
+                {{ p_i.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}
+              {% endif %}
             {% else %}
               {{ item.url }}
             {% endif %}
@@ -31,7 +39,11 @@
               {% if page.url == item_j.url %}
                 <li>
                   <span class="sidebar-item-3 active">
-                    {{ page.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}
+                    {% if page.title %}
+                      {{ page.title }}
+                    {% else %}
+                      {{ page.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}
+                    {% endif %}
                   </span>
                 </li>
               {% else %}
@@ -47,7 +59,11 @@
                   {% endfor %}
                   <a class="sidebar-link-3{% if exists == false %} broken{% endif %}" href="{{ item_j.url }}">
                     {% if exists %}
-                      {{ p_j.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}
+                      {% if p_j.title %}
+                        {{ p_j.title }}
+                      {% else %}
+                        {{ p_j.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}
+                      {% endif %}
                     {% else %}
                       {{ p.url }}
                     {% endif %}

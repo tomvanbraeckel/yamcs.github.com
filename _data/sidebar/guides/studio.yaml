@@ -9,12 +9,15 @@
 - url: /docs/studio/Running_Displays/
   items:
     - url: /docs/studio/OPI_Runtime_Perspective/
+    - url: /docs/studio/Processed_Variables/
+    - url: /docs/studio/Widgets/
+    - url: /docs/studio/Inspector_Windows/
 
 - url: /docs/studio/Editing_Displays/
   items:
     - url: /docs/studio/OPI_Editor_Perspective/
     - url: /docs/studio/Resource_Management/
-    - url: /docs/studio/Widgets/
+    - url: /docs/studio/Widget_Properties/
     - url: /docs/studio/Rules_&_Scripts/
     - url: /docs/studio/Theming/
 

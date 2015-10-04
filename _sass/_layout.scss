@@ -408,4 +408,10 @@ table.inline {
   &.small-contents td {
     font-size: smaller;
   }
+  &.nostretch {
+    width: auto;
+  }
+  &.image-overview img {
+    padding-right: 0.5em;
+  }
 }
