@@ -402,4 +402,14 @@ table.inline {
     padding-left: 0.5em;
     padding-right: 0.5em;
   }
+  td.code {
+    border: 1px solid #e8e8e8;
+    border-radius: 3px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    font-family: monospace;
+  }
+  &.small-contents td {
+    font-size: smaller;
+  }
 }

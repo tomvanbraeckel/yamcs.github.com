@@ -33,4 +33,4 @@ Each queue has a name, a default state and a list of roles. The commands of a us
 
 There is always a command-queue called 'default' whose state is enabled. If a command comes from a user whose role is not defined by any other queue (not recommended), the command will be put in the default queue. The default queue can be redefined in the `command-queue.yaml` in order to have a different state.
 
-The content of the command queue can be inspected using the Yamcs Monitor as explained <xref linkend="command-queue-control"/>. To be able to control the Command Queues, the user needs the MayControlCommandQueue privilege.
+The content of the command queue can be inspected using [Yamcs Studio](/docs/studio/) or [Yamcs Monitor](/docs/tools/Yamcs_Monitor). Control over the command queues, requires the *MayControlCommandQueue* privilege.

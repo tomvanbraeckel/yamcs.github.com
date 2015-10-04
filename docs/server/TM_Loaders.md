@@ -10,13 +10,13 @@ This loader loads the telemetry definition directly from the Oracle using the or
 
 This configuration file contains, next to the username/password used to connect to the database, the path and the version of the CCU that will be loaded and also the testConfiguration (an end item of type EGSE_TEST_CONFIGURATION).
 
-Based on the CCU parameters and on the opsname of the testConfiguration<footnote><para>Note that the test configuration can only be specified through its opsname, so the opsname must exist and be unique.</para></footnote>, Yamcs can determine the following three attributes which are used as attributes of the XTCE header:
+Based on the CCU parameters and on the opsname of the testConfiguration (the test configuration can only be specified through its opsname, so the opsname must exist and be unique.), Yamcs can determine the following three attributes which are used as attributes of the XTCE header:
 
 * CCU Internal Version - this is a number uniquely identifying the CCU and the CCU version
 * Test Configuration SID - this is a number uniquely identifying the test configuration
 * Consistency Date - this is the time when the configured CCU has been last modified.
 
-Please refer to <xref linkend="telemetry-processing"/> and to <xref linkend="commanding"/> for details on the loading of the MDB end items and on the mapping to Yamcs structures.
+Please refer to [Telemetry Processing](/docs/server/Telemetry_Processing/) and to [Commanding](/docs/server/Commanding) for details on the loading of the MDB end items and on the mapping to Yamcs structures.
 
 The configuration parameter `checkForUpdatedMdb` configures Yamcs to check or not the Oracle database for modified versions of the MDB. If the MDB can not be loaded from the serialized file, the Oracle database is checked nevertheless.
 
@@ -42,13 +42,11 @@ The packet description in CD-MCS MDB is spread over different structures. When r
 ![Creation of the sequence containers from the CD-MCS MDB](/assets/server/MDBSequenceContainerCreation.png){: .center-image }
 
 #### Excel Spreadsheet
-This loader constructs the MDB using containers and parameters defined in one or more Excel spreadsheets.
+This loader constructs the MDB using containers and parameters defined in one or more [Excel spreadsheets](/docs/server/Excel_Specification/).
 
 The loader is configured in `etc/mdb.yaml` (see <xref linkend="mdb.yaml"></xref> for a sample configuration). Specify the 'type' as `sheet`, and provide the location of the spreadsheet file in the spec attribute. Additional spreadsheets may be specified in a `subLoaders` list, using the type and spec attributes for each additional spreadsheet.
 
-The format of the Excel spreadsheet is described in <xref linkend="excel-spec"></xref>.
-
 #### XTCE files
-This loader reads an MDB saved in XML format compliant with the XTCE specification <xref linkend="RD3"></xref>. For more information about XTCE, see <xref linkend="RD2"></xref>.</para>
+This loader reads an MDB saved in XML format compliant with the XTCE specification. For more information about XTCE, see [http://www.xtce.org](http://www.xtce.org).
 
 The loader is configured in `etc/mdb.yaml` (see <xref linkend="mdb.yaml"></xref> for a sample configuration). Specify the 'type' as `xtce`, and provide the location of the XML file in the spec attribute.

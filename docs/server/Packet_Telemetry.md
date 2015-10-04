@@ -6,7 +6,7 @@ sidebar: yes
 
 The Yamcs Server implements a subset of the XTCE (XML Telemetric and Command Exchange) for telemetry processing. Only the concepts defined by the standard are supported.
 
-For information about XTCE, please refer to <xref linkend="RD2"></xref> and <xref linkend="RD3"></xref>. This sections details only the XTCE types implemented in Yamcs.
+For information about XTCE, please refer to [http://www.xtce.org](http://www.xtce.org). These sections detail only the XTCE types implemented in Yamcs.
 
 #### Sequence Containers
 

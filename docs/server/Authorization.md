@@ -39,7 +39,7 @@ Used to impose general limits, such as the privilege to command, privilege to co
 	<tr>
 		<th>MayControlCommandQueue</th>
 		<td>
-			<p>This privilege is required in order to be able to inspect and control the command queue. See <xref linkend="command-queues"/>.</p>
+			<p>This privilege is required in order to be able to inspect and control <a href="/docs/server/Commanding/#command-queues">command queues</a>.</p>
 			<p>The privilege is checked each time the user calls one of the operations for controlling the command queues.</p>		
 		</td>
 	</tr>

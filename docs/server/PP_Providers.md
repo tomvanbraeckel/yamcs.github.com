@@ -18,8 +18,6 @@ Once the list of processed parameters is built, it tries regularly to subscribe 
 The processed parameters are made available to the subscribing clients, using names like opsname_PP where opsname is the original name of the processed parameter (i.e. name at the source).
         
 Unlike CD-MCS the processed parameters are made available via Yamcs with the telemetry status received from DaSS. In CD-MCS the other attributes of the processed parameters are made available via other parameters like opsname_ST, etc. In Yamcs these are not initialized, even the subscription is refused.
-        
-The mapping between DaSS status and Yamcs parameters is documented in section <xref linkend="dass-pp-mapping"/>.
 
 ### MulticastPpProvider
 Implements processed parameters received via multicast from the TMR
@@ -36,7 +34,3 @@ Using the Yamcs Monitor the processing of packets can be enabled/disabled. In ad
 Some tests request data to be simulated. This can be achieved by using the SimulationPpprovider. This simulation pp provider uses in input scenarios that are defined in XML files.
 
 The XML scenario file allows to describe the parameters sent, their generation time, acquisition time, engineering value and monitoring value. Parameters are organized in ‘sequence’ that can be repeated to allow more complex scenarios. The speed of the simulation can be defined, by setting the duration of a simulation step
-
-The format of XML scenario file is defined in annex XXX
-
-A user interface is available to visualize a library of scenario and select the scenario that YAMCS should play. This tool is documented in section XXX
