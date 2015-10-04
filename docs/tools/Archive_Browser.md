@@ -4,11 +4,11 @@ sidebar: yes
 permalink: /docs/tools/Archive_Browser/
 ---
 
-Archive Browser is an application that allows inspecting the content of the TM and PP archive, as well as retrieving data as packets or parameters. It can be run either as a standalone application (`archive-browser.sh`) or from the Yamcs Monitor.
+Archive Browser is an application that allows inspecting the content of the TM and PP archive, as well as retrieving data as packets or parameters. It can be run either as a standalone application (<tt>archive-browser.sh</tt>) or from the Yamcs Monitor.
     
 ![Archive Browser](/assets/tools/archive-browser.png){: .center-image }
 
-### Getting Started
+## Getting Started
 The main part of the window comprises a display to visualize the content of the archive. When opening the window for the first time, it needs to be populated. This is done by entering the start and end range and clicking **Reload View**. The buttons next to the **Reload Range** input fields can be pressed to popup a calendar that can be used to select the date. The time of the day has to be entered manually. In addition, the **Select last...** dropdown can be used to fill in the range start with current_time (3, 6 or 12 months). Leaving any of the fields empty, means minus or plus infinity. To refresh data with the newest realtime data, the end of the range can be left empty.
             
 Clicking the **Reload View** button, will request information from Yamcs Server about all data available in the selected range, so this operation may take some time, depending on the amount of data, and depending on the bandwidth of the network connection. During the reload process, the *Packets* row in the *Archive Information* box displays the progress.
@@ -35,14 +35,14 @@ While zooming into selections, previous zoom levels will be remembered. The **Zo
 
 All dates shown in Archive Selector can be shown in a format using month and day (YYYY.MM.DD) or the day of the year (YYYY/DDD). This can be toggled in the **View** menu.
 
-### Selecting Data
+## Selecting Data
  When the **Apply Selection** button is pressed, the current selection is subject for replay. This includes all telemetry packets shown. Those packets visible but unwanted can be removed using the popup menu on the respective packet labels.
 
 By pressing the **Apply Selection** button, the start time, stop time, and packet names are inserted into the Yamcs Monitor **New Channel** box. There, unwanted packets can still be removed using the Del key. Further details like playback speed and loop mode can be specified there.
 
 The Archive Selector window remains open to allow the replay to be followed. It can be closed anytime if desired.
 
-### Replaying Data
+## Replaying Data
  When the selection has been applied, the new channel is ready to be created in Yamcs Monitor. Pressing the **Create** button will create the channel, connect it to the selected clients, and start replay immediately.
 
 Once the replay has started, a start marker and a stop marker appear on the Archive Selector display. These are tagged with yellow rectangles. A third marker denotes the current position. It is tagged with two green triangles. The current position marker and the **Replay Control** panel are updated often.
@@ -53,7 +53,7 @@ The archive replays are seekable with random access at any time. The right mouse
 
 The Archive Selector will show replay progress of the current channel selected in Yamcs Monitor. To switch to another replay channel, the desired channel only needs to be selected. The Archive Selector Window is updated with the information taken from the newly selected channel.
 
-### Parameter Retrieval
+## Parameter Retrieval
 The Parameter Retrieval tool can be started from the Archive Browser by pressing the **Parameter Retrieval** button once a time range has been selected in the histogram panel. Only the time range is used, the packet selection is automatically performed by the Yamcs server depending on the parameters requested.  
    
 ![Parameter Retrieval](/assets/tools/parameter-retrieval.png){: .center-image }

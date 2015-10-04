@@ -7,9 +7,9 @@ permalink: /docs/tools/Event_Viewer/
 The Event Viewer displays events from Yamcs Server. In older versions of Yamcs, the Event Viewer was in fact decoding and displaying on-board events only. Now the Event Viewer is just a display, the decoder being another component that runs inside the Yamcs Server (thus the events are decoded and saved in the archive even if no viewer is running). In addition, more and more components of Yamcs generate events (for example the DaSS TM/PP/TC components) when significant things happen.
 
 
-### Installing
+## Installing
 	
-#### Dependencies
+### Dependencies
 <table class="inline">
     <tr>
         <th>OS</th>
@@ -21,19 +21,19 @@ The Event Viewer displays events from Yamcs Server. In older versions of Yamcs, 
     </tr>
 </table>
 
-#### Installation
-The Event Viewer is delivered as part of an archived client tools package. The package does not need to be installed, just extracted to a suitable location. The tools can be run from the extracted location using starting scripts found in the `bin/` folder.
+### Installation
+The Event Viewer is delivered as part of an archived client tools package. The package does not need to be installed, just extracted to a suitable location. The tools can be run from the extracted location using starting scripts found in the <tt>bin/</tt> folder.
 
-#### Configuration
-No further configuration is needed, but you may specify a custom sound file to be used when an event with "sound alert" enabled is received. In this case, edit the `etc/event-viewer.yaml` file in the extracted location and change the `soundfile` entry to a full path to a WAV format sound file.
+### Configuration
+No further configuration is needed, but you may specify a custom sound file to be used when an event with "sound alert" enabled is received. In this case, edit the <tt>etc/event-viewer.yaml</tt> file in the extracted location and change the <tt>soundfile</tt> entry to a full path to a WAV format sound file.
 
-#### Updating
-Updated applications are made available as an archived client tools package. This should be extracted into its own folder, separate to any previous installation. The configuration files in `etc/` can be copied from a previous installation into the new installation.
+### Updating
+Updated applications are made available as an archived client tools package. This should be extracted into its own folder, separate to any previous installation. The configuration files in <tt>etc/</tt> can be copied from a previous installation into the new installation.
 	
-#### Removing
+### Removing
 To remove an installation, delete the extracted folder.
 
-### Starting the Event Viewer
+## Starting the Event Viewer
 On Windows and OS X, start Yamcs Monitor with the command
  
     $ event-viewer.sh
@@ -48,7 +48,7 @@ A URL can be provided on the command line to connect directly after the startup,
 	        
     $ event-viewer.sh yamcs://localhost:5445/
     
-### User interface
+## User interface
 
 ![Event Viewer](/assets/tools/event-viewer.png){: .center-image }
 

@@ -9,16 +9,16 @@ Sends telecommands to the DaSS. It supports decoding of acknowledgments from DaS
 
 <table class="inline">
     <tr>
-        <th><code>&lt;source&gt;_Status</code></th>
+        <th class="code">&lt;source&gt;_Status</th>
         <td>"OK" or "NACK msg"</td>
     </tr>
     <tr>
-        <th><code>&lt;source&gt;_Time</code></th>
+        <th class="code">&lt;source&gt;_Time</th>
         <td>the time at the reception of the acknowledgment</td>
     </tr>
 </table>
 
-Where `<source>` is one of:
+Where <tt>&lt;source&gt;</tt> is one of:
 
 * Acknowledge_DaSS
 * Acknowledge_MCS

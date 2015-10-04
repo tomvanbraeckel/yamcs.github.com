@@ -81,7 +81,7 @@ This sheet must be named "Containers", and the columns described must not be reo
 	</tr>
 	<tr>
 		<th>size in bits</th>
-		<td>The size of the container in bits. This is not usually needed but if the container is part of another container through aggregation, this size is used to determine the position of the next entry in the master container. See <xref linkend="container-agregation"/> for more details</td>
+		<td>The size of the container in bits. This is not usually needed but if the container is part of another container through aggregation, this size is used to determine the position of the next entry in the master container.</td>
 	</tr>
 	<tr>
 		<th>expected interval</th>
