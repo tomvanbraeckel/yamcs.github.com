@@ -16,7 +16,7 @@ function compose_pdf() {
         --print-media-type \
         --exclude-from-outline \
         --footer-html "$BASEURL/pdf/titlefooter/" \
-        "${TITLE}_cover.pdf"
+        "/tmp/${TITLE}_cover.pdf"
 
     wkhtmltopdf \
         --title "$TITLE" \
@@ -25,7 +25,7 @@ function compose_pdf() {
         --margin-bottom 15mm \
         cover "$BASEURL/pdf/titleinner/" \
         --exclude-from-outline \
-        "${TITLE}_precontent.pdf"
+        "/tmp/${TITLE}_precontent.pdf"
 
     # Image quality is not optimal. Below image-flags seem to have little effect other than
     # increasing the file size :-(
@@ -51,16 +51,16 @@ function compose_pdf() {
         --disable-external-links \
         --footer-html "$BASEURL/pdf/pagefooter/" \
         --print-media-type \
-        "${TITLE}_content.pdf"
+        "/tmp/${TITLE}_content.pdf"
 
     # echo "" | ps2pdf -sPAPERSIZE=a4 - ${TITLE}_blank.pdf
 
     gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile="assets/${TITLE}.pdf" \
-        "${TITLE}_cover.pdf" \
-        "${TITLE}_precontent.pdf" \
-        "${TITLE}_content.pdf"
+        "/tmp/${TITLE}_cover.pdf" \
+        "/tmp/${TITLE}_precontent.pdf" \
+        "/tmp/${TITLE}_content.pdf"
 
-    rm "$TITLE"_*.pdf
+    rm "/tmp/$TITLE"_*.pdf
 }
 
 TITLE="Yamcs Studio User Guide"

@@ -56,6 +56,19 @@ pre {
     font-size: 11px;
     /*line-height: 1.5em;*/
   }
+
+  tt {
+    font-size: 11px;
+  }
+
+  strong {
+    font-size: 11px;
+    font-weight: bold;
+  }
+
+  table, tr, td, th, tbody, thead, tfoot {
+    page-break-inside: avoid !important;
+  }
 }
 
 #markdown-toc, .chaptertoc {
