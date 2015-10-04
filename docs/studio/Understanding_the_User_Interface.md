@@ -41,7 +41,7 @@ Feel free to experiment some more with the drag feature. As you try dragging to 
 When you close Yamcs Studio and reopen it, it will restore your preferred view and window arrangement.
 
 <div class="hint">
-    Yamcs Studio stores the information about your view arrangement in a <code>.metadata</code> folder inside your workspace. This is how it knows how to restore this information through restarts. If you share your workspace with other users through a version control system, you should consider <em>not</em> committing this <code>.metadata</code> folder. This way everybody can have his own preffered arrangement without colliding with each other. 
+    Yamcs Studio stores the information about your view arrangement in a <tt>.metadata</tt> folder inside your workspace. This is how it knows how to restore this information through restarts. If you share your workspace with other users through a version control system, you should consider <em>not</em> committing this <tt>.metadata</tt> folder. This way everybody can have his own preffered arrangement without colliding with each other. 
 </div>
 
 ### Perspectives

@@ -12,7 +12,7 @@ Your window arrangement changes to something like this.
 
 ![OPI Editor](/assets/opi-editor.png){: .center-image }
 
-In the left navigator, expand the YSS project and open for example our `FlightData.opi` by right-clicking and choosing **Open With > OPI Editor**.
+In the left navigator, expand the YSS project and open for example our <tt>FlightData.opi</tt> by right-clicking and choosing **Open With > OPI Editor**.
 
 **Note:** we are aware that right-clicking it is slightly annoying. The left-click action by default opens the OPI file with OPI Runtime. Once you've successfully opened an OPI with the OPI Editor the left-click action will from that point always open it with the OPI Editor, as it remembers its last handler. We definitely want to improve the user experience here. But for now, please bear with us as we do the needed development work.
 
@@ -23,7 +23,7 @@ The window layout can be decomposed like this:
 1. Navigator
     The navigator contains all projects within the current workspace. In general a project is at the same level as a mission, but this is not strictly necessary. When we launch Yamcs Studio with a new workspace, it will always automatically create the YSS project. Once you have added your own project, you can remove YSS and it won't be autocreated anymore.
     
-    A project contains Operator Displays (`*.opi`), images, color profiles (`*.def`), custom scripts (`*.js` or `*.py`), etc. Familiarise yourself with the right-click option as you go about opening displays. Displays can be opened in a few different modes within the OPI Editor.
+    A project contains Operator Displays (<tt>*.opi</tt>), images, color profiles (<tt>*.def</tt>), custom scripts (<tt>*.js</tt> or <tt>*.py</tt>), etc. Familiarise yourself with the right-click option as you go about opening displays. Displays can be opened in a few different modes within the OPI Editor.
     
     * In editing mode
     * In runtime mode in a Standalone window (*beta*)

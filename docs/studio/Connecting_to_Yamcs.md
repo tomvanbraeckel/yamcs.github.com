@@ -82,4 +82,4 @@ You can verify that your copy of Yamcs Studio is properly connected by looking a
 
 ![Realtime Processor](/assets/studio/processor.png)
 
-If it says realtime, then you've successfully connected.
+If it says <tt>realtime</tt>, then you've successfully connected.

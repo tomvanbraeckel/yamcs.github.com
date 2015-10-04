@@ -13,4 +13,4 @@ You will need Oracle Java 8 installed. We currently recommend the latest [Oracle
 #### Troubleshooting
 Most problems related to starting Yamcs Studio, have to do with Java not being correctly detected, or by trying to launch Yamcs Studio with an old version of Java. Both of these issues are usually resolved by installing Oracle&nbsp;JDK&nbsp;8.
 
-In case that didn't help, Try defining the `-vm` property in the root `yamcs-studio.ini` file. Refer to [these instructions](https://wiki.eclipse.org/Eclipse.ini).
+In case that didn't help, Try defining the <tt>-vm</tt> property in the root <tt>yamcs-studio.ini</tt> file. Refer to the instructions available at [https://wiki.eclipse.org/Eclipse.ini](https://wiki.eclipse.org/Eclipse.ini).
