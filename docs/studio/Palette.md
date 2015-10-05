@@ -81,7 +81,7 @@ These are the default widgets that come with Yamcs Studio. Depending on your spe
     <tr>
         <td>
             <a href="/docs/studio/Monitors/#image-boolean-indicator">
-                <img src="/assets/studio/icons/widgets/imageBooleanindicator.gif">Image Boolean Indicator
+                <img src="/assets/studio/icons/widgets/imageBooleanIndicator.gif">Image Boolean Indicator
             </a>
         </td>
         <td>

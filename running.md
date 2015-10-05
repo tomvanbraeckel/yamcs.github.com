@@ -12,6 +12,7 @@ The YSS configuration is simple by design, showcasing only core functionality. I
 Running YSS is easy and straight-forward, but there are a few requirements you'll need to make sure your system has before you start. In particular this showcase uses <tt>docker</tt> and <tt>docker-compose</tt> to run container images that are prebuilt by the core Yamcs development team, and updated together with every Yamcs release.
 
 On this page:
+
 * TOC
 {:toc}
 

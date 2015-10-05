@@ -126,7 +126,7 @@ We limit ourselves to just listing the default widgets. Their runtime behaviour 
         <td width="33%"><img src="/assets/studio/icons/widgets/XYGraph.gif">XY Graph&#185;</td>
     </tr>
     <tr>
-        <td><img src="/assets/studio/icons/widgets/imageBooleanindicator.gif">Image Boolean Indicator</td>
+        <td><img src="/assets/studio/icons/widgets/imageBooleanIndicator.gif">Image Boolean Indicator</td>
         <td><img src="/assets/studio/icons/widgets/gauge2.png">Gauge</td>
         <td><img src="/assets/studio/icons/widgets/intensityGraph.png">Intensity Graph</td>
     </tr>
