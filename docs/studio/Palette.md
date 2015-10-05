@@ -62,23 +62,67 @@ These are the default widgets that come with Yamcs Studio. Depending on your spe
 
 <table class="inline image-overview">
     <tr>
-        <td width="33%"><img src="/assets/studio/icons/widgets/LED.png">LED</td>
-        <td width="33%"><img src="/assets/studio/icons/widgets/ProgressBar.gif">Progress Bar</td>
-        <td width="33%"><img src="/assets/studio/icons/widgets/XYGraph.gif">XY Graph</td>
+        <td width="33%">
+            <a href="/docs/studio/Monitors/#led">
+                <img src="/assets/studio/icons/widgets/LED.png">LED
+            </a>
+        </td>
+        <td width="33%">
+            <a href="/docs/studio/Monitors/#progress-bar">
+                <img src="/assets/studio/icons/widgets/ProgressBar.gif">Progress Bar
+            </a>
+        </td>
+        <td width="33%">
+            <a href="/docs/studio/Monitors/#xy-graph">
+                <img src="/assets/studio/icons/widgets/XYGraph.gif">XY Graph
+            </a>
+        </td>
     </tr>
     <tr>
-        <td><img src="/assets/studio/icons/widgets/imageBooleanindicator.gif">Image Boolean Indicator</td>
-        <td><img src="/assets/studio/icons/widgets/gauge2.png">Gauge</td>
-        <td><img src="/assets/studio/icons/widgets/intensityGraph.png">Intensity Graph</td>
+        <td>
+            <a href="/docs/studio/Monitors/#image-boolean-indicator">
+                <img src="/assets/studio/icons/widgets/imageBooleanindicator.gif">Image Boolean Indicator
+            </a>
+        </td>
+        <td>
+            <a href="/docs/studio/Monitors/#gauge">
+                <img src="/assets/studio/icons/widgets/gauge2.png">Gauge
+            </a>
+        </td>
+        <td>
+            <a href="/docs/studio/Monitors/#intensity-graph">
+                <img src="/assets/studio/icons/widgets/intensityGraph.png">Intensity Graph
+            </a>
+        </td>
     </tr>
     <tr>
-        <td><img src="/assets/studio/icons/widgets/textUpdate.png">Text Update</td>
-        <td><img src="/assets/studio/icons/widgets/thermo.gif">Thermometer</td>
-        <td><img src="/assets/studio/icons/widgets/ByteMonitor.png">Byte Monitor</td>
+        <td>
+            <a href="/docs/studio/Monitors/#text-update">
+                <img src="/assets/studio/icons/widgets/textUpdate.png">Text Update
+            </a>
+        </td>
+        <td>
+            <a href="/docs/studio/Monitors/#thermometer">
+                <img src="/assets/studio/icons/widgets/thermo.gif">Thermometer
+            </a>
+        </td>
+        <td>
+            <a href="/docs/studio/Monitors/#byte-monitor">
+                <img src="/assets/studio/icons/widgets/ByteMonitor.png">Byte Monitor
+            </a>
+        </td>
     </tr>
     <tr>
-        <td><img src="/assets/studio/icons/widgets/XMeter.png">Meter</td>
-        <td><img src="/assets/studio/icons/widgets/tank.png">Tank</td>
+        <td>
+            <a href="/docs/studio/Monitors/#meter">
+                <img src="/assets/studio/icons/widgets/XMeter.png">Meter
+            </a>
+        </td>
+        <td>
+            <a href="/docs/studio/Monitors/#tank">
+                <img src="/assets/studio/icons/widgets/tank.png">Tank
+            </a>
+        </td>
         <td></td>
     </tr>
 </table>

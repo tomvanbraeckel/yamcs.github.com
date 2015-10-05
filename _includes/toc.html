@@ -35,7 +35,7 @@
                       {% assign exists=false %}
                       {% assign p_j=false %}
                       {% for p in site.pages %}
-                        {% if p.url == item.url %}
+                        {% if p.url == item_j.url %}
                           {% assign exists=true %}
                           {% assign p_j=p %}
                           {% break %}
