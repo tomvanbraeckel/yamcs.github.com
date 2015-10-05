@@ -221,9 +221,21 @@ These are the default widgets that come with Yamcs Studio. Depending on your spe
 
 <table class="inline image-overview">
     <tr>
-        <td width="33%"><img src="/assets/studio/icons/widgets/table.gif">Table</td>
-        <td width="33%"><img src="/assets/studio/icons/widgets/groupContainer.png">Grouping Container</td>
-        <td width="33%"><img src="/assets/studio/icons/widgets/SashContainer.png">Sash Container</td>
+        <td width="33%">
+            <a href="/docs/studio/Other_Widgets/#table">
+                <img src="/assets/studio/icons/widgets/table.gif">Table
+            </a>
+        </td>
+        <td width="33%">
+            <a href="/docs/studio/Other_Widgets/#grouping-container">
+                <img src="/assets/studio/icons/widgets/groupContainer.png">Grouping Container
+            </a>
+        </td>
+        <td width="33%">
+            <a href="/docs/studio/Other_Widgets/#sash-container">
+                <img src="/assets/studio/icons/widgets/SashContainer.png">Sash Container
+            </a>
+        </td>
     </tr>
     <tr>
         <td>
@@ -231,12 +243,28 @@ These are the default widgets that come with Yamcs Studio. Depending on your spe
                 <img src="/assets/studio/icons/widgets/web_browser.png">Web Browser
             </a>
         </td>
-        <td><img src="/assets/studio/icons/widgets/linkingcontainer.png">Linking Container</td>
-        <td><img src="/assets/studio/icons/widgets/grid.gif">Grid Layout</td>
+        <td>
+            <a href="/docs/studio/Other_Widgets/#linking-container">
+                <img src="/assets/studio/icons/widgets/linkingcontainer.png">Linking Container
+            </a>
+        </td>
+        <td>
+            <a href="/docs/studio/Other_Widgets/#grid-layout">
+                <img src="/assets/studio/icons/widgets/grid.gif">Grid Layout
+            </a>
+        </td>
     </tr>
     <tr>
-        <td><img src="/assets/studio/icons/widgets/array.gif">Array</td>
-        <td><img src="/assets/studio/icons/widgets/tab.png">Tabbed Container</td>
+        <td>
+            <a href="/docs/studio/Other_Widgets/#array">
+                <img src="/assets/studio/icons/widgets/array.gif">Array
+            </a>
+        </td>
+        <td>
+            <a href="/docs/studio/Other_Widgets/#tabbed-container">
+                <img src="/assets/studio/icons/widgets/tab.png">Tabbed Container
+            </a>
+        </td>
         <td></td>
     </tr>
 </table>
