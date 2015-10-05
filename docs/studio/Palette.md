@@ -131,29 +131,89 @@ These are the default widgets that come with Yamcs Studio. Depending on your spe
 
 <table class="inline image-overview">
     <tr>
-        <td width="33%"><img src="/assets/studio/icons/widgets/actionbutton.gif">Action Button</td>
-        <td width="33%"><img src="/assets/studio/icons/widgets/knob.gif">Knob</td>
-        <td width="33%"><img src="/assets/studio/icons/widgets/imageButton.gif">Image Boolean Button</td>
+        <td width="33%">
+            <a href="/docs/studio/Controls/#action-button">
+                <img src="/assets/studio/icons/widgets/actionbutton.gif">Action Button
+            </a>
+        </td>
+        <td width="33%">
+            <a href="/docs/studio/Controls/#knob">
+                <img src="/assets/studio/icons/widgets/knob.gif">Knob
+            </a>
+        </td>
+        <td width="33%">
+            <a href="/docs/studio/Controls/#image-boolean-button">
+                <img src="/assets/studio/icons/widgets/imageButton.gif">Image Boolean Button
+            </a>
+        </td>
     </tr>
     <tr>
-        <td><img src="/assets/studio/icons/widgets/menubutton.gif">Menu Button</td>
-        <td><img src="/assets/studio/icons/widgets/scrollbar.png">Scrollbar</td>
-        <td><img src="/assets/studio/icons/widgets/checkboxenabledon.gif">Check Box</td>
+        <td>
+            <a href="/docs/studio/Controls/#menu-button">
+                <img src="/assets/studio/icons/widgets/menubutton.gif">Menu Button
+            </a>
+        </td>
+        <td>
+            <a href="/docs/studio/Controls/#scrollbar">
+                <img src="/assets/studio/icons/widgets/scrollbar.png">Scrollbar
+            </a>
+        </td>
+        <td>
+            <a href="/docs/studio/Controls/#check-box">
+                <img src="/assets/studio/icons/widgets/checkboxenabledon.gif">Check Box
+            </a>
+        </td>
     </tr>
     <tr>
-        <td><img src="/assets/studio/icons/widgets/textinput.png">Text Input</td>
-        <td><img src="/assets/studio/icons/widgets/thumbwheel.gif">Thumb Wheel</td>
-        <td><img src="/assets/studio/icons/widgets/radiobutton.gif">Radio Box</td>
+        <td>
+            <a href="/docs/studio/Controls/#text-input">
+                <img src="/assets/studio/icons/widgets/textinput.png">Text Input
+            </a>
+        </td>
+        <td>
+            <a href="/docs/studio/Controls/#thumb-wheel">
+                <img src="/assets/studio/icons/widgets/thumbwheel.gif">Thumb Wheel
+            </a>
+        </td>
+        <td>
+            <a href="/docs/studio/Controls/#radio-box">
+                <img src="/assets/studio/icons/widgets/radiobutton.gif">Radio Box
+            </a>
+        </td>
     </tr>
     <tr>
-        <td><img src="/assets/studio/icons/widgets/Spinner.gif">Spinner</td>
-        <td><img src="/assets/studio/icons/widgets/BoolSwitch.gif">Boolean Switch</td>
-        <td><img src="/assets/studio/icons/widgets/ChoiceButton.png">Choice Button</td>
+        <td>
+            <a href="/docs/studio/Controls/#spinner">
+                <img src="/assets/studio/icons/widgets/Spinner.gif">Spinner
+            </a>
+        </td>
+        <td>
+            <a href="/docs/studio/Controls/#boolean-switch">
+                <img src="/assets/studio/icons/widgets/BoolSwitch.gif">Boolean Switch
+            </a>
+        </td>
+        <td>
+            <a href="/docs/studio/Controls/#choice-button">
+                <img src="/assets/studio/icons/widgets/ChoiceButton.png">Choice Button
+            </a>
+        </td>
     </tr>
     <tr>
-        <td><img src="/assets/studio/icons/widgets/scaled_slider.gif">Scaled Slider</td>
-        <td><img src="/assets/studio/icons/widgets/BoolButton.gif">Boolean Button</td>
-        <td><img src="/assets/studio/icons/widgets/combo.gif">Combo</td>
+        <td>
+            <a href="/docs/studio/Controls/#scaled-slider">
+                <img src="/assets/studio/icons/widgets/scaled_slider.gif">Scaled Slider
+            </a>
+        </td>
+        <td>
+            <a href="/docs/studio/Controls/#boolean-button">
+                <img src="/assets/studio/icons/widgets/BoolButton.gif">Boolean Button
+            </a>
+        </td>
+        <td>
+            <a href="/docs/studio/Controls/#combo">
+                <img src="/assets/studio/icons/widgets/combo.gif">Combo
+            </a>
+        </td>
     </tr>
 </table>
 
