@@ -95,7 +95,7 @@ Note that the color information for alarms is currently not as rich as it could 
 </table>
 
 ### Catalogue
-We limit ourselves to just listing the default widgets. Their runtime behaviour should be fairly straightforward. The various properties are detailed in [Widget Properties](/docs/studio/Widget_Properties/), when we address the OPI Editor.
+We limit ourselves to just listing the default widgets. Their runtime behaviour should be fairly straightforward. The various properties are detailed when we address the [OPI Editor](/docs/studio/Editing_Displays/).
 
 #### Graphics
 

@@ -128,6 +128,26 @@
     }
   }
 
+  .sidebar-link-3 {
+    margin-left: 0;
+    padding-left: 0.5em;
+    display: block;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    text-decoration: none;
+    color: #222;
+    font-size: x-small;
+
+    &:hover {
+      background-color: #efefef;
+    }
+
+    &.active {
+      font-weight: 400;
+      border-left: 2px solid #3e4981;
+    }
+  }
+
   .sidebar-item-2 {
     /*font-weight: bold;*/
     color: #222;
@@ -140,6 +160,19 @@
     &.active {
       font-weight: 400;
       border-left: 2px solid #3e4981;
+    }
+  }
+
+  .sidebar-item-3 {
+    color: #222;
+    display: block;
+    font-size: x-small;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+
+    &.active {
+      font-weight: 400;
+      /*border-left: 2px solid #3e4981;*/
     }
   }
 

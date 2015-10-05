@@ -18,6 +18,12 @@
     - url: /docs/studio/OPI_Editor_Perspective/
     - url: /docs/studio/Resource_Management/
     - url: /docs/studio/Widget_Properties/
+    - url: /docs/studio/Palette/
+      items:
+        - url: /docs/studio/Graphics/
+        - url: /docs/studio/Monitors/
+        - url: /docs/studio/Controls/
+        - url: /docs/studio/Other_Widgets/
     - url: /docs/studio/Rules_&_Scripts/
     - url: /docs/studio/Theming/
 
