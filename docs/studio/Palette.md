@@ -4,7 +4,7 @@ sidebar: yes
 permalink: /docs/studio/Palette/
 ---
 
-This documents the default widgets that come with Yamcs Studio. Depending on your particular version of Yamcs Studio you may have additional widgets at your disposal.
+These are the default widgets that come with Yamcs Studio. Depending on your specific version of Yamcs Studio you may have less or more widgets at your disposal.
 
 #### Graphics
 
@@ -122,7 +122,11 @@ This documents the default widgets that come with Yamcs Studio. Depending on you
         <td width="33%"><img src="/assets/studio/icons/widgets/SashContainer.png">Sash Container</td>
     </tr>
     <tr>
-        <td><img src="/assets/studio/icons/widgets/web_browser.png">Web Browser</td>
+        <td>
+            <a href="/docs/studio/Other_Widgets/#web-browser">
+                <img src="/assets/studio/icons/widgets/web_browser.png">Web Browser
+            </a>
+        </td>
         <td><img src="/assets/studio/icons/widgets/linkingcontainer.png">Linking Container</td>
         <td><img src="/assets/studio/icons/widgets/grid.gif">Grid Layout</td>
     </tr>
