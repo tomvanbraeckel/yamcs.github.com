@@ -10,7 +10,7 @@ Yamcs Studio is composed out of multiple views that are arranged together in a p
 {:toc}
 
 ### Views
-Views all share the same user interface organization. On the left you see a tab with the view icon, followed by a title, and then a close icon On the outer right there are actions to ![Minimize](/assets/studio/view-minimize.png){: .inline-image} **Minimize** or  ![Maximize](/assets/studio/view-maximize.png){: .inline-image} **Maximize** the view. Some views (such as the one in the screenshot) also have a third pull-down icon ![Pulldown](/assets/studio/view-pulldown.png){: .inline-image} with view-specific actions in it. Most views, though, add dedicated colored icons next to the standard icons. The pull-down menu is used to hide less-often used actions.
+Views all share the same user interface organization. On the left you see a tab with the view icon, followed by a title, and then a close icon. On the outer right there are actions to ![Minimize](/assets/studio/view-minimize.png){: .inline-image} **Minimize** or  ![Maximize](/assets/studio/view-maximize.png){: .inline-image} **Maximize** the view. Some views (such as the one in the screenshot) also have a third pull-down icon ![Pulldown](/assets/studio/view-pulldown.png){: .inline-image} with view-specific actions in it. Most views, though, add dedicated colored icons next to the standard icons. The pull-down menu is used to hide less-often used actions.
 
 ![A View](/assets/studio/a-view.png){: .center-image }
 

@@ -59,4 +59,5 @@ But at runtime, with 3 columns, it renders like this:
 ![Run Grid Layout](/assets/studio/grid-layout-run.png){: .center-image }
 
 The order of the container's children is important for this layout, and can be modified in the **Outline** view.
+
 ![Grid Layout Outline](/assets/studio/grid-layout-outline.png){: .center-image }

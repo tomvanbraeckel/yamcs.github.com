@@ -68,7 +68,6 @@
   border-right: 1px solid #e8e8e8;
 
   li > a {
-    overflow: hidden;
     text-overflow: ellipsis;
   }
 
@@ -129,9 +128,8 @@
   }
 
   .sidebar-link-3 {
-    margin-left: 0;
-    padding-left: 0.5em;
     display: block;
+    padding-left: 0.5em;
     padding-top: 0.3em;
     padding-bottom: 0.3em;
     text-decoration: none;
@@ -167,12 +165,12 @@
     color: #222;
     display: block;
     font-size: x-small;
+    padding-left: 0.5em;
     padding-top: 0.3em;
     padding-bottom: 0.3em;
 
     &.active {
       font-weight: 400;
-      /*border-left: 2px solid #3e4981;*/
     }
   }
 
@@ -185,6 +183,10 @@
 
   ul.items > li > ul {
     list-style-image: url('/assets/chevron-right.png');
+
+    li.active {
+      list-style-image: url('/assets/chevron-right-active.png');
+    }
   }
 
   .sidebar-item.collapsed ul.items {
