@@ -15,8 +15,7 @@ Launch the <tt>Yamcs Studio</tt> executable from a terminal window while redirec
 
 #### Mac OS X
 
-With Terminal navigate into the Yamcs Studio application bundle and launch <tt>./Yamcs Studio</tt> directly
-from there while redirecting all output to a file named <tt>log.txt</tt>. For example:
+With Terminal navigate into the Yamcs Studio application bundle and launch <tt>./Yamcs Studio</tt> directly from there while redirecting all output to a file named <tt>log.txt</tt>. For example:
 
     cd Yamcs\ Studio.app/Contents/MacOS
     ./Yamcs\ Studio >log.txt 2>&1

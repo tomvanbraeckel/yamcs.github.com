@@ -32,22 +32,23 @@ function compose_pdf() {
     # There's a few more things to try. wkhtmltopdf renders to a 800x600 viewport, we could
     # try increasing that, in hopes to get around some bad internal image resizing function.
     # (most of our images are automatically css-resized to 100% of the available width)
+    #--disable-internal-links \
     wkhtmltopdf \
         --title "$TITLE" \
         --quiet \
+        --page-size A4 \
         --margin-top 20mm \
         --margin-bottom 20mm \
         --margin-left 20mm \
         --margin-right 20mm \
-        --image-quality 1200 \
-        --image-dpi 1800 \
+        --image-quality 2000 \
+        --image-dpi 18000 \
         toc \
         --exclude-from-outline \
         --disable-smart-shrinking \
         --xsl-style-sheet toc.xsl \
         "$BASEURL/pdf/content/" \
         --disable-smart-shrinking \
-        --disable-internal-links \
         --disable-external-links \
         --footer-html "$BASEURL/pdf/pagefooter/" \
         --print-media-type \

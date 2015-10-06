@@ -42,12 +42,27 @@ h3.toc.nocount:before {
   counter-increment: none;
 }
 
+h4 {
+  font-weight: bold;
+}
+
 pre {
   white-space: pre-wrap;
   overflow: hidden;
 }
 
 @media print {
+  html {
+    /* 122mm when not justifying */
+    width: 132mm; /* Magic number.. Should be 210, maybe minus margins, but that causes clipping. needs tests. */
+    /*height: 297mm;*/
+  }
+
+  body {
+    /* interesting. using this property actually means that i need to adjust the above magic number */
+    text-align: justify;
+  }
+
   .newpage {
     page-break-before: always;
   }
@@ -57,17 +72,18 @@ pre {
     /*line-height: 1.5em;*/
   }
 
-  tt {
-    font-size: 11px;
-  }
-
   strong {
-    font-size: 11px;
     font-weight: bold;
+    white-space: nowrap;
   }
 
   table, tr, td, th, tbody, thead, tfoot, .hint {
     page-break-inside: avoid !important;
+  }
+
+  a {
+    color: black !important;
+    text-decoration: none !important;
   }
 }
 
@@ -76,7 +92,6 @@ pre {
 }
 
 a {
-  text-decoration: none;
   color: #3e4982;
 }
 

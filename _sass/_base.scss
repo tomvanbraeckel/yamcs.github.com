@@ -119,126 +119,6 @@ h4 {
   font-weight: 600;
 }
 
-.wrapper {
-  max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-  max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: $spacing-unit;
-  padding-left: $spacing-unit;
-  @extend %clearfix;
-
-  @include media-query($on-laptop) {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-    padding-right: $spacing-unit / 2;
-    padding-left: $spacing-unit / 2;
-  }
-}
-
-.container {
-  /*font: 16px "Helvetica Neue", Helvetica, Arial, sans-serif;*/
-  position: relative;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 5px 10px;
-
-  &.small {
-    max-width: 700px;
-  }
-}
-
-.container .brand {
-  position: relative;
-  /*padding-left: 360px;*/
-  padding-left: 230px;
-  /*margin-left: auto;
-  margin-right: auto;
-  padding-left: $spacing-unit;
-  padding-right: $spacing-unit;*/
-  min-height: 310px;
-}
-
-.container .brand .logo {
-  display: block;
-  position: absolute;
-  left: -20px;
-  top: 20px;
-  border: 0;
-}
-
-.container .brand h1 {
-  font-weight: bold;
-  letter-spacing: -0.04em;
-  display: inline-block;
-  margin: 0;
-  color: #3e4981;
-  font-size: 100px;
-  line-height: 1;
-  padding-top: 60px;
-}
-
-.container .brand h3 {
-  font-weight: bold;
-  letter-spacing: -0.04em;
-  margin: 0 0 30px;
-  font-size: 48px;
-  line-height: 1;
-  color: #222;
-}
-
-.nav {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.yamcs-header {
-  position: absolute;
-  left: 40px; /* separate with image */
-  top: -10px - 10px  + (48px - 10px - 10px - 10px - 10px);
-
-  a {
-    text-decoration: none;
-  }
-
-  a.hover {
-    text-decoration: none;
-  }
-
-  h3 {
-    display: inline;
-    font-size: 30px;
-    line-height: 48px;
-    font-weight: bold;
-    color: #3e4981;
-  }
-}
-
-.network-nav {
-  font-weight: bold;
-  font-size: 16px;
-  position: relative;
-  display: inline;
-  float: right;
-  z-index: 2; /* to capture clicks from under brand */
-}
-
-.network-nav li {
-  display: inline;
-}
-
-.network-nav a {
-  color: #222;
-  font-weight: 300;
-  padding: 0.2em 15px;
-  border-radius: 4px;
-
-  &.special {
-    /*background-color: #bada55;*/
-  }
-}
-
 .left {
   float: left;
 }
@@ -247,10 +127,37 @@ h4 {
   float: right;
 }
 
-.main {
+.center-image {
+  margin: 0 auto;
+  display: block;
+}
 
-  &.with-sidebar {
-    margin-left: 230px;
+.toc {
+  ol {
+    list-style-type: none;
+    counter-reset: item;
+    margin: 0;
+    padding: 0;
+  }
+
+  ol > li {
+    display: table;
+    counter-increment: item;
+    margin-bottom: 0.6em;
+  }
+
+  ol > li:before {
+    content: counters(item, ".") ". ";
+    display: table-cell;
+    padding-right: 0.6em;
+  }
+
+  li ol > li {
+    margin: 0;
+  }
+
+  li ol > li:before {
+    content: counters(item, ".") " ";
   }
 }
 
@@ -263,16 +170,56 @@ h4 {
   }
 }
 
-.icon {
+.inline-image {
+  vertical-align: top;
+  padding-left: 5px;
+}
 
-  > svg {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    vertical-align: middle;
+.hint {
+  background: url('/assets/idea.png') 5px 5px no-repeat;
+  /*background-size: 20px;*/
+  border-top: 1px solid #eef;
+  border-bottom: 1px solid #eef;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 40px;
+  margin-left: 0.5em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  font-size: smaller;
+  min-height: 30px;
+}
 
-    path {
-      fill: $grey-color;
-    }
+table.inline {
+  border-collapse: collapse;
+  margin-bottom: 15px;
+  width: 100%;
+  th {
+    background-color: #eef;
+    border: 1px solid #e8e8e8;
+    border-radius: 3px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    font-weight: 500;
+    text-align: left;
+    white-space: nowrap;
+  }
+  td {
+    border: 1px solid #e8e8e8;
+    border-radius: 3px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+  th.code, td.code {
+    font-family: monospace;
+  }
+  &.small-contents td {
+    font-size: smaller;
+  }
+  &.nostretch {
+    width: auto;
+  }
+  &.image-overview img {
+    padding-right: 0.5em;
   }
 }
