@@ -16,7 +16,6 @@
         {% endif %}
       {% endif %}
     </title>
-    <!--link rel="stylesheet" href="/css/main.css"-->
     <link rel="stylesheet" href="/css/print2.css">
     <link rel="stylesheet" href="/css/print.css">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
@@ -51,6 +50,22 @@
                       {% endif %}
                     </h2>
                     {{ p.content }}
+
+                    {% for item_j in item.items %}
+                      {% for p_j in site.pages %}
+                        {% if p_j.url == item_j.url %}
+                          <h3 class="{% if forloop.first == false %}newpage{% endif %}">
+                            {% if p_j.title %}
+                              {{ p_j.title }}
+                            {% else %}
+                              {{ p_j.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}
+                            {% endif %}
+                          </h3>
+                          {{ p_j.content }}
+                          {% break %}
+                        {% endif %}
+                      {% endfor %}
+                    {% endfor %}
                     {% break %}
                   {% endif %}
                 {% endfor %}
