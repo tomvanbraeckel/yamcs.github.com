@@ -46,6 +46,8 @@ We can also standardize the size of selected widgets. For example. By clicking *
  
 ![Match Size](/assets/studio/match-size.png){: .center-image }
 
+The size of the last selected widget is taken as the reference. This reference widget is highlighted with black intead of white anchor points.
+
 <div class="hint">
-    Note that in this particular case of non-square LEDs, clicking only <strong>Match Width</strong> was actually sufficient since round LEDs can't take on the shape of an ellipse.
+    Note that in this particular case of non-square LEDs, clicking only <strong>Match Width</strong> would actually have been sufficient since round LEDs can't take on the shape of an ellipse.
 </div>
