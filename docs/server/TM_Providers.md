@@ -6,12 +6,29 @@ sidebar: yes
 
 TM Providers are components that collect data from external sources and inject them into a Yamcs stream. They are defined in the instance configuration file as part of the <tt>tmProviders</tt> list.
 
-Each TM Provider is defined in terms of an identifying name, a class (the java class instantiated by Yamcs to load the provider), a specification (used as an argument when instantiating the class) and the name of the stream where the data will be injected. There is also a property <tt>enabledAtStartup</tt> which allows to enable (default) or disable the TM provider for connecting to the external data source at the server startup.
+Each TM Provider is defined in terms of an identifying name, a class (the java class instantiated by Yamcs to load the provider), a specification (used as an argument when instantiating the class) and the name of the stream where the data will be injected. There is also a property <tt>enabledAtStartup</tt> which allows to enable (default) or disable the TM provider for connecting to the external data source at the server start-up.
+
+
+### TcpTmProvider
+Provides packets received via plain TCP sockets. The packets in CCSDS format are expected one after the other without any delimiter or separator (the length is deduced from the CCSDS header).
+
+The specification consists of a name which selects a configuration defined in the file [etc/tcp.yaml](/docs/server/tcp.yaml/).
+
+In case the TCP connection with the telemetry server cannot be opened or is broken, it retries to connect each 10 seconds.
+
+### TmapTmProvider
+This provider is very similar with the TcpTmProvider above except that it expects packets having an extra 32 bytes PaCTS header followed by the CCSDS header. The PaCTS header is discarded.
+
+
+### MulticastTmProvider
+This provider listens to a multicast (or UDP) port for datagrams containing CCSDS packets.
+
+The specification consists of a name which selects a configuration defined in the file [etc/multicast.yaml](/docs/server/multicast.yaml/).
 
 ### DassPacketProvider
 Receives telemetry packets (PathTM) from DaSS. 
 
-At startup the DassPacketProvider loads configuration properties defined in the configuration file <tt>etc/dass.yaml</tt>. It builds the list of packet specifications which it should subscribe to DaSS. A specification is an object (vehicle id, packet type, apid, private header source). The list is built as follows:
+At  start-up the DassPacketProvider loads configuration properties defined in the configuration file <tt>etc/dass.yaml</tt>. It builds the list of packet specifications which it should subscribe to DaSS. A specification is an object (vehicle id, packet type, apid, private header source). The list is built as follows:
 
 * If the property <tt>tmSubscriptionList</tt> is defined, then it considers only the specifications matching this property.
 * If the property <tt>tmSubscriptionList</tt> is not defined, then all the APIDs defined in the MDB are considered as part of the subscription list with the vehicle id set to 2 (=Columbus), the packet type set to 1 (=payload) and the private header source set to -1 (=all). Please note that this kind of subscription only works when connected to the DaSS kernel not when connected to the USOC router (the USOC router does not support the wildcard subscriptions).
@@ -31,18 +48,3 @@ For the secure connection to work, the file <tt>etc/trustStore</tt> has to be po
 
 This command will import the file <tt>esa_root.crt</tt> into the java key store.
 
-### TcpTmProvider
-Provides packets received via plain TCP sockets. The packets in CCSDS format are expected one after the other without any delimiter or separator (the length is deduced from the CCSDS header).
-
-The specification consists of a name which selects a configuration defined in the file [etc/tcp.yaml](/docs/server/tcp.yaml/).
-
-In case the tcp connection with the telemetry server cannot be opened or is broken, it retries to connect each 10 seconds.
-
-### TmapTmProvider
-This provider is very similar with the TcpTmProvider above except that it expects packets having an extra 32 bytes PaCTS header followed by the CCSDS header. The PaCTS header is discarded.
-
-
-### MulticastTmProvider
-This provider listens to a multicast (or UDP) port for datagrams containing CCSDS packets.
-
-The specification consists of a name which selects a configuration defined in the file [etc/multicast.yaml](/docs/server/multicast.yaml/).

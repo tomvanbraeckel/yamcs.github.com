@@ -85,12 +85,12 @@ The starting configuration file is <tt>etc/yamcs.yaml</tt>. It contains a list o
 
 The logging level is configured  in [etc/logging.yamcs-server.properties](/docs/server/logging.yamcs-server.properties).
 
-#### Updating
+#### Upgrading
 Upgrading is done using the rpm command:
 
     rpm -U yamcs-version.noarch.rpm
 
-If a configuration file (in the <tt>etc</tt> directory) has been updated with regard to the previous installed version, the old files will be saved with the extension <tt>.rpmsave</tt>. The user then has to inspect the difference between the two version and to implement the newly added options into the old configuration files.
+If a configuration file (in the <tt>etc</tt> directory) has been updated with regard to the previous installed version, the old files will be saved with the extension <tt>.rpmsave</tt>. The user then has to inspect the difference between the two versions and to implement the newly added options into the old configuration files.
 
 
 #### Removing

@@ -70,10 +70,10 @@ Being able to split the code in different user libraries is merely a user conven
 #### Algorithm Scope
 User algorithms themselves have each their own scope. This scope is safe with regards to other algorithms (i.e. variables defined in algorithm *a* will not leak to algorithm *b*.
 
-An algorithm's scope, however, will be shared accross multiple algorithm runs. This feature allows you to keep variables inside internal memory if needed. Do take caution with initializing your variables correctly at the beginning of your algorithm if you only update them under a certain set of conditions (unless of course you intend them to keep their value across runs).
+An algorithm's scope, however, will be shared across multiple algorithm runs. This feature allows you to keep variables inside internal memory if needed. Do take caution with initializing your variables correctly at the beginning of your algorithm if you only update them under a certain set of conditions (unless of course you intend them to keep their value across runs).
 
 #### Sharing State
-If some kind of a shared state is required between multiple algorithms, the user libraries's shared scope could be (ab)used for this. In many cases, the better solution would be to just output a parameter from one algorithm, and input it into another. Yamcs will automatically detect such dependencies, and will execute algorithms in the correct order.
+If some kind of a shared state is required between multiple algorithms, the user libraries' shared scope could be (ab)used for this. In many cases, the better solution would be to just output a parameter from one algorithm, and input it into another. Yamcs will automatically detect such dependencies, and will execute algorithms in the correct order.
         
 #### Historic Values
 With what has been described so far, it would already be possible to store values in an algorithm's scope and perform windowing operations, such as averages. Yamcs goes a step further by allowing you to input a particular *instance* of a parameter. By default instance *0* is inputted, which means the parameter's actual value. But you could also define instance *-1* for inputting the parameter's value as it was on the previous parameter update. If you define input parameters for, say, each of the instances *-4*, *-3*, *-2*, *-1* and *0*, your user algorithm could be just a simple oneliner, since Yamcs is taking care of the administration.

@@ -18,7 +18,7 @@ Based on the CCU parameters and on the opsname of the testConfiguration (the tes
 
 Please refer to [Telemetry Processing](/docs/server/Telemetry_Processing/) and to [Commanding](/docs/server/Commanding) for details on the loading of the MDB end items and on the mapping to Yamcs structures.
 
-The configuration parameter <tt>checkForUpdatedMdb</tt> configures Yamcs to check or not the Oracle database for modified versions of the MDB. If the MDB can not be loaded from the serialized file, the Oracle database is checked nevertheless.
+The configuration parameter <tt>checkForUpdatedMdb</tt> configures Yamcs to check or not the Oracle database for modified versions of the MDB. If the MDB cannot be loaded from the serialized file, the Oracle database is checked nevertheless.
 
 This option is useful for working offline. However if it is set to false, Yamcs will never read new versions of the database, and if the database is modified and SCOE files generated, MCS Tools will refuse to load the SCOE files (it will want old ones corresponding to the saved Yamcs database).
 
@@ -59,4 +59,4 @@ The loader is configured in [etc/mdb.yaml](/docs/server/mdb.yaml/). Specify the 
 #### XTCE files
 This loader reads an MDB saved in XML format compliant with the XTCE specification. For more information about XTCE, see [http://www.xtce.org](http://www.xtce.org).
 
-The loader is configured in [etc/mdb.yaml](/docs/server/mdb.yaml/) for a sample configuration). Specify the 'type' as <tt>xtce</tt>, and provide the location of the XML file in the <tt>spec</tt> attribute.
+The loader is configured in [etc/mdb.yaml](/docs/server/mdb.yaml/). Specify the 'type' as <tt>xtce</tt>, and provide the location of the XML file in the <tt>spec</tt> attribute.
