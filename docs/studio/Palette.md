@@ -4,53 +4,55 @@ sidebar: yes
 permalink: /docs/studio/Palette/
 ---
 
-These are the default widgets that come with Yamcs Studio. Depending on your specific version of Yamcs Studio you may have less or more widgets at your disposal.
+The Palette is a fold-out zone of the [Editor Area](/docs/studio/Editor_Area/) that contains the widgets bundled with your version of Yamcs Studio, which may contain less or more widgets than the default widgets documented below.
+
+Widgets come in all different kinds, and are grouped in four different categories.
 
 #### Graphics
 
 <table class="inline image-overview">
     <tr>
         <td width="33%">
-            <a href="/docs/studio/Graphics/#arc">
+            <a href="/docs/studio/Graphic_Widgets/#arc">
                 <img src="/assets/studio/icons/widgets/arc.png">Arc
             </a>
         </td>
         <td width="33%">
-            <a href="/docs/studio/Graphics/#rectangle">
+            <a href="/docs/studio/Graphic_Widgets/#rectangle">
                 <img src="/assets/studio/icons/widgets/rectangle2.png">Rectangle
             </a>
         </td>
         <td width="33%">
-            <a href="/docs/studio/Graphics/#label">
+            <a href="/docs/studio/Graphic_Widgets/#label">
                 <img src="/assets/studio/icons/widgets/label.png">Label
             </a>
         </td>
     </tr>
     <tr>
         <td>
-            <a href="/docs/studio/Graphics/#polyline">
+            <a href="/docs/studio/Graphic_Widgets/#polyline">
                 <img src="/assets/studio/icons/widgets/polyline.gif">Polyline
             </a>
         </td>
         <td>
-            <a href="/docs/studio/Graphics/#rounded-rectangle">
+            <a href="/docs/studio/Graphic_Widgets/#rounded-rectangle">
                 <img src="/assets/studio/icons/widgets/roundedRectangle.png">Rounded Rectangle
             </a>
         </td>
         <td>
-            <a href="/docs/studio/Graphics/#image">
+            <a href="/docs/studio/Graphic_Widgets/#image">
                 <img src="/assets/studio/icons/widgets/image.gif">Image
             </a>
         </td>
     </tr>
     <tr>
         <td>
-            <a href="/docs/studio/Graphics/#polygon">
+            <a href="/docs/studio/Graphic_Widgets/#polygon">
                 <img src="/assets/studio/icons/widgets/polygon.png">Polygon
             </a>
         </td>
         <td>
-            <a href="/docs/studio/Graphics/#ellipse">
+            <a href="/docs/studio/Graphic_Widgets/#ellipse">
                 <img src="/assets/studio/icons/widgets/ellipse2.png">Ellipse
             </a>
         </td>
@@ -63,63 +65,63 @@ These are the default widgets that come with Yamcs Studio. Depending on your spe
 <table class="inline image-overview">
     <tr>
         <td width="33%">
-            <a href="/docs/studio/Monitors/#led">
+            <a href="/docs/studio/Monitor_Widgets/#led">
                 <img src="/assets/studio/icons/widgets/LED.png">LED
             </a>
         </td>
         <td width="33%">
-            <a href="/docs/studio/Monitors/#progress-bar">
+            <a href="/docs/studio/Monitor_Widgets/#progress-bar">
                 <img src="/assets/studio/icons/widgets/ProgressBar.gif">Progress Bar
             </a>
         </td>
         <td width="33%">
-            <a href="/docs/studio/Monitors/#xy-graph">
+            <a href="/docs/studio/Monitor_Widgets/#xy-graph">
                 <img src="/assets/studio/icons/widgets/XYGraph.gif">XY Graph
             </a>
         </td>
     </tr>
     <tr>
         <td>
-            <a href="/docs/studio/Monitors/#image-boolean-indicator">
+            <a href="/docs/studio/Monitor_Widgets/#image-boolean-indicator">
                 <img src="/assets/studio/icons/widgets/imageBooleanIndicator.gif">Image Boolean Indicator
             </a>
         </td>
         <td>
-            <a href="/docs/studio/Monitors/#gauge">
+            <a href="/docs/studio/Monitor_Widgets/#gauge">
                 <img src="/assets/studio/icons/widgets/gauge2.png">Gauge
             </a>
         </td>
         <td>
-            <a href="/docs/studio/Monitors/#intensity-graph">
+            <a href="/docs/studio/Monitor_Widgets/#intensity-graph">
                 <img src="/assets/studio/icons/widgets/intensityGraph.png">Intensity Graph
             </a>
         </td>
     </tr>
     <tr>
         <td>
-            <a href="/docs/studio/Monitors/#text-update">
+            <a href="/docs/studio/Monitor_Widgets/#text-update">
                 <img src="/assets/studio/icons/widgets/textUpdate.png">Text Update
             </a>
         </td>
         <td>
-            <a href="/docs/studio/Monitors/#thermometer">
+            <a href="/docs/studio/Monitor_Widgets/#thermometer">
                 <img src="/assets/studio/icons/widgets/thermo.gif">Thermometer
             </a>
         </td>
         <td>
-            <a href="/docs/studio/Monitors/#byte-monitor">
+            <a href="/docs/studio/Monitor_Widgets/#byte-monitor">
                 <img src="/assets/studio/icons/widgets/ByteMonitor.png">Byte Monitor
             </a>
         </td>
     </tr>
     <tr>
         <td>
-            <a href="/docs/studio/Monitors/#meter">
+            <a href="/docs/studio/Monitor_Widgets/#meter">
                 <img src="/assets/studio/icons/widgets/XMeter.png">Meter
             </a>
         </td>
         <td>
-            <a href="/docs/studio/Monitors/#tank">
+            <a href="/docs/studio/Monitor_Widgets/#tank">
                 <img src="/assets/studio/icons/widgets/tank.png">Tank
             </a>
         </td>
@@ -132,85 +134,85 @@ These are the default widgets that come with Yamcs Studio. Depending on your spe
 <table class="inline image-overview">
     <tr>
         <td width="33%">
-            <a href="/docs/studio/Controls/#action-button">
+            <a href="/docs/studio/Control_Widgets/#action-button">
                 <img src="/assets/studio/icons/widgets/actionbutton.gif">Action Button
             </a>
         </td>
         <td width="33%">
-            <a href="/docs/studio/Controls/#knob">
+            <a href="/docs/studio/Control_Widgets/#knob">
                 <img src="/assets/studio/icons/widgets/knob.gif">Knob
             </a>
         </td>
         <td width="33%">
-            <a href="/docs/studio/Controls/#image-boolean-button">
+            <a href="/docs/studio/Control_Widgets/#image-boolean-button">
                 <img src="/assets/studio/icons/widgets/imageButton.gif">Image Boolean Button
             </a>
         </td>
     </tr>
     <tr>
         <td>
-            <a href="/docs/studio/Controls/#menu-button">
+            <a href="/docs/studio/Control_Widgets/#menu-button">
                 <img src="/assets/studio/icons/widgets/menubutton.gif">Menu Button
             </a>
         </td>
         <td>
-            <a href="/docs/studio/Controls/#scrollbar">
+            <a href="/docs/studio/Control_Widgets/#scrollbar">
                 <img src="/assets/studio/icons/widgets/scrollbar.png">Scrollbar
             </a>
         </td>
         <td>
-            <a href="/docs/studio/Controls/#check-box">
+            <a href="/docs/studio/Control_Widgets/#check-box">
                 <img src="/assets/studio/icons/widgets/checkboxenabledon.gif">Check Box
             </a>
         </td>
     </tr>
     <tr>
         <td>
-            <a href="/docs/studio/Controls/#text-input">
+            <a href="/docs/studio/Control_Widgets/#text-input">
                 <img src="/assets/studio/icons/widgets/textinput.png">Text Input
             </a>
         </td>
         <td>
-            <a href="/docs/studio/Controls/#thumb-wheel">
+            <a href="/docs/studio/Control_Widgets/#thumb-wheel">
                 <img src="/assets/studio/icons/widgets/thumbwheel.gif">Thumb Wheel
             </a>
         </td>
         <td>
-            <a href="/docs/studio/Controls/#radio-box">
+            <a href="/docs/studio/Control_Widgets/#radio-box">
                 <img src="/assets/studio/icons/widgets/radiobutton.gif">Radio Box
             </a>
         </td>
     </tr>
     <tr>
         <td>
-            <a href="/docs/studio/Controls/#spinner">
+            <a href="/docs/studio/Control_Widgets/#spinner">
                 <img src="/assets/studio/icons/widgets/Spinner.gif">Spinner
             </a>
         </td>
         <td>
-            <a href="/docs/studio/Controls/#boolean-switch">
+            <a href="/docs/studio/Control_Widgets/#boolean-switch">
                 <img src="/assets/studio/icons/widgets/BoolSwitch.gif">Boolean Switch
             </a>
         </td>
         <td>
-            <a href="/docs/studio/Controls/#choice-button">
+            <a href="/docs/studio/Control_Widgets/#choice-button">
                 <img src="/assets/studio/icons/widgets/ChoiceButton.png">Choice Button
             </a>
         </td>
     </tr>
     <tr>
         <td>
-            <a href="/docs/studio/Controls/#scaled-slider">
+            <a href="/docs/studio/Control_Widgets/#scaled-slider">
                 <img src="/assets/studio/icons/widgets/scaled_slider.gif">Scaled Slider
             </a>
         </td>
         <td>
-            <a href="/docs/studio/Controls/#boolean-button">
+            <a href="/docs/studio/Control_Widgets/#boolean-button">
                 <img src="/assets/studio/icons/widgets/BoolButton.gif">Boolean Button
             </a>
         </td>
         <td>
-            <a href="/docs/studio/Controls/#combo">
+            <a href="/docs/studio/Control_Widgets/#combo">
                 <img src="/assets/studio/icons/widgets/combo.gif">Combo
             </a>
         </td>

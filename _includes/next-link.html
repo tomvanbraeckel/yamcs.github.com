@@ -1,6 +1,10 @@
 {% assign grabnext=false %}
 {% assign nextitem=false %}
 {% for p in structure %}
+  {% if nextitem %}
+    {% break %}
+  {% endif %}
+
   {% if grabnext %}
     {% if nextitem==false %}
       {% assign nextpage=p %}
@@ -12,6 +16,10 @@
     {% assign grabnext=true %}
   {% endif %}
   {% for item_i in p.items %}
+    {% if nextitem %}
+      {% break %}
+    {% endif %}
+
     {% if grabnext %}
       {% assign nextitem=item_i %}
       {% break %}
@@ -19,6 +27,19 @@
     {% if item_i.url == page.url %}
       {% assign grabnext=true %}
     {% endif %}
+    {% for item_j in item_i.items %}
+      {% if nextitem %}
+        {% break %}
+      {% endif %}
+
+      {% if grabnext %}
+        {% assign nextitem=item_j %}
+        {% break %}
+      {% endif %}
+      {% if item_j.url == page.url %}
+        {% assign grabnext=true %}
+      {% endif %}
+    {% endfor %}
   {% endfor %}
 {% endfor %}
 

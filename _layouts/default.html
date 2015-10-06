@@ -55,7 +55,11 @@
                     {% for p in site.pages %}
                       {% if p.url == item_i.url %}
                         <li>
-                          <a href="{{ p.url }}">{{ p.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}</a>
+                          {% if p.title %}
+                            <a href="{{ p.url }}">{{ p.title }}</a>
+                          {% else %}
+                            <a href="{{ p.url }}">{{ p.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}</a>
+                          {% endif %}
                         </li>
                         {% break %}
                       {% endif %}
@@ -65,6 +69,34 @@
                 {% endif %}
               {% endfor %}
             </div>
+          {% endif %}
+
+          {% if page.section %}
+          <div class="chaptertoc">
+            In this section:<br>
+            {% for chapter in structure %}
+              <ul>
+              {% for item_i in chapter.items %}
+                {% if item_i.url == page.url %}
+                  {% for item_j in item_i.items %}
+                    {% for p in site.pages %}
+                      {% if p.url == item_j.url %}
+                        <li>
+                          {% if p.title %}
+                            <a href="{{ p.url }}">{{ p.title }}</a>
+                          {% else %}
+                            <a href="{{ p.url }}">{{ p.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}</a>
+                          {% endif %}
+                        </li>
+                        {% break %}
+                      {% endif %}
+                    {% endfor %}
+                  {% endfor %}
+                {% endif %}
+              {% endfor %}
+              </ul>
+            {% endfor %}
+          </div>
           {% endif %}
 
           <p>&nbsp;</p>

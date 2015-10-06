@@ -8,22 +8,23 @@
 
 - url: /docs/studio/Running_Displays/
   items:
-    - url: /docs/studio/OPI_Runtime_Perspective/
     - url: /docs/studio/Processed_Variables/
     - url: /docs/studio/Widgets/
     - url: /docs/studio/Inspector_Windows/
 
 - url: /docs/studio/Editing_Displays/
   items:
-    - url: /docs/studio/OPI_Editor_Perspective/
-    - url: /docs/studio/Resource_Management/
-    - url: /docs/studio/Widget_Properties/
+    - url: /docs/studio/Navigator/
+    - url: /docs/studio/Editor_Area/
+    - url: /docs/studio/Outline/
+    - url: /docs/studio/Properties/
     - url: /docs/studio/Palette/
       items:
-        - url: /docs/studio/Graphics/
-        - url: /docs/studio/Monitors/
-        - url: /docs/studio/Controls/
+        - url: /docs/studio/Graphic_Widgets/
+        - url: /docs/studio/Monitor_Widgets/
+        - url: /docs/studio/Control_Widgets/
         - url: /docs/studio/Other_Widgets/
+    - url: /docs/studio/Actions/
     - url: /docs/studio/Rules_&_Scripts/
     - url: /docs/studio/Theming/
 
