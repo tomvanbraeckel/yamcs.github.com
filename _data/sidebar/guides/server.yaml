@@ -2,6 +2,8 @@
   items:
     - url: /docs/server/Fundamentals/
     - url: /docs/server/Installation/
+    - url: /docs/server/Acronyms/
+
 
 - url: /docs/server/Data_Links/
   items:
