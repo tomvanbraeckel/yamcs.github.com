@@ -4,7 +4,7 @@ sidebar: yes
 permalink: /docs/studio/Understanding_the_User_Interface/
 ---
 
-Yamcs Studio is composed out of multiple views that are arranged together in a perspective. The user has great flexibility in modifying the default arrangement to his liking.
+Yamcs Studio is composed out of multiple views that are arranged together in a perspective. The user has great flexibility in modifying the default arrangement.
 
 * TOC
 {:toc}

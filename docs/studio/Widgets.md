@@ -148,7 +148,7 @@ We limit ourselves to just listing the default widgets. Their runtime behaviour 
 
 <table class="inline image-overview">
     <tr>
-        <td width="33%"><img src="/assets/studio/icons/widgets/actionbutton.gif">Action Button</td>
+        <td width="33%"><img src="/assets/studio/icons/widgets/actionbutton.gif">Action Button&#178;</td>
         <td width="33%"><img src="/assets/studio/icons/widgets/knob.gif">Knob</td>
         <td width="33%"><img src="/assets/studio/icons/widgets/imageButton.gif">Image Boolean Button</td>
     </tr>
@@ -173,6 +173,8 @@ We limit ourselves to just listing the default widgets. Their runtime behaviour 
         <td><img src="/assets/studio/icons/widgets/combo.gif">Combo</td>
     </tr>
 </table>
+
+&#178; Action Buttons are often used to open other displays. Whether this opens in a new tab or in the same tab depends on how the display author constructed the display. Override the default by right-clicking the Action Button.
 
 #### Others
 
