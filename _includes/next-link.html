@@ -6,10 +6,9 @@
   {% endif %}
 
   {% if grabnext %}
-    {% if nextitem==false %}
-      {% assign nextpage=p %}
+    {% if nextitem == false %}
+      {% assign nextitem=p %}
     {% endif %}
-    {% break %}
   {% endif %}
 
   {% if p.url == page.url %}

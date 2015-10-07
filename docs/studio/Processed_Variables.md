@@ -44,8 +44,13 @@ The PV Name for parameters is the fully qualified XTCE name as specified in the 
 
 Example PV Names:
 
-* <tt>/YSS/SIMULATOR/BatteryVoltage1</tt><br>Short for <tt>para:///YSS/SIMULATOR/BatteryVoltage1</tt>
-* <tt>/YSS/SIMULATOR/BatteryTemperature1</tt><br>Short for <tt>para:///YSS/SIMULATOR/BatteryTemperature1</tt>
+* <tt>para:///YSS/SIMULATOR/BatteryVoltage1</tt>
+* <tt>para:///YSS/SIMULATOR/BatteryTemperature1</tt>
+
+Or simply:
+
+* <tt>/YSS/SIMULATOR/BatteryVoltage1</tt>
+* <tt>/YSS/SIMULATOR/BatteryTemperature1</tt>
 
 In these examples <tt>YSS</tt> is the name of the root space system. <tt>SIMULATOR</tt> is the name of the space system directly below, which defines both measurements <tt>BatteryVoltage1</tt> and <tt>BatteryTemperature1</tt>.
 
@@ -54,12 +59,16 @@ Same concept as a Parameter, but has additional support for writing values from 
 
 Remark that software parameters are not currently archived by Yamcs Server, and will therefore be reset when Yamcs is restarted.
 
+Example PV Name:
+
+* <tt>sw:///YSS/SIMULATOR/some-software-param</tt>
+
 ### Simulated Values
 Locally generated simulation data. Mainly useful during testing, or in combination with other PVs using formulas. Full documentation is upcoming. For now please have a look at the sample operator displays in the YSS projects.
 
 Example PV Names:
 
-* <tt>sim://ramp(0, 1, 1, 0.5)</tt>
+* <tt>sim://ramp(0,1,1,0.5)</tt>
 * <tt>sim://const(4)</tt>
 * <tt>sim://noise</tt>
 * <tt>sim://sine</tt>
