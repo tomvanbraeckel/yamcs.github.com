@@ -4,98 +4,12 @@ sidebar: yes
 permalink: /docs/studio/Widgets/
 ---
 
-Most widgets are backed by a PV. Some widgets (e.g. layouting widgets) are typically not connected to a PV, other widgets (e.g. charts) can be backed by more than one PV.
+A display is a container for widgets.
 
-### Color Decorations
-When a widget is backed by a PV, it will be decorated according to its runtime state. The specific colors of these decorations can vary since the default colors can be overridden (or disabled) by the display author.
+Most widgets are backed by a PV. Some widgets (e.g. layouting widgets) are typically not connected to a PV. Other widgets (e.g. charts) can be backed by more than one PV.
 
-<table class="inline">
-    <tr>
-        <th>State</th>
-        <th>Decoration</th>
-    </tr>
-    <tr>
-        <td>Connected</td>
-        <td>No decorations</td>
-    </tr>
-    <tr>
-        <td style="white-space: nowrap;">Connected, but no value (yet)</td>
-        <td>Dashed pink border around the widget</td>
-    </tr>
-    <tr>
-        <td>Disconnected</td>
-        <td>
-            Solid pink border around the widget and the label 'Disconnected' in the top left corner (space-permitting)
-        </td>
-    </tr>
-    <tr>
-        <td>Expired</td>
-        <td>
-            Blinking solid pink border around the widget 
-        </td>
-    </tr>
-    <tr>
-        <td>Minor Alarm</td>
-        <td>Solid orange border around the widget</td>
-    </tr>
-    <tr>
-        <td>Major Alarm</td>
-        <td>Solid red border around the widget</td>
-    </tr>
-</table>
-
-Note that the color information for alarms is currently not as rich as it could be. Yamcs parameters support five different levels of alarms, as well as a range of special monitoring values. This information is for now transformed using the following mapping:
-
-<table class="inline nostretch">
-    <tr>
-        <th>Yamcs Server</th>
-        <th style="text-align: center;" width="200">Yamcs Studio</th>
-    </tr>
-    <tr>
-        <td>
-            WATCH<br>
-            WATCH_LOW<br>
-            WATCH_HIGH
-        </td>
-        <td rowspan="3" style="text-align: center;">
-            MINOR
-        </td>
-    </tr>
-    <tr>
-        <td>
-            WARNING<br>
-            WARNING_LOW<br>
-            WARNING_HIGH
-        </td>
-    </tr>
-    <tr>
-        <td>
-            DISTRESS<br>
-            DISTRESS_LOW<br>
-            DISTRESS_HIGH
-        </td>
-    </tr>
-    <tr>
-        <td>
-            CRITICAL<br>
-            CRITICAL_LOW<br>
-            CRITICAL_HIGH
-        </td>
-        <td rowspan="2" style="text-align: center;">
-            MAJOR
-        </td>
-    </tr>
-    <tr>
-        <td>
-            SEVERE<br>
-            SEVERE_LOW<br>
-            SEVERE_HIGH
-        </td>
-    </tr>
-</table>
-
-### Catalogue
-We limit ourselves to just listing the default widgets. Their runtime behaviour should be fairly straightforward. The various properties are detailed when we address the [OPI Editor](/docs/studio/Editing_Displays/).
+### Catalogue of Widgets
+The default widgets in Yamcs Studio are listed below. Their runtime behaviour should be fairly straightforward. The various properties are detailed when we address the [OPI Editor](/docs/studio/Editing_Displays/).
 
 #### Graphics
 
@@ -193,5 +107,93 @@ We limit ourselves to just listing the default widgets. Their runtime behaviour 
         <td><img src="/assets/studio/icons/widgets/array.gif">Array</td>
         <td><img src="/assets/studio/icons/widgets/tab.png">Tabbed Container</td>
         <td></td>
+    </tr>
+</table>
+
+### Color Decorations
+When a widget is backed by a PV, it will be decorated according to its runtime state. The specific colors of these decorations can vary since the default colors can be overridden (or disabled) by the display author.
+
+<table class="inline">
+    <tr>
+        <th>State</th>
+        <th>Decoration</th>
+    </tr>
+    <tr>
+        <td>Connected</td>
+        <td>No decorations</td>
+    </tr>
+    <tr>
+        <td style="white-space: nowrap;">Connected, but no value (yet)</td>
+        <td>Dashed pink border around the widget</td>
+    </tr>
+    <tr>
+        <td>Disconnected</td>
+        <td>
+            Solid pink border around the widget and the label 'Disconnected' in the top left corner (space-permitting)
+        </td>
+    </tr>
+    <tr>
+        <td>Expired</td>
+        <td>
+            Blinking solid pink border around the widget 
+        </td>
+    </tr>
+    <tr>
+        <td>Minor Alarm</td>
+        <td>Solid orange border around the widget</td>
+    </tr>
+    <tr>
+        <td>Major Alarm</td>
+        <td>Solid red border around the widget</td>
+    </tr>
+</table>
+
+Note that the color information for alarms is currently not as rich as it could be. Yamcs parameters support five different levels of alarms, as well as a range of special monitoring values. This information is for now transformed using the following mapping:
+
+<table class="inline nostretch">
+    <tr>
+        <th>Yamcs Server</th>
+        <th style="text-align: center;" width="200">Yamcs Studio</th>
+    </tr>
+    <tr>
+        <td>
+            WATCH<br>
+            WATCH_LOW<br>
+            WATCH_HIGH
+        </td>
+        <td rowspan="3" style="text-align: center;">
+            MINOR
+        </td>
+    </tr>
+    <tr>
+        <td>
+            WARNING<br>
+            WARNING_LOW<br>
+            WARNING_HIGH
+        </td>
+    </tr>
+    <tr>
+        <td>
+            DISTRESS<br>
+            DISTRESS_LOW<br>
+            DISTRESS_HIGH
+        </td>
+    </tr>
+    <tr>
+        <td>
+            CRITICAL<br>
+            CRITICAL_LOW<br>
+            CRITICAL_HIGH
+        </td>
+        <td rowspan="2" style="text-align: center;">
+            MAJOR
+        </td>
+    </tr>
+    <tr>
+        <td>
+            SEVERE<br>
+            SEVERE_LOW<br>
+            SEVERE_HIGH
+        </td>
     </tr>
 </table>
