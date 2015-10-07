@@ -19,47 +19,25 @@ A PV is considered <em>connected</em> if the data source is available, and at le
 * TOC
 {:toc}
 
-### PV Info
-PVs always have a *name* uniquely identifying the specific data source. Depending on the type of PV, this name is prefixed with a different schema.
-
-<table class="inline">
-    <tr>
-        <th>Schema</th>
-        <th>PV Type</th>
-    </tr>
-    <tr>
-        <td class="code">loc://</td>
-        <td>Local PV</td>
-    </tr>
-    <tr>
-        <td class="code">sim://</td>
-        <td>Simulated PV</td>
-    </tr>
-    <tr>
-        <td class="code">para://</td>
-        <td>Yamcs Parameter</td>
-    </tr>
-    <tr>
-        <td class="code">sw://</td>
-        <td>Yamcs Software Parameter</td>
-    </tr>
-</table>
-
-<div class="hint">
-    While exploring existing displays you may sometimes notice widgets that are backed by a PV <em>without</em> a schema. By convention these are all resolved using the <tt>para://</tt> schema. Displays authors often choose not to specify this schema.
-</div>  
+### Local PVs
 
 Local PVs are read and written entirely in a running Yamcs Studio instance. They are never communicated to Yamcs, nor to any other copies of Yamcs Studio. Local PVs are typically used by the display author as a means to store information that needs to be communicated from one widget to another. They also form a powerful building block when scripting advanced displays due to their ability to store runtime state. This makes it possible to script logic based on a historical window of values.
 
-Local PVs are transient, and are reset when Yamcs Studio is restarted.
+Local PVs are transient, and are reset when Yamcs Studio is restarted. Local PVs do not need to be specially created. They are automatically instantiated when needed.
 
-<!---
 Example PV Names:
 
-* todo
--->
+* <tt>loc://foo</tt>
+* <tt>loc://my-favourite-local-pv</tt>
+* <tt>loc://anything-you-want-really</tt>
 
-#### Parameter
+You can assign an initial value to a local PV by adding it after its name. For instance:
+
+* <tt>loc://foo(1)</tt>
+* <tt>loc://bar("abc")</tt>
+
+
+### Parameters
 Parameter PVs represent a read-only value that is provided by Yamcs. Typically this denotes telemetry.
 
 The PV Name for parameters is the fully qualified XTCE name as specified in the Yamcs Mission Database.
@@ -71,13 +49,54 @@ Example PV Names:
 
 In these examples <tt>YSS</tt> is the name of the root space system. <tt>SIMULATOR</tt> is the name of the space system directly below, which defines both measurements <tt>BatteryVoltage1</tt> and <tt>BatteryTemperature1</tt>.
 
-#### Software Parameter
+### Software Parameters
 Same concept as a Parameter, but has additional support for writing values from the client to the server. In this regard they can be used as a means of communicating information from one client to another using Yamcs Server as the medium.
 
 Remark that software parameters are not currently archived by Yamcs Server, and will therefore be reset when Yamcs is restarted.
 
-#### Simulated Value
-Locally generated functions. Mainly useful during testing, or in combination with other PVs using formulas.
+### Simulated Values
+Locally generated simulation data. Mainly useful during testing, or in combination with other PVs using formulas. Full documentation is upcoming. For now please have a look at the sample operator displays in the YSS projects.
+
+Example PV Names:
+
+* <tt>sim://ramp(0, 1, 1, 0.5)</tt>
+* <tt>sim://const(4)</tt>
+* <tt>sim://noise</tt>
+* <tt>sim://sine</tt>
 
 ### Formulas
-PVs can be combined together using client-side formulas. Formulas always start with <tt>=</tt> followed by a formula expression. Expressions are similar to Excel formulas. 
+PVs can be combined with mathematical expressions. Formulas always start with <tt>=</tt> followed by a formula expression. Note that any referenced PVs must be wrapped with single quotes. 
+
+Example PV Names:
+
+* <tt>=3*'loc://foo(2)'</tt>
+* <tt>=3.14</tt>
+* <tt>=log('loc://foo(2)')<tt>
+
+Supported formulas include:
+
+* abs(a)
+* acos(a)
+* asin(a)
+* atan(a)
+* ceil(a)
+* cos(a)
+* cosh(a)
+* exp(a)
+* expm1(a)
+* floor(a)
+* log(a)
+* log10(a)
+* round(a)
+* sin(a)
+* sinh(a)
+* sqrt(a)
+* tan(a)
+* tanh(a)
+* toDegrees(a)
+* toRadians(a)
+* atan2(a, b)
+* hypot(a, b)
+* pow(a, b)
+* min(a, b, c, d, e)
+* max(a, b, c, d, e)

@@ -6,11 +6,17 @@
     - url: /docs/studio/Understanding_the_User_Interface/
     - url: /docs/studio/Connecting_to_Yamcs/
 
-- url: /docs/studio/Running_Displays/
+- url: /docs/studio/OPI_Runtime/
+
+- url: /docs/studio/Processed_Variables/
+
+- url: /docs/studio/Widgets/
+
+- url: /docs/studio/Inspector_Windows/
   items:
-    - url: /docs/studio/Processed_Variables/
-    - url: /docs/studio/Widgets/
-    - url: /docs/studio/Inspector_Windows/
+    - url: /docs/studio/PV_List/
+    - url: /docs/studio/PV_Info/
+    - url: /docs/studio/OPI_Probe/
 
 - url: /docs/studio/Editing_Displays/
   items:

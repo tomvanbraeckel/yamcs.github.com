@@ -1,8 +1,7 @@
 ---
 layout: default
 sidebar: yes
-chapter: yes
-permalink: /docs/studio/Running_Displays/
+permalink: /docs/studio/OPI_Runtime/
 ---
 
 The OPI Runtime perspective is useful for realtime operations, or for testing out displays as they are being built. The default layout looks like this:
