@@ -20,6 +20,7 @@
 
 - url: /docs/studio/Editing_Displays/
   items:
+    - url: /docs/studio/OPI_Editor/
     - url: /docs/studio/Navigator/
     - url: /docs/studio/Editor_Area/
     - url: /docs/studio/Outline/
