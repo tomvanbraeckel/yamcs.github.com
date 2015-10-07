@@ -38,11 +38,23 @@
                 {% endfor %}
               {% endif %}
             </h1>
+
+            {% for p in site.pages %}
+              {% if p.url == chapter.url %}
+                {{ p.content }}
+                {% break %}
+              {% endif %}
+            {% endfor %}
+
             {% if chapter.items %}
               {% for item in chapter.items %}
+                {% assign newpage=true %}
+                {% if forloop.first %}
+                  {% assign newpage=false %}
+                {% endif %}
                 {% for p in site.pages %}
                   {% if p.url == item.url %}
-                    <h2 class="toc{% if forloop.first == false %} newpage{% endif %}">
+                    <h2 class="toc{% if newpage == true %} newpage{% endif %}">
                       {% if p.title %}
                         {{ p.title }}
                       {% else %}
