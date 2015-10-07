@@ -5,14 +5,13 @@ chapter: yes
 permalink: /docs/server/Mission_Database/
 ---
 
-Currently, the Yamcs Mission Database is split into three parts:
+The Yamcs Mission Database is composed of the following parts, contained in an XTCE hierarchical structure:
 
-* Telemetry is described according to the XTCE structure.
-* Telecommand is described according to the CD-MCS MDB structure.
-* Processed Parameters is simply a list of names, according to Yamcs own structure.
+* Telemetry
+* Telecommands
+* Processed Parameters
+* Algorithms
 
-Eventually, these three parts will be merged into one single XTCE hierarchical structure.
-
-For faster access, the database is cached serialized on disk in the cache directory. Each of the three parts mentioned above create two files, one storing the data itself and the other one storing the time when the cache file has been created. These files should be considered Yamcs internal and are subject to change.
+For faster access, the database is cached serialized on disk in the cache directory. The cached mission database is composed of two files, one storing the data itself and the other one storing the time when the cache file has been created. These files should be considered Yamcs internal and are subject to change.
  
-Different loaders are possible for each database type.
+Different loaders are possible for each database source type.

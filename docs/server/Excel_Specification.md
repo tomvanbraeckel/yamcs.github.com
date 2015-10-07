@@ -244,6 +244,84 @@ Depending on the combination of raw and engineering type, automatic conversion i
 	</tr>
 </table>
 
+### Derived Parameters Sheet
+This sheet must be named “DerivedParameters”, and the columns described must not be reordered.
+Derived Parameters are parameters whose values are output of Algorithms (defined in section Algorithm).
+
+<table class="inline">
+	<tr>
+		<th>opsname</th>
+		<td>The opsname of the parameter. Any entry starting with `#` is treated as a comment row</td>
+	</tr>
+	<tr>
+		<th>bitlength</th>
+		<td>Length of the measurement, in bits, not needed for terminatedstring raw types</td>
+	</tr>
+	<tr>
+		<th>raw type</th>
+		<td>See <a href="#raw-types">Raw Types</a></td>
+	</tr>
+	<tr>
+		<th>eng type</th>
+		<td>See <a href="#engineering-types">Engineering Types</a></td>
+	</tr>
+	<tr>
+		<th>eng unit</th>
+		<td>Free-form textual description of unit(s). E.g. degC, W, V, A, s, us</td>
+	</tr>
+	<tr>
+		<th>calibration</th>
+		<td>Name of a calibration described in the Calibration sheet, leave empty if no calibration is applied</td>
+	</tr>
+	<tr>
+		<th>description</th>
+		<td>Optional human-readable text</td>
+	</tr>
+	<tr>
+		<th>namespace:MDB:Pathname</th>
+		<td>Optional MDB alias for the packet</td>
+	</tr>
+</table>
+
+### Local Parameters Sheet
+This sheet must be named "LocalParameters", and the columns described must not be reordered.
+Local parameters are equivalent to Parameters but can be written by Yamcs clients.
+
+<table class="inline">
+	<tr>
+		<th>opsname</th>
+		<td>The opsname of the parameter. Any entry starting with `#` is treated as a comment row</td>
+	</tr>
+	<tr>
+		<th>bitlength</th>
+		<td>Length of the measurement, in bits, not needed for terminatedstring raw types</td>
+	</tr>
+	<tr>
+		<th>raw type</th>
+		<td>See <a href="#raw-types">Raw Types</a></td>
+	</tr>
+	<tr>
+		<th>eng type</th>
+		<td>See <a href="#engineering-types">Engineering Types</a></td>
+	</tr>
+	<tr>
+		<th>eng unit</th>
+		<td>Free-form textual description of unit(s). E.g. degC, W, V, A, s, us</td>
+	</tr>
+	<tr>
+		<th>calibration</th>
+		<td>Name of a calibration described in the Calibration sheet, leave empty if no calibration is applied</td>
+	</tr>
+	<tr>
+		<th>description</th>
+		<td>Optional human-readable text</td>
+	</tr>
+	<tr>
+		<th>namespace:MDB:Pathname</th>
+		<td>Optional MDB alias for the packet</td>
+	</tr>
+</table>
+
 ### Calibration Sheet
 This sheet must be named "Calibration", and the columns described must not be reordered. The sheet contains calibration data including enumerations
 
@@ -595,6 +673,121 @@ When monitoring results change, events are generated and can be followed in the 
 	</tr>
 </table>
 
+
+### Commands Sheet
+This sheet must be named “Commands”, and the columns described must not be reordered.
+The sheet contains commands description, including arguments. General convention:
+
+* First line with a new 'Command name' starts a new command
+* Second line after a new 'Command name' should contain the first command arguments
+* Empty lines are only allowed between two commands.
+
+<table class="inline">
+	<tr>
+		<th>Command name</th>
+		<td>The opsname of the command. Any entry starting with `#` is treated as a comment row</td>
+	</tr>
+	<tr>
+		<th>parent</th>
+		<td>name of the parent command if any.
+Can be specified starting with / for an absolute reference or with ../ for pointing to parent SpaceSystem
+:x means that the arguments in this container start at position x (in bits) relative to the topmost container.
+Currently there is a problem for containers that have no argument: the bit position does not apply to children and has to be repeated.</td>
+	</tr>
+	<tr>
+		<th>argAssignement</th>
+		<td>name1=value1;name2=value2.. where name1,name2.. are the names of arguments which are assigned when the inheritance takes place</td>
+	</tr>
+	<tr>
+		<th>flags</th>
+		<td>for comands:
+A=abstract
+for argument: 
+L = little endian</td>
+	</tr>
+	<tr>
+		<th>argument name</th>
+		<td>from this column on, most of the parameters are valid for arguments only which have to come starting next row after the command. The exceptions are: -  - size in bits
+- description
+- aliases</td>
+	</tr>
+	<tr>
+		<th>relpos</th>
+		<td>relative position to the previous argument
+default is 0</td>
+	</tr>
+	<tr>
+		<th>size in bits</th>
+		<td>size in bits of the raw value</td>
+	</tr>
+	<tr>
+		<th>eng type</th>
+		<td>engineering type; can be one of:
+- uint
+- int
+- float
+- string
+- binary
+- enumerated
+- boolean
+- FixedValue
+FixedValue is like binary but is not considered an argument but just a value to fill in the packet.</td></tr>
+<tr><th>raw type</th>
+<td>raw type: can be one of uint, int, float or binary
+</td></tr>
+<tr><th>(default) value</th>
+<td>"default value
+if eng type is FixedValue, this has to contain the value in hexadecimal.
+Note that when the size of the argument is not an integer number of bytes (which is how hexadecimal binary strings are specified), the most significant bits are ignored."
+</td></tr>
+<tr><th>eng unit</th>
+<td></td></tr>
+<tr><th>calibration</th>
+<td>point to a calibration from the Calibration sheet
+</td></tr>
+<tr><th>range low</th>
+<td>"the value of the argument cannot be smaller than this. 
+For strings and binary arguments this means the minimum length in characters, respectively bytes."
+</td></tr>
+<tr><th>range high</th>
+<td>"the value of the argument cannot be higher than this. Only applies to numbers.
+For strings and binary arguments this means the minimum length in characters, respectively bytes."
+</td></tr>
+<tr><th>description</th>
+<td>optional free text description</td>
+	</tr>
+</table>
+
+### Command Options Sheet
+This sheet must be named “CommandOptions”, and the columns described must not be reordered.
+This sheet defines the options that can be applied to commands.
+
+<table class="inline">
+<tr><th>Command name</th><td>The opsname of the command. Any entry starting with `#` is treated as a comment row</td></tr>
+<tr><th>Transmission Constraints</th><td>Constrains can be specified on multiple lines.
+All of them have to be met for the command to be allowed for transmission.
+</td></tr>
+<tr><th>Constraint Timeout</th><td>This refers to the left column.
+A command stays in the queue for that many milliseconds. If the constraint is not met, the command is rejected.
+0 means that the command is rejected even before being added to the queue, if the constraint is not met.
+</td></tr>
+<tr><th>Command Significance</th><td>Significance level for commands. Depending on the configuration, an extra confirmation or certain privileges may be required to send commands of high significance.
+one of:
+- none
+- watch
+- warning
+- distress
+- critical
+- severe
+</td></tr>
+<tr><th>Significance Reason</th><td>A message that will be presented to the user explaining why the command is significant.
+</td></tr>
+</table>
+
+
+### Change Log Sheet
+This sheet must be named “ChangeLog”, and the columns described must not be reordered.
+This sheet contains the list of the revision made to the MDB.
 
 ### Legacy Sheets
 Legacy sheets remain supported, but are generally not used in new projects anymore.

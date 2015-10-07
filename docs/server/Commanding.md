@@ -6,7 +6,7 @@ sidebar: yes
 
 Yamcs contains an HLCL parser capable to parse the telecommanding requests coming from the MCS Tools. 
 
-XTCE structures are not supported for commanding, and neither are command preconditions or postconditions (i.e. checking that telemetry parameters have certain values before or after sending the command).
+XTCE structures are supported for commanding, including command preconditions and postconditions (i.e. checking that telemetry parameters have certain values before or after sending the command). 
 
 
 #### Command Queues

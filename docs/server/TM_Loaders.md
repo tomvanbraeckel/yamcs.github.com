@@ -4,6 +4,17 @@ permalink: /docs/server/TM_Loaders/
 sidebar: yes
 ---
 
+
+#### Excel Spreadsheet
+This loader constructs the MDB using containers and parameters defined in one or more Yamcs [Excel spreadsheets](/docs/server/Excel_Specification/).
+
+The loader is configured in [etc/mdb.yaml](/docs/server/mdb.yaml/). Specify the 'type' as <tt>sheet</tt>, and provide the location of the spreadsheet file in the spec attribute. Additional spreadsheets may be specified in a <tt>subLoaders</tt> list, using the type and spec attributes for each additional spreadsheet.
+
+#### XTCE files
+This loader reads an MDB saved in XML format compliant with the XTCE specification. For more information about XTCE, see [http://www.xtce.org](http://www.xtce.org).
+
+The loader is configured in [etc/mdb.yaml](/docs/server/mdb.yaml/). Specify the 'type' as <tt>xtce</tt>, and provide the location of the XML file in the <tt>spec</tt> attribute.
+
 #### CD-MCS MDB
 
 This loader loads the telemetry definition directly from the Oracle using the oracle jdbc driver. The relevant configuration file is <tt>etc/cdmcs-mdb.yaml</tt>. 
@@ -51,12 +62,3 @@ The packet description in CD-MCS MDB is spread over different structures. When r
 
 ![Creation of the sequence containers from the CD-MCS MDB](/assets/server/MDBSequenceContainerCreation.png){: .center-image }
 
-#### Excel Spreadsheet
-This loader constructs the MDB using containers and parameters defined in one or more [Excel spreadsheets](/docs/server/Excel_Specification/).
-
-The loader is configured in [etc/mdb.yaml](/docs/server/mdb.yaml/). Specify the 'type' as <tt>sheet</tt>, and provide the location of the spreadsheet file in the spec attribute. Additional spreadsheets may be specified in a <tt>subLoaders</tt> list, using the type and spec attributes for each additional spreadsheet.
-
-#### XTCE files
-This loader reads an MDB saved in XML format compliant with the XTCE specification. For more information about XTCE, see [http://www.xtce.org](http://www.xtce.org).
-
-The loader is configured in [etc/mdb.yaml](/docs/server/mdb.yaml/). Specify the 'type' as <tt>xtce</tt>, and provide the location of the XML file in the <tt>spec</tt> attribute.
