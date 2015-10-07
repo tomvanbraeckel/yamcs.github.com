@@ -7,7 +7,7 @@ permalink: /docs/studio/Widgets/
 Most widgets are backed by a PV. Some widgets (e.g. layouting widgets) are typically not connected to a PV, other widgets (e.g. charts) can be backed by more than one PV.
 
 ### Color Decorations
-When a widget is backed by a PV, it will be decorated according to its runtime state. The specific colors of these decorations can vary since the default colors can be overriden (or disabled) by the display author.
+When a widget is backed by a PV, it will be decorated according to its runtime state. The specific colors of these decorations can vary since the default colors can be overridden (or disabled) by the display author.
 
 <table class="inline">
     <tr>

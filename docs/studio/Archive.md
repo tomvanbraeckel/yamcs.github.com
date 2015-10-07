@@ -10,7 +10,7 @@ The Archive view represents a visual view of the data stored in the Yamcs archiv
 {:toc}
 
 ### User Interface
-We are aware that the current user interface takes some getting used to. The Archive view always works on a range of indexed data, which it fetches from the server. All further actions like zooming happen client-side on the loaded data range.
+The Archive view always works on a range of indexed data, which it fetches from the server. All further actions like zooming happen client-side on the loaded data range.
 
 #### Choosing a Data Range
 As a first step you should select your data range. Click the pull-down icon ![Pull-down Menu](/assets/studio/view-pulldown.png){: .inline-image} to bring up this menu:

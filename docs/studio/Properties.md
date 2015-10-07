@@ -23,7 +23,7 @@ Different widgets have different properties, but many of those properties are sh
 <table class="inline">
     <tr>
         <th class="code">Name</th>
-        <td>A name that identifies this widget in the Outline view. There is no constraint on uniquess, but when not specified by the user, Yamcs Studio will try to determine a unique name by concatenating the widget type with a sequential number.</td>
+        <td>A name that identifies this widget in the Outline view. There is no constraint on uniqueness, but when not specified by the user, Yamcs Studio will try to determine a unique name by concatenating the widget type with a sequential number.</td>
     </tr>
     <tr>
         <th class="code">X<br>Y<br>Width<br>Height</th>

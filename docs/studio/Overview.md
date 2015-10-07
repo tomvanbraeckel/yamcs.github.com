@@ -5,7 +5,7 @@ permalink: /docs/studio/Overview/
 ---
 
 #### Brief History of Yamcs
-Yamcs started as a server software first and foremost. While it initially started as a swiss-army knife to fill gaps in existing traditional mission control systems, it gradually grew to cover the whole spectrum of TM processing and TC commanding. Missions can have very specific software requirements, and often include a varied stack of software. Over the years Yamcs was extended in various ways to play nice with different kinds of TM and TC software.
+Yamcs started as a server software first and foremost. While it initially started as a swiss-army knife to fill gaps in existing traditional mission control systems, it gradually grew to cover the whole spectrum of TM processing and TC commanding. Missions can have very specific software requirements, and often include a varied stack of software. Over the years Yamcs was extended in various ways to play nicely with different kinds of TM and TC software.
 
 Along the way, standalone client GUIs were developed as the need arose. This includes Archive Browser, Event Viewer, Packet Viewer and Yamcs Monitor. These tools are being used in many missions.
 
@@ -19,7 +19,7 @@ Yamcs can be made to integrate with display software other than Yamcs Studio (an
 * Increased semantical coherence
 * Single point of contact
 * Opportunities for customisation that covers both server and client
-* Integrated views operational views
+* Integrated operational views
 
 #### Technology
 Yamcs Studio is an Eclipse RCP application, and builds upon Open Source software libraries like CS-Studio, Netty, Protobuf and of course our own Yamcs API.

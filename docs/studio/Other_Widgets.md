@@ -15,7 +15,7 @@ The Web Browser widget allows incorporating a web browser inside a display. This
 ![Web Browser](/assets/studio/web-browser.png){: .center-image }
 
 #### Array
-Container widget that repeats an other widget. First create an Array instance, than drag another widget on top of it and release. The widget will be repeated for the defined **Array Length**.
+Container widget that repeats another widget. First create an Array instance, than drag another widget on top of it and release. The widget will be repeated for the defined **Array Length**.
 
 Modifying the property of any child modifies it for all the other children as well.
 
@@ -28,7 +28,7 @@ You can group widgets together using a Grouping Container. Drag any widget on to
 
 To remove a widget out of a group, select it and drag it out of its container. To remove a group, right-click on it and select **Ungroup**. To add existing widgets to a new group, select them, and then choose **Group** from the right-click menu.
 
-To prevent nested widgets from being invidually selectable, set the **Lock Children** property of the group to <tt>yes</tt>.
+To prevent nested widgets from being individually selectable, set the **Lock Children** property of the group to <tt>yes</tt>.
 
 ![Grouping Container](/assets/studio/grouping-container.png){: .center-image }
 

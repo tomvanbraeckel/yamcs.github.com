@@ -6,7 +6,7 @@ permalink: /docs/studio/Command_Stack/
 
 The Command Stack allows operators to prepare stacks of commands for manual command issuing. The process is intentionally click-heavy to make sure that operators are aware of what they are doing.
 
-When you issue commands from Yamcs Studio, these are queued to Yamcs Server, which will perform any further steps.   
+When you issue commands from Yamcs Studio, these are queued to Yamcs Server, which will perform any further steps.
 
 We're keen on bringing many improvements to this view for better editing, but it is usable in its current state.
 
@@ -26,9 +26,9 @@ Add a command by clicking the ![New Command](/assets/studio/icons/new_command.pn
 
 This opens a wizard dialog with the list of available commands. You can filter the list with the search box on top.
 
-Commands are identified by their fully qualified XTCE name. This name matches the hierarchical structure of the commands as defined in the mission database of the connected Yamcs instance. In future versions we may inlude a tree representation in addition to the current flat representation.
+Commands are identified by their fully qualified XTCE name. This name matches the hierarchical structure of the commands as defined in the mission database of the connected Yamcs instance. In future versions we may include a tree representation in addition to the current flat representation.
 
-Commands can have varying levels of criticality (called *significance* in XTCE parlor). The icon in the leftmost column indicates the defined criticality for the command.
+Commands can have varying levels of criticality (called *significance* in XTCE terminology). The icon in the leftmost column indicates the defined criticality for the command.
 
 <table class="inline">
     <tr>

@@ -22,7 +22,7 @@ The window layout can be decomposed like this:
 ![Edit FlightData.opi](/assets/yss-opi-editor-flight-data-annotated.png){: .center-image }
 
 1. Navigator
-    The [Navigator](/docs/studio/Navigator/) contains all projects within the current workspace. In general a project is at the same level as a mission, but this is not strictly necessary. When we launch Yamcs Studio with a new workspace, it will always automatically create the YSS project. Once you have added your own project, you can remove YSS and it won't be autocreated anymore.
+    The [Navigator](/docs/studio/Navigator/) contains all projects within the current workspace. In general a project is at the same level as a mission, but this is not strictly necessary. When we launch Yamcs Studio with a new workspace, it will always automatically create the YSS project. Once you have added your own project, you can remove YSS and it won't be auto created anymore.
     
     A project contains Operator Displays (<tt>*.opi</tt>), images, style definitions (<tt>*.def</tt>), custom scripts (<tt>*.js</tt> or <tt>*.py</tt>), etc. Familiarise yourself with the right-click option as you go about opening displays. Displays can be opened in a few different modes within the OPI Editor.
     

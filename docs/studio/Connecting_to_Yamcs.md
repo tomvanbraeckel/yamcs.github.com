@@ -6,7 +6,7 @@ permalink: /docs/studio/Connecting_to_Yamcs/
 
 Yamcs Studio is a client application that's meant to be connected with Yamcs Server.
 
-Yamcs Server, or 'Yamcs' handles the processing, archiving and dispatching of telemetry data. Yamcs Studio is one of the possible Yamcs clients for receiving telemetry data.
+Yamcs Server, or 'Yamcs', handles the processing, archiving and dispatching of telemetry data. Yamcs Studio is one of the possible Yamcs clients for receiving telemetry data.
 
 To configure a Yamcs connection, select **File > Connect...**. This will open the Connections window where you can manage your connections. For many missions, one connection will do just fine, but depending on how Yamcs is deployed at your site, you may have multiple Yamcs instances on the same server, or even multiple Yamcs servers.
 

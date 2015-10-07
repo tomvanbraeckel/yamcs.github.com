@@ -17,7 +17,7 @@ The OPI Runtime perspective is useful for realtime operations, or for testing ou
 2. Perspective Switcher
     When you launch Yamcs Studio it will open in <tt>OPI Runtime</tt> mode (OPI means Operator Interface). With the perspective switcher you can switch Yamcs Studio to the <tt>OPI Editor</tt> mode. Doing so will store and close your current arrangement of windows and views, and will open a different arrangement that is optimised for editing displays.
     
-    Note that it is possible to make builds of Yamcs Studio that include *only* the runtime perspective. This can significantly improve UX during operations.
+    Note that it is possible to make builds of Yamcs Studio that include *only* the runtime perspective. This can significantly improve user experience during operations.
 
 3. Display Tabs
     Displays open in different tabs. These are not normal tabs, though. By clicking and dragging these tabs we can easily create split screens, or different tab stacks. We can also drag a tab out of its parent window into a new window. In fact, Yamcs Studio is optimised for multi-monitor systems. Window layouts are restored through restarts of Yamcs Studio.

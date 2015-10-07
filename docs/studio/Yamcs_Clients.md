@@ -4,7 +4,7 @@ sidebar: yes
 permalink: /docs/studio/Yamcs_Clients/
 ---
 
-The Yamcs Clients view is a readonly view that shows you all the clients that are connected to the same Yamcs Server that you are connected to.
+The Yamcs Clients view is a read-only view that shows you all the clients that are connected to the same Yamcs Server that you are connected to.
 
 ![Yamcs Clients](/assets/studio/yamcs-clients.png){: .center-image }
 

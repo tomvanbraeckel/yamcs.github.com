@@ -53,12 +53,14 @@ Local PVs are read and written entirely in a running Yamcs Studio instance. They
 
 Local PVs are transient, and are reset when Yamcs Studio is restarted.
 
+<!---
 Example PV Names:
 
 * todo
+-->
 
 #### Parameter
-Parameter PVs represent a readonly value that is provided by Yamcs. Typically this denotes telemetry.
+Parameter PVs represent a read-only value that is provided by Yamcs. Typically this denotes telemetry.
 
 The PV Name for parameters is the fully qualified XTCE name as specified in the Yamcs Mission Database.
 

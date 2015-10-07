@@ -23,7 +23,7 @@ Yamcs Studio is now launched and you should see an empty workspace with the defa
 
 ![Empty Workspace](/assets/studio/empty-workspace.png){: .center-image }
 
-The empty area in the middle is where displays will open. In the middle of the screen we have a
+The empty area in the middle is where displays will open.
 
 
 Yamcs Studio has two different modes (called *perspectives*). OPI Editor and OPI Runtime. When Yamcs Studio is launched for the first time the user will be welcomed with the default OPI Runtime perspective, which is used during realtime operations, or for testing out displays with live telemetry.
