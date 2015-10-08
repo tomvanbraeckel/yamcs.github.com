@@ -4,4 +4,4 @@ sidebar: yes
 permalink: /docs/studio/Theming/
 ---
 
-bla
+Documentation forthcoming.
