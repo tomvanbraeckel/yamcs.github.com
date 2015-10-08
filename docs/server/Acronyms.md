@@ -49,7 +49,7 @@ sidebar: yes
 |SCOE|Special Checkout Equipment|
 |SH|Secondary Header|
 |SID|Short Identifier|
-|SQL|Structures Query Language|
+|SQL|Structured Query Language|
 |SSL|Secured Socket Layer|
 |TC|Telecommand|
 |TCAP|Transaction Capabilities Application Part|
@@ -58,7 +58,7 @@ sidebar: yes
 |TMR|Telemetry Router|
 |TOC|Table of Content|
 |TRIBOLAB|Tribology Laboratory|
-|UDP|User Datagram Protocl|
+|UDP|User Datagram Protocol|
 |UHB|User Home Base|
 |UMI|Universal Measurement Identifier|
 |USOC|User Support and Operations Center|
