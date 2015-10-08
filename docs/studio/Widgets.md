@@ -46,7 +46,7 @@ The default widgets in Yamcs Studio are listed below. Their runtime behaviour sh
     </tr>
     <tr>
         <td><img src="/assets/studio/icons/widgets/textUpdate.png">Text Update</td>
-        <td><img src="/assets/studio/icons/widgets/thermo.gif">Thermometer</td>
+        <td><img src="/assets/studio/icons/widgets/Thermo.gif">Thermometer</td>
         <td><img src="/assets/studio/icons/widgets/ByteMonitor.png">Byte Monitor</td>
     </tr>
     <tr>
@@ -72,7 +72,7 @@ The default widgets in Yamcs Studio are listed below. Their runtime behaviour sh
         <td><img src="/assets/studio/icons/widgets/checkboxenabledon.gif">Check Box</td>
     </tr>
     <tr>
-        <td><img src="/assets/studio/icons/widgets/textinput.png">Text Input</td>
+        <td><img src="/assets/studio/icons/widgets/textInput.png">Text Input</td>
         <td><img src="/assets/studio/icons/widgets/thumbwheel.gif">Thumb Wheel</td>
         <td><img src="/assets/studio/icons/widgets/radiobutton.gif">Radio Box</td>
     </tr>

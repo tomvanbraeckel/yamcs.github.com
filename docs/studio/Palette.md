@@ -105,7 +105,7 @@ Widgets come in all different kinds, and are grouped in four different categorie
         </td>
         <td>
             <a href="/docs/studio/Monitor_Widgets/#thermometer">
-                <img src="/assets/studio/icons/widgets/thermo.gif">Thermometer
+                <img src="/assets/studio/icons/widgets/Thermo.gif">Thermometer
             </a>
         </td>
         <td>
@@ -169,7 +169,7 @@ Widgets come in all different kinds, and are grouped in four different categorie
     <tr>
         <td>
             <a href="/docs/studio/Control_Widgets/#text-input">
-                <img src="/assets/studio/icons/widgets/textinput.png">Text Input
+                <img src="/assets/studio/icons/widgets/textInput.png">Text Input
             </a>
         </td>
         <td>
