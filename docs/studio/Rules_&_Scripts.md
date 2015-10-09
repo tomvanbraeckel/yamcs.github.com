@@ -10,7 +10,7 @@ Making OPI displays is flexible using the [Palette](/docs/studio/Palette/) and t
 You may have noticed that every widget has a **Rules** property. Rules are a user-friendly way for adding dynamic behaviour to widgets. They are most often used for changing the widget's properties at runtime.
 
 #### Example
-This is best explained with an example. Suppose we have the bright idea to make an LED square when it is off, and round when it is on. The static properties would not allows for such a scenario, so we add a rule.
+This is best explained with an example. Suppose we have the bright idea to make an LED square when it is off, and round when it is on. The static properties would not allow for such a scenario, we therefore add a rule.
 
 1. Edit the **Rules** property to pop up this dialog. 
 
@@ -22,11 +22,11 @@ This is best explained with an example. Suppose we have the bright idea to make 
 
 1. The first thing to choose is the rule's target **Property**. So select **Square LED**.
 
-1. In the right **Input PVs** table add your input PV. In this example we chose to generate an alternating 0/1 value using a simulated PV. Notice the sequential number in the <tt>#</tt> column. The first PV is numbered <tt>0</tt>. Make sure to check the <tt>Trigger</tt> checkbox as this will then trigger execution of the rule whenever the PV's value is updated.
+1. In the right **Input PVs** table add your input PV. In this example we chose to generate an alternating 0/1 value using a simulated PV. Notice the sequential number in the <tt>#</tt> column. The first PV is numbered <tt>0</tt>. Make sure to check the <tt>Trigger</tt> checkbox as this will then trigger the execution of the rule whenever the PV's value is updated.
 
 1. Now in the **Expressions** table, fill in your conditions in the **Boolean Expression** column, and add the desired value of the rule's property in the **Output Value** column. The double value of the top-most right PV is available as the variable <tt>pv0</tt>. The next PV in the list (if applicable) is available as the variable <tt>pv1</tt>, etc.
 
-    ![Example Rule](/assets/studio/rule-example.png){: .center-image }   
+    ![Example Rule](/assets/studio/rule-example.png){: .center-image }
 
 1. Confirm your dialogs, save your display and refresh a runtime view of it. You should see the LED's shape now alternating between square and ground.
 
@@ -84,8 +84,8 @@ In addition, you can access the numeric alarm state of an input PV.
     If you wish to set a property value that always applies, use <tt>true</tt> (or <tt>1==1</tt>) as the Boolean Expression.
 </div>
 
-#### Ouput Value
-The exact form that the column **Output Value** takes on depends on the type of the property. Some properties are colors, so you would see a color picker, other properties expect text, and the above example was a boolean yes/no, so we got a checkbox.
+#### Output Value
+The exact form that the **Output Value** column adopts depends on the type of the property. Some properties are colors, so you would see a color picker, other properties expect text, and the above example was a boolean yes/no, so we got a checkbox.
 
 
 ### Scripts

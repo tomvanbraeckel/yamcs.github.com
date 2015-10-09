@@ -57,9 +57,9 @@ Commands can have varying levels of criticality (called *significance* in XTCE t
     </tr>
 </table>
 
-If an explanatory message regarding the criticality was defined in the mission database, this will show in the top title area of the dialog when the command is selected. Currently, only numbers or text can be entered.
+If an explanatory message regarding the criticality was defined in the mission database, this will show in the top title area of the dialog when the command is selected.
 
-Once you've chosen your command, hit **Next** to go the next page in the wizard, where you can specify any arguments that need to be provided for the command.
+Once you've chosen your command, hit **Next** to go the next page in the wizard, where you can specify any arguments that need to be provided for the command. Currently, only numbers or text can be entered.
 
 <div class="hint">
     You can close the wizard from the first page as well by clicking <strong>Finish</strong> instead of <strong>Next</strong>. If the command requires any arguments, you will have a chance to add them afterwards as well by editing your stacked command.
@@ -76,6 +76,10 @@ You can review your provided arguments by double clicking the command. To remove
 If a stacked command does not pass static validation checks (sometimes referred to as SPTVs -- Static PreTransmission Verification) it will be marked with error indicators. This will prevent the user from attempting further execution of the stack until the error is resolved.
 
 ![Stack in Error](/assets/studio/stack-in-error.png){: .center-image }
+
+<div class="hint">
+    It is not currently possible to move a command up or down the stack.
+</div>
 
 ### Executing a Stack
 When we're done composing our manual stack, we can start execution its commands. Execution is top-down, so select the first command of your stack.

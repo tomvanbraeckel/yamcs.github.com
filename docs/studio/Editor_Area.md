@@ -22,11 +22,11 @@ Notice the [Palette](/docs/studio/Palette/) attached to the right of the Editor 
 
 To add a widget to your display, click first on its icon in the Palette, then click where you want to put it in the Editor Area.
 
-There, an LED.
+We select as example an LED.
 
 ![An LED](/assets/studio/an-led.png){: .center-image }
 
-Once the widget has been placed, you can finetune its position and size using the [Properties View](/docs/studio/Properties). Some operations are also readily available in the Editor Area itself using familiar controls. Click on a widget to select it, then drag one of the handles to a different location.
+Once the widget has been placed, you can finetune its position and size using the [Properties View](/docs/studio/Properties). Some operations are also readily available in the Editor Area itself using familiar controls. For example, to enlarge a widget, select it, then drag its handles around with the mouse.
 
 ![A Larger LED](/assets/studio/a-larger-led.png){: .center-image }
 

@@ -4,7 +4,7 @@ sidebar: yes
 permalink: /docs/studio/Actions/
 ---
 
-Widgets have a **Actions** property which is used to trigger actions upon user interaction. The common case is to associate Actions with [Control Widgets](/docs/studio/Control_Widgets/), but in principle it can be made to work with other widgets as well.
+Widgets have an **Actions** property which is used to trigger actions upon user interaction. The common case is to associate Actions with [Control Widgets](/docs/studio/Control_Widgets/), but in principle it can be made to work with other widgets as well.
 
 ![Sample Action](/assets/studio/open-opi-action.png){: .center-image }
 
@@ -25,7 +25,7 @@ The list of available actions currently includes:
     </tr>
     <tr>
         <th>Execute Command</th>
-        <td>This executes a command on your operating system. It does not execute a telecommand (although we should probably add such a feature too)</td>
+        <td>This executes a command on your operating system. It does not execute a telecommand (although we will probably add such a feature too)</td>
     </tr>
     <tr>
         <th>Execute JavaScript</th>

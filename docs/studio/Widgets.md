@@ -6,7 +6,7 @@ permalink: /docs/studio/Widgets/
 
 A display is a container for widgets.
 
-Most widgets are backed by a PV. Some widgets (e.g. layouting widgets) are typically not connected to a PV. Other widgets (e.g. charts) can be backed by more than one PV.
+Most widgets are backed by a PV. Some widgets (e.g. widgets used for layout) are typically not connected to a PV. Other widgets (e.g. charts) can be backed by more than one PV.
 
 ### Catalogue of Widgets
 The default widgets in Yamcs Studio are listed below. Their runtime behaviour should be fairly straightforward. The various properties are detailed when we address the [OPI Editor](/docs/studio/Editing_Displays/).
@@ -148,7 +148,7 @@ When a widget is backed by a PV, it will be decorated according to its runtime s
     </tr>
 </table>
 
-Note that the color information for alarms is currently not as rich as it could be. Yamcs parameters support five different levels of alarms, as well as a range of special monitoring values. This information is for now transformed using the following mapping:
+Note that the color information for alarms is currently not as rich as it could be. Yamcs parameters support five different levels of alarms, as well as a range of special monitoring values. This information has for now been transformed using the following mapping:
 
 <table class="inline nostretch">
     <tr>

@@ -28,7 +28,7 @@ Different widgets have different properties, but many of those properties are sh
     <tr>
         <th class="code">X<br>Y<br>Width<br>Height</th>
         <td>
-            <p>Widgets are contained in a bounding box which controlled by these properties.</p>
+            <p>Widgets are contained in a bounding box which is controlled by these properties.</p>
             <p><tt>X</tt> and <tt>Y</tt> indicate the pixel position of the widget within the display. The origin is located at the top left of the Editor Area. The X and Y position of the widget also indicates the top left of its bounding box.</p>
             <p><tt>Width</tt> and <tt>Height</tt> indicate the size of the bounding box. Many widgets support automatic scaling within the available bounding box.</p>
         </td>

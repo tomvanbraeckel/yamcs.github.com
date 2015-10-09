@@ -15,7 +15,7 @@ Recall that within Yamcs Studio, you are always working in one workspace only. W
 To create a new project, choose **File > New Project**, or right-click in the navigator and choose **New Project** from the pop-up menu.
 
 #### Importing Existing Projects
-To import an existing project, select **File > Import** and choose **Existing Projects into Workspace**. Navigate to the project's folder, and if Yamcs Studio recognizes it as a project you will be import it.
+To import an existing project, select **File > Import** and choose **Existing Projects into Workspace**. Navigate to the project's folder, and if Yamcs Studio recognizes it as a project you will be able to import it.
 
 <div class="hint">
     Projects are just directories on your disk (usually under version control). Yamcs Studio recognizes existing projects by the metadata which is added under the hidden <tt>.metadata</tt> folder. This metadata includes project-specific preferences, as well as for example the name of the project.
@@ -30,13 +30,13 @@ Open a file by double-clicking on it. If you open a file, yet Yamcs Studio does 
 
 The default Yamcs Studio distribution handles <tt>*.def</tt> and <tt>*.opi</tt> files. It also comes with a built-in text editor for basic editing of many other types of files as well (including <tt>*.txt</tt>, <tt>*.js</tt> and <tt>*.py</tt>).
 
-Use right-click, **Open With** for more control over how the file is to be opened.
+Use right-click **Open With** for more control over how the file is to be opened.
 
 #### Searching
 An advanced search and replace dialog is available from the **Search** menu. If you select a node in the navigator before opening the Search dialog, this dialog will be configured to only search resources under that node.
 
 ![Search](/assets/studio/search.png){: .center-image }
 
-Your search can include wildcard characters, and can be further specified to only a specific set of resources. The results will be opened in a the **Search** view which also allows for replacing occurrences upon right-click.
+Your search can include wildcard characters, and can be further specified to only a specific set of resources. The results will be opened in a **Search** view which also allows for replacing occurrences upon right-click.
 
 ![Search Results](/assets/studio/search-results.png){: .center-image }

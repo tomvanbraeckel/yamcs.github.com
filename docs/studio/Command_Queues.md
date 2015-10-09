@@ -18,7 +18,7 @@ The view is split into two panels:
     * blocked &#8594; enabled: all the commands in the queue will be automatically sent.
     <br>
 
-* The bottom panel contains the list of commands currently present in the queue selected in the upper panel. For each command the queue name, the command id, the user that has sent the command and the command string are display. The list is empty if the selected queue is not in the state blocked.
+* The bottom panel contains the list of commands currently present in the queue that is selected in the upper panel. For each command the queue name, the command id, the user that has sent the command and the command string are displayed. The list is empty if the selected queue is not in the state blocked.
 
     Right-clicking on a command gives the possibility to **Send** or **Reject** the command.
 

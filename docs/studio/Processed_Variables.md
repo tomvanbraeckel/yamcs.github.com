@@ -4,7 +4,7 @@ sidebar: yes
 permalink: /docs/studio/Processed_Variables/
 ---
 
-Processed Variable or 'PV' is a term used by Yamcs Studio that covers the different types of data sources that a widget can be connected to. It is a more general term than parameter, which is a Yamcs Server notion. In Yamcs Studio there are other types of PVs than parameters.
+Processed Variable or 'PV' is a term used by Yamcs Studio that covers the different types of data sources that a widget can be connected to. It is a more general term than parameter, which is a Yamcs Server notion.
 
 PVs are uniquely identified by a <em>PV Name</em>. If multiple widgets have dependencies on the same PV, only one instance will be created and shared between these widgets.
 
@@ -13,8 +13,10 @@ The term PV is used to indicate both the name of a specific data source definiti
 A PV is considered <em>connected</em> if the data source is available, and at least one widget within Yamcs Studio is subscribing to it. As soon as no more widgets are connected to a PV, the PV gets <em>disconnected</em>.
 
 <div class="hint">
-    This last property currently has as a side effect that for example chart widgets lose their history when closing and reopening the containing display. We are aware of this, and have ideas on how to address this shortcoming.
+    A side effect of this last property, is that widgets with memory, such as chart widgets, lose their history when closing and reopening the display. We are aware of this, and are taking care of this shortcoming.
 </div>
+
+There are different types of PVs:
 
 * TOC
 {:toc}

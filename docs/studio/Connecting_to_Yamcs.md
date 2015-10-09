@@ -4,7 +4,7 @@ sidebar: yes
 permalink: /docs/studio/Connecting_to_Yamcs/
 ---
 
-Yamcs Studio is a client application that's meant to be connected with Yamcs Server.
+Yamcs Studio is a client application that is meant to be connected with Yamcs Server.
 
 Yamcs Server, or 'Yamcs', handles the processing, archiving and dispatching of telemetry data. Yamcs Studio is one of the possible Yamcs clients for receiving telemetry data.
 
