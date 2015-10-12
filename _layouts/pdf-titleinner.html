@@ -36,13 +36,18 @@
         color: #3e4982;
       }
     </style>
+    <script>
+      function getURLParameter(name) {
+        return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||"001"
+      }
+    </script>
   </head>
   <body>
       <div class="top-bar">
       </div>
       <h1>{{ page.title }}</h1>
       <div style="text-align: center; padding-top: 4em; font-size: 0.75em;">
-        {{ page.docref }}<br>
+        {{ page.docref }}<span id="version"><script>document.write(getURLParameter('version'));</script></span><br>
         <br>
         This version was published
         <script language="javascript">

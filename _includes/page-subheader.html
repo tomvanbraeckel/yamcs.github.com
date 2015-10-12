@@ -51,6 +51,18 @@
     / <span class="active">{{ page.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}</span>
   {% endif %}
 
+
+  {%if page.pdflinkVersioned %}
+    <div style="float: right;">
+      &nbsp;
+      <select onChange="window.location.href=this.value">
+        <option value="">Previous version...</option>
+        {% for pdf in page.pdflinkVersioned %}
+        <option value="{{ pdf.link }}">{{ pdf.version }}</option>    
+        {% endfor %}
+      </select>
+    </div>
+  {% endif %}
   {% if page.pdflink %}
     <div style="float: right;">
       <a href="{{ page.pdflink }}">Download PDF</a>

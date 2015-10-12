@@ -1,5 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 set -e
+
+VERSION=$1
+if [ -n "$1" ]; then FILE_SUFFIX="-"$VERSION; fi
 
 DOCSURL="http://localhost:4000/docs"
 
@@ -12,7 +15,7 @@ function compose_pdf() {
         --quiet \
         --margin-top 10mm \
         --margin-bottom 50mm \
-        "$BASEURL/pdf/titlepage/" \
+        "$BASEURL/pdf/titlepage/?version="$VERSION \
         --print-media-type \
         --exclude-from-outline \
         --footer-html "$BASEURL/pdf/titlefooter/" \
@@ -23,7 +26,7 @@ function compose_pdf() {
         --quiet \
         --margin-top 10mm \
         --margin-bottom 15mm \
-        cover "$BASEURL/pdf/titleinner/" \
+        cover "$BASEURL/pdf/titleinner/?version="$VERSION \
         --exclude-from-outline \
         "/tmp/${TITLE}_precontent.pdf"
 
@@ -56,7 +59,7 @@ function compose_pdf() {
 
     # echo "" | ps2pdf -sPAPERSIZE=a4 - ${TITLE}_blank.pdf
 
-    gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile="assets/${TITLE}.pdf" \
+    gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile="assets/${TITLE}${FILE_SUFFIX}.pdf" \
         "/tmp/${TITLE}_cover.pdf" \
         "/tmp/${TITLE}_precontent.pdf" \
         "/tmp/${TITLE}_content.pdf"
@@ -77,7 +80,7 @@ exiftool \
     -keywords="tm" \
     -keywords="tc" \
     -overwrite_original \
-    "assets/${TITLE}.pdf"
+    "assets/${TITLE}${FILE_SUFFIX}.pdf"
 
 TITLE="Yamcs Server Manual"
 compose_pdf "$DOCSURL/server" "$TITLE"
@@ -92,7 +95,7 @@ exiftool \
     -keywords="tm" \
     -keywords="tc" \
     -overwrite_original \
-    "assets/${TITLE}.pdf"
+    "assets/${TITLE}${FILE_SUFFIX}.pdf"
 
 TITLE="Yamcs Client Tools Guide"
 compose_pdf "$DOCSURL/tools" "$TITLE"
@@ -108,4 +111,4 @@ exiftool \
     -keywords="tm" \
     -keywords="tc" \
     -overwrite_original \
-    "assets/${TITLE}.pdf"
+    "assets/${TITLE}${FILE_SUFFIX}.pdf"

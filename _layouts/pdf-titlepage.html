@@ -38,13 +38,21 @@
       color: #3e4982;
     }
   </style>
+  <script>
+    function getURLParameter(name) {
+      return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||"001"
+    }
+  </script>
 </head>
 <body>
     <div class="top-bar">
-      <h2>Space Applications Services</h2>
+      <h2>Space Applications Servicesz</h2>
     </div>
     <h1>{{ page.title }}</h1>
     <div>
+      <div style="text-align: center;">
+	<br>{{ page.docref }}<span id="version"><script>document.write(getURLParameter('version'));</script></span>
+      </div>
       <table style="margin: 0 auto; padding-top: 4em;">
         <tr>
           <td>
