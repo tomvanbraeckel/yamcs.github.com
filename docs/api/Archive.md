@@ -11,6 +11,7 @@ Fetches Parameters, Packets, Processed Parameters, Events and/or Command History
 Filters are specified in the request body, and should always include at least a `start` and a `stop` value. These are to be encoded in the internal Yamcs time format (use `TimeEncoding` from `yamcs-api`). We might make this configurable in the future.
 
 Request the command history:
+
 ```
 curl -XGET http://localhost:8090/simulator/api/archive -d '{"start": 1425686400,"stop": 1426636800,"commandHistoryRequest": {}}'
 ```
@@ -18,6 +19,7 @@ curl -XGET http://localhost:8090/simulator/api/archive -d '{"start": 1425686400,
 In practice the Yamcs archive could be very big. Therefore, responses are by default limited to about 1MB. Anything above will generate a server error. If your client is expected to fetch more data than that, you should use the `stream`-option like so:
 
 Request parameters:
+
 ```
 curl -XGET http://localhost:8090/simulator/api/archive -d '{"start": 1425686400,"stop": 1426636800,"commandHistoryRequest": {}}'
 ```

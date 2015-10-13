@@ -21,7 +21,8 @@ curl -XGET http://localhost:8090/simulator/api/parameter/_get?pretty -d '
      ,"timeout":2000}
   }'
 ```
-```json
+
+{% highlight json %}
 {
   "parameter" : [ {
     "id" : {
@@ -82,13 +83,14 @@ curl -XGET http://localhost:8090/simulator/api/parameter/_get?pretty -d '
     "generationTimeUTC" : "2015-04-23T14:30:46.242"
   } ]
 }
-```
+{% endhighlight %}
 
 ### Retrieve single parameter `/parameter/parameter_fqname`
 ```
 curl -XGET http://localhost:8090/simulator/api/parameter/YSS/SIMULATOR/BatteryVoltage2?pretty
 ```
-```json
+
+{% highlight json %}
 {
   "id" : {
     "name" : "/YSS/SIMULATOR/BatteryVoltage2"
@@ -109,7 +111,7 @@ curl -XGET http://localhost:8090/simulator/api/parameter/YSS/SIMULATOR/BatteryVo
   "acquisitionTimeUTC" : "2015-04-23T15:12:12.511",
   "generationTimeUTC" : "2015-04-23T15:11:56.507"
 }
-```
+{% endhighlight %}
 
 
 
