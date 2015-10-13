@@ -26,6 +26,11 @@
           {% assign title='Yamcs Client Tools Guide' %}
         {% endif %}
 
+        {% if page.sidebar and page.url contains '/docs/api' %}
+          {% assign structure=site.data.sidebar.guides.api %}
+          {% assign title='Yamcs Server API' %}
+        {% endif %}
+
         {% if structure %}
           {% include sidebar.html structure=structure title=title %}
         {% endif %}

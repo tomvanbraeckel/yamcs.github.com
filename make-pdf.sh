@@ -112,3 +112,20 @@ exiftool \
     -keywords="tc" \
     -overwrite_original \
     "assets/${TITLE}${FILE_SUFFIX}.pdf"
+
+TITLE="Yamcs Server API"
+compose_pdf "$DOCSURL/api" "$TITLE"
+exiftool \
+    -Author="Space Applications Services" \
+    -Subject="User Guide" \
+    -keywords="yamcs" \
+    -keywords="client" \
+    -keywords="tools" \
+    -keywords="mission" \
+    -keywords="control" \
+    -keywords="system" \
+    -keywords="tm" \
+    -keywords="tc" \
+    -keywords="api" \
+    -overwrite_original \
+    "assets/${TITLE}${FILE_SUFFIX}.pdf"
