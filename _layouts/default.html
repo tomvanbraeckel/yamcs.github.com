@@ -20,6 +20,7 @@
           {% if page.sidebar and page.url contains myurl %}
             {% assign title = titles[forloop.index] %}
             {% if page.version %}
+              {% capture title %}{{ title }}<br><small>{{page.version}}</small>{% endcapture %}
               {% capture structureName %}{{ document }}_{{ page.version | replace: '.', '_'}}{% endcapture %}
               {% assign structure=site.data.sidebar.guides[structureName]%}
             {% else %}
