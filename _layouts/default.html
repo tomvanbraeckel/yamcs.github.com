@@ -27,8 +27,13 @@
         {% endif %}
 
         {% if page.sidebar and page.url contains '/docs/api' %}
-          {% assign structure=site.data.sidebar.guides.api %}
           {% assign title='Yamcs Server API' %}
+          {% if page.version %}
+            {% capture structureName %}{{ "api_" }}{{ page.version | replace: '.', '_'}}{% endcapture %}
+            {% assign structure=site.data.sidebar.guides[structureName]%}
+          {% else %}
+            {% assign structure=site.data.sidebar.guides.api %}            
+          {% endif %}
         {% endif %}
 
         {% if structure %}

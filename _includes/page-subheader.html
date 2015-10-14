@@ -37,8 +37,14 @@
     {% if page.url == '/docs/api/' %}
       Yamcs Server API
     {% else %}
-      {% assign structure=site.data.sidebar.guides.api %}
-      <a href="/docs/api/">Yamcs Server API</a>
+      {% if page.version %}
+        {% assign structure=site.data.sidebar.guides.api_0_28_0 %}
+        <a href="/docs/api/">Yamcs Server API</a>
+       / <a href="/docs/api/{{page.version}}">{{page.version}}</a>
+      {% else %}
+        {% assign structure=site.data.sidebar.guides.api %}
+        <a href="/docs/api/">Yamcs Server API</a>
+      {% endif %}
     {% endif %}
   {% endif %}
 
@@ -61,18 +67,18 @@
     / <span class="active">{{ page.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}</span>
   {% endif %}
 
-
-  {%if page.pdflinkVersioned %}
+  {%if page.previousVersions %}
     <div style="float: right;">
       &nbsp;
       <select onChange="window.location.href=this.value">
-        <option value="">Previous PDF versions...</option>
-        {% for pdf in page.pdflinkVersioned %}
-        <option value="{{ pdf.link }}">{{ pdf.version }}</option>    
+        <option value="">Previous versions...</option>
+        {% for v in page.previousVersions %}
+          <option value="{{ v.link }}">{{ v.version }}</option>    
         {% endfor %}
       </select>
     </div>
   {% endif %}
+
   {% if page.pdflink %}
     <div style="float: right;">
       <a href="{{ page.pdflink }}">Download PDF</a>
