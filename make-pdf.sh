@@ -1,15 +1,45 @@
 #!/bin/bash
 set -e
 
-VERSION=$1
-if [ -n "$1" ]; then FILE_SUFFIX="-"$VERSION; fi
+
+#  Usage: ./make-pdf.sh [document_name version]
+#
+#  If no arguments are provided, generate the 4 pdf documents for the latest version.
+#  
+#  Optional arguments:
+#  document_name: one of "server", "studio", "tools", "api"
+#  version: version number, must match directory name in /docs/<document_name>/<version>
+#
+#  If the optional arguments are provided, generate the pdf document for the requested document with the requested version.
+#  Output name is <title>-<version>.pdf
+#
+#  PDF documents are saved in the /asset/ folder.
+
+
+DOC=$1
+VERSION=$2
+
+if [ -n "$DOC" ] && [ -z "$VERSION" ]; then
+echo "Usage: ./make-pdf.sh [document_name version]"
+exit
+fi
+
+if [ -n "$VERSION" ]; then 
+FILE_SUFFIX="-"$VERSION 
+fi
 
 DOCSURL="http://localhost:4000/docs"
 
 function compose_pdf() {
+  
     BASEURL=$1
     TITLE=$2
-    echo "Generating $2 from $1"
+
+    if [ -n "$VERSION" ]; then
+      BASEURL="$BASEURL/$VERSION"
+    fi
+
+    echo "Generating $TITLE from $BASEURL"
     wkhtmltopdf \
         --title "$TITLE" \
         --quiet \
@@ -67,6 +97,8 @@ function compose_pdf() {
     rm "/tmp/$TITLE"_*.pdf
 }
 
+if [ -z "$DOC" ] || [ "$DOC" = "studio" ]; then
+echo 1
 TITLE="Yamcs Studio User Guide"
 compose_pdf "$DOCSURL/studio" "$TITLE"
 exiftool \
@@ -81,7 +113,10 @@ exiftool \
     -keywords="tc" \
     -overwrite_original \
     "assets/${TITLE}${FILE_SUFFIX}.pdf"
+fi
 
+if [ -z "$DOC" ] || [ "$DOC" = "server" ]; then
+echo 2
 TITLE="Yamcs Server Manual"
 compose_pdf "$DOCSURL/server" "$TITLE"
 exiftool \
@@ -96,7 +131,10 @@ exiftool \
     -keywords="tc" \
     -overwrite_original \
     "assets/${TITLE}${FILE_SUFFIX}.pdf"
+fi
 
+if [ -z "$DOC" ] || [ "$DOC" = "tools" ]; then
+echo 3
 TITLE="Yamcs Client Tools Guide"
 compose_pdf "$DOCSURL/tools" "$TITLE"
 exiftool \
@@ -112,7 +150,10 @@ exiftool \
     -keywords="tc" \
     -overwrite_original \
     "assets/${TITLE}${FILE_SUFFIX}.pdf"
+fi
 
+if [ -z "$DOC" ] || [ "$DOC" = "api" ]; then
+echo 4
 TITLE="Yamcs Server API"
 compose_pdf "$DOCSURL/api" "$TITLE"
 exiftool \
@@ -129,3 +170,5 @@ exiftool \
     -keywords="api" \
     -overwrite_original \
     "assets/${TITLE}${FILE_SUFFIX}.pdf"
+fi
+

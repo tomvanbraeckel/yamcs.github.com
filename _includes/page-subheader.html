@@ -2,51 +2,31 @@
 
   {% assign structure=false %}
 
-  {% if page.url contains '/docs/server' %}
-    <a href="/docs/">Docs</a> /
-    {% if page.url == '/docs/server/' %}
-      Yamcs Server Manual
-    {% else %}
-      {% assign structure=site.data.sidebar.guides.server %}
-      <a href="/docs/server/">Yamcs Server User Guide</a>
-    {% endif %}
-  {% endif %}
 
-  {% if page.url contains '/docs/studio' %}
-    <a href="/docs/">Docs</a> /
-    {% if page.url == '/docs/studio/' %}
-      Yamcs Studio User Guide
-    {% else %}
-      {% assign structure=site.data.sidebar.guides.studio %}
-      <a href="/docs/studio/">Yamcs Studio User Guide</a>
-    {% endif %}
-  {% endif %}
 
-  {% if page.url contains '/docs/tools' %}
-    <a href="/docs/">Docs</a> /
-    {% if page.url == '/docs/tools/' %}
-      Yamcs Client Tools Guide
-    {% else %}
-      {% assign structure=site.data.sidebar.guides.tools %}
-      <a href="/docs/tools/">Yamcs Client Tools Guide</a>
-    {% endif %}
-  {% endif %}
+  {% assign documents = "server,studio,tools,api" | split: ',' %}
+  {% assign titles = "x,Yamcs Server Manual,Yamcs Studio User Guide,Yamcs Client Tools Guide,Yamcs Server API" | split: ',' %}
 
- {% if page.url contains '/docs/api' %}
-    <a href="/docs/">Docs</a> /
-    {% if page.url == '/docs/api/' %}
-      Yamcs Server API
-    {% else %}
-      {% if page.version %}
-        {% assign structure=site.data.sidebar.guides.api_0_28_0 %}
-        <a href="/docs/api/">Yamcs Server API</a>
-       / <a href="/docs/api/{{page.version}}">{{page.version}}</a>
-      {% else %}
-        {% assign structure=site.data.sidebar.guides.api %}
-        <a href="/docs/api/">Yamcs Server API</a>
+  {% for document in documents %}
+      {% capture url %}/docs/{{ document }}/{% endcapture %}
+      {% if page.url contains url %}
+        {% assign title = titles[forloop.index] %}
+        <a href="/docs/">Docs</a> /
+        {% if page.url == url %}
+          {{title}}
+        {% else %}
+          {% if page.version %}
+	    {% capture structureName %}{{ document }}_{{ page.version | replace: '.', '_'}}{% endcapture %}
+            {% assign structure=site.data.sidebar.guides.[structureName] %}
+            <a href="{{url}}">{{title}}</a>
+            / <a href="{{url}}{{page.version}}">{{page.version}}</a>
+          {% else %}
+            {% assign structure=site.data.sidebar.guides.[document] %}
+            <a href="{{url}}">{{title}}</a>
+          {% endif %}
+        {% endif %}
       {% endif %}
-    {% endif %}
-  {% endif %}
+  {% endfor %}
 
   {% if structure %}
     {% for chapter in structure %}
@@ -72,8 +52,8 @@
       &nbsp;
       <select onChange="window.location.href=this.value">
         <option value="">Previous versions...</option>
-        {% for v in page.previousVersions %}
-          <option value="{{ v.link }}">{{ v.version }}</option>    
+        {% for version in page.previousVersions %}
+          <option value="{{page.permalink}}{{ version }}/">{{ version }}</option>    
         {% endfor %}
       </select>
     </div>
