@@ -1,0 +1,23 @@
+- url: /docs/api/0.28.0/Web_API_Configuration/
+  
+- url: /docs/api/0.28.0/REST_API/
+  items:
+    - url: /docs/api/0.28.0/Alarms/
+    - url: /docs/api/0.28.0/Archive/
+    - url: /docs/api/0.28.0/Commanding/
+#    - url: /docs/api/0.28.0/Events/
+    - url: /docs/api/0.28.0/Mission_Data_Base/
+    - url: /docs/api/0.28.0/Parameters/
+#    - url: /docs/api/0.28.0/Processors/
+#    - url: /docs/api/0.28.0/Simulation_Time/
+
+
+- url: /docs/api/0.28.0/WebSocket_API/
+  items:
+#    -url: /docs/api/0.28.0/Parameter_Updates/
+    - url: /docs/api/0.28.0/Alarm_Notices/
+#    -url: /docs/api/0.28.0/Command_History_Updates/
+    - url: /docs/api/0.28.0/Event_Updates/
+    - url: /docs/api/0.28.0/Management_Updates/
+    - url: /docs/api/0.28.0/Streams/
+
