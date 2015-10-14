@@ -98,7 +98,6 @@ function compose_pdf() {
 }
 
 if [ -z "$DOC" ] || [ "$DOC" = "studio" ]; then
-echo 1
 TITLE="Yamcs Studio User Guide"
 compose_pdf "$DOCSURL/studio" "$TITLE"
 exiftool \
@@ -116,7 +115,6 @@ exiftool \
 fi
 
 if [ -z "$DOC" ] || [ "$DOC" = "server" ]; then
-echo 2
 TITLE="Yamcs Server Manual"
 compose_pdf "$DOCSURL/server" "$TITLE"
 exiftool \
@@ -134,7 +132,6 @@ exiftool \
 fi
 
 if [ -z "$DOC" ] || [ "$DOC" = "tools" ]; then
-echo 3
 TITLE="Yamcs Client Tools Guide"
 compose_pdf "$DOCSURL/tools" "$TITLE"
 exiftool \
@@ -153,7 +150,6 @@ exiftool \
 fi
 
 if [ -z "$DOC" ] || [ "$DOC" = "api" ]; then
-echo 4
 TITLE="Yamcs Server API"
 compose_pdf "$DOCSURL/api" "$TITLE"
 exiftool \

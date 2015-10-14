@@ -25,6 +25,11 @@ document=$1
 version=$2
 version_escaped=${version//[.]/_}
 
+if [ -z "$document" ] || [ -z "$version" ]; then
+echo "usage: ./tag-document-version.sh <document> <version>, with <document> one of [server, studio, tools, api]."
+exit
+fi
+
 echo updating website, document: $document , version: $version
 #1)
 cp _data/sidebar/guides/$document.yaml _data/sidebar/guides/${document}_$version_escaped.yaml
@@ -62,9 +67,7 @@ else
 fi
 
 #8)
-echo Waiting 20s for jekyll to rebuild the website...
-sleep 20
-echo  generating pdf...
-# ./make-pdf.sh $document $version
+read -n1 -r -p "Waiting for jekyll to update the website, press any key to start PDF file generation..." key
+./make-pdf.sh $document $version
 
 
