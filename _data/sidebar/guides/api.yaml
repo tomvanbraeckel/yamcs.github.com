@@ -3,6 +3,9 @@
 - url: /docs/api/REST_API/
   items:
     - url: /docs/api/Alarms/
+      items:
+        - url: /docs/api/List_Active_Alarms/
+        - url: /docs/api/Acknowledge_Alarm/        
     - url: /docs/api/Archive/
     - url: /docs/api/Commanding/
 #    - url: /docs/api/Events/
