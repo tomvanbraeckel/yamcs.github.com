@@ -19,8 +19,8 @@ set -e
 DOC=$1
 VERSION=$2
 
-if [ -n "$DOC" ] && [ -z "$VERSION" ]; then
-echo "Usage: ./make-pdf.sh [document_name version]"
+if [ -n "$DOC" ] && [ "$DOC" != "server" ] && [ "$DOC" != "studio" ] && [ "$DOC" != "tools" ] && [ "$DOC" != "api" ]; then
+echo "Usage: ./make-pdf.sh [document_name] [version], with document_name one of 'server', 'studio', 'tools', 'api'"
 exit
 fi
 

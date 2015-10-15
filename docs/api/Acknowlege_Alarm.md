@@ -15,7 +15,7 @@ sidebar: yes
 
 <table class="inline">
     <tr><th>Parameter</th><th>Description</th></tr>
-     <tr><td>Body</td><td>When using Protobuf, send a request body of type `Rest.AcknowledgeAlarmRequest`. </td><td></td></tr>
+     <tr><td>Body</td><td>When using Protobuf, send a request body of type `Rest.AcknowledgeAlarmRequest`. </td></tr>
 </table>
 
 Protobuff definitions:
