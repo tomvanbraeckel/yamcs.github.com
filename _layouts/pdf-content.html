@@ -66,7 +66,7 @@
                     {% for item_j in item.items %}
                       {% for p_j in site.pages %}
                         {% if p_j.url == item_j.url %}
-                          <h3 class="{% if forloop.first == false %}newpage{% endif %}">
+                          <h3 class="toc">
                             {% if p_j.title %}
                               {{ p_j.title }}
                             {% else %}

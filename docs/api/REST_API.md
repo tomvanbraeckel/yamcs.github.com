@@ -2,6 +2,7 @@
 layout: default
 permalink: /docs/api/REST_API/
 sidebar: yes
+chapter: yes
 ---
 
 Yamcs provides a RESTful web service allowing remote tools to interface with a growing set of internals.

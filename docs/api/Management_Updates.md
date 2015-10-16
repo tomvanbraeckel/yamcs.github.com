@@ -4,7 +4,7 @@ permalink: /docs/api/Management_Updates/
 sidebar: yes
 ---
 
-The `management` resource type within the [[ WebSocket API ]] groups general Yamcs info that does not fit under a specific other resource type.
+The `management` resource type within the WebSocket API groups general Yamcs info that does not fit under a specific other resource type.
 
 We recommend using the LGPL Java WebSocket client distributed as part of the yamcs-api jar, but if that is not an option, this is the protocol:
 

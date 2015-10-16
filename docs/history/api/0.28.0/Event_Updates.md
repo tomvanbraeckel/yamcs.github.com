@@ -5,7 +5,7 @@ permalink: /docs/api/0.28.0/Event_Updates/
 sidebar: yes
 ---
 
-The `events` resource type within the [[ WebSocket API ]] allows subscribing to event updates.
+The `events` resource type within the WebSocket API allows subscribing to event updates.
 
 We recommend using the LGPL Java WebSocket client distributed as part of the yamcs-api jar. But for deeper understanding, this is the protocol:
 

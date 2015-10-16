@@ -4,7 +4,7 @@ permalink: /docs/api/Alarm_Notices/
 sidebar: yes
 ---
 
-The `alarms` resource type within the [[ WebSocket API ]] allows subscribing to alarm updates.
+The `alarms` resource type within the WebSocket API allows subscribing to alarm updates.
 
 We recommend using the LGPL Java WebSocket client distributed as part of the yamcs-api jar, but if that is not an option, this is the protocol:
 

@@ -5,7 +5,7 @@ permalink: /docs/api/0.28.0/Streams/
 sidebar: yes
 ---
 
-The `stream` resource type within the [[ WebSocket API ]] groups low-level publish/subscribe operations on [[ Yamcs Streams ]].
+The `stream` resource type within the WebSocket API groups low-level publish/subscribe operations on Yamcs Streams.
 
 The documented operations work on one of the built-in streams (like `tm`, `tm_realtime`, `tm_dump`, `pp_realtime`, `cmdhist_realtime`, etc). Or, if your Yamcs deployment defines any other streams, they would work as well.
 

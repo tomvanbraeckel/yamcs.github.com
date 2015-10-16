@@ -1,0 +1,40 @@
+- url: /docs/server/0.28.0/Introduction/
+  items:
+    - url: /docs/server/0.28.0/Fundamentals/
+    - url: /docs/server/0.28.0/Installation/
+    - url: /docs/server/0.28.0/Acronyms/
+
+
+- url: /docs/server/0.28.0/Data_Links/
+  items:
+    - url: /docs/server/0.28.0/TM_Providers/
+    - url: /docs/server/0.28.0/PP_Providers/
+    - url: /docs/server/0.28.0/TC_Uplinkers/
+
+- url: /docs/server/0.28.0/Mission_Database/
+  items:
+    - url: /docs/server/0.28.0/TM_Loaders/
+    - url: /docs/server/0.28.0/PP_Loaders/
+    - url: /docs/server/0.28.0/TC_Loaders/
+    - url: /docs/server/0.28.0/Excel_Specification/
+
+- url: /docs/server/0.28.0/Telemetry_Processing/
+  items:
+    - url: /docs/server/0.28.0/Packet_Telemetry/
+    - url: /docs/server/0.28.0/Algorithms/
+    - url: /docs/server/0.28.0/Alarms/
+    - url: /docs/server/0.28.0/Commanding/
+
+- url: /docs/server/0.28.0/Security/
+  items:
+    - url: /docs/server/0.28.0/Authentication/
+    - url: /docs/server/0.28.0/Authorization/
+
+- url: /docs/server/0.28.0/Configuration/
+  items:
+    - url: /docs/server/0.28.0/command-queue.yaml/
+    - url: /docs/server/0.28.0/logging.yamcs-server.properties/
+    - url: /docs/server/0.28.0/mdb.yaml/
+    - url: /docs/server/0.28.0/multicast.yaml/
+    - url: /docs/server/0.28.0/privileges.yaml/
+    - url: /docs/server/0.28.0/tcp.yaml/
