@@ -14,7 +14,7 @@
         - url: /docs/api/Validate_Command/
         - url: /docs/api/Send_Command/
 #    - url: /docs/api/Events/
-    - url: /docs/api/Mission_Data_Base/
+    - url: /docs/api/Mission_Database/
       items:
         - url: /docs/api/List_Parameters/
         - url: /docs/api/Parameter_Info/
@@ -22,7 +22,7 @@
     - url: /docs/api/Parameters/
       items:
         - url: /docs/api/Single_Parameter_Value/
-        - url: /docs/api/Multiple_Parameters_Values/
+        - url: /docs/api/Multiple_Parameter_Values/
         - url: /docs/api/Set_Parameter/
 #    - url: /docs/api/Processors/
 #    - url: /docs/api/Simulation_Time/

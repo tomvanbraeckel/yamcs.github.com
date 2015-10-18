@@ -1,10 +1,10 @@
 ---
 layout: default
-permalink: /docs/api/Multiple_Parameters_Values/
+permalink: /docs/api/Multiple_Parameter_Values/
 sidebar: yes
 ---
 
-Retrieve multiple parameters values.
+Retrieve multiple parameter values.
 
 ### HTTP Post
 

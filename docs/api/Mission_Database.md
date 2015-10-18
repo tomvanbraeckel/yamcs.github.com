@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /docs/api/Mission_Data_Base/
+permalink: /docs/api/Mission_Database/
 sidebar: yes
 section: yes
 ---
