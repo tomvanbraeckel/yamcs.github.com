@@ -20,7 +20,7 @@ sidebar: yes
 
 Clients are required to specify a unique `sequenceNumber` for every command. The unicity is not currently enforced by the server, since it's basically there to help the client, and not necessarily the server.
 
-Protobuff definitions:
+Protobuf definitions:
 
 {% highlight nginx %}
 message RestSendCommandRequest {

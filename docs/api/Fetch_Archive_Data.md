@@ -23,7 +23,7 @@ Filters are specified in the request body, and should always include at least a 
 </table>
 
 
-Protobuff definition:
+Protobuf definition:
 
 {% highlight nginx %}
 message RestDumpArchiveRequest {
@@ -63,7 +63,7 @@ Using this option, the response may contain multiple individually delimited JSON
 
 ### Response
 
-Protobuff definition:
+Protobuf definition:
 
 {% highlight nginx %}
 message RestDumpArchiveResponse {

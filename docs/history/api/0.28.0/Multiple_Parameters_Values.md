@@ -21,7 +21,7 @@ Retrieve multiple parameters values.
      <tr><td>Body</td><td>Request body of type `Rest.RestGetParameterRequest`</td></tr>
 </table>
 
-Protobuff definitions:
+Protobuf definitions:
 
 {% highlight nginx %}
 message RestGetParameterRequest {
@@ -57,7 +57,7 @@ Instead of the timeout, the `fromCache:true` can be used to retrieve parameters 
 Response is of type `pvalue.ParameterData`.
 
 
-Protobuff definitions:
+Protobuf definitions:
 
 {% highlight nginx %}
 message ParameterData {

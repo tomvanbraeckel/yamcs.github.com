@@ -18,7 +18,7 @@ sidebar: yes
 </table>
 
 
-Protobuff definitions:
+Protobuf definitions:
 
 {% highlight nginx %}
 message ParameterData {

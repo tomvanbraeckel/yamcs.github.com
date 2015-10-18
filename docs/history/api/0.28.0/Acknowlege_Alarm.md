@@ -19,7 +19,7 @@ sidebar: yes
      <tr><td>Body</td><td>When using Protobuf, send a request body of type `Rest.AcknowledgeAlarmRequest`. </td></tr>
 </table>
 
-Protobuff definitions:
+Protobuf definitions:
 
 {% highlight nginx %}
 message AcknowledgeAlarmRequest {
@@ -39,7 +39,7 @@ message AcknowledgeAlarmRequest {
 
 
 The response can be deserialized as `Rest.AcknowledgeAlarmResponse`.
-Protobuff definition:
+Protobuf definition:
 
 {% highlight nginx %}
 message AcknowledgeAlarmResponse {

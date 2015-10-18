@@ -18,7 +18,7 @@ sidebar: yes
      <tr><td>Body</td><td>Request body of type `Rest.RestGetParameterInfoRequest`</td></tr>
 </table>
 
-Protobuff definitions:
+Protobuf definitions:
 
 {% highlight nginx %}
 message RestGetParameterInfoRequest {
@@ -45,7 +45,7 @@ message NamedObjectId {
 
 Response is of type `Rest.RestGetParameterInfoResponse`.
 
-Protobuff definitions:
+Protobuf definitions:
 
 {% highlight nginx %}
 message RestGetParameterInfoResponse {

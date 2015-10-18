@@ -18,7 +18,7 @@ sidebar: yes
      <tr><td>Body</td><td>Request body of type `Rest.RestValidateCommandRequest`</td></tr>
 </table>
 
-Protobuff definitions:
+Protobuf definitions:
 
 {% highlight nginx %}
 message RestValidateCommandRequest {
@@ -56,7 +56,7 @@ Empty response means the command was successfully validated.
 
 If the command has a significance, a response is sent with type `Rest.RestValidateCommandResponse`. It contains the command significance.
 
-Protobuff definitions:
+Protobuf definitions:
 
 {% highlight nginx %}
 message RestValidateCommandResponse {

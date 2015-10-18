@@ -28,7 +28,7 @@ Retrieve single parameter value.
 Response is of type `pvalue.ParameterValue`.
 
 
-Protobuff definitions:
+Protobuf definitions:
 
 {% highlight nginx %}
 message ParameterValue {

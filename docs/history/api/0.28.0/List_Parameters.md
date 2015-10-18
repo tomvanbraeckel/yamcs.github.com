@@ -18,7 +18,7 @@ sidebar: yes
 <tr><td>Body</td><td>Request body of type `Rest.RestListAvailableParametersRequest`</td></tr>
 </table>
 
-Protobuff definitions:
+Protobuf definitions:
 
 {% highlight nginx %}
 message RestListAvailableParametersRequest {
@@ -35,7 +35,7 @@ message RestListAvailableParametersRequest {
 
 ### Response
 
-Protobuff definitions:
+Protobuf definitions:
 
 {% highlight nginx %}
 message RestListAvailableParametersResponse {
