@@ -55,6 +55,7 @@ If there was no update for a certain parameter, yet the algorithm is still being
     
 #### Triggers
 Algorithms can trigger on two conditions:
+
 * Whenever a specified parameter is updated
 * Periodically (expressed in milliseconds)
 

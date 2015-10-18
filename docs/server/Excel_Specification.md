@@ -689,72 +689,66 @@ The sheet contains commands description, including arguments. General convention
 	</tr>
 	<tr>
 		<th>parent</th>
-		<td>name of the parent command if any.
-Can be specified starting with / for an absolute reference or with ../ for pointing to parent SpaceSystem
-:x means that the arguments in this container start at position x (in bits) relative to the topmost container.
-Currently there is a problem for containers that have no argument: the bit position does not apply to children and has to be repeated.</td>
+		<td>
+			<p>name of the parent command if any.</p>
+			<p>Can be specified starting with / for an absolute reference or with ../ for pointing to parent SpaceSystem :x means that the arguments in this container start at position x (in bits) relative to the topmost container. Currently there is a problem for containers that have no argument: the bit position does not apply to children and has to be repeated.</p>
+		</td>
 	</tr>
 	<tr>
-		<th>argAssignement</th>
+		<th>argAssignment</th>
 		<td>name1=value1;name2=value2.. where name1,name2.. are the names of arguments which are assigned when the inheritance takes place</td>
 	</tr>
 	<tr>
 		<th>flags</th>
-		<td>for comands:
-A=abstract
-for argument: 
-L = little endian</td>
+		<td>For commands: A=abstract. For arguments: L = little endian</td>
 	</tr>
 	<tr>
 		<th>argument name</th>
-		<td>from this column on, most of the parameters are valid for arguments only which have to come starting next row after the command. The exceptions are: -  - size in bits
-- description
-- aliases</td>
+		<td>From this column on, most of the cells are valid for arguments only. These have to be defined on a new row after the command. The exceptions are: size in bits, description, aliases</td>
 	</tr>
 	<tr>
 		<th>relpos</th>
-		<td>relative position to the previous argument
+		<td>Relative position to the previous argument
 default is 0</td>
 	</tr>
 	<tr>
 		<th>size in bits</th>
-		<td>size in bits of the raw value</td>
+		<td>Size in bits of the raw value</td>
 	</tr>
 	<tr>
 		<th>eng type</th>
-		<td>engineering type; can be one of:
-- uint
-- int
-- float
-- string
-- binary
-- enumerated
-- boolean
-- FixedValue
-FixedValue is like binary but is not considered an argument but just a value to fill in the packet.</td></tr>
-<tr><th>raw type</th>
-<td>raw type: can be one of uint, int, float or binary
-</td></tr>
-<tr><th>(default) value</th>
-<td>"default value
-if eng type is FixedValue, this has to contain the value in hexadecimal.
-Note that when the size of the argument is not an integer number of bytes (which is how hexadecimal binary strings are specified), the most significant bits are ignored."
-</td></tr>
-<tr><th>eng unit</th>
-<td></td></tr>
-<tr><th>calibration</th>
-<td>point to a calibration from the Calibration sheet
-</td></tr>
-<tr><th>range low</th>
-<td>"the value of the argument cannot be smaller than this. 
-For strings and binary arguments this means the minimum length in characters, respectively bytes."
-</td></tr>
-<tr><th>range high</th>
-<td>"the value of the argument cannot be higher than this. Only applies to numbers.
-For strings and binary arguments this means the minimum length in characters, respectively bytes."
-</td></tr>
-<tr><th>description</th>
-<td>optional free text description</td>
+		<td>
+			Dngineering type; can be one of: uint, int, float, string, binary, enumerated, boolean or FixedValue.
+			FixedValue is like binary but is not considered an argument but just a value to fill in the packet.
+		</td>
+	</tr>
+	<tr>
+		<th>raw type</th>
+		<td>Raw type: can be one of uint, int, float, string or binary</td>
+	</tr>
+	<tr>
+		<th>(default) value</th>
+		<td>Default value. If eng type is FixedValue, this has to contain the value in hexadecimal. Note that when the size of the argument is not an integer number of bytes (which is how hexadecimal binary strings are specified), the most significant bits are ignored.</td>
+	</tr>
+	<tr>
+		<th>eng unit</th>
+		<td></td>
+	</tr>
+	<tr>
+		<th>calibration</th>
+		<td>Point to a calibration from the Calibration sheet</td>
+	</tr>
+	<tr>
+		<th>range low</th>
+		<td>The value of the argument cannot be smaller than this. For strings and binary arguments this means the minimum length in characters, respectively bytes.</td>
+	</tr>
+	<tr>
+		<th>range high</th>
+		<td>The value of the argument cannot be higher than this. Only applies to numbers. For strings and binary arguments this means the minimum length in characters, respectively bytes.</td>
+	</tr>
+	<tr>
+		<th>description</th>
+		<td>Optional free text description</td>
 	</tr>
 </table>
 
