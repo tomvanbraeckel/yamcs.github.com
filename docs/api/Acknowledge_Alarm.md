@@ -4,10 +4,8 @@ permalink: /docs/api/Acknowledge_Alarm/
 sidebar: yes
 ---
 
-### HTTP Post to Alarms
-
 ```
-/{yamcsInstance}/api/alarms/acknowledge/(alarmId)/my/qualified/parameter/name
+POST /{yamcsInstance}/api/alarms/acknowledge/(alarmId)/my/qualified/parameter/name
 ```
 
 
@@ -15,7 +13,7 @@ sidebar: yes
 
 <table class="inline">
     <tr><th>Parameter</th><th>Description</th></tr>
-     <tr><td>Body</td><td>When using Protobuf, send a request body of type `Rest.AcknowledgeAlarmRequest`. </td></tr>
+     <tr><td>Body</td><td>When using Protobuf, send a request body of type <code>Rest.AcknowledgeAlarmRequest</code>. </td></tr>
 </table>
 
 Protobuf definitions:

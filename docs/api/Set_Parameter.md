@@ -4,17 +4,15 @@ permalink: /docs/api/Set_Parameter/
 sidebar: yes
 ---
 
-### HTTP Post
-
 ```
-/{yamcsInstance}/api/parameter/_set
+POST /{yamcsInstance}/api/parameter/_set
 ```
 
 ### Required Parameters
 
 <table class="inline">
     <tr><th>Parameter</th><th>Description</th></tr>
-     <tr><td>Body</td><td>Request body of type `Rest.ParameterData`</td></tr>
+     <tr><td>Body</td><td>Request body of type <code>Rest.ParameterData</code></td></tr>
 </table>
 
 
@@ -132,11 +130,8 @@ enum MonitoringResult {
 
 
 ### Optional Parameters
+None
 
 ### Response
 
 Empty response.
-
-### Example
-
-

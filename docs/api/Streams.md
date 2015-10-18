@@ -40,6 +40,7 @@ Other streams would have different columns.
 
 ### Publish to a Stream
 Within the websocket request envelope use these values:
+
 * request-type `stream`
 * request `publish`
 * data

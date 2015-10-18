@@ -4,13 +4,14 @@ permalink: /docs/api/Multiple_Parameter_Values/
 sidebar: yes
 ---
 
-Retrieve multiple parameter values.
-
-### HTTP Post
+Retrieves the current value of each of the specified parameters.
 
 ```
-/{yamcsInstance}/api/parameter/_get
+GET /{yamcsInstance}/api/parameter/_get
+POST /{yamcsInstance}/api/parameter/_get
 ```
+
+GET is recommended, but POST requests are permitted too as long as the API doesn't support specifying parameters through other means than the request body.
 
 ### Required Parameters
 

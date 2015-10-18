@@ -4,17 +4,15 @@ permalink: /docs/api/Validate_Command/
 sidebar: yes
 ---
 
-### HTTP Post
-
 ```
-/{yamcsInstance}/api/commanding/validator
+POST /{yamcsInstance}/api/commanding/validator
 ```
 
 ### Required Parameters
 
 <table class="inline">
     <tr><th>Parameter</th><th>Description</th></tr>
-     <tr><td>Body</td><td>Request body of type `Rest.RestValidateCommandRequest`</td></tr>
+     <tr><td>Body</td><td>Request body of type <code>Rest.RestValidateCommandRequest</code></td></tr>
 </table>
 
 Protobuf definitions:

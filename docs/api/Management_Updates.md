@@ -10,12 +10,13 @@ We recommend using the LGPL Java WebSocket client distributed as part of the yam
 
 ### Subscribe to Management Updates
 Within the websocket request envelope use these values:
+
 * request-type `management`
 * request `subscribe`
 
 This will make your web socket connection receive updates on the following Yamcs data types (aka `ProtoDataType`):
 
-##### CLIENT_INFO
+#### CLIENT_INFO
 Updates on a client that is or was connected to Yamcs. Directly after sending a `management/subscribe` request, you will also get an update for all the clients that are connected at that point. As soon as a client is disconnected, you will also get an update on that.
 
 Here's example output in JSON (with Protobuf, there's an applicable getter in the `WebSocketSubscriptionData`), where there are two anonymous clients connected to a non-secured deployment of Yamcs:
@@ -28,7 +29,7 @@ Here's example output in JSON (with Protobuf, there's an applicable getter in th
 
 After the empty initial ACK, we receive two data messages, one for each connected client at that point. Notice the `currentClient` field which indicates whether this client info concerns your own web socket session. The `state` field indicates either CONNECTED (0) or DISCONNECTED (1). In case the other use would close its connection, we would thus get an update on that too.
 
-##### PROCESSOR_INFO
+#### PROCESSOR_INFO
 Updates on the lifecycle of Yamcs TM/TC processors. Directly after sending a `management/subscribe` request, you will also get an update for all the processors at that point.
 
 Here's an example output in JSON (with Protobuf, there's an applicable getter in the `WebSocketSubscriptionData`), where there is just one processor `realtime`.
@@ -38,7 +39,7 @@ Here's an example output in JSON (with Protobuf, there's an applicable getter in
 [1,4,0,{"dt":"PROCESSOR_INFO","data":{"instance":"simulator","name":"realtime","type":"realtime","creator":"system","hasCommanding":true,"state":2}}]
 {% endhighlight %}
 
-##### PROCESSING_STATISTICS
+#### PROCESSING_STATISTICS
 General statistics on processors. For every high-level packet, shows you the the current processing time, an increasing data count, and many more info. Updates on this data type are a bit noisier than the client_info/processor_info updates, so we might decide to move this out to a different subscription request in the future.
 
 Here's an example output in JSON (with Protobuf, there's an applicable getter in the `WebSocketSubscriptionData`):
@@ -51,6 +52,7 @@ Here's an example output in JSON (with Protobuf, there's an applicable getter in
 
 ### Get Client-Info
 Within the websocket request envelope use these values:
+
 * request-type `management`
 * request `getClientInfo`
 

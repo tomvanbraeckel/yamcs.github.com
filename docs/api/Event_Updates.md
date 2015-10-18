@@ -10,6 +10,7 @@ We recommend using the LGPL Java WebSocket client distributed as part of the yam
 
 ### Subscribe
 Within the WebSocket request envelope use these values:
+
 * request-type `events`
 * request `subscribe`
 
@@ -26,6 +27,7 @@ Here's example output in JSON (with Protobuf, there's an applicable getter in th
 
 ### Unsubscribe
 Within the WebSocket request envelope use these values:
+
 * request-type `events`
 * request `unsubscribe`
 

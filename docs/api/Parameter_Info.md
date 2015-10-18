@@ -4,17 +4,18 @@ permalink: /docs/api/Parameter_Info/
 sidebar: yes
 ---
 
-### HTTP Post
+```
+GET /{yamcsInstance}/api/mdb/parameterInfo
+POST /{yamcsInstance}/api/mdb/parameterInfo
+```
 
-```
-/{yamcsInstance}/api/mdb/parameterInfo
-```
+GET is recommended, but POST requests are permitted too as long as the API doesn't support specifying parameters through other means than the request body.
 
 ### Required Parameters
 
 <table class="inline">
     <tr><th>Parameter</th><th>Description</th></tr>
-     <tr><td>Body</td><td>Request body of type `Rest.RestGetParameterInfoRequest`</td></tr>
+     <tr><td>Body</td><td>Request body of type <code>Rest.RestGetParameterInfoRequest</code></td></tr>
 </table>
 
 Protobuf definitions:

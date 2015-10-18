@@ -4,20 +4,20 @@ permalink: /docs/api/Dump_MDB/
 sidebar: yes
 ---
 
-
-### HTTP Post
+Returns the entire dump of the mission database. We recommend against using this method as we plan to make the entire mission database more RESTful and explorable in the future. 
 
 ```
-/{yamcsInstance}/api/mdb/dump
+GET /{yamcsInstance}/api/mdb/dump
 ```
 
 ### Required Parameters
+None
 
 ### Optional Parameters
+None
 
 ### Response
-
-Return the entire dump of the mission database. This is a very bad method which we would like to make more RESTful and explorable in the future, but for now it returns a java-serialized dump of `org.yamcs.xtce.XtceDb` for the specified yamcs instance. You'll need a dependency on yamcs-xtce to interpret this dump.
+Java-serialized dump of `org.yamcs.xtce.XtceDb` for the specified yamcs instance. You will need a dependency on yamcs-xtce to interpret this dump.
 
 ### Example
 

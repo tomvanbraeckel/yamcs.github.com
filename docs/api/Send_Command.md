@@ -4,10 +4,8 @@ permalink: /docs/api/Send_Command/
 sidebar: yes
 ---
 
-### HTTP Post
-
 ```
-/{yamcsInstance}/api/commanding/queue
+POST /{yamcsInstance}/api/commanding/queue
 ```
 
 
@@ -15,7 +13,7 @@ sidebar: yes
 
 <table class="inline">
     <tr><th>Parameter</th><th>Description</th></tr>
-    <tr><td>Body</td><td>Request body of type `Rest.RestValidateCommandRequest`</td></tr>
+    <tr><td>Body</td><td>Request body of type <code>Rest.RestValidateCommandRequest</code></td></tr>
 </table>
 
 Clients are required to specify a unique `sequenceNumber` for every command. The unicity is not currently enforced by the server, since it's basically there to help the client, and not necessarily the server.

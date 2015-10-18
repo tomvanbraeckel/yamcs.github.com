@@ -4,15 +4,14 @@ permalink: /docs/api/Single_Parameter_Value/
 sidebar: yes
 ---
 
-Retrieve single parameter value.
-
-### HTTP Post
+Retrieves the current value of the specified parameter.
 
 ```
-/{yamcsInstance}/api/parameter/{parameter fully qualified}
+GET /{yamcsInstance}/api/parameter/{parameter fully qualified}
 ```
 
 ### Required Parameters
+None
 
 
 ### Optional Parameters

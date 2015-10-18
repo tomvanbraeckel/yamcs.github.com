@@ -4,17 +4,15 @@ permalink: /docs/api/List_Parameters/
 sidebar: yes
 ---
 
-### HTTP Post
-
 ```
-/{yamcsInstance}/api/mdb/parameters
+GET /{yamcsInstance}/api/mdb/parameters
 ```
 
 ### Required Parameters
 
 <table class="inline">
     <tr><th>Parameter</th><th>Description</th></tr>
-<tr><td>Body</td><td>Request body of type `Rest.RestListAvailableParametersRequest`</td></tr>
+<tr><td>Body</td><td>Request body of type <code>Rest.RestListAvailableParametersRequest</code></td></tr>
 </table>
 
 Protobuf definitions:

@@ -6,18 +6,13 @@ sidebar: yes
 
 Returns a list of current active alarms. For each alarm you get full information on the value occurrence that initially triggered the alarm, the most severe value since it originally triggered, and the latest value at the time of your request.
 
-### HTTP Post to Alarms
-
 ```
-/{yamcsInstance}/api/alarms
+GET /{yamcsInstance}/api/alarms
 ```
 
 ### Required Parameters
 
-<table class="inline">
-    <tr><th>Parameter</th><th>Description</th></tr>
-     <tr><td></td><td></td></tr>
-</table>
+None
 
 ### Optional Parameters
 

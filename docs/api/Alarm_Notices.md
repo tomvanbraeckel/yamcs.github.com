@@ -10,6 +10,7 @@ We recommend using the LGPL Java WebSocket client distributed as part of the yam
 
 ### Subscribe to Alarm Notices
 Within the WebSocket request envelope use these values:
+
 * request-type `alarms`
 * request `subscribe`
 
@@ -27,6 +28,7 @@ Here's example output in JSON (with Protobuf, there's an applicable getter in th
 
 ### Unsubscribe
 Within the WebSocket request envelope use these values:
+
 * request-type `alarms`
 * request `unsubscribe`
 
