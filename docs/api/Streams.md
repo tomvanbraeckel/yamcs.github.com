@@ -12,6 +12,7 @@ We recommend using the LGPL Java WebSocket client distributed as part of the yam
 
 ### Subscribe to a Stream
 Within the websocket request envelope use these values:
+
 * request-type `stream`
 * request `subscribe`
 * data
