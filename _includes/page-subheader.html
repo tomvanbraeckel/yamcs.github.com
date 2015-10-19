@@ -53,8 +53,7 @@
       <select onChange="window.location.href=this.value">
         <option value="">Version...</option>
         {% for version in page.previousVersions %}
-          {% capture link %}{% if page.version %}{{page.permalink | remove: page.version}}{% else %}{{page.permalink}}{% endif %}{% endcapture %}
-          {% capture link %}{{link | replace: '//', '/'}}{% endcapture %}
+          {% capture link %}{% if page.version %}{% capture linkVersion %}/{{page.version}}{% endcapture %}{{page.permalink | remove: linkVersion}}{% else %}{{page.permalink}}{% endif %}{% endcapture %}
           {% if version == "latest" %}
             <option value="{{link}}">{{ version }}</option>    
           {% else %}
