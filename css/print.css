@@ -85,6 +85,10 @@ pre {
     color: black !important;
     text-decoration: none !important;
   }
+
+  .noprint {
+    display: none;
+  }
 }
 
 #markdown-toc, .chaptertoc {

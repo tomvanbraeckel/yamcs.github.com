@@ -20,7 +20,7 @@
           {% if page.sidebar and page.url contains myurl %}
             {% assign title = titles[forloop.index] %}
             {% if page.version %}
-              {% capture title %}{{ title }}<br><small>{{page.version}}</small>{% endcapture %}
+              {% capture title %}{{ title }}<br><small>{{ page.version }}</small>{% endcapture %}
               {% capture structureName %}{{ document }}_{{ page.version | replace: '.', '_'}}{% endcapture %}
               {% assign structure=site.data.sidebar.guides[structureName]%}
             {% else %}
@@ -46,6 +46,13 @@
               {{ page.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}
             {% endif %}
           </h1>
+          {% if page.pdflink %}
+            <div class="pdf noprint">
+              Download a PDF copy of this online document:<br>
+              <a href="{{ page.pdflink }}">{{ page.pdflink | replace: '/assets/','' }}</a>
+            </div>
+          {% endif %}
+
           {{ content }}
 
           {% if page.chapter %}

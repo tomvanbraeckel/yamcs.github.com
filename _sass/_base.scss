@@ -190,6 +190,21 @@ h4 {
   min-height: 30px;
 }
 
+.pdf {
+  background: url('/assets/pdf.png') 5px 5px no-repeat;
+  /*background-size: 20px;*/
+  border-top: 1px solid #eef;
+  border-bottom: 1px solid #eef;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 40px;
+  margin-left: 0.5em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  font-size: smaller;
+  min-height: 30px;
+}
+
 table.inline {
   border-collapse: collapse;
   margin-bottom: 15px;
