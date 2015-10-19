@@ -5,7 +5,6 @@
 # Next steps are from folder /docs/history/<document>/<version>/
 # 3) Edit index.html to:
 #    - in header, modify pdf link to /assets/<doc_title>-<version>.pdf
-#    - in header, remove tag "previousVersions"
 #    - in body, append <version_escaped> to {% include toc.html structure=site.data.sidebar.guides.[...]
 # 4) Edit all files header to:
 #    - insert version in permalink
@@ -14,8 +13,7 @@
 #    - insert version in permalink
 # 6) Edit pdf/content.md file header to:
 #    - append _<version_escaped> to tag guide
-# 7) Update /doc/<document>/index.html to:
-#    - check if tag "previousVersions" exists in header, else add it
+# 7) Update /doc/<document>/index.html and /docs/history/<document>/*/index.html to:
 #    - add <version> to tag "previousVersions"
 # 8) Wait for jekkyl to update website (arbitrary 20 s), then generate PDF of <document> <version>
 
@@ -41,7 +39,6 @@ cp -r docs/$document/* docs/history/$document/$version/
 
 #3)
 sed -i "s/.pdf/-$version.pdf/g" docs/history/$document/$version/index.html
-sed -i '/previousVersions/d' docs/history/$document/$version/index.html
 sed -i "s/structure=site.data.sidebar.guides.$document/structure=site.data.sidebar.guides.${document}_$version_escaped/g" docs/history/$document/$version/index.html
 
 #4)
@@ -54,17 +51,9 @@ sed -i "s/permalink: \/docs\/$document/permalink: \/docs\/$document\/$version/g"
 #6)
 sed -i "s/guide: $document/guide: ${document}_$version_escaped/g" docs/history/$document/$version/pdf/content.md
 
-#7)
-if ! grep -q previousVersions "docs/$document/index.html"; then   
-   # add tag previousVersion to index if necessary
-   echo adding previousVersion tag in \"docs/$document/index.html\"
-   sed -i "s/title:/previousVersions: [ $version ]\ntitle:/g" docs/$document/index.html
-else
-   # if it exists, add the new version only if it is not already there
-   if ! grep -q $version "docs/$document/index.html"; then   
-     sed -i "s/previousVersions: \[/previousVersions: \[ $version\,/g" docs/$document/index.html
-   fi
-fi
+#7) 
+./update-version-history.sh docs/$document/index.html $version
+find docs/history/$document -name index.html -exec sh -c "./update-version-history.sh {} $version" {} \;
 
 #8)
 read -n1 -r -p "Waiting for jekyll to update the website, press any key to start PDF file generation..." key

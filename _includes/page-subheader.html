@@ -51,9 +51,15 @@
     <div style="float: right;">
       &nbsp;
       <select onChange="window.location.href=this.value">
-        <option value="">Previous versions...</option>
+        <option value="">Version...</option>
         {% for version in page.previousVersions %}
-          <option value="{{page.permalink}}{{ version }}/">{{ version }}</option>    
+          {% capture link %}{% if page.version %}{{page.permalink | remove: page.version}}{% else %}{{page.permalink}}{% endif %}{% endcapture %}
+          {% capture link %}{{link | replace: '//', '/'}}{% endcapture %}
+          {% if version == "latest" %}
+            <option value="{{link}}">{{ version }}</option>    
+          {% else %}
+            <option value="{{link}}{{ version }}/">{{ version }}</option>    
+          {% endif %}
         {% endfor %}
       </select>
     </div>
