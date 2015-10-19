@@ -67,7 +67,7 @@ pre {
     page-break-before: always;
   }
 
-  body {
+  body, pre, code {
     font-size: 11px;
     /*line-height: 1.5em;*/
   }
