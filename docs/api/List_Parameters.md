@@ -41,33 +41,28 @@ message RestListAvailableParametersResponse {
 {% endhighlight %}
 
 {% highlight nginx %}
-message RestParameterType {
-    optional string engType = 1;
-    optional string dataEncoding =2; //TODO
-    repeated RestUnitType unitSet = 3; 
-    optional RestAlarmInfo defaultAlarm = 4;
+message RestParameter {
+  optional yamcs.NamedObjectId id=1;
+  optional RestDataSource dataSource=2;
 }
 {% endhighlight %}
 
 {% highlight nginx %}
-message RestUnitType {
-   optional string unit = 1;
+message NamedObjectId {
+  required string name=1;
+  optional string namespace=2; 
 }
 {% endhighlight %}
 
 {% highlight nginx %}
-message RestAlarmInfo {
-    optional int32 minViolations = 1;
-    repeated RestAlarmRange staticAlarmRanges = 2;
-}
-{% endhighlight %}
-
-{% highlight nginx %}
-message RestAlarmRange {
-   optional RestAlarmLevel level = 1; 
-   optional double minInclusive = 2;
-   optional double maxInclusive = 3; 
-   optional string enumerationValue = 4;
+enum RestDataSource {
+  TELEMETERED=0;
+  DERIVED=1;
+  CONSTANT=2;
+  LOCAL=3;
+  SYSTEM=4;
+  COMMAND=5;
+  COMMAND_HISTORY=6;
 }
 {% endhighlight %}
 
