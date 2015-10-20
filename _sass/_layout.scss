@@ -232,9 +232,14 @@
       background-color: #efefef;
     }
 
+    &.expanded {
+      background-color: $grey-color-light;
+    }
+
     &.active {
-      font-weight: 400;
-      border-left: 2px solid #3e4981;
+      /*border-left: 2px solid #3e4981;*/
+      background-color: #1756a9 !important;
+      color: white !important;
     }
   }
 
@@ -267,8 +272,10 @@
     font-size: 14px;
 
     &.active {
-      font-weight: 400;
-      border-left: 2px solid #3e4981;
+      /*font-weight: 400;*/
+      /*border-left: 2px solid #3e4981;*/
+      background-color: #1756a9 !important;
+      color: white !important;
     }
   }
 
@@ -281,7 +288,9 @@
     padding-bottom: 0.3em;
 
     &.active {
-      font-weight: 400;
+      /*font-weight: 400;*/
+      background-color: #1756a9 !important;
+      color: #fff;
     }
   }
 

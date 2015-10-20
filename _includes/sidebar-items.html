@@ -1,9 +1,24 @@
 {% if include.items %}
   <ul class="items">
-    {% for item in include.items %}
+    {% for section in include.items %}
+
+      {% assign expand_section=false %}
+      {% assign active_section=false %}
+      {% if section.url == page.url %}
+        {% assign expand_section=true %}
+        {% assign active_section=true %}
+      {% else %}
+        {% for subsection in section.items %}
+          {% if subsection.url == page.url %}
+            {% assign expand_section=true %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
       <li>
-        {% if page.url == item.url %}
-          <span class="sidebar-item-2 active">
+        {% if page.url == section.url %}
+          <span class="sidebar-item-2 {% if active_section %}active{% endif %} {% if expand_section %}expanded{% endif %}">
             {% if page.title %}
               {{ page.title }}
             {% else %}
@@ -14,13 +29,13 @@
           {% assign exists=false %}
           {% assign p_i=false %}
           {% for p in site.pages %}
-            {% if p.url == item.url %}
+            {% if p.url == section.url %}
               {% assign exists=true %}
               {% assign p_i=p %}
               {% break %}
             {% endif %}
           {% endfor %}
-          <a class="sidebar-link-2{% if exists == false %} broken{% endif %}" href="{{ item.url }}">
+          <a class="sidebar-link-2 {% if active_section %}active{% endif %} {% if expand_section %}expanded{% endif %}  {% if exists == false %} broken{% endif %}" href="{{ section.url }}">
             {% if exists %}
               {% if p_i.title %}
                 {{ p_i.title }}
@@ -28,15 +43,15 @@
                 {{ p_i.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}
               {% endif %}
             {% else %}
-              {{ item.url }}
+              {{ section.url }}
             {% endif %}
           </a>
         {% endif %}
 
-        {% if item.items %}
+        {% if section.items %}
           <ul>
-            {% for item_j in item.items %}
-              {% if page.url == item_j.url %}
+            {% for subsection in section.items %}
+              {% if page.url == subsection.url %}
                 <li class="active">
                   <span class="sidebar-item-3 active">
                     {% if page.title %}
@@ -51,13 +66,13 @@
                   {% assign exists=false %}
                   {% assign p_j=false %}
                   {% for p in site.pages %}
-                    {% if p.url == item_j.url %}
+                    {% if p.url == subsection.url %}
                       {% assign exists=true %}
                       {% assign p_j=p %}
                       {% break %}
                     {% endif %}
                   {% endfor %}
-                  <a class="sidebar-link-3{% if exists == false %} broken{% endif %}" href="{{ item_j.url }}">
+                  <a class="sidebar-link-3{% if exists == false %} broken{% endif %}" href="{{ subsection.url }}">
                     {% if exists %}
                       {% if p_j.title %}
                         {{ p_j.title }}

@@ -1,40 +1,40 @@
 <div id="sidebar" class="sidebar">
   <div style="border-bottom: 1px solid #e8e8e8; padding-bottom: 0.5em; margin-bottom: 1em; font-weight: 400; text-align: center;">{{ include.title }}</div>
-  {% for link in include.structure %}
+  {% for chapter in include.structure %}
 
     {% comment %}
       Open for other ideas that work on github too (i.e. no plugins)
       here we just check all nested pages, to determine expansion state
     {% endcomment %}
 
+    {% assign active=false %}
     {% assign expand=false %}
-    {% if link.url == page.url %}
+    {% if chapter.url == page.url %}
+      {% assign active=true %}
       {% assign expand=true %}
     {% else %}
-      {% for item in link.items %}
-        {% if item.url == page.url %}
+      {% for item_i in chapter.items %}
+        {% if item_i.url == page.url %}
           {% assign expand=true %}
-          {% break %}
         {% else %}
-          {% for item_j in item.items %}
+          {% for item_j in item_i.items %}
             {% if item_j.url == page.url %}
               {% assign expand=true %}
-              {% break %}
             {% endif %}
           {% endfor %}
         {% endif %}
       {% endfor %}
     {% endif %}
 
-    <div class="sidebar-item {% if expand %}active expanded{% else %}collapsed{% endif %}">
+    <div class="sidebar-item {% if active %}active{% endif %} {% if expand %}expanded{% else %}collapsed{% endif %}">
       {% for p in site.pages %}
-        {% if p.url == link.url %}
+        {% if p.url == chapter.url %}
           <a class="sidebar-item-hdr" href="{{ p.url }}">{{ p.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}</a>
           {% break %}
         {% endif %}
       {% endfor %}
 
-      {% include sidebar-items.html items=link.items %}
+      {% include sidebar-items.html items=chapter.items %}
     </div>
 
   {% endfor %}
