@@ -5,7 +5,7 @@ sidebar: yes
 ---
 
 ```
-POST /{yamcsInstance}/api/alarms/acknowledge/(alarmId)/my/qualified/parameter/name
+POST /:instance/alarms/acknowledge/:alarmId/my/qualified/parameter/name
 ```
 
 
@@ -32,8 +32,6 @@ message AcknowledgeAlarmRequest {
 </table>
 
 ### Response
-
-
 
 The response can be deserialized as `Rest.AcknowledgeAlarmResponse`.
 Protobuf definition:

@@ -11,8 +11,35 @@ All operations accept and deliver both JSON and Protobuf. The `.proto` files tha
 
 All operations documented in the following pages assume the default _simulator_ instance. They also assume that the client is sending and asking JSON messages. However, the server is also capable of reading and writing binary data using Google Protocol Buffers. If -as a client- you are sending in the Protobuf wire format, change the HTTP `Content-Type` header to `application/octet-stream`. If you also want the server to respond with Protobuf messages, set the HTTP `Accept` header to `application/octet-stream`.
 
+### HTTP Verbs
+The supported verbs in this API are:
 
-## Error Handling
+<table class="inline">
+    <tr>
+        <td class="code">GET</td>
+        <td>Retrieve a resource</td>
+    </tr>
+    <tr>
+        <td class="code">POST</td>
+        <td>Create or update a resource</td>
+    </tr>
+    <tr>
+        <td class="code">DELETE</td>
+        <td>Delete a resource</td>
+    </tr>
+</table>
+
+Many HTTP clients (including Java's `HttpsUrlConnection`) are not able to send request bodies over GET. Therefore the Yamcs REST API also accepts sending all GET requests as POST instead.
+
+Yamcs does not currently distinguish between POST, PUT or PATCH. Send only POST for modifications.
+
+### Time
+All timestamps are returned as UTC and formatted according to ISO 8601. E.g.
+    
+    2015-08-26T08:08:40.724
+    2015-08-26
+
+### Error Handling
 When an exception is caught while handling a REST request, the server will try to give some feedback to the client by wrapping it in a generic exception message like this:
 
 {% highlight json %}

@@ -5,7 +5,7 @@
     - url: /docs/api/Alarms/
       items:
         - url: /docs/api/List_Active_Alarms/
-        - url: /docs/api/Acknowledge_Alarm/        
+        - url: /docs/api/Acknowledge_Alarm/
     - url: /docs/api/Archive/
       items:
         - url: /docs/api/Fetch_Archive_Data/
@@ -14,16 +14,17 @@
         - url: /docs/api/Validate_Command/
         - url: /docs/api/Send_Command/
 #    - url: /docs/api/Events/
-    - url: /docs/api/Mission_Database/
+    - url: /docs/api/Instances/
       items:
-        - url: /docs/api/List_Parameters/
-        - url: /docs/api/Parameter_Info/
-        - url: /docs/api/Dump_MDB/
+        - url: /docs/api/List_Instances/
+        - url: /docs/api/Get_a_Single_Instance/
     - url: /docs/api/Parameters/
       items:
-        - url: /docs/api/Single_Parameter_Value/
+        - url: /docs/api/List_Parameters/
+        - url: /docs/api/Get_a_Single_Parameter/
+        - url: /docs/api/Get_a_Parameter's_Value/
         - url: /docs/api/Multiple_Parameter_Values/
-        - url: /docs/api/Set_Parameter/
+        - url: /docs/api/Edit_a_Parameter/
 #    - url: /docs/api/Processors/
 #    - url: /docs/api/Simulation_Time/
 
@@ -36,4 +37,3 @@
     - url: /docs/api/Event_Updates/
     - url: /docs/api/Management_Updates/
     - url: /docs/api/Streams/
-

@@ -5,7 +5,7 @@ sidebar: yes
 ---
 
 ```
-POST /{yamcsInstance}/api/commanding/queue
+POST /:instance/commanding/queue
 ```
 
 

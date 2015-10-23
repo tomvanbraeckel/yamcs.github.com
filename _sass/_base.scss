@@ -104,6 +104,19 @@ code {
   }
 }
 
+pre.header {
+  background-color: #f4f4f4;
+  border: 1px solid #cacaca;
+  text-align: right;
+  margin-bottom: -5px;
+}
+
+pre.header + .highlight pre {
+  border-radius: 0 0 3px 3px;
+  border-top-color: #ddd;
+  margin-top: -2px;
+}
+
 pre {
   padding: 8px 12px;
   overflow-x: auto;

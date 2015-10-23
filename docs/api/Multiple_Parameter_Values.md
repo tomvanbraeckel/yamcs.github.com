@@ -18,23 +18,23 @@ GET is recommended, but POST requests are permitted too as long as the API doesn
 
 <table class="inline">
     <tr><th>Parameter</th><th>Description</th></tr>
-     <tr><td>Body</td><td>Request body of type `Rest.RestGetParameterRequest`</td></tr>
+     <tr><td>Body</td><td>Request body of type <code>Rest.RestGetParameterRequest</code></td></tr>
 </table>
 
 Protobuf definitions:
 
 {% highlight nginx %}
 message RestGetParameterRequest {
-    repeated yamcs.NamedObjectId list=1;
-    optional bool fromCache=2;
-    optional uint64 timeout=3; //if not from cache, wait this time (in milliseconds) to receive the parameter
+    repeated yamcs.NamedObjectId list = 1;
+    optional bool fromCache = 2;
+    optional uint64 timeout = 3; //if not from cache, wait this time (in milliseconds) to receive the parameter
 }
 {% endhighlight %}
 
 {% highlight nginx %}
 message NamedObjectId {
-  required string name=1;
-  optional string namespace=2; 
+  required string name = 1;
+  optional string namespace = 2; 
 }
 {% endhighlight %}
 

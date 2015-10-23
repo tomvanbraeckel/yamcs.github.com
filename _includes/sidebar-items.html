@@ -48,7 +48,7 @@
           </a>
         {% endif %}
 
-        {% if section.items %}
+        {% if expand_section and section.items %}
           <ul>
             {% for subsection in section.items %}
               {% if page.url == subsection.url %}

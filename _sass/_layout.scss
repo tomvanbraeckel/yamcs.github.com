@@ -183,15 +183,16 @@
   }
 
 
-  .sidebar-link {
+  a.sidebar-link {
     display: block;
     border-radius: 5px;
     padding: 5px 10px;
     background-color: $grey-color-light;
     margin-bottom: 5px;
+    color: #222;
   }
 
-  .sidebar-item-hdr {
+  a.sidebar-item-hdr {
     display: block;
     /*border-radius: 5px;*/
     padding: 5px 10px;
@@ -203,6 +204,7 @@
     -ms-user-select: none;
     user-select: none;
     text-decoration: none;
+    color: #222;
 
     &:hover {
       background-color: $grey-color-light;
@@ -219,7 +221,7 @@
     background-color: $grey-color-light;
   }
 
-  .sidebar-link-2 {
+  a.sidebar-link-2 {
     padding-left: 1em;
     display: block;
     padding-top: 0.3em;
@@ -243,7 +245,7 @@
     }
   }
 
-  .sidebar-link-3 {
+  a.sidebar-link-3 {
     display: block;
     padding-left: 0.5em;
     padding-top: 0.3em;

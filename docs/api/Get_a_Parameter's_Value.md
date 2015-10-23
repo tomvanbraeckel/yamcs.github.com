@@ -1,24 +1,37 @@
 ---
 layout: default
-permalink: /docs/api/Single_Parameter_Value/
+permalink: /docs/api/Get_a_Parameter's_Value/
 sidebar: yes
 ---
 
 Retrieves the current value of the specified parameter.
 
-```
-GET /{yamcsInstance}/api/parameter/{parameter fully qualified}
-```
-
-### Required Parameters
-None
+    GET /api/:instance/parameters/:namespace/:name/value
 
 
-### Optional Parameters
+### Parameters
 
 <table class="inline">
-    <tr><th>Parameter</th><th>Description</th></tr>
-     <tr><td>pretty</td><td>If inserted in the request, the JSON result will be formatted in a human readable manner.</td></tr>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td class="code">fromCache</td>
+        <td class="code">bool</td>
+        <td>Whether the latest cached value may be returned. Defaults to <tt>yes</tt></td>
+    </tr>
+    <tr>
+        <td class="code">timeout</td>
+        <td class="code">number</td>
+        <td>Time in milliseconds to wait on a value (only valid if <tt>fromCache=no</tt>).</td>
+    </tr>
+    <tr>
+        <td class="code">pretty</td>
+        <td class="code">bool</td>
+        <td>Format the JSON result in a human readable manner.</td>
+    </tr>
 </table>
 
 
@@ -154,4 +167,3 @@ curl -XGET http://localhost:8090/simulator/api/parameter/YSS/SIMULATOR/BatteryVo
   "generationTimeUTC" : "2015-04-23T15:11:56.507"
 }
 {% endhighlight %}
-

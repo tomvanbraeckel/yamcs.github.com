@@ -5,7 +5,7 @@ sidebar: yes
 ---
 
 ```
-POST /{yamcsInstance}/api/commanding/validator
+POST /:instance/commanding/validator
 ```
 
 ### Required Parameters

@@ -1,11 +1,11 @@
 ---
 layout: default
-permalink: /docs/api/Set_Parameter/
+permalink: /docs/api/Edit_a_Parameter/
 sidebar: yes
 ---
 
 ```
-POST /{yamcsInstance}/api/parameter/_set
+POST /:instance/parameter/_set
 ```
 
 ### Required Parameters

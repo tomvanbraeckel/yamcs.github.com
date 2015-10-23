@@ -7,12 +7,8 @@ sidebar: yes
 Fetches Parameters, Packets, Processed Parameters, Events and/or Command History from the Yamcs Archive. The API of this method is likely to change in the near future.
 
 ```
-GET /{yamcsInstance}/api/archive
-POST /{yamcsInstance}/api/archive
+GET /:instance/archive
 ```
-
-GET is recommended, but POST requests are permitted too as long as the API doesn't support specifying parameters through other means than the request body.
-
 
 ### Required Parameters
 
