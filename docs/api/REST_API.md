@@ -29,7 +29,7 @@ The supported verbs in this API are:
     </tr>
 </table>
 
-Many HTTP clients (including Java's `HttpsUrlConnection`) are not able to send request bodies over GET. Therefore the Yamcs REST API also accepts sending all GET requests as POST instead.
+Many HTTP clients (including Java's `HttpsUrlConnection`) are not able to send request bodies over GET. Therefore whenever an operation documents a GET request body, it will accept both GET and POST requests.
 
 Yamcs does not currently distinguish between POST, PUT or PATCH. Send only POST for modifications.
 

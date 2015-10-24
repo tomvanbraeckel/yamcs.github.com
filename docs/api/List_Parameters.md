@@ -76,15 +76,19 @@ The `q` parameter supports searching on namespace or name. For example:
 
 ### Protobuf
 
-Response body is of type `Parameters.ListParametersResponse`
+Response body is of type `Rest.ListParametersResponse`
 
 {% highlight nginx %}
 message ListParametersResponse {
-  repeated ParameterInfo parameter = 1;
+  repeated mdb.ParameterInfo parameter = 1;
 }
 {% endhighlight %}
 
 Supporting definitions:
+
+<pre class="header">
+  mdb.proto
+</pre>
 
 {% highlight nginx %}
 message ParameterInfo {
@@ -93,50 +97,38 @@ message ParameterInfo {
   optional DataSourceType dataSource = 4;
   optional string url = 5;
 }
-{% endhighlight %}
 
-{% highlight nginx %}
 message NameDescriptionType {
   optional string qualifiedName = 1;
   optional string shortDescription = 2;
   optional string longDescription = 3;
   repeated yamcs.NamedObjectId aliases = 4;
 }
-{% endhighlight %}
 
-{% highlight nginx %}
 message ParameterTypeInfo {
   optional string engType = 1;
   optional string dataEncoding = 2;
   repeated UnitInfo unitSet = 3; 
   optional AlarmInfo defaultAlarm = 4;
 }
-{% endhighlight %}
 
-{% highlight nginx %}
 message UnitInfo {
   optional string unit = 1;
 }
-{% endhighlight %}
 
-{% highlight nginx %}
 message AlarmInfo {
   optional int32 minViolations = 1;
   repeated AlarmRange staticAlarmRanges = 2;
 }
-{% endhighlight %}
 
-{% highlight nginx %}
 message AlarmRange {
-  optional AlarmLevel level = 1; 
+  optional AlarmLevelType level = 1; 
   optional double minInclusive = 2;
   optional double maxInclusive = 3; 
   optional string enumerationValue = 4;
 }
-{% endhighlight %}
 
-{% highlight nginx %}
-enum AlarmLevel {
+enum AlarmLevelType {
   NORMAL = 0;
   WATCH = 1;
   WARNING =  2;
@@ -144,9 +136,7 @@ enum AlarmLevel {
   CRITICAL = 4;
   SEVERE = 5;
 }
-{% endhighlight %}
 
-{% highlight nginx %}
 enum DataSourceType {
   TELEMETERED = 0;
   DERIVED = 1;
@@ -155,5 +145,17 @@ enum DataSourceType {
   SYSTEM = 4;
   COMMAND = 5;
   COMMAND_HISTORY = 6;
+}
+{% endhighlight %}
+
+
+<pre class="header">
+  yamcs.proto
+</pre>
+
+{% highlight nginx %}
+message NamedObjectId {
+  required string name = 1;
+  optional string namespace = 2;
 }
 {% endhighlight %}

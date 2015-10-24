@@ -5,14 +5,14 @@ sidebar: yes
 ---
 
 ```
-POST /:instance/commanding/validator
+POST /api/:instance/commanding/validator
 ```
 
 ### Required Parameters
 
 <table class="inline">
     <tr><th>Parameter</th><th>Description</th></tr>
-     <tr><td>Body</td><td>Request body of type <code>Rest.RestValidateCommandRequest</code></td></tr>
+     <tr><td>Body</td><td>Request body of type <code>Rest.ValidateCommandRequest</code></td></tr>
 </table>
 
 Protobuf definitions:

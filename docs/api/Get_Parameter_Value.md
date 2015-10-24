@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /docs/api/Get_a_Parameter's_Value/
+permalink: /docs/api/Get_Parameter_Value/
 sidebar: yes
 ---
 

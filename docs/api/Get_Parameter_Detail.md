@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /docs/api/Get_a_Single_Parameter/
+permalink: /docs/api/Get_Parameter_Detail/
 sidebar: yes
 ---
 
@@ -78,16 +78,41 @@ Specify the parameter IDs in the request body:
 
 POST requests are also allowed, because some HTTP clients do not support GET with a request body.
 
-Example response:
+In the response the requested parameter ID is returned for every match. Example:
 
 {% highlight json %}
-  todo
+{
+  "response" : [ {
+    "id" : {
+      "name" : "YSS_ccsds-apid",
+      "namespace" : "MDB:OPS Name"
+    },
+    "parameter" : {
+      "description" : {
+        "qualifiedName" : "/YSS/ccsds-apid",
+        "aliases" : [ {
+          "name" : "YSS_ccsds-apid",
+          "namespace" : "MDB:OPS Name"
+        }, {
+          "name" : "ccsds-apid",
+          "namespace" : "/YSS"
+        } ]
+      },
+      "type" : {
+        "engType" : "integer",
+        "dataEncoding" : "IntegerDataEncoding(sizeInBits:11, encoding:unsigned, defaultCalibrator:null byteOrder:BIG_ENDIAN)"
+      },
+      "dataSource" : "TELEMETERED",
+      "url" : "http://localhost:8090/api/simulator/parameters/YSS/ccsds-apid"
+    }
+  } ]
+}
 {% endhighlight %} 
 
 
 ### Protobuf
 
-Response body is of type `Parameters.ParameterInfo`:
+Response body is of type `Mdb.ParameterInfo`:
 
 {% highlight nginx %}
 message ParameterInfo {
@@ -98,7 +123,7 @@ message ParameterInfo {
 }
 {% endhighlight %}
 
-Bulk requests are of type `Parameters.BulkGetParameterRequest`:
+Bulk requests are of type `Rest.BulkGetParameterRequest`:
 
 {% highlight nginx %}
 message BulkGetParameterRequest {
@@ -106,7 +131,7 @@ message BulkGetParameterRequest {
 }
 {% endhighlight %}
 
-Bulk Responses are of type `Parameters.BulkGetParameterResponse`:
+Bulk Responses are of type `Rest.BulkGetParameterResponse`:
 
 {% highlight nginx %}
 message BulkGetParameterResponse {

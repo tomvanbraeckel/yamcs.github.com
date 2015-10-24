@@ -9,7 +9,11 @@
     - url: /docs/api/Archive/
       items:
         - url: /docs/api/Fetch_Archive_Data/
-    - url: /docs/api/Commanding/
+    - url: /docs/api/Commands/
+      items:
+        - url: /docs/api/List_Commands/
+        - url: /docs/api/Get_Command_Detail/
+    - url: /docs/api/Command_Queues/
       items:
         - url: /docs/api/Validate_Command/
         - url: /docs/api/Send_Command/
@@ -17,12 +21,12 @@
     - url: /docs/api/Instances/
       items:
         - url: /docs/api/List_Instances/
-        - url: /docs/api/Get_a_Single_Instance/
+        - url: /docs/api/Get_an_Instance/
     - url: /docs/api/Parameters/
       items:
         - url: /docs/api/List_Parameters/
-        - url: /docs/api/Get_a_Single_Parameter/
-        - url: /docs/api/Get_a_Parameter's_Value/
+        - url: /docs/api/Get_Parameter_Detail/
+        - url: /docs/api/Get_Parameter_Value/
         - url: /docs/api/Multiple_Parameter_Values/
         - url: /docs/api/Edit_a_Parameter/
 #    - url: /docs/api/Processors/

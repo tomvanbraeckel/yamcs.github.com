@@ -53,6 +53,12 @@ message ListInstancesResponse {
 }
 {% endhighlight %}
 
+Supporting definitions:
+
+<pre class="header">
+    yamcs.proto
+</pre>
+
 {% highlight nginx %}
 message YamcsInstance {
   required string name = 1;
@@ -62,9 +68,6 @@ message YamcsInstance {
   optional string parameters_url = 6;
 }
 
-{% endhighlight %}
-
-{% highlight nginx %}
 message MissionDatabase {
   required string configName = 1;
   required string name = 2;

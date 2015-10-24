@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /docs/api/Get_a_Single_Instance/
+permalink: /docs/api/Get_an_Instance/
 sidebar: yes
 ---
 
@@ -54,6 +54,12 @@ message YamcsInstance {
   optional string parameters_url = 6;
 }
 {% endhighlight %}
+
+Supporting definitions:
+
+<pre class="header">
+    yamcs.proto
+</pre>
 
 {% highlight nginx %}
 message MissionDatabase {
