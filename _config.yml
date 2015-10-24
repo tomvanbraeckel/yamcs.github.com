@@ -3,7 +3,8 @@ title: Yamcs
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://www.yamcs.org" # the base hostname & protocol for your site
 
-# Build settings
+exclude: [vendor]
+
 markdown: kramdown
 
 kramdown:
