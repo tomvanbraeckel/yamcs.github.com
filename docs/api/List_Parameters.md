@@ -53,16 +53,14 @@ The `q` parameter supports searching on namespace or name. For example:
 {% highlight json %}
 {
   "parameter" : [ {
-    "description" : {
-      "qualifiedName" : "/YSS/ccsds-apid",
-      "aliases" : [ {
-        "name" : "YSS_ccsds-apid",
-        "namespace" : "MDB:OPS Name"
-      }, {
-        "name" : "ccsds-apid",
-        "namespace" : "/YSS"
-      } ]
-    },
+    "qualifiedName" : "/YSS/ccsds-apid",
+    "alias" : [ {
+      "name" : "YSS_ccsds-apid",
+      "namespace" : "MDB:OPS Name"
+    }, {
+      "name" : "ccsds-apid",
+      "namespace" : "/YSS"
+    } ],
     "type" : {
       "engType" : "integer",
       "dataEncoding" : "IntegerDataEncoding(sizeInBits:11, encoding:unsigned, defaultCalibrator:null byteOrder:BIG_ENDIAN)"
@@ -92,17 +90,13 @@ Supporting definitions:
 
 {% highlight nginx %}
 message ParameterInfo {
-  optional NameDescriptionInfo description = 2;
-  optional ParameterTypeInfo type = 3;
-  optional DataSourceType dataSource = 4;
-  optional string url = 5;
-}
-
-message NameDescriptionType {
   optional string qualifiedName = 1;
   optional string shortDescription = 2;
   optional string longDescription = 3;
-  repeated yamcs.NamedObjectId aliases = 4;
+  repeated yamcs.NamedObjectId alias = 4;
+  optional ParameterTypeInfo type = 5;
+  optional DataSourceType dataSource = 6;
+  optional string url = 7;
 }
 
 message ParameterTypeInfo {

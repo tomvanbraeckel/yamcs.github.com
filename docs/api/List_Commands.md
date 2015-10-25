@@ -53,17 +53,18 @@ The `q` parameter supports searching on namespace or name. For example:
 {% highlight json %}
 {
   "command" : [ {
-    "description" : {
-      "qualifiedName" : "/YSS/SIMULATOR/SWITCH_VOLTAGE_ON",
-      "aliases" : [ {
-        "name" : "SIMULATOR_SWITCH_VOLTAGE_ON",
-        "namespace" : "MDB:OPS Name"
-      }, {
-        "name" : "SWITCH_VOLTAGE_ON",
-        "namespace" : "/YSS/SIMULATOR"
-      } ]
+    "qualifiedName" : "/YSS/SIMULATOR/SWITCH_VOLTAGE_ON",
+    "alias" : [ {
+      "name" : "SIMULATOR_SWITCH_VOLTAGE_ON",
+      "namespace" : "MDB:OPS Name"
+    }, {
+      "name" : "SWITCH_VOLTAGE_ON",
+      "namespace" : "/YSS/SIMULATOR"
+    } ],
+    "baseCommand" : {
+      "qualifiedName" : "/YSS/SIMULATOR/SIM_TC",
+      "url" : "http://localhost:8090/api/simulator/commands/YSS/SIMULATOR/SIM_TC"
     },
-    "baseCommandUrl" : "http://localhost:8090/api/simulator/commands/YSS/SIMULATOR/SIM_TC",
     "abstract" : false,
     "argument" : [ {
       "name" : "voltage_num",
@@ -101,22 +102,17 @@ Supporting definitions:
 
 {% highlight nginx %}
 message CommandInfo {
-  optional NameDescriptionInfo description = 1;
-  optional CommandInfo baseCommand = 2;
-  optional string baseCommandUrl = 3;
-  optional bool abstract = 4;
-  repeated ArgumentInfo argument = 5;
-  repeated ArgumentAssignmentInfo argumentAssignment = 6;
-  optional SignificanceInfo significance = 7;
-  repeated TransmissionConstraintInfo constraint = 8;
-  optional string url = 9;
-}
-
-message NameDescriptionType {
   optional string qualifiedName = 1;
   optional string shortDescription = 2;
   optional string longDescription = 3;
-  repeated yamcs.NamedObjectId aliases = 4;
+  repeated yamcs.NamedObjectId alias = 4;
+  optional CommandInfo baseCommand = 5;
+  optional bool abstract = 6;
+  repeated ArgumentInfo argument = 7;
+  repeated ArgumentAssignmentInfo argumentAssignment = 8;
+  optional SignificanceInfo significance = 9;
+  repeated TransmissionConstraintInfo constraint = 10;
+  optional string url = 11;
 }
 
 message ArgumentInfo {

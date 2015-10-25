@@ -36,38 +36,32 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
 
 {% highlight json %}
 {
-  "description" : {
-    "qualifiedName" : "/YSS/SIMULATOR/SWITCH_VOLTAGE_ON",
-    "aliases" : [ {
-      "name" : "SIMULATOR_SWITCH_VOLTAGE_ON",
+  "qualifiedName" : "/YSS/SIMULATOR/SWITCH_VOLTAGE_ON",
+  "alias" : [ {
+    "name" : "SIMULATOR_SWITCH_VOLTAGE_ON",
+    "namespace" : "MDB:OPS Name"
+  }, {
+    "name" : "SWITCH_VOLTAGE_ON",
+    "namespace" : "/YSS/SIMULATOR"
+  } ],
+  "baseCommand" : {
+    "qualifiedName" : "/YSS/SIMULATOR/SIM_TC",
+    "alias" : [ {
+      "name" : "SIMULATOR_SIM_TC",
       "namespace" : "MDB:OPS Name"
     }, {
-      "name" : "SWITCH_VOLTAGE_ON",
+      "name" : "SIM_TC",
       "namespace" : "/YSS/SIMULATOR"
-    } ]
-  },
-  "baseCommand" : {
-    "description" : {
-      "qualifiedName" : "/YSS/SIMULATOR/SIM_TC",
-      "aliases" : [ {
-        "name" : "SIMULATOR_SIM_TC",
+    } ],
+    "baseCommand" : {
+      "qualifiedName" : "/YSS/ccsds-tc",
+      "alias" : [ {
+        "name" : "YSS_ccsds-tc",
         "namespace" : "MDB:OPS Name"
       }, {
-        "name" : "SIM_TC",
-        "namespace" : "/YSS/SIMULATOR"
-      } ]
-    },
-    "baseCommand" : {
-      "description" : {
-        "qualifiedName" : "/YSS/ccsds-tc",
-        "aliases" : [ {
-          "name" : "YSS_ccsds-tc",
-          "namespace" : "MDB:OPS Name"
-        }, {
-          "name" : "ccsds-tc",
-          "namespace" : "/YSS"
-        } ]
-      },
+        "name" : "ccsds-tc",
+        "namespace" : "/YSS"
+      } ],
       "abstract" : true,
       "argument" : [ {
         "name" : "ccsds-apid",
@@ -125,15 +119,17 @@ Response body is of type `Mdb.CommandInfo`:
 
 {% highlight nginx %}
 message CommandInfo {
-  optional NameDescriptionInfo description = 1;
-  optional CommandInfo baseCommand = 2;
-  optional string baseCommandUrl = 3;
-  optional bool abstract = 4;
-  repeated ArgumentInfo argument = 5;
-  repeated ArgumentAssignmentInfo argumentAssignment = 6;
-  optional SignificanceInfo significance = 7;
-  repeated TransmissionConstraintInfo constraint = 8;
-  optional string url = 9;
+  optional string qualifiedName = 1;
+  optional string shortDescription = 2;
+  optional string longDescription = 3;
+  repeated yamcs.NamedObjectId alias = 4;
+  optional CommandInfo baseCommand = 5;
+  optional bool abstract = 6;
+  repeated ArgumentInfo argument = 7;
+  repeated ArgumentAssignmentInfo argumentAssignment = 8;
+  optional SignificanceInfo significance = 9;
+  repeated TransmissionConstraintInfo constraint = 10;
+  optional string url = 11;
 }
 {% endhighlight %}
 
@@ -144,13 +140,6 @@ Supporting definitions:
 </pre>
 
 {% highlight nginx %}
-message NameDescriptionType {
-  optional string qualifiedName = 1;
-  optional string shortDescription = 2;
-  optional string longDescription = 3;
-  repeated yamcs.NamedObjectId aliases = 4;
-}
-
 message ArgumentInfo {
   optional string name = 1;
   optional string description = 2;
@@ -197,7 +186,7 @@ message ComparisonInfo {
     SMALLER_THAN_OR_EQUAL_TO = 6;
   }
 
-  optional string parameter = 1;
+  optional ParameterInfo parameter = 1;
   optional OperatorType operator = 2;
   optional string value = 3;
 }

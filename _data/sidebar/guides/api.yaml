@@ -9,6 +9,9 @@
     - url: /docs/api/Archive/
       items:
         - url: /docs/api/Fetch_Archive_Data/
+    - url: /docs/api/Clients/
+      items:
+        - url: /docs/api/List_Clients/
     - url: /docs/api/Commands/
       items:
         - url: /docs/api/List_Commands/
@@ -17,6 +20,10 @@
       items:
         - url: /docs/api/Validate_Command/
         - url: /docs/api/Send_Command/
+    - url: /docs/api/Containers/
+      items:
+        - url: /docs/api/List_Containers/
+        - url: /docs/api/Get_Container_Detail/
 #    - url: /docs/api/Events/
     - url: /docs/api/Instances/
       items:
@@ -29,7 +36,11 @@
         - url: /docs/api/Get_Parameter_Value/
         - url: /docs/api/Multiple_Parameter_Values/
         - url: /docs/api/Edit_a_Parameter/
-#    - url: /docs/api/Processors/
+    - url: /docs/api/Processors/
+      items:
+        - url: /docs/api/List_Processors/
+        - url: /docs/api/Create_a_Processor/
+        - url: /docs/api/Edit_a_Processor/
 #    - url: /docs/api/Simulation_Time/
 
 
