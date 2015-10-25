@@ -12,8 +12,8 @@ The `:namespace` segment can be any of the valid namespaces for this command. In
 
 For example these URIs both point to the same command resource:
 
-    /simulator/commands/MDB%3AOPS+Name/SIMULATOR_SWITCH_VOLTAGE_ON
-    /simulator/commands/YSS/SIMULATOR/SWITCH_VOLTAGE_ON
+    /api/simulator/commands/MDB%3AOPS+Name/SIMULATOR_SWITCH_VOLTAGE_ON
+    /api/simulator/commands/YSS/SIMULATOR/SWITCH_VOLTAGE_ON
     
 Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII character set. The server supports UTF-8 but your client may not.
 
@@ -28,7 +28,7 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
     <tr>
         <td class="code">pretty</td>
         <td class="code">bool</td>
-        <td>Formats the JSON result in a human readable manner</td>
+        <td>Formats the JSON result in a human readable manner. Default <tt>no</tt></td>
     </tr>
 </table>
 
@@ -166,7 +166,6 @@ message SignificanceInfo {
     CRITICAL = 5;
     SEVERE = 6;
   }
-
   optional SignificanceLevelType consequenceLevel = 1;
   optional string reasonForWarning = 2;
 }
@@ -185,7 +184,6 @@ message ComparisonInfo {
     SMALLER_THAN = 5;
     SMALLER_THAN_OR_EQUAL_TO = 6;
   }
-
   optional ParameterInfo parameter = 1;
   optional OperatorType operator = 2;
   optional string value = 3;

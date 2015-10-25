@@ -519,3 +519,18 @@ a img.page-logo {
 a:hover img.page-logo {
   opacity: 0.4;
 }
+
+@media print {
+
+  .noprint {
+    display: none;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .main.with-sidebar {
+    margin-left: 0;
+  }
+}

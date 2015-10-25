@@ -16,10 +16,7 @@
       items:
         - url: /docs/api/List_Commands/
         - url: /docs/api/Get_Command_Detail/
-    - url: /docs/api/Command_Queues/
-      items:
-        - url: /docs/api/Validate_Command/
-        - url: /docs/api/Send_Command/
+        - url: /docs/api/Issue_a_Command/
     - url: /docs/api/Containers/
       items:
         - url: /docs/api/List_Containers/
