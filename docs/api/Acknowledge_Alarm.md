@@ -4,9 +4,8 @@ permalink: /docs/api/Acknowledge_Alarm/
 sidebar: yes
 ---
 
-```
-POST /:instance/alarms/acknowledge/:alarmId/my/qualified/parameter/name
-```
+    POST /api/:instance/alarms/acknowledge/:alarmId/my/qualified/parameter/name
+
 
 
 ### Required Parameters

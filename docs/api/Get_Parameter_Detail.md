@@ -12,8 +12,8 @@ The `:namespace` segment can be any of the valid namespaces for this parameter. 
 
 For example these URIs both point to the same parameter resource:
 
-    /simulator/parameters/MDB%3AOPS+Name/SIMULATOR_BatteryVoltage2
-    /simulator/parameters/YSS/SIMULATOR/BatteryVoltage2
+    /api/simulator/parameters/MDB%3AOPS+Name/SIMULATOR_BatteryVoltage2
+    /api/simulator/parameters/YSS/SIMULATOR/BatteryVoltage2
     
 Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII character set. The server supports UTF-8 but your client may not.
 

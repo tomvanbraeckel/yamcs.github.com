@@ -24,7 +24,9 @@
       items:
         - url: /docs/api/List_Containers/
         - url: /docs/api/Get_Container_Detail/
-#    - url: /docs/api/Events/
+    - url: /docs/api/Events/
+      items:
+        - url: /docs/api/Get_Event_History/
     - url: /docs/api/Instances/
       items:
         - url: /docs/api/List_Instances/

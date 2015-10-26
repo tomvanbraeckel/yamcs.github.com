@@ -4,9 +4,8 @@ permalink: /docs/api/Edit_a_Parameter/
 sidebar: yes
 ---
 
-```
-POST /:instance/parameter/_set
-```
+    POST /api/:instance/parameter/_set
+
 
 ### Required Parameters
 

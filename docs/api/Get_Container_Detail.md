@@ -12,8 +12,8 @@ The `:namespace` segment can be any of the valid namespaces for this container. 
 
 For example these URIs both point to the same container resource:
 
-    /simulator/containers/MDB%3AOPS+Name/SIMULATOR_DHS
-    /simulator/containers/YSS/SIMULATOR/DHS
+    /api/simulator/containers/MDB%3AOPS+Name/SIMULATOR_DHS
+    /api/simulator/containers/YSS/SIMULATOR/DHS
     
 Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII character set. The server supports UTF-8 but your client may not.
 

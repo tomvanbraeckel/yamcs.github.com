@@ -6,9 +6,8 @@ sidebar: yes
 
 Returns a list of current active alarms. For each alarm you get full information on the value occurrence that initially triggered the alarm, the most severe value since it originally triggered, and the latest value at the time of your request.
 
-```
-GET /:instance/alarms
-```
+    GET /api/:instance/alarms
+
 
 ### Required Parameters
 
@@ -142,5 +141,3 @@ curl -XGET http://localhost:8090/simulator/api/alarms?pretty
   } ]
 }
 {% endhighlight %}
-
-
