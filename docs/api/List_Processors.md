@@ -53,7 +53,7 @@ List all processors for the given Yamcs instance:
 
 ### Protobuf
 
-Response body is of type `Rest.ListProcessorsResponse`
+Response body is of type `Rest.ListProcessorsResponse`:
 
 {% highlight nginx %}
 message ListProcessorsResponse {
@@ -140,7 +140,7 @@ message ReplayStatus {
      ERROR = 3;   //the replay stopped due to an error.
      PAUSED = 4;
      CLOSED = 5; //the replay is finished and closed
-  };
+  }
   required ReplayState state = 1;
   optional ReplayRequest request = 2; //this is send only when answering getReplayStatus
   optional string errorMessage = 3; //in case state is ERROR

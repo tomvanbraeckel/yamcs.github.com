@@ -6,19 +6,19 @@ sidebar: yes
 
 List all commands defined in the Mission Database for the given Yamcs instance:
 
-    GET /api/:instance/commands
+    GET /api/:instance/mdb/commands
 
 
 List all commands defined under the given namespace:
 
-    GET /api/:instance/commands/:namespace
+    GET /api/:instance/mdb/commands/:namespace
     
 In case of fully qualified XTCE names, the `:namespace` segment must be repeated for every nested space system.
 
 For example these URIs are all valid:
 
-    /api/simulator/commands/MDB%3AOPS+Name
-    /api/simulator/commands/YSS/SIMULATOR
+    /api/simulator/mdb/commands/MDB%3AOPS+Name
+    /api/simulator/mdb/commands/YSS/SIMULATOR
     
 Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII character set. The server supports UTF-8 but your client may not.
 
@@ -45,7 +45,7 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
 
 The `q` parameter supports searching on namespace or name. For example:
 
-    /api/simulator/commands?q=volt+on&pretty 
+    /api/simulator/mdb/commands?q=volt+on&pretty 
 
 
 ### Response
@@ -63,7 +63,7 @@ The `q` parameter supports searching on namespace or name. For example:
     } ],
     "baseCommand" : {
       "qualifiedName" : "/YSS/SIMULATOR/SIM_TC",
-      "url" : "http://localhost:8090/api/simulator/commands/YSS/SIMULATOR/SIM_TC"
+      "url" : "http://localhost:8090/api/simulator/mdb/commands/YSS/SIMULATOR/SIM_TC"
     },
     "abstract" : false,
     "argument" : [ {
@@ -78,7 +78,7 @@ The `q` parameter supports searching on namespace or name. For example:
       "name" : "packet-id",
       "value" : "1"
     } ],
-    "url" : "http://localhost:8090/api/simulator/commands/YSS/SIMULATOR/SWITCH_VOLTAGE_ON"
+    "url" : "http://localhost:8090/api/simulator/mdb/commands/YSS/SIMULATOR/SWITCH_VOLTAGE_ON"
   } ]
 }
 {% endhighlight %}

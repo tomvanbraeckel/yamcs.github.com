@@ -6,19 +6,19 @@ sidebar: yes
 
 List all parameters defined in the Mission Database for the given Yamcs instance:
 
-    GET /api/:instance/parameters
+    GET /api/:instance/mdb/parameters
 
 
 List all parameters defined under the given namespace:
 
-    GET /api/:instance/parameters/:namespace
+    GET /api/:instance/mdb/parameters/:namespace
     
 In case of fully qualified XTCE names, the `:namespace` segment must be repeated for every nested space system.
 
 For example these URIs are all valid:
 
-    /api/simulator/parameters/MDB%3AOPS+Name
-    /api/simulator/parameters/YSS/SIMULATOR
+    /api/simulator/mdb/parameters/MDB%3AOPS+Name
+    /api/simulator/mdb/parameters/YSS/SIMULATOR
     
 Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII character set. The server supports UTF-8 but your client may not.
 
@@ -45,7 +45,7 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
 
 The `q` parameter supports searching on namespace or name. For example:
 
-    /api/simulator/parameters?q=ccsds+yss&pretty 
+    /api/simulator/mdb/parameters?q=ccsds+yss&pretty 
 
 
 ### Response
@@ -66,7 +66,7 @@ The `q` parameter supports searching on namespace or name. For example:
       "dataEncoding" : "IntegerDataEncoding(sizeInBits:11, encoding:unsigned, defaultCalibrator:null byteOrder:BIG_ENDIAN)"
     },
     "dataSource" : "TELEMETERED",
-    "url" : "http://localhost:8090/api/simulator/parameters/YSS/ccsds-apid"
+    "url" : "http://localhost:8090/api/simulator/mdb/parameters/YSS/ccsds-apid"
   } ]
 }
 {% endhighlight %}

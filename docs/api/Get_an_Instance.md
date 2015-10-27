@@ -35,7 +35,7 @@ Get data on a Yamcs instance:
   },
   "url" : "http://localhost:8090/api/simulator",
   "alarmsUrl" : "http://localhost:8090/api/simulator/alarms",
-  "parametersUrl" : "http://localhost:8090/api/simulator/parameters"
+  "parametersUrl" : "http://localhost:8090/api/simulator/mdb/parameters"
 }
 {% endhighlight %}
 
