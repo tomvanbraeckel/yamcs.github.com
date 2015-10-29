@@ -43,6 +43,7 @@
         - url: /docs/api/Create_a_Processor/
         - url: /docs/api/Edit_a_Processor/
 #    - url: /docs/api/Simulation_Time/
+    - url: /docs/api/User/
 
 - url: /docs/api/WebSocket_API/
   items:

@@ -4,13 +4,9 @@ permalink: /docs/api/List_Command_Queues/
 sidebar: yes
 ---
 
-List all command queues, across all Yamcs instances:
+List all command queues for the given processor:
 
-    GET /api/cqueues
-
-List all command queues for the given Yamcs instance:
-
-    GET /api/:instance/cqueues
+    GET /api/processors/:instance/:processor/cqueues
 
 
 ### Parameters
@@ -39,7 +35,8 @@ List all command queues for the given Yamcs instance:
     "name" : "default",
     "state" : "ENABLED",
     "nbSentCommands" : 0,
-    "nbRejectedCommands" : 0
+    "nbRejectedCommands" : 0,
+    "url" : "http://localhost:8090/api/processors/simulator/realtime/queues/default"
   } ]
 }
 {% endhighlight %}
@@ -70,6 +67,7 @@ message CommandQueueInfo {
   required int32 nbSentCommands = 5;
   required int32 nbRejectedCommands = 6;
   optional int32 stateExpirationTimeS = 7;
+  optional string url = 8;
 }
 
 enum QueueState {

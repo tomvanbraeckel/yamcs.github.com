@@ -10,7 +10,11 @@ List all clients:
 
 List all clients for the given Yamcs instance:
 
-    GET /api/:instance/clients
+    GET /api/clients/:instance
+    
+List all clients for the given processor:
+
+    GET /api/clients/:instance/:processor
 
 
 ### Parameters

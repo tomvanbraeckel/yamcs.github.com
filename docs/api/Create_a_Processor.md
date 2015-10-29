@@ -6,7 +6,7 @@ sidebar: yes
 
 Create a processor for the given Yamcs instance:
 
-    POST /api/:instance/processors
+    POST /api/processors/:instance
 
 
 ### Parameters

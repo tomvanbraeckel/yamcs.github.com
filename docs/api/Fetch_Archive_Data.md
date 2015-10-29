@@ -6,7 +6,7 @@ sidebar: yes
 
 Fetches Parameters, Packets, Processed Parameters, Events and/or Command History from the Yamcs Archive. The API of this method is likely to change in the near future.
 
-    GET /api/:instance/archive
+    GET /api/archive/:instance
 
 ### Required Parameters
 

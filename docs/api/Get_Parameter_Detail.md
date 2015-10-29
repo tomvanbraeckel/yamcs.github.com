@@ -6,14 +6,14 @@ sidebar: yes
 
 Return the data for the given parameter:
 
-    GET /api/:instance/mdb/parameters/:namespace/:name
+    GET /api/mdb/:instance/parameters/:namespace/:name
 
 The `:namespace` segment can be any of the valid namespaces for this parameter. In case of fully qualified XTCE names, the `:namespace` segment must be repeated for every nested space system.
 
 For example these URIs both point to the same parameter resource:
 
-    /api/simulator/mdb/parameters/MDB%3AOPS+Name/SIMULATOR_BatteryVoltage2
-    /api/simulator/mdb/parameters/YSS/SIMULATOR/BatteryVoltage2
+    /api/mdb/simulator/parameters/MDB%3AOPS+Name/SIMULATOR_BatteryVoltage2
+    /api/mdb/simulator/parameters/YSS/SIMULATOR/BatteryVoltage2
     
 Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII character set. The server supports UTF-8 but your client may not.
 
@@ -49,7 +49,7 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
     "dataEncoding" : "IntegerDataEncoding(sizeInBits:8, encoding:unsigned, defaultCalibrator:null byteOrder:BIG_ENDIAN)"
   },
   "dataSource" : "TELEMETERED",
-  "url" : "http://localhost:8090/api/simulator/mdb/parameters/YSS/SIMULATOR/BatteryVoltage2"
+  "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/SIMULATOR/BatteryVoltage2"
 }
 {% endhighlight %}
 
@@ -58,7 +58,7 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
 
 Combine multiple parameter queries in one and the same request using this address:
 
-    GET /api/:instance/mdb/parameters/bulk
+    GET /api/mdb/:instance/parameters/bulk
     
 Specify the parameter IDs in the request body:
 
@@ -101,7 +101,7 @@ In the response the requested parameter ID is returned for every match. Example:
         "dataEncoding" : "IntegerDataEncoding(sizeInBits:11, encoding:unsigned, defaultCalibrator:null byteOrder:BIG_ENDIAN)"
       },
       "dataSource" : "TELEMETERED",
-      "url" : "http://localhost:8090/api/simulator/mdb/parameters/YSS/ccsds-apid"
+      "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/ccsds-apid"
     }
   } ]
 }

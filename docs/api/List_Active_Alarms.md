@@ -6,18 +6,22 @@ sidebar: yes
 
 Returns a list of current active alarms. For each alarm you get full information on the value occurrence that initially triggered the alarm, the most severe value since it originally triggered, and the latest value at the time of your request.
 
-    GET /api/:instance/alarms
+    GET /api/processors/:instance/:processor/alarms
 
 
-### Required Parameters
-
-None
-
-### Optional Parameters
+### Parameters
 
 <table class="inline">
-    <tr><th>Parameter</th><th>Description</th></tr>
-     <tr><td>pretty</td><td>If inserted in the request, the JSON result will be formatted in a human readable manner.</td></tr>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td class="code">pretty</td>
+    <td class="code">bool</td>
+    <td>Format the JSON result in a human readable manner. Default: <tt>no</tt></td>
+  </tr>
 </table>
 
 ### Response

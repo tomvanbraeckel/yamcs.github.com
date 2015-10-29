@@ -6,19 +6,19 @@ sidebar: yes
 
 List all containers defined in the Mission Database for the given Yamcs instance:
 
-    GET /api/:instance/mdb/containers
+    GET /api/mdb/:instance/containers
 
 
 List all containers defined under the given namespace:
 
-    GET /api/:instance/mdb/containers/:namespace
+    GET /api/mdb/:instance/containers/:namespace
     
 In case of fully qualified XTCE names, the `:namespace` segment must be repeated for every nested space system.
 
 For example these URIs are all valid:
 
-    /api/simulator/mdb/containers/MDB%3AOPS+Name
-    /api/simulator/mdb/containers/YSS/SIMULATOR
+    /api/mdb/simulator/containers/MDB%3AOPS+Name
+    /api/mdb/simulator/containers/YSS/SIMULATOR
     
 Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII character set. The server supports UTF-8 but your client may not.
 
@@ -45,7 +45,7 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
 
 The `q` parameter supports searching on the namespace or name. For example:
 
-    /api/simulator/mdb/containers?q=yss+dhs&pretty
+    /api/mdb/simulator/containers?q=yss+dhs&pretty
 
 
 ### Response
@@ -64,19 +64,19 @@ The `q` parameter supports searching on the namespace or name. For example:
     "maxInterval" : 1500,
     "baseContainer" : {
       "qualifiedName" : "/YSS/ccsds-default",
-      "url" : "http://localhost:8090/api/simulator/mdb/containers/YSS/ccsds-default"
+      "url" : "http://localhost:8090/api/mdb/simulator/containers/YSS/ccsds-default"
     },
     "restrictionCriteria" : [ {
       "parameter" : {
         "qualifiedName" : "/YSS/ccsds-apid",
-        "url" : "http://localhost:8090/api/simulator/mdb/parameters/YSS/ccsds-apid"
+        "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/ccsds-apid"
       },
       "operator" : "EQUAL_TO",
       "value" : "1"
     }, {
       "parameter" : {
         "qualifiedName" : "/YSS/packet-id",
-        "url" : "http://localhost:8090/api/simulator/mdb/parameters/YSS/packet-id"
+        "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/packet-id"
       },
       "operator" : "EQUAL_TO",
       "value" : "2"
@@ -86,17 +86,17 @@ The `q` parameter supports searching on the namespace or name. For example:
       "referenceLocation" : "CONTAINER_START",
       "parameter" : {
         "qualifiedName" : "/YSS/SIMULATOR/PrimBusVoltage1",
-        "url" : "http://localhost:8090/api/simulator/mdb/parameters/YSS/SIMULATOR/PrimBusVoltage1"
+        "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/SIMULATOR/PrimBusVoltage1"
       }
     }, {
       "locationInBits" : 136,
       "referenceLocation" : "CONTAINER_START",
       "parameter" : {
         "qualifiedName" : "/YSS/SIMULATOR/PrimBusCurrent1",
-        "url" : "http://localhost:8090/api/simulator/mdb/parameters/YSS/SIMULATOR/PrimBusCurrent1"
+        "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/SIMULATOR/PrimBusCurrent1"
       }
     } ],
-    "url" : "http://localhost:8090/api/simulator/mdb/containers/YSS/SIMULATOR/DHS"
+    "url" : "http://localhost:8090/api/mdb/simulator/containers/YSS/SIMULATOR/DHS"
   } ]
 }
 {% endhighlight %}

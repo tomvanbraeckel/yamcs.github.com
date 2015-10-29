@@ -6,14 +6,14 @@ sidebar: yes
 
 Retrieves the current value of the specified parameter.
 
-    GET /api/:instance/parameters/:namespace/:name/value
+    GET /api/processors/:instance/:processor/parameters/:namespace/:name
 
 The `:namespace` segment can be any of the valid namespaces for this parameter. In case of fully qualified XTCE names, the `:namespace` segment must be repeated for every nested space system.
 
 For example these URIs both point to the same parameter value resource:
 
-    /api/simulator/parameters/MDB%3AOPS+Name/SIMULATOR_BatteryVoltage2/value
-    /api/simulator/parameters/YSS/SIMULATOR/BatteryVoltage2/value
+    /api/processors/simulator/realtime/parameters/MDB%3AOPS+Name/SIMULATOR_BatteryVoltage2
+    /api/processors/simulator/realtime/parameters/YSS/SIMULATOR/BatteryVoltage2
     
 Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII character set. The server supports UTF-8 but your client may not.
 
@@ -75,7 +75,7 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
 
 Combine multiple queries in one and the same request using this address:
 
-    GET /api/:instance/parameters/values/bulk
+    GET /api/processors/:instance/:processor/parameters/bulk
 
 The same options as in the query string can be specified in the request body. Parameter IDs are added to a list: 
 

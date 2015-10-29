@@ -6,14 +6,14 @@ sidebar: yes
 
 Return the data for the given command:
 
-    GET /api/:instance/mdb/commands/:namespace/:name
+    GET /api/mdb/:instance/commands/:namespace/:name
 
 The `:namespace` segment can be any of the valid namespaces for this command. In case of fully qualified XTCE names, the `:namespace` segment must be repeated for every nested space system.
 
 For example these URIs both point to the same command resource:
 
-    /api/simulator/mdb/commands/MDB%3AOPS+Name/SIMULATOR_SWITCH_VOLTAGE_ON
-    /api/simulator/mdb/commands/YSS/SIMULATOR/SWITCH_VOLTAGE_ON
+    /api/mdb/simulator/commands/MDB%3AOPS+Name/SIMULATOR_SWITCH_VOLTAGE_ON
+    /api/mdb/simulator/commands/YSS/SIMULATOR/SWITCH_VOLTAGE_ON
     
 Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII character set. The server supports UTF-8 but your client may not.
 
@@ -80,7 +80,7 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
         "name" : "packet-id",
         "type" : "integer"
       } ],
-      "url" : "http://localhost:8090/api/simulator/mdb/commands/YSS/ccsds-tc"
+      "url" : "http://localhost:8090/api/mdb/simulator/commands/YSS/ccsds-tc"
     },
     "abstract" : true,
     "argumentAssignment" : [ {
@@ -93,7 +93,7 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
       "name" : "packet-type",
       "value" : "10"
     } ],
-    "url" : "http://localhost:8090/api/simulator/mdb/commands/YSS/SIMULATOR/SIM_TC"
+    "url" : "http://localhost:8090/api/mdb/simulator/commands/YSS/SIMULATOR/SIM_TC"
   },
   "abstract" : false,
   "argument" : [ {
@@ -108,7 +108,7 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
     "name" : "packet-id",
     "value" : "1"
   } ],
-  "url" : "http://localhost:8090/api/simulator/mdb/commands/YSS/SIMULATOR/SWITCH_VOLTAGE_ON"
+  "url" : "http://localhost:8090/api/mdb/simulator/commands/YSS/SIMULATOR/SWITCH_VOLTAGE_ON"
 }
 {% endhighlight %}
 

@@ -6,14 +6,14 @@ sidebar: yes
 
 Return the data for the given container:
 
-    GET /api/:instance/mdb/containers/:namespace/:name
+    GET /api/mdb/:instance/containers/:namespace/:name
 
 The `:namespace` segment can be any of the valid namespaces for this container. In case of fully qualified XTCE names, the `:namespace` segment must be repeated for every nested space system.
 
 For example these URIs both point to the same container resource:
 
-    /api/simulator/mdb/containers/MDB%3AOPS+Name/SIMULATOR_DHS
-    /api/simulator/mdb/containers/YSS/SIMULATOR/DHS
+    /api/mdb/simulator/containers/MDB%3AOPS+Name/SIMULATOR_DHS
+    /api/mdb/simulator/containers/YSS/SIMULATOR/DHS
     
 Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII character set. The server supports UTF-8 but your client may not.
 
@@ -71,7 +71,7 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
           "dataEncoding" : "IntegerDataEncoding(sizeInBits:11, encoding:unsigned, defaultCalibrator:null byteOrder:BIG_ENDIAN)"
         },
         "dataSource" : "TELEMETERED",
-        "url" : "http://localhost:8090/api/simulator/mdb/parameters/YSS/ccsds-apid"
+        "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/ccsds-apid"
       }
     }, {
       "locationInBits" : 82,
@@ -90,7 +90,7 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
           "dataEncoding" : "IntegerDataEncoding(sizeInBits:4, encoding:unsigned, defaultCalibrator:null byteOrder:BIG_ENDIAN)"
         },
         "dataSource" : "TELEMETERED",
-        "url" : "http://localhost:8090/api/simulator/mdb/parameters/YSS/packet-type"
+        "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/packet-type"
       }
     }, {
       "locationInBits" : 96,
@@ -109,7 +109,7 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
           "dataEncoding" : "IntegerDataEncoding(sizeInBits:32, encoding:unsigned, defaultCalibrator:null byteOrder:BIG_ENDIAN)"
         },
         "dataSource" : "TELEMETERED",
-        "url" : "http://localhost:8090/api/simulator/mdb/parameters/YSS/packet-id"
+        "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/packet-id"
       }
     } ],
     "url" : "http://localhost:8090/api/simulator/containers/YSS/ccsds-default"
@@ -117,14 +117,14 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
   "restrictionCriteria" : [ {
     "parameter" : {
       "qualifiedName" : "/YSS/ccsds-apid",
-      "url" : "http://localhost:8090/api/simulator/mdb/parameters/YSS/ccsds-apid"
+      "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/ccsds-apid"
     },
     "operator" : "EQUAL_TO",
     "value" : "1"
   }, {
     "parameter" : {
       "qualifiedName" : "/YSS/packet-id",
-      "url" : "http://localhost:8090/api/simulator/mdb/parameters/YSS/packet-id"
+      "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/packet-id"
     },
     "operator" : "EQUAL_TO",
     "value" : "2"
@@ -146,7 +146,7 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
         "dataEncoding" : "IntegerDataEncoding(sizeInBits:8, encoding:unsigned, defaultCalibrator:null byteOrder:BIG_ENDIAN)"
       },
       "dataSource" : "TELEMETERED",
-      "url" : "http://localhost:8090/api/simulator/mdb/parameters/YSS/SIMULATOR/PrimBusVoltage1"
+      "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/SIMULATOR/PrimBusVoltage1"
     }
   }, {
     "locationInBits" : 136,
@@ -165,10 +165,10 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
         "dataEncoding" : "IntegerDataEncoding(sizeInBits:8, encoding:unsigned, defaultCalibrator:null byteOrder:BIG_ENDIAN)"
       },
       "dataSource" : "TELEMETERED",
-      "url" : "http://localhost:8090/api/simulator/mdb/parameters/YSS/SIMULATOR/PrimBusCurrent1"
+      "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/SIMULATOR/PrimBusCurrent1"
     }
   } ],
-  "url" : "http://localhost:8090/api/simulator/mdb/containers/YSS/SIMULATOR/DHS"
+  "url" : "http://localhost:8090/api/mdb/simulator/containers/YSS/SIMULATOR/DHS"
 }
 {% endhighlight %}
 

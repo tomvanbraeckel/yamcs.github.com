@@ -6,7 +6,7 @@ sidebar: yes
 
 Parameters are usually read-only. But software parameters can be updated:
 
-    POST /api/:instance/parameters/:namespace/:name/value
+    POST /api/processors/:instance/:processor/parameters/:namespace/:name
 
 
 ### Parameters
@@ -37,7 +37,7 @@ Parameters are usually read-only. But software parameters can be updated:
 
 To update multiple parameters at once, send a request to this address:
 
-    POST /api/:instance/parameters/values/bulkset
+    POST /api/processors/:instance/:processor/parameters/bulk
     
 {% highlight json %}
 {

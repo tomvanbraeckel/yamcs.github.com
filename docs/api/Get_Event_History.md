@@ -6,7 +6,7 @@ sidebar: yes
 
 Fetches events for the given Yamcs instance.
 
-    GET /api/:instance/archive/events
+    GET /api/events/:instance
 
 
 ### Parameters

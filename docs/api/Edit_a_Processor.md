@@ -6,7 +6,7 @@ sidebar: yes
 
 Edit a processor:
 
-    PATCH /api/:instance/processors/:processor
+    PATCH /api/processors/:instance/:name
 
 
 ### Parameters

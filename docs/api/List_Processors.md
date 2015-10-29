@@ -10,7 +10,7 @@ List all processors, across all Yamcs instances:
 
 List all processors for the given Yamcs instance:
 
-    GET /api/:instance/processors
+    GET /api/processors/:instance
 
 
 ### Parameters
@@ -45,7 +45,7 @@ List all processors for the given Yamcs instance:
     "creator" : "system",
     "hasCommanding" : true,
     "state" : "RUNNING",
-    "url" : "http://localhost:8090/api/simulator/processors/realtime"
+    "url" : "http://localhost:8090/api/processors/simulator/realtime"
   } ]
 }
 {% endhighlight %}

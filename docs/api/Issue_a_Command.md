@@ -6,18 +6,18 @@ sidebar: yes
 
 Issue a new command of the given type:
 
-    POST /api/:instance/commands/:namespace/:name
+    POST /api/processors/:instance/:processor/commands/:namespace/:name
     
 The `:namespace` segment can be any of the valid namespaces for this command. In case of fully qualified XTCE names, the `:namespace` segment must be repeated for every nested space system.
 
 For example these URIs both point to the same command resource:
 
-    /api/simulator/commands/MDB%3AOPS+Name/SIMULATOR_SWITCH_VOLTAGE_OFF
-    /api/simulator/commands/YSS/SIMULATOR/SWITCH_VOLTAGE_OFF
+    /api/processors/simulator/realtime/commands/MDB%3AOPS+Name/SIMULATOR_SWITCH_VOLTAGE_OFF
+    /api/processors/simulator/realtime/commands/YSS/SIMULATOR/SWITCH_VOLTAGE_OFF
     
 Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII character set. The server supports UTF-8 but your client may not.
     
-After validating the input parameters, the command will be added to the appropriate command queue for further dispatch. 
+After validating the input parameters, the command will be added to the appropriate command queue for further dispatch.
 
 ### Parameters
 
