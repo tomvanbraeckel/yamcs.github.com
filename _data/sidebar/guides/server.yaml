@@ -30,6 +30,8 @@
     - url: /docs/server/Authentication/
     - url: /docs/server/Authorization/
 
+- url: /docs/server/Web_API/
+
 - url: /docs/server/Configuration/
   items:
     - url: /docs/server/command-queue.yaml/

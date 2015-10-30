@@ -1,10 +1,10 @@
 ---
 layout: default
-permalink: /docs/api/Get_Event_History/
+permalink: /docs/api/List_Events/
 sidebar: yes
 ---
 
-Fetches events for the given Yamcs instance.
+List the events for the given Yamcs instance:
 
     GET /api/events/:instance
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /docs/api/Web_API_Configuration/
+permalink: /docs/server/Web_API/
 sidebar: yes
 ---
 

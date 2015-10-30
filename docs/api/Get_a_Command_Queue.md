@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /docs/api/Get_an_Instance/
+permalink: /docs/api/Get_a_Command_Queue/
 sidebar: yes
 ---
 
@@ -34,7 +34,7 @@ Get data on a Yamcs instance:
   "state" : "ENABLED",
   "nbSentCommands" : 0,
   "nbRejectedCommands" : 0,
-  "url" : "http://localhost:8090/api/processors/simulator/realtime/queues/default"
+  "url" : "http://localhost:8090/api/processors/simulator/realtime/cqueues/default"
 }
 {% endhighlight %}
 

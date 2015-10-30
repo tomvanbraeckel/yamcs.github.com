@@ -107,8 +107,13 @@ code {
 pre.header {
   background-color: #f4f4f4;
   border: 1px solid #cacaca;
-  text-align: right;
   margin-bottom: -5px;
+  margin-left: 0;
+  padding-left: 0;
+
+  &.r {
+    text-align: right;
+  }
 }
 
 pre.header + .highlight pre {

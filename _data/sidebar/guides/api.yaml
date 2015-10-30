@@ -1,11 +1,9 @@
-- url: /docs/api/Web_API_Configuration/
-  
 - url: /docs/api/REST_API/
   items:
     - url: /docs/api/Alarms/
       items:
-        - url: /docs/api/List_Active_Alarms/
-        - url: /docs/api/Acknowledge_Alarm/
+        - url: /docs/api/List_Alarms/
+        - url: /docs/api/Update_an_Alarm/
     - url: /docs/api/Archive/
       items:
         - url: /docs/api/Fetch_Archive_Data/
@@ -15,12 +13,13 @@
     - url: /docs/api/Command_Queues/
       items:
         - url: /docs/api/List_Command_Queues/
+        - url: /docs/api/Get_a_Command_Queue/
     - url: /docs/api/Commands/
       items:
         - url: /docs/api/Issue_a_Command/
     - url: /docs/api/Events/
       items:
-        - url: /docs/api/Get_Event_History/
+        - url: /docs/api/List_Events/
     - url: /docs/api/Instances/
       items:
         - url: /docs/api/List_Instances/
@@ -37,6 +36,7 @@
       items:
         - url: /docs/api/Get_Parameter_Value/
         - url: /docs/api/Set_Parameter_Value/
+        - url: /docs/api/Get_Parameter_History/
     - url: /docs/api/Processors/
       items:
         - url: /docs/api/List_Processors/
