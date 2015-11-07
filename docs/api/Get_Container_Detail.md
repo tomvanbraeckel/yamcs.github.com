@@ -36,6 +36,7 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
 
 {% highlight json %}
 {
+  "name": "DHS",
   "qualifiedName" : "/YSS/SIMULATOR/DHS",
   "alias" : [ {
     "name" : "SIMULATOR_DHS",
@@ -46,6 +47,7 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
   } ],
   "maxInterval" : 1500,
   "baseContainer" : {
+    "name": "ccsds-default",
     "qualifiedName" : "/YSS/ccsds-default",
     "alias" : [ {
       "name" : "YSS_ccsds-default",
@@ -58,6 +60,7 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
       "locationInBits" : 5,
       "referenceLocation" : "CONTAINER_START",
       "parameter" : {
+        "name": "ccsds-apid",
         "qualifiedName" : "/YSS/ccsds-apid",
         "alias" : [ {
           "name" : "YSS_ccsds-apid",
@@ -77,6 +80,7 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
       "locationInBits" : 82,
       "referenceLocation" : "CONTAINER_START",
       "parameter" : {
+        "name": "packet-type",
         "qualifiedName" : "/YSS/packet-type",
         "alias" : [ {
           "name" : "YSS_packet-type",
@@ -96,6 +100,7 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
       "locationInBits" : 96,
       "referenceLocation" : "CONTAINER_START",
       "parameter" : {
+        "name": "packet-id",
         "qualifiedName" : "/YSS/packet-id",
         "alias" : [ {
           "name" : "YSS_packet-id",
@@ -116,6 +121,7 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
   },
   "restrictionCriteria" : [ {
     "parameter" : {
+      "name": "ccsds-apid",
       "qualifiedName" : "/YSS/ccsds-apid",
       "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/ccsds-apid"
     },
@@ -123,6 +129,7 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
     "value" : "1"
   }, {
     "parameter" : {
+      "name": "packet-id",
       "qualifiedName" : "/YSS/packet-id",
       "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/packet-id"
     },
@@ -133,6 +140,7 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
     "locationInBits" : 128,
     "referenceLocation" : "CONTAINER_START",
     "parameter" : {
+      "name": "PrimBusVoltage1",
       "qualifiedName" : "/YSS/SIMULATOR/PrimBusVoltage1",
       "alias" : [ {
         "name" : "SIMULATOR_PrimBusVoltage1",
@@ -152,6 +160,7 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
     "locationInBits" : 136,
     "referenceLocation" : "CONTAINER_START",
     "parameter" : {
+      "name": "PrimBusCurrent1",
       "qualifiedName" : "/YSS/SIMULATOR/PrimBusCurrent1",
       "alias" : [ {
         "name" : "SIMULATOR_PrimBusCurrent1",
@@ -179,16 +188,17 @@ Response body is of type `Mdb.ContainerInfo`:
 
 {% highlight nginx %}
 message ContainerInfo {
-  optional string qualifiedName = 1;
-  optional string shortDescription = 2;
-  optional string longDescription = 3;
-  repeated yamcs.NamedObjectId alias = 4;
-  optional int64 maxInterval = 5;
-  optional int32 sizeInBits = 6;
-  optional ContainerInfo baseContainer = 7;
-  repeated ComparisonInfo restrictionCriteria = 8;
-  repeated SequenceEntryInfo entry = 9;
-  optional string url = 10;
+  optional string name = 1;
+  optional string qualifiedName = 2;
+  optional string shortDescription = 3;
+  optional string longDescription = 4;
+  repeated yamcs.NamedObjectId alias = 5;
+  optional int64 maxInterval = 6;
+  optional int32 sizeInBits = 7;
+  optional ContainerInfo baseContainer = 8;
+  repeated ComparisonInfo restrictionCriteria = 9;
+  repeated SequenceEntryInfo entry = 10;
+  optional string url = 11;
 }
 {% endhighlight %}
 

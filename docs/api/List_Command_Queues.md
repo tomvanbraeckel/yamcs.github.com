@@ -27,6 +27,7 @@ List all command queues for the given processor:
 
 ### Response
 
+<pre class="header">Status: 200 OK</pre>
 {% highlight json %}
 {
   "queue" : [ {
@@ -54,10 +55,7 @@ message ListCommandQueuesResponse {
 
 Supporting definitions:
 
-<pre class="header">
-  commanding.proto
-</pre>
-
+<pre class="r header">commanding.proto</pre>
 {% highlight nginx %}
 message CommandQueueInfo {
   required string instance = 1;

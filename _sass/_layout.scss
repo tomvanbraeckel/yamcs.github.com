@@ -419,6 +419,10 @@ ul.contact-list {
 
 .main {
 
+  li {
+    margin: 0.5em 0;
+  }
+
   &.with-sidebar {
     margin-left: 230px;
   }

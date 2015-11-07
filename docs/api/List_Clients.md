@@ -10,11 +10,11 @@ List all clients:
 
 List all clients for the given Yamcs instance:
 
-    GET /api/clients/:instance
+    GET /api/instances/:instance/clients
     
 List all clients for the given processor:
 
-    GET /api/clients/:instance/:processor
+    GET /api/processors/:instance/:processor/clients
 
 
 ### Parameters
@@ -35,6 +35,7 @@ List all clients for the given processor:
 
 ### Response
 
+<pre class="header">Status: 200 OK</pre>
 {% highlight json %}
 todo
 {% endhighlight %}
@@ -52,7 +53,7 @@ message ListClientsResponse {
 
 Supporting definitions:
 
-<pre class="header">
+<pre class="r header">
   yamcsManagement.proto
 </pre>
 

@@ -4,7 +4,7 @@ permalink: /docs/api/User/
 sidebar: yes
 ---
 
-Get the authenticated user:
+Get information on the authenticated user:
 
     GET /api/user
 
@@ -26,6 +26,7 @@ Get the authenticated user:
 
 ### Response
 
+<pre class="header">Status: 200 OK</pre>
 {% highlight json %}
 {
   "login" : "anonymous",
@@ -40,16 +41,17 @@ Get the authenticated user:
 
 ### Protobuf
 
-Request body is of type `Yamcs.UserInfo`:
+Request body is of type `YamcsManagement.UserInfo`:
 
 {% highlight nginx %}
 message UserInfo {
   optional string login = 1;
-  repeated string roles = 2;
-  repeated string tmParaPrivileges = 3;
-  repeated string tmParaSetPrivileges = 4;
-  repeated string tmPacketPrivileges = 5;
-  repeated string tcPrivileges = 6;
-  repeated string systemPrivileges = 7;
+  repeated ClientInfo clientInfo = 2;
+  repeated string roles = 3;
+  repeated string tmParaPrivileges = 4;
+  repeated string tmParaSetPrivileges = 5;
+  repeated string tmPacketPrivileges = 6;
+  repeated string tcPrivileges = 7;
+  repeated string systemPrivileges = 8;
 }
 {% endhighlight %}

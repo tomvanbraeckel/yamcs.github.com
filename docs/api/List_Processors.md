@@ -36,6 +36,7 @@ List all processors for the given Yamcs instance:
 
 ### Response
 
+<pre class="header">200 OK</pre>
 {% highlight json %}
 {
   "processor" : [ {
@@ -46,6 +47,7 @@ List all processors for the given Yamcs instance:
     "hasCommanding" : true,
     "state" : "RUNNING",
     "url" : "http://localhost:8090/api/processors/simulator/realtime",
+    "clientsUrl": "http://localhost:8090/api/processors/simulator/realtime/clients",
     "parametersUrl" : "http://localhost:8090/api/processors/simulator/realtime/parameters{/namespace}{/name}",
     "commandsUrl" : "http://localhost:8090/api/processors/simulator/realtime/commands{/namespace}{/name}",
     "commandQueuesUrl" : "http://localhost:8090/api/processors/simulator/realtime/cqueues{/name}",
@@ -67,7 +69,7 @@ message ListProcessorsResponse {
 
 Supporting definitions:
 
-<pre class="header">yamcsManagement.proto</pre>
+<pre class="r header">yamcsManagement.proto</pre>
 
 {% highlight nginx %}
 message ProcessorInfo {
@@ -81,15 +83,16 @@ message ProcessorInfo {
   optional yamcs.ReplayRequest replayRequest = 8;
   optional yamcs.ReplayStatus.ReplayState replayState = 9;
   optional string url = 10;
-  optional string parametersUrl = 11;
-  optional string commandsUrl = 12;
-  optional string commandQueuesUrl = 13;
-  optional string alarmsUrl = 14;
+  optional string clientsUrl = 11;
+  optional string parametersUrl = 12;
+  optional string commandsUrl = 13;
+  optional string commandQueuesUrl = 14;
+  optional string alarmsUrl = 15;
 }
 {% endhighlight %}
 
 
-<pre class="header">yamcs.proto</pre>
+<pre class="r header">yamcs.proto</pre>
 
 {% highlight nginx %}
 message ReplayRequest {

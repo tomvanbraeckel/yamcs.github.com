@@ -37,6 +37,7 @@ For each alarm you get full information on the value occurrence that initially t
 
 ### Example
 
+<pre class="header">Status: 200 OK</pre>
 {% highlight json %}
 {
   "alarms" : [ {
@@ -153,7 +154,7 @@ message ListAlarmsResponse {
 
 Supporting definitions:
 
-<pre class="header">alarms.proto</pre>
+<pre class="r header">alarms.proto</pre>
 
 {% highlight nginx %}
 message AlarmInfo {

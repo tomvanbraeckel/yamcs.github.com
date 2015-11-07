@@ -50,9 +50,11 @@ The `q` parameter supports searching on namespace or name. For example:
 
 ### Response
 
+<pre class="header">Status: 200 OK</pre>
 {% highlight json %}
 {
   "command" : [ {
+    "name": "SWITCH_VOLTAGE_ON",
     "qualifiedName" : "/YSS/SIMULATOR/SWITCH_VOLTAGE_ON",
     "alias" : [ {
       "name" : "SIMULATOR_SWITCH_VOLTAGE_ON",
@@ -62,6 +64,7 @@ The `q` parameter supports searching on namespace or name. For example:
       "namespace" : "/YSS/SIMULATOR"
     } ],
     "baseCommand" : {
+      "name": "SIM_TC",
       "qualifiedName" : "/YSS/SIMULATOR/SIM_TC",
       "url" : "http://localhost:8090/api/mdb/simulator/commands/YSS/SIMULATOR/SIM_TC"
     },
@@ -96,23 +99,22 @@ message ListCommandsResponse {
 
 Supporting definitions:
 
-<pre class="header">
-  mdb.proto
-</pre>
+<pre class="r header">mdb.proto</pre>
 
 {% highlight nginx %}
 message CommandInfo {
-  optional string qualifiedName = 1;
-  optional string shortDescription = 2;
-  optional string longDescription = 3;
-  repeated yamcs.NamedObjectId alias = 4;
-  optional CommandInfo baseCommand = 5;
-  optional bool abstract = 6;
-  repeated ArgumentInfo argument = 7;
-  repeated ArgumentAssignmentInfo argumentAssignment = 8;
-  optional SignificanceInfo significance = 9;
-  repeated TransmissionConstraintInfo constraint = 10;
-  optional string url = 11;
+  optional string name = 1;
+  optional string qualifiedName = 2;
+  optional string shortDescription = 3;
+  optional string longDescription = 4;
+  repeated yamcs.NamedObjectId alias = 5;
+  optional CommandInfo baseCommand = 6;
+  optional bool abstract = 7;
+  repeated ArgumentInfo argument = 8;
+  repeated ArgumentAssignmentInfo argumentAssignment = 9;
+  optional SignificanceInfo significance = 10;
+  repeated TransmissionConstraintInfo constraint = 11;
+  optional string url = 12;
 }
 
 message ArgumentInfo {
@@ -160,17 +162,14 @@ message ComparisonInfo {
     SMALLER_THAN = 5;
     SMALLER_THAN_OR_EQUAL_TO = 6;
   }
-
-  optional string parameter = 1;
+  optional ParameterInfo parameter = 1;
   optional OperatorType operator = 2;
   optional string value = 3;
 }
 {% endhighlight %}
 
 
-<pre class="header">
-  yamcs.proto
-</pre>
+<pre class="r header">yamcs.proto</pre>
 
 {% highlight nginx %}
 message NamedObjectId {

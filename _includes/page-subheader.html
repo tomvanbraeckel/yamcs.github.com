@@ -47,18 +47,21 @@
     / <span class="active">{{ page.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}</span>
   {% endif %}
 
-  {%if page.previousVersions %}
+  {% if page.previousVersions %}
     <div style="float: right;">
       &nbsp;
       <select onChange="window.location.href=this.value">
         <option value="">Version...</option>
         {% for version in page.previousVersions %}
           {% capture link %}{% if page.version %}{% capture linkVersion %}/{{page.version}}{% endcapture %}{{page.permalink | remove: linkVersion}}{% else %}{{page.permalink}}{% endif %}{% endcapture %}
-          {% if version == "latest" %}
-            <option value="{{link}}">{{ version }}</option>    
-          {% else %}
-            <option value="{{link}}{{ version }}/">{{ version }}</option>    
+
+          {% assign targeturl = link %}
+          {% if version != 'latest' %}
+            {% assign targeturl = link|append:version|append:'/' %}
           {% endif %}
+          <option value="{{ targeturl }}" {% if page.permalink == targeturl %}selected{% endif %}>
+            {% if version != 'latest' %}v{% endif %}{{ version }}
+          </option>
         {% endfor %}
       </select>
     </div>

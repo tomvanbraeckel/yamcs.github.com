@@ -36,6 +36,7 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
 
 {% highlight json %}
 {
+  "name": "SWITCH_VOLTAGE_ON",
   "qualifiedName" : "/YSS/SIMULATOR/SWITCH_VOLTAGE_ON",
   "alias" : [ {
     "name" : "SIMULATOR_SWITCH_VOLTAGE_ON",
@@ -45,6 +46,7 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
     "namespace" : "/YSS/SIMULATOR"
   } ],
   "baseCommand" : {
+    "name": "SIM_TC",
     "qualifiedName" : "/YSS/SIMULATOR/SIM_TC",
     "alias" : [ {
       "name" : "SIMULATOR_SIM_TC",
@@ -54,6 +56,7 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
       "namespace" : "/YSS/SIMULATOR"
     } ],
     "baseCommand" : {
+      "name": "ccsds-tc",
       "qualifiedName" : "/YSS/ccsds-tc",
       "alias" : [ {
         "name" : "YSS_ccsds-tc",
@@ -119,17 +122,18 @@ Response body is of type `Mdb.CommandInfo`:
 
 {% highlight nginx %}
 message CommandInfo {
-  optional string qualifiedName = 1;
-  optional string shortDescription = 2;
-  optional string longDescription = 3;
-  repeated yamcs.NamedObjectId alias = 4;
-  optional CommandInfo baseCommand = 5;
-  optional bool abstract = 6;
-  repeated ArgumentInfo argument = 7;
-  repeated ArgumentAssignmentInfo argumentAssignment = 8;
-  optional SignificanceInfo significance = 9;
-  repeated TransmissionConstraintInfo constraint = 10;
-  optional string url = 11;
+  optional string name = 1;
+  optional string qualifiedName = 2;
+  optional string shortDescription = 3;
+  optional string longDescription = 4;
+  repeated yamcs.NamedObjectId alias = 5;
+  optional CommandInfo baseCommand = 6;
+  optional bool abstract = 7;
+  repeated ArgumentInfo argument = 8;
+  repeated ArgumentAssignmentInfo argumentAssignment = 9;
+  optional SignificanceInfo significance = 10;
+  repeated TransmissionConstraintInfo constraint = 11;
+  optional string url = 12;
 }
 {% endhighlight %}
 

@@ -50,9 +50,11 @@ The `q` parameter supports searching on the namespace or name. For example:
 
 ### Response
 
+<pre class="header">Status: 200 OK</pre>
 {% highlight json %}
 {
   "container" : [ {
+    "name": "DHS",
     "qualifiedName" : "/YSS/SIMULATOR/DHS",
     "alias" : [ {
       "name" : "SIMULATOR_DHS",
@@ -63,11 +65,13 @@ The `q` parameter supports searching on the namespace or name. For example:
     } ],
     "maxInterval" : 1500,
     "baseContainer" : {
+      "name": "ccsds-default",
       "qualifiedName" : "/YSS/ccsds-default",
       "url" : "http://localhost:8090/api/mdb/simulator/containers/YSS/ccsds-default"
     },
     "restrictionCriteria" : [ {
       "parameter" : {
+        "name": "ccsds-apid",
         "qualifiedName" : "/YSS/ccsds-apid",
         "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/ccsds-apid"
       },
@@ -75,6 +79,7 @@ The `q` parameter supports searching on the namespace or name. For example:
       "value" : "1"
     }, {
       "parameter" : {
+        "name": "packet-id",
         "qualifiedName" : "/YSS/packet-id",
         "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/packet-id"
       },
@@ -85,6 +90,7 @@ The `q` parameter supports searching on the namespace or name. For example:
       "locationInBits" : 128,
       "referenceLocation" : "CONTAINER_START",
       "parameter" : {
+        "name": "PrimBusVoltage1",
         "qualifiedName" : "/YSS/SIMULATOR/PrimBusVoltage1",
         "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/SIMULATOR/PrimBusVoltage1"
       }
@@ -92,6 +98,7 @@ The `q` parameter supports searching on the namespace or name. For example:
       "locationInBits" : 136,
       "referenceLocation" : "CONTAINER_START",
       "parameter" : {
+        "name": "PrimBusCurrent1",
         "qualifiedName" : "/YSS/SIMULATOR/PrimBusCurrent1",
         "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/SIMULATOR/PrimBusCurrent1"
       }
@@ -114,22 +121,21 @@ message ListContainersResponse {
 
 Supporting definitions:
 
-<pre class="header">
-  mdb.proto
-</pre>
+<pre class="r header">mdb.proto</pre>
 
 {% highlight nginx %}
 message ContainerInfo {
-  optional string qualifiedName = 1;
-  optional string shortDescription = 2;
-  optional string longDescription = 3;
-  repeated yamcs.NamedObjectId alias = 4;
-  optional int64 maxInterval = 5;
-  optional int32 sizeInBits = 6;
-  optional ContainerInfo baseContainer = 7;
-  repeated ComparisonInfo restrictionCriteria = 8;
-  repeated SequenceEntryInfo entry = 9;
-  optional string url = 10;
+  optional string name = 1;
+  optional string qualifiedName = 2;
+  optional string shortDescription = 3;
+  optional string longDescription = 4;
+  repeated yamcs.NamedObjectId alias = 5;
+  optional int64 maxInterval = 6;
+  optional int32 sizeInBits = 7;
+  optional ContainerInfo baseContainer = 8;
+  repeated ComparisonInfo restrictionCriteria = 9;
+  repeated SequenceEntryInfo entry = 10;
+  optional string url = 11;
 }
 
 message ComparisonInfo {
@@ -166,9 +172,7 @@ message RepeatInfo {
 {% endhighlight %}
 
 
-<pre class="header">
-  yamcs.proto
-</pre>
+<pre class="r header">yamcs.proto</pre>
 
 {% highlight nginx %}
 message NamedObjectId {

@@ -36,6 +36,7 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
 
 {% highlight json %}
 {
+  "name": "BatteryVoltage2",
   "qualifiedName" : "/YSS/SIMULATOR/BatteryVoltage2",
   "alias" : [ {
     "name" : "SIMULATOR_BatteryVoltage2",
@@ -86,16 +87,15 @@ In the response the requested parameter ID is returned for every match. Example:
       "namespace" : "MDB:OPS Name"
     },
     "parameter" : {
-      "description" : {
-        "qualifiedName" : "/YSS/ccsds-apid",
-        "aliases" : [ {
-          "name" : "YSS_ccsds-apid",
-          "namespace" : "MDB:OPS Name"
-        }, {
-          "name" : "ccsds-apid",
-          "namespace" : "/YSS"
-        } ]
-      },
+      "name": "ccsds-apid",
+      "qualifiedName" : "/YSS/ccsds-apid",
+      "aliases" : [ {
+        "name" : "YSS_ccsds-apid",
+        "namespace" : "MDB:OPS Name"
+      }, {
+        "name" : "ccsds-apid",
+        "namespace" : "/YSS"
+      } ],
       "type" : {
         "engType" : "integer",
         "dataEncoding" : "IntegerDataEncoding(sizeInBits:11, encoding:unsigned, defaultCalibrator:null byteOrder:BIG_ENDIAN)"
@@ -114,13 +114,14 @@ Response body is of type `Mdb.ParameterInfo`:
 
 {% highlight nginx %}
 message ParameterInfo {
-  optional string qualifiedName = 1;
-  optional string shortDescription = 2;
-  optional string longDescription = 3;
-  repeated yamcs.NamedObjectId alias = 4;
-  optional ParameterTypeInfo type = 5;
-  optional DataSourceType dataSource = 6;
-  optional string url = 7;
+  optional string name = 1;
+  optional string qualifiedName = 2;
+  optional string shortDescription = 3;
+  optional string longDescription = 4;
+  repeated yamcs.NamedObjectId alias = 5;
+  optional ParameterTypeInfo type = 6;
+  optional DataSourceType dataSource = 7;
+  optional string url = 8;
 }
 {% endhighlight %}
 

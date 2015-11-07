@@ -50,9 +50,11 @@ The `q` parameter supports searching on namespace or name. For example:
 
 ### Response
 
+<pre class="header">Status: 200 OK</pre>
 {% highlight json %}
 {
   "parameter" : [ {
+    "name": "ccsds-apid",
     "qualifiedName" : "/YSS/ccsds-apid",
     "alias" : [ {
       "name" : "YSS_ccsds-apid",
@@ -84,19 +86,17 @@ message ListParametersResponse {
 
 Supporting definitions:
 
-<pre class="header">
-  mdb.proto
-</pre>
-
+<pre class="r header">mdb.proto</pre>
 {% highlight nginx %}
 message ParameterInfo {
-  optional string qualifiedName = 1;
-  optional string shortDescription = 2;
-  optional string longDescription = 3;
-  repeated yamcs.NamedObjectId alias = 4;
-  optional ParameterTypeInfo type = 5;
-  optional DataSourceType dataSource = 6;
-  optional string url = 7;
+  optional string name = 1;
+  optional string qualifiedName = 2;
+  optional string shortDescription = 3;
+  optional string longDescription = 4;
+  repeated yamcs.NamedObjectId alias = 5;
+  optional ParameterTypeInfo type = 6;
+  optional DataSourceType dataSource = 7;
+  optional string url = 8;
 }
 
 message ParameterTypeInfo {
@@ -143,9 +143,7 @@ enum DataSourceType {
 {% endhighlight %}
 
 
-<pre class="header">
-  yamcs.proto
-</pre>
+<pre class="r header">yamcs.proto</pre>
 
 {% highlight nginx %}
 message NamedObjectId {

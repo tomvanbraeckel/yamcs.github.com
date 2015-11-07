@@ -73,6 +73,7 @@ After validating the input parameters, the command will be added to the appropri
 
 ### Response
 
+<pre class="header">Status: 200 OK</pre>
 {% highlight json %}
 {
   "queue" : "default",

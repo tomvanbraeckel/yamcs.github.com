@@ -10,6 +10,7 @@
     - url: /docs/api/Clients/
       items:
         - url: /docs/api/List_Clients/
+        - url: /docs/api/Edit_a_Client/
     - url: /docs/api/Command_Queues/
       items:
         - url: /docs/api/List_Command_Queues/

@@ -99,8 +99,7 @@ message BulkSetParameterValueRequest {
 
 Supporting definitions:
 
-<pre class="header">yamcs.proto</pre>
-
+<pre class="r header">yamcs.proto</pre>
 {% highlight nginx %}
 message NamedObjectId {
   required string name = 1;

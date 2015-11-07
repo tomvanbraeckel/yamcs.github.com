@@ -32,6 +32,20 @@ Get data on a Yamcs instance:
   "missionDatabase" : {
     "configName" : "landing",
     "name" : "",
+    "spaceSystem" : [ {
+      "name" : "yamcs",
+      "qualifiedName" : "/yamcs"
+    }, {
+      "name" : "YSS",
+      "qualifiedName" : "/YSS",
+      "sub" : [ {
+        "name" : "SIMULATOR",
+        "qualifiedName" : "/YSS/SIMULATOR"
+      } ]
+    }, {
+      "name" : "GS",
+      "qualifiedName" : "/GS"
+    } ],
     "url" : "http://localhost:8090/api/mdb/simulator",
     "parametersUrl" : "http://localhost:8090/api/mdb/simulator/parameters{/namespace}{/name}",
     "containersUrl" : "http://localhost:8090/api/mdb/simulator/containers{/namespace}{/name}",
@@ -40,12 +54,13 @@ Get data on a Yamcs instance:
   "processor" : [ {
     "name" : "realtime",
     "url" : "http://localhost:8090/api/processors/simulator/realtime",
+    "clientsUrl" : "http://localhost:8090/api/processors/simulator/realtime/clients",
     "parametersUrl" : "http://localhost:8090/api/processors/simulator/realtime/parameters{/namespace}{/name}",
-    "commandsUrl" : "http://localhost:8090/api/processors/simulator/realtime/commands{/namespace}{/name}"
+    "commandsUrl" : "http://localhost:8090/api/processors/simulator/realtime/commands{/namespace}{/name}",
+    "commandQueuesUrl" : "http://localhost:8090/api/processors/simulator/realtime/cqueues{/name}"
   } ],
   "url" : "http://localhost:8090/api/instances/simulator",
   "clientsUrl" : "http://localhost:8090/api/clients/simulator{/processor}",
-  "commandQueuesUrl" : "http://localhost:8090/api/cqueues/simulator{/processor}",
   "eventsUrl" : "http://localhost:8090/api/events/simulator"
 }
 {% endhighlight %}
@@ -79,9 +94,36 @@ message MissionDatabase {
   required string configName = 1; //this is the config section in mdb.yaml
   required string name = 2; //XTCE root SpaceSystem name
   optional string version = 3; //XTCE root SpaceSystem header version
-  optional string url = 4;
-  optional string parametersUrl = 5;
-  optional string containersUrl = 6;
-  optional string commandsUrl = 7;
+  repeated SpaceSystemInfo spaceSystem = 4;
+  optional string url = 5;
+  optional string parametersUrl = 6;
+  optional string containersUrl = 7;
+  optional string commandsUrl = 8;
+}
+
+message SpaceSystemInfo {
+  optional string name = 1;
+  optional string qualifiedName = 2;
+  optional string shortDescription = 3;
+  optional string longDescription = 4;
+  repeated SpaceSystemInfo sub = 5;
+}
+
+message ProcessorInfo {
+  optional string instance = 1;
+  optional string name = 2;
+  optional string type = 3;
+  optional string spec = 4;
+  optional string creator = 5;
+  optional bool hasCommanding = 6;
+  optional ServiceState state = 7;
+  optional yamcs.ReplayRequest replayRequest = 8;
+  optional yamcs.ReplayStatus.ReplayState replayState = 9;
+  optional string url = 10;
+  optional string clientsUrl = 11;
+  optional string parametersUrl = 12;
+  optional string commandsUrl = 13;
+  optional string commandQueuesUrl = 14;
+  optional string alarmsUrl = 15;
 }
 {% endhighlight %}
