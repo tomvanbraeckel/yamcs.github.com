@@ -11,7 +11,7 @@
         - url: /docs/api/Get_Table_Data/
         - url: /docs/api/List_Streams/
         - url: /docs/api/Get_Stream_Detail/
-        - url: /docs/api/Fetch_Archive_Data/
+        #- url: /docs/api/Fetch_Archive_Data/
     - url: /docs/api/Clients/
       items:
         - url: /docs/api/List_Clients/
