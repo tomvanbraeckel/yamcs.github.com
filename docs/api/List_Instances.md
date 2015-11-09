@@ -56,13 +56,14 @@ List all configured Yamcs instances:
     "processor" : [ {
       "name" : "realtime",
       "url" : "http://localhost:8090/api/processors/simulator/realtime",
+      "clientsUrl" : "http://localhost:8090/api/processors/simulator/realtime/clients",
       "parametersUrl" : "http://localhost:8090/api/processors/simulator/realtime/parameters{/namespace}{/name}",
       "commandsUrl" : "http://localhost:8090/api/processors/simulator/realtime/commands{/namespace}{/name}",
       "commandQueuesUrl" : "http://localhost:8090/api/processors/simulator/realtime/cqueues{/name}"
     } ],
     "url" : "http://localhost:8090/api/instances/simulator",
-    "clientsUrl" : "http://localhost:8090/api/clients/simulator{/processor}",
-    "eventsUrl" : "http://localhost:8090/api/events/simulator"
+    "clientsUrl" : "http://localhost:8090/api/instances/simulator{/processor}/clients",
+    "eventsUrl" : "http://localhost:8090/api/instances/simulator{/processor}/events"
   } ]
 }
 {% endhighlight %}

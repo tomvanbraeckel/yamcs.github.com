@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /docs/api/Get_an_Instance/
+permalink: /docs/api/Get_Instance_Detail/
 sidebar: yes
 ---
 
@@ -20,7 +20,7 @@ Get data on a Yamcs instance:
     <tr>
         <td class="code">pretty</td>
         <td class="code">bool</td>
-        <td>format the JSON result in a human readable manner</td>
+        <td>Format the JSON result in a human readable manner</td>
     </tr>
 </table>
 
@@ -60,8 +60,8 @@ Get data on a Yamcs instance:
     "commandQueuesUrl" : "http://localhost:8090/api/processors/simulator/realtime/cqueues{/name}"
   } ],
   "url" : "http://localhost:8090/api/instances/simulator",
-  "clientsUrl" : "http://localhost:8090/api/clients/simulator{/processor}",
-  "eventsUrl" : "http://localhost:8090/api/events/simulator"
+  "clientsUrl" : "http://localhost:8090/api/instances/simulator{/processor}/clients",
+  "eventsUrl" : "http://localhost:8090/api/instances/simulator{/processor}/events"
 }
 {% endhighlight %}
 

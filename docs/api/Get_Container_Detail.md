@@ -204,9 +204,7 @@ message ContainerInfo {
 
 Supporting definitions:
 
-<pre class="header">
-  mdb.proto
-</pre>
+<pre class="r header">mdb.proto</pre>
 
 {% highlight nginx %}
 message ComparisonInfo {
@@ -243,9 +241,7 @@ message RepeatInfo {
 {% endhighlight %}
 
 
-<pre class="header">
-  yamcs.proto
-</pre>
+<pre class="r header">yamcs.proto</pre>
 
 {% highlight nginx %}
 message NamedObjectId {

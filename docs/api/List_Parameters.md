@@ -100,10 +100,15 @@ message ParameterInfo {
 }
 
 message ParameterTypeInfo {
+  message EnumValue {
+    optional int64 value = 1;
+    optional string label = 2;
+  }
   optional string engType = 1;
   optional string dataEncoding = 2;
-  repeated UnitInfo unitSet = 3; 
+  repeated UnitInfo unitSet = 3;
   optional AlarmInfo defaultAlarm = 4;
+  repeated EnumValue enumValue = 5;
 }
 
 message UnitInfo {

@@ -14,7 +14,7 @@ Filters are specified in the request body, and should always include at least a 
 
 <table class="inline">
     <tr><th>Parameter</th><th>Description</th></tr>
-     <tr><td>Body</td><td>Request body of type <code>Rest.RestDumpArchiveRequest</code></td></tr>
+    <tr><td>Body</td><td>Request body of type <code>Rest.RestDumpArchiveRequest</code></td></tr>
 </table>
 
 
@@ -49,7 +49,7 @@ message RestDumpArchiveRequest {
 
 <table class="inline">
     <tr><th>Parameter</th><th>Description</th></tr>
-     <tr><td>stream</td><td>In practice the Yamcs archive could be very big. Therefore, responses are by default limited to about 1MB. Anything above will generate a server error. If your client is expected to fetch more data than that, you should use this option.
+    <tr><td>stream</td><td>In practice the Yamcs archive could be very big. Therefore, responses are by default limited to about 1MB. Anything above will generate a server error. If your client is expected to fetch more data than that, you should use this option.
 <br>
 Using this option, the response may contain multiple individually delimited JSON messages, therefore your JSON client does not need to wait for the full response before starting processing. For Protobuf clients, the individual messages are prefixed with their byte-size (Protobuf is not a self-delimiting message format).</td></tr>
 </table>

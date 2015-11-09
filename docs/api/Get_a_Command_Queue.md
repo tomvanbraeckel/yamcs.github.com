@@ -57,9 +57,7 @@ message CommandQueueInfo {
 
 Supporting definitions:
 
-<pre class="header">
-    commanding.proto
-</pre>
+<pre class="r header">commanding.proto</pre>
 
 {% highlight nginx %}
 enum QueueState {

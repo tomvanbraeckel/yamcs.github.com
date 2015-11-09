@@ -170,7 +170,7 @@ message BulkGetParameterValueResponse {
 
 Supporting definitions:
 
-<pre class="header">yamcs.proto</pre>
+<pre class="r header">yamcs.proto</pre>
 
 {% highlight nginx %}
 message NamedObjectId {
@@ -205,7 +205,7 @@ message Value {
 }
 {% endhighlight %}
 
-<pre class="header">pvalue.proto</pre>
+<pre class="r header">pvalue.proto</pre>
 
 {% highlight nginx %}
 enum AcquisitionStatus {
@@ -237,7 +237,7 @@ enum MonitoringResult {
 {% endhighlight %}
 
 
-<pre class="header">mdb.proto</pre>
+<pre class="r header">mdb.proto</pre>
 
 {% highlight nginx %}
 message AlarmRange {

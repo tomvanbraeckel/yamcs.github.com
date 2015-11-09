@@ -6,6 +6,11 @@
         - url: /docs/api/Update_an_Alarm/
     - url: /docs/api/Archive/
       items:
+        - url: /docs/api/List_Tables/
+        - url: /docs/api/Get_Table_Detail/
+        - url: /docs/api/Get_Table_Data/
+        - url: /docs/api/List_Streams/
+        - url: /docs/api/Get_Stream_Detail/
         - url: /docs/api/Fetch_Archive_Data/
     - url: /docs/api/Clients/
       items:
@@ -24,7 +29,7 @@
     - url: /docs/api/Instances/
       items:
         - url: /docs/api/List_Instances/
-        - url: /docs/api/Get_an_Instance/
+        - url: /docs/api/Get_Instance_Detail/
     - url: /docs/api/Mission_Database/
       items:
         - url: /docs/api/List_Containers/

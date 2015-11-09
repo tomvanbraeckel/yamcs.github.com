@@ -139,10 +139,7 @@ message CommandInfo {
 
 Supporting definitions:
 
-<pre class="header">
-  mdb.proto
-</pre>
-
+<pre class="r header">mdb.proto</pre>
 {% highlight nginx %}
 message ArgumentInfo {
   optional string name = 1;
@@ -195,10 +192,7 @@ message ComparisonInfo {
 {% endhighlight %}
 
 
-<pre class="header">
-  yamcs.proto
-</pre>
-
+<pre class="r header">yamcs.proto</pre>
 {% highlight nginx %}
 message NamedObjectId {
   required string name = 1;
