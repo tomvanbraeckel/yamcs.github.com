@@ -86,7 +86,7 @@ message YamcsInstance {
 Supporting definitions:
 
 <pre class="header">
-    yamcsManagement.proto
+yamcsManagement.proto
 </pre>
 
 {% highlight nginx %}

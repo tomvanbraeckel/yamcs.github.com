@@ -6,14 +6,14 @@ sidebar: yes
 
 List the history of values for the specified parameter:
 
-    GET /api/processors/:instance/:processor/parameters/:namespace/:name/history
+    GET /api/archive/:instance/parameters/:namespace/:name/history
 
 The `:namespace` segment can be any of the valid namespaces for this parameter. In case of fully qualified XTCE names, the `:namespace` segment must be repeated for every nested space system.
 
 For example these URIs both point to the same parameter value resource:
 
-    /api/processors/simulator/realtime/parameters/MDB%3AOPS+Name/SIMULATOR_BatteryVoltage2/history
-    /api/processors/simulator/realtime/parameters/YSS/SIMULATOR/BatteryVoltage2/history
+    /api/archive/simulator/parameters/MDB%3AOPS+Name/SIMULATOR_BatteryVoltage2/history
+    /api/archive/simulator/parameters/YSS/SIMULATOR/BatteryVoltage2/history
     
 Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII character set. The server supports UTF-8 but your client may not.
 
@@ -29,7 +29,7 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
     <tr>
         <td class="code">order</td>
         <td class="code">string</td>
-        <td>The order of the returned results. Default: <tt>desc</tt></td>
+        <td>The order of the returned results. Can be either <tt>asc</tt> or <tt>desc</tt>. Default: <tt>desc</tt></td>
     </tr>
     <tr>
         <td class="code">pretty</td>

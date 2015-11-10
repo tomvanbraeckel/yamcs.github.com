@@ -32,6 +32,7 @@
         - url: /docs/api/Get_Instance_Detail/
     - url: /docs/api/Mission_Database/
       items:
+        - url: /docs/api/Get_MDB_Detail/
         - url: /docs/api/List_Containers/
         - url: /docs/api/Get_Container_Detail/
         - url: /docs/api/List_Parameters/
