@@ -42,11 +42,9 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
 ### Response
 
 <pre class="header">
-  Status: 200 OK
-  Link: <http://localhost:8090/api/.../history?since=>; rel="next",
-        <http://localhost:8090/api/.../history?since=>; rel="last",
-        <http://localhost:8090/api/.../bulk; rel="bulk"
+Status: 200 OK
 </pre>
+
 {% highlight json %}
 todo
 {% endhighlight %}
@@ -76,24 +74,6 @@ message ParameterValue {
 
   // context-dependent ranges
   repeated mdb.AlarmRange alarmRange = 25;
-}
-{% endhighlight %}
-
-Bulk requests are of type `Rest.BulkGetParameterValueRequest`:
-
-{% highlight nginx %}
-message BulkGetParameterValueRequest {
-  repeated yamcs.NamedObjectId id = 1;
-  optional bool fromCache = 2;
-  optional uint64 timeout = 3; //if not fromCache, wait this time (in milliseconds) to receive the parameter
-}
-{% endhighlight %}
-
-Bulk Responses are of type `Rest.BulkGetParameterValueResponse`:
-
-{% highlight nginx %}
-message BulkGetParameterValueResponse {
-  repeated pvalue.ParameterValue value = 1;
 }
 {% endhighlight %}
 

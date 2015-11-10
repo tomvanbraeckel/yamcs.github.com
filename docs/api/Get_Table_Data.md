@@ -40,15 +40,12 @@ Get the most recent data of a Yamcs table:
     <tr>
         <td class="code">limit</td>
         <td class="code">integer</td>
-        <td>The maximum number of returned records per page. Choose this value too high and you risk hitting the maximum response size limit enforced by the server. Default <tt>100</tt></td>
+        <td>The maximum number of returned records per page. Choose this value too high and you risk hitting the maximum response size limit enforced by the server. Default: <tt>100</tt></td>
     </tr>
     <tr>
-        <td class="code">sort</td>
-        <td class="code">array of strings</td>
-        <td>
-            <p>What column to sort results by. Prefix the column with <code>+</code> or <code>-</code> to specify the direction of the sort. The default direction is ascending: <code>+</code></p>
-            <p>E.g. <tt>?sort=gentime,-rectime</tt></p>
-        </td>
+        <td class="code">order</td>
+        <td class="code">string</td>
+        <td>The direction of the sort. Sorting is always done on the key of the table. Can be either <tt>asc</tt> or <tt>desc</tt>. Default: <tt>desc</tt></td>
     </tr>
     <tr>
         <td class="code">pretty</td>
@@ -57,20 +54,50 @@ Get the most recent data of a Yamcs table:
     </tr>
 </table>
 
-The <tt>start</tt> and <tt>limit</tt> allow for simplistic pagination and should really be combined with <tt>sort</tt> for deterministic behaviour. Keep in mind that in-between two requests extra data may have been added to the table, causing a shift of the results. This generic stateless operation does not provide a reliable mechanism against that, so address this by overlapping your <tt>start</tt> parameter with rows of the previous query if you need to combine multiple pages. For example, here we overlap by 4:
+The <tt>start</tt> and <tt>limit</tt> allow for pagination. Keep in mind that in-between two requests extra data may have been added to the table, causing a shift of the results. This generic stateless operation does not provide a reliable mechanism against that, so address it by overlapping your <tt>start</tt> parameter with rows of the previous query. In this example we overlap by 4:
 
-    ?start=0&limit=50&sort=-gentime
-    ?start=45&limit=50&sort=-gentime
+    ?start=0&limit=50&order=desc
+    ?start=45&limit=50&order=desc
 
 ### Response
 
 <pre class="header">
 Status: 200 OK
-Link: <http://localhost:8090/api/.../data?page=2>; rel="next"
+Link: <http://localhost:8090/api/.../data?start=100>; rel="next"
 </pre>
 
 {% highlight json %}
-todo
+{
+  "record" : [ {
+    "column" : [ {
+      "name" : "gentime",
+      "value" : {
+        "type" : "TIMESTAMP",
+        "timestampValue" : 1446650363464
+      }
+    }, {
+      "name" : "pname",
+      "value" : {
+        "type" : "STRING",
+        "stringValue" : "/YSS/SIMULATOR/FlightData"
+      }
+    } ]
+  }, {
+    "column" : [ {
+      "name" : "gentime",
+      "value" : {
+        "type" : "TIMESTAMP",
+        "timestampValue" : 1446650363667
+      }
+    }, {
+      "name" : "pname",
+      "value" : {
+        "type" : "STRING",
+        "stringValue" : "/YSS/SIMULATOR/FlightData"
+      }
+    } ]
+  } ]
+}
 {% endhighlight %}
 
 ### Protobuf

@@ -47,7 +47,7 @@ After validating the input parameters, the command will be added to the appropri
     <td class="code">array&nbsp;of<br>string&nbsp;pairs</td>
     <td>
       <p>The name/value assignments for this command.</p>
-      <p><strong>Note:</strong> We enjoy simple curl-able APIs, so we made it possible to provide assignments in the query string in the format <tt>name=value</tt>. However, when building your own client, make sure to use the request body to prevent any potential naming collisions with other URI parameters.</p>
+      <p><strong>Note:</strong> We enjoy simple curl-able APIs, so have made it possible to provide assignments in the query string in the format <tt>name=value</tt>. However, when building your own client, make sure to use the request body to prevent any potential naming collisions with other URI parameters.</p>
     </td>
   </tr>
   <tr>
