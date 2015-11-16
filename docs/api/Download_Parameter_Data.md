@@ -10,7 +10,7 @@ Download archived parameters:
 
     
 <div class="hint">
-This operation will possibly download a very large file. If you worry about size for your application, check out the support for <a href="/docs/api/List_Parameters/">paged parameter retrievals</a> instead.
+This operation will possibly download a very large file. If you worry about size for your application, check out the support for <a href="/docs/api/List_Parameter_Data/">paged parameter retrievals</a> instead.
 </div>
 
 

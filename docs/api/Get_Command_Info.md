@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /docs/api/Get_Command_Detail/
+permalink: /docs/api/Get_Command_Info/
 sidebar: yes
 ---
 

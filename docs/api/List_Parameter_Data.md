@@ -1,12 +1,12 @@
 ---
 layout: default
-permalink: /docs/api/List_Parameter_History/
+permalink: /docs/api/List_Parameter_Data/
 sidebar: yes
 ---
 
 List the history of values for the specified parameter:
 
-    GET /api/archive/:instance/parameters/:namespace/:name/history
+    GET /api/archive/:instance/parameters/:namespace/:name
 
 
 ### Parameters
@@ -118,8 +118,6 @@ Time    BatteryVoltage2
 2015-11-13T12:21:42.750 159                       
 {% endhighlight %}
 
-The columns are tab-separated.
-
 
 ### Protobuf
 
@@ -127,22 +125,7 @@ Response:
 
 <pre class="header r">pvalue.proto</pre>
 {% highlight nginx %}
-message ParameterValue {
-  optional yamcs.NamedObjectId id = 1;
-  optional yamcs.Value rawValue = 2;
-  optional yamcs.Value engValue = 3;
-  optional int64 acquisitionTime = 4;
-  optional int64 generationTime = 5;
-  optional AcquisitionStatus acquisitionStatus = 6;
-  optional bool processingStatus = 7;
-  optional MonitoringResult monitoringResult = 8;
-
-  optional string acquisitionTimeUTC = 11;
-  optional string generationTimeUTC = 12;
-
-  optional int64 expirationTime = 23;
-  optional string expirationTimeUTC = 24;
-
-  repeated mdb.AlarmRange alarmRange = 25;
+message ParameterData {
+  repeated ParameterValue parameter = 1;
 }
 {% endhighlight %}

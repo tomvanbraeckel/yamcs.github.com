@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /docs/api/List_Containers/
+permalink: /docs/api/List_Container_Info/
 sidebar: yes
 ---
 

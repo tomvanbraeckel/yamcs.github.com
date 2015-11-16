@@ -25,12 +25,12 @@
     - url: /docs/api/Mission_Database/
       items:
         - url: /docs/api/Get_MDB_Detail/
-        - url: /docs/api/List_Containers/
-        - url: /docs/api/Get_Container_Detail/
-        - url: /docs/api/List_Parameters/
-        - url: /docs/api/Get_Parameter_Detail/
-        - url: /docs/api/List_Commands/
-        - url: /docs/api/Get_Command_Detail/
+        - url: /docs/api/List_Container_Info/
+        - url: /docs/api/Get_Container_Info/
+        - url: /docs/api/List_Parameter_Info/
+        - url: /docs/api/Get_Parameter_Info/
+        - url: /docs/api/List_Command_Info/
+        - url: /docs/api/Get_Command_Info/
     - url: /docs/api/Packets/
       items:
         - url: /docs/api/List_Packets/
@@ -40,8 +40,8 @@
         - url: /docs/api/Get_Parameter_Value/
         - url: /docs/api/Set_Parameter_Value/
         - url: /docs/api/Get_Parameter_Samples/
-        - url: /docs/api/List_Parameter_History/
-        - url: /docs/api/Download_Parameter_History/
+        - url: /docs/api/List_Parameter_Data/
+        - url: /docs/api/Download_Parameter_Data/
     - url: /docs/api/Processors/
       items:
         - url: /docs/api/List_Processors/

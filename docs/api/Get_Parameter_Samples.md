@@ -35,18 +35,27 @@ Sample the history of values for the specified parameter:
 </table>
  
 
-### Media Type
-
-In addition to the usual support for JSON and Protobuf, the response for this particular resource can be made to output CSV data by setting the HTTP `Accept` header to `text/csv`.
-
-
 ### Response
+
+<pre class="header">Status: 200 OK</pre>
+{% highlight json %}
+{
+  "sample" : [ {
+    "averageGenerationTime" : 1447233133626,
+    "averageGenerationTimeUTC" : "2015-11-11T09:11:37.626",
+    "averageValue" : 169.41836734693865,
+    "lowValue" : 103.0,
+    "highValue" : 237.0,
+    "n" : 98
+  } ]
+}
+{% endhighlight %}
 
 ### Protobuf
 
 Response:
 
-<pre class="header">pvalue.proto</pre>
+<pre class="r header">pvalue.proto</pre>
 {% highlight nginx %}
 message SampleSeries {
   message Sample {

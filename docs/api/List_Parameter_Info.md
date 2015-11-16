@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /docs/api/List_Parameters/
+permalink: /docs/api/List_Parameter_Info/
 sidebar: yes
 ---
 
