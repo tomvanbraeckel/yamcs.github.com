@@ -41,9 +41,7 @@ This operation will possibly download a very large file. If you worry about size
 
 ### Media Type
 
-In addition to the usual support for JSON and Protobuf, the response for this particular resource can be made to output CSV data by setting the HTTP `Accept` header to `text/csv`. Or alternatively, append the suffix <tt>.csv</tt> at the end of your URI path:
-
-    GET /api/archive/:instance/downloads/events.csv
+In addition to the usual support for JSON and Protobuf, the response for this particular resource can be made to output CSV data by setting the HTTP `Accept` header to `text/csv`.
 
 
 ### Response

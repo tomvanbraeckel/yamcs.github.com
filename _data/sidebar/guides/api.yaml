@@ -74,7 +74,6 @@
     - url: /docs/api/alarms.proto/
     - url: /docs/api/archive.proto/
     - url: /docs/api/commanding.proto/
-    - url: /docs/api/events.proto/
     - url: /docs/api/mdb.proto/
     - url: /docs/api/pvalue.proto/
     - url: /docs/api/rest.proto/
