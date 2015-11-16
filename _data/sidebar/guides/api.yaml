@@ -62,7 +62,7 @@
 
 - url: /docs/api/WebSocket_API/
   items:
-#    -url: /docs/api/Parameter_Updates/
+    - url: /docs/api/Parameter_Updates/
     - url: /docs/api/Alarm_Notices/
 #    -url: /docs/api/Command_History_Updates/
     - url: /docs/api/Event_Updates/

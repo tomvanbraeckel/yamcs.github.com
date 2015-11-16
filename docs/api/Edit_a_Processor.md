@@ -51,7 +51,7 @@ Resume the processor, and set speed to 2.5x:
 {% highlight json %}
 {
   "state" : "RUNNING",
-  "speed" : "2.5"
+  "speed" : "2.5x"
 }
 {% endhighlight %}
 
