@@ -9,21 +9,6 @@ Get data on a Yamcs instance:
     GET /api/processors/:instance/:processor/cqueues/:name
 
 
-### Parameters
-
-<table class="inline">
-    <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-    </tr>
-    <tr>
-        <td class="code">pretty</td>
-        <td class="code">bool</td>
-        <td>format the JSON result in a human readable manner</td>
-    </tr>
-</table>
-
 ### Response
 
 {% highlight json %}
@@ -40,8 +25,9 @@ Get data on a Yamcs instance:
 
 ### Protobuf
 
-Response is of type `Commanding.CommandQueueInfo`.
+Response:
 
+<pre class="r header">commanding.proto</pre>
 {% highlight nginx %}
 message CommandQueueInfo {
   required string instance = 1;
@@ -52,17 +38,5 @@ message CommandQueueInfo {
   required int32 nbRejectedCommands = 6;
   optional int32 stateExpirationTimeS = 7;
   optional string url = 8;
-}
-{% endhighlight %}
-
-Supporting definitions:
-
-<pre class="r header">commanding.proto</pre>
-
-{% highlight nginx %}
-enum QueueState {
-  BLOCKED = 1;
-  DISABLED = 2;
-  ENABLED = 3;
 }
 {% endhighlight %}

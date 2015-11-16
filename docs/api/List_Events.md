@@ -4,93 +4,106 @@ permalink: /docs/api/List_Events/
 sidebar: yes
 ---
 
-List the events for the given Yamcs instance:
+List the history of events:
 
-    GET /api/events/:instance
-
+    GET /api/archive/:instance/events/
 
 ### Parameters
 
 <table class="inline">
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td class="code">q</td>
-    <td class="code">string</td>
-    <td>The search keywords.</td>
-  </tr>
-  <tr>
-    <td class="code">pretty</td>
-    <td class="code">bool</td>
-    <td>Format the JSON result in a human readable manner.</td>
-  </tr>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td class="code">start</td>
+        <td class="code">string</td>
+        <td>Filter the lower bound of the event's generation time. Specify a date string in ISO 8601 format</td>
+    </tr>
+    <tr>
+        <td class="code">stop</td>
+        <td class="code">string</td>
+        <td>Filter the upper bound of the event's generation time. Specify a date string in ISO 8601 format</td>
+    </tr>
+    <tr>
+        <td class="code">pos</td>
+        <td class="code">integer</td>
+        <td>The zero-based row number at which to start outputting results. Default: <tt>0</tt></td>
+    </tr>
+    <tr>
+        <td class="code">limit</td>
+        <td class="code">integer</td>
+        <td>The maximum number of returned records per page. Choose this value too high and you risk hitting the maximum response size limit enforced by the server. Default: <tt>100</tt></td>
+    </tr>
+    <!--tr>
+        <td class="code">q</td>
+        <td class="code">string</td>
+        <td>The search keywords.</td>
+    </tr-->
+    <tr>
+        <td class="code">order</td>
+        <td class="code">string</td>
+        <td>The order of the returned results. Can be either <tt>asc</tt> or <tt>desc</tt>. Default: <tt>desc</tt></td>
+    </tr>
 </table>
 
-Filters are specified in the request body, and should always include at least a `start` and a `stop` value. These are to be encoded in the internal Yamcs time format (use `TimeEncoding` from `yamcs-api`). We are likely to make this configurable in the future.
+The <tt>pos</tt> and <tt>limit</tt> allow for pagination. Keep in mind that in-between two requests extra data may have been recorded, causing a shift of the results. This generic stateless operation does not provide a reliable mechanism against that, so address it by overlapping your <tt>pos</tt> parameter with rows of the previous query. In this example we overlap by 4:
 
-<table class="inline">
-    <tr><th>Parameter</th><th>Description</th></tr>
-    <tr><td>Body</td><td>Request body of type <code>Rest.RestDumpArchiveRequest</code></td></tr>
-</table>
+    ?pos=0&limit=50&order=desc
+    ?pos=45&limit=50&order=desc
+    
+An alternative is to download the events instead.
 
 
-Protobuf definition:
+### Media Type
 
-{% highlight nginx %}
-message RestDumpArchiveRequest {
-  // Time specification (assumed Yamcs internal time)
-  optional int64 start = 1;
-  optional int64 stop = 2;
-  
-  //Alternative time specification as UTC strings in ISO8601 format
-  optional string utcStart = 9;
-  optional string utcStop = 10;
-
-  // At least one of the following request types should be added
-  optional yamcs.ParameterReplayRequest parameterRequest=3;
-  optional yamcs.PacketReplayRequest packetRequest=4;
-  optional yamcs.EventReplayRequest eventRequest=5;
-  optional yamcs.CommandHistoryReplayRequest commandHistoryRequest=6;
-  optional yamcs.PpReplayRequest ppRequest=7;
-
-  // By default the response will be aggregated on the server and only when fully
-  // built be sent to the client. This has a limitation of 1MB though.
-  // You can circumvent this limitation by enabling the stream-option, see the
-  // wiki for more details on this.
-  optional bool stream = 8;
-}
-{% endhighlight %}
-
-### Optional Parameters
-
-<table class="inline">
-    <tr><th>Parameter</th><th>Description</th></tr>
-    <tr><td>stream</td><td>In practice the Yamcs archive could be very big. Therefore, responses are by default limited to about 1MB. Anything above will generate a server error. If your client is expected to fetch more data than that, you should use this option.
-<br>
-Using this option, the response may contain multiple individually delimited JSON messages, therefore your JSON client does not need to wait for the full response before starting processing. For Protobuf clients, the individual messages are prefixed with their byte-size (Protobuf is not a self-delimiting message format).</td></tr>
-</table>
-
+In addition to the usual support for JSON and Protobuf, the response for this particular resource can be made to output CSV data by setting the HTTP `Accept` header to `text/csv`. 
 
 
 ### Response
 
-Protobuf definition:
+<pre class="header">
+Status: 200 OK
+</pre>
 
-{% highlight nginx %}
-message RestDumpArchiveResponse {
-  repeated pvalue.ParameterData parameterData=2;
-  repeated yamcs.TmPacketData packetData=3;
-  repeated commanding.CommandHistoryEntry command=4;
-  repeated yamcs.Event event=5;
-  repeated pvalue.ParameterData ppData=6;
+{% highlight json %}
+{
+  "event" : [ {
+    "source" : "AlarmChecker",
+    "generationTime" : 1447425863786,
+    "receptionTime" : 1447425863786,
+    "seqNumber" : 15,
+    "type" : "IN_LIMITS",
+    "message" : "Parameter /YSS/SIMULATOR/BatteryVoltage2 has changed to value 222",
+    "severity" : "INFO",
+    "generationTimeUTC" : "2015-11-13T14:43:47.786",
+    "receptionTimeUTC" : "2015-11-13T14:43:47.786"
+  } ]
 }
 {% endhighlight %}
 
-### Example
+Or when requesting CSV:
 
-```
-curl -XGET http://localhost:8090/simulator/api/archive -d '{"start": 1425686400,"stop": 1426636800,"commandHistoryRequest": {}}'
-```
+<pre class="header">
+Status: 200 OK
+Content-Type: text/csv
+</pre>
+
+{% highlight text %}
+Source  Generation Time Reception Time  Event Type      Event Text
+AlarmChecker    2015-11-13T14:46:36.029 2015-11-13T14:46:36.029 IN_LIMITS       Parameter /YSS/SIMULATOR/BatteryVoltage2 has changed to value 195
+AlarmChecker    2015-11-13T14:46:29.784 2015-11-13T14:46:29.784 IN_LIMITS       Parameter /YSS/SIMULATOR/BatteryVoltage2 has changed to value 196
+AlarmChecker    2015-11-13T14:46:23.571 2015-11-13T14:46:23.571 IN_LIMITS       Parameter /YSS/SIMULATOR/BatteryVoltage2 has changed to value 197
+{% endhighlight %}
+
+### Protobuf
+
+Response:
+
+<pre class="r header">rest.proto</pre>
+{% highlight nginx %}
+message ListEventsResponse {
+  repeated yamcs.Event event = 1;
+}
+{% endhighlight %}

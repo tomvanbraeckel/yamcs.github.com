@@ -8,32 +8,10 @@ Return the data for the given parameter:
 
     GET /api/mdb/:instance/parameters/:namespace/:name
 
-The `:namespace` segment can be any of the valid namespaces for this parameter. In case of fully qualified XTCE names, the `:namespace` segment must be repeated for every nested space system.
-
-For example these URIs both point to the same parameter resource:
-
-    /api/mdb/simulator/parameters/MDB%3AOPS+Name/SIMULATOR_BatteryVoltage2
-    /api/mdb/simulator/parameters/YSS/SIMULATOR/BatteryVoltage2
-    
-Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII character set. The server supports UTF-8 but your client may not.
-
-### Parameters
-
-<table class="inline">
-    <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-    </tr>
-    <tr>
-        <td class="code">pretty</td>
-        <td class="code">bool</td>
-        <td>Formats the JSON result in a human readable manner</td>
-    </tr>
-</table>
 
 ### Response
 
+<pre class="header">Status: 200 OK</pre>
 {% highlight json %}
 {
   "name": "BatteryVoltage2",
@@ -110,8 +88,9 @@ In the response the requested parameter ID is returned for every match. Example:
 
 ### Protobuf
 
-Response body is of type `Mdb.ParameterInfo`:
+Response:
 
+<pre class="r header">mdb.proto</pre>
 {% highlight nginx %}
 message ParameterInfo {
   optional string name = 1;
@@ -125,16 +104,18 @@ message ParameterInfo {
 }
 {% endhighlight %}
 
-Bulk requests are of type `Rest.BulkGetParameterRequest`:
+Bulk request:
 
+<pre class="r header">rest.proto</pre>
 {% highlight nginx %}
 message BulkGetParameterRequest {
   repeated yamcs.NamedObjectId id = 1;
 }
 {% endhighlight %}
 
-Bulk Responses are of type `Rest.BulkGetParameterResponse`:
+Bulk Response:
 
+<pre class="r header">rest.proto</pre>
 {% highlight nginx %}
 message BulkGetParameterResponse {
   message GetParameterResponse {
@@ -143,68 +124,5 @@ message BulkGetParameterResponse {
   }
 
   repeated GetParameterResponse response = 1;
-}
-{% endhighlight %}
-
-Supporting definitions:
-
-<pre class="r header">mdb.proto</pre>
-
-{% highlight nginx %}
-message ParameterTypeInfo {
-  message EnumValue {
-    optional int64 value = 1;
-    optional string label = 2;
-  }
-  optional string engType = 1;
-  optional string dataEncoding = 2;
-  repeated UnitInfo unitSet = 3;
-  optional AlarmInfo defaultAlarm = 4;
-  repeated EnumValue enumValue = 5;
-}
-
-message UnitInfo {
-  optional string unit = 1;
-}
-
-message AlarmInfo {
-  optional int32 minViolations = 1;
-  repeated AlarmRange staticAlarmRanges = 2;
-}
-
-message AlarmRange {
-  optional AlarmLevel level = 1; 
-  optional double minInclusive = 2;
-  optional double maxInclusive = 3; 
-  optional string enumerationValue = 4;
-}
-
-enum AlarmLevelType {
-  NORMAL = 0;
-  WATCH = 1;
-  WARNING =  2;
-  DISTRESS = 3;
-  CRITICAL = 4;
-  SEVERE = 5;
-}
-
-enum DataSourceType {
-  TELEMETERED = 0;
-  DERIVED = 1;
-  CONSTANT = 2;
-  LOCAL = 3;
-  SYSTEM = 4;
-  COMMAND = 5;
-  COMMAND_HISTORY = 6;
-}
-{% endhighlight %}
-
-
-<pre class="r header">yamcs.proto</pre>
-
-{% highlight nginx %}
-message NamedObjectId {
-  required string name = 1;
-  optional string namespace = 2;
 }
 {% endhighlight %}

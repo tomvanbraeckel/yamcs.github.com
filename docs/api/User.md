@@ -9,21 +9,6 @@ Get information on the authenticated user:
     GET /api/user
 
 
-### Parameters
-
-<table class="inline">
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td class="code">pretty</td>
-    <td class="code">bool</td>
-    <td>Format the JSON result in a human readable manner. Default: <tt>no</tt></td>
-  </tr>
-</table>
-
 ### Response
 
 <pre class="header">Status: 200 OK</pre>
@@ -41,8 +26,9 @@ Get information on the authenticated user:
 
 ### Protobuf
 
-Request body is of type `YamcsManagement.UserInfo`:
+Request:
 
+<pre class="r header">yamcsManagement.proto</pre>
 {% highlight nginx %}
 message UserInfo {
   optional string login = 1;

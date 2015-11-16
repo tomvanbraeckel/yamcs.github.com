@@ -1,7 +1,6 @@
 ---
 layout: default
-permalink: /docs/api/Command_Queues/
+permalink: /docs/api/Tables/
 sidebar: yes
 section: yes
 ---
-

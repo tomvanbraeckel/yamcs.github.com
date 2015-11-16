@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /docs/api/Commands/
+permalink: /docs/api/Commanding/
 section: yes
 sidebar: yes
 ---

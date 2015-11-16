@@ -8,32 +8,10 @@ Return the data for the given container:
 
     GET /api/mdb/:instance/containers/:namespace/:name
 
-The `:namespace` segment can be any of the valid namespaces for this container. In case of fully qualified XTCE names, the `:namespace` segment must be repeated for every nested space system.
-
-For example these URIs both point to the same container resource:
-
-    /api/mdb/simulator/containers/MDB%3AOPS+Name/SIMULATOR_DHS
-    /api/mdb/simulator/containers/YSS/SIMULATOR/DHS
-    
-Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII character set. The server supports UTF-8 but your client may not.
-
-### Parameters
-
-<table class="inline">
-    <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-    </tr>
-    <tr>
-        <td class="code">pretty</td>
-        <td class="code">bool</td>
-        <td>Formats the JSON result in a human readable manner</td>
-    </tr>
-</table>
 
 ### Response
 
+<pre class="header">Status: 200 OK</pre>
 {% highlight json %}
 {
   "name": "DHS",
@@ -184,8 +162,9 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
 
 ### Protobuf
 
-Response body is of type `Mdb.ContainerInfo`:
+Response:
 
+<pre class="r header">mdb.proto</pre>
 {% highlight nginx %}
 message ContainerInfo {
   optional string name = 1;
@@ -199,53 +178,5 @@ message ContainerInfo {
   repeated ComparisonInfo restrictionCriteria = 9;
   repeated SequenceEntryInfo entry = 10;
   optional string url = 11;
-}
-{% endhighlight %}
-
-Supporting definitions:
-
-<pre class="r header">mdb.proto</pre>
-
-{% highlight nginx %}
-message ComparisonInfo {
-  enum OperatorType {
-    EQUAL_TO = 1;
-    NOT_EQUAL_TO = 2;
-    GREATER_THAN = 3;
-    GREATER_THAN_OR_EQUAL_TO = 4;
-    SMALLER_THAN = 5;
-    SMALLER_THAN_OR_EQUAL_TO = 6;
-  }
-  optional ParameterInfo parameter = 1;
-  optional OperatorType operator = 2;
-  optional string value = 3;
-}
-
-message SequenceEntryInfo {
-  enum ReferenceLocationType {
-    CONTAINER_START = 1;
-    PREVIOUS_ENTRY = 2;
-  }
-  optional int32 locationInBits = 1;
-  optional ReferenceLocationType referenceLocation = 2;
-  optional ContainerInfo container = 3;
-  optional ParameterInfo parameter = 4;
-  optional RepeatInfo repeat = 5;
-}
-
-message RepeatInfo {
-  optional int64 fixedCount = 1;
-  optional ParameterInfo dynamicCount = 2;
-  optional int32 bitsBetween = 3;
-}
-{% endhighlight %}
-
-
-<pre class="r header">yamcs.proto</pre>
-
-{% highlight nginx %}
-message NamedObjectId {
-  required string name = 1;
-  optional string namespace = 2;
 }
 {% endhighlight %}

@@ -8,32 +8,10 @@ Return the data for the given command:
 
     GET /api/mdb/:instance/commands/:namespace/:name
 
-The `:namespace` segment can be any of the valid namespaces for this command. In case of fully qualified XTCE names, the `:namespace` segment must be repeated for every nested space system.
-
-For example these URIs both point to the same command resource:
-
-    /api/mdb/simulator/commands/MDB%3AOPS+Name/SIMULATOR_SWITCH_VOLTAGE_ON
-    /api/mdb/simulator/commands/YSS/SIMULATOR/SWITCH_VOLTAGE_ON
-    
-Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII character set. The server supports UTF-8 but your client may not.
-
-### Parameters
-
-<table class="inline">
-    <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-    </tr>
-    <tr>
-        <td class="code">pretty</td>
-        <td class="code">bool</td>
-        <td>Formats the JSON result in a human readable manner. Default <tt>no</tt></td>
-    </tr>
-</table>
 
 ### Response
 
+<pre class="header">Status: 200 OK</pre>
 {% highlight json %}
 {
   "name": "SWITCH_VOLTAGE_ON",
@@ -118,8 +96,9 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
 
 ### Protobuf
 
-Response body is of type `Mdb.CommandInfo`:
+Response:
 
+<pre class="r header">mdb.proto</pre>
 {% highlight nginx %}
 message CommandInfo {
   optional string name = 1;
@@ -134,68 +113,5 @@ message CommandInfo {
   optional SignificanceInfo significance = 10;
   repeated TransmissionConstraintInfo constraint = 11;
   optional string url = 12;
-}
-{% endhighlight %}
-
-Supporting definitions:
-
-<pre class="r header">mdb.proto</pre>
-{% highlight nginx %}
-message ArgumentInfo {
-  optional string name = 1;
-  optional string description = 2;
-  optional string type = 3;
-  optional string initialValue = 4;
-  repeated UnitInfo unitSet = 5;
-}
-
-message UnitInfo {
-  optional string unit = 1;
-}
-
-message ArgumentAssignmentInfo {
-  optional string name = 1;
-  optional string value = 2;
-}
-
-message SignificanceInfo {
-  enum SignificanceLevelType {
-    NONE = 1;
-    WATCH = 2;
-    WARNING = 3;
-    DISTRESS = 4;
-    CRITICAL = 5;
-    SEVERE = 6;
-  }
-  optional SignificanceLevelType consequenceLevel = 1;
-  optional string reasonForWarning = 2;
-}
-
-message TransmissionConstraintInfo {
-  repeated ComparisonInfo comparison = 1;
-  optional int64 timeout = 2;
-}
-
-message ComparisonInfo {
-  enum OperatorType {
-    EQUAL_TO = 1;
-    NOT_EQUAL_TO = 2;
-    GREATER_THAN = 3;
-    GREATER_THAN_OR_EQUAL_TO = 4;
-    SMALLER_THAN = 5;
-    SMALLER_THAN_OR_EQUAL_TO = 6;
-  }
-  optional ParameterInfo parameter = 1;
-  optional OperatorType operator = 2;
-  optional string value = 3;
-}
-{% endhighlight %}
-
-
-<pre class="r header">yamcs.proto</pre>
-{% highlight nginx %}
-message NamedObjectId {
-  required string name = 1;
-  optional string namespace = 2;
 }
 {% endhighlight %}

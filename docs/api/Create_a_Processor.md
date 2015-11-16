@@ -93,11 +93,6 @@ Replay processors allow for synchronized playback of different types of archived
     <td class="code">bool</td>
     <td>Whether or not to replay Command History. Default: <tt>no</tt></td>
   </tr>
-  <tr>
-    <td class="code">pretty</td>
-    <td class="code">bool</td>
-    <td>Format the JSON result in a human readable manner. Default: <tt>no</tt></td>
-  </tr>
 </table>
 
 The criteria <tt>paraname</tt>, <tt>ppgroup</tt>, <tt>packetname</tt> and <tt>cmdhist</tt> are additive. At least one of them should be filled in, or there will be nothing to replay.
@@ -136,8 +131,9 @@ Notice how the speed value must always be encoded as a string to keep our parser
 
 ### Protobuf
 
-Request body is of type `Rest.CreateProcessorRequest`
+Request:
 
+<pre class="r header">rest.proto</pre>
 {% highlight nginx %}
 message CreateProcessorRequest {
   optional string name = 1;

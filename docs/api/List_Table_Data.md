@@ -1,10 +1,10 @@
 ---
 layout: default
-permalink: /docs/api/Get_Table_Data/
+permalink: /docs/api/List_Table_Data/
 sidebar: yes
 ---
 
-Get the most recent data of a Yamcs table:
+List the most recent data of a Yamcs table:
 
     GET /api/archive/:instance/tables/:table/data
 
@@ -47,11 +47,6 @@ Get the most recent data of a Yamcs table:
         <td class="code">string</td>
         <td>The direction of the sort. Sorting is always done on the key of the table. Can be either <tt>asc</tt> or <tt>desc</tt>. Default: <tt>desc</tt></td>
     </tr>
-    <tr>
-        <td class="code">pretty</td>
-        <td class="code">bool</td>
-        <td>Format the JSON result in a human readable manner</td>
-    </tr>
 </table>
 
 The <tt>start</tt> and <tt>limit</tt> allow for pagination. Keep in mind that in-between two requests extra data may have been added to the table, causing a shift of the results. This generic stateless operation does not provide a reliable mechanism against that, so address it by overlapping your <tt>start</tt> parameter with rows of the previous query. In this example we overlap by 4:
@@ -63,7 +58,6 @@ The <tt>start</tt> and <tt>limit</tt> allow for pagination. Keep in mind that in
 
 <pre class="header">
 Status: 200 OK
-Link: <http://localhost:8090/api/.../data?start=100>; rel="next"
 </pre>
 
 {% highlight json %}
@@ -102,24 +96,14 @@ Link: <http://localhost:8090/api/.../data?start=100>; rel="next"
 
 ### Protobuf
 
-Response is of type `Archive.TableData`:
+Response:
 
+<pre class="r header">archive.proto</pre>
 {% highlight nginx %}
 message TableData {
   message TableRecord {
     repeated ColumnData column = 1;
   }
   repeated TableRecord record = 1;
-}
-{% endhighlight %}
-
-Supporting definitions:
-
-<pre class="r header">archive.proto</pre>
-
-{% highlight nginx %}
-message ColumnData {
-  optional string name = 1;
-  optional yamcs.Value value = 2;
 }
 {% endhighlight %}

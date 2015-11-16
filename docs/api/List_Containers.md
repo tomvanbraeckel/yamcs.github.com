@@ -13,15 +13,6 @@ List all containers defined under the given namespace:
 
     GET /api/mdb/:instance/containers/:namespace
     
-In case of fully qualified XTCE names, the `:namespace` segment must be repeated for every nested space system.
-
-For example these URIs are all valid:
-
-    /api/mdb/simulator/containers/MDB%3AOPS+Name
-    /api/mdb/simulator/containers/YSS/SIMULATOR
-    
-Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII character set. The server supports UTF-8 but your client may not.
-
 
 ### Parameters
 
@@ -35,11 +26,6 @@ Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII charac
     <td class="code">q</td>
     <td class="code">string</td>
     <td>The search keywords.</td>
-  </tr>
-  <tr>
-    <td class="code">pretty</td>
-    <td class="code">bool</td>
-    <td>Format the JSON result in a human readable manner.</td>
   </tr>
 </table>
 
@@ -111,72 +97,12 @@ The `q` parameter supports searching on the namespace or name. For example:
 
 ### Protobuf
 
-Response body is of type `Rest.ListContainersResponse`
+Response:
+
+<pre class="r header">rest.proto</pre>
 
 {% highlight nginx %}
 message ListContainersResponse {
   repeated mdb.ContainerInfo container = 1;
-}
-{% endhighlight %}
-
-Supporting definitions:
-
-<pre class="r header">mdb.proto</pre>
-
-{% highlight nginx %}
-message ContainerInfo {
-  optional string name = 1;
-  optional string qualifiedName = 2;
-  optional string shortDescription = 3;
-  optional string longDescription = 4;
-  repeated yamcs.NamedObjectId alias = 5;
-  optional int64 maxInterval = 6;
-  optional int32 sizeInBits = 7;
-  optional ContainerInfo baseContainer = 8;
-  repeated ComparisonInfo restrictionCriteria = 9;
-  repeated SequenceEntryInfo entry = 10;
-  optional string url = 11;
-}
-
-message ComparisonInfo {
-  enum OperatorType {
-    EQUAL_TO = 1;
-    NOT_EQUAL_TO = 2;
-    GREATER_THAN = 3;
-    GREATER_THAN_OR_EQUAL_TO = 4;
-    SMALLER_THAN = 5;
-    SMALLER_THAN_OR_EQUAL_TO = 6;
-  }
-  optional ParameterInfo parameter = 1;
-  optional OperatorType operator = 2;
-  optional string value = 3;
-}
-
-message SequenceEntryInfo {
-  enum ReferenceLocationType {
-    CONTAINER_START = 1;
-    PREVIOUS_ENTRY = 2;
-  }
-  optional int32 locationInBits = 1;
-  optional ReferenceLocationType referenceLocation = 2;
-  optional ContainerInfo container = 3;
-  optional ParameterInfo parameter = 4;
-  optional RepeatInfo repeat = 5;
-}
-
-message RepeatInfo {
-  optional int64 fixedCount = 1;
-  optional ParameterInfo dynamicCount = 2;
-  optional int32 bitsBetween = 3;
-}
-{% endhighlight %}
-
-
-<pre class="r header">yamcs.proto</pre>
-
-{% highlight nginx %}
-message NamedObjectId {
-  required string name = 1;
-  optional string namespace = 2;
 }
 {% endhighlight %}

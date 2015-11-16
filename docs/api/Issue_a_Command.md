@@ -8,15 +8,7 @@ Issue a new command of the given type:
 
     POST /api/processors/:instance/:processor/commands/:namespace/:name
     
-The `:namespace` segment can be any of the valid namespaces for this command. In case of fully qualified XTCE names, the `:namespace` segment must be repeated for every nested space system.
-
-For example these URIs both point to the same command resource:
-
-    /api/processors/simulator/realtime/commands/MDB%3AOPS+Name/SIMULATOR_SWITCH_VOLTAGE_OFF
-    /api/processors/simulator/realtime/commands/YSS/SIMULATOR/SWITCH_VOLTAGE_OFF
-    
-Notice the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCII character set. The server supports UTF-8 but your client may not.
-    
+  
 After validating the input parameters, the command will be added to the appropriate command queue for further dispatch.
 
 ### Parameters
@@ -50,11 +42,6 @@ After validating the input parameters, the command will be added to the appropri
       <p><strong>Note:</strong> We enjoy simple curl-able APIs, so have made it possible to provide assignments in the query string in the format <tt>name=value</tt>. However, when building your own client, make sure to use the request body to prevent any potential naming collisions with other URI parameters.</p>
     </td>
   </tr>
-  <tr>
-    <td class="code">pretty</td>
-    <td class="code">bool</td>
-    <td>Format the JSON result in a human readable manner. Default: <tt>no</tt></td>
-  </tr>
 </table>
 
 
@@ -87,8 +74,9 @@ The binary is encoded in Base64 format.
 
 ### Protobuf
 
-Request body is of type `Rest.IssueCommandRequest`:
+Request:
 
+<pre class="r header">rest.proto</pre>
 {% highlight nginx %}
 message IssueCommandRequest {
   message Assignment {
@@ -102,8 +90,9 @@ message IssueCommandRequest {
 }
 {% endhighlight %}
 
-Response body is of type `Rest.IssueCommandResponse`:
+Response:
 
+<pre class="r header">rest.proto</pre>
 {% highlight nginx %}
 message IssueCommandResponse {
   optional string queue = 1;
