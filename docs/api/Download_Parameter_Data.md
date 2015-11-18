@@ -33,6 +33,11 @@ This operation will possibly download a very large file. If you worry about size
         <td>Filter the upper bound of the parameter's generation time. Specify a date string in ISO 8601 format</td>
     </tr>
     <tr>
+        <td class="code">norepeat</td>
+        <td class="code">bool</td>
+        <td>Whether to filter out consecutive identical values. Default <tt>no</tt>.</td>
+    </tr>
+    <tr>
         <td class="code">order</td>
         <td class="code">string</td>
         <td>The order of the returned results. Can be either <tt>asc</tt> or <tt>desc</tt>. Default: <tt>asc</tt></td>

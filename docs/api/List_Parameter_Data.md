@@ -28,6 +28,11 @@ List the history of values for the specified parameter:
         <td>Filter the upper bound of the parameter's generation time. Specify a date string in ISO 8601 format</td>
     </tr>
     <tr>
+        <td class="code">norepeat</td>
+        <td class="code">bool</td>
+        <td>Whether to filter out consecutive identical values. Default <tt>no</tt>.</td>
+    </tr>
+    <tr>
         <td class="code">pos</td>
         <td class="code">integer</td>
         <td>The zero-based row number at which to start outputting results. Default: <tt>0</tt></td>

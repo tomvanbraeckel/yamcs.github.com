@@ -43,7 +43,7 @@ You first get an empty reply message confirming the positive receipt of your req
 [ 1, 2, 789 ]
 {% endhighlight %}
     
-Further messages will be marked as type <tt>PARAMETER_DATA</tt>. Directly after you subscribe, you will receive the latest cached values  -- if applicable.
+Further messages will be marked as type <tt>PARAMETER_DATA</tt>. Directly after you subscribe, you will receive the latest cached values -- if applicable.
 
 {% highlight json %}
 todo
