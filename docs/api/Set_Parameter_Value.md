@@ -40,9 +40,9 @@ To update multiple parameters at once, send a request to this address:
 
 ### Protobuf
 
-Request:
+#### Request
 
-<pre class="r header">yamcs.proto</pre>
+<pre class="r header"><a href="/docs/api/yamcs.proto/">yamcs.proto</a></pre>
 {% highlight nginx %}
 message Value {
   enum Type {
@@ -71,9 +71,9 @@ message Value {
 }
 {% endhighlight %}
 
-Bulk request:
+#### Bulk Request
 
-<pre class="r header">rest.proto</pre>
+<pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight nginx %}
 message BulkSetParameterValueRequest {
   message SetParameterValueRequest {

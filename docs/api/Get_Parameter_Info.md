@@ -90,7 +90,7 @@ In the response the requested parameter ID is returned for every match. Example:
 
 Response:
 
-<pre class="r header">mdb.proto</pre>
+<pre class="r header"><a href="/docs/api/mdb.proto/">mdb.proto</a></pre>
 {% highlight nginx %}
 message ParameterInfo {
   optional string name = 1;
@@ -106,7 +106,7 @@ message ParameterInfo {
 
 Bulk request:
 
-<pre class="r header">rest.proto</pre>
+<pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight nginx %}
 message BulkGetParameterRequest {
   repeated yamcs.NamedObjectId id = 1;
@@ -115,7 +115,7 @@ message BulkGetParameterRequest {
 
 Bulk Response:
 
-<pre class="r header">rest.proto</pre>
+<pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight nginx %}
 message BulkGetParameterResponse {
   message GetParameterResponse {

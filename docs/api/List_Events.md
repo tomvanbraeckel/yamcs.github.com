@@ -48,18 +48,12 @@ List the history of events:
     </tr>
 </table>
 
-The <tt>pos</tt> and <tt>limit</tt> allow for pagination. Keep in mind that in-between two requests extra data may have been recorded, causing a shift of the results. This generic stateless operation does not provide a reliable mechanism against that, so address it by overlapping your <tt>pos</tt> parameter with rows of the previous query. In this example we overlap by 4:
+The <tt>pos</tt> and <tt>limit</tt> allow for pagination. Keep in mind that in-between two requests extra data may have been recorded, causing a shift of the results. This stateless operation does not provide a reliable mechanism against that, so address it by overlapping your <tt>pos</tt> parameter with rows of the previous query. In this example we overlap by 4:
 
     ?pos=0&limit=50&order=desc
     ?pos=45&limit=50&order=desc
     
 An alternative is to download the events instead.
-
-
-### Media Type
-
-In addition to the usual support for JSON and Protobuf, the response for this particular resource can be made to output CSV data by setting the HTTP `Accept` header to `text/csv`. 
-
 
 ### Response
 
@@ -83,7 +77,12 @@ Status: 200 OK
 }
 {% endhighlight %}
 
-Or when requesting CSV:
+### CSV
+
+In addition to the usual support for JSON and Protobuf, the response for this particular resource can be made to output CSV data in one of these ways:
+
+1. Add the HTTP header: `Accept: text/csv`
+1. Add a query parameter to the URI: `format=csv`
 
 <pre class="header">
 Status: 200 OK
@@ -99,9 +98,9 @@ AlarmChecker    2015-11-13T14:46:23.571 2015-11-13T14:46:23.571 IN_LIMITS       
 
 ### Protobuf
 
-Response:
+#### Response
 
-<pre class="r header">rest.proto</pre>
+<pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight nginx %}
 message ListEventsResponse {
   repeated yamcs.Event event = 1;

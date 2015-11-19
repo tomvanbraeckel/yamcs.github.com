@@ -53,9 +53,9 @@ Sample the history of values for the specified parameter:
 
 ### Protobuf
 
-Response:
+#### Response
 
-<pre class="r header">pvalue.proto</pre>
+<pre class="r header"><a href="/docs/api/pvalue.proto/">pvalue.proto</a></pre>
 {% highlight nginx %}
 message SampleSeries {
   message Sample {

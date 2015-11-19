@@ -40,9 +40,9 @@ Get data on a Yamcs table:
 
 ### Protobuf
 
-Response:
+#### Response
 
-<pre class="r header">archive.proto</pre>
+<pre class="r header"><a href="/docs/api/archive.proto/">archive.proto</a></pre>
 {% highlight nginx %}
 message TableInfo {
   optional string name = 1;

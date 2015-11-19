@@ -164,7 +164,7 @@ Return the data for the given container:
 
 Response:
 
-<pre class="r header">mdb.proto</pre>
+<pre class="r header"><a href="/docs/api/mdb.proto/">mdb.proto</a></pre>
 {% highlight nginx %}
 message ContainerInfo {
   optional string name = 1;

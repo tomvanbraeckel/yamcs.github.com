@@ -26,9 +26,9 @@ Get information on the authenticated user:
 
 ### Protobuf
 
-Request:
+#### Request
 
-<pre class="r header">yamcsManagement.proto</pre>
+<pre class="r header"><a href="/docs/api/yamcsManagement.proto/">yamcsManagement.proto</a></pre>
 {% highlight nginx %}
 message UserInfo {
   optional string login = 1;

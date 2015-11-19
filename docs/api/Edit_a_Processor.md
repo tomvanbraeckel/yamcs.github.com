@@ -60,9 +60,9 @@ Notice that the speed value must be encoded as a string to keep our parser happy
 
 ### Protobuf
 
-Request:
+#### Request
 
-<pre class="r header">rest.proto</pre>
+<pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight nginx %}
 message PatchProcessorRequest {
   optional string state = 1;

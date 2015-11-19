@@ -34,6 +34,7 @@
     - url: /docs/api/Packets/
       items:
         - url: /docs/api/List_Packets/
+        - url: /docs/api/Get_a_Packet/
         - url: /docs/api/Download_Packets/
     - url: /docs/api/Parameter_Values/
       items:

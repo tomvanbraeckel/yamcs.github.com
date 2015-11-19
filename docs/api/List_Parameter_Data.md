@@ -54,10 +54,6 @@ The <tt>pos</tt> and <tt>limit</tt> allow for pagination. Keep in mind that in-b
     ?pos=0&limit=50&order=desc
     ?pos=45&limit=50&order=desc 
 
-### Media Type
-
-In addition to the usual support for JSON and Protobuf, the response for this particular resource can be made to output CSV data by setting the HTTP `Accept` header to `text/csv`.
-
 
 ### Response
 
@@ -109,7 +105,12 @@ Status: 200 OK
 }
 {% endhighlight %}
 
-Or when requesting CSV:
+### CSV
+
+In addition to the usual support for JSON and Protobuf, the response for this particular resource can be made to output CSV data in one of these ways:
+
+1. Add the HTTP header: `Accept: text/csv`
+1. Add a query parameter to the URI: `format=csv`
 
 <pre class="header">
 Status: 200 OK
@@ -126,9 +127,9 @@ Time    BatteryVoltage2
 
 ### Protobuf
 
-Response:
+#### Response
 
-<pre class="header r">pvalue.proto</pre>
+<pre class="r header"><a href="/docs/api/pvalue.proto/">pvalue.proto</a></pre>
 {% highlight nginx %}
 message ParameterData {
   repeated ParameterValue parameter = 1;

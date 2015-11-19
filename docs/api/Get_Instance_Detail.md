@@ -57,7 +57,7 @@ If an instance does not have web services enabled, it will be listed among the r
 
 Response:
 
-<pre class="r header">yamcsManagement.proto</pre>
+<pre class="r header"><a href="/docs/api/yamcsManagement.proto/">yamcsManagement.proto</a></pre>
 
 {% highlight nginx %}
 message YamcsInstance {

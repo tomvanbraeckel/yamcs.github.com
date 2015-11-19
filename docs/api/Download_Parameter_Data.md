@@ -45,11 +45,13 @@ This operation will possibly download a very large file. If you worry about size
 </table>
 
 
-### Media Type
-
-In addition to the usual support for JSON and Protobuf, the response for this particular resource can be made to output CSV data by setting the HTTP `Accept` header to `text/csv`.
-
-
 ### Response
 
 The response will be a stream of individual parameters. When using Protobuf, every parameter is delimited by its byte size.
+
+### CSV
+
+In addition to the usual support for JSON and Protobuf, the response for this particular resource can be made to output CSV data in one of these ways:
+
+1. Add the HTTP header: `Accept: text/csv`
+1. Add a query parameter to the URI: `format=csv`

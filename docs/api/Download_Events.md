@@ -39,11 +39,25 @@ This operation will possibly download a very large file. If you worry about size
 </table>
 
 
-### Media Type
-
-In addition to the usual support for JSON and Protobuf, the response for this particular resource can be made to output CSV data by setting the HTTP `Accept` header to `text/csv`.
-
-
 ### Response
 
 The response will be a stream of individual event records. When using Protobuf, every event is delimited by its byte size.
+
+### CSV
+
+In addition to the usual support for JSON and Protobuf, the response for this particular resource can be made to output CSV data in one of these ways:
+
+1. Add the HTTP header: `Accept: text/csv`
+1. Add a query parameter to the URI: `format=csv`
+
+<pre class="header">
+Status: 200 OK
+Content-Type: text/csv
+</pre>
+
+{% highlight text %}
+Source  Generation Time Reception Time  Event Type      Event Text
+AlarmChecker    2015-11-13T14:46:36.029 2015-11-13T14:46:36.029 IN_LIMITS       Parameter /YSS/SIMULATOR/BatteryVoltage2 has changed to value 195
+AlarmChecker    2015-11-13T14:46:29.784 2015-11-13T14:46:29.784 IN_LIMITS       Parameter /YSS/SIMULATOR/BatteryVoltage2 has changed to value 196
+AlarmChecker    2015-11-13T14:46:23.571 2015-11-13T14:46:23.571 IN_LIMITS       Parameter /YSS/SIMULATOR/BatteryVoltage2 has changed to value 197
+{% endhighlight %}

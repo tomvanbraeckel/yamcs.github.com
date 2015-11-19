@@ -74,9 +74,9 @@ The binary is encoded in Base64 format.
 
 ### Protobuf
 
-Request:
+#### Request
 
-<pre class="r header">rest.proto</pre>
+<pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight nginx %}
 message IssueCommandRequest {
   message Assignment {
@@ -90,9 +90,9 @@ message IssueCommandRequest {
 }
 {% endhighlight %}
 
-Response:
+#### Response
 
-<pre class="r header">rest.proto</pre>
+<pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight nginx %}
 message IssueCommandResponse {
   optional string queue = 1;

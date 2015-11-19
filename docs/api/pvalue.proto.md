@@ -4,6 +4,6 @@ permalink: /docs/api/pvalue.proto/
 sidebar: yes
 ---
 
-{% highlight text %}
+{% highlight proto %}
 {% include api/pvalue.proto %}
 {% endhighlight %}

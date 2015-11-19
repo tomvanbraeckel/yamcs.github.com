@@ -38,9 +38,9 @@ Update the client's processor to <tt>replay123</tt>:
 
 ### Protobuf
 
-Request:
+#### Request
 
-<pre class="r header">rest.proto</pre>
+<pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight nginx %}
 message PatchClientRequest {
   optional string processor = 1;

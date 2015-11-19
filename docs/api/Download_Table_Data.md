@@ -41,11 +41,6 @@ This operation will possibly download a very large file. If you worry about size
 </table>
 
 
-### Media Type
-
-In addition to the usual support for JSON and Protobuf, the response for this particular resource can be made to output CSV data by setting the HTTP `Accept` header to `text/csv`.
-
-
 ### Response
 
 The response will be a stream of individual table records. When using Protobuf, every table record is delimited by its byte size. 

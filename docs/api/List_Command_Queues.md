@@ -29,9 +29,9 @@ List all command queues for the given processor:
 
 ### Protobuf
 
-Response:
+#### Response
 
-<pre class="r header">rest.proto</pre>
+<pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight nginx %}
 message ListCommandQueuesResponse {
   repeated commanding.CommandQueueInfo queue = 1;

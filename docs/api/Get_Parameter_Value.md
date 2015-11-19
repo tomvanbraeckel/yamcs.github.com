@@ -112,9 +112,9 @@ The response is a list of parameter values:
 
 ### Protobuf
 
-Response:
+#### Response
 
-<pre class="r header">pvalue.proto</pre>
+<pre class="r header"><a href="/docs/api/pvalue.proto/">pvalue.proto</a></pre>
 {% highlight nginx %}
 message ParameterValue {
   optional yamcs.NamedObjectId id = 1;
@@ -136,9 +136,9 @@ message ParameterValue {
 }
 {% endhighlight %}
 
-Bulk request:
+#### Bulk Request
 
-<pre class="r header">rest.proto</pre>
+<pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight nginx %}
 message BulkGetParameterValueRequest {
   repeated yamcs.NamedObjectId id = 1;
@@ -147,9 +147,9 @@ message BulkGetParameterValueRequest {
 }
 {% endhighlight %}
 
-Bulk Response:
+#### Bulk Response
 
-<pre class="r header">rest.proto</pre>
+<pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight nginx %}
 message BulkGetParameterValueResponse {
   repeated pvalue.ParameterValue value = 1;

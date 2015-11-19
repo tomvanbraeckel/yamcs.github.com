@@ -4,6 +4,6 @@ permalink: /docs/api/alarms.proto/
 sidebar: yes
 ---
 
-{% highlight text %}
+{% highlight proto %}
 {% include api/alarms.proto %}
 {% endhighlight %}

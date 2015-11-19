@@ -37,7 +37,7 @@ Get data on a Yamcs stream:
 
 Response:
 
-<pre class="r header">archive.proto</pre>
+<pre class="r header"><a href="/docs/api/archive.proto/">archive.proto</a></pre>
 {% highlight nginx %}
 message StreamInfo {
   optional string name = 1;

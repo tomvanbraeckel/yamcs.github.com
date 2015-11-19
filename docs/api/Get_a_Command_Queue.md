@@ -25,9 +25,9 @@ Get data on a Yamcs instance:
 
 ### Protobuf
 
-Response:
+#### Response
 
-<pre class="r header">commanding.proto</pre>
+<pre class="r header"><a href="/docs/api/commanding.proto/">commanding.proto</a></pre>
 {% highlight nginx %}
 message CommandQueueInfo {
   required string instance = 1;

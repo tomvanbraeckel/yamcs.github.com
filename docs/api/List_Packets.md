@@ -7,6 +7,12 @@ sidebar: yes
 List the history of packets:
 
     GET /api/archive/:instance/packets/
+    
+List the packets for the specified generation time
+
+    GET /api/archive/:instance/packets/:gentime
+    
+The <tt>:gentime</tt> must be in ISO 8601 format. E.g. 2015-10-20T06:47:02.000
 
 ### Parameters
 
@@ -76,9 +82,9 @@ Status: 200 OK
 
 ### Protobuf
 
-Response:
+#### Response
 
-<pre class="r header">rest.proto</pre>
+<pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight nginx %}
 message ListPacketsResponse {
   repeated yamcs.TmPacketData packet = 1;

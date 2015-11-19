@@ -96,9 +96,9 @@ Return the data for the given command:
 
 ### Protobuf
 
-Response:
+#### Response
 
-<pre class="r header">mdb.proto</pre>
+<pre class="r header"><a href="/docs/api/mdb.proto/">mdb.proto</a></pre>
 {% highlight nginx %}
 message CommandInfo {
   optional string name = 1;

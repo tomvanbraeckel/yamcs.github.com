@@ -4,6 +4,6 @@ permalink: /docs/api/archive.proto/
 sidebar: yes
 ---
 
-{% highlight text %}
+{% highlight proto %}
 {% include api/archive.proto %}
 {% endhighlight %}

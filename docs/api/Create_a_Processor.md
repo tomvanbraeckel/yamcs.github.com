@@ -131,9 +131,9 @@ Notice how the speed value must always be encoded as a string to keep our parser
 
 ### Protobuf
 
-Request:
+#### Request
 
-<pre class="r header">rest.proto</pre>
+<pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight nginx %}
 message CreateProcessorRequest {
   optional string name = 1;

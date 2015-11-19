@@ -40,9 +40,10 @@ List all streams for the given instance:
 Note that this will only list the fixed columns of the stream. Tuples may always have extra columns.
 
 ### Protobuf
-Response:
 
-<pre class="r header">rest.proto</pre>
+#### Response
+
+<pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight nginx %}
 message ListStreamsResponse {
   repeated archive.StreamInfo stream = 1;
