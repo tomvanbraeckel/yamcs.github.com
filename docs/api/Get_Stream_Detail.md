@@ -35,7 +35,7 @@ Get data on a Yamcs stream:
 
 ### Protobuf
 
-Response:
+#### Response
 
 <pre class="r header"><a href="/docs/api/archive.proto/">archive.proto</a></pre>
 {% highlight nginx %}

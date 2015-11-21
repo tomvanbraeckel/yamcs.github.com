@@ -23,6 +23,11 @@ List all commands defined under the given namespace:
     <th>Description</th>
   </tr>
   <tr>
+    <td class="code">recurse</td>
+    <td class="code">bool</td>
+    <td>If an XTCE <tt>:namespace</tt> is given, specifies whether to list commands of any nested sub systems. Default <tt>no</tt>.</td>
+  </tr>
+  <tr>
     <td class="code">q</td>
     <td class="code">string</td>
     <td>The search keywords.</td>
