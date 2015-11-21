@@ -26,7 +26,7 @@ Replay processors allow for synchronized playback of different types of archived
   </tr>
   <tr>
     <td class="code">start</td>
-    <td class="code">stop</td>
+    <td class="code">string</td>
     <td><strong>Required.</strong> The time at which the replay should start.</td>
   </tr>
   <tr>
