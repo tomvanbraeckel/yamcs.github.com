@@ -4,7 +4,7 @@ permalink: /docs/api/Update_an_Alarm/
 sidebar: yes
 ---
 
-    PATCH /api/processors/:instance/:processor/parameters/:namespace/:name/alarms/:id
+    PATCH /api/processors/:instance/:processor/parameters/:namespace/:name/alarms/:seqnum
     
 ### Parameters
 

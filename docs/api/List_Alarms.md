@@ -4,13 +4,13 @@ permalink: /docs/api/List_Alarms/
 sidebar: yes
 ---
 
-List all alarms for the given processor:
+List the history of alarms:
 
-    GET /api/processors/:instance/:processor/alarms
+    GET /api/archive/:instance/alarms
     
-List all alarms for the given parameter:
+List the history of alarms for the given parameter:
 
-    GET /api/processors/:instance/:processor/parameters/:namespace/:name/alarms 
+    GET /api/archive/:instance/alarms/:namespace/:name 
     
 For each alarm you get full information on the value occurrence that initially triggered the alarm, the most severe value since it originally triggered, and the latest value at the time of your request.
 
@@ -18,16 +18,41 @@ For each alarm you get full information on the value occurrence that initially t
 ### Parameters
 
 <table class="inline">
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td class="code">filter</td>
-    <td class="code">string</td>
-    <td>Indicates which sort of alarms to return. Either <tt>active</tt> or <tt>all</tt>. Default: <tt>all</tt></td>
-  </tr>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td class="code">start</td>
+        <td class="code">string</td>
+        <td>Filter the lower bound of the alarm's trigger time. Specify a date string in ISO 8601 format</td>
+    </tr>
+    <tr>
+        <td class="code">stop</td>
+        <td class="code">string</td>
+        <td>Filter the upper bound of the alarm's trigger time. Specify a date string in ISO 8601 format</td>
+    </tr>
+    <tr>
+        <td class="code">pos</td>
+        <td class="code">integer</td>
+        <td>The zero-based row number at which to start outputting results. Default: <tt>0</tt></td>
+    </tr>
+    <tr>
+        <td class="code">limit</td>
+        <td class="code">integer</td>
+        <td>The maximum number of returned records per page. Choose this value too high and you risk hitting the maximum response size limit enforced by the server. Default: <tt>100</tt></td>
+    </tr>
+    <!--tr>
+        <td class="code">filter</td>
+        <td class="code">string</td>
+        <td>Indicates which sort of alarms to return. Either <tt>active</tt> or <tt>all</tt>. Default: <tt>all</tt></td>
+    </tr-->
+    <tr>
+        <td class="code">order</td>
+        <td class="code">string</td>
+        <td>The order of the returned results. Can be either <tt>asc</tt> or <tt>desc</tt>. The sorting is always by trigger time (i.e. the generation time of the trigger value). Default: <tt>desc</tt></td>
+    </tr>
 </table>
 
 ### Example
@@ -35,105 +60,122 @@ For each alarm you get full information on the value occurrence that initially t
 <pre class="header">Status: 200 OK</pre>
 {% highlight json %}
 {
-  "alarms" : [ {
-    "id" : 3,
+  "alarm" : [ {
+    "seqNum" : 1,
     "triggerValue" : {
       "id" : {
-        "name" : "/YSS/SIMULATOR/O2TankTemp"
+        "name" : "/YSS/SIMULATOR/BatteryVoltage2"
       },
       "rawValue" : {
-        "type" : 2,
-        "uint32Value" : 227
+        "type" : "UINT32",
+        "uint32Value" : 49
       },
       "engValue" : {
-        "type" : 2,
-        "uint32Value" : 227
+        "type" : "UINT32",
+        "uint32Value" : 49
       },
-      "acquisitionTime" : 1440576556724,
-      "generationTime" : 1440576539714,
-      "acquisitionStatus" : 0,
+      "acquisitionTime" : 1448229350720,
+      "generationTime" : 1448229333628,
+      "acquisitionStatus" : "ACQUIRED",
       "processingStatus" : true,
-      "monitoringResult" : 21,
-      "acquisitionTimeUTC" : "2015-08-26T08:08:40.724",
-      "generationTimeUTC" : "2015-08-26T08:08:23.714",
-      "watchLow" : 10.0,
-      "watchHigh" : 12.0,
-      "warningLow" : 30.0,
-      "warningHigh" : 32.0,
-      "distressLow" : 40.0,
-      "distressHigh" : 42.0,
-      "criticalLow" : 60.0,
-      "criticalHigh" : 62.0,
-      "severeLow" : 80.0,
-      "severeHigh" : 82.0,
-      "expirationTime" : 1440576558224,
-      "expirationTimeUTC" : "2015-08-26T08:08:42.224"
+      "monitoringResult" : "WATCH_LOW",
+      "acquisitionTimeUTC" : "2015-11-22T21:55:14.720",
+      "generationTimeUTC" : "2015-11-22T21:54:57.628",
+      "expirationTime" : 1448229357720,
+      "expirationTimeUTC" : "2015-11-22T21:55:21.720",
+      "alarmRange" : [ {
+        "level" : "WATCH",
+        "minInclusive" : 50.0
+      }, {
+        "level" : "WARNING",
+        "minInclusive" : 40.0
+      }, {
+        "level" : "DISTRESS",
+        "minInclusive" : 30.0
+      }, {
+        "level" : "CRITICAL",
+        "minInclusive" : 20.0
+      }, {
+        "level" : "SEVERE",
+        "minInclusive" : 10.0
+      } ]
     },
     "mostSevereValue" : {
       "id" : {
-        "name" : "/YSS/SIMULATOR/O2TankTemp"
+        "name" : "/YSS/SIMULATOR/BatteryVoltage2"
       },
       "rawValue" : {
-        "type" : 2,
-        "uint32Value" : 227
+        "type" : "UINT32",
+        "uint32Value" : 39
       },
       "engValue" : {
-        "type" : 2,
-        "uint32Value" : 227
+        "type" : "UINT32",
+        "uint32Value" : 39
       },
-      "acquisitionTime" : 1440576556724,
-      "generationTime" : 1440576539714,
-      "acquisitionStatus" : 0,
+      "acquisitionTime" : 1448229413038,
+      "generationTime" : 1448229395945,
+      "acquisitionStatus" : "ACQUIRED",
       "processingStatus" : true,
-      "monitoringResult" : 21,
-      "acquisitionTimeUTC" : "2015-08-26T08:08:40.724",
-      "generationTimeUTC" : "2015-08-26T08:08:23.714",
-      "watchLow" : 10.0,
-      "watchHigh" : 12.0,
-      "warningLow" : 30.0,
-      "warningHigh" : 32.0,
-      "distressLow" : 40.0,
-      "distressHigh" : 42.0,
-      "criticalLow" : 60.0,
-      "criticalHigh" : 62.0,
-      "severeLow" : 80.0,
-      "severeHigh" : 82.0,
-      "expirationTime" : 1440576558224,
-      "expirationTimeUTC" : "2015-08-26T08:08:42.224"
+      "monitoringResult" : "WARNING_LOW",
+      "acquisitionTimeUTC" : "2015-11-22T21:56:17.038",
+      "generationTimeUTC" : "2015-11-22T21:55:59.945",
+      "expirationTime" : 1448229420038,
+      "expirationTimeUTC" : "2015-11-22T21:56:24.038",
+      "alarmRange" : [ {
+        "level" : "WATCH",
+        "minInclusive" : 50.0
+      }, {
+        "level" : "WARNING",
+        "minInclusive" : 40.0
+      }, {
+        "level" : "DISTRESS",
+        "minInclusive" : 30.0
+      }, {
+        "level" : "CRITICAL",
+        "minInclusive" : 20.0
+      }, {
+        "level" : "SEVERE",
+        "minInclusive" : 10.0
+      } ]
     },
     "currentValue" : {
       "id" : {
-        "name" : "/YSS/SIMULATOR/O2TankTemp"
+        "name" : "/YSS/SIMULATOR/BatteryVoltage2"
       },
       "rawValue" : {
-        "type" : 2,
-        "uint32Value" : 223
+        "type" : "UINT32",
+        "uint32Value" : 48
       },
       "engValue" : {
-        "type" : 2,
-        "uint32Value" : 223
+        "type" : "UINT32",
+        "uint32Value" : 48
       },
-      "acquisitionTime" : 1440577186414,
-      "generationTime" : 1440577169410,
-      "acquisitionStatus" : 0,
+      "acquisitionTime" : 1448229356954,
+      "generationTime" : 1448229339867,
+      "acquisitionStatus" : "ACQUIRED",
       "processingStatus" : true,
-      "monitoringResult" : 21,
-      "acquisitionTimeUTC" : "2015-08-26T08:19:10.414",
-      "generationTimeUTC" : "2015-08-26T08:18:53.410",
-      "watchLow" : 10.0,
-      "watchHigh" : 12.0,
-      "warningLow" : 30.0,
-      "warningHigh" : 32.0,
-      "distressLow" : 40.0,
-      "distressHigh" : 42.0,
-      "criticalLow" : 60.0,
-      "criticalHigh" : 62.0,
-      "severeLow" : 80.0,
-      "severeHigh" : 82.0,
-      "expirationTime" : 1440577187914,
-      "expirationTimeUTC" : "2015-08-26T08:19:11.914"
-    },
-    "violations" : 102
+      "monitoringResult" : "WATCH_LOW",
+      "acquisitionTimeUTC" : "2015-11-22T21:55:20.954",
+      "generationTimeUTC" : "2015-11-22T21:55:03.867",
+      "expirationTime" : 1448229363954,
+      "expirationTimeUTC" : "2015-11-22T21:55:27.954",
+      "alarmRange" : [ {
+        "level" : "WATCH",
+        "minInclusive" : 50.0
+      }, {
+        "level" : "WARNING",
+        "minInclusive" : 40.0
+      }, {
+        "level" : "DISTRESS",
+        "minInclusive" : 30.0
+      }, {
+        "level" : "CRITICAL",
+        "minInclusive" : 20.0
+      }, {
+        "level" : "SEVERE",
+        "minInclusive" : 10.0
+      } ]
+    }
   } ]
 }
 {% endhighlight %}

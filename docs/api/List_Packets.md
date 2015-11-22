@@ -6,7 +6,7 @@ sidebar: yes
 
 List the history of packets:
 
-    GET /api/archive/:instance/packets/
+    GET /api/archive/:instance/packets
     
 List the packets for the specified generation time
 
