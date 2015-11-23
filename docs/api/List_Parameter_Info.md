@@ -31,7 +31,7 @@ List all parameters defined under the given namespace:
     <td class="code">type</td>
     <td class="code">array of strings</td>
     <td>
-        The parameter types to be included in the result. Valid types are <tt>boolean</tt>, <tt>binary</tt>, <tt>enumeration</tt>, <tt>float</tt>, <tt>integer</tt>, <tt>string</tt> or <tt>all</tt>. Both these notations are accepted:
+        The parameter types to be included in the result. Valid types are <tt>boolean</tt>, <tt>binary</tt>, <tt>enumeration</tt>, <tt>float</tt>, <tt>integer</tt> or <tt>string</tt>. Both these notations are accepted:
         <ul>
             <li><tt>?type=float,integer</tt></li>
             <li><tt>?type[]=float&type[]=integer</tt></li>
