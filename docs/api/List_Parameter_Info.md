@@ -28,6 +28,18 @@ List all parameters defined under the given namespace:
     <td>If an XTCE <tt>:namespace</tt> is given, specifies whether to list parameters of any nested sub systems. Default <tt>no</tt>.</td>
   </tr>
   <tr>
+    <td class="code">type</td>
+    <td class="code">array of strings</td>
+    <td>
+        The parameter types to be included in the result. Valid types are <tt>boolean</tt>, <tt>binary</tt>, <tt>enumeration</tt>, <tt>float</tt>, <tt>integer</tt>, <tt>string</tt> or <tt>all</tt>. Both these notations are accepted:
+        <ul>
+            <li><tt>?type=float,integer</tt></li>
+            <li><tt>?type[]=float&type[]=integer</tt></li>
+        </ul>
+        If unspecified, parameters of all types will be included.
+    </td>
+  </tr>
+  <tr>
     <td class="code">q</td>
     <td class="code">string</td>
     <td>The search keywords.</td>

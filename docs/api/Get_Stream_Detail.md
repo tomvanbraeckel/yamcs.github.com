@@ -14,6 +14,9 @@ Get data on a Yamcs stream:
 
 ### Response
 
+<pre class="header">
+Status: 200 OK
+</pre>
 {% highlight json %}
 {
   "name" : "tm_realtime",
