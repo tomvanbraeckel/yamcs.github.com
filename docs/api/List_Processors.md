@@ -57,7 +57,7 @@ List all processors for the given Yamcs instance:
 #### Response
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight nginx %}
+{% highlight proto %}
 message ListProcessorsResponse {
   repeated yamcsManagement.ProcessorInfo processor = 1;
 }

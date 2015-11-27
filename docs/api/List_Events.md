@@ -101,7 +101,7 @@ AlarmChecker    2015-11-13T14:46:23.571 2015-11-13T14:46:23.571 IN_LIMITS       
 #### Response
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight nginx %}
+{% highlight proto %}
 message ListEventsResponse {
   repeated yamcs.Event event = 1;
 }

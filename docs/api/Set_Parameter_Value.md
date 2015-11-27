@@ -43,7 +43,7 @@ To update multiple parameters at once, send a request to this address:
 #### Request
 
 <pre class="r header"><a href="/docs/api/yamcs.proto/">yamcs.proto</a></pre>
-{% highlight nginx %}
+{% highlight proto %}
 message Value {
   enum Type {
     FLOAT = 0;
@@ -74,7 +74,7 @@ message Value {
 #### Bulk Request
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight nginx %}
+{% highlight proto %}
 message BulkSetParameterValueRequest {
   message SetParameterValueRequest {
     optional yamcs.NamedObjectId id = 1;

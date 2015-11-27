@@ -84,7 +84,7 @@ The `q` parameter supports searching on namespace or name. For example:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 
-{% highlight nginx %}
+{% highlight proto %}
 message ListCommandsResponse {
   repeated mdb.CommandInfo command = 1;
 }

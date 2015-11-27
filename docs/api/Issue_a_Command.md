@@ -77,7 +77,7 @@ The binary is encoded in Base64 format.
 #### Request
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight nginx %}
+{% highlight proto %}
 message IssueCommandRequest {
   message Assignment {
     optional string name = 1;
@@ -93,7 +93,7 @@ message IssueCommandRequest {
 #### Response
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight nginx %}
+{% highlight proto %}
 message IssueCommandResponse {
   optional string queue = 1;
   optional string source = 2;

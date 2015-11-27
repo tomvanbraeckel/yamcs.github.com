@@ -46,7 +46,7 @@ Status: 200 OK
 #### Response
 
 <pre class="r header"><a href="/docs/api/archive.proto/">archive.proto</a></pre>
-{% highlight nginx %}
+{% highlight proto %}
 message TableInfo {
   optional string name = 1;
   repeated ColumnInfo keyColumn = 2;

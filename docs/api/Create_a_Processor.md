@@ -134,7 +134,7 @@ Notice how the speed value must always be encoded as a string to keep our parser
 #### Request
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight nginx %}
+{% highlight proto %}
 message CreateProcessorRequest {
   optional string name = 1;
   optional string start = 2;

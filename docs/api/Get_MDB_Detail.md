@@ -44,7 +44,7 @@ Get data on a the Mission Database for the given Yamcs instance:
 Response:
 
 <pre class="r header"><a href="/docs/api/yamcsManagement.proto/">yamcsManagement.proto</a></pre>
-{% highlight nginx %}
+{% highlight proto %}
 message MissionDatabase {
   required string configName = 1;
   required string name = 2;

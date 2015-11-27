@@ -85,7 +85,7 @@ Status: 200 OK
 #### Response
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight nginx %}
+{% highlight proto %}
 message ListPacketsResponse {
   repeated yamcs.TmPacketData packet = 1;
 }

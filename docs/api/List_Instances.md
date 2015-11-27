@@ -59,7 +59,7 @@ List all configured Yamcs instances:
 #### Response
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight nginx %}
+{% highlight proto %}
 message ListInstancesResponse {
   repeated yamcsManagement.YamcsInstance instance = 1;
 }

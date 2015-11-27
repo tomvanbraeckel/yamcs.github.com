@@ -115,7 +115,7 @@ The response is a list of parameter values:
 #### Response
 
 <pre class="r header"><a href="/docs/api/pvalue.proto/">pvalue.proto</a></pre>
-{% highlight nginx %}
+{% highlight proto %}
 message ParameterValue {
   optional yamcs.NamedObjectId id = 1;
   optional yamcs.Value rawValue = 2;
@@ -139,7 +139,7 @@ message ParameterValue {
 #### Bulk Request
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight nginx %}
+{% highlight proto %}
 message BulkGetParameterValueRequest {
   repeated yamcs.NamedObjectId id = 1;
   optional bool fromCache = 2;
@@ -150,7 +150,7 @@ message BulkGetParameterValueRequest {
 #### Bulk Response
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight nginx %}
+{% highlight proto %}
 message BulkGetParameterValueResponse {
   repeated pvalue.ParameterValue value = 1;
 }

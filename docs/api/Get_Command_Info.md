@@ -99,7 +99,7 @@ Return the data for the given command:
 #### Response
 
 <pre class="r header"><a href="/docs/api/mdb.proto/">mdb.proto</a></pre>
-{% highlight nginx %}
+{% highlight proto %}
 message CommandInfo {
   optional string name = 1;
   optional string qualifiedName = 2;

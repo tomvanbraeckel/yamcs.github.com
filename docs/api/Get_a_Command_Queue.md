@@ -28,7 +28,7 @@ Get data on a Yamcs instance:
 #### Response
 
 <pre class="r header"><a href="/docs/api/commanding.proto/">commanding.proto</a></pre>
-{% highlight nginx %}
+{% highlight proto %}
 message CommandQueueInfo {
   required string instance = 1;
   required string processorName = 2;

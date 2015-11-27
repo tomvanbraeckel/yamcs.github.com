@@ -29,7 +29,7 @@ Get information on the authenticated user:
 #### Response
 
 <pre class="r header"><a href="/docs/api/yamcsManagement.proto/">yamcsManagement.proto</a></pre>
-{% highlight nginx %}
+{% highlight proto %}
 message UserInfo {
   optional string login = 1;
   repeated ClientInfo clientInfo = 2;

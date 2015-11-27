@@ -44,7 +44,7 @@ Note that this will only list the fixed columns of the stream. Tuples may always
 #### Response
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight nginx %}
+{% highlight proto %}
 message ListStreamsResponse {
   repeated archive.StreamInfo stream = 1;
 }

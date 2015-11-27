@@ -185,7 +185,7 @@ For each alarm you get full information on the value occurrence that initially t
 #### Response
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight nginx %}
+{% highlight proto %}
 message ListAlarmsResponse {
   repeated alarms.AlarmData alarm = 1;
 }

@@ -41,7 +41,7 @@ sidebar: yes
 #### Request
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight nginx %}
+{% highlight proto %}
 message PatchAlarmRequest {
   optional string state = 1;
   optional string comment = 2;

@@ -32,7 +32,7 @@ The binary inside the packet variable is encoded in Base64 format
 #### Response
 
 <pre class="r header"><a href="/docs/api/yamcs.proto/">yamcs.proto</a></pre>
-{% highlight nginx %}
+{% highlight proto %}
 message TmPacketData {
   required int64 receptionTime = 1;
   required bytes packet = 2;

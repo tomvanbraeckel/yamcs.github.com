@@ -130,7 +130,7 @@ Time    BatteryVoltage2
 #### Response
 
 <pre class="r header"><a href="/docs/api/pvalue.proto/">pvalue.proto</a></pre>
-{% highlight nginx %}
+{% highlight proto %}
 message ParameterData {
   repeated ParameterValue parameter = 1;
 }

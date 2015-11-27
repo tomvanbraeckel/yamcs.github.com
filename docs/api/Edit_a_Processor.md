@@ -63,7 +63,7 @@ Notice that the speed value must be encoded as a string to keep our parser happy
 #### Request
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight nginx %}
+{% highlight proto %}
 message PatchProcessorRequest {
   optional string state = 1;
   optional int64 seekTime = 2;

@@ -32,7 +32,7 @@ List all command queues for the given processor:
 #### Response
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight nginx %}
+{% highlight proto %}
 message ListCommandQueuesResponse {
   repeated commanding.CommandQueueInfo queue = 1;
 }

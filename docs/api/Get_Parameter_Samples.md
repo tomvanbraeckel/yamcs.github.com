@@ -56,7 +56,7 @@ Sample the history of values for the specified parameter:
 #### Response
 
 <pre class="r header"><a href="/docs/api/pvalue.proto/">pvalue.proto</a></pre>
-{% highlight nginx %}
+{% highlight proto %}
 message SampleSeries {
   message Sample {
     optional int64 averageGenerationTime = 1;

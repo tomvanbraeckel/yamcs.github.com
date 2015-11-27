@@ -30,7 +30,7 @@ todo
 #### Response
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight nginx %}
+{% highlight proto %}
 message ListClientsResponse {
   repeated yamcsManagement.ClientInfo client = 1;
 }

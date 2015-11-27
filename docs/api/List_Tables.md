@@ -51,7 +51,7 @@ Note that this will only list the fixed columns of the table. Tuples may always 
 #### Response
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight nginx %}
+{% highlight proto %}
 message ListTablesResponse {
   repeated archive.TableInfo table = 1;
 }
