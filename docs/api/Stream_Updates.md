@@ -8,8 +8,6 @@ The `stream` resource type within the WebSocket API groups low-level publish/sub
 
 The documented operations work on one of the built-in streams (like `tm`, `tm_realtime`, `tm_dump`, `pp_realtime`, `cmdhist_realtime`, etc). Or, if your Yamcs deployment defines any other streams, they would work as well.
 
-We recommend using the LGPL Java WebSocket client distributed as part of the yamcs-api jar, but for deeper understanding, this is the protocol:
-
 ### Subscribe to a Stream
 Within the websocket request envelope use these values:
 

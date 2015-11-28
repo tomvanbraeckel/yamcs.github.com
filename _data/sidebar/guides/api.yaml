@@ -22,6 +22,11 @@
       items:
         - url: /docs/api/List_Instances/
         - url: /docs/api/Get_Instance_Detail/
+    - url: /docs/api/Links/
+      items:
+        - url: /docs/api/List_Links/
+        - url: /docs/api/Get_a_Link/
+        - url: /docs/api/Edit_a_Link/
     - url: /docs/api/Mission_Database/
       items:
         - url: /docs/api/Get_MDB_Detail/
