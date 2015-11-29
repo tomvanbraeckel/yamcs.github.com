@@ -27,7 +27,7 @@ After validating the input parameters, the command will be added to the appropri
   <tr>
     <td class="code">sequenceNumber</td>
     <td class="code">integer</td>
-    <td>The sequence number as specified by the origin.</td>
+    <td>The sequence number as specified by the origin. This gets communicated back in command history and command queue entries, thereby allowing clients to map local with remote command identities.</td>
   </tr>
   <tr>
     <td class="code">dryRun</td>

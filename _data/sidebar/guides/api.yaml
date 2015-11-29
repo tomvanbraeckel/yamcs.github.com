@@ -13,11 +13,22 @@
       items:
         - url: /docs/api/Issue_a_Command/
         - url: /docs/api/List_Command_Queues/
-        - url: /docs/api/Get_a_Command_Queue/
+        - url: /docs/api/Get_Command_Queue/
+        - url: /docs/api/Edit_Command_Queue/
+        - url: /docs/api/List_Queued_Commands/
+        - url: /docs/api/Edit_Queued_Command/
     - url: /docs/api/Events/
       items:
         - url: /docs/api/List_Events/
         - url: /docs/api/Download_Events/
+    - url: /docs/api/Indexes/
+      items:
+        - url: /docs/api/Download_Packet_Index/
+        - url: /docs/api/Download_PP_Index/
+        - url: /docs/api/Download_Event_Index/
+        - url: /docs/api/Download_Command_Index/
+        - url: /docs/api/Download_Completeness_Index/
+        - url: /docs/api/Download_Bulk_Indexes/
     - url: /docs/api/Instances/
       items:
         - url: /docs/api/List_Instances/

@@ -1,10 +1,10 @@
 ---
 layout: default
-permalink: /docs/api/Get_a_Command_Queue/
+permalink: /docs/api/Get_Command_Queue/
 sidebar: yes
 ---
 
-Get data on a Yamcs instance:
+Get data on a command queue:
 
     GET /api/processors/:instance/:processor/cqueues/:name
 
@@ -16,9 +16,25 @@ Get data on a Yamcs instance:
   "instance" : "simulator",
   "processorName" : "realtime",
   "name" : "default",
-  "state" : "ENABLED",
+  "state" : "BLOCKED",
   "nbSentCommands" : 0,
   "nbRejectedCommands" : 0,
+  "entry" : [ {
+    "instance" : "simulator",
+    "processorName" : "realtime",
+    "queueName" : "default",
+    "cmdId" : {
+      "generationTime" : 1448782973440,
+      "origin" : "000349-WS.local",
+      "sequenceNumber" : 5,
+      "commandName" : "/YSS/SIMULATOR/SWITCH_VOLTAGE_OFF"
+    },
+    "source" : "SWITCH_VOLTAGE_OFF(voltage_num: 2)",
+    "binary" : "GGTAAAAAAAAAAABqAAAAAgI=",
+    "username" : "anonymous",
+    "generationTime" : 1448782973440,
+    "uuid" : "3e867111-048a-4343-b195-47ba07d07093"
+  } ],
   "url" : "http://localhost:8090/api/processors/simulator/realtime/cqueues/default"
 }
 {% endhighlight %}

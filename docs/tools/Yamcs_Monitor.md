@@ -162,11 +162,10 @@ The window is split into two panels:
 
     In addition to setting the new state of the queue, the following additional actions happen when changing the state of a blocked queue:
     
-    * blocked &#8594; disabled: all the commands in the queue will be automatically rejected;
-    * blocked &#8594; enabled: all the commands in the queue will be automatically sent.
+    * blocked &#8594; disabled: all the queued commands will be automatically rejected;
+    * blocked &#8594; enabled: all the queued commands will be automatically sent.
     <br>
 
 * The bottom panel contains the list of commands currently present in the queue selected in the upper panel. For each command the queue name, the command id, the user that has sent the command and the command string are display. The list is empty if the selected queue is not in the state blocked.
 
-    Right-clicking on a command gives the possibility to **Send** or **Reject** the command.
-
+    Right-clicking on a command gives the possibility to **Send** or **Reject** a single queued command.
