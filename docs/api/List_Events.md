@@ -17,6 +17,30 @@ List the history of events:
         <th>Description</th>
     </tr>
     <tr>
+        <td class="code">source</td>
+        <td class="code">array of strings</td>
+        <td>
+            The source of the events. Both these notations are accepted:
+            <ul>
+                <li><tt>?source=DataHandler,CustomAlgorithm</tt></li>
+                <li><tt>?source[]=DataHandler&source[]=CustomAlgorithm</tt></li>
+            </ul>
+            Names must match exactly.
+        </td>
+    </tr>
+    <!--tr>
+        <td class="code">type</td>
+        <td class="code">array of strings</td>
+        <td>
+            The type of the events. Both these notations are accepted:
+            <ul>
+                <li><tt>?type=HK,Power</tt></li>
+                <li><tt>?type[]=HK&type[]=Power</tt></li>
+            </ul>
+            Names must match exactly.
+        </td>
+    </tr-->
+    <tr>
         <td class="code">start</td>
         <td class="code">string</td>
         <td>Filter the lower bound of the event's generation time. Specify a date string in ISO 8601 format</td>
@@ -77,12 +101,17 @@ Status: 200 OK
 }
 {% endhighlight %}
 
-### CSV
+### Alternative Media Types
 
-In addition to the usual support for JSON and Protobuf, the response for this particular resource can be made to output CSV data in one of these ways:
+#### CSV
 
-1. Add the HTTP header: `Accept: text/csv`
-1. Add a query parameter to the URI: `format=csv`
+Use HTTP header:
+
+    Accept: text/csv
+    
+Or, add this query parameter to the URI: `format=csv`.
+    
+Response:
 
 <pre class="header">
 Status: 200 OK
@@ -96,9 +125,13 @@ AlarmChecker    2015-11-13T14:46:29.784 2015-11-13T14:46:29.784 IN_LIMITS       
 AlarmChecker    2015-11-13T14:46:23.571 2015-11-13T14:46:23.571 IN_LIMITS       Parameter /YSS/SIMULATOR/BatteryVoltage2 has changed to value 197
 {% endhighlight %}
 
-### Protobuf
+#### Protobuf
 
-#### Response
+Use HTTP header:
+
+    Accept: application/protobuf
+
+Responses are of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight proto %}

@@ -67,12 +67,12 @@ JSON responses will be automatically pretty-printed for improved curl experience
 
 While it is in general recommended to use JSON as documented throughout this chapter, all REST operations also support Google Protocol Buffers for a lighter footprint. Yamcs Studio, for example, uses exclusively binary Protobuf messages. To mark your requests as Protobuf, set this HTTP header:
 
-    Content-Type: application/octet-stream
+    Content-Type: application/protobuf
     
 If you also want to server to respond with Protobuf messages, add the <tt>Accept</tt> header:
 
-    Accept: application/octet-stream
+    Accept: application/protobuf
 
 The <tt>.proto</tt> files that define the contract of the REST endpoint are included in the chapter [Proto Files](/docs/api/Proto_Files/). Using the <tt>protoc</tt> compiler, client code can be generated for Java, Python, C++ and more.
 
-The applicable top-level Protobuf messages are documented for every operation separately. If the response status is not <tt>200 OK</tt>, deserialize the response as of type <tt>RestExceptionMessage</tt>.
+The applicable top-level Protobuf messages are documented for every operation separately. If the response status is not between <tt>200</tt> and <tt>299</tt>, deserialize the response as of type <tt>RestExceptionMessage</tt>.

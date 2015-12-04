@@ -23,6 +23,18 @@ The <tt>:gentime</tt> must be in ISO 8601 format. E.g. 2015-10-20T06:47:02.000
         <th>Description</th>
     </tr>
     <tr>
+        <td class="code">name</td>
+        <td class="code">array of strings</td>
+        <td>
+            The archived name of the packets. Both these notations are accepted:
+            <ul>
+                <li><tt>?name=/YSS/SIMULATOR/DHS,/YSS/SIMULATOR/Power</tt></li>
+                <li><tt>?name[]=/YSS/SIMULATOR/DHS&name[]=/YSS/SIMULATOR/Power</tt></li>
+            </ul>
+            Names must match exactly.
+        </td>
+    </tr>
+    <tr>
         <td class="code">start</td>
         <td class="code">string</td>
         <td>Filter the lower bound of the packet's generation time. Specify a date string in ISO 8601 format</td>

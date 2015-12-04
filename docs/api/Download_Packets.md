@@ -22,6 +22,18 @@ This operation will possibly download a very large file. If you worry about size
         <th>Description</th>
     </tr>
     <tr>
+        <td class="code">name</td>
+        <td class="code">array of strings</td>
+        <td>
+            The archived name of the packets. Both these notations are accepted:
+            <ul>
+                <li><tt>?name=/YSS/SIMULATOR/DHS,/YSS/SIMULATOR/Power</tt></li>
+                <li><tt>?name[]=/YSS/SIMULATOR/DHS&name[]=/YSS/SIMULATOR/Power</tt></li>
+            </ul>
+            Names must match exactly.
+        </td>
+    </tr>
+    <tr>
         <td class="code">start</td>
         <td class="code">string</td>
         <td>Filter the lower bound of the packet's generation time. Specify a date string in ISO 8601 format</td>
@@ -41,8 +53,32 @@ This operation will possibly download a very large file. If you worry about size
 
 ### Response
 
-The response will be a stream of individual packets. When using Protobuf, every packet is delimited by its byte size.
+The response will be a stream of self-standing JSON messages.
 
-### Raw packets
 
+### Alternative Media Types
+
+#### Raw binary
+
+Use HTTP header:
+
+    Accept: application/octet-stream
+
+#### Protobuf
+
+Use HTTP header:
+
+    Accept: application/protobuf
  
+Sends self-standing <tt>VarInt</tt> delimited messages of type:
+
+<pre class="r header"><a href="/docs/api/yamcs.proto/">yamcs.proto</a></pre>
+{% highlight proto %}
+message TmPacketData {
+  required int64 receptionTime = 1;
+  required bytes packet = 2;
+  optional int64 generationTime = 3;
+  optional int32 sequenceNumber = 4;
+  optional NamedObjectId id = 5;
+}
+{% endhighlight %}

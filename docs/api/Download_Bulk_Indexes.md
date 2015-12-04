@@ -30,7 +30,21 @@ This operation will possibly download a very large file.
     <td class="code">string</td>
     <td>The time at which to stop retrieving index records.</td> 
   </tr>
+  <tr>
+    <td class="code">filter</td>
+    <td class="code">array of strings</td>
+    <td>The type of indexes to retrieve. Choose out of <tt>tm</tt>, <tt>pp</tt>, <tt>events</tt>, <tt>commands</tt> or <tt>completeness</tt>. By default all indexes will be sent.</td> 
+  </tr>
+  <tr>
+    <td class="code">packetname</td>
+    <td class="code">array of strings</td>
+    <td>Specify exact names for the TM packets for which you want to retrieve index records. Setting this parameter, automatically implies that <tt>tm</tt> is added to the filter.</td> 
+  </tr>
 </table>
+
+Example request URI:
+
+    /api/archive/simulator/indexes?filter=commands,events&packetname=/YSS/SIMULATOR/Power
     
 ### Example
 
