@@ -55,6 +55,22 @@ message ListAlgorithmsResponse {
   repeated mdb.AlgorithmInfo algorithm = 1;
 }
 
+message ListLinksResponse {
+  repeated yamcsManagement.LinkInfo link = 1;
+}
+
+message ListCommandHistoryResponse {
+  repeated commanding.CommandHistoryEntry entry = 1;
+}
+
+message PatchLinkRequest {
+  optional string state = 1;
+}
+
+message PatchCommandQueueRequest {
+  optional string state = 1;
+}
+
 message ListClientsResponse {
   repeated yamcsManagement.ClientInfo client = 1;
 }
@@ -69,6 +85,14 @@ message ListProcessorsResponse {
 
 message ListCommandQueuesResponse {
   repeated commanding.CommandQueueInfo queue = 1;
+}
+
+message ListCommandQueueEntries {
+  repeated commanding.CommandQueueEntry entry = 1;
+}
+
+message PatchCommandQueueEntryRequest {
+  optional string state = 1;
 }
 
 message IssueCommandRequest {
@@ -127,7 +151,7 @@ message ListInstancesResponse {
 }
 
 message ListAlarmsResponse {
-  repeated alarms.AlarmInfo alarm = 1;
+  repeated alarms.AlarmData alarm = 1;
 }
 
 message PatchAlarmRequest {
@@ -145,4 +169,8 @@ message ListStreamsResponse {
 
 message ListEventsResponse {
   repeated yamcs.Event event = 1;
+}
+
+message ListPacketsResponse {
+  repeated yamcs.TmPacketData packet = 1;
 }
