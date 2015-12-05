@@ -42,7 +42,7 @@ Release an entry:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight proto %}
-message PatchCommandQueueEntryRequest {
+message EditCommandQueueEntryRequest {
   optional string state = 1;
 }
 {% endhighlight %}

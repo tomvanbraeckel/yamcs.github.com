@@ -57,7 +57,7 @@ The response contains the updated queue information:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight proto %}
-message PatchCommandQueueRequest {
+message EditCommandQueueRequest {
   optional string state = 1;
 }
 {% endhighlight %}

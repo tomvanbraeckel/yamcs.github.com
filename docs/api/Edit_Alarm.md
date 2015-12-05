@@ -42,7 +42,7 @@ sidebar: yes
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight proto %}
-message PatchAlarmRequest {
+message EditAlarmRequest {
   optional string state = 1;
   optional string comment = 2;
 }

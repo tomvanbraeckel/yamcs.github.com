@@ -70,7 +70,7 @@ Response is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight proto %}
-message PatchTagRequest {
+message EditTagRequest {
   optional string name = 1;
   optional string start = 2;
   optional string stop = 3;

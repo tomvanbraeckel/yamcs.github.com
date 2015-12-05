@@ -42,7 +42,7 @@ Update the client's processor to <tt>replay123</tt>:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight proto %}
-message PatchClientRequest {
+message EditClientRequest {
   optional string processor = 1;
 }
 {% endhighlight %}
