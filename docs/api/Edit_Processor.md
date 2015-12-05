@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /docs/api/Edit_a_Processor/
+permalink: /docs/api/Edit_Processor/
 sidebar: yes
 ---
 
@@ -23,8 +23,8 @@ Edit a processor:
     <td>The state this processor should be updated to. Either <tt>PAUSED</tt> or <tt>RUNNING</tt>.</td>
   </tr>
   <tr>
-    <td class="code">seek_time</td>
-    <td class="code">integer</td>
+    <td class="code">seek</td>
+    <td class="code">string</td>
     <td>The seek time in milliseconds.</td>
   </tr>
   <tr>

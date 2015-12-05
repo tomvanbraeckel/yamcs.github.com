@@ -45,16 +45,21 @@ List all processors for the given Yamcs instance:
     "clientsUrl": "http://localhost:8090/api/processors/simulator/realtime/clients",
     "parametersUrl" : "http://localhost:8090/api/processors/simulator/realtime/parameters{/namespace}{/name}",
     "commandsUrl" : "http://localhost:8090/api/processors/simulator/realtime/commands{/namespace}{/name}",
-    "commandQueuesUrl" : "http://localhost:8090/api/processors/simulator/realtime/cqueues{/name}",
-    "alarmsUrl" : "http://localhost:8090/api/processors/simulator/realtime/alarms{/id}"
+    "commandQueuesUrl" : "http://localhost:8090/api/processors/simulator/realtime/cqueues{/name}"
   } ]
 }
 {% endhighlight %}
 
 
-### Protobuf
+### Alternative Media Types
 
-#### Response
+#### Protobuf
+
+Use HTTP header:
+
+    Accept: application/protobuf
+    
+Response is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight proto %}

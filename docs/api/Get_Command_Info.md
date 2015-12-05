@@ -93,10 +93,15 @@ Return the data for the given command:
 }
 {% endhighlight %}
 
+### Alternative Media Types
 
-### Protobuf
+#### Protobuf
 
-#### Response
+Use HTTP header:
+
+    Accept: application/protobuf
+
+Response if of type:
 
 <pre class="r header"><a href="/docs/api/mdb.proto/">mdb.proto</a></pre>
 {% highlight proto %}

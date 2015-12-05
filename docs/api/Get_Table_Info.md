@@ -1,16 +1,17 @@
 ---
 layout: default
-permalink: /docs/api/Get_Stream_Detail/
+permalink: /docs/api/Get_Table_Info/
 sidebar: yes
 ---
 
-Get data on a Yamcs stream:
+Get info on a Yamcs table:
 
-    GET /api/archive/:instance/streams/:name
-    
+    GET /api/archive/:instance/tables/:name
+
 <div class="hint">
-    This is low-level API for those cases where access to an internal stream of Yamcs is wanted. It is recommended to use other API operations for any of the default built-in streams.
+    This is low-level API for those cases where access to an internal key/value table of Yamcs is wanted. It is recommended to use other API operations for any of the default built-in tables.
 </div>
+
 
 ### Response
 
@@ -19,19 +20,23 @@ Status: 200 OK
 </pre>
 {% highlight json %}
 {
-  "name" : "tm_realtime",
-  "column" : [ {
+  "name" : "tm",
+  "keyColumn" : [ {
     "name" : "gentime",
     "type" : "TIMESTAMP"
   }, {
     "name" : "seqNum",
     "type" : "INT"
-  }, {
+  } ],
+  "valueColumn" : [ {
     "name" : "rectime",
     "type" : "TIMESTAMP"
   }, {
     "name" : "packet",
     "type" : "BINARY"
+  }, {
+    "name" : "pname",
+    "type" : "ENUM"
   } ]
 }
 {% endhighlight %}
@@ -42,8 +47,9 @@ Status: 200 OK
 
 <pre class="r header"><a href="/docs/api/archive.proto/">archive.proto</a></pre>
 {% highlight proto %}
-message StreamInfo {
+message TableInfo {
   optional string name = 1;
-  repeated ColumnInfo column = 2;
+  repeated ColumnInfo keyColumn = 2;
+  repeated ColumnInfo valueColumn = 3;
 }
 {% endhighlight %}

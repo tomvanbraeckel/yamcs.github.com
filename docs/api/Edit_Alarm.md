@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /docs/api/Update_an_Alarm/
+permalink: /docs/api/Edit_Alarm/
 sidebar: yes
 ---
 

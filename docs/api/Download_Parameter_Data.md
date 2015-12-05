@@ -47,11 +47,22 @@ This operation will possibly download a very large file. If you worry about size
 
 ### Response
 
-The response will be a stream of individual parameters. When using Protobuf, every parameter is delimited by its byte size.
+The response will be a stream of individual parameters.
 
-### CSV
+### Alternative Media Types
 
-In addition to the usual support for JSON and Protobuf, the response for this particular resource can be made to output CSV data in one of these ways:
+#### CSV
 
-1. Add the HTTP header: `Accept: text/csv`
-1. Add a query parameter to the URI: `format=csv`
+Use HTTP header:
+
+    Accept: application/protobuf
+    
+Or add the query parameter `format=csv`.
+
+#### Protobuf
+
+Use HTTP header:
+
+    Accept: application/protobuf
+
+The response if a stream of individual Protobuf messages delimited by a <tt>VarInt</tt>.

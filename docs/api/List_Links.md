@@ -39,7 +39,7 @@ List all links for the given Yamcs instance:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight proto %}
-message ListLinksResponse {
+message ListLinkInfoResponse {
   repeated yamcsManagement.LinkInfo link = 1;
 }
 {% endhighlight %}

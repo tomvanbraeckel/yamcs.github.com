@@ -44,11 +44,15 @@ Status: 200 OK
 todo
 {% endhighlight %}
 
-### Protobuf
+### Alternative Media Types
 
-#### Response
+#### Protobuf
 
-Individual Protobuf messages delimited with a <tt>varint</tt>. Every message is of type:
+Use HTTP header:
+
+    Accept: application/protobuf
+
+The response is a stream of individual Protobuf messages delimited with a <tt>VarInt</tt>. Every message is of type:
 
 <pre class="r header"><a href="/docs/api/yamcs.proto/">yamcs.proto</a></pre>
 {% highlight proto %}

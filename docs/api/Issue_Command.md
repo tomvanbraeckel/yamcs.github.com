@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /docs/api/Issue_a_Command/
+permalink: /docs/api/Issue_Command/
 sidebar: yes
 ---
 

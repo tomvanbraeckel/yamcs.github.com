@@ -1,12 +1,12 @@
 ---
 layout: default
-permalink: /docs/api/Edit_a_Client/
+permalink: /docs/api/Edit_Link/
 sidebar: yes
 ---
 
-Edit a client:
+Edit a link:
 
-    PATCH /api/clients/:id
+    PATCH /api/links/:instance/:name
 
 
 ### Parameters
@@ -18,9 +18,9 @@ Edit a client:
     <th>Description</th>
   </tr>
   <tr>
-    <td class="code">processor</td>
+    <td class="code">state</td>
     <td class="code">string</td>
-    <td>The processor. This processor must be part of the instance that the client is connected to.</td>
+    <td>The state of the link. Either <tt>enabled</tt> or <tt>disabled</tt>.</td>
   </tr>
 </table>
 
@@ -28,21 +28,35 @@ The same parameters can also be specified in the request body. In case both quer
 
 ### Example
 
-Update the client's processor to <tt>replay123</tt>:
+Enable a link:
 
 {% highlight json %}
 {
-  "processor" : "replay123"
+  "state" : "enabled"
 }
 {% endhighlight %}
 
-### Protobuf
+Disable a link:
 
-#### Request
+{% highlight json %}
+{
+  "state" : "disabled"
+}
+{% endhighlight %}
+
+### Alternative Media Types
+
+#### Protobuf
+
+Use HTTP header:
+
+    Accept: application/protobuf
+    
+Response is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight proto %}
-message PatchClientRequest {
-  optional string processor = 1;
+message PatchLinkRequest {
+  optional string state = 1;
 }
 {% endhighlight %}

@@ -4,14 +4,14 @@
     - url: /docs/api/Alarms/
       items:
         - url: /docs/api/List_Alarms/
-        - url: /docs/api/Update_an_Alarm/
+        - url: /docs/api/Edit_Alarm/
     - url: /docs/api/Clients/
       items:
         - url: /docs/api/List_Clients/
-        - url: /docs/api/Edit_a_Client/
+        - url: /docs/api/Edit_Client/
     - url: /docs/api/Commanding/
       items:
-        - url: /docs/api/Issue_a_Command/
+        - url: /docs/api/Issue_Command/
         - url: /docs/api/List_Command_Queues/
         - url: /docs/api/Get_Command_Queue/
         - url: /docs/api/Edit_Command_Queue/
@@ -36,8 +36,8 @@
     - url: /docs/api/Links/
       items:
         - url: /docs/api/List_Links/
-        - url: /docs/api/Get_a_Link/
-        - url: /docs/api/Edit_a_Link/
+        - url: /docs/api/Get_Link/
+        - url: /docs/api/Edit_Link/
     - url: /docs/api/Mission_Database/
       items:
         - url: /docs/api/Get_MDB_Detail/
@@ -50,7 +50,7 @@
     - url: /docs/api/Packets/
       items:
         - url: /docs/api/List_Packets/
-        - url: /docs/api/Get_a_Packet/
+        - url: /docs/api/Get_Packet/
         - url: /docs/api/Download_Packets/
     - url: /docs/api/Parameter_Values/
       items:
@@ -62,19 +62,26 @@
     - url: /docs/api/Processors/
       items:
         - url: /docs/api/List_Processors/
-        - url: /docs/api/Create_a_Processor/
-        - url: /docs/api/Edit_a_Processor/
+        - url: /docs/api/Get_Processor_Info/
+        - url: /docs/api/Create_Processor/
+        - url: /docs/api/Edit_Processor/
 #    - url: /docs/api/Simulation_Time/
     - url: /docs/api/Streams/
       items:
         - url: /docs/api/List_Streams/
-        - url: /docs/api/Get_Stream_Detail/
+        - url: /docs/api/Get_Stream_Info/
     - url: /docs/api/Tables/
       items:
         - url: /docs/api/List_Tables/
-        - url: /docs/api/Get_Table_Detail/
+        - url: /docs/api/Get_Table_Info/
         - url: /docs/api/List_Table_Data/
         - url: /docs/api/Download_Table_Data/
+    - url: /docs/api/Tags/
+      items:
+        - url: /docs/api/List_Tags/
+        - url: /docs/api/Get_Tag/
+        - url: /docs/api/Create_Tag/
+        - url: /docs/api/Edit_Tag/
     - url: /docs/api/User/
 
 - url: /docs/api/WebSocket_API/

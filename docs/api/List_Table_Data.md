@@ -94,9 +94,15 @@ Status: 200 OK
 }
 {% endhighlight %}
 
-### Protobuf
+### Alternative Media Types
 
-#### Response
+#### Protobuf
+
+Use HTTP header:
+
+    Accept: application/protobuf
+    
+Response is of type:
 
 <pre class="r header"><a href="/docs/api/archive.proto/">archive.proto</a></pre>
 {% highlight proto %}

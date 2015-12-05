@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /docs/api/Create_a_Processor/
+permalink: /docs/api/Create_Processor/
 sidebar: yes
 ---
 

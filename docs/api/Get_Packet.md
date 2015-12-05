@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /docs/api/Get_a_Packet/
+permalink: /docs/api/Get_Packet/
 sidebar: yes
 ---
 

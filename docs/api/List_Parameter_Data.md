@@ -105,12 +105,15 @@ Status: 200 OK
 }
 {% endhighlight %}
 
-### CSV
+### Alternative Media Types
 
-In addition to the usual support for JSON and Protobuf, the response for this particular resource can be made to output CSV data in one of these ways:
+#### CSV
 
-1. Add the HTTP header: `Accept: text/csv`
-1. Add a query parameter to the URI: `format=csv`
+Use HTTP header:
+
+    Accept: text/csv
+
+Or, add this query parameter: `format=csv`.
 
 <pre class="header">
 Status: 200 OK
@@ -125,9 +128,13 @@ Time    BatteryVoltage2
 {% endhighlight %}
 
 
-### Protobuf
+#### Protobuf
 
-#### Response
+Use HTTP header:
+
+    Accept: application/protobuf
+
+Response if of type:
 
 <pre class="r header"><a href="/docs/api/pvalue.proto/">pvalue.proto</a></pre>
 {% highlight proto %}

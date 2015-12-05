@@ -38,9 +38,15 @@ To update multiple parameters at once, send a request to this address:
 }
 {% endhighlight %}
 
-### Protobuf
+### Alternative Media Types
 
-#### Request
+#### Protobuf
+
+Use HTTP header:
+
+    Content-Type: application/protobuf
+    
+Request is of type:
 
 <pre class="r header"><a href="/docs/api/yamcs.proto/">yamcs.proto</a></pre>
 {% highlight proto %}
@@ -71,7 +77,7 @@ message Value {
 }
 {% endhighlight %}
 
-#### Bulk Request
+Bulk request is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight proto %}

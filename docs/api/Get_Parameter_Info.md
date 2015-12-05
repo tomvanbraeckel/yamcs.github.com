@@ -86,9 +86,15 @@ In the response the requested parameter ID is returned for every match. Example:
 {% endhighlight %} 
 
 
-### Protobuf
+### Alternative Media Types
 
-Response:
+#### Protobuf
+
+Use HTTP header:
+
+    Accept: application/protobuf
+    
+Response is of type:
 
 <pre class="r header"><a href="/docs/api/mdb.proto/">mdb.proto</a></pre>
 {% highlight proto %}
@@ -104,7 +110,7 @@ message ParameterInfo {
 }
 {% endhighlight %}
 
-Bulk request:
+Bulk requests are of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight proto %}
@@ -113,7 +119,11 @@ message BulkGetParameterRequest {
 }
 {% endhighlight %}
 
-Bulk Response:
+Use this additional HTTP header to mark your request as Protobuf:
+
+    Content-Type: application/protobuf
+
+Bulk responses are of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight proto %}

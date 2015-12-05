@@ -70,7 +70,7 @@ Use HTTP header:
 
     Accept: application/protobuf
  
-Sends self-standing <tt>VarInt</tt> delimited messages of type:
+The response is a stream of self-standing <tt>VarInt</tt> delimited messages of type:
 
 <pre class="r header"><a href="/docs/api/yamcs.proto/">yamcs.proto</a></pre>
 {% highlight proto %}
