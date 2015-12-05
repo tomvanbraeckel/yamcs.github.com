@@ -27,12 +27,12 @@ Replay processors allow for synchronized playback of different types of archived
   <tr>
     <td class="code">start</td>
     <td class="code">string</td>
-    <td><strong>Required.</strong> The time at which the replay should start.</td>
+    <td><strong>Required.</strong> The time at which the replay should start. Must be a date string in ISO 8601 format.</td>
   </tr>
   <tr>
     <td class="code">stop</td>
     <td class="code">string</td>
-    <td>The time at which the replay should stop. If unspecified, the replay will keep going as long as there is remaining data.</td> 
+    <td>The time at which the replay should stop. Must be a date string in ISO 8601 format. If unspecified, the replay will keep going as long as there is remaining data.</td> 
   </tr>
   <tr>
     <td class="code">loop</td>

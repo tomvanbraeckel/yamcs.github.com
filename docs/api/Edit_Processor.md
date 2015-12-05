@@ -25,12 +25,19 @@ Edit a processor:
   <tr>
     <td class="code">seek</td>
     <td class="code">string</td>
-    <td>The seek time in milliseconds.</td>
+    <td>The time where the processing needs to jump towards. Must be a date string in ISO 8601 format.</td>
   </tr>
   <tr>
     <td class="code">speed</td>
     <td class="code">string</td>
-    <td>Either <tt>afap</tt>, <tt>realtime</tt> or a fixed delay value in milliseconds.</td>
+    <td>
+        The speed of the processor. One of:
+        <ul>
+            <li><tt>afap</tt></li>
+            <li>a speed factor relative to the original speed. Example: <tt>2x</tt></li>
+            <li>a fixed delay value in milliseconds. Example: <tt>2000</tt></li>
+        </ul>
+    </td>
   </tr>
 </table>
 
@@ -52,6 +59,14 @@ Resume the processor, and set speed to 2.5x:
 {
   "state" : "RUNNING",
   "speed" : "2.5x"
+}
+{% endhighlight %}
+
+Make processor move according to original speed:
+
+{% highlight json %}
+{
+  "speed" : "1x"
 }
 {% endhighlight %}
 
