@@ -13,7 +13,7 @@ set -e
 #  If the optional arguments are provided, generate the pdf document for the requested document with the requested version.
 #  Output name is <title>-<version>.pdf
 #
-#  PDF documents are saved in the /asset/ folder.
+#  PDF documents are saved in the /assets/ folder.
 
 
 DOC=$1
@@ -24,14 +24,14 @@ echo "Usage: ./make-pdf.sh [document_name] [version], with document_name one of 
 exit
 fi
 
-if [ -n "$VERSION" ]; then 
-FILE_SUFFIX="-"$VERSION 
+if [ -n "$VERSION" ]; then
+FILE_SUFFIX="-"$VERSION
 fi
 
 DOCSURL="http://localhost:4000/docs"
 
 function compose_pdf() {
-  
+
     BASEURL=$1
     TITLE=$2
 
@@ -89,12 +89,12 @@ function compose_pdf() {
 
     # echo "" | ps2pdf -sPAPERSIZE=a4 - ${TITLE}_blank.pdf
 
-    gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile="assets/${TITLE}${FILE_SUFFIX}.pdf" \
+    gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile="/tmp/${TITLE}${FILE_SUFFIX}.pdf.wkhtmltopdf" \
         "/tmp/${TITLE}_cover.pdf" \
         "/tmp/${TITLE}_precontent.pdf" \
         "/tmp/${TITLE}_content.pdf"
 
-    rm "/tmp/$TITLE"_*.pdf
+    rm -f "/tmp/$TITLE"_*.pdf
 }
 
 if [ -z "$DOC" ] || [ "$DOC" = "studio" ]; then
@@ -111,7 +111,7 @@ exiftool \
     -keywords="tm" \
     -keywords="tc" \
     -overwrite_original \
-    "assets/${TITLE}${FILE_SUFFIX}.pdf"
+    "/tmp/${TITLE}${FILE_SUFFIX}.pdf.wkhtmltopdf"
 fi
 
 if [ -z "$DOC" ] || [ "$DOC" = "server" ]; then
@@ -128,7 +128,7 @@ exiftool \
     -keywords="tm" \
     -keywords="tc" \
     -overwrite_original \
-    "assets/${TITLE}${FILE_SUFFIX}.pdf"
+    "/tmp/${TITLE}${FILE_SUFFIX}.pdf.wkhtmltopdf"
 fi
 
 if [ -z "$DOC" ] || [ "$DOC" = "tools" ]; then
@@ -146,7 +146,7 @@ exiftool \
     -keywords="tm" \
     -keywords="tc" \
     -overwrite_original \
-    "assets/${TITLE}${FILE_SUFFIX}.pdf"
+    "/tmp/${TITLE}${FILE_SUFFIX}.pdf.wkhtmltopdf"
 fi
 
 if [ -z "$DOC" ] || [ "$DOC" = "api" ]; then
@@ -154,10 +154,9 @@ TITLE="Yamcs Server API"
 compose_pdf "$DOCSURL/api" "$TITLE"
 exiftool \
     -Author="Space Applications Services" \
-    -Subject="User Guide" \
+    -Subject="API" \
     -keywords="yamcs" \
-    -keywords="client" \
-    -keywords="tools" \
+    -keywords="server" \
     -keywords="mission" \
     -keywords="control" \
     -keywords="system" \
@@ -165,6 +164,11 @@ exiftool \
     -keywords="tc" \
     -keywords="api" \
     -overwrite_original \
-    "assets/${TITLE}${FILE_SUFFIX}.pdf"
+    "/tmp/${TITLE}${FILE_SUFFIX}.pdf.wkhtmltopdf"
 fi
 
+# Move only at the end to prevent restarts of jekyll
+for file in /tmp/*.pdf.wkhtmltopdf; do
+    FILENAME=$(basename "$file")
+    mv "$file" "assets/${FILENAME%.*}"
+done
