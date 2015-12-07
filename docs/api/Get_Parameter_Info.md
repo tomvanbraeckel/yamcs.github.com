@@ -90,8 +90,9 @@ In the response the requested parameter ID is returned for every match. Example:
 
 #### Protobuf
 
-Use HTTP header:
+Use these HTTP headers:
 
+    Content-Type: application/protobuf
     Accept: application/protobuf
     
 Response is of type:
@@ -110,7 +111,7 @@ message ParameterInfo {
 }
 {% endhighlight %}
 
-Bulk requests are of type:
+Bulk request is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight proto %}
@@ -119,11 +120,7 @@ message BulkGetParameterRequest {
 }
 {% endhighlight %}
 
-Use this additional HTTP header to mark your request as Protobuf:
-
-    Content-Type: application/protobuf
-
-Bulk responses are of type:
+Bulk response is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight proto %}

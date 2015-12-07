@@ -41,11 +41,10 @@ Sample the history of values for the specified parameter:
 {% highlight json %}
 {
   "sample" : [ {
-    "averageGenerationTime" : 1447233133626,
-    "averageGenerationTimeUTC" : "2015-11-11T09:11:37.626",
-    "averageValue" : 169.41836734693865,
-    "lowValue" : 103.0,
-    "highValue" : 237.0,
+    "time" : "2015-11-11T09:11:37.626",
+    "avg" : 169.41836734693865,
+    "min" : 103.0,
+    "max" : 237.0,
     "n" : 98
   } ]
 }
@@ -63,14 +62,13 @@ Response is of type:
 
 <pre class="r header"><a href="/docs/api/pvalue.proto/">pvalue.proto</a></pre>
 {% highlight proto %}
-message SampleSeries {
+message TimeSeries {
   message Sample {
-    optional int64 averageGenerationTime = 1;
-    optional string averageGenerationTimeUTC = 2;
-    optional double averageValue = 3;
-    optional double lowValue = 4;
-    optional double highValue = 5;
-    optional int32 n = 6;
+    optional string time = 1;
+    optional double avg = 2;
+    optional double min = 3;
+    optional double max = 4;
+    optional int32 n = 5;
   }
 
   repeated Sample sample = 1;
