@@ -535,7 +535,16 @@ a:hover img.page-logo {
     display: none;
   }
 
-  .main.with-sidebar {
+  .main.with-sidebar, .footer-inset.with-sidebar {
     margin-left: 0;
+  }
+
+  .highlight {
+    background: none;
+  }
+
+  pre, pre.header, code {
+    background: none;
+    border: none;
   }
 }

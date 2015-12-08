@@ -67,9 +67,26 @@ pre {
     page-break-before: always;
   }
 
-  body, pre, code {
+  body {
     font-size: 11px;
     /*line-height: 1.5em;*/
+  }
+
+  pre, code, td.code {
+    font-size: 9px;
+  }
+
+  .highlight {
+    background: none;
+  }
+
+  pre, pre.header, code {
+    background: none;
+    border: none;
+  }
+
+  pre.r.header {
+    display: none;
   }
 
   strong {
