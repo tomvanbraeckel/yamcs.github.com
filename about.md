@@ -18,5 +18,5 @@ If you are interested in Yamcs and would consider using Yamcs in your project or
 
 
 <p>&nbsp;</p>
-![Sponsors](/assets/sponsors.png){: .center-image }
+![Sponsors](/assets/main/sponsors.png){: .center-image }
 <p>&nbsp;</p>

@@ -1,7 +1,5 @@
-# Site settings
 title: Yamcs
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://www.yamcs.org" # the base hostname & protocol for your site
+url: "http://www.yamcs.org"
 
 exclude: [vendor]
 

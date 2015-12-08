@@ -4,7 +4,7 @@
 # 2) copy files from /docs/<document>/* to /docs/history/<document>/<version>/
 # Next steps are from folder /docs/history/<document>/<version>/
 # 3) Edit index.html to:
-#    - in header, modify pdf link to /assets/<doc_title>-<version>.pdf
+#    - in header, modify pdf link to /assets/pdf/<doc_title>-<version>.pdf
 #    - in body, append <version_escaped> to {% include toc.html structure=site.data.sidebar.guides.[...]
 # 4) Edit all files header to:
 #    - insert version in permalink

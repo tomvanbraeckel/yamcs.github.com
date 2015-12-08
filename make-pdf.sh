@@ -79,7 +79,7 @@ function compose_pdf() {
         toc \
         --exclude-from-outline \
         --disable-smart-shrinking \
-        --xsl-style-sheet toc.xsl \
+        --xsl-style-sheet docs/toc.xsl \
         "$BASEURL/pdf/content/" \
         --disable-smart-shrinking \
         --disable-external-links \
@@ -170,5 +170,5 @@ fi
 # Move only at the end to prevent restarts of jekyll
 for file in /tmp/*.pdf.wkhtmltopdf; do
     FILENAME=$(basename "$file")
-    mv "$file" "assets/${FILENAME%.*}"
+    mv "$file" "assets/pdf/${FILENAME%.*}"
 done

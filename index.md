@@ -11,7 +11,7 @@ Yamcs is a cost-efficient suite of tools for spacecraft, payload and ground segm
 
 A typical deployment of Yamcs consists of **Yamcs Server** connecting to a TM/TC frontend or to a simulator. The TM/TC frontend is the interface to the payload. It can be either a ground station during the operations, some EGSE equipment during the development or a simulator used for development and test of the ground software or for training purposes.
 
-![Typical Deployment](/assets/typical-deployment.png){: .center-image }
+![Typical Deployment](/assets/main/typical-deployment.png){: .center-image }
 
 The data acquired from the TM/TC frontend is interpreted based on the Mission Database. The Mission Database can be as simple as an excel spreadsheet or can be an engineering database used when developing the payload/spacecraft.
 
