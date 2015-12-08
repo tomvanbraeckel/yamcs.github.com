@@ -62,6 +62,8 @@ function compose_pdf() {
 
     # Image quality is not optimal. Below image-flags seem to have little effect other than
     # increasing the file size :-(
+    #--image-quality 2000 \
+    #--image-dpi 18000 \
     # There's a few more things to try. wkhtmltopdf renders to a 800x600 viewport, we could
     # try increasing that, in hopes to get around some bad internal image resizing function.
     # (most of our images are automatically css-resized to 100% of the available width)
@@ -74,8 +76,6 @@ function compose_pdf() {
         --margin-bottom 20mm \
         --margin-left 20mm \
         --margin-right 20mm \
-        --image-quality 2000 \
-        --image-dpi 18000 \
         toc \
         --exclude-from-outline \
         --disable-smart-shrinking \

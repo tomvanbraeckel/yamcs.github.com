@@ -60,8 +60,27 @@ When an exception is caught while handling a REST request, the server will try t
 
 Clients of the REST API should check on whether the status code is between 200 and 299, and if not, interpret the response with the above structure.
 
-### Pretty Printing
-JSON responses will be automatically pretty-printed for improved curl experience. Turn this behaviour off by setting the query parameter <tt>pretty=no</tt> in your URI. This will make responses slightly faster and lighter.
+### Curlability
+JSON responses are by default configured for an improved curl experience. This means that responses will be pretty-printed, and that they will contain links to other URL resources where it makes sense. When building an actual client you may want to turn this off for a lighter payload.
+
+<table class="inline">
+    <tr>
+        <th>Query Parameter</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td class="code">pretty</td>
+        <td>Whether to autoformat JSON responses. Default: <tt>yes</tt></td>
+    </tr>
+    <tr>
+        <td class="code">nolink</td>
+        <td>Whether to hide links to related REST resources. Default: <tt>no</tt></td>
+    </tr>
+</table>
+
+For example, append all URLs like so, makes responses lighter and faster:
+
+    ?nolink&pretty=no
 
 ### Protobuf
 
