@@ -62,11 +62,12 @@ Change the color, and the description:
 
 #### Protobuf
 
-Use HTTP header:
+Use these HTTP headers:
 
+    Content-Type: application/protobuf
     Accept: application/protobuf
     
-Response is of type:
+Request is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight proto %}

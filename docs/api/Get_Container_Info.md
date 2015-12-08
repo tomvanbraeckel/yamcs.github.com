@@ -160,9 +160,15 @@ Return the data for the given container:
 {% endhighlight %}
 
 
-### Protobuf
+### Alternative Media Types
 
-Response:
+#### Protobuf
+
+Use HTTP header:
+
+    Accept: application/protobuf
+    
+Response is of type:
 
 <pre class="r header"><a href="/docs/api/mdb.proto/">mdb.proto</a></pre>
 {% highlight proto %}

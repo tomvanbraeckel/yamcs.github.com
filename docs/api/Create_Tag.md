@@ -62,9 +62,10 @@ Create a red tag covering January 1st 2015, onwards:
 
 #### Protobuf
 
-Use HTTP header:
+Use these HTTP headers:
 
     Content-Type: application/protobuf
+    Accept: application/protobuf
     
 Request is of type:
 

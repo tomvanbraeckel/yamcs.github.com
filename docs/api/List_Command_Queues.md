@@ -27,9 +27,15 @@ List all command queues for the given processor:
 {% endhighlight %}
 
 
-### Protobuf
+### Alternative Media Types
 
-#### Response
+#### Protobuf
+
+Use HTTP header:
+
+    Accept: application/protobuf
+    
+Response is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight proto %}

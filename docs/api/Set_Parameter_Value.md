@@ -42,9 +42,10 @@ To update multiple parameters at once, send a request to this address:
 
 #### Protobuf
 
-Use HTTP header:
+Use these HTTP headers:
 
     Content-Type: application/protobuf
+    Accept: application/protobuf
     
 Request is of type:
 

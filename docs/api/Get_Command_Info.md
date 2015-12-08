@@ -101,7 +101,7 @@ Use HTTP header:
 
     Accept: application/protobuf
 
-Response if of type:
+Response is of type:
 
 <pre class="r header"><a href="/docs/api/mdb.proto/">mdb.proto</a></pre>
 {% highlight proto %}

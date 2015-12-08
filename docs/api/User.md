@@ -24,9 +24,15 @@ Get information on the authenticated user:
 }
 {% endhighlight %}
 
-### Protobuf
+### Alternative Media Types
 
-#### Response
+#### Protobuf
+
+Use HTTP header:
+
+    Accept: application/protobuf
+    
+Response is of type:
 
 <pre class="r header"><a href="/docs/api/yamcsManagement.proto/">yamcsManagement.proto</a></pre>
 {% highlight proto %}

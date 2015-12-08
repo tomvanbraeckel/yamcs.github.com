@@ -73,9 +73,16 @@ Make processor move according to original speed:
 Notice that the speed value must be encoded as a string to keep our parser happy.
 
 
-### Protobuf
+### Alternative Media Types
 
-#### Request
+#### Protobuf
+
+Use these HTTP headers:
+
+    Content-Type: application/protobuf
+    Accept: application/protobuf
+    
+Request is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight proto %}

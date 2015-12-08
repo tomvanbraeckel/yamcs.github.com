@@ -180,9 +180,15 @@ For each alarm you get full information on the value occurrence that initially t
 }
 {% endhighlight %}
 
-### Protobuf
+### Alternative Media Types
 
-#### Response
+#### Protobuf
+
+Use HTTP header:
+
+    Accept: application/protobuf
+    
+Response is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 {% highlight proto %}

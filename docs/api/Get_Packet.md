@@ -27,9 +27,15 @@ The gentime must be an exact match of the packet's generation time in ISO 8601 f
 The binary inside the packet variable is encoded in Base64 format
 
 
-### Protobuf
+### Alternative Media Types
 
-#### Response
+#### Protobuf
+
+Use HTTP header:
+
+    Accept: application/protobuf
+    
+Response is of type:
 
 <pre class="r header"><a href="/docs/api/yamcs.proto/">yamcs.proto</a></pre>
 {% highlight proto %}
