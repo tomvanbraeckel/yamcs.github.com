@@ -55,7 +55,7 @@ The response will be a stream of individual parameters.
 
 Use HTTP header:
 
-    Accept: application/protobuf
+    Accept: text/csv
     
 Or add the query parameter `format=csv`.
 
