@@ -52,7 +52,8 @@ After validating the input parameters, the command will be added to the appropri
   "sequenceNumber" : 1,
   "origin" : "user@my-machine",
   "assignment" : [ {
-    "voltage_num": 3
+    "name": "voltage_num",
+    "value": "3"
   } ],
   "dryRun" : true
 }
