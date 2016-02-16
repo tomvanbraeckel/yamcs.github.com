@@ -17,7 +17,7 @@ On the basic stream archive structure, Yamcs pre-defines a few table types for s
 ## Packet telemetry
 The below definition (created inside the XtceTmRecorder service) will create a table that uses the generation time and sequence number as primary key. That means that if a packet has the same time and sequence number as another packet already in the archive, it will not be stored (considered duplicate). 
 
-<pre><code>
+<pre><code class="config-file">
 CREATE TABLE tm(gentime TIMESTAMP, seqNum INT, packet BINARY, pname ENUM, PRIMARY KEY(gentime, seqNum)( HISTOGRAM(pname) PARTITION BY TIME_AND_VALUE(gentime, pname) TABLE_FORMAT=compressed
 </code></pre>
 
