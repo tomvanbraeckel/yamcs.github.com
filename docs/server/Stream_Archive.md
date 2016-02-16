@@ -12,7 +12,7 @@ The primary key is used to sort the data in the table. Yamcs uses a (key,value) 
 
 Although not enforced by Yamcs, it is usual to have the time as part of the primary key.
 
-On the basic stream archive structure, Yamcs pre-defines a few table types for storing data at higher level of abstractions
+On the basic stream archive structure, Yamcs pre-defines a few table types for storing data at higher level of abstractions. These are Packet telemetry, Events, Command history, Alarms and Parameters and are described in the next sections.
 
 ## Packet telemetry
 The below definition (created inside the XtceTmRecorder service) will create a table that uses the generation time and sequence number as primary key. That means that if a packet has the same time and sequence number as another packet already in the archive, it will not be stored (considered duplicate). 
