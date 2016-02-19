@@ -9,7 +9,7 @@ sidebar: yes
 <table class="inline">
 	<tr>
 		<th>OS</th>
-		<td>Linux or Windows, 32bit or 64bit</td>
+		<td>Linux 64bit</td>
 	</tr>
 	<tr>
 		<th>Hardware</th>
@@ -18,15 +18,7 @@ sidebar: yes
 	<tr>
 		<th>Java runtime (JRE)</th>
 		<td>&gt;= version 1.8</td>
-	</tr>
-	<tr>
-		<th>Tokyocabinet</th>
-		<td>&gt;= version 1.4</td>
-	</tr>
-	<tr>
-		<th>libjtokyocabinet</th>
-		<td>&gt;= version 1.22</td>
-	</tr>
+	</tr>	
 </table>
 
 #### Installation

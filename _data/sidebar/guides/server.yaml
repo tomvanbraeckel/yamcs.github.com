@@ -25,6 +25,11 @@
     - url: /docs/server/Alarms/
     - url: /docs/server/Commanding/
 
+- url: /docs/server/Archive/
+  items:
+    - url: /docs/server/Stream_Archive/
+    - url: /docs/server/Parameter_Archive/
+
 - url: /docs/server/Security/
   items:
     - url: /docs/server/Authentication/
