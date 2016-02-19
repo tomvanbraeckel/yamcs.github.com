@@ -97,7 +97,7 @@ Use HTTP header:
 
     Accept: application/protobuf
 
-The response if a stream of individual Protobuf messages delimited by a <tt>VarInt</tt>. Messages are of type:
+The response is a stream of individual Protobuf messages delimited by a <tt>VarInt</tt>. Messages are of type:
 
 <pre class="r header"><a href="/docs/api/yamcs.proto/">yamcs.proto</a></pre>
 {% highlight proto %}

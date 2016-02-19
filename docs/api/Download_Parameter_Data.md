@@ -65,4 +65,4 @@ Use HTTP header:
 
     Accept: application/protobuf
 
-The response if a stream of individual Protobuf messages delimited by a <tt>VarInt</tt>.
+The response is a stream of individual Protobuf messages delimited by a <tt>VarInt</tt>.

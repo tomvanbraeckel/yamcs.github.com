@@ -6,7 +6,7 @@ sidebar: yes
 
 Download multiple indexes at the same time for the given instance:
 
-    GET /api/archive/:instance/indexes/completeness
+    GET /api/archive/:instance/indexes
 
 <div class="hint">
 This operation will possibly download a very large file.
