@@ -21,11 +21,11 @@ sidebar: yes
 
 Protobuf definitions:
 
-{% highlight nginx %}
+```proto
 message AcknowledgeAlarmRequest {
    optional string message = 1;
 }
-{% endhighlight %}
+```
 
 ### Optional Parameters
 
@@ -41,11 +41,11 @@ message AcknowledgeAlarmRequest {
 The response can be deserialized as `Rest.AcknowledgeAlarmResponse`.
 Protobuf definition:
 
-{% highlight nginx %}
+```proto
 message AcknowledgeAlarmResponse {
    optional string errorMessage = 1;
 }
-{% endhighlight %}
+```
 
 ### Example
 
@@ -57,15 +57,15 @@ curl -XPOST http://localhost:8090/simulator/api/alarms/acknowledge/3/YSS/SIMULAT
 ```
 
 If you get an empty response, the acknowledge was successful:
-{% highlight json %}
+```json
 {}
-{% endhighlight %}
+```
 
 If the alarm could not be acknowledged, you get a message why that is. For instance:
-{% highlight json %}
+```json
 {
   "errorMessage" : "Parameter /YSS/SIMULATOR/O2TankTemp is not in state of alarm"
 }
-{% endhighlight %}
+```
 
 

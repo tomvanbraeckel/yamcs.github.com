@@ -61,7 +61,7 @@ The <tt>pos</tt> and <tt>limit</tt> allow for pagination. Keep in mind that in-b
 Status: 200 OK
 </pre>
 
-{% highlight json %}
+```json
 {
   "parameter" : [ {
     "id" : {
@@ -103,7 +103,7 @@ Status: 200 OK
     } ]
   } ]
 }
-{% endhighlight %}
+```
 
 ### Alternative Media Types
 
@@ -120,12 +120,12 @@ Status: 200 OK
 Content-Type: text/csv
 </pre>
 
-{% highlight text %}
+```
 Time    BatteryVoltage2
 2015-11-13T12:21:55.199 157
 2015-11-13T12:21:48.972 158
 2015-11-13T12:21:42.750 159                       
-{% endhighlight %}
+```
 
 
 #### Protobuf
@@ -137,8 +137,8 @@ Use HTTP header:
 Response if of type:
 
 <pre class="r header"><a href="/docs/api/pvalue.proto/">pvalue.proto</a></pre>
-{% highlight proto %}
+```proto
 message ParameterData {
   repeated ParameterValue parameter = 1;
 }
-{% endhighlight %}
+```

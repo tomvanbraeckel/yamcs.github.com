@@ -14,7 +14,7 @@ Get info on a specific Yamcs processor:
 <pre class="header">
 Status: 200 OK
 </pre>
-{% highlight json %}
+```json
 {
   "instance" : "simulator",
   "name" : "realtime",
@@ -28,7 +28,7 @@ Status: 200 OK
   "commandsUrl" : "http://localhost:8090/api/processors/simulator/realtime/commands{/namespace}{/name}",
   "commandQueuesUrl" : "http://localhost:8090/api/processors/simulator/realtime/cqueues{/name}"
 }
-{% endhighlight %}
+```
 
 ### Alternative Media Types
 
@@ -41,7 +41,7 @@ Use HTTP header:
 Response is of type:
 
 <pre class="r header"><a href="/docs/api/yamcsManagement.proto/">yamcsManagement.proto</a></pre>
-{% highlight proto %}
+```proto
 message ProcessorInfo {
   optional string instance = 1;
   optional string name = 2;
@@ -58,4 +58,4 @@ message ProcessorInfo {
   optional string commandsUrl = 13;
   optional string commandQueuesUrl = 14;
 }
-{% endhighlight %}
+```

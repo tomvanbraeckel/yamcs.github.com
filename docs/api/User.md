@@ -12,7 +12,7 @@ Get information on the authenticated user:
 ### Response
 
 <pre class="header">Status: 200 OK</pre>
-{% highlight json %}
+```json
 {
   "login" : "anonymous",
   "roles" : [ "admin" ],
@@ -22,7 +22,7 @@ Get information on the authenticated user:
   "tcPrivileges" : [ ".*" ],
   "systemPrivileges" : [ "MayControlYProcessor", "MayModifyCommandHistory", "MayControlCommandQueue", "MayCommandPayload", "MayGetMissionDatabase", "MayControlArchiving" ]
 }
-{% endhighlight %}
+```
 
 ### Alternative Media Types
 
@@ -35,7 +35,7 @@ Use HTTP header:
 Response is of type:
 
 <pre class="r header"><a href="/docs/api/yamcsManagement.proto/">yamcsManagement.proto</a></pre>
-{% highlight proto %}
+```proto
 message UserInfo {
   optional string login = 1;
   repeated ClientInfo clientInfo = 2;
@@ -46,4 +46,4 @@ message UserInfo {
   repeated string tcPrivileges = 7;
   repeated string systemPrivileges = 8;
 }
-{% endhighlight %}
+```

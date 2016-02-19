@@ -16,14 +16,14 @@ All operations documented in the following pages assume the default _simulator_ 
 ## Error Handling
 When an exception is caught while handling a REST request, the server will try to give some feedback to the client by wrapping it in a generic exception message like this:
 
-{% highlight json %}
+```json
 {
   "exception" : {
     "type": "<short>",
     "msg": "<long>"
   }
 }
-{% endhighlight %}
+```
 
 Clients of the REST API should check on whether the status code is `200 OK`, and if not, deserialize the response as a `RestExceptionMessage` instead.
 

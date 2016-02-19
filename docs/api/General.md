@@ -49,14 +49,14 @@ Notice as well the use of `%3A` and `+` to URL-encode `MDB:OPS Name` to the ASCI
 ### Error Handling
 When an exception is caught while handling a REST request, the server will try to give some feedback to the client by wrapping it in a generic exception message like so:
 
-{% highlight json %}
+```json
 {
   "exception" : {
     "type": "<short>",
     "msg": "<long>"
   }
 }
-{% endhighlight %}
+```
 
 Clients of the REST API should check on whether the status code is between 200 and 299, and if not, interpret the response with the above structure.
 

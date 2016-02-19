@@ -85,7 +85,7 @@ An alternative is to download the events instead.
 Status: 200 OK
 </pre>
 
-{% highlight json %}
+```json
 {
   "event" : [ {
     "source" : "AlarmChecker",
@@ -99,7 +99,7 @@ Status: 200 OK
     "receptionTimeUTC" : "2015-11-13T14:43:47.786"
   } ]
 }
-{% endhighlight %}
+```
 
 ### Alternative Media Types
 
@@ -118,12 +118,12 @@ Status: 200 OK
 Content-Type: text/csv
 </pre>
 
-{% highlight text %}
+```
 Source  Generation Time Reception Time  Event Type      Event Text
 AlarmChecker    2015-11-13T14:46:36.029 2015-11-13T14:46:36.029 IN_LIMITS       Parameter /YSS/SIMULATOR/BatteryVoltage2 has changed to value 195
 AlarmChecker    2015-11-13T14:46:29.784 2015-11-13T14:46:29.784 IN_LIMITS       Parameter /YSS/SIMULATOR/BatteryVoltage2 has changed to value 196
 AlarmChecker    2015-11-13T14:46:23.571 2015-11-13T14:46:23.571 IN_LIMITS       Parameter /YSS/SIMULATOR/BatteryVoltage2 has changed to value 197
-{% endhighlight %}
+```
 
 #### Protobuf
 
@@ -134,8 +134,8 @@ Use HTTP header:
 Responses are of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight proto %}
+```proto
 message ListEventsResponse {
   repeated yamcs.Event event = 1;
 }
-{% endhighlight %}
+```

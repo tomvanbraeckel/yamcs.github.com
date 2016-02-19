@@ -23,20 +23,20 @@ Retrieve multiple parameters values.
 
 Protobuf definitions:
 
-{% highlight nginx %}
+```proto
 message RestGetParameterRequest {
     repeated yamcs.NamedObjectId list=1;
     optional bool fromCache=2;
     optional uint64 timeout=3; //if not from cache, wait this time (in milliseconds) to receive the parameter
 }
-{% endhighlight %}
+```
 
-{% highlight nginx %}
+```proto
 message NamedObjectId {
   required string name=1;
   optional string namespace=2; 
 }
-{% endhighlight %}
+```
 
 ### Optional Parameters
 
@@ -59,7 +59,7 @@ Response is of type `pvalue.ParameterData`.
 
 Protobuf definitions:
 
-{% highlight nginx %}
+```proto
 message ParameterData {
     repeated ParameterValue parameter=1;
 
@@ -70,10 +70,10 @@ message ParameterData {
     optional int64  generationTime = 3;
     optional int32 seqNum = 4;
 }
-{% endhighlight %}
+```
 
 
-{% highlight nginx %}
+```proto
 message ParameterValue {
     optional yamcs.NamedObjectId id=1;
   	optional yamcs.Value rawValue=2;
@@ -102,9 +102,9 @@ message ParameterValue {
     optional int64 expirationTime = 23;
     optional string expirationTimeUTC = 24;
 }
-{% endhighlight %}
+```
 
-{% highlight nginx %}
+```proto
 message Value {
     enum Type {
         FLOAT = 0;
@@ -130,19 +130,19 @@ message Value {
     optional sint64        sint64Value=10;
     optional bool          booleanValue=11;
 }
-{% endhighlight %}
+```
 
-{% highlight nginx %}
+```proto
 enum AcquisitionStatus {
       ACQUIRED=0; //OK!
       NOT_RECEIVED=1; //no value received so far
       INVALID=2; //some value has been received but is invalid
       EXPIRED=3; //the parameter is coming from a packet which has not since updated although it should have been
 };
-{% endhighlight %}
+```
 
 
-{% highlight nginx %}
+```proto
 enum MonitoringResult {
       DISABLED=0;
       IN_LIMITS=1;
@@ -167,7 +167,7 @@ enum MonitoringResult {
       SEVERE_LOW=20;
       SEVERE_HIGH=21;
 }
-{% endhighlight %}
+```
 
 
 ### Example
@@ -183,7 +183,7 @@ curl -XGET http://localhost:8090/simulator/api/parameter/_get?pretty -d '
   }'
 ```
 
-{% highlight json %}
+```json
 {
   "parameter" : [ {
     "id" : {
@@ -244,4 +244,4 @@ curl -XGET http://localhost:8090/simulator/api/parameter/_get?pretty -d '
     "generationTimeUTC" : "2015-04-23T14:30:46.242"
   } ]
 }
-{% endhighlight %}
+```

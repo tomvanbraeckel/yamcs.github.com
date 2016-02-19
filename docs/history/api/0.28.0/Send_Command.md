@@ -23,27 +23,27 @@ Clients are required to specify a unique `sequenceNumber` for every command. The
 
 Protobuf definitions:
 
-{% highlight nginx %}
+```proto
 message RestSendCommandRequest {
   repeated RestCommandType commands=1;
 }
-{% endhighlight %}
+```
 
-{% highlight nginx %}
+```proto
 message RestCommandType {
   optional string origin=1;
   optional int32 sequenceNumber=2;
   optional yamcs.NamedObjectId id=3;
   repeated RestArgumentType arguments=4;
 }
-{% endhighlight %}
+```
 
-{% highlight nginx %}
+```proto
 message RestArgumentType {
   optional string name=1;
   optional string value=2;
 }
-{% endhighlight %}
+```
 
 ### Optional Parameters
 

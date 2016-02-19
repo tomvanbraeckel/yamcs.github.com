@@ -12,7 +12,7 @@ Return the data for the given parameter:
 ### Response
 
 <pre class="header">Status: 200 OK</pre>
-{% highlight json %}
+```json
 {
   "name": "BatteryVoltage2",
   "qualifiedName" : "/YSS/SIMULATOR/BatteryVoltage2",
@@ -30,7 +30,7 @@ Return the data for the given parameter:
   "dataSource" : "TELEMETERED",
   "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/SIMULATOR/BatteryVoltage2"
 }
-{% endhighlight %}
+```
 
 
 ### Bulk
@@ -41,7 +41,7 @@ Combine multiple parameter queries in one and the same request using this addres
     
 Specify the parameter IDs in the request body:
 
-{% highlight json %}
+```json
 {
   "id" : [ {
     "name": "YSS_ccsds-apid",
@@ -51,13 +51,13 @@ Specify the parameter IDs in the request body:
     "namespace": "MDB:OPS Name"
   } ]
 }
-{% endhighlight %}
+```
 
 POST requests are also allowed, because some HTTP clients do not support GET with a request body.
 
 In the response the requested parameter ID is returned for every match. Example:
 
-{% highlight json %}
+```json
 {
   "response" : [ {
     "id" : {
@@ -83,7 +83,7 @@ In the response the requested parameter ID is returned for every match. Example:
     }
   } ]
 }
-{% endhighlight %} 
+``` 
 
 
 ### Alternative Media Types
@@ -98,7 +98,7 @@ Use these HTTP headers:
 Response is of type:
 
 <pre class="r header"><a href="/docs/api/mdb.proto/">mdb.proto</a></pre>
-{% highlight proto %}
+```proto
 message ParameterInfo {
   optional string name = 1;
   optional string qualifiedName = 2;
@@ -109,21 +109,21 @@ message ParameterInfo {
   optional DataSourceType dataSource = 7;
   optional string url = 8;
 }
-{% endhighlight %}
+```
 
 Bulk request is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight proto %}
+```proto
 message BulkGetParameterRequest {
   repeated yamcs.NamedObjectId id = 1;
 }
-{% endhighlight %}
+```
 
 Bulk response is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight proto %}
+```proto
 message BulkGetParameterResponse {
   message GetParameterResponse {
     optional yamcs.NamedObjectId id = 1;
@@ -132,4 +132,4 @@ message BulkGetParameterResponse {
 
   repeated GetParameterResponse response = 1;
 }
-{% endhighlight %}
+```

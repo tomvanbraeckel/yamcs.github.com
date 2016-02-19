@@ -42,7 +42,7 @@ The `q` parameter supports searching on namespace or name. For example:
 ### Response
 
 <pre class="header">Status: 200 OK</pre>
-{% highlight json %}
+```json
 {
   "command" : [ {
     "name": "SWITCH_VOLTAGE_ON",
@@ -75,7 +75,7 @@ The `q` parameter supports searching on namespace or name. For example:
     "url" : "http://localhost:8090/api/mdb/simulator/commands/YSS/SIMULATOR/SWITCH_VOLTAGE_ON"
   } ]
 }
-{% endhighlight %}
+```
 
 
 ### Alternative Media Types
@@ -90,8 +90,8 @@ Response is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 
-{% highlight proto %}
+```proto
 message ListCommandInfoResponse {
   repeated mdb.CommandInfo command = 1;
 }
-{% endhighlight %}
+```

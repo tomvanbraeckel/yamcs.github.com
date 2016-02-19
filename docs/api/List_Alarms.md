@@ -58,7 +58,7 @@ For each alarm you get full information on the value occurrence that initially t
 ### Example
 
 <pre class="header">Status: 200 OK</pre>
-{% highlight json %}
+```json
 {
   "alarm" : [ {
     "seqNum" : 1,
@@ -178,7 +178,7 @@ For each alarm you get full information on the value occurrence that initially t
     }
   } ]
 }
-{% endhighlight %}
+```
 
 ### Alternative Media Types
 
@@ -191,8 +191,8 @@ Use HTTP header:
 Response is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight proto %}
+```proto
 message ListAlarmsResponse {
   repeated alarms.AlarmData alarm = 1;
 }
-{% endhighlight %}
+```

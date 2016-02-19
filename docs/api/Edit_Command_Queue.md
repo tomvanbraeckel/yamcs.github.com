@@ -30,16 +30,16 @@ The same parameters can also be specified in the request body. In case both quer
 
 Block a queue:
 
-{% highlight json %}
+```json
 {
   "state" : "blocked"
 }
-{% endhighlight %}
+```
 
 The response contains the updated queue information:
 
 <pre class="header">Status: 200 OK</pre>
-{% highlight json %}
+```json
 {
   "instance" : "simulator",
   "processorName" : "realtime",
@@ -49,7 +49,7 @@ The response contains the updated queue information:
   "nbRejectedCommands" : 0,
   "url" : "http://localhost:8090/api/processors/simulator/realtime/cqueues/default"
 }
-{% endhighlight %}
+```
 
 ### Alternative Media Types
 
@@ -63,16 +63,16 @@ Use these HTTP headers:
 Request is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight proto %}
+```proto
 message EditCommandQueueRequest {
   optional string state = 1;
 }
-{% endhighlight %}
+```
 
 Response is of type:
 
 <pre class="r header"><a href="/docs/api/commanding.proto/">commanding.proto</a></pre>
-{% highlight proto %}
+```proto
 message CommandQueueInfo {
   required string instance = 1;
   required string processorName = 2;
@@ -84,4 +84,4 @@ message CommandQueueInfo {
   repeated CommandQueueEntry entry = 8;
   optional string url = 9;
 }
-{% endhighlight %}
+```

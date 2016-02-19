@@ -12,7 +12,7 @@ Return the data for the given container:
 ### Response
 
 <pre class="header">Status: 200 OK</pre>
-{% highlight json %}
+```json
 {
   "name": "DHS",
   "qualifiedName" : "/YSS/SIMULATOR/DHS",
@@ -157,7 +157,7 @@ Return the data for the given container:
   } ],
   "url" : "http://localhost:8090/api/mdb/simulator/containers/YSS/SIMULATOR/DHS"
 }
-{% endhighlight %}
+```
 
 
 ### Alternative Media Types
@@ -171,7 +171,7 @@ Use HTTP header:
 Response is of type:
 
 <pre class="r header"><a href="/docs/api/mdb.proto/">mdb.proto</a></pre>
-{% highlight proto %}
+```proto
 message ContainerInfo {
   optional string name = 1;
   optional string qualifiedName = 2;
@@ -185,4 +185,4 @@ message ContainerInfo {
   repeated SequenceEntryInfo entry = 10;
   optional string url = 11;
 }
-{% endhighlight %}
+```

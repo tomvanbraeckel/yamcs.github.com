@@ -12,7 +12,7 @@ List all command queues for the given processor:
 ### Response
 
 <pre class="header">Status: 200 OK</pre>
-{% highlight json %}
+```json
 {
   "queue" : [ {
     "instance" : "simulator",
@@ -24,7 +24,7 @@ List all command queues for the given processor:
     "url" : "http://localhost:8090/api/processors/simulator/realtime/queues/default"
   } ]
 }
-{% endhighlight %}
+```
 
 
 ### Alternative Media Types
@@ -38,8 +38,8 @@ Use HTTP header:
 Response is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight proto %}
+```proto
 message ListCommandQueuesResponse {
   repeated commanding.CommandQueueInfo queue = 1;
 }
-{% endhighlight %}
+```

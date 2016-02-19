@@ -50,12 +50,12 @@ The same parameters can also be specified in the request body. In case both quer
 
 Change the color, and the description:
 
-{% highlight json %}
+```json
 {
   "color" : "#00ff00",
   "description": "a sample description"
 }
-{% endhighlight %}
+```
 
 
 ### Alternative Media Types
@@ -70,7 +70,7 @@ Use these HTTP headers:
 Request is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight proto %}
+```proto
 message EditTagRequest {
   optional string name = 1;
   optional string start = 2;
@@ -78,4 +78,4 @@ message EditTagRequest {
   optional string description = 4;
   optional string color = 5;
 }
-{% endhighlight %}
+```

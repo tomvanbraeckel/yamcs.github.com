@@ -12,7 +12,7 @@ Get data on a Yamcs instance:
 ### Response
 
 <pre class="header">Status: 200 OK</pre>
-{% highlight json %}
+```json
 {
   "name" : "simulator",
   "missionDatabase" : {
@@ -49,7 +49,7 @@ Get data on a Yamcs instance:
   "clientsUrl" : "http://localhost:8090/api/instances/simulator{/processor}/clients",
   "eventsUrl" : "http://localhost:8090/api/instances/simulator{/processor}/events"
 }
-{% endhighlight %}
+```
 
 If an instance does not have web services enabled, it will be listed among the results, but none of its URLs will be filled in.
 
@@ -65,7 +65,7 @@ Response is of type:
 
 <pre class="r header"><a href="/docs/api/yamcsManagement.proto/">yamcsManagement.proto</a></pre>
 
-{% highlight proto %}
+```proto
 message YamcsInstance {
   required string name = 1;
   optional MissionDatabase missionDatabase = 3;
@@ -75,4 +75,4 @@ message YamcsInstance {
   optional string commandQueuesUrl = 7;
   optional string eventsUrl = 8;
 }
-{% endhighlight %}
+```

@@ -12,7 +12,7 @@ List all queued command entries for the given command queue:
 ### Response
 
 <pre class="header">Status: 200 OK</pre>
-{% highlight json %}
+```json
 {
   "entry" : [ {
     "instance" : "simulator",
@@ -31,7 +31,7 @@ List all queued command entries for the given command queue:
     "uuid" : "3e867111-048a-4343-b195-47ba07d07093"
   } ]
 }
-{% endhighlight %}
+```
 
 
 ### Alternative Media Types
@@ -45,8 +45,8 @@ Use HTTP header:
 Response is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight proto %}
+```proto
 message ListCommandQueueEntries {
   repeated commanding.CommandQueueEntry entry = 1;
 }
-{% endhighlight %}
+```

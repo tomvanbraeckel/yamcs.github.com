@@ -16,7 +16,7 @@ List all links for the given Yamcs instance:
 ### Response
 
 <pre class="header">Status: 200 OK</pre>
-{% highlight json %}
+```json
 {
   "link" : [ {
     "instance" : "simulator",
@@ -30,7 +30,7 @@ List all links for the given Yamcs instance:
     "detailedStatus" : "reading files from /storage/yamcs-incoming/simulator/tm"
   } ]
 }
-{% endhighlight %}
+```
 
 
 ### Alternative Media Types
@@ -44,8 +44,8 @@ Use HTTP header:
 Response is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight proto %}
+```proto
 message ListLinkInfoResponse {
   repeated yamcsManagement.LinkInfo link = 1;
 }
-{% endhighlight %}
+```

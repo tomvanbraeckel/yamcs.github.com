@@ -26,8 +26,8 @@ Return the entire dump of the mission database. This is a very bad method which 
 curl -XGET http://localhost:8090/simulator/api/mdb/dump?pretty
 ```
 
-{% highlight json %}
+```json
 {
   "rawMdb": "<blob encoded as Base64>"
 }
-{% endhighlight %}
+```

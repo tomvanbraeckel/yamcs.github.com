@@ -12,7 +12,7 @@ Get data on a specific link for the given Yamcs instance:
 ### Response
 
 <pre class="header">Status: 200 OK</pre>
-{% highlight json %}
+```json
 {
   "instance" : "simulator",
   "name" : "tm1",
@@ -24,7 +24,7 @@ Get data on a specific link for the given Yamcs instance:
   "dataCount" : 34598,
   "detailedStatus" : "reading files from /storage/yamcs-incoming/simulator/tm"
 }
-{% endhighlight %}
+```
 
 ### Alternative Media Types
 
@@ -37,7 +37,7 @@ Use HTTP header:
 Response is of type:
 
 <pre class="r header"><a href="/docs/api/yamcsManagement.proto/">yamcsManagement.proto</a></pre>
-{% highlight proto %}
+```proto
 message LinkInfo {
   required string instance = 1;
   required string name = 2;
@@ -49,4 +49,4 @@ message LinkInfo {
   optional int64 dataCount = 8;
   optional string detailedStatus = 9;
 }
-{% endhighlight %}
+```

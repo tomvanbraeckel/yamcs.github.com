@@ -20,18 +20,18 @@ sidebar: yes
 
 Protobuf definitions:
 
-{% highlight nginx %}
+```proto
 message RestGetParameterInfoRequest {
     repeated yamcs.NamedObjectId list = 1;
 }
-{% endhighlight %}
+```
 
-{% highlight nginx %}
+```proto
 message NamedObjectId {
   required string name=1;
   optional string namespace=2; 
 }
-{% endhighlight %}
+```
 
 ### Optional Parameters
 
@@ -47,61 +47,61 @@ Response is of type `Rest.RestGetParameterInfoResponse`.
 
 Protobuf definitions:
 
-{% highlight nginx %}
+```proto
 message RestGetParameterInfoResponse {
     repeated RestParameterInfo pinfo = 1;
 }
-{% endhighlight %}
+```
 
-{% highlight nginx %}
+```proto
 message RestParameterInfo {
     optional yamcs.NamedObjectId id = 1;
     optional RestNameDescription description = 2;
     optional RestParameterType type = 3;
     optional string dataSource = 4;
 }
-{% endhighlight %}
+```
 
-{% highlight nginx %}
+```proto
 message RestNameDescription {
     optional string qualifiedName = 1;
     optional string shortDescription = 2;
     optional string longDescription = 3;
     repeated yamcs.NamedObjectId aliases = 4;
 }
-{% endhighlight %}
+```
 
 
-{% highlight nginx %}
+```proto
 message RestParameterType {
     optional string engType = 1;
     optional string dataEncoding =2; //TODO
     repeated RestUnitType unitSet = 3; 
     optional RestAlarmInfo defaultAlarm = 4;
 }
-{% endhighlight %}
+```
 
-{% highlight nginx %}
+```proto
 message RestUnitType {
    optional string unit = 1;
 }
-{% endhighlight %}
+```
 
-{% highlight nginx %}
+```proto
 message RestAlarmInfo {
     optional int32 minViolations = 1;
     repeated RestAlarmRange staticAlarmRanges = 2;
 }
-{% endhighlight %}
+```
 
-{% highlight nginx %}
+```proto
 message RestAlarmRange {
    optional RestAlarmLevel level = 1; 
    optional double minInclusive = 2;
    optional double maxInclusive = 3; 
    optional string enumerationValue = 4;
 }
-{% endhighlight %}
+```
 
 
 ### Example

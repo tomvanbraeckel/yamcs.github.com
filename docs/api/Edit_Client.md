@@ -30,11 +30,11 @@ The same parameters can also be specified in the request body. In case both quer
 
 Update the client's processor to <tt>replay123</tt>:
 
-{% highlight json %}
+```json
 {
   "processor" : "replay123"
 }
-{% endhighlight %}
+```
 
 ### Alternative Media Types
 
@@ -48,8 +48,8 @@ Use these HTTP headers:
 Request is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight proto %}
+```proto
 message EditClientRequest {
   optional string processor = 1;
 }
-{% endhighlight %}
+```

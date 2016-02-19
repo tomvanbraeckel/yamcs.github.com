@@ -20,27 +20,27 @@ sidebar: yes
 
 Protobuf definitions:
 
-{% highlight nginx %}
+```proto
 message RestValidateCommandRequest {
   repeated RestCommandType commands=1;
 }
-{% endhighlight %}
+```
 
-{% highlight nginx %}
+```proto
 message RestCommandType {
   optional string origin=1;
   optional int32 sequenceNumber=2;
   optional yamcs.NamedObjectId id=3;
   repeated RestArgumentType arguments=4;
 }
-{% endhighlight %}
+```
 
-{% highlight nginx %}
+```proto
 message RestArgumentType {
   optional string name=1;
   optional string value=2;
 }
-{% endhighlight %}
+```
 
 
 ### Optional Parameters
@@ -58,13 +58,13 @@ If the command has a significance, a response is sent with type `Rest.RestValida
 
 Protobuf definitions:
 
-{% highlight nginx %}
+```proto
 message RestValidateCommandResponse {
   repeated commanding.CommandSignificance commandsSignificance = 1;
 }
-{% endhighlight %}
+```
 
-{% highlight nginx %}
+```proto
 /* this message is sent as response to validate, in case the significance is defined for a commands*/
 message CommandSignificance {
     enum Level {
@@ -79,7 +79,7 @@ message CommandSignificance {
    required Level consequenceLevel = 2;
    optional string reasonForWarning = 3;
 }
-{% endhighlight %}
+```
 
 
 ### Example
@@ -96,12 +96,12 @@ curl -XGET http://localhost:8090/simulator/api/commanding/validator?pretty -d '
   }'
 ```
 
-{% highlight json %}
+```json
 {
   "exception" : {
     "type" : "BadRequestException",
     "msg" : "Cannot assign value to voltage_num: Value 5 is not in the range required for the type IntegerDataType name:voltage_num sizeInBits:32 signed: false, validRange: [1,3], encoding: IntegerDataEncoding(sizeInBits:8, encoding:unsigned, defaultCalibrator:null byteOrder:BIG_ENDIAN)"
   }
 }
-{% endhighlight %}
+```
 

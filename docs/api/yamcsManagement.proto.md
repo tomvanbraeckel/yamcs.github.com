@@ -4,6 +4,6 @@ permalink: /docs/api/yamcsManagement.proto/
 sidebar: yes
 ---
 
-{% highlight proto %}
+```proto
 {% include api/yamcsManagement.proto %}
-{% endhighlight %}
+```

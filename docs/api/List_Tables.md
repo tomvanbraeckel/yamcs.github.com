@@ -19,7 +19,7 @@ List all tables for the given instance:
 Status: 200 OK
 </pre>
 
-{% highlight json %}
+```json
 {
   "table" : [ {
     "name" : "tm",
@@ -42,7 +42,7 @@ Status: 200 OK
     } ]
   } ]
 }
-{% endhighlight %}
+```
 
 Note that this will only list the fixed columns of the table. Tuples may always add extra value columns.
 
@@ -57,8 +57,8 @@ Use HTTP header:
 Response is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight proto %}
+```proto
 message ListTablesResponse {
   repeated archive.TableInfo table = 1;
 }
-{% endhighlight %}
+```

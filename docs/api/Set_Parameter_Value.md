@@ -11,12 +11,12 @@ Parameters are usually read-only. But software parameters can be updated:
 
 ### Example
 
-{% highlight json %}
+```json
 {
   "type" : "UINT32",
   "uint32Value" : 123
 }
-{% endhighlight %}
+```
 
 ### Multi-set
 
@@ -24,7 +24,7 @@ To update multiple parameters at once, send a request to this address:
 
     POST /api/processors/:instance/:processor/parameters/mset
     
-{% highlight json %}
+```json
 {
   "request" : [ {
     "id": {
@@ -36,7 +36,7 @@ To update multiple parameters at once, send a request to this address:
     }
   } ]
 }
-{% endhighlight %}
+```
 
 ### Alternative Media Types
 
@@ -50,7 +50,7 @@ Use these HTTP headers:
 Request is of type:
 
 <pre class="r header"><a href="/docs/api/yamcs.proto/">yamcs.proto</a></pre>
-{% highlight proto %}
+```proto
 message Value {
   enum Type {
     FLOAT = 0;
@@ -76,12 +76,12 @@ message Value {
   optional sint64 sint64Value = 10;
   optional bool booleanValue = 11;
 }
-{% endhighlight %}
+```
 
 Bulk request is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight proto %}
+```proto
 message BulkSetParameterValueRequest {
   message SetParameterValueRequest {
     optional yamcs.NamedObjectId id = 1;
@@ -89,4 +89,4 @@ message BulkSetParameterValueRequest {
   }
   repeated SetParameterValueRequest request = 1;
 }
-{% endhighlight %}
+```

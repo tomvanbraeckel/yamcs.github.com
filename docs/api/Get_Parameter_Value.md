@@ -33,7 +33,7 @@ Retrieves the current value of the specified parameter.
 ### Response
 
 <pre class="header">Status: 200 OK</pre>
-{% highlight json %}
+```json
 {
   "id" : {
     "name" : "BatteryVoltage2",
@@ -56,7 +56,7 @@ Retrieves the current value of the specified parameter.
   "expirationTime" : 1445940428269,
   "expirationTimeUTC" : "2015-10-27T10:06:32.269"
 }
-{% endhighlight %}
+```
 
 ### Multi-get
 
@@ -66,7 +66,7 @@ Get the values of multiple parameters in one and the same request using this add
 
 The same options as in the query string can be specified in the request body. Parameter IDs are added to a list: 
 
-{% highlight json %}
+```json
 {
   "fromCache" : false,
   "timeout" : 15000,
@@ -77,13 +77,13 @@ The same options as in the query string can be specified in the request body. Pa
     "name": "/YSS/SIMULATOR/BatteryVoltage2"
   } ]
 }
-{% endhighlight %}
+```
 
 POST requests are also allowed, because some HTTP clients do not support GET with a request body.
 
 The response is a list of parameter values:
 
-{% highlight json %}
+```json
 {
   "value" : [ {
     "id" : {
@@ -107,7 +107,7 @@ The response is a list of parameter values:
     "expirationTimeUTC" : "2015-10-27T11:12:44.466"
   } ]
 }
-{% endhighlight %}
+```
 
 
 ### Protobuf
@@ -115,7 +115,7 @@ The response is a list of parameter values:
 #### Response
 
 <pre class="r header"><a href="/docs/api/pvalue.proto/">pvalue.proto</a></pre>
-{% highlight proto %}
+```proto
 message ParameterValue {
   optional yamcs.NamedObjectId id = 1;
   optional yamcs.Value rawValue = 2;
@@ -134,24 +134,24 @@ message ParameterValue {
 
   repeated mdb.AlarmRange alarmRange = 25;
 }
-{% endhighlight %}
+```
 
 #### Bulk Request
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight proto %}
+```proto
 message BulkGetParameterValueRequest {
   repeated yamcs.NamedObjectId id = 1;
   optional bool fromCache = 2;
   optional uint64 timeout = 3; //if not fromCache, wait this time (in milliseconds) to receive the parameter
 }
-{% endhighlight %}
+```
 
 #### Bulk Response
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight proto %}
+```proto
 message BulkGetParameterValueResponse {
   repeated pvalue.ParameterValue value = 1;
 }
-{% endhighlight %}
+```

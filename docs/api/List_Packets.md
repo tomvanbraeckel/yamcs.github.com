@@ -80,7 +80,7 @@ An alternative is to download the packets instead.
 Status: 200 OK
 </pre>
 
-{% highlight json %}
+```json
 { 
   "packet" : [ {
     "receptionTime" : 1447625895283,
@@ -89,7 +89,7 @@ Status: 200 OK
     "sequenceNumber" : 134283264
   } ] 
 }
-{% endhighlight %}
+```
 
 
 ### Alternative Media Types
@@ -103,8 +103,8 @@ Use HTTP header:
 Response is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight proto %}
+```proto
 message ListPacketsResponse {
   repeated yamcs.TmPacketData packet = 1;
 }
-{% endhighlight %}
+```

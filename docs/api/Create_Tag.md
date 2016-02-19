@@ -49,13 +49,13 @@ Create a tag for the given archive instance:
 
 Create a red tag covering January 1st 2015, onwards:
 
-{% highlight json %}
+```json
 {
   "name" : "My archive annotation",
   "start" : "2015-01-01T00:00:00.000",
   "color" : "#ff0000"
 }
-{% endhighlight %}
+```
 
 
 ### Alternative Media Types
@@ -70,7 +70,7 @@ Use these HTTP headers:
 Request is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight proto %}
+```proto
 message CreateTagRequest {
   optional string name = 1;
   optional string start = 2;
@@ -78,4 +78,4 @@ message CreateTagRequest {
   optional string description = 4;
   optional string color = 5;
 }
-{% endhighlight %}
+```

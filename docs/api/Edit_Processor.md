@@ -47,28 +47,28 @@ The same parameters can also be specified in the request body. In case both quer
 
 Pause the processor:
 
-{% highlight json %}
+```json
 {
   "state" : "PAUSED"
 }
-{% endhighlight %}
+```
 
 Resume the processor, and set speed to 2.5x:
 
-{% highlight json %}
+```json
 {
   "state" : "RUNNING",
   "speed" : "2.5x"
 }
-{% endhighlight %}
+```
 
 Make processor move according to original speed:
 
-{% highlight json %}
+```json
 {
   "speed" : "1x"
 }
-{% endhighlight %}
+```
 
 Notice that the speed value must be encoded as a string to keep our parser happy.
 
@@ -85,10 +85,10 @@ Use these HTTP headers:
 Request is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight proto %}
+```proto
 message EditProcessorRequest {
   optional string state = 1;
   optional string seek = 2;
   optional string speed = 3;
 }
-{% endhighlight %}
+```

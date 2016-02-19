@@ -20,11 +20,11 @@ sidebar: yes
 
 Protobuf definitions:
 
-{% highlight nginx %}
+```proto
 message RestListAvailableParametersRequest {
   repeated string namespaces=1; // if not available, all the namespaces
 }
-{% endhighlight %}
+```
 
 ### Optional Parameters
 
@@ -37,42 +37,42 @@ message RestListAvailableParametersRequest {
 
 Protobuf definitions:
 
-{% highlight nginx %}
+```proto
 message RestListAvailableParametersResponse {
   repeated RestParameter parameters=1;
 }
-{% endhighlight %}
+```
 
-{% highlight nginx %}
+```proto
 message RestParameterType {
     optional string engType = 1;
     optional string dataEncoding =2; //TODO
     repeated RestUnitType unitSet = 3; 
     optional RestAlarmInfo defaultAlarm = 4;
 }
-{% endhighlight %}
+```
 
-{% highlight nginx %}
+```proto
 message RestUnitType {
    optional string unit = 1;
 }
-{% endhighlight %}
+```
 
-{% highlight nginx %}
+```proto
 message RestAlarmInfo {
     optional int32 minViolations = 1;
     repeated RestAlarmRange staticAlarmRanges = 2;
 }
-{% endhighlight %}
+```
 
-{% highlight nginx %}
+```proto
 message RestAlarmRange {
    optional RestAlarmLevel level = 1; 
    optional double minInclusive = 2;
    optional double maxInclusive = 3; 
    optional string enumerationValue = 4;
 }
-{% endhighlight %}
+```
 
 ### Example
 
@@ -82,7 +82,7 @@ Retrieve qualified parameter names:
 curl -XGET http://localhost:8090/simulator/api/mdb/parameters?pretty
 ```
 
-{% highlight json %}
+```json
 {
   "ids" : [ {
     "name": "/YSS/SIMULATOR/ccsds-apid",
@@ -90,7 +90,7 @@ curl -XGET http://localhost:8090/simulator/api/mdb/parameters?pretty
     "name": "/YSS/SIMULATOR/packet-type",
   } ]
 }
-{% endhighlight %}
+```
 
 
 
@@ -102,13 +102,13 @@ curl -XGET http://localhost:8090/simulator/api/mdb/parameters?pretty -d '{
 }'
 ```
 
-{% highlight json %}
+```json
 {
   "ids" : [ {
     "name": "SIMULATOR_ccsds-apid",
     "namespace": "MDB:OPS Name"
   } ]
 }
-{% endhighlight %}
+```
 
 

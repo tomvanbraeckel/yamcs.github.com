@@ -30,19 +30,19 @@ The same parameters can also be specified in the request body. In case both quer
 
 Enable a link:
 
-{% highlight json %}
+```json
 {
   "state" : "enabled"
 }
-{% endhighlight %}
+```
 
 Disable a link:
 
-{% highlight json %}
+```json
 {
   "state" : "disabled"
 }
-{% endhighlight %}
+```
 
 ### Alternative Media Types
 
@@ -56,8 +56,8 @@ Use these HTTP headers:
 Request is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight proto %}
+```proto
 message EditLinkRequest {
   optional string state = 1;
 }
-{% endhighlight %}
+```

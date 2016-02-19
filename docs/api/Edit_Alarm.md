@@ -28,12 +28,12 @@ sidebar: yes
 
 ### Example
 
-{% highlight json %}
+```json
 {
   "state": "acknowledged",
   "comment": "bla bla"
 }
-{% endhighlight %}
+```
 
 
 ### Alternative Media Types
@@ -48,9 +48,9 @@ Use these HTTP headers:
 Request is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight proto %}
+```proto
 message EditAlarmRequest {
   optional string state = 1;
   optional string comment = 2;
 }
-{% endhighlight %}
+```

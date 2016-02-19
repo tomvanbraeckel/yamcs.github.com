@@ -18,7 +18,7 @@ Get info on a Yamcs table:
 <pre class="header">
 Status: 200 OK
 </pre>
-{% highlight json %}
+```json
 {
   "name" : "tm",
   "keyColumn" : [ {
@@ -39,7 +39,7 @@ Status: 200 OK
     "type" : "ENUM"
   } ]
 }
-{% endhighlight %}
+```
 
 ### Alternative Media Types
 
@@ -52,10 +52,10 @@ Use HTTP header:
 Response is of type:
 
 <pre class="r header"><a href="/docs/api/archive.proto/">archive.proto</a></pre>
-{% highlight proto %}
+```proto
 message TableInfo {
   optional string name = 1;
   repeated ColumnInfo keyColumn = 2;
   repeated ColumnInfo valueColumn = 3;
 }
-{% endhighlight %}
+```

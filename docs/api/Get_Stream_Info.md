@@ -17,7 +17,7 @@ Get info on a Yamcs stream:
 <pre class="header">
 Status: 200 OK
 </pre>
-{% highlight json %}
+```json
 {
   "name" : "tm_realtime",
   "column" : [ {
@@ -34,7 +34,7 @@ Status: 200 OK
     "type" : "BINARY"
   } ]
 }
-{% endhighlight %}
+```
 
 ### Alternative Media Types
 
@@ -47,9 +47,9 @@ Use HTTP header:
 Response if of type:
 
 <pre class="r header"><a href="/docs/api/archive.proto/">archive.proto</a></pre>
-{% highlight proto %}
+```proto
 message StreamInfo {
   optional string name = 1;
   repeated ColumnInfo column = 2;
 }
-{% endhighlight %}
+```

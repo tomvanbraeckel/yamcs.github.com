@@ -102,7 +102,7 @@ The criteria <tt>paraname</tt>, <tt>ppgroup</tt>, <tt>packetname</tt> and <tt>cm
 
 Replay everything except PPs as of January 1st 2015 at 4.5x the original speed, and add client 12 to the replay:
 
-{% highlight json %}
+```json
 {
   "name" : "A sample processor",
   "start" : "2015-01-01T00:00:00.000",
@@ -112,11 +112,11 @@ Replay everything except PPs as of January 1st 2015 at 4.5x the original speed, 
   "packetname": [ "*" ],
   "cmdhist": true
 }
-{% endhighlight %}
+```
 
 Replay parameters directly under <tt>/GC</tt> or anywhere under <tt>/YSS</tt> at a fixed delay of 1 second, and switch client 12 to this replay processor:
 
-{% highlight json %}
+```json
 {
   "name" : "A lighter processor",
   "start" : "2015-01-01T00:00:00.000",
@@ -124,7 +124,7 @@ Replay parameters directly under <tt>/GC</tt> or anywhere under <tt>/YSS</tt> at
   "speed": "1000",
   "paraname": [ "/YSS/*", "/GC" ]
 }
-{% endhighlight %}
+```
 
 Notice how the speed value must always be encoded as a string to keep our parser happy.
 
@@ -141,7 +141,7 @@ Use these HTTP headers:
 Request is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight proto %}
+```proto
 message CreateProcessorRequest {
   optional string name = 1;
   optional string start = 2;
@@ -155,4 +155,4 @@ message CreateProcessorRequest {
   optional bool cmdhist = 10;
   optional bool persistent = 11;
 }
-{% endhighlight %}
+```

@@ -30,11 +30,11 @@ The same parameters can also be specified in the request body. In case both quer
 
 Release an entry:
 
-{% highlight json %}
+```json
 {
   "state" : "released"
 }
-{% endhighlight %}
+```
 
 ### Alternative Media Types
 
@@ -48,8 +48,8 @@ Use these HTTP headers:
 Request is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight proto %}
+```proto
 message EditCommandQueueEntryRequest {
   optional string state = 1;
 }
-{% endhighlight %}
+```

@@ -38,7 +38,7 @@ Sample the history of values for the specified parameter:
 ### Response
 
 <pre class="header">Status: 200 OK</pre>
-{% highlight json %}
+```json
 {
   "sample" : [ {
     "time" : "2015-11-11T09:11:37.626",
@@ -48,7 +48,7 @@ Sample the history of values for the specified parameter:
     "n" : 98
   } ]
 }
-{% endhighlight %}
+```
 
 ### Alternative Media Types
 
@@ -61,7 +61,7 @@ Use HTTP header:
 Response is of type:
 
 <pre class="r header"><a href="/docs/api/pvalue.proto/">pvalue.proto</a></pre>
-{% highlight proto %}
+```proto
 message TimeSeries {
   message Sample {
     optional string time = 1;
@@ -73,4 +73,4 @@ message TimeSeries {
 
   repeated Sample sample = 1;
 }
-{% endhighlight %}
+```

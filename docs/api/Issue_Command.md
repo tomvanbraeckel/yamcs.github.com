@@ -47,7 +47,7 @@ After validating the input parameters, the command will be added to the appropri
 
 ### Example
 
-{% highlight json %}
+```json
 {
   "sequenceNumber" : 1,
   "origin" : "user@my-machine",
@@ -57,19 +57,19 @@ After validating the input parameters, the command will be added to the appropri
   } ],
   "dryRun" : true
 }
-{% endhighlight %}
+```
 
 ### Response
 
 <pre class="header">Status: 200 OK</pre>
-{% highlight json %}
+```json
 {
   "queue" : "default",
   "source" : "SWITCH_VOLTAGE_ON(voltage_num: 3)",
   "hex" : "1864C000000000000000006A0000000103",
   "binary" : "GGTAAAAAAAAAAABqAAAAAQM="
 }
-{% endhighlight %}
+```
 
 The binary is encoded in Base64 format.
 
@@ -85,7 +85,7 @@ Use these HTTP headers:
 Request is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight proto %}
+```proto
 message IssueCommandRequest {
   message Assignment {
     optional string name = 1;
@@ -96,16 +96,16 @@ message IssueCommandRequest {
   optional int32 sequenceNumber = 3;
   optional bool dryRun = 4;
 }
-{% endhighlight %}
+```
 
 #### Response
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight proto %}
+```proto
 message IssueCommandResponse {
   optional string queue = 1;
   optional string source = 2;
   optional string hex = 3;
   optional bytes binary = 4;
 }
-{% endhighlight %}
+```

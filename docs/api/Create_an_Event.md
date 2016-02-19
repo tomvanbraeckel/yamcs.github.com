@@ -54,7 +54,7 @@ Create an Event:
 
 ### Example
 
-{% highlight json %}
+```json
 {
   "source":"REST API",
   "type":"Test",
@@ -64,7 +64,7 @@ Create an Event:
   "receptionTime":0,
  "severity":"WARNING"
 }
-{% endhighlight %}
+```
 
 ### Response
 
@@ -76,7 +76,7 @@ Create an Event:
 #### Request
 
 <pre class="r header"><a href="/docs/api/yamcs.proto/">yamcs.proto</a></pre>
-{% highlight proto %}
+```proto
 message Event {
   enum EventSeverity {
     INFO = 0;
@@ -96,5 +96,5 @@ message Event {
 
   extensions 100 to 10000;
 }
-{% endhighlight %}
+```
 

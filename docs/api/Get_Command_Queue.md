@@ -11,7 +11,7 @@ Get data on a command queue:
 
 ### Response
 
-{% highlight json %}
+```json
 {
   "instance" : "simulator",
   "processorName" : "realtime",
@@ -37,7 +37,7 @@ Get data on a command queue:
   } ],
   "url" : "http://localhost:8090/api/processors/simulator/realtime/cqueues/default"
 }
-{% endhighlight %}
+```
 
 ### Alternative Media Types
 
@@ -50,7 +50,7 @@ Use HTTP header:
 Response is of type:
 
 <pre class="r header"><a href="/docs/api/commanding.proto/">commanding.proto</a></pre>
-{% highlight proto %}
+```proto
 message CommandQueueInfo {
   required string instance = 1;
   required string processorName = 2;
@@ -61,4 +61,4 @@ message CommandQueueInfo {
   optional int32 stateExpirationTimeS = 7;
   optional string url = 8;
 }
-{% endhighlight %}
+```

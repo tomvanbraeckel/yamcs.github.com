@@ -26,7 +26,7 @@ Filters are specified in the request body, and should always include at least a 
 
 Protobuf definition:
 
-{% highlight nginx %}
+```proto
 message RestDumpArchiveRequest {
   // Time specification (assumed Yamcs internal time)
   optional int64 start = 1;
@@ -49,7 +49,7 @@ message RestDumpArchiveRequest {
   // wiki for more details on this.
   optional bool stream=8;
 }
-{% endhighlight %}
+```
 
 ### Optional Parameters
 
@@ -66,7 +66,7 @@ Using this option, the response may contain multiple individually delimited JSON
 
 Protobuf definition:
 
-{% highlight nginx %}
+```proto
 message RestDumpArchiveResponse {
   repeated pvalue.ParameterData parameterData=2;
   repeated yamcs.TmPacketData packetData=3;
@@ -74,7 +74,7 @@ message RestDumpArchiveResponse {
   repeated yamcs.Event event=5;
   repeated pvalue.ParameterData ppData=6;
 }
-{% endhighlight %}
+```
 
 ### Example
 

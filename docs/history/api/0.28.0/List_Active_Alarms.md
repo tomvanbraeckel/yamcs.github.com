@@ -33,18 +33,18 @@ When using Protobuf, the response can be deserialized as `Rest.GetAlarmsResponse
 
 Protobuf definition:
 
-{% highlight nginx %}
+```proto
 message GetAlarmsResponse {
    repeated alarms.Alarm alarms = 1;
 }
-{% endhighlight %}
+```
 
 ### Example
 
 ```
 curl -XGET http://localhost:8090/simulator/api/alarms?pretty
 ```
-{% highlight json %}
+```json
 {
   "alarms" : [ {
     "id" : 3,
@@ -147,6 +147,6 @@ curl -XGET http://localhost:8090/simulator/api/alarms?pretty
     "violations" : 102
   } ]
 }
-{% endhighlight %}
+```
 
 

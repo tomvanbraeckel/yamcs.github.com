@@ -6,7 +6,7 @@ sidebar: yes
 
 Subscribe to parameter updates:
 
-{% highlight json %}
+```json
 [ 1, 1, :seq, {
     "parameter": "subscribe",
     "data": {
@@ -15,7 +15,7 @@ Subscribe to parameter updates:
         ]
     }
 } ]
-{% endhighlight %}
+```
     
 Subscribing is an additive operation, where new parameter IDs are appended to any existing subscription.    
 
@@ -23,7 +23,7 @@ Subscribing is an additive operation, where new parameter IDs are appended to an
 
 Subscribe to BatteryVoltage1 through a qualified name, and BatteryVoltage2 using an OPS name:
 
-{% highlight json %}
+```json
 [ 1, 1, 789, {
     "parameter": "subscribe",
     "data": {
@@ -33,33 +33,33 @@ Subscribe to BatteryVoltage1 through a qualified name, and BatteryVoltage2 using
         ]
     }
 } ]
-{% endhighlight %}
+```
 
 ### Response
 
 You first get an empty reply message confirming the positive receipt of your request:
 
-{% highlight json %}
+```json
 [ 1, 2, 789 ]
-{% endhighlight %}
+```
     
 Further messages will be marked as type <tt>PARAMETER_DATA</tt>. Directly after you subscribe, you will receive the latest cached values -- if applicable.
 
-{% highlight json %}
+```json
 todo
-{% endhighlight %}
+```
 
 
 ### Unsubscribe
 
 Unsubscribe from all currently subscribed parameters:
 
-{% highlight json %}
+```json
 [ 1, 1, 790, { "parameter": "unsubscribe" } ]
-{% endhighlight %}
+```
 
 This will be confirmed with an empty reply message:
 
-{% highlight json %}
+```json
 [ 1, 2, 790 ]
-{% endhighlight %}
+```

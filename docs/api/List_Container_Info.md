@@ -42,7 +42,7 @@ The `q` parameter supports searching on the namespace or name. For example:
 ### Response
 
 <pre class="header">Status: 200 OK</pre>
-{% highlight json %}
+```json
 {
   "container" : [ {
     "name": "DHS",
@@ -97,7 +97,7 @@ The `q` parameter supports searching on the namespace or name. For example:
     "url" : "http://localhost:8090/api/mdb/simulator/containers/YSS/SIMULATOR/DHS"
   } ]
 }
-{% endhighlight %}
+```
 
 
 ### Alternative Media Types
@@ -112,8 +112,8 @@ Response is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 
-{% highlight proto %}
+```proto
 message ListContainerInfoResponse {
   repeated mdb.ContainerInfo container = 1;
 }
-{% endhighlight %}
+```

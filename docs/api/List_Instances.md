@@ -12,7 +12,7 @@ List all configured Yamcs instances:
 ### Response
 
 <pre class="header">Status: 200 OK</pre>
-{% highlight json %}
+```json
 {
   "instance" : [ {
     "name" : "simulator",
@@ -51,7 +51,7 @@ List all configured Yamcs instances:
     "eventsUrl" : "http://localhost:8090/api/instances/simulator{/processor}/events"
   } ]
 }
-{% endhighlight %}
+```
 
 
 ### Alternative Media Types
@@ -65,8 +65,8 @@ Use HTTP header:
 Response is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight proto %}
+```proto
 message ListInstancesResponse {
   repeated yamcsManagement.YamcsInstance instance = 1;
 }
-{% endhighlight %}
+```

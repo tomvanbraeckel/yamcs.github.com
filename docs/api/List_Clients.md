@@ -20,9 +20,9 @@ List all clients for the given processor:
 ### Response
 
 <pre class="header">Status: 200 OK</pre>
-{% highlight json %}
+```json
 todo
-{% endhighlight %}
+```
 
 
 ### Alternative Media Types
@@ -36,8 +36,8 @@ Use HTTP header:
 Response is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight proto %}
+```proto
 message ListClientsResponse {
   repeated yamcsManagement.ClientInfo client = 1;
 }
-{% endhighlight %}
+```

@@ -54,7 +54,7 @@ The `q` parameter supports searching on namespace or name. For example:
 ### Response
 
 <pre class="header">Status: 200 OK</pre>
-{% highlight json %}
+```json
 {
   "parameter" : [ {
     "name": "ccsds-apid",
@@ -74,7 +74,7 @@ The `q` parameter supports searching on namespace or name. For example:
     "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/ccsds-apid"
   } ]
 }
-{% endhighlight %}
+```
 
 
 ### Alternative Media Types
@@ -89,8 +89,8 @@ Response is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 
-{% highlight proto %}
+```proto
 message ListParameterInfoResponse {
   repeated mdb.ParameterInfo parameter = 1;
 }
-{% endhighlight %}
+```

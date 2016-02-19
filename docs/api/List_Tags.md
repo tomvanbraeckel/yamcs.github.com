@@ -15,7 +15,7 @@ List all tags for the given instance:
 Status: 200 OK
 </pre>
 
-{% highlight json %}
+```json
 {
   "tag" : [ {
     "id" : 1,
@@ -26,7 +26,7 @@ Status: 200 OK
     "color" : "#ffc800"
   } ]
 }
-{% endhighlight %}
+```
 
 
 ### Alternative Media Types
@@ -40,8 +40,8 @@ Use HTTP header:
 Response is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight proto %}
+```proto
 message ListTagsResponse {
   repeated yamcs.ArchiveTag tag = 1;
 }
-{% endhighlight %}
+```

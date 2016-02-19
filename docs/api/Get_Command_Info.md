@@ -12,7 +12,7 @@ Return the data for the given command:
 ### Response
 
 <pre class="header">Status: 200 OK</pre>
-{% highlight json %}
+```json
 {
   "name": "SWITCH_VOLTAGE_ON",
   "qualifiedName" : "/YSS/SIMULATOR/SWITCH_VOLTAGE_ON",
@@ -91,7 +91,7 @@ Return the data for the given command:
   } ],
   "url" : "http://localhost:8090/api/mdb/simulator/commands/YSS/SIMULATOR/SWITCH_VOLTAGE_ON"
 }
-{% endhighlight %}
+```
 
 ### Alternative Media Types
 
@@ -104,7 +104,7 @@ Use HTTP header:
 Response is of type:
 
 <pre class="r header"><a href="/docs/api/mdb.proto/">mdb.proto</a></pre>
-{% highlight proto %}
+```proto
 message CommandInfo {
   optional string name = 1;
   optional string qualifiedName = 2;
@@ -119,4 +119,4 @@ message CommandInfo {
   repeated TransmissionConstraintInfo constraint = 11;
   optional string url = 12;
 }
-{% endhighlight %}
+```

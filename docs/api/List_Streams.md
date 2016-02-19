@@ -16,7 +16,7 @@ List all streams for the given instance:
 ### Example
 
 <pre class="header">Status: 200 OK</pre>
-{% highlight json %}
+```json
 {
   "stream" : [ {
     "name" : "tm_realtime",
@@ -35,7 +35,7 @@ List all streams for the given instance:
     } ]
   } ]
 }
-{% endhighlight %}
+```
 
 Note that this will only list the fixed columns of the stream. Tuples may always have extra columns.
 
@@ -50,8 +50,8 @@ Use HTTP header:
 Response is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight proto %}
+```proto
 message ListStreamsResponse {
   repeated archive.StreamInfo stream = 1;
 }
-{% endhighlight %}
+```

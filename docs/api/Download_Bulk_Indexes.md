@@ -54,7 +54,7 @@ You get back a sequence of consecutive self-standing JSON objects. Note that thi
 Status: 200 OK
 </pre>
 
-{% highlight json %}
+```json
 {
   "instance" : "simulator",
   "records" : [ {
@@ -94,7 +94,7 @@ Status: 200 OK
   "type" : "histogram",
   "tableName" : "cmdhist"
 }
-{% endhighlight %}
+```
 
 ### Alternative Media Types
 
@@ -107,7 +107,7 @@ Use HTTP header:
 The response is a stream of individual Protobuf messages delimited with a <tt>VarInt</tt>. Every message is of type:
 
 <pre class="r header"><a href="/docs/api/yamcs.proto/">yamcs.proto</a></pre>
-{% highlight proto %}
+```proto
 message IndexResult {
   required string instance = 1;
   repeated ArchiveRecord records = 2;
@@ -116,4 +116,4 @@ message IndexResult {
   //if type=histogram, the tableName is the table for which the histogram is sent
   optional string tableName = 4;
 }
-{% endhighlight %}
+```

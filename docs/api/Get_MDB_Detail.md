@@ -12,7 +12,7 @@ Get data on a the Mission Database for the given Yamcs instance:
 ### Response
 
 <pre class="header">Status: 200 OK</pre>
-{% highlight json %}
+```json
 {
   "configName" : "landing",
   "name" : "",
@@ -37,7 +37,7 @@ Get data on a the Mission Database for the given Yamcs instance:
       } ]
     } ]
 }
-{% endhighlight %}
+```
 
 ### Alternative Media Types
 
@@ -58,7 +58,7 @@ Use HTTP header:
 Response is of type:
 
 <pre class="r header"><a href="/docs/api/yamcsManagement.proto/">yamcsManagement.proto</a></pre>
-{% highlight proto %}
+```proto
 message MissionDatabase {
   required string configName = 1;
   required string name = 2;
@@ -69,4 +69,4 @@ message MissionDatabase {
   optional string containersUrl = 7;
   optional string commandsUrl = 8;
 }
-{% endhighlight %}
+```

@@ -12,7 +12,7 @@ Get info on a specific tag for the given archive instance:
 ### Response
 
 <pre class="header">Status: 200 OK</pre>
-{% highlight json %}
+```json
 {
   "id" : 1,
   "name" : "My annotation",
@@ -21,7 +21,7 @@ Get info on a specific tag for the given archive instance:
   "description" : "blabla",
   "color" : "#ffc800"
 }
-{% endhighlight %}
+```
 
 ### Alternative Media Types
 
@@ -34,7 +34,7 @@ Use HTTP header:
 Response is of type:
 
 <pre class="r header"><a href="/docs/api/yamcs.proto/">yamcs.proto</a></pre>
-{% highlight proto %}
+```proto
 message ArchiveTag {
   optional int32 id = 1;
   required string name = 2;
@@ -43,4 +43,4 @@ message ArchiveTag {
   optional string description = 5;
   optional string color = 6;
 }
-{% endhighlight %}
+```

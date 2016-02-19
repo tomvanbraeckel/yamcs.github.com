@@ -32,7 +32,7 @@ List all processors for the given Yamcs instance:
 ### Response
 
 <pre class="header">Status: 200 OK</pre>
-{% highlight json %}
+```json
 {
   "processor" : [ {
     "instance" : "simulator",
@@ -48,7 +48,7 @@ List all processors for the given Yamcs instance:
     "commandQueuesUrl" : "http://localhost:8090/api/processors/simulator/realtime/cqueues{/name}"
   } ]
 }
-{% endhighlight %}
+```
 
 
 ### Alternative Media Types
@@ -62,8 +62,8 @@ Use HTTP header:
 Response is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
-{% highlight proto %}
+```proto
 message ListProcessorsResponse {
   repeated yamcsManagement.ProcessorInfo processor = 1;
 }
-{% endhighlight %}
+```

@@ -48,7 +48,7 @@ You get back a sequence of consecutive self-standing JSON objects. Note that thi
 Status: 200 OK
 </pre>
 
-{% highlight json %}
+```json
 {
   "id" : {
     "name" : "/YSS/SIMULATOR/FlightData"
@@ -71,7 +71,7 @@ Status: 200 OK
   "last" : 1448272084398,
   "num" : 5
 }
-{% endhighlight %}
+```
 
 ### Alternative Media Types
 
@@ -84,7 +84,7 @@ Use HTTP header:
 The response is a stream of individual Protobuf messages delimited with a <tt>VarInt</tt>. Every message is of type:
 
 <pre class="r header"><a href="/docs/api/yamcs.proto/">yamcs.proto</a></pre>
-{% highlight proto %}
+```proto
 message ArchiveRecord {
   required NamedObjectId id = 1;
   required int64 first = 2;
@@ -92,4 +92,4 @@ message ArchiveRecord {
   required int32 num = 4;
   optional string info = 5;
 }
-{% endhighlight %}
+```

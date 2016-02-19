@@ -4,6 +4,6 @@ permalink: /docs/api/mdb.proto/
 sidebar: yes
 ---
 
-{% highlight proto %}
+```proto
 {% include api/mdb.proto %}
-{% endhighlight %}
+```

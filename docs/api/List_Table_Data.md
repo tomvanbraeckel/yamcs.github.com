@@ -60,7 +60,7 @@ The <tt>start</tt> and <tt>limit</tt> allow for pagination. Keep in mind that in
 Status: 200 OK
 </pre>
 
-{% highlight json %}
+```json
 {
   "record" : [ {
     "column" : [ {
@@ -92,7 +92,7 @@ Status: 200 OK
     } ]
   } ]
 }
-{% endhighlight %}
+```
 
 ### Alternative Media Types
 
@@ -105,11 +105,11 @@ Use HTTP header:
 Response is of type:
 
 <pre class="r header"><a href="/docs/api/archive.proto/">archive.proto</a></pre>
-{% highlight proto %}
+```proto
 message TableData {
   message TableRecord {
     repeated ColumnData column = 1;
   }
   repeated TableRecord record = 1;
 }
-{% endhighlight %}
+```

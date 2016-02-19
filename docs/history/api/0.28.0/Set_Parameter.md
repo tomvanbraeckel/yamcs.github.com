@@ -21,7 +21,7 @@ sidebar: yes
 
 Protobuf definitions:
 
-{% highlight nginx %}
+```proto
 message ParameterData {
     repeated ParameterValue parameter=1;
 
@@ -32,10 +32,10 @@ message ParameterData {
     optional int64  generationTime = 3;
     optional int32 seqNum = 4;
 }
-{% endhighlight %}
+```
 
 
-{% highlight nginx %}
+```proto
 message ParameterValue {
     optional yamcs.NamedObjectId id=1;
   	optional yamcs.Value rawValue=2;
@@ -64,9 +64,9 @@ message ParameterValue {
     optional int64 expirationTime = 23;
     optional string expirationTimeUTC = 24;
 }
-{% endhighlight %}
+```
 
-{% highlight nginx %}
+```proto
 message Value {
     enum Type {
         FLOAT = 0;
@@ -92,19 +92,19 @@ message Value {
     optional sint64        sint64Value=10;
     optional bool          booleanValue=11;
 }
-{% endhighlight %}
+```
 
-{% highlight nginx %}
+```proto
 enum AcquisitionStatus {
       ACQUIRED=0; //OK!
       NOT_RECEIVED=1; //no value received so far
       INVALID=2; //some value has been received but is invalid
       EXPIRED=3; //the parameter is coming from a packet which has not since updated although it should have been
 };
-{% endhighlight %}
+```
 
 
-{% highlight nginx %}
+```proto
 enum MonitoringResult {
       DISABLED=0;
       IN_LIMITS=1;
@@ -129,7 +129,7 @@ enum MonitoringResult {
       SEVERE_LOW=20;
       SEVERE_HIGH=21;
 }
-{% endhighlight %}
+```
 
 
 ### Optional Parameters
