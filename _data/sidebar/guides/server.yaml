@@ -1,5 +1,6 @@
 - url: /docs/server/Introduction/
   items:
+    - url: /docs/server/Monitoring_and_Control_Model/
     - url: /docs/server/Fundamentals/
     - url: /docs/server/Installation/
     - url: /docs/server/Acronyms/
