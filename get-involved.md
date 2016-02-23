@@ -14,8 +14,17 @@ If you would like to join the discussion, please visit our public forum at [http
 
 We have open-sourced a significant chunk of two of our products: Yamcs Server and Yamcs Studio. If you feel like contributing to any of these, you are welcome to do so. We use GitHub for all of our open-source developments (code, issues, pull-requests).
 
-* Yamcs Server: See the GitHub wiki [https://github.com/yamcs/yamcs/wiki](https://github.com/yamcs/yamcs/wiki)
-* Yamcs Studio: Start by reading [https://github.com/yamcs/yamcs-studio/blob/master/notes/Contributing.md](https://github.com/yamcs/yamcs-studio/blob/master/notes/Contributing.md)
+**Yamcs Server**
+
+The GitHub repository is at [https://github.com/yamcs/yamcs](https://github.com/yamcs/yamcs/).
+
+- for small patches, just a pull request is enough.
+- for bigger contributions, we kindly ask you to sign the [Yamcs Contributor Agreement](/assets/pdf/Yamcs_Contributor_Agreement_v1.pdf).
+
+
+**Yamcs Studio**
+
+Start by reading [https://github.com/yamcs/yamcs-studio/blob/master/notes/Contributing.md](https://github.com/yamcs/yamcs-studio/blob/master/notes/Contributing.md)
 
 <p>&nbsp;</p>
 
