@@ -19,11 +19,13 @@
     - url: /docs/server/TC_Loaders/
     - url: /docs/server/Excel_Specification/
 
-- url: /docs/server/Telemetry_Processing/
+- url: /docs/server/Monitoring_and_Control/
   items:
-    - url: /docs/server/Packet_Telemetry/
-    - url: /docs/server/Algorithms/
-    - url: /docs/server/Alarms/
+    - url: /docs/server/Telemetry_Processing/
+      items:
+        - url: /docs/server/Packet_Telemetry/
+        - url: /docs/server/Algorithms/
+        - url: /docs/server/Alarms/
     - url: /docs/server/Commanding/
 
 - url: /docs/server/Archive/
