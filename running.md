@@ -76,7 +76,7 @@ With all the preparations done, we now get to run a Yamcs instance in a box (wel
 
 ## Run Yamcs Studio
 
-We now have a working Yamcs Server receiving and recording telemetry from a Simulator. To get a better peek at what's happening we will now launch Yamcs Studio -- a rich desktop client for Yamcs. Make sure you have Yamcs Studio installed (refer to [these instructions](/docs/studio/installation)). From the menu choose **File > Connect...** and fill in these details:
+We now have a working Yamcs Server receiving and recording telemetry from a Simulator. To get a better peek at what's happening we will now launch Yamcs Studio -- a rich desktop client for Yamcs. Make sure you have Yamcs Studio installed (refer to [these instructions](/docs/studio/Installation)). From the menu choose **File > Connect...** and fill in these details:
 
 ![YSS Connection](/assets/main/yss-connect.png){: .center-image }
 
