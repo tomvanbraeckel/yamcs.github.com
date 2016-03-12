@@ -22,7 +22,7 @@ Detailed installation instructions can be found at [https://docs.docker.com/inst
 
     $ curl -sSL https://get.docker.com/ | sh
     
-Docker's official documentation also explains how to set up <tt>docker</tt> so that you don't need to prepend every command with <tt>sudo</tt>, which we definitely recommend. Further instructions presume that <tt>docker</tt> was configured as such, and will no longer mention the use of `sudo`.
+Docker's official documentation also explains how to set up <tt>docker</tt> so that you don't need to prepend every command with <tt>sudo</tt>, which we would recommend. Further instructions presume that <tt>docker</tt> was configured as such, and will no longer mention the use of `sudo`.
 
 Verify correct installation by running <tt>docker -v</tt>. 
 
@@ -32,7 +32,7 @@ Detailed installation instructions can be found at [https://docs.docker.com/comp
 
 1. Get the <tt>docker-compose</tt> binary.
 
-        $ sudo wget https://github.com/docker/compose/releases/download/1.4.0/docker-compose-`uname  -s`-`uname -m` -O /usr/local/bin/docker-compose
+        $ sudo wget https://github.com/docker/compose/releases/download/1.6.2/docker-compose-`uname -s`-`uname -m` -O /usr/local/bin/docker-compose
 
     This command installs the binary in the <tt>/usr/local/bin</tt> directory. 
 	
@@ -40,13 +40,13 @@ Detailed installation instructions can be found at [https://docs.docker.com/comp
 
         $ sudo chmod +x /usr/local/bin/docker-compose
         
-Verify correct installation by running <tt>docker-compose -v</tt>. Any problems related to this latest command usually have to do with either not having started the docker daemon (for some platforms this is automatically configured, for others not), or by not having added your user to the <tt>docker</tt> group. Please ask a yamcs developer for further assistance specific to your platform if you get stuck on this.
+Verify correct installation by running <tt>docker-compose -v</tt>. Any problems related to this latest command usually have to do with either not having started the docker daemon (for some platforms this is automatically configured, for others not), or by not having added your user to the <tt>docker</tt> group. Please ask a Yamcs developer for further assistance specific to your platform if you get stuck on this.
 		
 ## Run Yamcs and the Simulator
 
 With all the preparations done, we now get to run a Yamcs instance in a box (well, container).
 
-1. Get the YSS configuration. You have the choice between two different configurations:
+1. Get the YSS configuration. You have the choice between two different configurations. If you're unsure, pick the first:
 
     * A 5Hz Launch &amp; Landing simulator
     
@@ -62,7 +62,7 @@ With all the preparations done, we now get to run a Yamcs instance in a box (wel
 
 2. Start your YSS deployment with compose.
     
-        $ docker-compose up       
+        $ docker-compose up
     
     This will download, then launch both Yamcs and the Simulator in the foreground. You should see some log messages and the phrase  *yamcsstartup success* near the bottom.
     
