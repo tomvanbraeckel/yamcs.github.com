@@ -64,7 +64,7 @@ With all the preparations done, we now get to run a Yamcs instance in a box (wel
     
         $ docker-compose up
     
-    This will download, then launch both Yamcs and the Simulator in the foreground. You should see some log messages and the phrase  *yamcsstartup success* near the bottom.
+    This will download, then launch both Yamcs and the Simulator in the foreground. You should see some log messages and the phrase  *Server running* near the bottom.
     
     When you're done with testing and want to shutdown the deployment, just <tt>CTRL-c</tt> this process. Later on, whenever you want the YSS configuration back up again, go to the applicable directory and run <tt>docker-compose up</tt>.
     
