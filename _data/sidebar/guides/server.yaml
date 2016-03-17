@@ -8,7 +8,7 @@
 
 - url: /docs/server/Data_Links/
   items:
-    - url: /docs/server/TM_Providers/
+    - url: /docs/server/TM_DataLinks/
     - url: /docs/server/PP_Providers/
     - url: /docs/server/TC_Uplinkers/
 
