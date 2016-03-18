@@ -40,3 +40,29 @@ For development purposes, all the software can run on a developer's computer or 
 
 
 For more information on the Yamcs suite of tools, head over to the [Yamcs Docs](/docs/). For a quick test-run of core functionality, have a look at [Up & Running](/running/).
+
+### Who Uses Yamcs ?
+* Belgian User Operations and Support Centre (BUSOC)
+* Centre d'aide au développement des activités en micro-pesanteur et des opérations spatiales (CADMOS)
+* Dutch User Operations and Support Centre (Erasmus)
+* European Robotic Arm Mission Control Centre (ERA-MCC)
+* Atomic Clock Ensemble in Space ground segment (ACES)
+* And Many Others...
+
+<style>
+#users {
+    white-space: nowrap;
+}
+#users, img
+{
+  padding-right: 20px;
+}
+</style>
+<div id="users">
+<img src="/assets/users/esa.png" title="ESA" style="width: 200px;"/>
+<img src="/assets/users/busoc.png" title="B.USOC" style="width: 120px;"/>
+<img src="/assets/users/cadmos.gif" title="CADMOS" style="width: 120px;"/>
+<img src="/assets/users/erasmus.jpg" title="ERASMUS" style="width: 120px;"/>
+<img src="/assets/users/aces.png" title="ACES" style="width: 120px;"/>
+</div>
+
