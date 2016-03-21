@@ -7,7 +7,7 @@ sidebar: yes
 Download archived packets:
 
     GET /api/archive/:instance/downloads/packets
-    
+
 <div class="hint">
 This operation will possibly download a very large file. If you worry about size for your application, check out the support for <a href="/docs/api/List_Packets/">paged packet retrievals</a> instead.
 </div>
@@ -64,12 +64,14 @@ Use HTTP header:
 
     Accept: application/octet-stream
 
+Or add the query parameter `format=raw`.
+
 #### Protobuf
 
 Use HTTP header:
 
     Accept: application/protobuf
- 
+
 The response is a stream of self-standing <tt>VarInt</tt> delimited messages of type:
 
 <pre class="r header"><a href="/docs/api/yamcs.proto/">yamcs.proto</a></pre>
