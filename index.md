@@ -45,8 +45,8 @@ For more information on the Yamcs suite of tools, head over to the [Yamcs Docs](
 * Belgian User Operations and Support Centre (BUSOC)
 * Centre d'aide au développement des activités en micro-pesanteur et des opérations spatiales (CADMOS)
 * Dutch User Operations and Support Centre (Erasmus)
-* European Robotic Arm Mission Control Centre (ERA-MCC)
-* Atomic Clock Ensemble in Space ground segment (ACES)
+* European Robotic Arm (ERA) Support Centre
+* Atomic Clock Ensemble in Space (ACES) Ground Segment
 * And Many Others...
 
 <style>
