@@ -7,8 +7,9 @@ sidebar: yes
 Sample the history of values for the specified parameter:
 
     GET /api/archive/:instance/parameters/:namespace/:name/samples
+    GET /api/archive/:instance/parameters2/:namespace/:name/samples
 
-
+The second call (with "parameters2") returns values from the parameter archive if the parameter archive has been enabled. It should be much faster for large intervals. Note that as the parameter archive is backfilled (i.e. not filled in realtime), the paramers2 call will try to return the latest values from the parameter cache. See the [Processor] configuration section on how to configure the Parameter Cache.
 ### Parameters
 
 <table class="inline">
@@ -31,6 +32,16 @@ Sample the history of values for the specified parameter:
         <td class="code">order</td>
         <td class="code">string</td>
         <td>The order of the returned results. Can be either <tt>asc</tt> or <tt>desc</tt>. Default: <tt>asc</tt></td>
+    </tr>
+    <tr>
+        <td class="code">norealtime</td>
+        <td class="code">boolean</td>
+        <td>Only for parameters2. Disable loading of parameters from the parameter cache. Default: <tt>false</tt></td>
+    </tr>
+    <tr>
+        <td class="code">processor</td>
+        <td class="code">string</td>
+        <td>Only for parameters2. The name of the processor from which to use the parameter cache. Default: <tt>realtime</tt></td>
     </tr>
 </table>
  

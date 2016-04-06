@@ -84,6 +84,10 @@
         - url: /docs/api/Create_Tag/
         - url: /docs/api/Edit_Tag/
     - url: /docs/api/User/
+    - url: /docs/api/Parameter_Archive/
+      items:
+         - url: /docs/api/Parameter_Archive_Rebuild/
+         - url: /docs/api/Delete_Partitions/
 
 - url: /docs/api/WebSocket_API/
   items:

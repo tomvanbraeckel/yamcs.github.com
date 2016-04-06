@@ -32,6 +32,7 @@
   items:
     - url: /docs/server/Stream_Archive/
     - url: /docs/server/Parameter_Archive/
+    - url: /docs/server/Parameter_Archive_Internals/
 
 - url: /docs/server/Security/
   items:
