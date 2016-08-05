@@ -49,6 +49,47 @@ This operation will possibly download a very large file. If you worry about size
 
 The response will be a stream of individual parameters.
 
+### Multi-get
+
+Get the value history of multiple parameters in one and the same request using this address:
+
+    GET /api/archive/:instance/downloads/parameters
+
+In addition to the parameters for the single parameter retrieval you can specify these:
+
+<table class="inline">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td class="code">namespace</td>
+        <td class="code">string</td>
+        <td>Namespace used to display parameter names in e.g. csv header. Only used when no parameter ids were specified</td>
+    </tr>
+    <tr>
+        <td class="code">ids</td>
+        <td class="code">list of name pairs</td>
+        <td>Parameters to be included in the output. If not specified, all parameters from the MDB will be dumped.</td>
+    </tr>
+</table>
+
+Example: 
+
+```json
+{
+  "id" : [ {
+    "name": "YSS_ccsds-apid",
+    "namespace": "MDB:OPS Name"
+  }, {
+    "name": "/YSS/SIMULATOR/BatteryVoltage2"
+  } ]
+}
+```
+
+POST requests are also allowed, because some HTTP clients do not support GET with a request body.
+
 ### Alternative Media Types
 
 #### CSV
@@ -66,3 +107,15 @@ Use HTTP header:
     Accept: application/protobuf
 
 The response is a stream of individual Protobuf messages delimited by a <tt>VarInt</tt>.
+
+Bulk request is of type:
+
+<pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
+```proto
+message BulkDownloadParameterValueRequest {
+  optional string start = 1;
+  optional string stop = 2;
+  repeated yamcs.NamedObjectId id = 3;
+  optional string namespace = 4;
+}
+```

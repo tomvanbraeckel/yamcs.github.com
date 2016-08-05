@@ -110,9 +110,16 @@ The response is a list of parameter values:
 ```
 
 
-### Protobuf
+### Alternative Media Types
 
-#### Response
+#### Protobuf
+
+Use these HTTP headers:
+
+    Content-Type: application/protobuf
+    Accept: application/protobuf
+    
+Request is of type:
 
 <pre class="r header"><a href="/docs/api/pvalue.proto/">pvalue.proto</a></pre>
 ```proto
@@ -136,7 +143,7 @@ message ParameterValue {
 }
 ```
 
-#### Bulk Request
+Bulk request is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 ```proto
@@ -147,7 +154,7 @@ message BulkGetParameterValueRequest {
 }
 ```
 
-#### Bulk Response
+Bulk response is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 ```proto
