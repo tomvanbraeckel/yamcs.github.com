@@ -98,6 +98,7 @@
     - url: /docs/api/Event_Updates/
     - url: /docs/api/Management_Updates/
     - url: /docs/api/Stream_Updates/
+    - url: /docs/api/Command_Queues_Updates/
 
 - url: /docs/api/Proto_Files/
   items:
