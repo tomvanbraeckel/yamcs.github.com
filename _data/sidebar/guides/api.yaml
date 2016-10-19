@@ -85,6 +85,10 @@
         - url: /docs/api/Create_Tag/
         - url: /docs/api/Edit_Tag/
     - url: /docs/api/User/
+    - url: /docs/api/Services/
+      items:
+         - url: /docs/api/List_Services/
+         - url: /docs/api/Control_Services/    
     - url: /docs/api/Parameter_Archive/
       items:
          - url: /docs/api/Parameter_Archive_Rebuild/
