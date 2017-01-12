@@ -106,7 +106,6 @@ Use HTTP header:
 
     Accept: application/protobuf
 
-The response is a stream of individual Protobuf messages delimited by a <tt>VarInt</tt>.
 
 Bulk request is of type:
 
@@ -117,5 +116,13 @@ message BulkDownloadParameterValueRequest {
   optional string stop = 2;
   repeated yamcs.NamedObjectId id = 3;
   optional string namespace = 4;
+}
+```
+
+The response is a stream of self-standing <tt>VarInt</tt> delimited messages of type:
+<pre class="r header"><a href="/docs/api/pvalue.proto/">pvalue.proto</a></pre>
+```proto
+message ParameterData {
+  repeated ParameterValue parameter = 1;
 }
 ```
