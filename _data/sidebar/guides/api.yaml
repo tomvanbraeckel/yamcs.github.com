@@ -104,6 +104,7 @@
     - url: /docs/api/Alarm_Notices/
 #    -url: /docs/api/Command_History_Updates/
     - url: /docs/api/Event_Updates/
+    - url: /docs/api/Link_Updates/
     - url: /docs/api/Management_Updates/
     - url: /docs/api/Stream_Updates/
     - url: /docs/api/Command_Queues_Updates/
