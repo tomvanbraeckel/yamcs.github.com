@@ -1,4 +1,4 @@
-FROM yamcs/yamcs:3.0.0.1
+FROM yamcs/yamcs:3.1.0
 
 COPY tcp.yaml etc/tcp.yaml
 
