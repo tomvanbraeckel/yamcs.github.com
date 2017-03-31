@@ -19,13 +19,13 @@ Here's example output in JSON (with Protobuf, there's an applicable getter in th
 
 ```json
 [1,2,3]
-'[1,4,0,{"dt":"COMMAND_QUEUE_INFO","data":{"instance":"simulator","processorName":"realtime","name":"default","state":"BLOCKED","nbSentCommands":5,"nbRejectedCommands":1,"entry":[{"instance":"simulator","processorName":"realtime","queueName":"default","cmdId":{"generationTime":1470381583809,"origin":"127.0.0.1","sequenceNumber":14,"commandName":"/test123/"},"source":"test123()","binary":"GMnAAAA5ABBDDEBqEwCwRsiBwEcAAABpAAAAAAAPc3ZfaXNDcmlzc0Nyb3NzAAAAAAAAAAAAAAAAAAAAAAAAAA==","username":"nm","generationTime":1470381583809,"uuid":"2459b774-52e2-4011-b753-31151e689821"}]}}]'
+[1,4,0,{"dt":"COMMAND_QUEUE_INFO","data":{"instance":"simulator","processorName":"realtime","name":"default","state":"BLOCKED","nbSentCommands":5,"nbRejectedCommands":1,"entry":[{"instance":"simulator","processorName":"realtime","queueName":"default","cmdId":{"generationTime":1470381583809,"origin":"127.0.0.1","sequenceNumber":14,"commandName":"/test123/"},"source":"test123()","binary":"GMnAAAA5ABBDDEBqEwCwRsiBwEcAAABpAAAAAAAPc3ZfaXNDcmlzc0Nyb3NzAAAAAAAAAAAAAAAAAAAAAAAAAA==","username":"nm","generationTime":1470381583809,"uuid":"2459b774-52e2-4011-b753-31151e689821"}]}}]
 ```
 
 Below, an example message received when a command is added to the queue:
 
 ```json
-'[1,4,3,{"dt":"COMMAND_QUEUE_EVENT","data":{"type":"COMMAND_ADDED","data":{"instance":"simulator","processorName":"realtime","queueName":"default","cmdId":{"generationTime":1470381585809,"origin":"127.0.0.1","sequenceNumber":14,"commandName":"test124"},"source":"test124()","binary":"GMnAAAA5AAAAAABqewCwRsiBwEcAAABpAAAAAAAPc3ZfaXNDcmlzc0Nyb3NzAAAAAAAAAAAAAAAAAAAAAAAAAA==","username":"nm","generationTime":1470381583809,"uuid":"2459b774-89e2-4011-b753-31151e689821"}}}]'
+[1,4,3,{"dt":"COMMAND_QUEUE_EVENT","data":{"type":"COMMAND_ADDED","data":{"instance":"simulator","processorName":"realtime","queueName":"default","cmdId":{"generationTime":1470381585809,"origin":"127.0.0.1","sequenceNumber":14,"commandName":"test124"},"source":"test124()","binary":"GMnAAAA5AAAAAABqewCwRsiBwEcAAABpAAAAAAAPc3ZfaXNDcmlzc0Nyb3NzAAAAAAAAAAAAAAAAAAAAAAAAAA==","username":"nm","generationTime":1470381583809,"uuid":"2459b774-89e2-4011-b753-31151e689821"}}}]
 ```
 
 ### Unsubscribe

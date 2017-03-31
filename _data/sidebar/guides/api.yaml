@@ -88,11 +88,11 @@
     - url: /docs/api/Services/
       items:
          - url: /docs/api/List_Services/
-         - url: /docs/api/Control_Services/    
+         - url: /docs/api/Control_Services/
     - url: /docs/api/Parameter_Archive/
       items:
          - url: /docs/api/Parameter_Archive_Rebuild/
-         - url: /docs/api/Delete_Partitions/         
+         - url: /docs/api/Delete_Partitions/
     - url: /docs/api/RocksDB/
       items:
          - url: /docs/api/RocksDB_List/
@@ -100,15 +100,15 @@
 
 - url: /docs/api/WebSocket_API/
   items:
-    - url: /docs/api/Parameter_Updates/
     - url: /docs/api/Alarm_Notices/
-#    -url: /docs/api/Command_History_Updates/
+    - url: /docs/api/Command_History_Updates/
+    - url: /docs/api/Command_Queues_Updates/
     - url: /docs/api/Event_Updates/
     - url: /docs/api/Link_Updates/
     - url: /docs/api/Management_Updates/
-    - url: /docs/api/Stream_Updates/
-    - url: /docs/api/Command_Queues_Updates/
     - url: /docs/api/Packet_Updates/
+    - url: /docs/api/Parameter_Updates/
+    - url: /docs/api/Stream_Updates/
 
 - url: /docs/api/Proto_Files/
   items:
