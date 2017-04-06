@@ -9,10 +9,17 @@ Yamcs offers various ways of defining TM packets, parameters, commands and other
 * TOC
 {:toc}
 
+### Multiple Space Systems support
+Since version 5.4, the spreadsheet definition supports loading from one excel file a hirearchy composed of multiple space systems. Until version 5.3 this was only possible by definiting multiple excel files (one per subsystem) and defining the hierarchy in mdb.yaml. Also until version 5.3 the loader forced some sheets to always be present (e.g. Containers). From version 5.4 only the General sheet has to be present, all the other ones are optional. 
+
+To define the space system hierarchy, the convention is that all the sheets that do not have a prefix contain data for the main space system whose name is defined in the General sheet.
+To define data in subsystems, a syntax like  *SYSTEM1|SYSTEM2|Containers" can be used. This definition will create a SYSTEM1 as part of the main space system and a child SYSTEM2 of SYSTEM1. Then the containers will be loaded in SYSTEM2.
+
+The spreadhseet loader scans and creates the subsystem hierarchy and then it loads the data inside the systems traversing the hierarchy in a depht-first order.
+
+
 ### Conventions
 
-* If specified, every opsname will automatically be prepended with the <tt>opsname prefix</tt> from the 'General' sheet
-* The actual descriptive part of opsnames is WordCapitalized (eg. <tt>HK_WatchdogError</tt>)
 * All numeric values can be entered as decimals or as hexadecimals (with prefix <tt>0x</tt>)
 * Although column names are used for reference below, columns must not be reordered
 
@@ -33,11 +40,7 @@ This sheet must be named "General", and the columns described must not be reorde
 	<tr>
 		<th>document version</th>
 		<td>Used by the author to track versions in an arbitrary manner</td>
-	</tr>
-	<tr>
-		<th>opsname prefix</th>
-		<td>Optional value which will automatically be prepended before every opsname, useful if all the parameters have a common system prefix</td>
-	</tr>
+	</tr>	
 </table>
 
 ### Containers Sheet
@@ -50,7 +53,7 @@ This sheet must be named "Containers", and the columns described must not be reo
 <table class="inline">
 	<tr>
 		<th>container name</th>
-		<td>The opsname of the packet</td>
+		<td>The relative name of the packet inside the space system</td>
 	</tr>
 	<tr>
 		<th>parent</th>
@@ -73,7 +76,7 @@ This sheet must be named "Containers", and the columns described must not be reo
 	</tr>
 	<tr>
 		<th>parameter name</th>
-		<td>The opsnames of the Parameters contained within this container, one per line after the line defining the opsname. Parameters are defined in the Parameters sheet. Note that the first parameter of a packet may not be on the same line as the packet opsname. Extension: for the SOLAR Instruments, this column has been extended to mean not only a measurement but also another packet in case the extension mechanism specified above is not enough.</td>
+		<td>The names of the Parameters or sub-containers contained within this container, one per line after the line defining the name. Parameters are defined in the Parameters sheet. Note that the first parameter or sub-container may not be on the same line as the container name.</td>
 	</tr>
 	<tr>
 		<th>relpos</th>
@@ -102,12 +105,12 @@ This sheet must be named "Parameters", and the columns described must not be reo
 
 <table class="inline">
 	<tr>
-		<th>opsname</th>
-		<td>The opsname of the measurements. Any entry starting with `#` is treated as a comment row</td>
+		<th>name</th>
+		<td>The name of the parameter. Any entry starting with `#` is treated as a comment row</td>
 	</tr>
 	<tr>
 		<th>bitlength</th>
-		<td>Length of the measurement, in bits, not needed for terminatedstring raw types</td>
+		<td>Length of the parameter, in bits, not needed for terminatedstring raw types</td>
 	</tr>
 	<tr>
 		<th>raw type</th>
@@ -250,12 +253,12 @@ Derived Parameters are parameters whose values are output of Algorithms (defined
 
 <table class="inline">
 	<tr>
-		<th>opsname</th>
-		<td>The opsname of the parameter. Any entry starting with `#` is treated as a comment row</td>
+		<th>name</th>
+		<td>The name of the parameter. Any entry starting with `#` is treated as a comment row</td>
 	</tr>
 	<tr>
 		<th>bitlength</th>
-		<td>Length of the measurement, in bits, not needed for terminatedstring raw types</td>
+		<td>Length of the parameter, in bits, not needed for terminatedstring raw types</td>
 	</tr>
 	<tr>
 		<th>raw type</th>
@@ -289,12 +292,12 @@ Local parameters are equivalent to Parameters but can be written by Yamcs client
 
 <table class="inline">
 	<tr>
-		<th>opsname</th>
-		<td>The opsname of the parameter. Any entry starting with `#` is treated as a comment row</td>
+		<th>name</th>
+		<td>The name of the parameter. Any entry starting with `#` is treated as a comment row</td>
 	</tr>
 	<tr>
 		<th>bitlength</th>
-		<td>Length of the measurement, in bits, not needed for terminatedstring raw types</td>
+		<td>Length of the parameter, in bits, not needed for terminatedstring raw types</td>
 	</tr>
 	<tr>
 		<th>raw type</th>
@@ -685,7 +688,7 @@ The sheet contains commands description, including arguments. General convention
 <table class="inline">
 	<tr>
 		<th>Command name</th>
-		<td>The opsname of the command. Any entry starting with `#` is treated as a comment row</td>
+		<td>The name of the command. Any entry starting with `#` is treated as a comment row</td>
 	</tr>
 	<tr>
 		<th>parent</th>
@@ -757,7 +760,7 @@ This sheet must be named “CommandOptions”, and the columns described must no
 This sheet defines the options that can be applied to commands.
 
 <table class="inline">
-<tr><th>Command name</th><td>The opsname of the command. Any entry starting with `#` is treated as a comment row</td></tr>
+<tr><th>Command name</th><td>The name of the command. Any entry starting with `#` is treated as a comment row</td></tr>
 <tr><th>Transmission Constraints</th><td>Constrains can be specified on multiple lines.
 All of them have to be met for the command to be allowed for transmission.
 </td></tr>
@@ -783,166 +786,4 @@ one of:
 This sheet must be named “ChangeLog”, and the columns described must not be reordered.
 This sheet contains the list of the revision made to the MDB.
 
-### Legacy Sheets
-Legacy sheets remain supported, but are generally not used in new projects anymore.
 
-#### MDB Sheet
-This sheet is optional, but if present must be named "MDB". The columns described must not be reordered.
-
-<table class="inline">
-	<tr>
-		<th>version<br>issue<br>revision<br>testversion</th>
-		<td>Used for CDU version tracking</td>
-	</tr>
-	<tr>
-		<th>instance</th>
-		<td>Organisation</td>
-	</tr>
-	<tr>
-		<th>systemtree</th>
-		<td>Version of the system tree used</td>
-	</tr>
-	<tr>
-		<th>cupath</th>
-		<td>Path in MDB</td>
-	</tr>
-	<tr>
-		<th>apid</th>
-		<td>APID used for TCs</td>
-	</tr>
-	<tr>
-		<th>element_configuration</th>
-		<td>Root system</td>
-	</tr>
-	<tr>
-		<th>mission<br>CDU version<br>CDU description</th>
-		<td>Inserted into generated CDU</td>
-	</tr>
-</table>
-
-#### TC Sheet
-This sheet must be named "TC", and the columns described must not be reordered. The sheet contains telecommand descriptions and their parameters.
-
-Constant parameters (i.e. cannot be chosen when building the command) are specified as constants (not a range, not an enum, only a lowlimit/value) and have no name.
-
-Ordinary parameters (parameters to be filled in by the user of the TC) must have a name and an enum or a range.
-
-Parameters that are calculated (eg. checksum) have a range or an enum but no name.
-
-<table class="inline">
-	<tr>
-		<th>packet opsname</th>
-		<td>The opsname of the TC</td>
-	</tr>
-	<tr>
-		<th>packet partial full pathname</th>
-		<td>The part of the full pathname, relative to the CDU (maintained by SpaceApps)</td>
-	</tr>
-	<tr>
-		<th>packetid</th>
-		<td>Identifying number</td>
-	</tr>
-	<tr>
-		<th>response packet opsname</th>
-		<td>The opsname of the response packet, can be left empty if no response packet is expected</td>
-	</tr>
-	<tr>
-		<th>parameter name</th>
-		<td>Each parameter is optionally given a name</td>
-	</tr>
-	<tr>
-		<th>flags</th>
-		<td>
-			Used to encode special cases. Flags are case-insensitive and can be concatenated together.
-			<ul>
-				<li><tt>I</tt> &ndash; ignore completely when generating the Oracle MDB (in Yamcs the parameter is not ignored).</li>
-				<li><tt>C</tt> &ndash; calculated value (only for parameters)</li>
-			</ul>
-		</td>
-	</tr>
-	<tr>
-		<th>bits</th>
-		<td>Specifies the number of bits the parameter has. Can be any non-zero number</td>
-	</tr>
-	<tr>
-		<th>datatype</th>
-		<td>
-			<listitem>
-				A <a href="#raw-types">raw type</a>: <tt>uint</tt>, <tt>int</tt>, <tt>string</tt>, <tt>varstr</tt>, <tt>float</tt> or <tt>enum</tt>.
-				All case insensitive. <tt>string</tt> has a fixed size that is padded if necessary. <tt>varstr</tt> has a maximum size and will not be padded
-			</listitem>
-		</td>
-	</tr>
-	<tr>
-		<th>rel position</th>
-		<td>Specifies the offset of this parameter to the last bit of the previous parameter. No empty bits means a relative position of 1. Three irrelevant bits between parameter n and parameter n+1 means a relative position of 4</td>
-	</tr>
-	<tr>
-		<th>Value/lowlimit</th>
-		<td>
-			Contains engineering values. There are several entry possibilities:
-			<ul>
-				<li>the column contains 1 value, but the highlimit column is left empty for this parameter, the value means a fixed value for this parameters</li>
-				<li>the column contains 1 value and the highlimit column also contains a value for this parameter, the 2 values specify a range for this parameters</li>
-				<li>the column contains semicolons and each value seperated between semicolons (do not use spaces before/after the semicolons) is either:
-					<ul>
-						<li>a '=' b pair. Lefthandside = textual representation of the righthandside value, this textual representations cannot be longer than 8 characters</li>
-						<li>x where x is a number and meaning that any value larger or equal to x is also a valid value. Having this means that also a highlimit must be filled in combining the previous ones is also possible.</li>
-					</ul>
-					<br>
-					For example, <tt>ON=1;OFF=0;3</tt> means that value 1 is encoded as <tt>ON</tt>, value 0 is encoded as <tt>OFF</tt> and any other value greater than or equal to 3 is also a valid value (if the highlimit field exists and is greater than 3)
-				</li>
-			</ul>
-		</td>
-	</tr>
-	<tr>
-		<th>highlimit</th>
-		<td>The upper limit of the values that the parameter can take</td>
-	</tr>
-	<tr>
-		<th>engunit</th>
-		<td>Free-form engineering units for the parameters</td>
-	</tr>
-	<tr>
-		<th>calibration</th>
-		<td>Name of a calibration described in the <a href="#calibration-sheet">Calibration Sheet</a></td>
-	</tr>
-	<tr>
-		<th>description</th>
-		<td>An optional description for the commands or parameters.</td>
-	</tr>
-</table>
-		
-#### RESP Sheet
-This sheet is optional, but if present must be named "RESP" and the columns must not be reordered. The sheet specifies the basic identifying information for packets which are expected in response to TC.
-
-<table class="inline">
-	<tr>
-		<th>response opsname</th>
-		<td>OpsName of the packet</td>
-	</tr>
-	<tr>
-		<th>response partial full pathname</th>
-		<td>The part of the full pathname, relative to the CDU (maintained by SpaceApps)</td>
-	</tr>
-	<tr>
-		<th>apid</th>
-		<td>APID to which the packet belongs</td>
-	</tr>
-	<tr>
-		<th>packetid</th>
-		<td>ID of the packet</td>
-	</tr>
-	<tr>
-		<th>measurement opsname</th>
-		<td>OpsName of the triggering packet</td>
-	</tr>
-	<tr>
-		<th>relpos</th>
-		<td></td>
-	</tr>
-	<tr>
-		<th>description</th>
-		<td>Optional human-readable text</td>
-	</tr>
-</table>

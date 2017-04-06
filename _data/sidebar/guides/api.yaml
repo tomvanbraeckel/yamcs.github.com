@@ -78,6 +78,7 @@
         - url: /docs/api/Get_Table_Info/
         - url: /docs/api/List_Table_Data/
         - url: /docs/api/Download_Table_Data/
+        - url: /docs/api/Load_Table_Data/
     - url: /docs/api/Tags/
       items:
         - url: /docs/api/List_Tags/
