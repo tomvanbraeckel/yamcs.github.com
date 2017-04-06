@@ -9,7 +9,8 @@ Sample the history of values for the specified parameter:
     GET /api/archive/:instance/parameters/:namespace/:name/samples
     GET /api/archive/:instance/parameters2/:namespace/:name/samples
 
-The second call (with "parameters2") returns values from the parameter archive if the parameter archive has been enabled. It should be much faster for large intervals. Note that as the parameter archive is backfilled (i.e. not filled in realtime), the paramers2 call will try to return the latest values from the parameter cache. See the [Processor] configuration section on how to configure the Parameter Cache.
+The first call (with "parameters") returns values from the parameter archive if the parameter archive has been enabled. It should be much faster for large intervals. Note that as the parameter archive is backfilled (i.e. not filled in realtime), the paramers call will try to return the latest values from the parameter cache. See the [Processor] configuration section on how to configure the Parameter Cache.
+The second call (with "parameters2") performs a replay.
 
 ### Parameters
 

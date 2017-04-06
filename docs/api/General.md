@@ -78,9 +78,16 @@ JSON responses are by default configured for an improved curl experience. This m
     </tr>
 </table>
 
-For example, append all URLs like so, makes responses lighter and faster:
+For example, appending all URLs like so, makes responses lighter and faster:
 
     ?nolink&pretty=no
+    
+    
+### CORS
+
+Cross-origin Resource Sharing (CORS) allows access to the Yamcs REST API from a remotely hosted web page. This is the HTML5 way of bypassing the self-origin policy typically enforced by browsers. With CORS, the browser will issue a preflight request to Yamcs to verify that it allows ajax requests from the originating web page.
+
+CORS is enabled by default on Yamcs Server, but this is configurable or limitable by your site administrator. Authorization headers can be forwarded from the originating web page to Yamcs, should the same authentication mechanism be employed. 
 
 ### Protobuf
 
