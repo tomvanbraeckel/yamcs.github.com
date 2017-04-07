@@ -12,12 +12,13 @@
     - url: /docs/api/Commanding/
       items:
         - url: /docs/api/Issue_Command/
+        - url: /docs/api/List_Commands/
+        - url: /docs/api/Download_Commands/
         - url: /docs/api/List_Command_Queues/
         - url: /docs/api/Get_Command_Queue/
         - url: /docs/api/Edit_Command_Queue/
         - url: /docs/api/List_Queued_Commands/
         - url: /docs/api/Edit_Queued_Command/
-        - url: /docs/api/Download_Commands/
     - url: /docs/api/Events/
       items:
         - url: /docs/api/List_Events/
