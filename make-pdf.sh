@@ -13,7 +13,8 @@ set -e
 #  If the optional arguments are provided, generate the pdf document for the requested document with the requested version.
 #  Output name is <title>-<version>.pdf
 #
-#  PDF documents are saved in the /assets/ folder.
+#  PDF documents are stored in Nexus. This part is not automated.
+#  curl --user fdi --upload-file Yamcs\ Server\ API.pdf https://nexus.spaceapplications.com/repository/yamcs/documentation/
 
 
 DOC=$1
@@ -170,5 +171,5 @@ fi
 # Move only at the end to prevent restarts of jekyll
 for file in /tmp/*.pdf.wkhtmltopdf; do
     FILENAME=$(basename "$file")
-    mv "$file" "assets/pdf/${FILENAME%.*}"
+    mv "$file" "${FILENAME%.*}"
 done
