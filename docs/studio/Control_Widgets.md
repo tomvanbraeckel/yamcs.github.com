@@ -5,7 +5,7 @@ permalink: /docs/studio/Control_Widgets/
 ---
 
 #### Action Button
-A button that can be used to trigger [Actions](/docs/studio/actions/). Use the **Toggle** property to have the option of adding a different action on press and release.
+A button that can be used to trigger [Actions](/docs/studio/Actions/). Use the **Toggle** property to have the option of adding a different action on press and release.
 
 ![Action Button](/assets/studio/action-button.png){: .center-image }
 
