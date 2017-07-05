@@ -98,11 +98,32 @@ Status: 200 OK
 
 ### Alternative Media Types
 
-#### Protobuf
+#### Protobuf request
+
+This can be used when the list of packets is long and the GET URI would be larger than 4096 characters.
+
+Use HTTP header:
+
+    Content-Type: application/protobuf
+
+The request is the same but without parameters. The parameters are encoded in the body and they are of type:
+
+<pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
+```proto
+message BulkGetIndexRequest {
+  optional string start = 1;
+  optional string stop = 2;
+  repeated string filter = 3;
+  repeated string packetname = 4;
+}
+```
+
+#### Protobuf response
 
 Use HTTP header:
 
     Accept: application/protobuf
+
 
 The response is a stream of individual Protobuf messages delimited with a <tt>VarInt</tt>. Every message is of type:
 
@@ -117,3 +138,4 @@ message IndexResult {
   optional string tableName = 4;
 }
 ```
+
