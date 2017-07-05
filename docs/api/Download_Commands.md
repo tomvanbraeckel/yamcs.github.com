@@ -66,5 +66,4 @@ message CommandHistoryEntry {
   required CommandId commandId = 1;
   repeated CommandHistoryAttribute attr = 3;
 }
-
 ```
