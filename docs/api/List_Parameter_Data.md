@@ -54,6 +54,28 @@ The <tt>pos</tt> and <tt>limit</tt> allow for pagination. Keep in mind that in-b
     ?pos=0&limit=50&order=desc
     ?pos=45&limit=50&order=desc 
 
+When using CSV output some columns are hidden by default. You can add them via the `extra` flag:
+
+<table class="inline">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td class="code">extra</td>
+        <td class="code">array of strings</td>
+        <td>
+            Extra columns added to the CSV output:
+            <ul>
+                <li><tt>raw</tt>: Raw parameter values</li>
+                <li><tt>monitoring</tt>: Monitoring status</li>
+            </ul>
+            Example: <tt>?extra=raw,monitoring</tt>
+        </td>
+    </tr>
+</table>
+
 
 ### Response
 
