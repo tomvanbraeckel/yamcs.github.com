@@ -25,6 +25,16 @@ The spreadhseet loader scans and creates the subsystem hierarchy and then it loa
 
 A number of mandatory named sheets are described as part of this specification, though authors may add their own sheets and still use the spreadsheet file as the reference MDB.
 
+### Rules for parameter/conainer reference lookup
+
+Each time a name reference is mentioned in the spreadsheet, the following rules apply:
+<ul>
+  <li>The reference can use UNIX like directory access expressions (../a/b).</li>
+  <li>If the name is not found as a qualified parameter, and the option enableAliasReferences is configured for the SpreadsheetLoader, the parameter is looked up through all the aliases of the parent systems.</li>
+</ul>
+The exact result of the lookup depends of course on the exact tree configuration in mdb.yaml"
+
+
 ### General Sheet
 This sheet must be named "General", and the columns described must not be reordered.
 
@@ -44,11 +54,20 @@ This sheet must be named "General", and the columns described must not be reorde
 </table>
 
 ### Containers Sheet
-This sheet must be named "Containers", and the columns described must not be reordered. The sheet contains packets information, including their measurements. General conventions:
+This sheet must be named "Containers", and the columns described must not be reordered. The sheet contains description of the content of the container (packet). 
+As per XTCE, a container is a structure describing a binary chunk of data composed of multiple entries.
+
+A container can inherit from other container - meaning that it takes all entries from the parent and it adds some more. It can have two types of entries:
+- parameters
+- other containers (this is called aggregation)
+
+General conventions:
 
 * first line with a new 'container name' starts a new packet
 * second line after a new 'container name' should contain the first measurement
 * empty lines are only allowed between two packets
+
+Comment lines starting with “#” on the first column can appear everywhere and are ignored.
 
 <table class="inline">
 	<tr>
@@ -61,60 +80,54 @@ This sheet must be named "Containers", and the columns described must not be reo
 	</tr>
 	<tr>
 		<th>condition</th>
-		<td>Inheritance condition, usually specifies a switch within the parent which activates this child, for example `MID=0x101`</td>
+		<td>Inheritance condition, usually specifies a switch within the parent which activates this child, for example `MID=0x101` There are currently three forms supported:
+                 <ul> 
+                      <li>Simple condition:  <tt>Parameter==value</tt></li>
+                      <li>Condition list:  <tt>Parameter==value;Parameter2==value2</tt> - all conditions must be true</li>
+                      <li>Boolean condition: <tt>op(epx1;exp2;...;expn)</tt>
+                          <ul>
+                            <li>op is '&' (AND) or '|' (OR)</li>
+                            <li>expi is a boolean expression or a simple condition</li>
+                          </ul>
+                      </li>
+                  </ul>
+                Currently the only supported conditions are on the parameters of the parent container. This cover the usual case where the parent defines a header and the inheritance condition
+                is based on paraemters from the header.
+               </td>
 	</tr>
-	<tr>
-		<th>flags</th>
-		<td>
-			Used to encode special cases. Flags are case-insensitive and can be concatenated together.
-			<ul>
-				<li><tt>I</tt> &ndash; ignore completely when generating the Oracle MDB (In Yamcs the parameter is <em>not</em> ignored)</li>
-				<li><tt>D</tt> &ndash; derived value, in this case the measurement must not have a calibration</li>
-				<li><tt>L</tt> &ndash; little endian value</li>
-			</ul>
-		</td>
-	</tr>
-	<tr>
-		<th>parameter name</th>
-		<td>The names of the Parameters or sub-containers contained within this container, one per line after the line defining the name. Parameters are defined in the Parameters sheet. Note that the first parameter or sub-container may not be on the same line as the container name.</td>
-	</tr>
-	<tr>
-		<th>relpos</th>
-		<td>Relative position (offset) of a measurement to its predecessor. A relpos of 1 means no gap between two measurements. A relpos of 9 means a gap of one byte (i.e. 8 irrelevant bits).</td>
-	</tr>
-	<tr>
-		<th>size in bits</th>
-		<td>The size of the container in bits. This is not usually needed but if the container is part of another container through aggregation, this size is used to determine the position of the next entry in the master container.</td>
-	</tr>
-	<tr>
-		<th>expected interval</th>
-		<td>If the container is not updated in this interval, all the parameters from it are marked as expired</td>
-	</tr>
-	<tr>
-		<th>description</th>
-		<td>Optional human-readable text</td>
-	</tr>
-	<tr>
-		<th>namespace:MDB:Pathname</th>
-		<td>Optional MDB alias for the packet</td>
-	</tr>
+	
 </table>
 
 ### Parameters Sheet
-This sheet must be named "Parameters", and the columns described must not be reordered. The sheet contains measurements information (both for TM and RESP packets), excluding their calibration.
+This sheet must be named ending with "Parameters", and the columns described must not be reordered. The sheet contains parameter (sometimes called measurements) information.
+Any number of sheets ending with "Parameters" can be present and they all have the same structure. Each parameter has a so called "DataSource" (as per XTCE) which is not immediately configured.
+However by historical convention:
+  <ul>
+    <li>DerivedParameters contains all parameter whose data source is set to "DERIVED" - these are usually results of algorithm computations.</li>
+    <li>LocalParameters contains all parameters whose data source is set to "LOCAL" - these are parameters that can be set by the user using the Yamcs API </li>
+    <li>All other parameter sheets contain parameters whose data source is set to "TELEMETERED" - these are parameters received from remote devices </li>
+ </ul>
+
+
+A parameter when extracted from a binary packet has two forms: a raw value and an enginnering value. The extraction from the raw packet is performed according to the encoding, whereas the conversion 
+from raw to enginnering value is performed by a calibrator. This sheet can also be used to specify parameters without encoding - if they are received already extracted, Yamcs can do only their calibration. 
+Or it can be that a parameter is already calibrated, it can still be specified here to be able to associate alarms.
+
+Empty lines can appear everywhere and are ignored.
+Comment lines starting with “#” on the first column can appear everywhere and are ignored.
 
 <table class="inline">
 	<tr>
 		<th>name</th>
-		<td>The name of the parameter. Any entry starting with `#` is treated as a comment row</td>
+		<td>The name of the parameter in the namespace.</td>
 	</tr>
 	<tr>
-		<th>bitlength</th>
-		<td>Length of the parameter, in bits, not needed for terminatedstring raw types</td>
+		<th>encoding</th>
+		<td>Description on how to extract the raw type from the binary packet. See <a href="#encoding-and-raw-types"> below</a> for all supported encodings.</td>
 	</tr>
 	<tr>
 		<th>raw type</th>
-		<td>See <a href="#raw-types">Raw Types</a></td>
+		<td>See <a href="#encoding-and-raw-types"> below</a> for all supported raw types</td>
 	</tr>
 	<tr>
 		<th>eng type</th>
@@ -133,63 +146,145 @@ This sheet must be named "Parameters", and the columns described must not be reo
 		<td>Optional human-readable text</td>
 	</tr>
 	<tr>
-		<th>namespace:MDB:Pathname</th>
-		<td>Optional MDB alias for the packet</td>
-	</tr>
+                <th>namespace:&lt;NS-NAME&gt;</th>
+                <td>If present, these columns can be used to assign additional names to the parameters in the namespace NS-NAME. Any number of columns can be present to give additional names in different namespaces.</td>
+        </tr>
 </table>
 
-#### Raw Types
+#### Encoding and Raw Types
 Raw types describe how the parameter is encoded in the raw packet. All types are case-insensitive.
 
 <table class="inline">
 	<tr>
-		<th>Type</th>
+		<th>Raw Type</th>
+		<th>Encoding</th>
 		<th>Description</th>
 	</tr>
 	<tr>
-		<td class="code">uint</td>
-		<td>Unsigned integer, need to specify bit length</td>
+		<td class="code" rowspan="2">uint</td>
+		<td class="code">unsigned(&lt;n&gt,&lt;BE|LE&gt;)</td>
+		<td>Unsigned integer.
+		    <ul>
+		       <li>n is size in bits.</li>
+		       <li>LE = little endian, BE = big endian.</li>
+		    </ul>
+		</td>
 	</tr>
 	<tr>
-		<td class="code">float</td>
-		<td>Floating point number, need to specify bit length</td>
+	       <td class="code">&lt;n&gt;</td>
+	       <td> shortcut for <tt>unsigned(&lt;n&gt;,BE)</tt></td>
+	</tr>
+	
+	<tr>
+                <td class="code" rowspan="3">int</td>
+                <td class="code">twosComplement(&lt;n&gt;, &lt;BE|LE&gt;)</td>
+                <td>two's complement encoding
+                  <ul>
+                       <li>n is size in bits.</li>
+                       <li>LE = little endian, BE = big endian.</li>
+                    </ul>
+                </td>
+        </tr>
+        <tr>                
+                <td class="code">signMagnitude(&lt;n&gt;, &lt;BE|LE&gt;)</td>
+                <td>sign magnitude encoding - first (or last for LE) bit is the sign, the remaining bits represent the magnitude (absolute value).
+                     <ul>
+                       <li>n is size in bits.</li>
+                       <li>LE = little endian, BE = big endian.</li>
+                    </ul>
+                </td>
+        </tr>
+	<tr>                
+                <td class="code">&lt;n&gt;</td>
+                <td>shortcut for <tt>twosComplement(&lt;n&gt;,BE)</tt>
+                </td>
+        </tr>
+        
+	<tr>
+		<td class="code" rowspan="2">float</td>
+		<td class="code">ieee754_1985(&lt;n&gt;, &lt;BE|LE&gt;)</td>
+		<td>IEE754_1985 encoding
+		      <ul>
+                       <li>n is size in bits.</li>
+                       <li>LE = little endian, BE = big endian.</li>
+                    </ul>
+                </td>
 	</tr>
 	<tr>
-		<td class="code">int</td>
-		<td>Synonymous to <tt>int(2s)</tt></td>
-	</tr>
-	<tr>
-		<td class="code">int(2s)</td>
-		<td>Signed integer using 2's complement binary representation, need to specify bit length</td>
-	</tr>
-	<tr>
-		<td class="code">int(si)</td>
-		<td>Signed integer using sign-magnitude binary representation, need to specify bit length</td>
+		<td class="code">&lt;n&gt;</td>
+		<td>shortcut for <tt>iee754_1985(&lt;n&gt;,BE)</tt></td>
 	</tr>
 	<tr>
 		<td class="code">boolean</td>
-		<td>Boolean value of 1 bit. Value 1 is true and 0 is false. The bit length must not be defined as it is assumed to be 1</td>
+		<td>&lt;empty&gt;</td>
+		<td>the encoding has to be empty - 1 bit is assumed.</td>
 	</tr>
 	<tr>
-		<td class="code">bytestream</td>
-		<td>Catch-all for any binary data, need to specify bit length</td>
+		<td class="code" rowspan="3">string</td>
+		<td class="code">fixed(&lt;n&gt;, &lt;charset&gt;)</td>
+		<td>fixed size string
+		  <ul>
+		    <li> <tt>n</tt> is the size in bits of the string. Only multiple of 8 supported.</li>
+                    <li><tt>charset</tt> is one of the <a href="https://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html">charsets supported by java</a> (UTF-8, ISO-8859-1, etc).<br>    
+                    If not specified, it is by default UTF-8</li>
+                </ul>
+                The string has to start at a byte boundary inside the container.
+                </td>
+                
 	</tr>
 	<tr>
-		<td class="code">string</td>
-		<td>Synonymous to <tt>TerminatedString(0x0)</tt></td>
+		<td class="code">PrependedSize(&lt;x&gt;, &lt;charset&gt;)</td>
+		<td>The size of string <b>in bytes</b> is specified in first <tt>x</tt> bits of string - the size itself will not be part of the string.<br>
+		  <ul>
+		    <li><tt>x</tt> is the size in bits of the size tag</li>
+                    <li><tt>charset</tt> is as defined above.<br></li>
+                  </ul>
+                  Note that while x can be any number of bits<=32, the string has to start at a byte boundary.
+                </td>
 	</tr>
 	<tr>
-		<td class="code">TerminatedString(0x0)</td>
-		<td>A string terminated by the specified byte.</td>
+		<td class="code">terminated(&lt;0xBB&gt;, &lt;charset&gt;)</td>
+		<td>terminated string - pay attention to the parameters following this one; if the terminator is not found all the buffer will be consumed;
+		   <ul>
+		     <li><tt>0xBB</tt> specifies a byte that is the string terminator</li>
+                     <li><tt>charset</tt> is as defined above.</li>
+                   </ul>
+	       </td>
 	</tr>
 	<tr>
-		<td class="code">FixedString</td>
-		<td>Fixed length string, specify size in bitlength</td>
+	        <td class="code" rowspan="3">binary</td>
+		<td class="code">fixed(&lt;n&gt;)</td>
+		<td>fixed size byte array.
+		<ul>
+		  <li><tt>n</tt> size of the array in bits. It has to be multiple of 8 and the parameter has to start at a byte boundary.</li>
+		</ul>  
+	       </td>
 	</tr>
-	<tr>
-		<td class="code">PrependedSizeString</td>
-		<td>Has size specified in the leading byte of the value</td>
-	</tr>
+	<tr>                
+                <td class="code">PrependedSize(&lt;x&gt;)</td>
+                <td>byte array whose size in bytes is specified in the first <tt>x</tt> bits of the array - the size itself will not be part of the raw value.
+                  <ul>
+                    <li><tt>x</tt> is the size in bits of the size tag</li>                   
+                  </ul>
+                    Note that while x can be any number of bits<=32, the byte array has to start at a byte boundary.
+                </td>
+        </tr>
+        <tr>                
+                <td class="code">&lt;n&gt;</td>
+                <td>shortcut for fixed(&lt;n&gt;)
+                </td>
+        </tr>
+        <tr>    
+                <td>&lt;any of the above&gt;</td>
+                <td class="code">custom(&lt;n&gt;,algorithm)</td>
+                <td>The decoding will be performed by a user defined algorithm.
+                   <ul>
+                     <li> &lt;n&gt; is optional and may be used to specify the size in bits of the entry in the container (in case the size is fixed) - it will use for optimizing 
+                   the access to the parameters following this one.</li>
+                     <li><tt>algorithm</tt> the name of the algorithm - it has to be defined in tha <a href="#algorithms-sheet">algorithm sheet</a></li>
+                   </ul>
+                </td>
+        </tr>
 </table>
     
 #### Engineering Types
@@ -205,142 +300,83 @@ Depending on the combination of raw and engineering type, automatic conversion i
 	</tr>
 	<tr>
 		<td class="code">uint</td>
-		<td>Unsigned integer</td>
-		<td>From type <tt>uint</tt> or <tt>string</tt></td>
-	</tr>
-	<tr>
-		<td class="code">int</td>
-		<td>Signed integer</td>
+		<td>Unsigned 32 bit integer - it corresponds to <tt>int</tt> in java and <tt>uint32</tt> in protobuf</td>
 		<td>From <tt>int</tt>, <tt>uint</tt> or <tt>string</tt></td>
 	</tr>
 	<tr>
+                <td class="code">uint64</td>
+                <td>Unsigned 64 bit integer - it corresponds to <tt>long</tt> in java and <tt>uint64</tt> in protobuf</td>
+                <td>From <tt>int</tt>, <tt>uint</tt> or <tt>string</tt></td>
+        </tr>
+	<tr>
+		<td class="code">int</td>
+		<td>Signed 32 bit integer - it corresponds to <tt>int</tt> in java and <tt>int32</tt> in protobuf</td>
+		<td>From <tt>int</tt>, <tt>uint</tt> or <tt>string</tt></td>
+	</tr>
+	<tr>
+                <td class="code">int64</td>
+                <td>Signed 64 bit integer - it corresponds to <tt>long</tt> in java and <tt>int64</tt> in protobuf</td>
+                <td>From <tt>int</tt>, <tt>uint</tt> or <tt>string</tt></td>
+        </tr>
+	<tr>
 		<td class="code">string</td>
-		<td>String</td>
+		<td>Character string - it corresponds to <tt>String</tt> in java and <tt>string</tt> in protobuf</td>
 		<td>From <tt>string</tt></td>
 	</tr>
 	<tr>
 		<td class="code">float</td>
-		<td>Floating point number</td>
+		<td>32 bit floating point number - it corresponds to <tt>float</tt> in java and protobuf</td>
 		<td>From <tt>float</tt>, <tt>int</tt>, <tt>uint</tt> or <tt>string</tt></td>
 	</tr>
 	<tr>
+                <td class="code">double</td>
+                <td>62 bit floating point number - it corresponds to <tt>double</tt> in java and protobuf</td>
+                <td>From <tt>float</tt>, <tt>int</tt>, <tt>uint</tt> or <tt>string</tt></td>
+        </tr>
+	<tr>
 		<td class="code">enumerated</td>
 		<td>
-			A kind of string that can only be one out of a fixed set of predefined state values. If the parameter's enumerated value is unknown, the state value <tt>UNDEF</tt> is used instead.
+			A kind of string that can only be one out of a fixed set of predefined state values. It corrersponds to <tt>String</tt> in java and <tt>string</tt> in protobuf.
 		</td>
 		<td>
         	From <tt>int</tt> or <tt>uint</tt>. A Calibrator is required.
 		</td>
 	</tr>
+	
 	<tr>
 		<td class="code">boolean</td>
-		<td>A binary true/false value</td>
+		<td>A binary true/false value - it corresponds to 'boolean' in java and 'bool' in protobuf</td>
 		<td>
 			<p>From any raw type</p>
-			<p>Values equal to zero, all-zero bytes or an empty string are considered <em>falsy</em></p>
+			<p>Values equal to zero, all-zero bytes or an empty string are considered <em>false</em></p>
 		</td>
 	</tr>
 	<tr>
 		<td class="code">binary</td>
-		<td>Catch-all for any binary data</td>
+		<td>Byte array - it corresponds to <tt>byte[]</tt> in java and <tt>bytes</tt> in protobuf.</td>
 		<td>From <tt>bytestream</tt> only</td>
 	</tr>
 </table>
 
-### Derived Parameters Sheet
-This sheet must be named “DerivedParameters”, and the columns described must not be reordered.
-Derived Parameters are parameters whose values are output of Algorithms (defined in section Algorithm).
 
-<table class="inline">
-	<tr>
-		<th>name</th>
-		<td>The name of the parameter. Any entry starting with `#` is treated as a comment row</td>
-	</tr>
-	<tr>
-		<th>bitlength</th>
-		<td>Length of the parameter, in bits, not needed for terminatedstring raw types</td>
-	</tr>
-	<tr>
-		<th>raw type</th>
-		<td>See <a href="#raw-types">Raw Types</a></td>
-	</tr>
-	<tr>
-		<th>eng type</th>
-		<td>See <a href="#engineering-types">Engineering Types</a></td>
-	</tr>
-	<tr>
-		<th>eng unit</th>
-		<td>Free-form textual description of unit(s). E.g. degC, W, V, A, s, us</td>
-	</tr>
-	<tr>
-		<th>calibration</th>
-		<td>Name of a calibration described in the Calibration sheet, leave empty if no calibration is applied</td>
-	</tr>
-	<tr>
-		<th>description</th>
-		<td>Optional human-readable text</td>
-	</tr>
-	<tr>
-		<th>namespace:MDB:Pathname</th>
-		<td>Optional MDB alias for the packet</td>
-	</tr>
-</table>
-
-### Local Parameters Sheet
-This sheet must be named "LocalParameters", and the columns described must not be reordered.
-Local parameters are equivalent to Parameters but can be written by Yamcs clients.
-
-<table class="inline">
-	<tr>
-		<th>name</th>
-		<td>The name of the parameter. Any entry starting with `#` is treated as a comment row</td>
-	</tr>
-	<tr>
-		<th>bitlength</th>
-		<td>Length of the parameter, in bits, not needed for terminatedstring raw types</td>
-	</tr>
-	<tr>
-		<th>raw type</th>
-		<td>See <a href="#raw-types">Raw Types</a></td>
-	</tr>
-	<tr>
-		<th>eng type</th>
-		<td>See <a href="#engineering-types">Engineering Types</a></td>
-	</tr>
-	<tr>
-		<th>eng unit</th>
-		<td>Free-form textual description of unit(s). E.g. degC, W, V, A, s, us</td>
-	</tr>
-	<tr>
-		<th>calibration</th>
-		<td>Name of a calibration described in the Calibration sheet, leave empty if no calibration is applied</td>
-	</tr>
-	<tr>
-		<th>description</th>
-		<td>Optional human-readable text</td>
-	</tr>
-	<tr>
-		<th>namespace:MDB:Pathname</th>
-		<td>Optional MDB alias for the packet</td>
-	</tr>
-</table>
 
 ### Calibration Sheet
-This sheet must be named "Calibration", and the columns described must not be reordered. The sheet contains calibration data including enumerations
+This sheet must be named "Calibration", and the columns described must not be reordered. The sheet contains calibration data including enumerations.
 
 <table class="inline">
 	<tr>
-		<th>parameter name</th>
-		<td>Name of the calibration.</td>
+		<th>calibrator name</th>
+		<td>Name of the calibration - it has to match the calibration column in the Parameter sheet.</td>
 	</tr>
 	<tr>
 		<th>type</th>
-		<td>
+		<td> One of the following:
 			<ul>
-				<li><tt>polynomial</tt> for polynomial calibration</li>
-				<li><tt>pointpair</tt> for pointpair calibration</li>
-				<li><tt>identical</tt> for discrete calibration</li>
+				<li><tt>polynomial</tt> for polynomial calibration.  Note that the polynomial calibration is performed with double precision
+				floating point numbers even though the input and/or output may be 32 bit. </li>
+				<li><tt>spline</tt> for linear spline(pointpair) interpolation. As for the polynomial, the computation is performed with double precision numbers.</li>				
 				<li><tt>enumeration</tt> for mapping enumeration states</li>
+				<li><tt>java-expression</tt> for writing more complex functions</li>
 			</ul>
 		</td>
 	</tr>
@@ -348,10 +384,10 @@ This sheet must be named "Calibration", and the columns described must not be re
 		<th>calib1</th>
 		<td>
 			<ul>
-				<li>If the type is <tt>polynomial</tt>: coefficient</li>
-				<li>If the type is <tt>pointpair</tt>: start point</li>
-				<li>If the type is <tt>identical</tt>: engineering value</li>
+				<li>If the type is <tt>polynomial</tt>: it list the coefficients, one per row starting with the constant and up to the highest grade. There is no limit in the number of coefficients (i.e. order of polynomial).</li>
+				<li>If the type is <tt>spline</tt>: start point (x from (x,y) pair)</li>
 				<li>If the type is <tt>enumeration</tt>: numeric value</li>
+				<li>If the type is <tt>java-expression</tt>: the textual formula to be executed (see below)</li>
 			</ul>
 		</td>
 	</tr>
@@ -360,45 +396,90 @@ This sheet must be named "Calibration", and the columns described must not be re
 		<td>
 			<ul>
 				<li>If the type is <tt>polynomial</tt>: leave <em>empty</em></li>
-				<li>If the type is <tt>pointpair</tt>: stop point corresponding to the start point in <tt>calib1</tt></li>
-				<li>If the type is <tt>identical</tt>: engineering value corresponding to the raw value in <tt>calib1</tt></li>
+				<li>If the type is <tt>spline</tt>: stop point (y) corresponding to the start point(x) in <tt>calib1</tt></li>				
 				<li>If the type is <tt>enumeration</tt>: text state corresponding to the numeric value in <tt>calib1</tt></li>
+				<li>If the type is <tt>java-expression</tt>: leave <em>empty</em></li>
 			</ul>
 		</td>
 	</tr>
 </table>
 
+#### Java Expressions
+This is intended as a catch-all case. XTCE specifies a MathOperationCalibration calibrator that is not implemented in Yamcs. However these expressions can be used for the same purpose.
+They can be used for float or integer calibrations. 
+
+The expression appearing in the <em>calib1</em> column will be enclosed and compiled into a class like this:
+
+```java
+package org.yamcs.xtceproc.jecf;
+public class Expression665372494 implements org.yamcs.xtceproc.CalibratorProc {
+   public double calibrate(double rv) {
+       return <expression>;
+   }
+}
+```
+
+The expression has usually to return a double; but java will convert implicitly any other primitive type to a double.
+
+Java statements cannot be used but the conditional operator “? :” can be used; for example this expression would compile fine:
+
+```java
+  rv>0?rv+5:rv-5
+```
+
+Static functions can be also referenced. In addition to the usual Java ones (e.g. Math.sin, Math.log, etc) user own functions (that can be found as part of a jar on the server in the lib/ext directory) can be referenced by specifying the full class name:
+```java
+  my.very.complicated.calibrator.Execute(rv)
+```
+
 ### Algorithms Sheet
 This sheet must be named "Algorithms", and the columns described must not be reordered. The sheet contains arbitrarily complex user algorithms that can set (derived) output parameters based on any number of input parameters.
+
+Comment lines starting with “#” on the first column can appear everywhere and are ignored.
+Empty lines are used to separate algorithms and cannot be used inside the specification of one algorithm.
+
 
 <table class="inline">
 	<tr>
 		<th>algorithm name</th>
-		<td>The identifying name of the algorithm. Any entry starting with <tt>#</tt> is treated as a comment row</td>
+		<td>The identifying name of the algorithm.</td>
 	</tr>
 	<tr>
+                <th>algorithm language</th>
+                <td>The programming language of the algorithm. Currently supported values are:
+                   <ul>
+                     <li>JavaScript</li>
+                     <li>python - note that this requires the presence of jython.jar in the Yamcs lib or lib/ext directory (it is not delivered together with Yamcs).</li>
+                     <li>Java</li>
+                     </ul>
+                </td>
+        </tr>
+	<tr>
 		<th>text</th>
-		<td>The code of the algorithm</td>
+		<td>The code of the algorithm (see below for how this is interpreted).</td>
 	</tr>
 	<tr>
 		<th>trigger</th>
 		<td>
-			Optionally specify when the algorithm should trigger. If left blank, algorithms will trigger as soon as at least one of their input parameters is updated, which is expected to suit most use cases. Other options are:
+			Optionally specify when the algorithm should trigger:
 			<ul>
 				<li><tt>OnParameterUpdate('/some-param', 'some-other-param')</tt><br>Execute the algorithm whenever <em>any</em> of the specified parameters are updated</li>
+				<li><tt>OnInputParameterUpdate</tt><br>This is the same as above for all input parameters (i.e. execute whenever <em>any</em> input parameter is updated).</li>
 				<li><tt>OnPeriodicRate(&lt;fireRate&gt;)</tt><br>Execute the algorithm every <tt>fireRate</tt> milliseconds</li>
+				<li><tt>none</tt><br>The algorithm doesn't trigger automatically but can be called upon from other parts of the system (like the command verifier)</li>
 			</ul>
+			The default is none.
 		</td>
 	</tr>
+	
 	<tr>
 		<th>in/out</th>
 		<td>Whether a parameter is inputted to, or outputted from the algorithm. Parameters are defined, one per line, following the line defining the algorithm name</td>
 	</tr>
 	<tr>
-		<th>parameter name</th>
+		<th>parameter reference</th>
 		<td>
-			<p>Reference name of a parameter. Input parameters can come from any sort of parameter provider. Output parameters should be defined in the same spreadsheet as the algorithm definition.</p>
-			<p>Both input and output parameters must be defined in the Parameters sheet and can have calibrations linked to them. In most cases there is no need to specify a bitsize for an output parameter.</p>
+			<p>Reference name of a parameter. See above on how this reference is resolved.</p>
 			<p>Algorithms can be interdependent, meaning that the output parameters of one algorithm could be used as input parameters of another algorithm.</p>
 		</td>
 	</tr>
@@ -417,12 +498,74 @@ This sheet must be named "Algorithms", and the columns described must not be reo
 		</td>
 	</tr>
 </table>
-            
+
+#### JavaScript algorithms
+A full function body is expected. The body will be encapsulated in a javascript function like
+```javascript
+function algorithm_name(in_1, in_2, ..., out_1, out_2...) {
+   <algortihm-text>
+}
+```
+The <tt>in_n</tt> and <tt>outX</tt> are to be names given in the spreadsheet column <em>name used in the algorithm</em>.
+
+The method can make use of the input variables and assign out_x.value (this is the engineering value) or out_x.rawValue (this is the raw value) and out_x.updated for each output variable.
+The <out>.updated can be set to false to indicate that the output value has not to be further processed even if the algorithm has run.
+By default it is true - meaning that each time the algorithm is run, it is assumed that it updates all the output variables.
+
+If out_x.rawValue is set and out_x.value is not, then Yamcs will run a calibration to compute the engineering value.
+
+Note that for some algorithms (e.g. command verifiers) need to return a value (rather 
+
+#### Python algorithms
+This works very similarly with the JavaScript algorithms, The thing to pay attention is the indentation. The algorithm text wihch is specified in the spreadsheet will be automatically indeted with 4 characters.
+```python
+function algorithm_name(in_1, in_2, ..., out_1, out_2...) {
+   <algortihm-text>
+}
+```
+
+#### Java algorithms
+The algorithm text  is a class name with optionally parantheses enclosed string that is parsed into an object by an yaml parser.
+Yamcs will try to locate the given class who must be implementing the org.yamcs.algorithms.AlgorithmExecutor interface and will create an object with a constructor with three paramethers:
+```java
+<Constructor>(Algorithm, AlgorithmExecutionContext, Object arg) 
+```
+
+where <tt>arg</tt> is the argument parsed from the yaml.
+
+If the optional argument is not present in the algorithm text definition,  then the class constructor  should only have two parameters.
+The abstract class <tt>org.yamcs.algorithms.AbstractAlgorithmExecutor</tt> offers some helper methods and can be used as base class for implementation of such algorithm.
+
+If the algorithm is used for data decoding, it has to implement the <tt>org.yamcs.xtceproc.DataDecoder</tt> interface instead (see below). 
+
+#### Command verifier algorithms
+Command verifier algorithms are special algorithms associated to the command verifiers. Multiple instances of the same algorithm may execute in parallel if there are multiple pending commands executed in parallel.
+
+These algorithms are special as they can use as input variables not only parameters but also command arguments and command history events. These are specified by using "/yamcs/cmd/arg/" and "/yamcs/cmdHist" prefix respectively.
+
+In addition these algorithms may return a boolean value (whereas the normal algorithms only have to write to output variables). The returned value is used to indicate if the verifier has succeeded or failed. No return value will mean that the verifier is still pending.
+
+#### Data Decoding algorithms
+The Data Decoding algorithms are used to extract a raw value from a binary buffer. 
+These algorithms do not produce any output and are triggered whenever the parameter has to be extracted from a container.
+
+These algorithms work differently from the other ones and have are some limitations:
+<ul>
+ <li> only Java is supported as a language</li>
+ <li> not possible to specify input parameters</li>
+</ul>
+
+These algorithms have to implement the interface org.yamcs.xtceproc.DataDecoder.
+
+
+
+
 #### Example Definition
 
 <table class="inline small-contents">
 	<tr>
 		<th>algo name</th>
+		<th>language</th>
 		<th>text</th>
 		<th>trigger</th>
 		<th>in/out</th>
@@ -432,14 +575,16 @@ This sheet must be named "Algorithms", and the columns described must not be reo
 	</tr>
 	<tr>
 		<td class="code">my_avg</td>
-		<td class="code">r = (a.value + b.value + c.value) / 3;</td>
-		<td class="code"></td>
+		<td class="code">JavaScript</td>
+		<td class="code">r.value = (a.value + b.value + c.value) / 3;</td>
+		<td class="code">OnInputParameterUpdate</td>
 		<td class="code"></td>
 		<td class="code"></td>
 		<td class="code"></td>
 		<td class="code"></td>
 	</tr>
 	<tr>
+		<td class="code"></td>
 		<td class="code"></td>
 		<td class="code"></td>
 		<td class="code"></td>
@@ -452,12 +597,14 @@ This sheet must be named "Algorithms", and the columns described must not be reo
 		<td class="code"></td>
 		<td class="code"></td>
 		<td class="code"></td>
+		<td class="code"></td>
 		<td class="code">in</td>
 		<td class="code">/MY_SS/some_temperature</td>
 		<td class="code">-1</td>
 		<td class="code">b</td>
 	</tr>
 	<tr>
+		<td class="code"></td>
 		<td class="code"></td>
 		<td class="code"></td>
 		<td class="code"></td>
@@ -470,12 +617,102 @@ This sheet must be named "Algorithms", and the columns described must not be reo
 		<td class="code"></td>
 		<td class="code"></td>
 		<td class="code"></td>
+		<td class="code"></td>
 		<td class="code">out</td>
 		<td class="code">/MY_SS/avg_out</td>
 		<td class="code"></td>
 		<td class="code">r</td>
 	</tr>
 </table>
+
+#### Example Definition for a command verifier algorithm
+
+<table class="inline small-contents">
+        <tr>
+                <th>algo name</th>
+                <th>language</th>
+                <th>text</th>
+                <th>trigger</th>
+                <th>in/out</th>
+                <th>param name</th>
+                <th>instance</th>
+                <th>friendly<br>name</th>
+        </tr>
+        <tr>
+                <td class="code">alg_verif_completed</td>
+                <td class="code">JavaScript</td>
+                <td class="code">if((receivedCmdId.value==sentCmdId.value) && (receivedSeqNum.value==sentSeqNum.value) && (stage.value==2) ) {
+    if(result.value==0) return true;
+    else return false;}
+                </td>
+                <td class="code"></td>
+                <td class="code"></td>
+                <td class="code"></td>
+                <td class="code"></td>
+                <td class="code"></td>
+        </tr>
+        <tr>
+                <td class="code"></td>
+                <td class="code"></td>
+                <td class="code"></td>
+                <td class="code"></td>
+                <td class="code">in</td>
+                <td class="code">/yamcs/cmd/arg/packet-id</td>
+                <td class="code"></td>
+                <td class="code">sentCmdId</td>
+        </tr>
+        <tr>
+                <td class="code"></td>
+                <td class="code"></td>
+                <td class="code"></td>
+                <td class="code"></td>
+                <td class="code">in</td>
+                <td class="code">/yamcs/cmdHist/ccsds-seqcount</td>
+                <td class="code"></td>
+                <td class="code">sentSeqNum</td>
+        </tr>
+        <tr>
+                <td class="code"></td>
+                <td class="code"></td>
+                <td class="code"></td>
+                <td class="code"></td>
+                <td class="code">in</td>
+                <td class="code">avc_command_seq</td>
+                <td class="code"></td>
+                <td class="code">receivedSeqNum</td>
+        </tr>
+        <tr>
+                <td class="code"></td>
+                <td class="code"></td>
+                <td class="code"></td>
+                <td class="code"></td>
+                <td class="code">in</td>
+                <td class="code">avc_command_id</td>
+                <td class="code"></td>
+                <td class="code">receivedCmdId</td>
+        </tr>
+        <tr>
+                <td class="code"></td>
+                <td class="code"></td>
+                <td class="code"></td>
+                <td class="code"></td>
+                <td class="code">in</td>
+                <td class="code">avc_command_execution_stage</td>
+                <td class="code"></td>
+                <td class="code">stage</td>
+        </tr>
+        <tr>
+                <td class="code"></td>
+                <td class="code"></td>
+                <td class="code"></td>
+                <td class="code"></td>
+                <td class="code">in</td>
+                <td class="code">avc_command_result</td>
+                <td class="code"></td>
+                <td class="code">result</td>
+        </tr>
+</table>
+
 
 
 ### Alarms Sheet
@@ -707,7 +944,7 @@ The sheet contains commands description, including arguments. General convention
 	</tr>
 	<tr>
 		<th>argument name</th>
-		<td>From this column on, most of the cells are valid for arguments only. These have to be defined on a new row after the command. The exceptions are: size in bits, description, aliases</td>
+		<td>From this column on, most of the cells are valid for arguments only. These have to be defined on a new row after the command. The exceptions are: description, aliases</td>
 	</tr>
 	<tr>
 		<th>relpos</th>
@@ -715,8 +952,8 @@ The sheet contains commands description, including arguments. General convention
 default is 0</td>
 	</tr>
 	<tr>
-		<th>size in bits</th>
-		<td>Size in bits of the raw value</td>
+		<th>encoding</th>
+		<td>How to convert the raw value to binary. The supported encodings are listed in the table below.</td>
 	</tr>
 	<tr>
 		<th>eng type</th>
@@ -727,7 +964,7 @@ default is 0</td>
 	</tr>
 	<tr>
 		<th>raw type</th>
-		<td>Raw type: can be one of uint, int, float, string or binary</td>
+		<td>Raw type: one of the types defined in the table below.</td>
 	</tr>
 	<tr>
 		<th>(default) value</th>
@@ -755,9 +992,142 @@ default is 0</td>
 	</tr>
 </table>
 
+#### Encoding and Raw Types for command arguments
+The raw type and encoding describe how the argument is encoded in the binary packet. All types are case-insensitive.
+
+<table class="inline">
+        <tr>
+                <th>Raw Type</th>
+                <th>Encoding</th>
+                <th>Description</th>
+        </tr>
+        <tr>
+                <td class="code" rowspan="2">uint</td>
+                <td class="code">unsigned(&lt;n&gt,&lt;BE|LE&gt;)</td>
+                <td>Unsigned integer.
+                    <ul>
+                       <li>n is size in bits.</li>
+                       <li>LE = little endian, BE = big endian.</li>
+                    </ul>
+                </td>
+        </tr>
+        <tr>
+               <td class="code">&lt;n&gt;</td>
+               <td> shortcut for <tt>unsigned(&lt;n&gt;,BE)</tt></td>
+        </tr>
+        
+        <tr>
+                <td class="code" rowspan="3">int</td>
+                <td class="code">twosComplement(&lt;n&gt;, &lt;BE|LE&gt;)</td>
+                <td>two's complement encoding
+                  <ul>
+                       <li>n is size in bits.</li>
+                       <li>LE = little endian, BE = big endian.</li>
+                    </ul>
+                </td>
+        </tr>
+        <tr>                
+                <td class="code">signMagnitude(&lt;n&gt;, &lt;BE|LE&gt;)</td>
+                <td>sign magnitude encoding - first (or last for LE) bit is the sign, the remaining bits represent the magnitude (absolute value).
+                     <ul>
+                       <li>n is size in bits.</li>
+                       <li>LE = little endian, BE = big endian.</li>
+                    </ul>
+                </td>
+        </tr>
+        <tr>                
+                <td class="code">&lt;n&gt;</td>
+                <td>shortcut for <tt>twosComplement(&lt;n&gt;,BE)</tt>
+                </td>
+        </tr>
+        
+        <tr>
+                <td class="code" rowspan="2">float</td>
+                <td class="code">ieee754_1985(&lt;n&gt;, &lt;BE|LE&gt;)</td>
+                <td>IEE754_1985 encoding
+                      <ul>
+                       <li>n is size in bits.</li>
+                       <li>LE = little endian, BE = big endian.</li>
+                    </ul>
+                </td>
+        </tr>
+        <tr>
+                <td class="code">&lt;n&gt;</td>
+                <td>shortcut for <tt>iee754_1985(&lt;n&gt;,BE)</tt></td>
+        </tr>
+        <tr>
+                <td class="code">boolean</td>
+                <td>&lt;empty&gt;</td>
+                <td>the encoding has to be empty - 1 bit is assumed.</td>
+        </tr>
+        <tr>
+                <td class="code" rowspan="4">string</td>
+                <td class="code">fixed(&lt;n&gt;, &lt;charset&gt;)</td>
+                <td>fixed size string
+                  <ul>
+                    <li> <tt>n</tt> is the size in bits of the string. Only multiple of 8 supported.</li>
+                    <li><tt>charset</tt> is one of the <a href="https://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html">charsets supported by java</a> (UTF-8, ISO-8859-1, etc).<br>    
+                    If not specified, it is by default UTF-8</li>
+                </ul>               
+                </td>
+                
+        </tr>
+        <tr>
+                <td class="code">PrependedSize(&lt;x&gt;, &lt;charset&gt;&lt;m;&gt)</td>
+                <td>The size of string <b>in bytes</b> is specified in first <tt>x</tt> bits of string - the size itself will not be part of the string.<br>
+                  <ul>
+                    <li><tt>x</tt> is the size in bits of the size tag</li>
+                    <li><tt>charset</tt> is as defined above.<br></li>
+                    <li><tt>m</tt> if specified, it is the minimum size in bits of the encoded value. Note that the prepended size reflects the real size of the string even if smaller than this minimum size. This option has been added for compatibility with the Airbus CGS system but its usage is discouraged since it is not compliant with XTCE.<br></li>
+                  </ul>
+                </td>
+        </tr>
+        <tr>
+                <td class="code">&lt;n&gt;</td>
+                <td>shortcut for <tt>fixed(&lt;n&gt;)</tt></td>
+        </tr>
+        <tr>
+                <td class="code">terminated(&lt;0xBB&gt;, &lt;charset&gt;&lt;m;&gt)</td>
+                <td>terminated string;
+                   <ul>
+                     <li><tt>0xBB</tt> specifies a byte that is the string terminator</li>
+                     <li><tt>charset</tt> is as defined above.</li>
+                     <li><tt>m</tt> if specified is the minimum size in bits of the encoded value. Note that the termination character reflects the real size of the string even if smaller than this minimum size. This option has been added for compatibility with the Airbus CGS system but its usage is discouraged since it is not compliant with XTCE.</li>
+                   </ul>
+               </td>
+        </tr>
+        <tr>
+                <td class="code" rowspan="3">binary</td>
+                <td class="code">fixed(&lt;n&gt;)</td>
+                <td>fixed size byte array.
+                <ul>
+                  <li><tt>n</tt> size of the array in bits. It has to be multiple of 8 and the argument has to start at a byte boundary.</li>
+                </ul>  
+               </td>
+        </tr>
+        <tr>                
+                <td class="code">PrependedSize(&lt;x&gt;)</td>
+                <td>byte array whose size in bytes is specified in the first <tt>x</tt> bits of the array - the size itself will not be part of the raw value.
+                  <ul>
+                    <li><tt>x</tt> is the size in bits of the size tag</li>                   
+                  </ul>
+                    Note that while x can be any number of bits<=32, the byte array has to start at a byte boundary.
+                </td>
+        </tr>
+        <tr>                
+                <td class="code">&lt;n&gt;</td>
+                <td>shortcut for fixed(&lt;n&gt;)
+                </td>
+        </tr>       
+</table>
+    
 ### Command Options Sheet
 This sheet must be named “CommandOptions”, and the columns described must not be reordered.
-This sheet defines the options that can be applied to commands.
+This sheet defines two types of options for commands:
+<ul>
+ <li>transmission constraints - these are conditions that have to be met in order for the command to be sent.</li>
+ <li>command significance - this is meant to flag commands that have a certain significance. Currently the significance is only used by the end user applications (e.g. Yamcs Studio) to raise the awarness of the operator when sending such command.</li>
+</ul>
 
 <table class="inline">
 <tr><th>Command name</th><td>The name of the command. Any entry starting with `#` is treated as a comment row</td></tr>
@@ -780,6 +1150,102 @@ one of:
 <tr><th>Significance Reason</th><td>A message that will be presented to the user explaining why the command is significant.
 </td></tr>
 </table>
+
+
+### Command Verification Sheet
+The Command verification sheets defines how a command shall be verified once it has been sent for execution.
+
+The transmission/execution of a command usual goes through multiple stages and a verifier can be associated to each stage.
+Each verifier runs within a defined time window which can be relative to the release of the command or to the completion of the previous verifier. The verifiers have three possible outcomes:
+  <ul>
+   <li> OK = the stage has been passed successfully.</li>
+   <li> NOK = the stage verification has failed (for example there was an error on-board when executing the command, or the uplink was not activated).</li>
+   <li> timeout - the condition could not be verified within the defined time interval.</li>
+  </ul>
+For each verifier it has to be defined what happens for each of the three outputs. 
+
+<table class="inline">
+<tr>
+  <th>Command name</th>
+  <td>The command relative name as defined in the Command sheet. Referencing commands from other subsystems is not supported.</td>
+</tr>
+
+<tr>
+   <th>CmdVerifier Stage</th>
+   <td>
+    Any name for a stage is accepted but XTCE defines the following ones:
+    <ul>
+      <li>TransferredToRange</li>
+      <li>SentFromRange</li>
+      <li>Received</li>
+      <li>Accepted</li>
+      <li>Queued</li>
+      <li>Execution</li>
+      <li>Complete</li>
+      <li>Failed</li>
+    </ul>
+    Yamcs interprets these as strings without any special semantics.
+    If special actions (like declaring the command as completed) are required for Complete or Failed, they have to be configured in OnuSccess/OnFail/OnTimeout columns. By default command history events with the name Verification_&lt;stage&gt; are generated."
+  </td>
+</tr>
+
+<tr>
+   <th>CmdVerifier Type</th>
+   <td>
+     Supported types are:
+     <ul>
+       <li>container – the command is considered verified when the container is received. Note that this cannot generate a Fail (NOK) condition - it's either OK if the container is received in the timewindow or timeout if the container is not received.</li>
+       <li>algorithm – the result of the algorithm run is used as the output of the verifier. If the algorithm is not run (because it gets no inputs) or returns null, then the timeout condition applies</li>
+     </ul>
+    </td>
+</tr>
+<tr>
+  <th>CmdVerifier Text </th>
+  <td>
+    Depending on the type: 
+    <ul>
+      <li>container: is the name of the container from the Containers sheet. Reference to containers from other space systems is not supported.</li>
+      <li>algorithm: is the name of the algorithm from the Algorithms sheet. Reference to algorithms from other space systems is not supported.</li>
+     </ul>
+   </td>
+</tr>
+
+<tr>
+   <th>Time Check Window</th>
+   <td>start,stop in milliseconds defines when the verifier starts checking the command and when it stops. </td>
+</tr>
+
+<tr>
+  <th>checkWindow is relative to</th>
+  <td>
+    <ul>
+      <li>LastVerifier (default) – the start,stop in the window definition are relative to the end of the previous verifier. If there is no previous verifier, the start,stop are relative to the command release time. If the previous verifier ends with timeout, this verifier will also timeout without checking anything.</li>
+      <li>CommandRelease - the start,stop in the window definition are relative to the command release.</li>
+    </ul>
+  </td>
+</tr>
+
+<tr>
+  <th>OnSuccess</th>
+  <td>       "Defines what happens when the verification returns true. It has to be one of:
+     <ul>
+       <li>SUCCESS: command considered completed successful (CommandComplete event is generated)</li>
+       <li>FAIL:  CommandFailed event is generated</li>
+       <li>none (default) – only a Verification_stage event is generated without an effect on the final execution status of the command.</li>
+      </ul>
+  </td>
+</tr>
+<tr>
+    <th>OnFail</th>
+    <td> Same like OnSuccess but the evnet is generated in case the verifier returns false.</td>
+</tr>
+<tr>
+    <th>OnTimeout</th>
+    <td>Same as OnSuccess but the event is generated in case the verifier times out.</td>
+</tr>
+
+</table>
+
 
 
 ### Change Log Sheet

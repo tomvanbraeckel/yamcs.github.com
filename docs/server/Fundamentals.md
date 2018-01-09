@@ -22,7 +22,7 @@ Streams are inspired from the domain of Complex Event Processing (CEP) or Stream
 Typically there is a stream for realtime telemetry called <tt>tm_realtime</tt>, one for realtime processed parameters called <tt>pp_realtime</tt>, one for commands called <tt>tc</tt>, etc.
 
 Streams can be made 'visible' to the external word by two means:
-* HornetQ wrappers. A wrapper is a HornetQ address that is configured such that each message published to the address gets transferred to the stream and each tuple that comes via the stream is transformed into a HornetQ message and published via the address. An external client then can bind a queue to that address and receive all the messages that transit through the respective stream. Unlike the Yamcs streams which are synchronous and very light, the HornetQ addresses are asynchronous and involve more overhead. Care has to be taken with HornetQ for not filling up the memory if clients are slow to read messages from the queue.
+* ApaceMQ Artemis wrappers. There are several services that can take data from streams and publish them to Artemis addresses. Unlike the Yamcs streams which are synchronous and very light, the Artemis addresses are asynchronous and involve more overhead. Care has to be taken with Artemis for not filling up the memory if clients are slow to read messages from the queue.
 
 * Websocket subscription. This can be done using the api described in the [Websocket API](/docs/api/Stream_Updates/).
 
@@ -34,7 +34,8 @@ Mission Control Systems like Yamcs process TM/TC according to the Mission Databa
 
 
 ### Data Links
-Data Links represent special components that communicate with the external world. There are three types of Data Links: TM (called TM Providers), TC (called TC Uplinkers) and PP (called PP Providers). TM and PP receive telemetry packets or parameters and inject them into the realtime or dump TM or PP streams. The TC data links subscribe to the realtime TC stream and send data to the external systems. Note that any stream (like the realtime TM stream) can be linked to a HornetQ address, making it possible to inject data externally. However, the Data Links can report on their status and can also be controlled by an operator to connect/disconnect to/from the data sources.
+Data Links represent special components that communicate with the external world. There are three types of Data Links: TM, TC and PP (processed parameters). TM and PP receive telemetry packets or parameters and inject them into the realtime or dump TM or PP streams. The TC data links subscribe to the realtime TC stream and send data to the external systems.
+The Data Links can report on their status and can also be controlled by an operator to connect/disconnect to/from the data sources.
 
 
 ### Data types

@@ -27,7 +27,7 @@ Yamcs is delivered as an rpm (or deb) package and installation is achieved using
 
     $ rpm -U yamcs-version.noarch.rpm
     
-After installing the rpms, the following directories are created under <tt>/yamcs/opt</tt>:
+After installing the rpms, the following directories are created under <tt>/opt/yamcs</tt>:
         
 <table class="inline">
 	<tr>
@@ -50,8 +50,21 @@ After installing the rpms, the following directories are created under <tt>/yamc
 		<th class="code">log</th>
 		<td>Contains the log files of Yamcs. It has to be writable by the user <tt>yamcs</tt></td>
 	</tr>
+	<tr>
+                <th class="code">mdb</th>
+                <td>Empty directory where the mission database has to be located.</td>
+        </tr>
 </table>
+
     
+In addition to the default Yamcs package, in order to get a running server, the yamcs-simulation rpm can also be installed:
+
+      $ rpm -U yamcs-version.noarch.rpm
+      
+This package will provide default configuration files and MDB for running a simple simulation of an UAV.
+
+In addition to the directories mentioned above, yamcs also uses <tt>/storage/yamcs-data</tt> to store the data (telemetry, telecomand, event archive). This directory has to be writable by the user <tt>yamcs</tt>. The location of the data directory can be changed by editing <tt>/opt/yamcs/etc/yamcs.yaml</tt>
+
 In addition to the default Yamcs package, there are other proprietary extensions. For example:
 
 * <tt>yamcs-cdmcs</tt>
@@ -60,16 +73,14 @@ In addition to the default Yamcs package, there are other proprietary extensions
 * <tt>yamcs-dass</tt>
     Provides TM/TC receivers/senders via the DaSS protocol
     
-* <tt>yamcs-busoc</tt>
-    Provides the SOLAR (ISS/Columbus payload) event decoder and a few SOLAR specific derived variables.
+* <tt>yamcs-spell</tt>
+    Provides the modules required to use [SPELL](https://sourceforge.net/projects/spell-sat/) with Yamcs. SPELL is a procedure execution environment developed by [SES](www.ses.com). 
     
-* <tt>yamcs-erasmus</tt>
-    Provides the EDR and FASTER (also ISS/Columbus payloads/instruments) event decoder and some specific derived variables.
         
 <div class="hint">
-	The extensions are not part of the Yamcs open-source release. They only make sense in the specific USOC environment.
+        The extensions are not part of the Yamcs open-source release. If you are interested in using them, please contact Space Applications Services.
 </div>
-    
+
 #### Configuration
 The Yamcs configuration files are encoded using the yaml format. This format allows to encode in a human readable way (unlike XML) the most common data types: numbers, strings, lists and maps. For detailed syntax rules, please see [http://www.yaml.org](http://www.yaml.org).
 
