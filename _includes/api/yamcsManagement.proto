@@ -1,3 +1,5 @@
+syntax="proto2";
+
 package yamcsManagement;
 option java_package = "org.yamcs.protobuf";
 
@@ -24,12 +26,17 @@ message YamcsInstance {
   optional string url = 5;
   optional string clientsUrl = 6;
   optional string eventsUrl = 7;
+  optional ServiceState state = 8;
+  //in case the state=FAILED, this field will indicate the cause of the failure
+  // the missionDatabase and other fields may not be filled when this happens
+  optional string failureCause = 9;
 }
 
 message HistoryInfo {
   optional string version = 1;
   optional string date = 2;
   optional string message = 3;
+  optional string author = 4;
 }
 
 message SpaceSystemInfo {
@@ -51,8 +58,8 @@ message SpaceSystemInfo {
 }
 
 message MissionDatabase {
-  required string configName = 1; //this is the config section in mdb.yaml
-  required string name = 2; //XTCE root SpaceSystem name
+  optional string configName = 1; //this is the config section in mdb.yaml
+  optional string name = 2; //XTCE root SpaceSystem name
   optional string version = 3; //XTCE root SpaceSystem header version
   repeated SpaceSystemInfo spaceSystem = 4;
   optional string url = 5;
@@ -75,15 +82,16 @@ message ProcessorInfo {
   optional string type = 3;
   optional string spec = 4;
   optional string creator = 5;
-  optional bool hasCommanding = 6;
-  optional ServiceState state = 7;
-  optional yamcs.ReplayRequest replayRequest = 8; //in case of replay
-  optional yamcs.ReplayStatus.ReplayState replayState = 9; //in case of replay
-  optional string url = 10;
-  optional string clientsUrl = 11;
-  optional string parametersUrl = 12;
-  optional string commandsUrl = 13;
-  optional string commandQueuesUrl = 14;
+  optional bool hasAlarms = 6;
+  optional bool hasCommanding = 7;
+  optional ServiceState state = 8;
+  optional yamcs.ReplayRequest replayRequest = 9; //in case of replay
+  optional yamcs.ReplayStatus.ReplayState replayState = 10; //in case of replay
+  optional string url = 11;
+  optional string clientsUrl = 12;
+  optional string parametersUrl = 13;
+  optional string commandsUrl = 14;
+  optional string commandQueuesUrl = 15;
 }
 
 message ClientInfo {
@@ -98,6 +106,8 @@ message ClientInfo {
   optional string processorName = 5;
   optional ClientState state = 6;
   optional bool currentClient = 7; //Only used for clients that register themselves (websocket)
+  optional int64 loginTime = 8;
+  optional string loginTimeUTC = 9;
 }
 
 message UserInfo {
@@ -138,10 +148,10 @@ message ProcessorManagementRequest {
   optional string instance = 2; //yamcs instance
   optional string name = 3; //processor name
   optional string type = 4; //only for CREATE
-  optional string spec = 5; //only for CREATE
+  optional string config = 5; //only for CREATE - used to be called spec
   repeated int32 clientId = 6; //for CREATE and CONNECT
   optional bool persistent = 7[default=false]; //only for CREATE
-  optional yamcs.ReplayRequest replaySpec = 8; //for CREATE as alternative to string spec
+  optional yamcs.ReplayRequest replaySpec = 8 [deprecated=true]; //used to be alternative to config but config can be used with a json or yaml encoded ReplayRequest
 }
 
 message ProcessorRequest {
@@ -179,4 +189,11 @@ message LinkEvent {
   }
   optional Type type = 1;
   optional LinkInfo linkInfo = 2;
+}
+
+message ServiceInfo {
+  optional string instance = 1;
+  optional string name = 2;
+  optional ServiceState state = 3;
+  optional string className = 4;
 }

@@ -1,3 +1,5 @@
+syntax="proto2";
+
 package yamcs;
 option java_package = "org.yamcs.protobuf";
 
@@ -148,8 +150,8 @@ message ReplaySpeed {
   optional float param = 2;
 }
 
-//Integers from this enum are sent as values of the $Protocol.DATA_TYPE_HEADER_NAME to the hornetq messages containing replay data
-//the first two are not data but status information and perhaps should be moved to a different field
+//Integers from this enum are sent as values of the $Protocol.DATA_TYPE_HEADER_NAME to the artemis messages containing subscription data
+// the same ids are also part of for websocket subscriptions
 enum ProtoDataType {
   //error in replay
   DT_ERROR = 1;
@@ -173,6 +175,9 @@ enum ProtoDataType {
   LINK_EVENT = 16;
   COMMAND_QUEUE_INFO = 17;
   COMMAND_QUEUE_EVENT = 18;
+  CONNECTION_INFO = 19;
+  
+  EXTENSION_DATA = 100;
 }
 
 //used to replay (concurrently) TM packets, parameters and events
@@ -193,9 +198,11 @@ message ReplayRequest {
 
   // Reverse the direction of the replay
   optional bool reverse = 15;
-
-  // At least one of the following request types should be added
+  
   optional ParameterReplayRequest parameterRequest = 8;
+
+  // By default all Packets, Events, CommandHistory are part of the replay
+  // Unless one or more of the below requests are specified.
   optional PacketReplayRequest packetRequest = 9;
   optional EventReplayRequest eventRequest = 10;
   optional CommandHistoryReplayRequest commandHistoryRequest = 11;
@@ -217,10 +224,13 @@ message EventReplayRequest {
 }
 
 message CommandHistoryReplayRequest {
+  // No filter, means all command history entries are sent
+  repeated NamedObjectId nameFilter = 1;
 }
 
 message PpReplayRequest {
-  repeated string groupNameFilter = 1; // At least 1 filter is required
+  // No filter, means all pp groups are sent
+  repeated string groupNameFilter = 1;
 }
 
 message ReplayStatus {
