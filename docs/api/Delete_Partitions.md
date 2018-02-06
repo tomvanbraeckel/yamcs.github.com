@@ -4,7 +4,7 @@ permalink: /docs/api/Delete_Partitions/
 sidebar: yes
 ---
 
-Delete parttitions from the parameter archive.
+Delete partitions from the parameter archive.
 
     GET /api/archive/:instance/parameterArchive/deletePartitions   
 
@@ -34,4 +34,5 @@ Delete parttitions from the parameter archive.
 ### Response
 
 <pre class="header">Status: 200 OK</pre>
+
 Response is of type string and list the partitions that have been removed.

@@ -15,7 +15,7 @@ Since version 5.4, the spreadsheet definition supports loading from one excel fi
 To define the space system hierarchy, the convention is that all the sheets that do not have a prefix contain data for the main space system whose name is defined in the General sheet.
 To define data in subsystems, a syntax like  *SYSTEM1|SYSTEM2|Containers" can be used. This definition will create a SYSTEM1 as part of the main space system and a child SYSTEM2 of SYSTEM1. Then the containers will be loaded in SYSTEM2.
 
-The spreadhseet loader scans and creates the subsystem hierarchy and then it loads the data inside the systems traversing the hierarchy in a depht-first order.
+The spreadsheet loader scans and creates the subsystem hierarchy and then it loads the data inside the systems traversing the hierarchy in a depht-first order.
 
 
 ### Conventions
@@ -109,8 +109,8 @@ However by historical convention:
  </ul>
 
 
-A parameter when extracted from a binary packet has two forms: a raw value and an enginnering value. The extraction from the raw packet is performed according to the encoding, whereas the conversion 
-from raw to enginnering value is performed by a calibrator. This sheet can also be used to specify parameters without encoding - if they are received already extracted, Yamcs can do only their calibration. 
+A parameter when extracted from a binary packet has two forms: a raw value and an engineering value. The extraction from the raw packet is performed according to the encoding, whereas the conversion 
+from raw to engineering value is performed by a calibrator. This sheet can also be used to specify parameters without encoding - if they are received already extracted, Yamcs can do only their calibration. 
 Or it can be that a parameter is already calibrated, it can still be specified here to be able to associate alarms.
 
 Empty lines can appear everywhere and are ignored.
@@ -281,7 +281,7 @@ Raw types describe how the parameter is encoded in the raw packet. All types are
                    <ul>
                      <li> &lt;n&gt; is optional and may be used to specify the size in bits of the entry in the container (in case the size is fixed) - it will use for optimizing 
                    the access to the parameters following this one.</li>
-                     <li><tt>algorithm</tt> the name of the algorithm - it has to be defined in tha <a href="#algorithms-sheet">algorithm sheet</a></li>
+                     <li><tt>algorithm</tt> the name of the algorithm - it has to be defined in the <a href="#algorithms-sheet">algorithm sheet</a></li>
                    </ul>
                 </td>
         </tr>
@@ -503,7 +503,7 @@ Empty lines are used to separate algorithms and cannot be used inside the specif
 A full function body is expected. The body will be encapsulated in a javascript function like
 ```javascript
 function algorithm_name(in_1, in_2, ..., out_1, out_2...) {
-   <algortihm-text>
+   <algorithm-text>
 }
 ```
 The <tt>in_n</tt> and <tt>outX</tt> are to be names given in the spreadsheet column <em>name used in the algorithm</em>.
@@ -520,7 +520,7 @@ Note that for some algorithms (e.g. command verifiers) need to return a value (r
 This works very similarly with the JavaScript algorithms, The thing to pay attention is the indentation. The algorithm text wihch is specified in the spreadsheet will be automatically indeted with 4 characters.
 ```python
 function algorithm_name(in_1, in_2, ..., out_1, out_2...) {
-   <algortihm-text>
+   <algorithm-text>
 }
 ```
 
@@ -1227,12 +1227,13 @@ For each verifier it has to be defined what happens for each of the three output
 
 <tr>
   <th>OnSuccess</th>
-  <td>       "Defines what happens when the verification returns true. It has to be one of:
-     <ul>
-       <li>SUCCESS: command considered completed successful (CommandComplete event is generated)</li>
-       <li>FAIL:  CommandFailed event is generated</li>
-       <li>none (default) – only a Verification_stage event is generated without an effect on the final execution status of the command.</li>
-      </ul>
+  <td>
+  	Defines what happens when the verification returns true. It has to be one of:
+	<ul>
+		<li>SUCCESS: command considered completed successful (CommandComplete event is generated)</li>
+		<li>FAIL:  CommandFailed event is generated</li>
+		<li>none (default) – only a Verification_stage event is generated without an effect on the final execution status of the command.</li>
+	</ul>
   </td>
 </tr>
 <tr>

@@ -9,7 +9,7 @@ Yamcs Server is the essential part of Yamcs implementing all the logic of monito
 
 ![Typical Deployment](/assets/server/typical-deployment.png){: .center-image }
 
-Although the Yamcs Server is indeed providing server based functionality, it does provide out of the box an embeeded web server with can be used for administration and even for limited monitoring applications.
+Although the Yamcs Server is indeed providing server based functionality, it does provide out of the box an embedded web server that can be used for administration and even for limited monitoring applications.
 
 Yamcs is implemented completely in Java, however it relies on external storage engine for data archiving. Currently the used storage engine is [RocksDB](http://rocksdb.org/). The platform of choice for running the Yamcs server is Linux x64, but it does run pretty well on Mac OS X and even on Windows with the latest versions of RocksDB.
 

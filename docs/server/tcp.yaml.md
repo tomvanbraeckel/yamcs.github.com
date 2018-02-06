@@ -4,8 +4,7 @@ sidebar: yes
 permalink: /docs/server/tcp.yaml/
 ---
 
-<pre>
-<code class="config-file">
+```yaml
 #configuration for the TcpTmProvider and TcpUplinker 
 # they look for properties like 
 #spec:
@@ -20,5 +19,4 @@ local:
     tmPort: 10015
     tcHost: localhost
     tcPort: 10025
-</code>
-</pre>
+```

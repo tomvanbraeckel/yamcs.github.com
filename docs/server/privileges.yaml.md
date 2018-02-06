@@ -4,8 +4,7 @@ sidebar: yes
 permalink: /docs/server/privileges.yaml/
 ---
 
-<pre>
-<code class="config-file">
+```yaml
 #configuration of the privileges
 # if privileges.enabled is set to false, the connection to realm is not even
 # attempted and hasPrivilege method always returns true
@@ -30,5 +29,4 @@ tcPath:          "ou=TC, ou=yamcs, ou=Applications, ou=Operation, ou=Columbus,ou
 
 # yaml file, if using YamlRealm
 yamlRealmFilename:  credentials.yaml
-</code>
-</pre>
+```

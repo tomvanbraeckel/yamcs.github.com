@@ -17,16 +17,25 @@ On the basic stream archive structure, Yamcs pre-defines a few table types for s
 ## Packet telemetry
 The below definition (created inside the XtceTmRecorder service) will create a table that uses the generation time and sequence number as primary key. That means that if a packet has the same time and sequence number as another packet already in the archive, it will not be stored (considered duplicate). 
 
-<pre><code class="config-file">
-CREATE TABLE tm(gentime TIMESTAMP, seqNum INT, packet BINARY, pname ENUM, PRIMARY KEY(gentime, seqNum)( HISTOGRAM(pname) PARTITION BY TIME_AND_VALUE(gentime, pname) TABLE_FORMAT=compressed
-</code></pre>
+```
+CREATE TABLE tm(
+    gentime TIMESTAMP, 
+    seqNum INT, 
+    packet BINARY, 
+    pname ENUM, 
+    PRIMARY KEY(
+        gentime, 
+        seqNum
+    )
+ ) HISTOGRAM(pname) PARTITION BY TIME_AND_VALUE(gentime, pname) TABLE_FORMAT=compressed;
+```
 
 Following is a short description of the columns used:
 
 * gentime - is the generation time of the packet.
 * seqNum - is an increasing sequence number.
 * packet - is the binary packet.
-* pname - is the XTCE fully qualified name of the container. In the XTCE container hierarchy, one has to configure which containers are used as partitions. This can be done by setting a flag in the spreadhseet.
+* pname - is the XTCE fully qualified name of the container. In the XTCE container hierarchy, one has to configure which containers are used as partitions. This can be done by setting a flag in the spreadsheet.
 
 The HISTOGRAM(pname) clause means that Yamcs will build an overview that can be used to quickly see when data for the given packet name is available in the archive.
 
@@ -34,11 +43,21 @@ The PARTITION BY TIME_AND_VALUE clause means that data will be partition in diff
 Parittioning the data based on time, ensures that old data will be "frozen" and not disturbed by new data coming in. Partitioning by container has benefits when retrieving data for one  specific container for a time interval. If this is not desired, one can set the partitioning flag only on the root container (in fact it is automatically set) so all packets will be stored in the same partition.
 
 ## Events
-The below definition (created inisde the EventRecorder service) will create a table that uses the generation time, source and sequence number as primary key.
+The below definition (created by the EventRecorder service) will create a table that uses the generation time, source and sequence number as primary key.
 
-<pre><code class="config-file">
-"CREATE TABLE events(gentime TIMESTAMP, source ENUM, seqNum INT, body PROTOBUF('org.yamcs.protobuf.Yamcs$Event'), PRIMARY KEY(gentime, source, seqNum)) HISTOGRAM(source) partition by time(gentime) table_format=compressed")
-</code></pre>
+```
+CREATE TABLE events(
+    gentime TIMESTAMP, 
+    source ENUM, 
+    seqNum INT, 
+    body PROTOBUF('org.yamcs.protobuf.Yamcs$Event'), 
+    PRIMARY KEY(
+        gentime, 
+        source, 
+        seqNum
+    )
+) HISTOGRAM(source) partition by time(gentime) table_format=compressed;
+```
 
 Following is a short description of the columns used:
 
@@ -47,11 +66,21 @@ Following is a short description of the columns used:
 * seqNum - is a sequence number provided by the event source. Each source is supposed to keep an independent sequence count for the events it generates.
 
 ## Command history
-The below definition (created inisde the CommandHistoryRecorder service) will create a table that uses the generation time, origin and sequence number as primary key:
+The below definition (created by the CommandHistoryRecorder service) will create a table that uses the generation time, origin and sequence number as primary key:
 
-<pre><code class="config-file">
-CREATE TABLE cmdhist(gentime TIMESTAMP, origin STRING, seqNum INT, cmdName STRING, PRIMARY KEY(gentime, origin, seqNum)) HISTOGRAM(cmdName) PARTITION BY TIME(gentime) table_format=compressed
-</code></pre>
+```
+CREATE TABLE cmdhist(
+    gentime TIMESTAMP,
+    origin STRING,
+    seqNum INT,
+    cmdName STRING,
+    PRIMARY KEY(
+        gentime, 
+        origin, 
+        seqNum
+    )
+) HISTOGRAM(cmdName) PARTITION BY TIME(gentime) table_format=compressed;
+```
 
 Following is a short description of the columns used:
 
@@ -64,29 +93,50 @@ In addition to these columns, there will be numerous dynamic columns set by the 
 
 Recording data into this table is setup with the following statements:
 
-<pre><code class="config-file">
+```
 INSERT_APPEND INTO cmdhist SELECT * FROM cmdhist_realtime;
 INSERT_APPEND INTO cmdhist SELECT * FROM cmdhist_dump;
-</code></pre>
+```
 
 The INSERT_APPEND says that if a tuple with the new key is received on one of the cmdhist_realtime or cmdhist_dump streams, it will be just inserted into the cmdhist table. If however, a tuple with a key that already exists in the table is received, the columns that are new in the newly received tuple are appended to the already existing columns in the table.
 
 ## Alarms
 
-The below definition (created inisde the AlarmRecorder service) will create a table that uses the trigger time, parameter name and sequence number as primary key:
-<pre><code class="config-file">
-"CREATE TABLE alarms(triggerTime TIMESTAMP, parameter STRING, seqNum INT, PRIMARY KEY(triggerTime, parameter, seqNum)) table_format=compressed";
-</code></pre>
+The below definition (created by the AlarmRecorder service) will create a table that uses the trigger time, parameter name and sequence number as primary key:
+
+```
+CREATE TABLE alarms(
+    triggerTime TIMESTAMP, 
+    parameter STRING, 
+    seqNum INT, 
+    PRIMARY KEY(
+        triggerTime, 
+        parameter, 
+        seqNum
+    )
+) table_format=compressed;
+```
+
 Following is a short description of the columns used:
 * triggerTime - is the time when the alarm has been triggered. Until an alarm is acknowledged, there will not be a new alarm generated for that parameter (even though it goes back in limits in the meanwhile)
 * parameter - the fully qualified XTCE name of the parameter for which the alarm has been triggered.
 * seqNum - a sequence number increasing with each new triggered alarm. The sequence number will reset to 0 at Yamcs restart.
 
 ## Parameters
-The below definition (created inisde the AlarmRecorder service) will create a table that uses the generation time and sequence number as primary key:
-<pre><code class="config-file">
-CREATE TABLE pp(gentime TIMESTAMP, ppgroup ENUM, seqNum INT, rectime TIMESTAMP, primary key(gentime, seqNum)) histogram(ppgroup) PARTITION BY TIME_AND_VALUE(gentime,ppgroup) table_format=compressed";
-</code></pre>
+The below definition (created by the ParameterRecorder service) will create a table that uses the generation time and sequence number as primary key:
+
+```
+CREATE TABLE pp(
+    gentime TIMESTAMP,
+    ppgroup ENUM, 
+    seqNum INT, 
+    rectime TIMESTAMP,
+    primary key(
+        gentime,
+        seqNum
+    )
+) histogram(ppgroup) PARTITION BY TIME_AND_VALUE(gentime,ppgroup) table_format=compressed;
+```
 
 Following is a short description of the columns used:
 
@@ -95,9 +145,9 @@ Following is a short description of the columns used:
 * seqNum - is a sequence number supposed to be increasing independently for each group.
 * rectime - is the time when the parameters have been received by Yamcs.
 
-In addition to these columns that are statically created, the pp table will store columns with the name of the parameter and the type PROTOBUF(org.yamcs.protobuf.Pvalue$ParameterValue).
+In addition to these columns that are statically created, the pp table will store columns with the name of the parameter and the type `PROTOBUF(org.yamcs.protobuf.Pvalue$ParameterValue)`.
 
 
-Note that becuase partitioning by ppgroup is specified, this is also implicitly part of the primary key (but not stored as such in the RocksDB key).
+Note that because partitioning by ppgroup is specified, this is also implicitly part of the primary key (but not stored as such in the RocksDB key).
 
 

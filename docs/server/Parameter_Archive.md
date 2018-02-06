@@ -8,13 +8,13 @@ sidebar: yes
 The parameter archive stores for each parameter tuples of (t<sub>i</sub>, ev<sub>i</sub>, rv<sub>i</sub>, ps<sub>i</sub>) where:
 
 * t<sub>i</sub> - is a timestamp when the sample has been taken
-* ev<sub>i</sub> - is the enginnering value of the parameter at the given time.
-* rv<sub>i</sub> - is the enginnering value of the parameter at the given time.
+* ev<sub>i</sub> - is the engineering value of the parameter at the given time.
+* rv<sub>i</sub> - is the engineering value of the parameter at the given time.
 * ps<sub>i</sub> - is the parameter status of the parameter at the given time.
 
-The parameter status includes things like out of limits (alarms), processing status, etc. XTCE provides a mechanism through which a parameter can change it's alarm ranges depending on the context. For this reason we store in the parameter status also the applicable alarm ranges at the given time. 
+The parameter status includes things like out of limits (alarms), processing status, etc. XTCE provides a mechanism through which a parameter can change its alarm ranges depending on the context. For this reason we store in the parameter status also the applicable alarm ranges at the given time. 
 
-In order to speed up the retrieval, the parameter archive stores data in segments of aproximatively 70 minutes. That means that all engineering values for one parameter for the 70 minutes are stored together; same for raw values, parameter status and timestamps. More detail about the parameter archive organization can be found in the [Parameter Archive Internals](../Parameter_Archive_Internals).
+In order to speed up the retrieval, the parameter archive stores data in segments of approximately 70 minutes. That means that all engineering values for one parameter for the 70 minutes are stored together; same for raw values, parameter status and timestamps. More detail about the parameter archive organization can be found in the [Parameter Archive Internals](../Parameter_Archive_Internals).
 Having all the data inside one segment of the same type offers possibility for good compression especially if the values don't change much or at all (as it is often the case).
 
 While this structure is good for fast retrieval, it doesn't allow updating data very efficiently and in any case not in realtime (like the stream archive does). This is why the parameter archive is filled in batch mode - data is accumulated in memory and flushed to disk periodically. The sections below explain the different filling strategies implemented.
@@ -36,11 +36,9 @@ The backFiller is configured with a so called warmupTime (by default 60 seconds)
 
 Example configuration for the parameter archive.
 
-Parameter
-<pre>
-<code class="config-file">
+```yaml
 services: 
-    ....
+    # [...]
     - class: org.yamcs.parameterarchive.ParameterArchive
       args: 
           realtimeFiller:
@@ -50,14 +48,13 @@ services:
 	      #warmupTime: 60 seconds default warmupTime
               enabled: true
               schedule: [{startSegment: 10, numSegments: 3}]
-</code>
-</pre>
+```
+
 This configuration enables the realtime filler flushing the data to the archive each 5 minutes, and in addition the backFiller fills the archive 10 segments (approx 700 minutes) in the past, 3 segments at a time.
 
-<pre>
-<code class="config-file">
+```yaml
 services: 
-    ....
+    # [...]
     - class: org.yamcs.parameterarchive.ParameterArchive
       args: 
           realtimeFiller:
@@ -66,6 +63,6 @@ services:
               enabled: true
               warmupTime: 120 
               schedule: [{startSegment: 10, numSegments: 3}, {startSegment: 2, numSegments:2, interval: 600} ]
-</code>
-</pre>
+```
+
 This configuration does not use the realtime filler, but instead performs regular (each 600 seconds) back-fillings of the last two segments. It is the configuration used in the ISS ground segment where due to regular(each 20-30min) LOS (loss of signal), the archive is very fragmented and the only way to obtain continous data is to perform replays.

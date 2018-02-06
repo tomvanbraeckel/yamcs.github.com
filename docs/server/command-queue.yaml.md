@@ -4,8 +4,7 @@ sidebar: yes
 permalink: /docs/server/command-queue.yaml/
 ---
 
-<pre>
-<code class="config-file">
+```yaml
 # Definitions of command queues
 # Eeach queue has a name, a default state and a list of roles
 # There are three possibile states: 
@@ -34,5 +33,4 @@ ops-critic:
 uhb:
     state: disabled
     roles: [UHB-Operator]
-</code>
-</pre>
+```

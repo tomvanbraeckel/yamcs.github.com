@@ -5,7 +5,7 @@ sidebar: yes
 ---
 
 ## Why not store the values on change only?
-As explained [here](../Parameter_Archive), the parameter archive stores for each parameter tuples (t<sub>i</sub>, ev<sub>i</sub>, rv<sub>i</sub>, ps<sub>i</sub>). In Yamcs the timestamp is an 8 bytes long, the raw and enginnering values are of usual types (signed/unsigend 32/64 integer, 32/64 floating point, string, boolean, binary) and the parameter status is a protobuf message.
+As explained [here](../Parameter_Archive), the parameter archive stores for each parameter tuples (t<sub>i</sub>, ev<sub>i</sub>, rv<sub>i</sub>, ps<sub>i</sub>). In Yamcs the timestamp is an 8 bytes long, the raw and engineering values are of usual types (signed/unsigend 32/64 integer, 32/64 floating point, string, boolean, binary) and the parameter status is a protobuf message.
 
 We can notice that in a typical space data stream there are many parameters that do not change very often (like an device ON/OFF status). For these, the space required to store the timestamp can greatly exceed in size the space required for storing the value (if simple compression is used).
 
@@ -72,7 +72,7 @@ Description and implementation of the FastPFOR algorithm can be found [here](htt
 
 **FloatSegment** - stores 32 bits floating point numbers encoded using the algorithm (very slightly modified to work on 32 bits) described in the [Facebook Gorilla paper](http://www.vldb.org/pvldb/vol8/p1816-teller.pdf)
 
-**ParameterStatusSegment**, **StringSegmnet** and **BinarySegment** are all stored either raw, as an enumeration, or run-length encoded, depeending on which results in smaller compressed size.
+**ParameterStatusSegment**, **StringSegment** and **BinarySegment** are all stored either raw, as an enumeration, or run-length encoded, depeending on which results in smaller compressed size.
 
 **DoubleSegment** and **LongSegment** are only stored as raw for the moment - compression is still to be implemented. For DoubleSegment we can employ the same approach like for 32 bits (since the original approach is in fact designed for compressing 64 bits floating point numbers).
 
