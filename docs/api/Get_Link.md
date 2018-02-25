@@ -8,8 +8,6 @@ Get data on a specific link for the given Yamcs instance:
 
     GET /api/links/:instance/:name
 
-<strong>!!</strong> due to a bug in Yamcs <= v0.29.4 you should temporarily use the url `/api/links/:instance/link/:name`
-
 ### Response
 
 <pre class="header">Status: 200 OK</pre>
