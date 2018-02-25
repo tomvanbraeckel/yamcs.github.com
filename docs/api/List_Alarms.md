@@ -4,6 +4,10 @@ permalink: /docs/api/List_Alarms/
 sidebar: yes
 ---
 
+List the active alarms for the given processor:
+
+    GET /api/processors/:instance/:processor/alarms
+
 List the history of alarms:
 
     GET /api/archive/:instance/alarms
@@ -12,7 +16,7 @@ List the history of alarms for the given parameter:
 
     GET /api/archive/:instance/alarms/:namespace/:name 
     
-For each alarm you get full information on the value occurrence that initially triggered the alarm, the most severe value since it originally triggered, and the latest value at the time of your request.
+For each alarm the response contains detailed information on the value occurrence that initially triggered the alarm, the most severe value since it originally triggered, and the latest value at the time of your request.
 
 
 ### Parameters
