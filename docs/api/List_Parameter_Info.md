@@ -8,12 +8,6 @@ List all parameters defined in the Mission Database for the given Yamcs instance
 
     GET /api/mdb/:instance/parameters
 
-
-List all parameters defined under the given namespace:
-
-    GET /api/mdb/:instance/parameters/:namespace
-    
-
 ### Parameters
 
 <table class="inline">
@@ -23,9 +17,14 @@ List all parameters defined under the given namespace:
     <th>Description</th>
   </tr>
   <tr>
+    <td class="code">namespace</td>
+    <td class="code">string</td>
+    <td>Include parameters under the specified namespace only</td>
+  </tr>
+  <tr>
     <td class="code">recurse</td>
     <td class="code">bool</td>
-    <td>If an XTCE <tt>:namespace</tt> is given, specifies whether to list parameters of any nested sub systems. Default <tt>no</tt>.</td>
+    <td>If a <tt>namespace</tt> is given, specifies whether to list parameters of any nested sub systems. Default <tt>no</tt>.</td>
   </tr>
   <tr>
     <td class="code">type</td>
