@@ -6,11 +6,11 @@ sidebar: yes
 
 Sample the history of values for the specified parameter:
 
-    GET /api/archive/:instance/parameters/:namespace/:name/samples
-    GET /api/archive/:instance/parameters2/:namespace/:name/samples
+    GET /api/archive/:instance/parameters/:namespace/:name/samples   
 
-The first call (with "parameters") returns values from the parameter archive if the parameter archive has been enabled. It should be much faster for large intervals. Note that as the parameter archive is backfilled (i.e. not filled in realtime), the paramers call will try to return the latest values from the parameter cache. See the [Processor] configuration section on how to configure the Parameter Cache.
-The second call (with "parameters2") performs a replay.
+The call (with "parameters") returns values from the parameter archive if the parameter archive has been enabled. Note that as the parameter archive is backfilled (i.e. not filled in realtime), the paramers call will try to return the latest values from the parameter cache. See the [Processor] configuration section on how to configure the Parameter Cache.
+If the parameter archive is not enabled, the <tt>source=replay</tt> can be used to reprocess the data and send the result. Note that this is much slower than the parameter archive for large intervals.
+
 
 ### Parameters
 
@@ -38,12 +38,17 @@ The second call (with "parameters2") performs a replay.
     <tr>
         <td class="code">norealtime</td>
         <td class="code">boolean</td>
-        <td>Only for parameters2. Disable loading of parameters from the parameter cache. Default: <tt>false</tt></td>
+        <td>Disable loading of parameters from the parameter cache. Default: <tt>false</tt></td>
     </tr>
     <tr>
         <td class="code">processor</td>
         <td class="code">string</td>
-        <td>Only for parameters2. The name of the processor from which to use the parameter cache. Default: <tt>realtime</tt></td>
+        <td>The name of the processor from which to use the parameter cache. Default: <tt>realtime</tt></td>
+    </tr>
+    <tr>
+        <td class="code">source</td>
+        <td class="code">string</td>
+        <td>Either <tt>ParameterArchive</tt> or <tt>replay</tt>. How to retrieve the parameters - if <tt>replay</tt> is specified, a replay processor will be created and data will be processed with the active XTCEDB. Note that this is much slower than receiving data from the ParameterArchive.<br>Default: <tt>ParameterArchive</tt></td>
     </tr>
 </table>
  
