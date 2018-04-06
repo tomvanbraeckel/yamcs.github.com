@@ -8,7 +8,7 @@ Retrieve a history of ranges for the specified parameter:
 
     GET /api/archive/:instance/parameters/:namespace/:name/ranges 
 
-A range is a tuple <tt>(start, stop, value, count)</tt> that represents the time interval for which the parameter has been steadily coming in with the same value. This request is useful for retrieving an overview of paramters that change unfrequently in a large interval. For example an on/off status of a device, or some operational status. Two consecutive ranges containing the same value will be returned if there was a gap in the data. The gap is determined according to the parameter expiration time configured in the XTCEDB.
+A range is a tuple <tt>(start, stop, value, count)</tt> that represents the time interval for which the parameter has been steadily coming in with the same value. This request is useful for retrieving an overview for paramters that change unfrequently in a large time interval. For example an on/off status of a device, or some operational status. Two consecutive ranges containing the same value will be returned if there was a gap in the data. The gap is determined according to the parameter expiration time configured in the XTCEDB.
 
 ### Parameters
 
@@ -47,7 +47,7 @@ A range is a tuple <tt>(start, stop, value, count)</tt> that represents the time
 <pre class="header">Status: 200 OK</pre>
 ```json
 {
- {                                                                                                                                                                                                                                                                          "range": [{                                                                                                                                                                                                                                                                  
+ {                                                                                                                                                                                                                                                                          "range": [{
     "timeStart": "2018-04-06T11:24:01.752Z",                                                                                                                                                                                                                                   
     "timeStop": "2018-04-06T12:21:25.187Z",                                                                                                                                                                                                                                    
     "engValue": {
