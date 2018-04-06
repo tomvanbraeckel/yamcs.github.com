@@ -23,16 +23,15 @@ Subscribe to parameter updates:
 
 Options that can be used for parameter subscription:
 
-* <tt>updateOnExpiration</tt> if set to true, will cause parameter updates to be sent when parameters expire.
-the parameter will have the same value and timestamp like the previous sent one, but the acquisition status will be set to EXPIRED (instead of ACQUIRED)
-by default <tt>updateOnExpiration=false</tt>
+* <tt>updateOnExpiration</tt> if set to true (the default is false), will cause parameter updates to be sent when parameters expire.
+The update sent when the parameter expires will have the same value and timestamp like the previous sent one, but the acquisition status will be set to EXPIRED (instead of ACQUIRED).
 * <tt>abortOnInvalid</tt> if set to false (default), then no error will be raised if some of the specified parameters are invalid. Instead the valid ones will be subscribed and the response will return the list of invalid parameters. If set to true and some parameters are invalid, an exception will be returned and no subscription will be made.
-* <tt>sendFromCache</tt> if set to true (default) the existing values of the parameters from the cache (if any) will be sent immediately. Otherwise the values will only be sent when the  parameters update.
-* <tt>subscriptionId</tt> since version 4.1.1 - used to have multiple independent subscriptions. Each subscription is given an numeric id which can be used to add or remove parameters to/from the subcription.
-  * each request will return the subcriptionId where the parameter have been added. Note that if <tt>abortOnInvalid</tt> is false and all parameters are invalid, the request will return <tt>subscriptionId=-1</tt> and no subscription will be made. Each parameter message (containing parameter data) will also contain the subscriptionId.
-  * the subscriptionId can be specified in the request to add parameters to an existing subcription.
-  * if subscriptionId=-1 in the request, then a new subscription will be created and the id will be returned.
-  * for compatibility with the old API, if subscriptionId is not specified, the parameters will be added to the first subscription created.
+* <tt>sendFromCache</tt> if set to true (default), the existing values of the parameters from the cache (if any) will be sent immediately. Otherwise the values will only be sent when the  parameters update.
+* <tt>subscriptionId</tt> (available since Yamcs version 4.1.1) is used to have multiple independent subscriptions. Each subscription is given an numeric id which can be used to add or remove parameters to/from the subcription. How to use multiple subscriptions:
+  * each request will return the <tt>subcriptionId</tt> where the parameter have been added. Note that if <tt>abortOnInvalid</tt> is false and all the parameters are invalid, the request will return <tt>subscriptionId=-1</tt> and no subscription will be made. Each parameter message (containing parameter data) will also contain the <tt>subscriptionId</tt>.
+  * the <tt>subscriptionId</tt> can be specified in the request to add parameters to an existing subcription.
+  * if <tt>subscriptionId=-1</tt> is specified in the request, then a new subscription will be created and its <tt>subscriptionId</tt> will be returned.
+  * for compatibility with the old API, if the <tt>subscriptionId</tt> is not specified in the <tt>subscribe/unsubscribe</tt> request, then the parameters will be added or removed to/from the first subscription created.
 
 
 
@@ -55,7 +54,7 @@ Subscribe to BatteryVoltage1 through a qualified name, and BatteryVoltage2 using
 
 ### Response
 
-You first get an empty reply message confirming the positive receipt of your request:
+You first get an reply message confirming the positive receipt of your request and the generated <tt>subscriptionId</tt>:
 
 ```json
 [1, 2, 3, {"type":"ParameterSubscriptionResponse", "data":{
@@ -63,7 +62,8 @@ You first get an empty reply message confirming the positive receipt of your req
 }}]
 ```
     
-Further messages will be marked as type <tt>PARAMETER_DATA</tt>. Directly after you subscribe, you will receive the latest cached values -- if applicable.
+Further messages will be marked as type <tt>PARAMETER_DATA</tt>. Directly after you subscribe, you will receive the latest cached values if the option <tt>sendFromCache</tt> has been set.
+Note that all parameters are returned with the same identification they have been subscribed to.
 
 ```json
 [1, 4, 2, {
@@ -135,7 +135,7 @@ Further messages will be marked as type <tt>PARAMETER_DATA</tt>. Directly after 
 
 ### Unsubscribe
 
-Unsubscribe from selected parameter updatess:
+Unsubscribe from selected parameter updates:
 
 ```json
 [ 1, 1, 790, {
