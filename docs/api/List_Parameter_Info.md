@@ -69,8 +69,7 @@ The `q` parameter supports searching on namespace or name. For example:
       "engType" : "integer",
       "dataEncoding" : "IntegerDataEncoding(sizeInBits:11, encoding:unsigned, defaultCalibrator:null byteOrder:BIG_ENDIAN)"
     },
-    "dataSource" : "TELEMETERED",
-    "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/ccsds-apid"
+    "dataSource" : "TELEMETERED"
   } ]
 }
 ```

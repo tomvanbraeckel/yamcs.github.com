@@ -27,8 +27,7 @@ Return the data for the given parameter:
     "engType" : "integer",
     "dataEncoding" : "IntegerDataEncoding(sizeInBits:8, encoding:unsigned, defaultCalibrator:null byteOrder:BIG_ENDIAN)"
   },
-  "dataSource" : "TELEMETERED",
-  "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/SIMULATOR/BatteryVoltage2"
+  "dataSource" : "TELEMETERED"
 }
 ```
 
@@ -78,8 +77,7 @@ In the response the requested parameter ID is returned for every match. Example:
         "engType" : "integer",
         "dataEncoding" : "IntegerDataEncoding(sizeInBits:11, encoding:unsigned, defaultCalibrator:null byteOrder:BIG_ENDIAN)"
       },
-      "dataSource" : "TELEMETERED",
-      "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/ccsds-apid"
+      "dataSource" : "TELEMETERED"
     }
   } ]
 }

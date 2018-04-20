@@ -20,8 +20,7 @@ List all command queues for the given processor:
     "name" : "default",
     "state" : "ENABLED",
     "nbSentCommands" : 0,
-    "nbRejectedCommands" : 0,
-    "url" : "http://localhost:8090/api/processors/simulator/realtime/queues/default"
+    "nbRejectedCommands" : 0
   } ]
 }
 ```

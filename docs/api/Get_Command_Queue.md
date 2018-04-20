@@ -34,8 +34,7 @@ Get data on a command queue:
     "username" : "anonymous",
     "generationTime" : 1448782973440,
     "uuid" : "3e867111-048a-4343-b195-47ba07d07093"
-  } ],
-  "url" : "http://localhost:8090/api/processors/simulator/realtime/cqueues/default"
+  } ]
 }
 ```
 

@@ -40,12 +40,7 @@ List all processors for the given Yamcs instance:
     "type" : "realtime",
     "creator" : "system",
     "hasCommanding" : true,
-    "state" : "RUNNING",
-    "url" : "http://localhost:8090/api/processors/simulator/realtime",
-    "clientsUrl": "http://localhost:8090/api/processors/simulator/realtime/clients",
-    "parametersUrl" : "http://localhost:8090/api/processors/simulator/realtime/parameters{/namespace}{/name}",
-    "commandsUrl" : "http://localhost:8090/api/processors/simulator/realtime/commands{/namespace}{/name}",
-    "commandQueuesUrl" : "http://localhost:8090/api/processors/simulator/realtime/cqueues{/name}"
+    "state" : "RUNNING"
   } ]
 }
 ```

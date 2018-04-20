@@ -32,23 +32,11 @@ List all configured Yamcs instances:
       }, {
         "name" : "GS",
         "qualifiedName" : "/GS"
-      } ],
-      "url" : "http://localhost:8090/api/mdb/simulator",
-      "parametersUrl" : "http://localhost:8090/api/mdb/simulator/parameters{/namespace}{/name}",
-      "containersUrl" : "http://localhost:8090/api/mdb/simulator/containers{/namespace}{/name}",
-      "commandsUrl" : "http://localhost:8090/api/mdb/simulator/commands{/namespace}{/name}"
+      } ]
     },
     "processor" : [ {
-      "name" : "realtime",
-      "url" : "http://localhost:8090/api/processors/simulator/realtime",
-      "clientsUrl" : "http://localhost:8090/api/processors/simulator/realtime/clients",
-      "parametersUrl" : "http://localhost:8090/api/processors/simulator/realtime/parameters{/namespace}{/name}",
-      "commandsUrl" : "http://localhost:8090/api/processors/simulator/realtime/commands{/namespace}{/name}",
-      "commandQueuesUrl" : "http://localhost:8090/api/processors/simulator/realtime/cqueues{/name}"
-    } ],
-    "url" : "http://localhost:8090/api/instances/simulator",
-    "clientsUrl" : "http://localhost:8090/api/instances/simulator{/processor}/clients",
-    "eventsUrl" : "http://localhost:8090/api/instances/simulator{/processor}/events"
+      "name" : "realtime"
+    } ]
   } ]
 }
 ```

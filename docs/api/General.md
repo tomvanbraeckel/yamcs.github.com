@@ -60,29 +60,6 @@ When an exception is caught while handling a REST request, the server will try t
 
 Clients of the REST API should check on whether the status code is between 200 and 299, and if not, interpret the response with the above structure.
 
-### Curlability
-JSON responses are by default configured for an improved curl experience. This means that responses will be pretty-printed, and that they will contain links to other URL resources where it makes sense. When building an actual client you may want to turn this off for a lighter payload.
-
-<table class="inline">
-    <tr>
-        <th>Query Parameter</th>
-        <th>Description</th>
-    </tr>
-    <tr>
-        <td class="code">pretty</td>
-        <td>Whether to autoformat JSON responses. Default: <tt>yes</tt></td>
-    </tr>
-    <tr>
-        <td class="code">nolink</td>
-        <td>Whether to hide links to related REST resources. Default: <tt>no</tt></td>
-    </tr>
-</table>
-
-For example, appending all URLs like so, makes responses lighter and faster:
-
-    ?nolink&pretty=no
-    
-    
 ### CORS
 
 Cross-origin Resource Sharing (CORS) allows access to the Yamcs REST API from a remotely hosted web page. This is the HTML5 way of bypassing the self-origin policy typically enforced by browsers. With CORS, the browser will issue a preflight request to Yamcs to verify that it allows ajax requests from the originating web page.

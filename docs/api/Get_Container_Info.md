@@ -51,8 +51,7 @@ Return the data for the given container:
           "engType" : "integer",
           "dataEncoding" : "IntegerDataEncoding(sizeInBits:11, encoding:unsigned, defaultCalibrator:null byteOrder:BIG_ENDIAN)"
         },
-        "dataSource" : "TELEMETERED",
-        "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/ccsds-apid"
+        "dataSource" : "TELEMETERED"
       }
     }, {
       "locationInBits" : 82,
@@ -71,8 +70,7 @@ Return the data for the given container:
           "engType" : "integer",
           "dataEncoding" : "IntegerDataEncoding(sizeInBits:4, encoding:unsigned, defaultCalibrator:null byteOrder:BIG_ENDIAN)"
         },
-        "dataSource" : "TELEMETERED",
-        "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/packet-type"
+        "dataSource" : "TELEMETERED"
       }
     }, {
       "locationInBits" : 96,
@@ -91,25 +89,21 @@ Return the data for the given container:
           "engType" : "integer",
           "dataEncoding" : "IntegerDataEncoding(sizeInBits:32, encoding:unsigned, defaultCalibrator:null byteOrder:BIG_ENDIAN)"
         },
-        "dataSource" : "TELEMETERED",
-        "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/packet-id"
+        "dataSource" : "TELEMETERED"
       }
-    } ],
-    "url" : "http://localhost:8090/api/simulator/containers/YSS/ccsds-default"
+    } ]
   },
   "restrictionCriteria" : [ {
     "parameter" : {
       "name": "ccsds-apid",
-      "qualifiedName" : "/YSS/ccsds-apid",
-      "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/ccsds-apid"
+      "qualifiedName" : "/YSS/ccsds-apid"
     },
     "operator" : "EQUAL_TO",
     "value" : "1"
   }, {
     "parameter" : {
       "name": "packet-id",
-      "qualifiedName" : "/YSS/packet-id",
-      "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/packet-id"
+      "qualifiedName" : "/YSS/packet-id"
     },
     "operator" : "EQUAL_TO",
     "value" : "2"
@@ -131,8 +125,7 @@ Return the data for the given container:
         "engType" : "integer",
         "dataEncoding" : "IntegerDataEncoding(sizeInBits:8, encoding:unsigned, defaultCalibrator:null byteOrder:BIG_ENDIAN)"
       },
-      "dataSource" : "TELEMETERED",
-      "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/SIMULATOR/PrimBusVoltage1"
+      "dataSource" : "TELEMETERED"
     }
   }, {
     "locationInBits" : 136,
@@ -151,11 +144,9 @@ Return the data for the given container:
         "engType" : "integer",
         "dataEncoding" : "IntegerDataEncoding(sizeInBits:8, encoding:unsigned, defaultCalibrator:null byteOrder:BIG_ENDIAN)"
       },
-      "dataSource" : "TELEMETERED",
-      "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/SIMULATOR/PrimBusCurrent1"
+      "dataSource" : "TELEMETERED"
     }
-  } ],
-  "url" : "http://localhost:8090/api/mdb/simulator/containers/YSS/SIMULATOR/DHS"
+  } ]
 }
 ```
 

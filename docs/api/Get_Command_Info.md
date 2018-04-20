@@ -60,8 +60,7 @@ Return the data for the given command:
       }, {
         "name" : "packet-id",
         "type" : "integer"
-      } ],
-      "url" : "http://localhost:8090/api/mdb/simulator/commands/YSS/ccsds-tc"
+      } ]
     },
     "abstract" : true,
     "argumentAssignment" : [ {
@@ -73,8 +72,7 @@ Return the data for the given command:
     }, {
       "name" : "packet-type",
       "value" : "10"
-    } ],
-    "url" : "http://localhost:8090/api/mdb/simulator/commands/YSS/SIMULATOR/SIM_TC"
+    } ]
   },
   "abstract" : false,
   "argument" : [ {
@@ -88,8 +86,7 @@ Return the data for the given command:
   "argumentAssignment" : [ {
     "name" : "packet-id",
     "value" : "1"
-  } ],
-  "url" : "http://localhost:8090/api/mdb/simulator/commands/YSS/SIMULATOR/SWITCH_VOLTAGE_ON"
+  } ]
 }
 ```
 

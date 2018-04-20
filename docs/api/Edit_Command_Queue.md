@@ -46,8 +46,7 @@ The response contains the updated queue information:
   "name" : "default",
   "state" : "BLOCKED",
   "nbSentCommands" : 0,
-  "nbRejectedCommands" : 0,
-  "url" : "http://localhost:8090/api/processors/simulator/realtime/cqueues/default"
+  "nbRejectedCommands" : 0
 }
 ```
 

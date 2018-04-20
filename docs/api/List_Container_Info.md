@@ -56,22 +56,19 @@ The `q` parameter supports searching on the namespace or name. For example:
     "maxInterval" : 1500,
     "baseContainer" : {
       "name": "ccsds-default",
-      "qualifiedName" : "/YSS/ccsds-default",
-      "url" : "http://localhost:8090/api/mdb/simulator/containers/YSS/ccsds-default"
+      "qualifiedName" : "/YSS/ccsds-default"
     },
     "restrictionCriteria" : [ {
       "parameter" : {
         "name": "ccsds-apid",
-        "qualifiedName" : "/YSS/ccsds-apid",
-        "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/ccsds-apid"
+        "qualifiedName" : "/YSS/ccsds-apid"
       },
       "operator" : "EQUAL_TO",
       "value" : "1"
     }, {
       "parameter" : {
         "name": "packet-id",
-        "qualifiedName" : "/YSS/packet-id",
-        "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/packet-id"
+        "qualifiedName" : "/YSS/packet-id"
       },
       "operator" : "EQUAL_TO",
       "value" : "2"
@@ -81,19 +78,16 @@ The `q` parameter supports searching on the namespace or name. For example:
       "referenceLocation" : "CONTAINER_START",
       "parameter" : {
         "name": "PrimBusVoltage1",
-        "qualifiedName" : "/YSS/SIMULATOR/PrimBusVoltage1",
-        "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/SIMULATOR/PrimBusVoltage1"
+        "qualifiedName" : "/YSS/SIMULATOR/PrimBusVoltage1"
       }
     }, {
       "locationInBits" : 136,
       "referenceLocation" : "CONTAINER_START",
       "parameter" : {
         "name": "PrimBusCurrent1",
-        "qualifiedName" : "/YSS/SIMULATOR/PrimBusCurrent1",
-        "url" : "http://localhost:8090/api/mdb/simulator/parameters/YSS/SIMULATOR/PrimBusCurrent1"
+        "qualifiedName" : "/YSS/SIMULATOR/PrimBusCurrent1"
       }
-    } ],
-    "url" : "http://localhost:8090/api/mdb/simulator/containers/YSS/SIMULATOR/DHS"
+    } ]
   } ]
 }
 ```

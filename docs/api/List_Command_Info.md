@@ -55,8 +55,7 @@ The `q` parameter supports searching on namespace or name. For example:
     } ],
     "baseCommand" : {
       "name": "SIM_TC",
-      "qualifiedName" : "/YSS/SIMULATOR/SIM_TC",
-      "url" : "http://localhost:8090/api/mdb/simulator/commands/YSS/SIMULATOR/SIM_TC"
+      "qualifiedName" : "/YSS/SIMULATOR/SIM_TC"
     },
     "abstract" : false,
     "argument" : [ {
@@ -70,8 +69,7 @@ The `q` parameter supports searching on namespace or name. For example:
     "argumentAssignment" : [ {
       "name" : "packet-id",
       "value" : "1"
-    } ],
-    "url" : "http://localhost:8090/api/mdb/simulator/commands/YSS/SIMULATOR/SWITCH_VOLTAGE_ON"
+    } ]
   } ]
 }
 ```
