@@ -35,7 +35,7 @@ In addition, since the use of the HTTP <tt>PATCH</tt> method is not as widesprea
 ### Time
 All timestamps are returned as UTC and formatted according to ISO 8601. E.g.
     
-    2015-08-26T08:08:40.724
+    2015-08-26T08:08:40.724Z
     2015-08-26
     
 ### Namespaces
