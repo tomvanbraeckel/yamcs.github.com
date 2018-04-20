@@ -74,24 +74,8 @@
 
 .yamcs-header {
   position: absolute;
-  left: 40px; /* separate with image */
-  top: -10px - 10px  + (48px - 10px - 10px - 10px - 10px);
-
-  a {
-    text-decoration: none;
-  }
-
-  a.hover {
-    text-decoration: none;
-  }
-
-  h3 {
-    display: inline;
-    font-size: 30px;
-    line-height: 48px;
-    font-weight: bold;
-    color: #3e4981;
-  }
+  left: 60px; /* about in the middle of sidebar */
+  top: -6px;
 }
 
 .network-nav {
@@ -149,13 +133,6 @@
   padding-top: 30px;
   padding-left: 220px;
   color: #222;
-}
-
-.page-logo {
-  height: 40px;
-  position: absolute;
-  top: 5px;
-  left: -40px;
 }
 
 .icon-wrapper {
