@@ -47,11 +47,6 @@ For each alarm the response contains detailed information on the value occurrenc
         <td class="code">integer</td>
         <td>The maximum number of returned records per page. Choose this value too high and you risk hitting the maximum response size limit enforced by the server. Default: <tt>100</tt></td>
     </tr>
-    <!--tr>
-        <td class="code">filter</td>
-        <td class="code">string</td>
-        <td>Indicates which sort of alarms to return. Either <tt>active</tt> or <tt>all</tt>. Default: <tt>all</tt></td>
-    </tr-->
     <tr>
         <td class="code">order</td>
         <td class="code">string</td>

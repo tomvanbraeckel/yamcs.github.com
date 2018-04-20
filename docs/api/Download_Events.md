@@ -22,6 +22,18 @@ This operation will possibly download a very large file. If you worry about size
         <th>Description</th>
     </tr>
     <tr>
+        <td class="code">severity</td>
+        <td class="code">string</td>
+        <td>
+            The minimum severity level of the events. One of <tt>info</tt>, <tt>watch</tt>, <tt>warning</tt>, <tt>distress</tt> or <tt>severe</tt>. Default: <tt>info</tt>
+        </td>
+    </tr>
+    <tr>
+        <td class="code">q</td>
+        <td class="code">string</td>
+        <td>Text to search for in the message.</td>
+    </tr>
+    <tr>
         <td class="code">source</td>
         <td class="code">array of strings</td>
         <td>
@@ -33,27 +45,15 @@ This operation will possibly download a very large file. If you worry about size
             Names must match exactly.
         </td>
     </tr>
-    <!--tr>
-        <td class="code">type</td>
-        <td class="code">array of strings</td>
-        <td>
-            The type of the events. Both these notations are accepted:
-            <ul>
-                <li><tt>?type=HK,Power</tt></li>
-                <li><tt>?type[]=HK&type[]=Power</tt></li>
-            </ul>
-            Names must match exactly.
-        </td>
-    </tr-->
     <tr>
         <td class="code">start</td>
         <td class="code">string</td>
-        <td>Filter the lower bound of the event's generation time. Specify a date string in ISO 8601 format</td>
+        <td>Filter the lower bound of the event's generation time. Specify a date string in ISO 8601 format. This bound is inclusive.</td>
     </tr>
     <tr>
         <td class="code">stop</td>
         <td class="code">string</td>
-        <td>Filter the upper bound of the event's generation time. Specify a date string in ISO 8601 format</td>
+        <td>Filter the upper bound of the event's generation time. Specify a date string in ISO 8601 format. This bound is exclusive.</td>
     </tr>
     <tr>
         <td class="code">order</td>
