@@ -119,12 +119,12 @@
 }
 
 .site-header {
-  background: #eee;
+  background: #fff;
   color: #543729;
   padding: 10px 0;
   margin-bottom: 20px;
   box-sizing: border-box;
-  border-bottom: 1px solid #e8e8e8;
+  box-shadow: 0 .125rem .3125rem rgba(0,0,0,.26);
 }
 
 .site-title {
