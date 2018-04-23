@@ -6,7 +6,12 @@ sidebar: yes
 
 Create an event for the given Yamcs instance:
 
-    POST /api/archive/:instance/events/
+    POST /api/archive/:instance/events2/
+
+<div class="hint">
+    This endpoint shall be renamed to <tt>/api/archive/:instance/events/</tt> in the near future.
+    That URL is currently still in use for an old version of the event creation API.
+</div>
     
   
 ### Parameters
