@@ -30,12 +30,12 @@ For each alarm the response contains detailed information on the value occurrenc
     <tr>
         <td class="code">start</td>
         <td class="code">string</td>
-        <td>Filter the lower bound of the alarm's trigger time. Specify a date string in ISO 8601 format</td>
+        <td>Filter the lower bound of the alarm's trigger time. Specify a date string in ISO 8601 format. This bound is inclusive.</td>
     </tr>
     <tr>
         <td class="code">stop</td>
         <td class="code">string</td>
-        <td>Filter the upper bound of the alarm's trigger time. Specify a date string in ISO 8601 format</td>
+        <td>Filter the upper bound of the alarm's trigger time. Specify a date string in ISO 8601 format. This bound is exclusive.</td>
     </tr>
     <tr>
         <td class="code">pos</td>
@@ -78,10 +78,10 @@ For each alarm the response contains detailed information on the value occurrenc
       "acquisitionStatus" : "ACQUIRED",
       "processingStatus" : true,
       "monitoringResult" : "WATCH_LOW",
-      "acquisitionTimeUTC" : "2015-11-22T21:55:14.720",
-      "generationTimeUTC" : "2015-11-22T21:54:57.628",
+      "acquisitionTimeUTC" : "2015-11-22T21:55:14.720Z",
+      "generationTimeUTC" : "2015-11-22T21:54:57.628Z",
       "expirationTime" : 1448229357720,
-      "expirationTimeUTC" : "2015-11-22T21:55:21.720",
+      "expirationTimeUTC" : "2015-11-22T21:55:21.720Z",
       "alarmRange" : [ {
         "level" : "WATCH",
         "minInclusive" : 50.0
@@ -116,10 +116,10 @@ For each alarm the response contains detailed information on the value occurrenc
       "acquisitionStatus" : "ACQUIRED",
       "processingStatus" : true,
       "monitoringResult" : "WARNING_LOW",
-      "acquisitionTimeUTC" : "2015-11-22T21:56:17.038",
-      "generationTimeUTC" : "2015-11-22T21:55:59.945",
+      "acquisitionTimeUTC" : "2015-11-22T21:56:17.038Z",
+      "generationTimeUTC" : "2015-11-22T21:55:59.945Z",
       "expirationTime" : 1448229420038,
-      "expirationTimeUTC" : "2015-11-22T21:56:24.038",
+      "expirationTimeUTC" : "2015-11-22T21:56:24.038Z",
       "alarmRange" : [ {
         "level" : "WATCH",
         "minInclusive" : 50.0
@@ -154,10 +154,10 @@ For each alarm the response contains detailed information on the value occurrenc
       "acquisitionStatus" : "ACQUIRED",
       "processingStatus" : true,
       "monitoringResult" : "WATCH_LOW",
-      "acquisitionTimeUTC" : "2015-11-22T21:55:20.954",
-      "generationTimeUTC" : "2015-11-22T21:55:03.867",
+      "acquisitionTimeUTC" : "2015-11-22T21:55:20.954Z",
+      "generationTimeUTC" : "2015-11-22T21:55:03.867Z",
       "expirationTime" : 1448229363954,
-      "expirationTimeUTC" : "2015-11-22T21:55:27.954",
+      "expirationTimeUTC" : "2015-11-22T21:55:27.954Z",
       "alarmRange" : [ {
         "level" : "WATCH",
         "minInclusive" : 50.0

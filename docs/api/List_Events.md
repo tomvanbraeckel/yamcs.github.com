@@ -20,7 +20,7 @@ List the history of events:
         <td class="code">severity</td>
         <td class="code">string</td>
         <td>
-            The minimum severity level of the events. One of <tt>info</tt>, <tt>watch</tt>, <tt>warning</tt>, <tt>distress</tt> or <tt>severe</tt>. Default: <tt>info</tt>
+            The minimum severity level of the events. One of <tt>info</tt>, <tt>watch</tt>, <tt>warning</tt>, <tt>distress</tt>, <tt>critical</tt> or <tt>severe</tt>. Default: <tt>info</tt>
         </td>
     </tr>
     <tr>
@@ -90,8 +90,8 @@ Status: 200 OK
     "type" : "IN_LIMITS",
     "message" : "Parameter /YSS/SIMULATOR/BatteryVoltage2 has changed to value 222",
     "severity" : "INFO",
-    "generationTimeUTC" : "2015-11-13T14:43:47.786",
-    "receptionTimeUTC" : "2015-11-13T14:43:47.786"
+    "generationTimeUTC" : "2015-11-13T14:43:47.786Z",
+    "receptionTimeUTC" : "2015-11-13T14:43:47.786Z"
   } ]
 }
 ```
@@ -115,9 +115,9 @@ Content-Type: text/csv
 
 ```
 Source  Generation Time Reception Time  Event Type      Event Text
-AlarmChecker    2015-11-13T14:46:36.029 2015-11-13T14:46:36.029 IN_LIMITS       Parameter /YSS/SIMULATOR/BatteryVoltage2 has changed to value 195
-AlarmChecker    2015-11-13T14:46:29.784 2015-11-13T14:46:29.784 IN_LIMITS       Parameter /YSS/SIMULATOR/BatteryVoltage2 has changed to value 196
-AlarmChecker    2015-11-13T14:46:23.571 2015-11-13T14:46:23.571 IN_LIMITS       Parameter /YSS/SIMULATOR/BatteryVoltage2 has changed to value 197
+AlarmChecker    2015-11-13T14:46:36.029Z 2015-11-13T14:46:36.029Z IN_LIMITS       Parameter /YSS/SIMULATOR/BatteryVoltage2 has changed to value 195
+AlarmChecker    2015-11-13T14:46:29.784Z 2015-11-13T14:46:29.784Z IN_LIMITS       Parameter /YSS/SIMULATOR/BatteryVoltage2 has changed to value 196
+AlarmChecker    2015-11-13T14:46:23.571Z 2015-11-13T14:46:23.571Z IN_LIMITS       Parameter /YSS/SIMULATOR/BatteryVoltage2 has changed to value 197
 ```
 
 #### Protobuf

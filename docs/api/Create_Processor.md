@@ -105,7 +105,7 @@ Replay everything except PPs as of January 1st 2015 at 4.5x the original speed, 
 ```json
 {
   "name" : "A sample processor",
-  "start" : "2015-01-01T00:00:00.000",
+  "start" : "2015-01-01T00:00:00.000Z",
   "clientId" : [ 12 ],
   "speed": "4.5x",
   "paraname": [ "*" ],
@@ -119,7 +119,7 @@ Replay parameters directly under <tt>/GC</tt> or anywhere under <tt>/YSS</tt> at
 ```json
 {
   "name" : "A lighter processor",
-  "start" : "2015-01-01T00:00:00.000",
+  "start" : "2015-01-01T00:00:00.000Z",
   "clientId" : [ 12 ],
   "speed": "1000",
   "paraname": [ "/YSS/*", "/GC" ]

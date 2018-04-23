@@ -103,10 +103,10 @@ Status: 200 OK
     "acquisitionStatus" : "ACQUIRED",
     "processingStatus" : true,
     "monitoringResult" : "IN_LIMITS",
-    "acquisitionTimeUTC" : "2015-11-13T12:23:33.218",
-    "generationTimeUTC" : "2015-11-13T12:23:16.121",
+    "acquisitionTimeUTC" : "2015-11-13T12:23:33.218Z",
+    "generationTimeUTC" : "2015-11-13T12:23:16.121Z",
     "expirationTime" : 1447417456218,
-    "expirationTimeUTC" : "2015-11-13T12:23:40.218",
+    "expirationTimeUTC" : "2015-11-13T12:23:40.218Z",
     "alarmRange" : [ {
       "level" : "WATCH",
       "minInclusive" : 50.0

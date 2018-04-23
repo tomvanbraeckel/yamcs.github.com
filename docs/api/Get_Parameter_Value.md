@@ -51,10 +51,10 @@ Retrieves the current value of the specified parameter.
   "generationTime" : 1445940404207,
   "acquisitionStatus" : "ACQUIRED",
   "processingStatus" : true,
-  "acquisitionTimeUTC" : "2015-10-27T10:06:25.269",
-  "generationTimeUTC" : "2015-10-27T10:06:08.207",
+  "acquisitionTimeUTC" : "2015-10-27T10:06:25.269Z",
+  "generationTimeUTC" : "2015-10-27T10:06:08.207Z",
   "expirationTime" : 1445940428269,
-  "expirationTimeUTC" : "2015-10-27T10:06:32.269"
+  "expirationTimeUTC" : "2015-10-27T10:06:32.269Z"
 }
 ```
 
@@ -101,10 +101,10 @@ The response is a list of parameter values:
     "generationTime" : 1445944376410,
     "acquisitionStatus" : "ACQUIRED",
     "processingStatus" : true,
-    "acquisitionTimeUTC" : "2015-10-27T11:12:37.466",
-    "generationTimeUTC" : "2015-10-27T11:12:20.410",
+    "acquisitionTimeUTC" : "2015-10-27T11:12:37.466Z",
+    "generationTimeUTC" : "2015-10-27T11:12:20.410Z",
     "expirationTime" : 1445944400466,
-    "expirationTimeUTC" : "2015-10-27T11:12:44.466"
+    "expirationTimeUTC" : "2015-10-27T11:12:44.466Z"
   } ]
 }
 ```

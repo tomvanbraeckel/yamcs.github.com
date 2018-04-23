@@ -52,7 +52,7 @@ Create a red tag covering January 1st 2015, onwards:
 ```json
 {
   "name" : "My archive annotation",
-  "start" : "2015-01-01T00:00:00.000",
+  "start" : "2015-01-01T00:00:00.000Z",
   "color" : "#ff0000"
 }
 ```

@@ -24,12 +24,12 @@ This operation will possibly download a very large file.
     <tr>
         <td class="code">start</td>
         <td class="code">string</td>
-        <td>Filter the lower bound of the command's generation time. Specify a date string in ISO 8601 format</td>
+        <td>Filter the lower bound of the command's generation time. Specify a date string in ISO 8601 format. This bound is inclusive.</td>
     </tr>
     <tr>
         <td class="code">stop</td>
         <td class="code">string</td>
-        <td>Filter the upper bound of the command's generation time. Specify a date string in ISO 8601 format</td>
+        <td>Filter the upper bound of the command's generation time. Specify a date string in ISO 8601 format. This bound is exclusive.</td>
     </tr>
     <tr>
         <td class="code">order</td>

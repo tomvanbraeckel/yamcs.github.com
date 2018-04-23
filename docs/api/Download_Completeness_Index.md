@@ -41,7 +41,31 @@ Status: 200 OK
 </pre>
 
 ```json
-todo
+{
+  "id": {
+    "name": "apid_1"
+  },
+  "first": "1522399433316",
+  "last": "1522399433316",
+  "num": 1,
+  "info": "seqFirst: 0 seqLast: 0"
+}{
+  "id": {
+    "name": "apid_1"
+  },
+  "first": "1522399433515",
+  "last": "1522399433515",
+  "num": 1,
+  "info": "seqFirst: 0 seqLast: 0"
+}{
+  "id": {
+    "name": "apid_1"
+  },
+  "first": "1522399433718",
+  "last": "1522399433718",
+  "num": 1,
+  "info": "seqFirst: 0 seqLast: 0"
+}
 ```
 
 ### Alternative Media Types
