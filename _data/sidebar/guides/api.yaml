@@ -60,6 +60,7 @@
         - url: /docs/api/Get_Parameter_Value/
         - url: /docs/api/Set_Parameter_Value/
         - url: /docs/api/Get_Parameter_Samples/
+        - url: /docs/api/Get_Parameter_Ranges/
         - url: /docs/api/List_Parameter_Data/
         - url: /docs/api/Download_Parameter_Data/
     - url: /docs/api/Processors/
