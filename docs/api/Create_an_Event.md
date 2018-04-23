@@ -4,7 +4,7 @@ permalink: /docs/api/Create_an_Event/
 sidebar: yes
 ---
 
-Create an Event:
+Create an event for the given Yamcs instance:
 
     POST /api/archive/:instance/events/
     
@@ -18,83 +18,85 @@ Create an Event:
     <th>Description</th>
   </tr>
   <tr>
-    <td class="code">source</td>
-    <td class="code">string</td>
-    <td>The origin of the event.</td>
-  </tr>
-  <tr>
-    <td class="code">seqNumber</td>
-    <td class="code">integer</td>
-    <td>The sequence number as specified by the origin. This gets communicated back in event history.</td>
-  </tr>
-  <tr>
     <td class="code">message</td>
     <td class="code">string</td>
-    <td>Message content of the event.</td>
+    <td><strong>Required.</strong> Event message.</td>
   </tr>
   <tr>
-    <td class="code">generationTime</td>
-    <td class="code">integer</td>
-    <td>Generation time of the event in numeric format. As the number of milliseconds since 1/1/1970.</td>
-  </tr>
-  <tr>
-    <td class="code">receptionTime</td>
+    <td class="code">type</td>
     <td class="code">string</td>
-    <td>Reception time of the event in numeric format. Might be overwritten by the server.</td>
+    <td>Description of the type of the event. Useful for quick classification or filtering.</td>
   </tr>
   <tr>
     <td class="code">severity</td>
     <td class="code">string</td>
-    <td>
-      Severity level of the event. Can be one of "INFO", "WARNING", "ERROR".
-    </td>
+    <td>The severity level of the event. One of <tt>info</tt>, <tt>watch</tt>, <tt>warning</tt>, <tt>distress</tt>, <tt>critical</tt> or <tt>severe</tt>. Default is <tt>info</tt></td>
+  </tr>
+  <tr>
+    <td class="code">time</td>
+    <td class="code">string</td>
+    <td>Time associated with the event. Must be a date string in ISO 8601 format. If unspecified, this will default to the current mission time.</td>
   </tr>
 </table>
 
 
 ### Example
 
+Create an informatory event at the current mission time:
+
 ```json
 {
-  "source":"REST API",
-  "type":"Test",
-  "seqNumber":3,
-  "message":"this is a test event",
-  "generationTime":0,
-  "receptionTime":0,
- "severity":"WARNING"
+  "message": "Some info message"
+}
+```
+
+Add a critical event in the past:
+
+```json
+{
+  "message":"Some critical message",
+  "severity": "critical",
+  "time": "2015-01-01T00:00:00.000Z",
 }
 ```
 
 ### Response
 
+The full event is returned in the response body, including fields that are added by Yamcs Server.
+
 <pre class="header">Status: 200 OK</pre>
-
-
-### Protobuf
-
-#### Request
-
-<pre class="r header"><a href="/docs/api/yamcs.proto/">yamcs.proto</a></pre>
-```proto
-message Event {
-  enum EventSeverity {
-    INFO = 0;
-    WARNING = 1;
-    ERROR = 2;
-  }
-  required string source = 1;
-  required int64 generationTime = 2;
-  required int64 receptionTime = 3;
-  required int32 seqNumber = 4;
-  optional string type = 5;
-  required string message = 6;
-  optional EventSeverity severity = 7[default=INFO];
-
-  optional string generationTimeUTC = 8;
-  optional string receptionTimeUTC = 9;
-
-  extensions 100 to 10000;
+```json
+{
+  "source": "User",
+  "generationTime": "1524258406719",
+  "receptionTime": "1524258406719",
+  "seqNumber": 0,
+  "message": "Some info message",
+  "severity": "INFO",
+  "generationTimeUTC": "2018-04-20T21:06:09.719Z",
+  "receptionTimeUTC": "2018-04-20T21:06:09.719Z",
+  "createdBy": "admin"
 }
 ```
 
+
+### Alternative Media Types
+
+#### Protobuf
+
+Use these HTTP headers:
+
+    Content-Type: application/protobuf
+    Accept: application/protobuf
+    
+Request is of type:
+
+<pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
+```proto
+message CreateEventRequest {
+  optional string type = 1;
+  optional string message = 2;
+  optional string severity = 3;
+  optional string time = 4;
+}
+```
