@@ -32,5 +32,3 @@ The displayed information includes:
         <td>The processor this user is connected to</td>
     </tr>
 </table>
-
-Note that our legacy standalone clients are not currently appearing in the list of connected clients. These clients connect using our previous API, and will be refactored towards the new API at some point. 

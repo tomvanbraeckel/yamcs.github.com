@@ -1,18 +1,18 @@
 ---
 layout: default
 sidebar: yes
-permalink: /docs/studio/Navigator/
+permalink: /docs/studio/Explorer/
 ---
 
-The Navigator tab shows a folder-like structure of the resources contained within our current workspace.
+The Explorer tab shows a folder-like structure of the resources contained within your current workspace.
 
-![Navigator](/assets/studio/navigator.png){: .center-image }
+![Explorer](/assets/studio/navigator.png){: .center-image }
 
 ### Projects
 Recall that within Yamcs Studio, you are always working in one workspace only. Within that workspace you create or import *projects*. It is the projects that contain the actual resources (files and/or directories).
 
 #### Creating a Project
-To create a new project, choose **File > New Project**, or right-click in the navigator and choose **New Project** from the pop-up menu.
+To create a new project, choose **File > New Project**, or right-click in the explorer and choose **New Project** from the pop-up menu.
 
 #### Importing Existing Projects
 To import an existing project, select **File > Import** and choose **Existing Projects into Workspace**. Navigate to the project's folder, and if Yamcs Studio recognizes it as a project you will be able to import it.
@@ -33,7 +33,7 @@ The default Yamcs Studio distribution handles <tt>*.def</tt> and <tt>*.opi</tt> 
 Use right-click **Open With** for more control over how the file is to be opened.
 
 #### Searching
-An advanced search and replace dialog is available from the **Search** menu. If you select a node in the navigator before opening the Search dialog, this dialog will be configured to only search resources under that node.
+An advanced search and replace dialog is available from the **Search** menu. If you select a node in the explorer before opening the Search dialog, this dialog will be configured to only search resources under that node.
 
 ![Search](/assets/studio/search.png){: .center-image }
 

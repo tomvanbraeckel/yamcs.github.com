@@ -9,9 +9,7 @@ The Editor Area is a unique zone in Yamcs Studio where files are opened for edit
 ### OPI Files
 OPI stands for Operator Interface, but is more commonly referred to as a *display*. OPIs are often static, but when needed can be made very dynamic by combining different widgets and PVs together using concepts like [Actions](/docs/studio/Actions), [Rules](/docs/studio/Rules_&_Scripts/#rules) and [Scripts](/docs/studio/Rules_&_Scripts/#scripts).
 
-Create a new OPI file by right-clicking in the [Navigator](/docs/studio/Navigator) on the desired location, and selecting **New > OPI File**. The new file will be opened in the Editor Area.
-
-To open an existing file, right-click it from the [Navigator](/docs/studio/Navigator) and select **Open With > OPI Editor** to open it in the Editor Area.
+In the Display Builder window, create a new OPI file, right-click in the Explorer on the desired location, and select **New > OPI File**.
 
 ![Sample OPI](/assets/studio/sample-opi.png){: .center-image }
 

@@ -6,7 +6,7 @@
     - url: /docs/studio/Understanding_the_User_Interface/
     - url: /docs/studio/Connecting_to_Yamcs/
 
-- url: /docs/studio/OPI_Runtime/
+- url: /docs/studio/Display_Runner/
 
 - url: /docs/studio/Processed_Variables/
 
@@ -20,8 +20,8 @@
 
 - url: /docs/studio/Editing_Displays/
   items:
-    - url: /docs/studio/OPI_Editor/
-    - url: /docs/studio/Navigator/
+    - url: /docs/studio/Display_Runner/
+    - url: /docs/studio/Explorer/
     - url: /docs/studio/Editor_Area/
     - url: /docs/studio/Outline/
     - url: /docs/studio/Properties/

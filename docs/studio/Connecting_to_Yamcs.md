@@ -78,7 +78,7 @@ Select the **Connect on startup** option, if you would like Yamcs Studio to auto
     Connection preferences are stored in a hidden folder under your home directory, and will continue functioning whenever you upgrade your copy of Yamcs Studio.
 </div>
 
-You can verify that your copy of Yamcs Studio is properly connected by looking at the top left processor indicator of the OPI Runtime perspective:
+You can verify that your copy of Yamcs Studio is properly connected by looking at the bottom status bar:
 
 ![Realtime Processor](/assets/studio/processor.png)
 

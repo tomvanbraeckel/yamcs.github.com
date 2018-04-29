@@ -126,7 +126,7 @@ Replay parameters directly under <tt>/GC</tt> or anywhere under <tt>/YSS</tt> at
 }
 ```
 
-Notice how the speed value must always be encoded as a string to keep our parser happy.
+Notice how the speed value must always be encoded as a string.
 
 
 ### Alternative Media Types

@@ -70,7 +70,7 @@ Make processor move according to original speed:
 }
 ```
 
-Notice that the speed value must be encoded as a string to keep our parser happy.
+Notice how the speed value must be encoded as a string.
 
 
 ### Alternative Media Types
