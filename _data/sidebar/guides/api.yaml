@@ -26,6 +26,7 @@
         - url: /docs/api/Create_an_Event/
     - url: /docs/api/Indexes/
       items:
+        - url: /docs/api/Get_Packet_Index/
         - url: /docs/api/Download_Packet_Index/
         - url: /docs/api/Download_PP_Index/
         - url: /docs/api/Download_Event_Index/
