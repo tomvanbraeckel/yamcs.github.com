@@ -23,7 +23,7 @@
       items:
         - url: /docs/api/List_Events/
         - url: /docs/api/Download_Events/
-        - url: /docs/api/Create_an_Event/
+        - url: /docs/api/Create_Event/
     - url: /docs/api/Indexes/
       items:
         - url: /docs/api/Get_Packet_Index/
@@ -70,6 +70,7 @@
         - url: /docs/api/Get_Processor_Info/
         - url: /docs/api/Create_Processor/
         - url: /docs/api/Edit_Processor/
+        - url: /docs/api/Delete_Processor/
 #    - url: /docs/api/Simulation_Time/
     - url: /docs/api/Streams/
       items:
@@ -88,6 +89,7 @@
         - url: /docs/api/Get_Tag/
         - url: /docs/api/Create_Tag/
         - url: /docs/api/Edit_Tag/
+        - url: /docs/api/Delete_Tag/
     - url: /docs/api/User/
     - url: /docs/api/Services/
       items:

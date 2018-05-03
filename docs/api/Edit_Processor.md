@@ -24,7 +24,7 @@ Edit a processor:
   <tr>
     <td class="code">state</td>
     <td class="code">string</td>
-    <td>The state this replay processor should be updated to. Either <tt>paused</tt>, <tt>running</tt> or <tt>closed</tt>.</td>
+    <td>The state this replay processor should be updated to. Either <tt>paused</tt> or <tt>running</tt>.</td>
   </tr>
   <tr>
     <td class="code">seek</td>
