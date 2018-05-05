@@ -18,13 +18,16 @@ Edit a client:
     <th>Description</th>
   </tr>
   <tr>
+    <td class="code">instance</td>
+    <td class="code">string</td>
+    <td>The instance. If unspecified, this defaults to the instance that the client is currently connected to.</td>
+  </tr>
+  <tr>
     <td class="code">processor</td>
     <td class="code">string</td>
-    <td>The processor. This processor must be part of the instance that the client is connected to.</td>
+    <td>The processor. If <tt>instance</tt> is provided and <tt>processor</tt> is not, then this will default to the default processor for that instance.</td>
   </tr>
 </table>
-
-The same parameters can also be specified in the request body. In case both query string parameters and body parameters are specified, they are merged with priority being given to query string parameters.
 
 ### Example
 
@@ -33,6 +36,14 @@ Update the client's processor to <tt>replay123</tt>:
 ```json
 {
   "processor" : "replay123"
+}
+```
+
+Later on, leave the replay and switch to the default processor (e.g. realtime) on the simulator instance:
+
+```json
+{
+  "instance" : "simulator"
 }
 ```
 
@@ -50,6 +61,7 @@ Request is of type:
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 ```proto
 message EditClientRequest {
-  optional string processor = 1;
+  optional string instance = 1;
+  optional string processor = 2;
 }
 ```
