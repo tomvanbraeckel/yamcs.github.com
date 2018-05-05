@@ -82,7 +82,7 @@ In addition to the default Yamcs package, there are other proprietary extensions
 </div>
 
 #### Configuration
-The Yamcs configuration files are encoded using the yaml format. This format allows to encode in a human readable way (unlike XML) the most common data types: numbers, strings, lists and maps. For detailed syntax rules, please see [http://www.yaml.org](http://www.yaml.org).
+The Yamcs configuration files are encoded using the yaml format. This format allows to encode in a human readable way (unlike XML) the most common data types: numbers, strings, lists and maps. For detailed syntax rules, please see [https://www.yaml.org](https://www.yaml.org).
 
 The starting configuration file is <tt>etc/yamcs.yaml</tt>. It contains a list of Yamcs instances. For each instance, a file called <tt>etc/yamcs.instance-name.yaml</tt> defines all the components that are part of the instance. Depending on which components are selected, different configuration files are needed.
 

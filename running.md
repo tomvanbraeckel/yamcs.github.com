@@ -50,12 +50,12 @@ With all the preparations done, we now get to run a Yamcs instance in a box (wel
 
     * A 5Hz Launch &amp; Landing simulator
     
-            $ curl -sSL http://www.yamcs.org/yss/landing.sh | sh
+            $ curl -sSL https://www.yamcs.org/yss/landing.sh | sh
             $ cd landing
     
     * A 1Hz LEO Spacecraft simulator
 
-            $ curl -sSL http://www.yamcs.org/yss/leo_spacecraft.sh | sh
+            $ curl -sSL https://www.yamcs.org/yss/leo_spacecraft.sh | sh
             $ cd leo_spacecraft
 
     This will create a directory <tt>landing/</tt> or <tt>leo_spacecraft/</tt> under your current working directory with some configuration files needed to link the Yamcs container with the Simulator container.

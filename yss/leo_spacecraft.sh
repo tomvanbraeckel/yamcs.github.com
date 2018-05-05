@@ -1,6 +1,6 @@
 #!/bin/sh
 
-BASE_URL="http://www.yamcs.org"
+BASE_URL="https://www.yamcs.org"
 
 set -e
 /bin/echo -n "Downloading YSS LEO Spacecraft configuration to `pwd`/leo_spacecraft..... "
