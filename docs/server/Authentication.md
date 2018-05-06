@@ -12,7 +12,7 @@ Yamcs allows both secure (SSL based) and non-secure connections. The level of au
 ### Asserted Identities
 The CSIv2 CORBA specifications include a mechanism through which a user (typically corresponding to a proxy) can execute CORBA calls on behalf of other users. The mechanism is called identity assertion: the proxyuser asserts the identity of the real user.
 
-The Yamcs Server supports the identity assertion mechanism, imposing at the same time some restrictions meant to improve security:
+Yamcs Server supports the identity assertion mechanism, imposing at the same time some restrictions meant to improve security:
 
 * Identity assertion can be made only over secure (SSL) connections. As mentioned above the client always has to authenticate over secure connections and the proxyuser LDAP entry has to define the proxyuser certificate.
 * The LDAP entry for the user that asserts other identities (typically <tt>cn=proxyuser,ou=People,o=usoc</tt>) has to contain a subnode <tt>cn=assertedIdentities</tt> of type <tt>groupOfNames</tt> which has <tt>member</tt> attributes pointing to all the users whose identities can be asserted. If the proxyuser attempts to assert an identity not in the list, a NO_PERMISSION error will be thrown.

@@ -13,10 +13,10 @@ The Event Viewer displays events from Yamcs Server. In older versions of Yamcs, 
 <table class="inline">
     <tr>
         <th>OS</th>
-        <td>Linux or Windows, 32bit or 64bit</td>
+        <td>any</td>
     </tr>
     <tr>
-        <th width="1">Java runtime (JRE)</th>
+        <th width="1">Java Runtime Environment (JRE)</th>
         <td>Version &gt;= 1.8</td>
     </tr>
 </table>
@@ -57,7 +57,7 @@ The Event Viewer main part is a table of events displayed in the order in which 
 <table class="inline">
     <tr>
         <th>Source</th>
-        <td>represents the system or subsystem that generated the event (e.g. EDR, DaSSPacketProvider)</td>
+        <td>represents the system or subsystem that generated the event</td>
     </tr>
     <tr>
         <th>Generation Time</th>

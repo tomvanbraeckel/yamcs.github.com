@@ -10,10 +10,10 @@ Yamcs offers various ways of defining TM packets, parameters, commands and other
 {:toc}
 
 ### Multiple Space Systems support
-Since version 5.4, the spreadsheet definition supports loading from one excel file a hirearchy composed of multiple space systems. Until version 5.3 this was only possible by definiting multiple excel files (one per subsystem) and defining the hierarchy in mdb.yaml. Also until version 5.3 the loader forced some sheets to always be present (e.g. Containers). From version 5.4 only the General sheet has to be present, all the other ones are optional. 
+Since version 5.4, the spreadsheet definition supports loading from one Excel file a hierarchy composed of multiple space systems. Until version 5.3 this was only possible by defining multiple Excel files (one per subsystem) and defining the hierarchy in <tt>etc/mdb.yaml</tt>. Also until version 5.3 the loader forced some sheets to always be present (e.g. Containers). From version 5.4 only the General sheet has to be present, all the other ones are optional. 
 
 To define the space system hierarchy, the convention is that all the sheets that do not have a prefix contain data for the main space system whose name is defined in the General sheet.
-To define data in subsystems, a syntax like  *SYSTEM1|SYSTEM2|Containers" can be used. This definition will create a SYSTEM1 as part of the main space system and a child SYSTEM2 of SYSTEM1. Then the containers will be loaded in SYSTEM2.
+To define data in subsystems, a syntax like  <tt>SYSTEM1|SYSTEM2|Containers</tt> can be used. This definition will create a SYSTEM1 as part of the main space system and a child SYSTEM2 of SYSTEM1. Then the containers will be loaded in SYSTEM2.
 
 The spreadsheet loader scans and creates the subsystem hierarchy and then it loads the data inside the systems traversing the hierarchy in a depht-first order.
 

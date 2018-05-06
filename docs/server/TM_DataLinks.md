@@ -41,8 +41,13 @@ In case the TCP connection with the telemetry server cannot be opened or is brok
 ### org.yamcs.tctm.UdpTmDataLink
 This class listens to a UDP port for datagrams containing CCSDS packets. It supports the following arguments:
 
-* <tt>port</tt> - the UDP port to listen to.
-* <tt>maxLength</tt> - the maximum length of the packets received. Byt default it's 1500 bytes. If a datagram longer than that will be received, the data will be truncated.
+<dl>
+  <dt><tt>port</tt></dt>
+  <dd>The UDP port to listen to.</dd>
+
+  <dt><tt>maxLength</tt></dt>
+  <dd>The maximum length of the packets received. If a larger datagram is received, the data will be truncated. Default: 1500 bytes</dd>
+</dl>
 
 
 Example usage:
@@ -61,15 +66,22 @@ tmDataLinks:
 
 
 ### org.yamcs.tctm.FilePollingTmDataLink
-This class reads data from files in a directory, importing it into the configured stream. The directory is polled regularely for new files and the files are imported one by one. After the import, the file is removed (if the option delteAfterImport is not set to false, see below).
+This class reads data from files in a directory, importing it into the configured stream. The directory is polled regularely for new files and the files are imported one by one. After the import, the file is removed (if the option deleteAfterImport is not set to false, see below).
 
 The following arguments are supported:
 
-* <tt>incomingDir</tt> the directory where the data will be read from. If not specified, the data will be read from &lt;yamcs-incoming-dir&gt;/&lt;instance&gt;/tm/ where &lt;yamcs-incoming-dir&gt; is the value of the incomingDir property from [etc/yamcs.yaml](/docs/server/yamcs.yaml).
-* <tt>deleteAfterImport</tt> remove the file after importing all the data. By default set to true, can be set to false to import the same data again and again.
-* <tt>delayBetweenPackets</tt> when importing a file, wait this many milliseconds after each packet. This option together with the previous one can be used to simulate incoming realtime data.
+<dl>
+  <dt><tt>incomingDir</tt></dt>
+  <dd>The directory where the data will be read from. If not specified, the data will be read from <tt>&lt;yamcs-incoming-dir&gt;/&lt;instance&gt;/tm/</tt> where <tt>yamcs-incoming-dir</tt> is the value of the incomingDir property from <a href="/docs/server/yamcs.yaml">etc/yamcs.yaml</a>.</dd>
+
+  <dt><tt>deleteAfterImport</tt></dt>
+  <dd>Remove the file after importing all the data. By default set to true, can be set to false to import the same data again and again.</dd>
+
+  <dt><tt>delayBetweenPackets</tt></dt>
+  <dd>When importing a file, wait this many milliseconds after each packet. This option together with the previous one can be used to simulate incoming realtime data.</dd>
+</dl>
 
 
 ### org.yamcs.tctm.ArtemisTmDataLink
-This class reads data from a Artemis queue. Upon startup, the class will create the queue and bind it to the address which is specified in the spec parameter.
+This class reads data from an Artemis queue. Upon startup, the class will create the queue and bind it to the address which is specified in the spec parameter.
 

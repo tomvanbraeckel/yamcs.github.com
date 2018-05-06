@@ -65,4 +65,4 @@ services:
               schedule: [{startSegment: 10, numSegments: 3}, {startSegment: 2, numSegments:2, interval: 600} ]
 ```
 
-This configuration does not use the realtime filler, but instead performs regular (each 600 seconds) back-fillings of the last two segments. It is the configuration used in the ISS ground segment where due to regular(each 20-30min) LOS (loss of signal), the archive is very fragmented and the only way to obtain continous data is to perform replays.
+This configuration does not use the realtime filler, but instead performs regular (each 600 seconds) back-fillings of the last two segments. It is the configuration used in the ISS ground segment where due to regular(each 20-30min) LOS (loss of signal), the archive is very fragmented and the only way to obtain continuous data is to perform replays.

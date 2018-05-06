@@ -7,7 +7,7 @@ sidebar: yes
 The `management` resource type within the WebSocket API groups general Yamcs info that does not fit under a specific other resource type.
 
 ### Subscribe to Management Updates
-Within the websocket request envelope use these values:
+Within the WebSocket request envelope use these values:
 
 * request-type `management`
 * request `subscribe`
@@ -49,7 +49,7 @@ Here's an example output in JSON (with Protobuf, there's an applicable getter in
 
 
 ### Get Client-Info
-Within the websocket request envelope use these values:
+Within the WebSocket request envelope use these values:
 
 * request-type `management`
 * request `getClientInfo`

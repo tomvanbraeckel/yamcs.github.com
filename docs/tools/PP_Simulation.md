@@ -9,20 +9,20 @@ The Yamcs PP Simulation user interface allows to browse a library of scenarios, 
 
 ## Installing
 	
-### Dependencies
+### Prerequisites
 <table class="inline">
     <tr>
         <th>OS</th>
-        <td>Linux or Windows, 32bit or 64bit</td>
+        <td>any</td>
     </tr>
     <tr>
-        <th width="1">Java runtime (JRE)</th>
+        <th width="1">Java Runtime Environment (JRE)</th>
         <td>Version &gt;= 1.8</td>
     </tr>
 </table>
 
 ### Installation
-The Yamcs PP Simulation is delivered as part of an archived client tools package. The package does not need to be installed, just extracted to a suitable location. The tools can be run from the extracted location using starting scripts found in the <tt>bin/</tt> folder.
+Yamcs PP Simulation is delivered as part of an archived client tools package. The package does not need to be installed, just extracted to a suitable location. The tools can be run from the extracted location using starting scripts found in the <tt>bin/</tt> folder.
 
 ### Updating
 Updated applications are made available as an archived client tools package. This should be extracted into its own folder, separate to any previous installation. The configuration files in <tt>etc/</tt> can be copied from a previous installation into the new installation.

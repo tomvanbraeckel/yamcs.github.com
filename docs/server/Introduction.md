@@ -5,13 +5,12 @@ chapter: yes
 permalink: /docs/server/Introduction/
 ---
 
-Yamcs Server is the essential part of Yamcs implementing all the logic of monitoring and control of remote devices. It interfaces on one side with the device being monitored and controlled and on the other side with end user applications such as telemetry displays, commanding applications, etc.
+Yamcs Server, or short Yamcs, is a central component for monitoring and controlling remote devices. Yamcs stores and processes packets, and provides an interface for end-user applications to subscribe to realtime or archived data. Typical use cases for such applications include telemetry displays and commanding tools.
 
 ![Typical Deployment](/assets/server/typical-deployment.png){: .center-image }
 
-Although the Yamcs Server is indeed providing server based functionality, it does provide out of the box an embedded web server that can be used for administration and even for limited monitoring applications.
+Yamcs ships with an embedded web server for administering the server, the mission databases or for basic monitoring tasks. For more advanced requirements, Yamcs exposes its functionality over a well-documented HTTP-based API.
 
-Yamcs is implemented completely in Java, however it relies on external storage engine for data archiving. Currently the used storage engine is [RocksDB](http://rocksdb.org/). The platform of choice for running the Yamcs server is Linux x64, but it does run pretty well on Mac OS X and even on Windows with the latest versions of RocksDB.
+Yamcs is implemented entirely in Java, but it does rely on an external storage engine for actual data archiving. Currently the storage engine is [RocksDB](http://rocksdb.org/). The preferred target platform is linux x64, but Yamcs can also be made to run on Mac OS X and Windows.
 
-Although the Yamcs Server is used primarily as a server, it is being successfully used as a library for doing various tasks, mainly related to processing of packet telemetry according to XTCE definitions.
-This manual describes how to use Yamcs as a server. If you want to use it for other purposes, please contact the developers at [Yamcs mailing list](https://groups.google.com/forum/#!forum/yamcs).
+While Yamcs binaries are typically used to run the Yamcs Server, they can also be useful as a library for reusable tasks such as processing of packet telemetry according to XTCE definitions. This manual describes how to use Yamcs as a server. If you want to use it for other purposes, please contact the developers at [Yamcs mailing list](https://groups.google.com/forum/#!forum/yamcs).

@@ -9,7 +9,7 @@ The `stream` resource type within the WebSocket API groups low-level publish/sub
 The documented operations work on one of the built-in streams (like `tm`, `tm_realtime`, `tm_dump`, `pp_realtime`, `cmdhist_realtime`, etc). Or, if your Yamcs deployment defines any other streams, they would work as well.
 
 ### Subscribe to a Stream
-Within the websocket request envelope use these values:
+Within the WebSocket request envelope use these values:
 
 * request-type `stream`
 * request `subscribe`
@@ -37,7 +37,7 @@ In the case we were receiving some simulated data from the `tm_realtime` stream,
 Other streams would have different columns.
 
 ### Publish to a Stream
-Within the websocket request envelope use these values:
+Within the WebSocket request envelope use these values:
 
 * request-type `stream`
 * request `publish`

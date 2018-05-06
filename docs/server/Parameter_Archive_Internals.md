@@ -21,7 +21,7 @@ Usually some of the parameters in these packets will be counters or other things
 This is why, in Yamcs we do not adopt the "store on change only" strategy but a different one: we store the timestamps in one record and make reference to that record from all the parameters sharing those same timestamps. Of course it wouldn't make any sense to reference one singe timestamp value, instead we store multiple values in a segment and reference the time segment from all value segments that are related to it.
 
 ## Archive structure 
-We have estabilished that the Yamcs parameter archive stores rows of data of shape:
+We have established that the Yamcs parameter archive stores rows of data of shape:
 (t, pv<sub>0</sub>, pv<sub>1</sub>, pv<sub>2</sub>,...,  pv<sub>n</sub>)
 
 Where pv<sub>0</sub>, pv<sub>1</sub>, pv<sub>2</sub>..pv<sub>n</sub> are parameter values (for different parameters) all sharing the same timestamp t. One advantage of seeing the data this way is that we do keep together parameters extracted from the same packet (and having the same timestamp). It is sometimes useful for operators to know a sepcific parameter from which packet has been extracted (e.g. which APID, packet ID in a CCSDS packet structure).

@@ -10,12 +10,12 @@ In addition to the constraints/verifiers, Yamcs also implements the concept of c
 The Commands and arguments are formatted to binary packets based on the XTCE definition.
 
 
-#### Command significance
+#### Command Significance
 Yamcs uses the XTCE concept of command significance. Each command's significance can have one of this values none (default), watch, warning, distress, critical or  severe.
 
 In addition to the significance, the command has a message explaining why the command has the given significance.
 
-Currently, the Yamcs server does not check or impose anything based on the significance of the command. In the future, the privileges may be used to restrict users that can send commands of high significance. However, currently the information (significance + reason) is only given to an external application (Yamcs Studio) to present it to the user in a suitable manner.
+Currently, Yamcs Server does not check or impose anything based on the significance of the command. In the future, the privileges may be used to restrict users that can send commands of high significance. However, currently the information (significance + reason) is only given to an external application (Yamcs Studio) to present it to the user in a suitable manner.
 
 The command significance can be defined in the Excel Spreadsheet in the CommandOptionts tab:
 

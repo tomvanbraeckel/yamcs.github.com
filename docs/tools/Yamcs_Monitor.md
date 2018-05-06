@@ -15,10 +15,10 @@ Yamcs Monitor allows to control a Yamcs Server. It shows the list of data links,
 <table class="inline">
     <tr>
         <th>OS</th>
-        <td>Linux or Windows, 32bit or 64bit</td>
+        <td>any</td>
     </tr>
     <tr>
-        <th width="1">Java runtime (JRE)</th>
+        <th width="1">Java Runtime Environment (JRE)</th>
         <td>Version &gt;= 1.8</td>
     </tr>
 </table>

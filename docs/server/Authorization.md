@@ -4,9 +4,13 @@ permalink: /docs/server/Authorization/
 sidebar: yes
 ---
 
-Yamcs implements four types of privileges: System Privileges, TC Privileges, TM Sequence Containers (TM Packets) Privileges and TM Parameter Privileges.
+Yamcs implements different types of privileges:
+* System Privileges
+* TC Privileges
+* TM Sequence Container (aka Packet) Privileges
+* TM Parameter Privileges.
 
-The privileges are assigned to users through the use of roles: a user has specific roles, and some role is required for a specific privilege. If there is a match between the role assigned to the user and the role required for a privilege, then the user is allowed to pass the restriction.
+Privileges are assigned to users through the use of roles: a user has specific roles, and some role is required for a specific privilege. If there is a match between the role assigned to the user and the role required for a privilege, then the user is allowed to pass the restriction.
 
 All the user, role and privilege definitions are looked up in the LDAP database. Yamcs reads only LDAP objects of type <tt>groupOfNames</tt>. The access to the LDAP server is done using the properties from the [privileges.yaml](/docs/server/privileges.yaml/). Yamcs requires read-only access to the LDAP.
 

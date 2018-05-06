@@ -5,6 +5,20 @@
     - url: /docs/server/Installation/
     - url: /docs/server/Acronyms/
 
+- url: /docs/server/Services/
+  items:
+    - url: /docs/server/HTTP_Server/
+    - url: /docs/server/Data_Link_Initialiser/
+    - url: /docs/server/XTCE_TM_Recorder/
+    - url: /docs/server/Parameter_Recorder/
+    - url: /docs/server/Alarm_Recorder/
+    - url: /docs/server/Event_Recorder/
+    - url: /docs/server/Command_History_Recorder/
+    - url: /docs/server/Replay_Server/
+    - url: /docs/server/Index_Server/
+    - url: /docs/server/System_Parameters_Collector/
+    - url: /docs/server/Processor_Creator_Service/
+    - url: /docs/server/Parameter_Archive_Service/
 
 - url: /docs/server/Data_Links/
   items:
@@ -46,6 +60,5 @@
     - url: /docs/server/command-queue.yaml/
     - url: /docs/server/logging.yamcs-server.properties/
     - url: /docs/server/mdb.yaml/
-    - url: /docs/server/multicast.yaml/
     - url: /docs/server/privileges.yaml/
     - url: /docs/server/tcp.yaml/
