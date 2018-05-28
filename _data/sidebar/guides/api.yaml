@@ -100,7 +100,15 @@
       items:
          - url: /docs/api/RocksDB_List/
          - url: /docs/api/RocksDB_Properties/
-
+    - url: /docs/api/Buckets/
+      items:
+         - url: /docs/api/Create_Bucket/
+         - url: /docs/api/List_Buckets/
+         - url: /docs/api/Delete_Bucket/
+         - url: /docs/api/Upload_Object/
+         - url: /docs/api/List_Objects/
+         - url: /docs/api/Get_Object/
+         - url: /docs/api/Delete_Object/
 - url: /docs/api/WebSocket_API/
   items:
     - url: /docs/api/Alarm_Notices/
