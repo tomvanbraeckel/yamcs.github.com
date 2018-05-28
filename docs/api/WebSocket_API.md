@@ -7,13 +7,26 @@ chapter: yes
 
 Yamcs provides a WebSocket API for data subscriptions. A typical use case would be a display tool subscribing to parameter updates.
 
-All operations support binary WebSocket frames encoded using Google Protocol Buffers, as well as textual WebSocket frames encoded in JSON. The server distinguishes between Protobuf and JSON based on the type of the first received client frame. If it is a binary websocket frame, all further communication will default to Protobuf. If it is a textual websocket frame, all further communication will default to JSON.
+The WebSocket supports two subprotocols:
+
+1. Textual WebSocket frames encoded in JSON
+2. Binary WebSocket frames encoded in Google Protocol Buffers
+
+To select one or the other specify this header on your WebSocket upgrade request:
+
+    Sec-WebSocket-Protocol: protobuf
+
+or
+
+    Sec-WebSocket-Protocol: json
+
+When unspecified, the server defaults to JSON.
 
 ### Wrapper
 
 WebSocket calls should be directed to a URL of the form:
 
-    http://localhost:8090/:instance/_websocket
+    http://localhost:8090/_websocket/:instance
     
 Replace <tt>:instance</tt> with your Yamcs instance name. The frame must contain a text array like so:
 
@@ -48,4 +61,4 @@ The <tt>request-type</tt> and <tt>request</tt> criteria vary for every type of r
 
 ### Java Client
 
-WebSockets have good language support and are supported by all major browsers. If you are developing a Java application integrated with Yamcs, we recommend using the LGPL Java WebSocket client distributed as part of the <tt>yamcs-api</tt> jar.
+If you are developing a Java application integrated with Yamcs, we recommend using the LGPL Java WebSocket client distributed as part of the <tt>yamcs-api</tt> jar.

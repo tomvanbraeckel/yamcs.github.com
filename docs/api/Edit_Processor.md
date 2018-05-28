@@ -8,6 +8,10 @@ Edit a processor:
 
     PATCH /api/processors/:instance/:name
 
+<div class="hint">
+  Only replay processors can be edited.
+</div>
+
 
 ### Parameters
 
@@ -20,7 +24,7 @@ Edit a processor:
   <tr>
     <td class="code">state</td>
     <td class="code">string</td>
-    <td>The state this processor should be updated to. Either <tt>PAUSED</tt> or <tt>RUNNING</tt>.</td>
+    <td>The state this replay processor should be updated to. Either <tt>paused</tt> or <tt>running</tt>.</td>
   </tr>
   <tr>
     <td class="code">seek</td>
@@ -41,15 +45,13 @@ Edit a processor:
   </tr>
 </table>
 
-The same parameters can also be specified in the request body. In case both query string parameters and body parameters are specified, they are merged with priority being given to query string parameters.
-
 ### Example
 
 Pause the processor:
 
 ```json
 {
-  "state" : "PAUSED"
+  "state" : "paused"
 }
 ```
 
@@ -57,7 +59,7 @@ Resume the processor, and set speed to 2.5x:
 
 ```json
 {
-  "state" : "RUNNING",
+  "state" : "running",
   "speed" : "2.5x"
 }
 ```
@@ -69,8 +71,6 @@ Make processor move according to original speed:
   "speed" : "1x"
 }
 ```
-
-Notice that the speed value must be encoded as a string to keep our parser happy.
 
 
 ### Alternative Media Types

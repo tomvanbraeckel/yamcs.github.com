@@ -16,7 +16,7 @@ We're keen on bringing many improvements to this view for better editing, but it
 ### Preparing a Stack
 You can prepare a stack of commands only when you are connected to Yamcs. Yamcs Studio uses this connection to retrieve the list of available commands or to perform server-side validations.
 
-When you start Yamcs Studio, the Command Stack view (available from the OPI Runtime perspective) is by default shown below the operator displays. If you can't find it back, select **Window > Show View > Command Stack**.
+When you start Yamcs Studio, the Command Stack view (available from the Display Runner window) is by default shown below the operator displays. If you can't find it back, select **Window > Show View > Command Stack**.
 
 ![Command Stack](/assets/studio/stack-new.png){: .center-image }
 
@@ -26,7 +26,7 @@ Add a command by clicking the ![New Command](/assets/studio/icons/new_command.pn
 
 This opens a wizard dialog with the list of available commands. You can filter the list with the search box on top.
 
-Commands are identified by their fully qualified XTCE name. This name matches the hierarchical structure of the commands as defined in the mission database of the connected Yamcs instance. In future versions we may include a tree representation in addition to the current flat representation.
+Commands are identified by their fully qualified XTCE name. This name matches the hierarchical structure of the commands as defined in the mission database of the connected Yamcs instance.
 
 Commands can have varying levels of criticality (called *significance* in XTCE terminology). The icon in the leftmost column indicates the defined criticality for the command.
 
@@ -82,7 +82,7 @@ If a stacked command does not pass static validation checks (sometimes referred 
 </div>
 
 ### Executing a Stack
-When we're done composing our manual stack, we can start execution its commands. Execution is top-down, so select the first command of your stack.
+As soon as your manual stack contains at least one command, you can start execution. Execution is top-down, so select the first command of your stack.
 
 <div class="hint">
     There is currently no clear separation between a 'stack editing' mode and a 'stack executing' mode. We are happy with this given the current set of features, but may revise this concept as we add more features (e.g. moving commands up and down the stack).

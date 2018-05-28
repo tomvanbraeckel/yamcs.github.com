@@ -89,4 +89,4 @@ The filters can be activated or disabled in the preferences or by using the View
 
 The menu **File > Save as** allows to save the displayed events into a tab-separated file. The first line of the file is the header containing the column names as shown in the table.
 
-The menu **File > Retrieve Past Events** pops up a dialog allowing to select a start/end range for retrieving events from the archive. All the retrieved events are subjected to the filters on the client side. In the future, the server might be improved to apply the filters directly on the server.
+The menu **File > Retrieve Past Events** pops up a dialog allowing to select a start/end range for retrieving events from the archive. All the retrieved events are subjected to the filters on the client side.

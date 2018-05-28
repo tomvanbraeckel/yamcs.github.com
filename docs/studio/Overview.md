@@ -12,7 +12,7 @@ Along the way, standalone client GUIs were developed as needed. These include th
 An extensive list of tools, but with a gap. It was felt a display solution was needed to fill this missing part and with this need in mind, Yamcs Studio was created.
 
 ### Yamcs Studio
-Yamcs Studio is a desktop frontend to Yamcs. Its main attraction is its support for operator displays, but it also includes other facets that cover TC commanding and insight into various runtime aspects of Yamcs. Most of our legacy client GUIs have by now been ported into Yamcs Studio (with the exception of the Packet Viewer), for an integrated solution.
+Yamcs Studio is a desktop frontend to Yamcs. Its main attraction is its support for operator displays, but it also includes other facets that cover TC commanding and insight into various runtime aspects of Yamcs. Most of the Yamcs legacy client GUIs have by now been ported into Yamcs Studio (with the exception of the Packet Viewer), for an integrated solution.
 
 Yamcs can be integrated within a display software other than Yamcs Studio (and in fact, this is often the case in long-running missions where Yamcs was added in the mix after the project's initial conception), but there are advantages to working with Yamcs Studio:
 
@@ -22,7 +22,7 @@ Yamcs can be integrated within a display software other than Yamcs Studio (and i
 * Integrated operational views
 
 ### Technology
-Yamcs Studio is an Eclipse RCP application, and builds upon Open Source software libraries like CS-Studio, Netty, Protobuf and of course our own Yamcs API.
+Yamcs Studio is an Eclipse RCP application, and builds upon Open Source software libraries like CS-Studio, Netty, Protobuf and of course the Yamcs API.
 
 The main programming language is Java 8.
 

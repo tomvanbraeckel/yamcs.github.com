@@ -6,7 +6,7 @@ permalink: /docs/studio/Data_Links/
 
 This view provides an overview of the data links of a running Yamcs server.
 
-Data links represent input our output flows to Yamcs. There are three types of Data Links: TM (called TM Providers), TC (called TC Uplinkers) and PP (called PP Providers). TM and PP receive telemetry packets or parameters and inject them into the realtime or dump TM or PP streams. The TC data links subscribe to the realtime TC stream and send data to external systems.
+Data links represent input or output flows to Yamcs. There are three types of Data Links: TM (called TM Providers), TC (called TC Uplinkers) and PP (called PP Providers). TM and PP receive telemetry packets or parameters and inject them into the realtime or dump TM or PP streams. The TC data links subscribe to the realtime TC stream and send data to external systems.
 
 There are different types of providers. For details refer to the [Yamcs Server Manual](/docs/server/).
 

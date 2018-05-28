@@ -38,7 +38,7 @@ Here's an example output in JSON (with Protobuf, there's an applicable getter in
 ```
 
 #### PROCESSING_STATISTICS
-General statistics on processors. For every high-level packet, shows you the the current processing time, an increasing data count, and many more info. Updates on this data type are a bit noisier than the client_info/processor_info updates, so we might decide to move this out to a different subscription request in the future.
+General statistics on processors. For every high-level packet, shows you the the current processing time, an increasing data count, and many more info. Updates on this data type are a bit noisier than the client_info/processor_info updates, so we may decide to move this out to a different subscription request in the future.
 
 Here's an example output in JSON (with Protobuf, there's an applicable getter in the `WebSocketSubscriptionData`):
 

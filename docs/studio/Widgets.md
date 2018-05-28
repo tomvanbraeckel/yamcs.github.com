@@ -9,7 +9,7 @@ A display is a container for widgets.
 Most widgets are backed by a PV. Some widgets (e.g. widgets used for layout) are typically not connected to a PV. Other widgets (e.g. charts) can be backed by more than one PV.
 
 ### Catalogue of Widgets
-The default widgets in Yamcs Studio are listed below. Their runtime behaviour should be fairly straightforward. The various properties are detailed when we address the [OPI Editor](/docs/studio/Editing_Displays/).
+The default widgets in Yamcs Studio are listed below. Their runtime behaviour should be fairly straightforward. The various properties are detailed when we address the [Display Builder](/docs/studio/Editing_Displays/).
 
 #### Graphics
 

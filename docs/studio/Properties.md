@@ -4,7 +4,7 @@ sidebar: yes
 permalink: /docs/studio/Properties/
 ---
 
-The Properties view is used in the OPI Editor perspective to edit properties of your display, or to edit properties of a widget.
+The Properties view is used in the Display Builder window to edit properties of your display, or to edit properties of a widget.s
 
 Select a widget to see its properties in the Properties view. The contents of this view adapts to your selection. Click in the **Value** column to edit a specific property, depending on the type of property this will trigger different behaviour. For example, if the property is just a numeric value, you can edit it in-place (confirm with **Enter**). If the property represents multiline text or a list of items you will typically have more advanced editing controls in a popup dialog.
 

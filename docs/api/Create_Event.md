@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /docs/api/Create_an_Event/
+permalink: /docs/api/Create_Event/
 sidebar: yes
 ---
 

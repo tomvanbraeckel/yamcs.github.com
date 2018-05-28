@@ -6,7 +6,7 @@ title: Get Involved
 ---
 
 ### Discuss
-If you would like to join the discussion, please visit our public forum at [https://groups.google.com/forum/#!forum/yamcs](https://groups.google.com/forum/#!forum/yamcs)
+If you would like to join the discussion, please visit the public forum at [https://groups.google.com/forum/#!forum/yamcs](https://groups.google.com/forum/#!forum/yamcs)
 
 <p>&nbsp;</p>
 

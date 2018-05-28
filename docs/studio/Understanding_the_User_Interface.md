@@ -4,7 +4,7 @@ sidebar: yes
 permalink: /docs/studio/Understanding_the_User_Interface/
 ---
 
-Yamcs Studio is composed out of multiple views that are arranged together in a perspective. The user has great flexibility in modifying the default arrangement.
+Yamcs Studio is composed out of multiple views that are arranged together in windows. The user has great flexibility in modifying the default arrangement.
 
 * TOC
 {:toc}
@@ -36,25 +36,24 @@ Release the mouse to confirm this view's new position.
 
 ![View Stacked](/assets/studio/view-stacked.png){: .center-image }
 
-Feel free to experiment some more with the drag feature. As you try dragging to different locations, you will notice that Yamcs Studio has several hot spots where you can attach your views. For example, you can detach windows by dragging them outside of your application window. This provides additional screen space if your workstation supports multiple monitors.
+As you try dragging to different locations, you will notice that Yamcs Studio has several hot spots where you can attach your views. For example, you can detach windows by dragging them outside of your application window. This provides additional screen space if your workstation supports multiple monitors.
 
-When you close Yamcs Studio and reopen it, it will restore your preferred view and window arrangement.
+When you close Yamcs Studio and later reopen it, your last view and window arrangement will be restored.
 
 <div class="hint">
     Yamcs Studio stores the information about your view arrangement in a <tt>.metadata</tt> folder inside your workspace. This is how it knows how to restore this information through restarts. If you share your workspace with other users through a version control system, you should consider <em>not</em> committing this <tt>.metadata</tt> folder. This way everybody can have his own preferred arrangement without colliding with each other. 
 </div>
 
-### Perspectives
-Perspectives contain an organization of views. As you were performing the above actions with views, you were working within a certain *perspective*.
+### Windows
+Yamcs Studio uses two special windows that serve a different purpose:
 
-In the top right bar, you can see the Perspective Switcher. This is where you choose your current perspective. By default Yamcs Studio puts you in the OPI Runtime perspective, but by clicking the plus icon ![Choose Perspective](/assets/studio/perspective-choose.png) you can switch to the OPI Editor perspective, which has a different arrangement of views.
+* Display Builder
+* Display Runner
 
-Again you can modify the views in this perspective to your heart's content, but as a general precaution we would advise that you distinguish between 'Running Displays' (OPI Runtime), and 'Editing Displays' (OPI Editor). In future versions of Yamcs Studio we may make this distinction more apparent, or even go as far as to offer two different products. 
+On a new workspace, Yamcs Studio will by default open the Display Builder window. The Display Builder includes a default set of views that allow creating or editing operator displays.
 
-Notice, as you go back to the OPI Runtime perspective, that your earlier view arrangement is nicely restored.
+In the top toolbar, you can see a play button which allows you to open the Display Runner window. This window includes a different set of windows that put the focus on operations. In this window, displays open in runtime mode.
 
-If at any time you want to reset your perspective to the defaults, select **Window > Reset Perspective...**.
+In the top toolbar of the Display Runner there is a pickaxe button which allows you to open or bring to the front the Display Builder window.
 
-<div class="hint">
-    Some people prefer to have a separate window for every perspective. To do so, select <strong>Window > New Window</strong>. This action will duplicate your current window. You can then switch the new window to a different perspective, without impacting your original window.
-</div>
+If at any time you want to reset your window to the defaults, select **Window > Reset Window Layout...**.
