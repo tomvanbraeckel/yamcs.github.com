@@ -20,7 +20,11 @@ In case of simple upload, the objectName has to be specified as part of the URL 
 
 ### Form upload
 
-The form based upload can be used to upload an object from an HTML form. In this case the Content-Type is set to <tt>multipart/form-data</tt>, and the body will contain at least one part which is the object data, also including the filename which is used as the object name. This can be tested using the curl with the -F option.
+The form based upload can be used to upload an object from an HTML form. In this case the Content-Type of the request is set to <tt>multipart/form-data</tt>, and the body will contain at least one part which is the object data. This part includes a   filename which is used as the object name as well as a Content-Type header. The name attribute for the file part is ignored.
+Additional parts (which do not specify a filename) will be used as metadata: the name is specified as part of the Content-Disposition and the value is the body of the part.
+
+This can be tested using the curl with the -F option. 
+
 
 #### Example
 
@@ -33,9 +37,27 @@ Content-Length: 1090
 Content-Type: multipart/form-data; boundary=------------------------7109c709802f7ae4
 
 --------------------------7109c709802f7ae4
-Content-Disposition: form-data; name="file"; filename="object-name"
+Content-Disposition: form-data; name="file"; filename="object/name"
 Content-Type: text/plain
 
 [object data]
+--------------------------7109c709802f7ae4
+Content-Disposition: form-data; name="name1"
+
+value1
+--------------------------7109c709802f7ae4
+Content-Disposition: form-data; name="name2"
+
+value2
 --------------------------7109c709802f7ae4--
+
+```
+
+This will create an object named "object/name" with two metadata properties:
+
+```json
+ {
+   "name1": "value1",
+   "name2": "value2"
+}
 ```

@@ -13,7 +13,8 @@ By default each user has a bucket named <tt>user.username</tt> which can be used
 
 Buckets can be created at global level or at instance level. 
 The following limitations are implemented in order to prevent disk over consumption and keep the service responsive:
-* The maximum size of an object is 5MB.
+* The maximum size of an upload including data and metadata is 5MB.
 * The maximum number of objects in one bucket is 1000.
-* The maximum size of an bucket (i.e. the sum of the size of the objects within the bucket) is 100MB.
+* The maximum size of an bucket 100MB (counted as the sum of the size of the objects within the bucket).
+* The maximum size of the metadata is 16KB (counted as the sum of the length of the keys and values).
 
