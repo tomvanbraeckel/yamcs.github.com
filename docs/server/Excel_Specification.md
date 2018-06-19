@@ -2,6 +2,7 @@
 layout: default
 permalink: /docs/server/Excel_Specification/
 sidebar: yes
+chapter: yes
 ---
 
 Yamcs offers various ways of defining TM packets, parameters, commands and other mission items. The recommended way is to use a spreadsheet. This offers a good mixture between easy user manipulation and flexibility. This section explains the general and structural conventions that apply when defining a space system using Excel.

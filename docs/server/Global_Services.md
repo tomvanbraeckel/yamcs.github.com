@@ -2,5 +2,5 @@
 layout: default
 sidebar: yes
 chapter: yes
-permalink: /docs/server/Configuration/
+permalink: /docs/server/Global_Services/
 ---

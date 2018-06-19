@@ -5,13 +5,24 @@
     - url: /docs/server/Installation/
     - url: /docs/server/Acronyms/
 
-- url: /docs/server/Services/
+- url: /docs/server/Logging/
+
+- url: /docs/server/Security/
+  items:
+    - url: /docs/server/Authentication/
+    - url: /docs/server/Authorization/
+    - url: /docs/server/privileges.yaml/
+
+- url: /docs/server/Global_Services/
+  items:
+    - url: /docs/server/HTTP_Server/
+
+- url: /docs/server/Instance_Services/
   items:
     - url: /docs/server/Alarm_Recorder/
     - url: /docs/server/Command_History_Recorder/
     - url: /docs/server/Data_Link_Initialiser/
     - url: /docs/server/Event_Recorder/
-    #- url: /docs/server/HTTP_Server/
     - url: /docs/server/Index_Server/
     - url: /docs/server/Parameter_Archive_Service/
     - url: /docs/server/Parameter_Recorder/
@@ -25,13 +36,15 @@
     - url: /docs/server/TM_DataLinks/
     - url: /docs/server/PP_DataLinks/
     - url: /docs/server/TC_DataLinks/
+    - url: /docs/server/tcp.yaml/
+    - url: /docs/server/command-queue.yaml/
 
 - url: /docs/server/Mission_Database/
   items:
     - url: /docs/server/TM_Loaders/
     - url: /docs/server/PP_Loaders/
     - url: /docs/server/TC_Loaders/
-    - url: /docs/server/Excel_Specification/
+    - url: /docs/server/mdb.yaml/
 
 - url: /docs/server/Monitoring_and_Control/
   items:
@@ -48,17 +61,4 @@
     - url: /docs/server/Parameter_Archive/
     - url: /docs/server/Parameter_Archive_Internals/
 
-- url: /docs/server/Security/
-  items:
-    - url: /docs/server/Authentication/
-    - url: /docs/server/Authorization/
-
-- url: /docs/server/HTTP_Server/
-
-- url: /docs/server/Configuration/
-  items:
-    - url: /docs/server/command-queue.yaml/
-    - url: /docs/server/logging.yamcs-server.properties/
-    - url: /docs/server/mdb.yaml/
-    - url: /docs/server/privileges.yaml/
-    - url: /docs/server/tcp.yaml/
+- url: /docs/server/Excel_Specification/
