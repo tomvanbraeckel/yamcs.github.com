@@ -7,18 +7,18 @@
 
 - url: /docs/server/Services/
   items:
-    - url: /docs/server/HTTP_Server/
-    - url: /docs/server/Data_Link_Initialiser/
-    - url: /docs/server/XTCE_TM_Recorder/
-    - url: /docs/server/Parameter_Recorder/
     - url: /docs/server/Alarm_Recorder/
-    - url: /docs/server/Event_Recorder/
     - url: /docs/server/Command_History_Recorder/
-    - url: /docs/server/Replay_Server/
+    - url: /docs/server/Data_Link_Initialiser/
+    - url: /docs/server/Event_Recorder/
+    #- url: /docs/server/HTTP_Server/
     - url: /docs/server/Index_Server/
-    - url: /docs/server/System_Parameters_Collector/
-    - url: /docs/server/Processor_Creator_Service/
     - url: /docs/server/Parameter_Archive_Service/
+    - url: /docs/server/Parameter_Recorder/
+    - url: /docs/server/Processor_Creator_Service/
+    - url: /docs/server/Replay_Server/
+    - url: /docs/server/System_Parameters_Collector/
+    - url: /docs/server/XTCE_TM_Recorder/
 
 - url: /docs/server/Data_Links/
   items:
@@ -53,7 +53,7 @@
     - url: /docs/server/Authentication/
     - url: /docs/server/Authorization/
 
-- url: /docs/server/Web_API/
+- url: /docs/server/HTTP_Server/
 
 - url: /docs/server/Configuration/
   items:

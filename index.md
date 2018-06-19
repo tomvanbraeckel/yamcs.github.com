@@ -19,8 +19,8 @@ Space Applications Services develops and operates control centres for spacecraft
   <iframe width="700" height="387" src="https://www.youtube.com/embed/iVXQhMOrcp8" frameborder="0" allowfullscreen></iframe>
 </p>
 
-<a href="http://www.spaceapplications.com"><img style="float: left;" src="/assets/main/spaceapps_g.png"></a>
-If you are interested in Yamcs and would consider using Yamcs in your project or mission, please contact Space Applications using the details available at [http://www.spaceapplications.com/contact](http://www.spaceapplications.com/contact).
+<a href="https://www.spaceapplications.com"><img style="float: left;" src="/assets/main/spaceapps_g.png"></a>
+If you are interested in Yamcs and would consider using Yamcs in your project or mission, please contact Space Applications using the details available at [https://www.spaceapplications.com/contact](https://www.spaceapplications.com/contact).
 
 ### Featured Customers
 

@@ -8,8 +8,9 @@ Sample the history of values for the specified parameter:
 
     GET /api/archive/:instance/parameters/:namespace/:name/samples   
 
-The call (with "parameters") returns values from the parameter archive if the parameter archive has been enabled. Note that as the parameter archive is backfilled (i.e. not filled in realtime), the paramers call will try to return the latest values from the parameter cache. See the [Processor] configuration section on how to configure the Parameter Cache.
-If the parameter archive is not enabled, the <tt>source=replay</tt> can be used to reprocess the data and send the result. Note that this is much slower than the parameter archive for large intervals.
+<div class="hint">
+    By default this operation fetches data from the parameter archive and/or parameter cache. If these services are not configured, you can still get correct results by specifying the option <tt>source=replay</tt> as detailed below.
+</div>
 
 
 ### Parameters
@@ -48,7 +49,7 @@ If the parameter archive is not enabled, the <tt>source=replay</tt> can be used 
     <tr>
         <td class="code">source</td>
         <td class="code">string</td>
-        <td>Either <tt>ParameterArchive</tt> or <tt>replay</tt>. How to retrieve the parameters - if <tt>replay</tt> is specified, a replay processor will be created and data will be processed with the active XTCEDB. Note that this is much slower than receiving data from the ParameterArchive.<br>Default: <tt>ParameterArchive</tt></td>
+        <td>Specifies how to retrieve the parameters. Either <tt>ParameterArchive</tt> or <tt>replay</tt>. If <tt>replay</tt> is specified, a replay processor will be created and data will be processed with the active XTCEDB. Note that this is much slower than receiving data from the ParameterArchive.<br>Default: <tt>ParameterArchive</tt></td>
     </tr>
 </table>
  

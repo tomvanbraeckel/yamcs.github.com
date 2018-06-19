@@ -4,7 +4,7 @@ permalink: /docs/server/Data_Link_Initialiser/
 sidebar: yes
 ---
 
-Activates the data links during Yamcs start-up and creates all the needed streams.
+Manages the various data links and creates needed streams during Yamcs start-up.
 
 ### Configuration
 

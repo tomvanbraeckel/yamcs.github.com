@@ -10,7 +10,7 @@ Control global services:
 
 Control services for the given Yamcs instance:
 
-    PATCH /api/services/:instance/service/:name
+    PATCH /api/services/:instance/:name
 
 <table class="inline">
   <tr>
@@ -22,11 +22,9 @@ Control services for the given Yamcs instance:
     <td class="code">state</td>
     <td class="code">string</td>
     <td>The state of the service. Either <tt>running</tt> or <tt>stopped</tt>.
-    Note that once stopped, a service cannot be restarted. Instead a new service (new java Object) will be created and started.</td>
+    Note that once stopped, a service cannot be resumed. Instead a new service instance will be created and started.</td>
   </tr>
 </table>
-
-The same parameters can also be specified in the request body. In case both query string parameters and body parameters are specified, they are merged with priority being given to query string parameters.
 
 ### Example
 

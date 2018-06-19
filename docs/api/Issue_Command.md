@@ -42,6 +42,11 @@ After validating the input parameters, the command will be added to the appropri
       <p><strong>Note:</strong>It is also possible to provide assignments in the query string in the format <tt>name=value</tt>. However, you may want to use the request body instead to prevent any potential naming collisions with other URI parameters.</p>
     </td>
   </tr>
+  <tr>
+    <td class="code">comment</td>
+    <td class="code">string</td>
+    <td>Comment attached to this command.</td>
+  </tr>
 </table>
 
 

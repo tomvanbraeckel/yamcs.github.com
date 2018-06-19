@@ -4,7 +4,7 @@ permalink: /docs/server/HTTP_Server/
 sidebar: yes
 ---
 
-Embedded HTTP server that provides these functionalities:
+Yamcs includes an embedded HTTP server that provides these functionalities:
 
 * Serve REST API
 * Serve WebSocket API

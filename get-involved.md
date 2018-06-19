@@ -30,4 +30,4 @@ Start by reading [https://github.com/yamcs/yamcs-studio/blob/master/notes/Contri
 
 ### Commercial
 
-If you are interested in Yamcs and would consider using Yamcs in your project or mission, please contact Space Applications using the details available at [http://www.spaceapplications.com/contact](http://www.spaceapplications.com/contact). 
+If you are interested in Yamcs and would consider using Yamcs in your project or mission, please contact Space Applications using the details available at [https://www.spaceapplications.com/contact](https://www.spaceapplications.com/contact). 
