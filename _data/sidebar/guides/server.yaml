@@ -3,15 +3,14 @@
     - url: /docs/server/Monitoring_and_Control_Model/
     - url: /docs/server/Fundamentals/
     - url: /docs/server/Installation/
-    - url: /docs/server/Acronyms/
 
 - url: /docs/server/Logging/
 
 - url: /docs/server/Security/
   items:
-    - url: /docs/server/Authentication/
-    - url: /docs/server/Authorization/
-    - url: /docs/server/privileges.yaml/
+    - url: /docs/server/YAML_AuthModule/
+    - url: /docs/server/LDAP_AuthModule/
+    - url: /docs/server/SPNEGO_AuthModule/
 
 - url: /docs/server/Global_Services/
   items:
