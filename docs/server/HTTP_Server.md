@@ -39,7 +39,7 @@ The webConfig supports these options:
 
 <dl>
   <dt>webRoot</dt>
-  <dd>List of file paths that are statically served. This usually points to the web files for the built-in Yamcs website (<tt>lib/yamcs-web</tt>) and to site-specific configuration options (<tt>web</tt>) such as synoptic displays.</dd>
+  <dd>List of file paths that are statically served. This usually points to the web files for the built-in Yamcs web interface (<tt>lib/yamcs-web</tt>) and to site-specific configuration options (<tt>web</tt>) such as synoptic displays.</dd>
 
   <dt>webPort</dt>
   <dd>The port at which Yamcs web services may be reached. The default is port 8090.</dd>

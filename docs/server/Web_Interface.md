@@ -1,0 +1,17 @@
+---
+layout: default
+sidebar: yes
+chapter: yes
+permalink: /docs/server/Web_Interface/
+---
+
+Yamcs includes a web interface which provides quick access and control over many of its features. The web interface runs on port 8090 and integrates with the security system of Yamcs.
+
+The web interface is separated in three different modules:
+
+* *Monitor* provides typical monitoring capabilities (displays, events, ...)
+* *MDB* provides an overview of the Mission Database (parameters, containers, ...)
+* *System* provides administrative controls over Yamcs (tables, services, ...).
+
+All modules are aware of the privileges of the logged in user and will hide user interface elements that the user has no permission for. For normal operations access to the Monitor and MDB section should be sufficient.
+

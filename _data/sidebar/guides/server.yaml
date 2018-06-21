@@ -59,3 +59,9 @@
     - url: /docs/server/YAML_AuthModule/
     - url: /docs/server/LDAP_AuthModule/
     - url: /docs/server/SPNEGO_AuthModule/
+
+- url: /docs/server/Web_Interface/
+  items:
+    - url: /docs/server/Monitor/
+    - url: /docs/server/MDB/
+    - url: /docs/server/System/
