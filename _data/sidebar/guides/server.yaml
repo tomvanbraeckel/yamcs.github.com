@@ -33,6 +33,7 @@
 - url: /docs/server/Instance_Services/
   items:
     - url: /docs/server/Alarm_Recorder/
+    - url: /docs/server/Alarm_Reporter/
     - url: /docs/server/Command_History_Recorder/
     - url: /docs/server/Data_Link_Initialiser/
       items:
