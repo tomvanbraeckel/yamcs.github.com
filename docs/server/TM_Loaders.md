@@ -8,12 +8,12 @@ sidebar: yes
 #### Excel Spreadsheet
 This loader constructs the MDB using containers and parameters defined in one or more Yamcs [Excel spreadsheets](/docs/server/Excel_Specification/).
 
-The loader is configured in [etc/mdb.yaml](/docs/server/mdb.yaml/). Specify the 'type' as <tt>sheet</tt>, and provide the location of the spreadsheet file in the spec attribute. Additional spreadsheets may be specified in a <tt>subLoaders</tt> list, using the type and spec attributes for each additional spreadsheet.
+The loader is configured in <tt>etc/mdb.yaml</tt>. Specify the 'type' as <tt>sheet</tt>, and provide the location of the spreadsheet file in the spec attribute. Additional spreadsheets may be specified in a <tt>subLoaders</tt> list, using the type and spec attributes for each additional spreadsheet.
 
 #### XTCE files
 This loader reads an MDB saved in XML format compliant with the XTCE specification. For more information about XTCE, see [http://www.xtce.org](http://www.xtce.org).
 
-The loader is configured in [etc/mdb.yaml](/docs/server/mdb.yaml/). Specify the 'type' as <tt>xtce</tt>, and provide the location of the XML file in the <tt>spec</tt> attribute.
+The loader is configured in<tt>etc/mdb.yaml</tt>. Specify the 'type' as <tt>xtce</tt>, and provide the location of the XML file in the <tt>spec</tt> attribute.
 
 #### CD-MCS MDB
 
@@ -61,4 +61,3 @@ The packet description in CD-MCS MDB is spread over different structures. When r
 1. For each <tt>CCSDS_ADU_DESCRIPTION</tt> that contains a "Reference To a Structure ID or Table" pointing to an end item of type <tt>MEASUREMENT_LIST_TABLE</tt>, an additional integer parameter is created containing the definition of the "Flexible ID" as defined in this aggregate. Then for each end item of type <tt>PUS_STRUCTURE_ID</tt> referred in the <tt>MEASUREMENT_LIST_TABLE</tt>, a sequence container is created in Yamcs, set to inherit the original <tt>CCSDS_ADU_DESCRIPTION</tt> with the inheritance condition on the Flexible ID as defined in the <tt>MEASUREMENT_LIST_TABLE</tt>.
 
 ![Creation of the sequence containers from the CD-MCS MDB](/assets/server/MDBSequenceContainerCreation.png){: .center-image }
-

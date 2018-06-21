@@ -157,8 +157,8 @@ unauthenticatedUser:
 
 authModules:
   - class: org.yamcs.security.YamlAuthModule
-	config:
-	  hasher: org.yamcs.security.PBKDF2PasswordHasher
+    config:
+      hasher: org.yamcs.security.PBKDF2PasswordHasher
 ```
 
 These options are supported:

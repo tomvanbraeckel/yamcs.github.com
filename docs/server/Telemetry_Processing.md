@@ -1,6 +1,6 @@
 ---
 layout: default
 sidebar: yes
-section: yes
+chapter: yes
 permalink: /docs/server/Telemetry_Processing/
 ---

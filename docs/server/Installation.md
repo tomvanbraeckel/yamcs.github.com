@@ -86,8 +86,6 @@ Yamcs configuration files are written in YAML format. This format allows to enco
 
 The root configuration file is <tt>etc/yamcs.yaml</tt>. It contains a list of Yamcs instances. For each instance, a file called <tt>etc/yamcs.instance-name.yaml</tt> defines all the components that are part of the instance. Depending on which components are selected, different configuration files are needed.
 
-The logging level is configured in [etc/logging.yamcs-server.properties](/docs/server/logging.yamcs-server.properties).
-
 #### Upgrading
 Upgrading is done using the rpm command:
 
@@ -100,6 +98,8 @@ If a configuration file (in the <tt>etc</tt> directory) has been updated with re
 Yamcs Server can be removed (erased) using the rpm command:
 
     rpm -e yamcs
+
+Note that when you remove the <tt>yamcs</tt> package, it will also delete the <tt>yamcs</tt> user.
 
 #### Starting Yamcs Server
 Normally Yamcs Server should be configured to start automatically on boot via <tt>/etc/init.d/yamcs-server</tt>. The command will automatically run itself as a lower privilege user (username <tt>yamcs</tt>), but must initially be run as root for this to happen. Yamcs Server can be started and stopped as a service via commands such as <tt>service yamcs-server start</tt> and <tt>service yamcs-server stop</tt>. These commands use the init.d script and will run Yamcs as the appropriate user. It is also possible to directly use the script <tt>/opt/yamcs/bin/yamcs-server.sh</tt>, but use of the <tt>service</tt> command is preferred.

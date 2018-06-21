@@ -10,6 +10,9 @@ Records parameters. This service stores the data coming from one or more streams
   Parameters extracted from packets are usually not stored in <tt>pp</tt>. Instead Yamcs provides a different service called the [Parameter Archive](/docs/server/Parameter_Archive_Service) which is specially optimized for data retrieval.
 </div>
 
+### Class Name
+[<tt>org.yamcs.archive.ParameterRecorder</tt>](https://javadoc.io/page/org.yamcs/yamcs-core/latest/org/yamcs/archive/ParameterRecorder.html)
+
 ### Configuration
 
 This service is defined in <tt>etc/yamcs.(instance).yaml</tt>. Example from a typical deployment:
@@ -26,3 +29,10 @@ streamConfig:
 ```
 
 With this configuration both system parameters and processed parameters coming from the <tt>pp_realtime</tt> stream are stored into the table <tt>pp</tt>.
+
+### Configuration Options
+
+<dl>
+  <dt><tt>streams</tt></dt>
+  <dd>List of strings that tells which streams should be recorded. When unspecified, all <tt>param</tt> streams defined in <tt>streamConfig</tt> are recorded.</dd>
+</dl>

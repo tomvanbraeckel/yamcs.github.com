@@ -6,6 +6,9 @@ sidebar: yes
 
 Records command history entries. This service stores the data coming from one or more streams into a table <tt>cmdhist</tt>.
 
+### Class Name
+[<tt>org.yamcs.archive.CommandHistoryRecorder</tt>](https://javadoc.io/page/org.yamcs/yamcs-core/latest/org/yamcs/archive/CommandHistoryRecorder.html)
+
 ### Configuration
 
 This service is defined in <tt>etc/yamcs.(instance).yaml</tt>. Example from a typical deployment:

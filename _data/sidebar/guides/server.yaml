@@ -4,16 +4,30 @@
     - url: /docs/server/Fundamentals/
     - url: /docs/server/Installation/
 
-- url: /docs/server/Logging/
-
-- url: /docs/server/Security/
+- url: /docs/server/Mission_Database/
   items:
-    - url: /docs/server/YAML_AuthModule/
-    - url: /docs/server/LDAP_AuthModule/
-    - url: /docs/server/SPNEGO_AuthModule/
+    - url: /docs/server/TM_Loaders/
+    - url: /docs/server/PP_Loaders/
+    - url: /docs/server/TC_Loaders/
+    - url: /docs/server/Excel_Specification/
+
+- url: /docs/server/Telemetry_Processing/
+  items:
+    - url: /docs/server/Packet_Telemetry/
+    - url: /docs/server/Algorithms/
+    - url: /docs/server/Alarms/
+
+- url: /docs/server/Commanding/
+
+- url: /docs/server/Archive/
+  items:
+    - url: /docs/server/Stream_Archive/
+    - url: /docs/server/Parameter_Archive/
+    - url: /docs/server/Parameter_Archive_Internals/
 
 - url: /docs/server/Global_Services/
   items:
+    - url: /docs/server/Artemis_Server/
     - url: /docs/server/HTTP_Server/
 
 - url: /docs/server/Instance_Services/
@@ -21,6 +35,13 @@
     - url: /docs/server/Alarm_Recorder/
     - url: /docs/server/Command_History_Recorder/
     - url: /docs/server/Data_Link_Initialiser/
+      items:
+        - url: /docs/server/TCP_TM_Data_Link/
+        - url: /docs/server/UDP_TM_Data_Link/
+        - url: /docs/server/File_Polling_TM_Data_Link/
+        - url: /docs/server/Artemis_TM_Data_Link/
+        - url: /docs/server/TCP_TC_Data_Link/
+        - url: /docs/server/Simulated_Parameter_Data_Link/
     - url: /docs/server/Event_Recorder/
     - url: /docs/server/Index_Server/
     - url: /docs/server/Parameter_Archive_Service/
@@ -30,34 +51,10 @@
     - url: /docs/server/System_Parameters_Collector/
     - url: /docs/server/XTCE_TM_Recorder/
 
-- url: /docs/server/Data_Links/
-  items:
-    - url: /docs/server/TM_DataLinks/
-    - url: /docs/server/PP_DataLinks/
-    - url: /docs/server/TC_DataLinks/
-    - url: /docs/server/tcp.yaml/
-    - url: /docs/server/command-queue.yaml/
+- url: /docs/server/Logging/
 
-- url: /docs/server/Mission_Database/
+- url: /docs/server/Security/
   items:
-    - url: /docs/server/TM_Loaders/
-    - url: /docs/server/PP_Loaders/
-    - url: /docs/server/TC_Loaders/
-    - url: /docs/server/mdb.yaml/
-
-- url: /docs/server/Monitoring_and_Control/
-  items:
-    - url: /docs/server/Telemetry_Processing/
-      items:
-        - url: /docs/server/Packet_Telemetry/
-        - url: /docs/server/Algorithms/
-        - url: /docs/server/Alarms/
-    - url: /docs/server/Commanding/
-
-- url: /docs/server/Archive/
-  items:
-    - url: /docs/server/Stream_Archive/
-    - url: /docs/server/Parameter_Archive/
-    - url: /docs/server/Parameter_Archive_Internals/
-
-- url: /docs/server/Excel_Specification/
+    - url: /docs/server/YAML_AuthModule/
+    - url: /docs/server/LDAP_AuthModule/
+    - url: /docs/server/SPNEGO_AuthModule/

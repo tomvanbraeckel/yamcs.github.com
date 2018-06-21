@@ -4,7 +4,10 @@ permalink: /docs/server/Processor_Creator_Service/
 sidebar: yes
 ---
 
-Creates persistent processors during start-up of Yamcs.
+Creates persistent processors owned by the system user.
+
+### Class Name
+[<tt>org.yamcs.ProcessorCreatorService</tt>](https://javadoc.io/page/org.yamcs/yamcs-core/latest/org/yamcs/ProcessorCreatorService.html)
 
 ### Configuration
 
@@ -18,3 +21,16 @@ services:
       name: realtime
       type: realtime
 ```
+
+### Configuration Options
+
+<dl>
+  <dt><tt>name</tt></dt>
+  <dd><b>Required.</b> The name of the processor</dd>
+
+  <dt><tt>type</tt></dt>
+  <dd><b>Required.</b> The type of the processor</dd>
+
+  <dt><tt>config</tt></dt>
+  <dd>Configuration string to pass to the processor</dd>
+</dl>

@@ -16,6 +16,9 @@ The HTTP Server is tightly integrated with the security system of Yamcs and serv
 
 The HTTP Server can be disabled when its functionality is not needed. Note that in this case also official external clients such as Yamcs Studio will not be able to connect to Yamcs.
 
+### Class Name
+[<tt>org.yamcs.web.HttpServer</tt>](https://javadoc.io/page/org.yamcs/yamcs-core/latest/org/yamcs/web/HttpServer.html)
+
 ### Configuration
 
 This is a global service defined in <tt>etc/yamcs.yaml</tt>. Example from a typical deployment:
@@ -41,7 +44,7 @@ The webConfig supports these options:
   <dt>webPort</dt>
   <dd>The port at which Yamcs web services may be reached. The default is port 8090.</dd>
 
-  <dt>zeroCopyEnabled<dt>
+  <dt>zeroCopyEnabled</dt>
   <dd>Indicates whether zero-copy can be used to optimize non-SSL static file serving. Usually this can be left to true, but is has been added as an option to fix specific deployment issues (e.g. some docker hosts).</dd>
 
   <dt>cors</dt>

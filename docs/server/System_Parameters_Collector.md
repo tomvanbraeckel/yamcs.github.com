@@ -6,6 +6,9 @@ sidebar: yes
 
 Collects system parameters from any Yamcs component at a frequency of 1Hz. Parameter values are emitted to the <tt>sys_var</tt> stream.
 
+### Class Name
+[<tt>org.yamcs.parameter.SystemParametersCollector</tt>](https://javadoc.io/page/org.yamcs/yamcs-core/latest/org/yamcs/parameter/SystemParametersCollector.html)
+
 ### Configuration
 
 This service is defined in <tt>etc/yamcs.(instance).yaml</tt>. Example from a typical deployment:
@@ -17,3 +20,10 @@ services:
     args:
       provideJvmVariables: true
 ```
+
+### Configuration Options
+
+<dl>
+  <dt><tt>provideJvmVariables</tt></dt>
+  <dd>When set to <tt>true</tt> this service will create a few system parameters that allows monitoring basic JVM properties such as memory usage and thread count. Default: <tt>false</tt></dd>
+</dl>
