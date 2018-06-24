@@ -10,9 +10,6 @@ List all objects from a bucket
 
 <tt>_global</tt> can be used as instance name to list the objects from a bucket at the global level.
 
-The parameters that can be used for filtering are <tt>prefix</tt> and <tt>delimiter</tt>. They are similar (and inspired from) with what is implemented by the Google Cloud Storage and Amazon S3.
-
-The <tt>delimiter</tt> allows the list to work in a directory like mode despite the the object namespace being flat. For example if the delimiter is set to "/", then listing the bucket containg objects "a/b", "a/c", "d", "e" and "e/f" would return objects "d" and "e" and prefixes "a/" and "e/".
 ### Parameters
 
 <table class="inline">
@@ -29,11 +26,15 @@ The <tt>delimiter</tt> allows the list to work in a directory like mode despite 
   <tr>
     <td class="code">delimiter</td>
     <td class="code">string</td>
-    <td>Return only objects whose name do not contain the delimiter after the prefix. For the other ones, the response will contain (in the prefix response parameter) the name truncated after the delimiter. Duplicates are ommited.
-   
+    <td>
+      Return only objects whose name do not contain the delimiter after the prefix. For the other objects, the response contains (in the prefix response parameter) the name truncated after the delimiter. Duplicates are omitted.
     </td>
   </tr>
 </table> 
+
+The parameters <tt>prefix</tt> and <tt>delimiter</tt> provide filtering capabilities. These work similar to Google Cloud Storage and Amazon S3.
+
+The <tt>delimiter</tt> allows the list to work in a directory mode despite the object namespace being flat. For example if the delimiter is set to "/", then listing the bucket containing objects "a/b", "a/c", "d", "e" and "e/f" returns objects "d" and "e" and prefixes "a/" and "e/".
 
 
 ### Response
@@ -41,7 +42,7 @@ The <tt>delimiter</tt> allows the list to work in a directory like mode despite 
 <pre class="header">Status: 200 OK</pre>
 ```json
 {
-  "prefix" :[ "a/"],
+  "prefix": [ "a/"],
   "object": [{
     "name": "request-example-to-REST-Archive-CSV-API.txt",
     "created": "2018-05-28T08:25:19.809Z",
@@ -63,7 +64,6 @@ Response is of type:
 
 <pre class="r header"><a href="/docs/api/rest.proto/">rest.proto</a></pre>
 ```proto
-
 message ObjectInfo {
   optional string name = 1;
   optional string created  = 2; //time in UTC format

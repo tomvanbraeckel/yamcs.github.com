@@ -53,8 +53,6 @@ This section provides a view on Yamcs events. By default only the latest events 
 
 The Events table can also monitor incoming events on the current processor. Do so by clicking the play button in the top toolbar. You may stop the live streaming at any time by clicking the pause button.
 
-The Events table can shown different columns. Not all are shown by default. Changes to the visible columns are linked to your user account, and will be remembered when you next visit the page.
-
 The Events table has a severity filter. This filter allows defining the <b>minimum</b> severity of the event. Events that are more severe than the selected severity will also be shown. By default the severity filter is set to the lowest severity, <tt>Info</tt>, which means that all events will be shown.
 
 With the right privilege, it is possible to manually post an event. You can enter an arbitrary message and assign a severity. The time of the event will by default be set to the current time, but you can override this if preferred. The source of an event created this way will automatically be set to <tt>User</tt> and will contain a <tt>user</tt> attribute indicating your username.
