@@ -21,12 +21,12 @@ The SPNEGO AuthModule supports authentication of users via an external Kerberos 
   <tr>
     <td class="code">krbRealm</td>
     <td class="code">string</td>
-    <td><b>Required.</b> The Kerberos realm</td>
+    <td>Accept only users from this realm</td>
   </tr>
   <tr>
     <td class="code">stripRealm</td>
     <td class="code">boolean</td>
-    <td>Whether to strip the realm from the username (e.g. 'user@REALM' becomes just 'user'). Default: <tt>false</tt></td>
+    <td>Whether to strip the realm from the username (e.g. 'user@REALM' becomes just 'user'). Use this only when <tt>krbRealm</tt> is also set. Default: <tt>false</tt></td>
   </tr>
   <tr>
     <td class="code">krb5.conf</td>
