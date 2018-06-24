@@ -56,6 +56,16 @@
     - url: /docs/server/System_Parameters_Collector/
     - url: /docs/server/XTCE_TM_Recorder/
 
+- url: /docs/server/Processor_Services/
+  items:
+    - url: /docs/server/Algorithm_Manager/
+    - url: /docs/server/Replay_Service/
+    - url: /docs/server/Software_Parameter_Manager/
+    - url: /docs/server/Stream_Parameter_Provider/
+    - url: /docs/server/Stream_TC_Command_Releaser/
+    - url: /docs/server/Stream_TM_Packet_Provider/
+    - url: /docs/server/System_Parameter_Provider/
+
 - url: /docs/server/Logging/
 
 - url: /docs/server/Security/
