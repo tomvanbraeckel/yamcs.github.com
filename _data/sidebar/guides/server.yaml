@@ -34,6 +34,10 @@
   items:
     - url: /docs/server/Alarm_Recorder/
     - url: /docs/server/Alarm_Reporter/
+    - url: /docs/server/Artemis_Command_History_Publisher/
+    - url: /docs/server/Artemis_Event_Publisher/
+    - url: /docs/server/Artemis_Parameter_Publisher/
+    - url: /docs/server/Artemis_TM_Publisher/
     - url: /docs/server/Command_History_Recorder/
     - url: /docs/server/Data_Link_Initialiser/
       items:

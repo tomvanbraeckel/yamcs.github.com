@@ -4,7 +4,7 @@ permalink: /docs/server/Artemis_Server/
 sidebar: yes
 ---
 
-Initializes and starts the Artemis messaging server. This can be used to connect streams across Yamcs installations.
+Initializes and starts an embedded instance of the Artemis messaging server. This can be used to connect streams across Yamcs installations.
 
 ### Class Name
 [<tt>org.yamcs.artemis.ArtemisServer</tt>](https://javadoc.io/page/org.yamcs/yamcs-artemis/latest/org/yamcs/artemis/ArtemisServer.html)
