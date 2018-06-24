@@ -16,7 +16,7 @@ This service is defined in <tt>etc/yamcs.(instance).yaml</tt>. Example from a ty
 <pre class="r header">yamcs.simulator.yaml</pre>
 ```yaml
 services:
-  - org.yamcs.archive.XtceTmRecorder
+  - class: org.yamcs.archive.XtceTmRecorder
 
 streamConfig:
   tm:
@@ -28,7 +28,15 @@ With this configuration containers coming from both the tm_realtime and tm_dump 
 
 ### Configuration Options
 
-<dl>
-  <dt><tt>streams</tt></dt>
-  <dd>List of strings that tells which streams should be recorded. When unspecified, all <tt>tm</tt> streams defined in <tt>streamConfig</tt> are recorded.</dd>
-</dl>
+<table class="inline">
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td class="code">streams</td>
+    <td class="code">list of strings</td>
+    <td>The streams to record. When unspecified, all <tt>tm</tt> streams defined in <tt>streamConfig</tt> are recorded.</td>
+  </tr>
+</table>

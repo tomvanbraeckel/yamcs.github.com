@@ -18,7 +18,7 @@ Log files are rotated at 20MB with a maximum of 50 files. The theoretic maximum 
 
 Out files are directly captured from the process standard output and error streams. The logging level is typically less detailed then with `yamcs-server.log.x`, but the files may contain stdout and stderr output which does not make use of Yamcs' logging system.
 
-Out files are rotated over a maximum of 5 files. There is no size restriction on the file, but since the logging is not so detailed, the files do not grow very large. `x` is a sequence number. The lower the number, the more recent the logs. The most recent out file can always be found at `/opt/yamcs/log/yamcs-server.out.0`. Not that when Yamcs Server is restarted the out files will always rotate.
+Out files are rotated over a maximum of 5 files. There is no size restriction on the file, but since the logging is not so detailed, the files do not grow very large. `x` is a sequence number. The lower the number, the more recent the logs. The most recent out file can always be found at `/opt/yamcs/log/yamcs-server.out.0`. Note that when Yamcs Server is restarted the out files will always rotate.
 
 
 ### Configuration

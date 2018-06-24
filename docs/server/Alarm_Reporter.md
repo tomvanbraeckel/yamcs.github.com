@@ -20,15 +20,25 @@ This service is defined in <tt>etc/yamcs.(instance).yaml</tt>. Example from a ty
 <pre class="r header">yamcs.simulator.yaml</pre>
 ```yaml
 services:
-  - org.yamcs.alarms.AlarmReporter
+  - class: org.yamcs.alarms.AlarmReporter
 ```
 
 ### Configuration Options
 
-<dl>
-  <dt><tt>processor</tt></dt>
-  <dd>The name of the processor for which to generate events. By default is uses the first defined processor, which is usually <tt>realtime</tt>.</dd>
-
-  <dt><tt>source</tt></dt>
-  <dd>The source name of the generated events. Default: <tt>AlarmChecker</tt></dd>
-</dl>
+<table class="inline">
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td class="code">processor</td>
+    <td class="code">string</td>
+    <td>The name of the processor for which to generate events. By default is uses the first defined processor, which is usually <tt>realtime</tt>.</td>
+  </tr>
+  <tr>
+    <td class="code">source</td>
+    <td class="code">string</td>
+    <td>The source name of the generated events. Default: <tt>AlarmChecker</tt></td>
+  </tr>
+</table>

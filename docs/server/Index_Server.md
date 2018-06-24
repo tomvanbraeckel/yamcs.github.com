@@ -16,14 +16,22 @@ This service is defined in <tt>etc/yamcs.(instance).yaml</tt>. Example from a ty
 <pre class="r header">yamcs.simulator.yaml</pre>
 ```yaml
 services:
-  - org.yamcs.archive.IndexServer
+  - class: org.yamcs.archive.IndexServer
 ```
 
 ### Configuration Options
 
-<dl>
-  <dt>tmIndexer</dt>
-  <dd>
-    Class name of a <a href="https://javadoc.io/page/org.yamcs/yamcs-core/latest/org/yamcs/archive/TmIndex.html">TmIndex</a> implementation. Default is <a href="https://javadoc.io/page/org.yamcs/yamcs-core/latest/org/yamcs/archive/CcsdsTmIndex.html"><tt>org.yamcs.archive.CcsdsTmIndex</tt></a> which applies CCSDS conventions.
-  </dd>
-</dl>
+<table class="inline">
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td class="code">tmIndexer</td>
+    <td class="code">string</td>
+    <td>
+      Class name of a <a href="https://javadoc.io/page/org.yamcs/yamcs-core/latest/org/yamcs/archive/TmIndex.html">TmIndex</a> implementation. Default is <a href="https://javadoc.io/page/org.yamcs/yamcs-core/latest/org/yamcs/archive/CcsdsTmIndex.html"><tt>org.yamcs.archive.CcsdsTmIndex</tt></a> which applies CCSDS conventions.
+    </td>
+  </tr>
+</table>

@@ -23,7 +23,15 @@ services:
 
 ### Configuration Options
 
-<dl>
-  <dt><tt>provideJvmVariables</tt></dt>
-  <dd>When set to <tt>true</tt> this service will create a few system parameters that allows monitoring basic JVM properties such as memory usage and thread count. Default: <tt>false</tt></dd>
-</dl>
+<table class="inline">
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td class="code">provideJvmVariables</td>
+    <td class="code">boolean</td>
+    <td>When set to <tt>true</tt> this service will create a few system parameters that allows monitoring basic JVM properties such as memory usage and thread count. Default: <tt>false</tt></td>
+  </tr>
+</table>

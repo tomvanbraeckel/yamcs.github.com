@@ -12,26 +12,49 @@ Sends telecommands via TCP.
 
 ### Configuration Options
 
-<dl>
-  <dt>host</dt>
-  <dd><b>Required.</b> The host of the TC provider</dd>
+<table class="inline">
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td class="code">host</td>
+    <td class="code">string</td>
+    <td><strong>Required.</strong> The host of the TC provider</td>
+  </tr>
 
-  <dt>port</dt>
-  <dd><b>Required.</b> The TCP port to connect to</dd>
+  <tr>
+    <td class="code">port</td>
+    <td class="code">integer</td>
+    <td><strong>Required.</strong> The TCP port to connect to</td>
+  </tr>
 
-  <dt>tcQueueSize</dt>
-  <dd>Limit the size of the queue. Default: unlimited</dd>
+  <tr>
+    <td class="code">tcQueueSize</td>
+    <td class="code">integer</td>
+    <td>Limit the size of the queue. Default: unlimited</td>
+  </tr>
 
-  <dt>tcMaxRate</dt>
-  <dd>Ensure that on overage no more than <tt>tcMaxRate</tt> commands are issued during any given second. Default: unspecified</dd>
+  <tr>
+    <td class="code">tcMaxRate</td>
+    <td class="code">integer</td>
+    <td>Ensure that on overage no more than <tt>tcMaxRate</tt> commands are issued during any given second. Default: unspecified</td>
+  </tr>
 
-  <dt>commandPostprocessorClassName</dt>
-  <dd>
-    Class name of a <a href="https://javadoc.io/page/org.yamcs/yamcs-core/latest/org/yamcs/tctm/CommandPostprocessor.html">CommandPostprocessor</a> implementation. Default is <a href="https://javadoc.io/page/org.yamcs/yamcs-core/latest/org/yamcs/tctm/IssCommandPostprocessor.html"><tt>org.yamcs.tctm.IssCommandPostProcessor</tt></a> which applies ISS conventions.
-  </dd>
+  <tr>
+    <td class="code">commandPostprocessorClassName</td>
+    <td class="code">string</td>
+    <td>
+      Class name of a <a href="https://javadoc.io/page/org.yamcs/yamcs-core/latest/org/yamcs/tctm/CommandPostprocessor.html">CommandPostprocessor</a> implementation. Default is <a href="https://javadoc.io/page/org.yamcs/yamcs-core/latest/org/yamcs/tctm/IssCommandPostprocessor.html"><tt>org.yamcs.tctm.IssCommandPostProcessor</tt></a> which applies ISS conventions.
+    </td>
+  </tr>
 
-  <dt>commandPostprocessorArgs</dt>
-  <dd>
-    Optional args of arbitrary complexity to pass to the CommandPostprocessor. Each CommandPostprocessor may support different options.
-  </dd>
-</dl>
+  <tr>
+    <td class="code">commandPostprocessorArgs</td>
+    <td class="code">map</td>
+    <td>
+      Optional args of arbitrary complexity to pass to the CommandPostprocessor. Each CommandPostprocessor may support different options.
+    </td>
+  </tr>
+</table>

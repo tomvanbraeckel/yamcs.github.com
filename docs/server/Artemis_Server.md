@@ -16,14 +16,22 @@ This is a global service defined in <tt>etc/yamcs.yaml</tt>. Example from a typi
 <pre class="r header">yamcs.yaml</pre>
 ```yaml
 services:
-  - org.yamcs.artemis.ArtemisServer
+  - class: org.yamcs.artemis.ArtemisServer
 ```
 
 ### Configuration Options
 
-<dl>
-  <dt><tt>artemisConfigFile</tt></dt>
-  <dd>
-    Filename of the XML configuration file that contains further configuration options. Default: <tt>artemis.xml</tt>.
-  </dd>
-</dl>
+<table class="inline">
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td class="code">artemisConfigFile</td>
+    <td class="code">string</td>
+    <td>
+      Filename of the XML configuration file that contains further configuration options. Default: <tt>artemis.xml</tt>.
+    </td>
+  </tr>
+</table>

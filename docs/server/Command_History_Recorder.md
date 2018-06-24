@@ -16,7 +16,7 @@ This service is defined in <tt>etc/yamcs.(instance).yaml</tt>. Example from a ty
 <pre class="r header">yamcs.simulator.yaml</pre>
 ```yaml
 services:
-  - org.yamcs.archive.CommandHistoryRecorder
+  - class: org.yamcs.archive.CommandHistoryRecorder
 
 streamConfig:
   event:

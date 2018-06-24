@@ -24,13 +24,25 @@ services:
 
 ### Configuration Options
 
-<dl>
-  <dt><tt>name</tt></dt>
-  <dd><b>Required.</b> The name of the processor</dd>
-
-  <dt><tt>type</tt></dt>
-  <dd><b>Required.</b> The type of the processor</dd>
-
-  <dt><tt>config</tt></dt>
-  <dd>Configuration string to pass to the processor</dd>
-</dl>
+<table class="inline">
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td class="code">name</td>
+    <td class="code">string</td>
+    <td><b>Required.</b> The name of the processor</td>
+  </tr>
+  <tr>
+    <td class="code">type</td>
+    <td class="code">string</td>
+    <td><b>Required.</b> The type of the processor</td>
+  </tr>
+  <tr>
+    <td class="code">config</td>
+    <td class="code">string</td>
+    <td>Configuration string to pass to the processor</td>
+  </tr>
+</table>

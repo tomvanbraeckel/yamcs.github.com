@@ -21,25 +21,35 @@ This service is defined in <tt>etc/yamcs.(instance).yaml</tt>. Example from a ty
 <pre class="r header">yamcs.simulator.yaml</pre>
 ```yaml
 services:
-  - org.yamcs.tctm.DataLinkInitialiser
+  - class: org.yamcs.tctm.DataLinkInitialiser
 
 tmDataLinks:
   - class: org.yamcs.tctm.TcpTmDataLink
     name: tm_realtime
-    args: local
     stream: tm_realtime
+    args:
+      host: localhost
+      port: 10015
   - class: org.yamcs.tctm.TcpTmDataLink
     name: tm_dump
-    args: localDump
     stream: tm_dump
+    args:
+      host: localhost
+      port: 10115
   - class: org.yamcs.tctm.UdpTmDataLink
-    name: tm_realtime
+    name: udp_realtime
     stream: tm_realtime
     args: 
       port: 5900
       maxLength: 2048
 
-tcDataLinks: []
+tcDataLinks:
+  - class: org.yamcs.tctm.TcpTcDataLink
+    name: tc_realtime
+    stream: tc_realtime
+    args:
+      host: localhost
+      port: 10025
 
 parameterDataLinks: []
 ```

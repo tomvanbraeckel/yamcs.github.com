@@ -11,19 +11,30 @@ The YAML AuthModule supports authentication and authorization of users via YAML 
 
 ### Configuration Options
 
-<dl>
-  <dt>hasher</dt>
-  <dd>
-    Hasher class that can be used to verify if a password is correct without actually storing the password. When omitted, passwords in <tt>users.yaml</tt> should be defined in clear text. Possible values are:
-    <ul>
-    <li><a href="https://javadoc.io/page/org.yamcs/yamcs-core/latest/org/yamcs/security/PBKDF2PasswordHasher.html"><tt>org.yamcs.security.PBKDF2PasswordHasher</tt></a></li>
-    </ul>
-  </dd>
-  <dt>required</dt>
-  <dd>
-    When set to <tt>true</tt> the YAML AuthModule will veto the login process if it does not know the user. This may be of interest in situations where the YAML AuthModule does not authenticate the user, yet still some control is required via configuration files over which users can login. Default is <tt>false</tt>.
-  </dd>
-</dl>
+<table class="inline">
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td class="code">hasher</td>
+    <td class="code">string</td>
+    <td>
+      Hasher class that can be used to verify if a password is correct without actually storing the password. When omitted, passwords in <tt>users.yaml</tt> should be defined in clear text. Possible values are:
+      <ul>
+      <li><a href="https://javadoc.io/page/org.yamcs/yamcs-core/latest/org/yamcs/security/PBKDF2PasswordHasher.html"><tt>org.yamcs.security.PBKDF2PasswordHasher</tt></a></li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td class="code">required</td>
+    <td class="code">boolean</td>
+    <td>
+      When set to <tt>true</tt> the YAML AuthModule will veto the login process if it does not know the user. This may be of interest in situations where the YAML AuthModule does not authenticate the user, yet still some control is required via configuration files over which users can login. Default is <tt>false</tt>.
+    </td>
+  </tr>
+</table>
 
 The YAML AuthModule reads further configuration from two additional YAML files: <tt>users.yaml</tt> and <tt>roles.yaml</tt>.
 

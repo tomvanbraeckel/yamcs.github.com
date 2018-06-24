@@ -20,7 +20,7 @@ This service is defined in <tt>etc/yamcs.(instance).yaml</tt>. Example from a ty
 <pre class="r header">yamcs.simulator.yaml</pre>
 ```yaml
 services:
-  - org.yamcs.archive.ParameterRecorder
+  - class: org.yamcs.archive.ParameterRecorder
 
 streamConfig:
   param:
@@ -32,7 +32,15 @@ With this configuration both system parameters and processed parameters coming f
 
 ### Configuration Options
 
-<dl>
-  <dt><tt>streams</tt></dt>
-  <dd>List of strings that tells which streams should be recorded. When unspecified, all <tt>param</tt> streams defined in <tt>streamConfig</tt> are recorded.</dd>
-</dl>
+<table class="inline">
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td class="code">streams</td>
+    <td class="code">list of strings</td>
+    <td>The streams to record. When unspecified, all <tt>param</tt> streams defined in <tt>streamConfig</tt> are recorded.</td>
+  </tr>
+</table>

@@ -22,23 +22,45 @@ The algorithm used to build the list of user privileges is as follows:
 
 ### Configuration Options
 
-<dl>
-  <dt>host</dt>
-  <dd>
-    <b>Required.</b> The LDAP host
-  </dd>
-  <dt>userPath</dt>
-  <dd>
-    <b>Required.</b> The path to user definitions
-  </dd>
-  <dt>rolePath</dt>
-  <dd>The path to role definitions</dd>
-  <dt>systemPath</dt>
-  <dd>The path to system privileges</dd>
-  <dt>tmParameterPath</dt>
-  <dd>The path to <tt>ReadParameter</tt> object privileges</dd>
-  <dt>tmPacketPath</dt>
-  <dd>The path to <tt>ReadPacket</tt> object privileges</dd>
-  <dt>tcPath</dt>
-  <dd>The path to <tt>Command</tt> object privileges</dd>
-</dl>
+<table class="inline">
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td class="code">host</td>
+    <td class="code">string</td>
+    <td><b>Required.</b> The LDAP host</td>
+  </tr>
+  <tr>
+    <td class="code">userPath</td>
+    <td class="code">string</td>
+    <td><b>Required.</b> The path to user definitions</td>
+  </tr>
+  <tr>
+    <td class="code">rolePath</td>
+    <td class="code">string</td>
+    <td>The path to role definitions</td>
+  </tr>
+  <tr>
+    <td class="code">systemPath</td>
+    <td class="code">string</td>
+    <td>The path to system privileges</td>
+  </tr>
+  <tr>
+    <td class="code">tmParameterPath</td>
+    <td class="code">string</td>
+    <td>The path to <tt>ReadParameter</tt> object privileges</td>
+  </tr>
+  <tr>
+    <td class="code">tmPacketPath</td>
+    <td class="code">string</td>
+    <td>The path to <tt>ReadPacket</tt> object privileges</td>
+  </tr>
+  <tr>
+    <td class="code">tcPath</td>
+    <td class="code">string</td>
+    <td>The path to <tt>Command</tt> object privileges</td>
+  </tr>
+</table>

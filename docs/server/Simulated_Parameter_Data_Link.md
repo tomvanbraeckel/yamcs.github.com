@@ -13,7 +13,15 @@ The XML scenario file allows to describe the parameters sent, their generation t
 
 ### Configuration Options
 
-<dl>
-  <dt>simulationDataPath</dt>
-  <dd><b>Required.</b> Path to the XML file containing further configuration</dd>
-</dl>
+<table class="inline">
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td class="code">simulationDataPath</td>
+    <td class="code">string</td>
+    <td><b>Required.</b> Path to the XML file containing further configuration</td>
+  </tr>
+</table>
