@@ -46,6 +46,7 @@
     - url: /docs/studio/Yamcs_Clients/
     - url: /docs/studio/Data_Links/
 
-- url: /docs/studio/Troubleshooting/
+- url: /docs/studio/Administration/
   items:
+    - url: /docs/studio/Command_Options/
     - url: /docs/studio/Capturing_Log_Output/
