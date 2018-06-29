@@ -1,14 +1,14 @@
 ---
 layout: default
-permalink: /docs/api/Control_Services/
+permalink: /docs/api/Edit_Service/
 sidebar: yes
 ---
 
-Control global services:
+Edit a global service:
 
     PATCH /api/services/_global/:name
 
-Control services for the given Yamcs instance:
+Edit a service for a specific Yamcs instance:
 
     PATCH /api/services/:instance/:name
 

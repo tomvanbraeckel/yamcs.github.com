@@ -92,7 +92,7 @@
     - url: /docs/api/Services/
       items:
          - url: /docs/api/List_Services/
-         - url: /docs/api/Control_Services/
+         - url: /docs/api/Edit_Service/
     - url: /docs/api/Streams/
       items:
         - url: /docs/api/List_Streams/
