@@ -14,42 +14,8 @@ Yamcs will bind these input parameters in the script's execution context, so tha
 
 * value: the engineering value
 * rawValue: the raw value (if the parameter has a raw value)
-* monitoringResult: the result of the monitoring. One out of:
-
-    <table class="inline">
-        <tr>
-            <td>
-                <em>null</em><br>
-                DISABLED<br>
-                IN_LIMITS
-            </td>
-            <td>
-                WATCH<br>
-                WATCH_LOW<br>
-                WATCH_HIGH
-            </td>
-            <td>
-                WARNING<br>
-                WARNING_LOW<br>
-                WARNING_HIGH
-            </td>
-            <td>
-                DISTRESS<br>
-                DISTRESS_LOW<br>
-                DISTRESS_HIGH
-            </td>
-            <td>
-                CRITICAL<br>
-                CRITICAL_LOW<br>
-                CRITICAL_HIGH
-            </td>
-            <td>
-                SEVERE<br>
-                SEVERE_LOW<br>
-                SEVERE_HIGH
-            </td>
-        </tr>
-    </table>
+* monitoringResult: the result of the monitoring: <em>null</em>, <tt>DISABLED</tt>, <tt>WATCH</tt>, <tt>WARNING</tt>, <tt>DISTRESS</tt>, <tt>CRITICAL</tt> or <tt>SEVERE</tt>.
+* rangeCondition: <tt>LOW</tt> or <tt>HIGH</tt>.
 
 If there was no update for a certain parameter, yet the algorithm is still being executed, the previous value of that parameter will be retained.
     

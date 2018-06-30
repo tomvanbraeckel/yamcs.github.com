@@ -157,9 +157,7 @@ Note that the color information for alarms is currently not as rich as it could 
     </tr>
     <tr>
         <td>
-            WATCH<br>
-            WATCH_LOW<br>
-            WATCH_HIGH
+            WATCH
         </td>
         <td rowspan="3" style="text-align: center;">
             MINOR
@@ -167,23 +165,17 @@ Note that the color information for alarms is currently not as rich as it could 
     </tr>
     <tr>
         <td>
-            WARNING<br>
-            WARNING_LOW<br>
-            WARNING_HIGH
+            WARNING
         </td>
     </tr>
     <tr>
         <td>
-            DISTRESS<br>
-            DISTRESS_LOW<br>
-            DISTRESS_HIGH
+            DISTRESS
         </td>
     </tr>
     <tr>
         <td>
-            CRITICAL<br>
-            CRITICAL_LOW<br>
-            CRITICAL_HIGH
+            CRITICAL
         </td>
         <td rowspan="2" style="text-align: center;">
             MAJOR
@@ -191,9 +183,7 @@ Note that the color information for alarms is currently not as rich as it could 
     </tr>
     <tr>
         <td>
-            SEVERE<br>
-            SEVERE_LOW<br>
-            SEVERE_HIGH
+            SEVERE
         </td>
     </tr>
 </table>
