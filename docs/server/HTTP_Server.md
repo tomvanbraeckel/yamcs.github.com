@@ -112,7 +112,7 @@ The webConfig supports these options:
 
 CORS (cross-origin resource sharing) facilitates use of the API in client-side web applications that run in the browser. CORS is a W3C specification enforced by all major browsers. Details are described at <a href="https://www.w3.org/TR/cors/">https://www.w3.org/TR/cors/</a>. Yamcs simply adds configurable support for some of the CORS preflight response headers.
 
-Note embedded web interface of Yamcs does not need CORS, since it shares the same origin as the REST API.
+Note that the embedded web interface of Yamcs does not need CORS, since it shares the same origin as the REST API.
 
 <table class="inline">
   <tr>
