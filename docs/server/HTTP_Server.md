@@ -4,13 +4,11 @@ permalink: /docs/server/HTTP_Server/
 sidebar: yes
 ---
 
-Yamcs includes an embedded HTTP server that provides these functionalities:
+Embedded HTTP server that provides these functionalities:
 
 * Serve REST API
 * Serve WebSocket API
-* Serve the Yamcs website
-
-By default the HTTP server binds to port 8090.
+* Serve the Yamcs web interface
 
 The HTTP Server is tightly integrated with the security system of Yamcs and serves as the default interface for external tooling wanting to integrate. This covers both server-to-server and server-to-user communication patterns.
 
@@ -27,23 +25,17 @@ This is a global service defined in <tt>etc/yamcs.yaml</tt>. Example from a typi
 ```yaml
 services:
   - class: org.yamcs.web.HttpServer
-
-webConfig:
-  webRoot:
-    - lib/yamcs-web
-    - web
-
-  webPort: 8090
-
-  webSocket:
-    writeBufferWaterMark:
-      low: 32768
-      high: 65536
-    connectionCloseNumDroppedMsg: 5
-  
-  cors:
-    allowOrigin: "*"
-    allowCredentials: false
+    args:
+      webRoot: lib/yamcs-web
+      port: 8090
+      webSocket:
+        writeBufferWaterMark:
+          low: 32768
+          high: 65536
+        connectionCloseNumDroppedMsg: 5
+      cors:
+        allowOrigin: "*"
+        allowCredentials: false
 ```
 
 The webConfig supports these options:
@@ -55,19 +47,19 @@ The webConfig supports these options:
     <th>Description</th>
   </tr>
   <tr>
-    <td class="code">webRoot</td>
-    <td class="code">string</td>
-    <td>List of file paths that are statically served. This usually points to the web files for the built-in Yamcs web interface (<tt>lib/yamcs-web</tt>) and to site-specific configuration options (<tt>web</tt>) such as synoptic displays.</td>
-  </tr>
-  <tr>
-    <td class="code">webPort</td>
+    <td class="code">port</td>
     <td class="code">integer</td>
     <td>The port at which Yamcs web services may be reached. Default: <tt>8090</tt></td>
   </tr>
   <tr>
+    <td class="code">webRoot</td>
+    <td class="code">string or string[]</td>
+    <td>List of file paths that are statically served. This usually points to the web files for the built-in Yamcs web interface (<tt>lib/yamcs-web</tt>).</td>
+  </tr>
+  <tr>
     <td class="code">zeroCopyEnabled</td>
     <td class="code">boolean</td>
-    <td>Indicates whether zero-copy can be used to optimize non-SSL static file serving. Usually this can be left to true, but is has been added as an option to fix specific deployment issues (e.g. some docker hosts). Default: <tt>true</tt></td>
+    <td>Indicates whether zero-copy can be used to optimize non-SSL static file serving. Default: <tt>true</tt></td>
   </tr>
   <tr>
     <td class="code">webSocket</td>
@@ -131,13 +123,3 @@ Note that the embedded web interface of Yamcs does not need CORS, since it share
     <td>Whether the <tt>Access-Control-Allow-Credentials</tt> header of the preflight response is set to true. Default: <tt>false</tt></td>
   </tr>
 </table>
-
-Example:
-
-<pre class="r header">yamcs.yaml</pre>
-```yaml
-webConfig:
-  cors:
-    allowOrigin: "*"
-    allowCredentials: false
-```
