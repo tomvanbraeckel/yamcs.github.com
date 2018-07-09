@@ -40,6 +40,7 @@
     - url: /docs/server/Command_History_Recorder/
     - url: /docs/server/Data_Link_Initialiser/
       items:
+        - url: /docs/server/Artemis_Parameter_Data_Link/
         - url: /docs/server/Artemis_TM_Data_Link/
         - url: /docs/server/File_Polling_TM_Data_Link/
         - url: /docs/server/Simulated_Parameter_Data_Link/

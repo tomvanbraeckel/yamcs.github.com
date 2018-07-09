@@ -4,7 +4,7 @@ permalink: /docs/server/Artemis_TM_Data_Link/
 sidebar: yes
 ---
 
-Reads data from an Artemis queue.
+Reads <tt>tm</tt> data from an Artemis queue and publishes it to the configured stream.
 
 ### Class Name
 [<tt>org.yamcs.tctm.ArtemisTmDataLink</tt>](https://javadoc.io/page/org.yamcs/yamcs-core/latest/org/yamcs/tctm/ArtemisTmDataLink.html)
