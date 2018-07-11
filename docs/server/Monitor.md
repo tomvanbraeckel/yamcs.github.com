@@ -6,11 +6,11 @@ permalink: /docs/server/Monitor/
 
 The Monitor module within the Yamcs web interface provides typical operational views.
 
-The Monitor Module is always visited for a specific Yamcs instance and processor. Every view has in the top right corner an indicator that shows the current processor and that shows the time for that processor. From this widget, you can choose to start a replay of past data. When that happens, you will switch to this replay processor and would see the widget adapting.
+The Monitor Module is always visited for a specific Yamcs instance and processor. Every view has in the top right corner an indicator that shows the current processor and that shows the time for that processor. From this widget, you can choose to start a replay of past data. When that happens, you will switch to this replay processor and would see the widget reflecting the replay time.
 
 ### Displays
 
-Shows the displays that are known by Yamcs Server for the selected instance. The displays in this view are presented in a simple file browser. Clicking on a display file opens the display. If there is incoming telemetry this will be received by the opened display file.
+Shows the displays or display resources that are known by Yamcs Server for the selected instance. The displays in this view are presented in a file browser with the usual operations to rename, move or create. Clicking on a display file opens the display. If there is incoming telemetry this will be received by the opened display file.
 
 Note that only some display types are supported by the Yamcs web interface. The following provides an overview of the current state:
 
@@ -41,10 +41,40 @@ Note that only some display types are supported by the Yamcs web interface. The 
   </tr>
 </table>
 
+In addition there is file preview support for the following display resources:
+
+<table class="inline">
+  <tr>
+    <th>Extension</th>
+    <th>Resource type</th>
+    <th>View</th>
+    <th>Edit</th>
+  </tr>
+  <tr>
+    <td><tt>png</tt>, <tt>gif</tt>, <tt>bmp</tt>, <tt>jpg</tt>, <tt>jpeg</tt></td>
+    <td>Image</td>
+    <td>Full support</td>
+    <td>No plans to support</td>
+  </tr>
+  <tr>
+    <td><tt>js</tt></td>
+    <td>Script file</td>
+    <td>Full support</td>
+    <td>Planned</td>
+  </tr>
+</table>
+
+Any other file is displayed in a basic text viewer.
+
+Displays may be visualized in full screen, which helps remove distractions. This will not scale the display, so make use of the zoom in/out buttons before going full screen if you would like your display to appear larger.
 
 ### Layouts
 
-A layout allows to combine multiple displays in a single view. This is particularly useful if your displays are small.
+A layout allows to combine multiple displays in a single view. This is particularly useful if your displays are small. Layouts are personal and are linked to your user account. Create a layout via the "Create Layout" button in the toolbar. Open any number of displays via the sidebar and organize them together. Click "Save" when you want to save the changes to your layout for later use.
+
+Individual display frames can be zoomed in or out by dragging the corner in the right-bottom.
+
+A layout may be visualized in full screen, which helps remove distractions.
 
 
 ### Events
