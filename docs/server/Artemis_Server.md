@@ -28,10 +28,15 @@ services:
     <th>Description</th>
   </tr>
   <tr>
-    <td class="code">artemisConfigFile</td>
+    <td class="code">configFile</td>
     <td class="code">string</td>
     <td>
-      Filename of the XML configuration file that contains further configuration options. Default: <tt>artemis.xml</tt>.
+      Filename of the XML configuration file that contains further configuration options. Do not use an absolute path. The file must exist in the <tt>/opt/yamcs/etc</tt> folder. Default: <tt>artemis.xml</tt>.
     </td>
+  </tr>
+  <tr>
+    <td class="code">securityManager</td>
+    <td class="code">string</td>
+    <td>Class name of a <tt>org.apache.activemq.artemis.spi.core.security.ActiveMQSecurityManager</tt> implementation. The implementation should have a no-arg constructor. If unspecified, security is not enabled.</td>
   </tr>
 </table>

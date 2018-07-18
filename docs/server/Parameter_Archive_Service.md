@@ -39,7 +39,7 @@ services:
         enabled: true
         warmupTime: 120 
         schedule:
-          - {startSegment: 10, numSegments: 3},
+          - {startSegment: 10, numSegments: 3}
           - {startSegment: 2, numSegments: 2, interval: 600}
 ```
 
