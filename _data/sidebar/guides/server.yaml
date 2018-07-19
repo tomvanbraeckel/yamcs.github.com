@@ -60,8 +60,8 @@
   items:
     - url: /docs/server/Alarm_Reporter/
     - url: /docs/server/Algorithm_Manager/
+    - url: /docs/server/Local_Parameter_Manager/
     - url: /docs/server/Replay_Service/
-    - url: /docs/server/Software_Parameter_Manager/
     - url: /docs/server/Stream_Parameter_Provider/
     - url: /docs/server/Stream_TC_Command_Releaser/
     - url: /docs/server/Stream_TM_Packet_Provider/
