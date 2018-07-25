@@ -1,69 +1,41 @@
-<div class="page-subheader">
+{% if page.url contains '/downloads' %}
+{% else %}
+  <div class="page-subheader">
+    {% assign structure=false %}
+    {% assign documents = "server,studio,http,cli" | split: ',' %}
+    {% assign titles = "x,Yamcs Server Manual,Yamcs Studio User Guide,Yamcs HTTP API,Yamcs Command-Line Interface" | split: ',' %}
 
-  {% assign structure=false %}
-
-
-
-  {% assign documents = "server,studio,http,cli" | split: ',' %}
-  {% assign titles = "x,Yamcs Server Manual,Yamcs Studio User Guide,Yamcs HTTP API,Yamcs Command-Line Interface" | split: ',' %}
-
-  {% for document in documents %}
-      {% capture url %}/docs/{{ document }}/{% endcapture %}
-      {% if page.url contains url %}
+    {% for document in documents %}
+      {% capture docurl %}/docs/{{ document }}/{% endcapture %}
+      {% if page.url contains docurl %}
         {% assign title = titles[forloop.index] %}
         <a href="/docs/">Docs</a> /
-        {% if page.url == url %}
+        {% if page.url == docurl %}
           {{title}}
         {% else %}
-          {% if page.version %}
-	    {% capture structureName %}{{ document }}_{{ page.version | replace: '.', '_'}}{% endcapture %}
-            {% assign structure=site.data.sidebar.guides.[structureName] %}
-            <a href="{{url}}">{{title}}</a>
-            / <a href="{{url}}{{page.version}}">{{page.version}}</a>
-          {% else %}
-            {% assign structure=site.data.sidebar.guides.[document] %}
-            <a href="{{url}}">{{title}}</a>
-          {% endif %}
+          {% assign structure=site.data.sidebar.guides[document] %}
+          <a href="{{docurl}}">{{title}}</a>
         {% endif %}
       {% endif %}
-  {% endfor %}
-
-  {% if structure %}
-    {% for chapter in structure %}
-      {% for item_i in chapter.items %}
-        {% if item_i.url == page.url %}
-
-          {% for p in site.pages %}
-            {% if p.url == chapter.url %}
-              / <a href="{{ p.url }}">{{ p.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}</a>
-              {% break %}
-            {% endif %}
-          {% endfor %}
-          {% break %}
-
-        {% endif %}
-      {% endfor %}
     {% endfor %}
-    / <span class="active">{{ page.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}</span>
-  {% endif %}
 
-  {% if page.previousVersions %}
-    <div style="float: right;">
-      &nbsp;
-      <select onChange="window.location.href=this.value">
-        <option value="">Version...</option>
-        {% for version in page.previousVersions %}
-          {% capture link %}{% if page.version %}{% capture linkVersion %}/{{page.version}}{% endcapture %}{{page.permalink | remove: linkVersion}}{% else %}{{page.permalink}}{% endif %}{% endcapture %}
+    {% if structure %}
+      {% for chapter in structure %}
+        {% for item_i in chapter.items %}
+          {% if item_i.url == page.url %}
 
-          {% assign targeturl = link %}
-          {% if version != 'latest' %}
-            {% assign targeturl = link|append:version|append:'/' %}
+            {% for p in site.pages %}
+              {% if p.url == chapter.url %}
+                / <a href="{{ p.url }}">{{ p.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}</a>
+                {% break %}
+              {% endif %}
+            {% endfor %}
+            {% break %}
+
           {% endif %}
-          <option value="{{ targeturl }}" {% if page.permalink == targeturl %}selected{% endif %}>
-            {% if version != 'latest' %}v{% endif %}{{ version }}
-          </option>
         {% endfor %}
-      </select>
-    </div>
-  {% endif %}
-</div>
+      {% endfor %}
+      / <span class="active">{{ page.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}</span>
+    {% endif %}
+  </div>
+{% endif %}

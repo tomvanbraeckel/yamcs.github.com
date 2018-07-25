@@ -1,5 +1,10 @@
 <div id="sidebar" class="sidebar">
-  <div style="border-bottom: 1px solid #e8e8e8; padding-bottom: 0.5em; margin-bottom: 1em; font-weight: 400; text-align: center;">{{ include.title }}</div>
+  {% if include.title == '' %}
+    <p>&nbsp;</p>
+  {% else %}
+    <div style="border-bottom: 1px solid #e8e8e8; padding-bottom: 0.5em; margin-bottom: 1em; font-weight: 400; text-align: center;">{{ include.title }}</div>
+  {% endif %}
+
   {% for chapter in include.structure %}
 
     {% comment %}

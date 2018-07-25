@@ -1,4 +1,4 @@
-- url: /docs/cli/Overview/
+- url: /docs/cli/Getting_Started/
 - url: /docs/cli/yamcs_algorithms/
   items:
     - url: /docs/cli/yamcs_algorithms_list/
@@ -32,6 +32,8 @@
     - url: /docs/cli/yamcs_links_enable/
     - url: /docs/cli/yamcs_links_disable/
     - url: /docs/cli/yamcs_links_describe/
+- url: /docs/cli/yamcs_login/
+- url: /docs/cli/yamcs_logout/
 - url: /docs/cli/yamcs_parameters/
   items:
     - url: /docs/cli/yamcs_parameters_list/

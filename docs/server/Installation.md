@@ -4,16 +4,18 @@ permalink: /docs/server/Installation/
 sidebar: yes
 ---
 
-#### Prerequisites
+### Prerequisites
+
+Yamcs Server runs on 64-bit Linux.
 
 <table class="inline">
     <tr>
-        <th>OS</th>
-        <td>Linux 64bit</td>
+        <th>RAM</th>
+        <td>&gt;= 1Gb</td>
     </tr>
     <tr>
-        <th>Hardware</th>
-        <td>RAM &gt;= 1Gb, HD &gt;= 500Gb (dependent on amount of data archived)</td>
+        <th>HD</th>
+        <td>&gt;= 500Gb (dependent on amount of data archived)</td>
     </tr>
     <tr>
         <th>Java Runtime Environment (JRE)</th>
@@ -21,11 +23,42 @@ sidebar: yes
     </tr>	
 </table>
 
-#### Installation
+### Install Manually
 
-Yamcs is delivered as an rpm package and installation is achieved using the rpm command:
+Yamcs Server software is packaged in RPM format. To install:
 
     $ rpm -U yamcs-version.noarch.rpm
+
+This command also works for upgrading. If a configuration file (in the <tt>etc</tt> directory) has been updated with regard to the previous installed version, the old files will be saved with the extension <tt>.rpmsave</tt>. The user then has to inspect the difference between the two versions and to implement the newly added options into the old configuration files.
+
+To uninstall Yamcs Server use:
+
+    $ rpm -e yamcs
+
+Note that this will also remove the <tt>yamcs</tt> user.
+
+### Install from Repository
+
+Yamcs Server packages are distributed via yum and APT. Configure the Yamcs repository appropriate to your distribution following the [repository instructions](/downloads/Yum_Repository/).
+
+#### RPM (RHEL, Fedora, CentOS)
+
+Install via <tt>dnf</tt> (or <tt>yum</tt> on older distributions)
+
+    $ dnf check-update
+    $ sudo dnf install yamcs
+
+#### RPM (SLE, openSUSE)
+
+    $ sudo zypper refresh
+    $ sudo zypper install yamcs
+
+#### APT (Debian, Ubuntu)
+
+    $ sudo apt-get update
+    $ sudo apt-get install yamcs
+
+### File Layout
     
 After installing the rpms, the following directories are created under <tt>/opt/yamcs</tt>:
         
@@ -81,25 +114,10 @@ In addition to the default Yamcs package, there are other proprietary extensions
     The extensions are not part of the Yamcs open-source release. If you are interested in using them, please contact Space Applications Services.
 </div>
 
-#### Configuration
+### Configuration
 Yamcs configuration files are written in YAML format. This format allows to encode in a human friendly way the most common data types: numbers, strings, lists and maps. For detailed syntax rules, please see [https://www.yaml.org](https://www.yaml.org).
 
 The root configuration file is <tt>etc/yamcs.yaml</tt>. It contains a list of Yamcs instances. For each instance, a file called <tt>etc/yamcs.instance-name.yaml</tt> defines all the components that are part of the instance. Depending on which components are selected, different configuration files are needed.
 
-#### Upgrading
-Upgrading is done using the rpm command:
-
-    rpm -U yamcs-version.noarch.rpm
-
-If a configuration file (in the <tt>etc</tt> directory) has been updated with regard to the previous installed version, the old files will be saved with the extension <tt>.rpmsave</tt>. The user then has to inspect the difference between the two versions and to implement the newly added options into the old configuration files.
-
-
-#### Removing
-Yamcs Server can be removed (erased) using the rpm command:
-
-    rpm -e yamcs
-
-Note that when you remove the <tt>yamcs</tt> package, it will also delete the <tt>yamcs</tt> user.
-
-#### Starting Yamcs Server
+### Starting Yamcs Server
 Normally Yamcs Server should be configured to start automatically on boot via <tt>/etc/init.d/yamcs-server</tt>. The command will automatically run itself as a lower privilege user (username <tt>yamcs</tt>), but must initially be run as root for this to happen. Yamcs Server can be started and stopped as a service via commands such as <tt>service yamcs-server start</tt> and <tt>service yamcs-server stop</tt>. These commands use the init.d script and will run Yamcs as the appropriate user. It is also possible to directly use the script <tt>/opt/yamcs/bin/yamcsd</tt>, but use of the <tt>service</tt> command is preferred.

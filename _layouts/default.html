@@ -16,18 +16,21 @@
         {% assign titles = "x,Yamcs Server Manual,Yamcs Studio User Guide,Yamcs HTTP API,Yamcs Command-Line Interface" | split: ',' %}
 
         {% for document in documents %}
-          {% capture myurl %}/docs/{{ document }}{% endcapture %}
-          {% if page.sidebar and page.url contains myurl %}
-            {% assign title = titles[forloop.index] %}
-            {% if page.version %}
-              {% capture title %}{{ title }}<br><small>{{ page.version }}</small>{% endcapture %}
-              {% capture structureName %}{{ document }}_{{ page.version | replace: '.', '_'}}{% endcapture %}
-              {% assign structure=site.data.sidebar.guides[structureName]%}
-            {% else %}
-              {% assign structure=site.data.sidebar.guides[document] %}            
+          {% capture docurl %}/docs/{{ document }}{% endcapture %}
+          {% if page.sidebar %}
+            {% if page.url contains docurl %}
+              {% assign title = titles[forloop.index] %}
+              {% assign structure=site.data.sidebar.guides[document] %}
             {% endif %}
           {% endif %}
         {% endfor %}
+
+        {% if page.sidebar %}
+          {% if page.url contains '/downloads' %}
+            {% assign title = '' %}
+            {% assign structure=site.data.sidebar.guides['downloads'] %}
+          {% endif %}
+        {% endif %}
 
         {% if structure %}
           {% include sidebar.html structure=structure title=title %}

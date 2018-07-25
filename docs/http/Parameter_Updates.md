@@ -13,10 +13,10 @@ Subscribe to parameter updates:
         "list": [
             { "namespace": ":namespace", "name": ":name" }
         ],
-     "updateOnExpiration": false,
-     "abortOnInvalid": false,
-     "sendFromCache": true,
-     "subscriptionId": -1
+        "updateOnExpiration": false,
+        "abortOnInvalid": false,
+        "sendFromCache": true,
+        "subscriptionId": -1
     }
 } ]
 ```
