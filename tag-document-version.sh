@@ -24,7 +24,7 @@ version=$2
 version_escaped=${version//[.]/_}
 
 if [ -z "$document" ] || [ -z "$version" ]; then
-echo "usage: ./tag-document-version.sh <document> <version>, with <document> one of [server, studio, tools, api]."
+echo "usage: ./tag-document-version.sh <document> <version>, with <document> one of [server, studio, tools]."
 exit
 fi
 

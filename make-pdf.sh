@@ -7,21 +7,19 @@ set -e
 #  If no arguments are provided, generate the 4 pdf documents for the latest version.
 #  
 #  Optional arguments:
-#  document_name: one of "server", "studio", "tools", "api"
+#  document_name: one of "server", "studio", "tools"
 #  version: version number, must match directory name in /docs/<document_name>/<version>
 #
 #  If the optional arguments are provided, generate the pdf document for the requested document with the requested version.
 #  Output name is <title>-<version>.pdf
 #
 #  PDF documents are stored in Nexus. This part is not automated.
-#  curl --user fdi --upload-file Yamcs\ Server\ API.pdf https://nexus.spaceapplications.com/repository/yamcs/documentation/
-
 
 DOC=$1
 VERSION=$2
 
-if [ -n "$DOC" ] && [ "$DOC" != "server" ] && [ "$DOC" != "studio" ] && [ "$DOC" != "tools" ] && [ "$DOC" != "api" ]; then
-echo "Usage: ./make-pdf.sh [document_name] [version], with document_name one of 'server', 'studio', 'tools', 'api'"
+if [ -n "$DOC" ] && [ "$DOC" != "server" ] && [ "$DOC" != "studio" ] && [ "$DOC" != "tools" ]; then
+echo "Usage: ./make-pdf.sh [document_name] [version], with document_name one of 'server', 'studio', 'tools'"
 exit
 fi
 
@@ -146,24 +144,6 @@ exiftool \
     -keywords="system" \
     -keywords="tm" \
     -keywords="tc" \
-    -overwrite_original \
-    "/tmp/${TITLE}${FILE_SUFFIX}.pdf.wkhtmltopdf"
-fi
-
-if [ -z "$DOC" ] || [ "$DOC" = "api" ]; then
-TITLE="Yamcs Server API"
-compose_pdf "$DOCSURL/api" "$TITLE"
-exiftool \
-    -Author="Space Applications Services" \
-    -Subject="API" \
-    -keywords="yamcs" \
-    -keywords="server" \
-    -keywords="mission" \
-    -keywords="control" \
-    -keywords="system" \
-    -keywords="tm" \
-    -keywords="tc" \
-    -keywords="api" \
     -overwrite_original \
     "/tmp/${TITLE}${FILE_SUFFIX}.pdf.wkhtmltopdf"
 fi
