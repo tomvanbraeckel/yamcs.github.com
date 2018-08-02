@@ -7,7 +7,7 @@ set -e
 #  If no arguments are provided, generate the 4 pdf documents for the latest version.
 #  
 #  Optional arguments:
-#  document_name: one of "server", "studio", "tools"
+#  document_name: one of "server", "studio"
 #  version: version number, must match directory name in /docs/<document_name>/<version>
 #
 #  If the optional arguments are provided, generate the pdf document for the requested document with the requested version.
@@ -18,8 +18,8 @@ set -e
 DOC=$1
 VERSION=$2
 
-if [ -n "$DOC" ] && [ "$DOC" != "server" ] && [ "$DOC" != "studio" ] && [ "$DOC" != "tools" ]; then
-echo "Usage: ./make-pdf.sh [document_name] [version], with document_name one of 'server', 'studio', 'tools'"
+if [ -n "$DOC" ] && [ "$DOC" != "server" ] && [ "$DOC" != "studio" ]; then
+echo "Usage: ./make-pdf.sh [document_name] [version], with document_name one of 'server', 'studio'"
 exit
 fi
 
@@ -121,24 +121,6 @@ exiftool \
     -Subject="Manual" \
     -keywords="yamcs" \
     -keywords="server" \
-    -keywords="mission" \
-    -keywords="control" \
-    -keywords="system" \
-    -keywords="tm" \
-    -keywords="tc" \
-    -overwrite_original \
-    "/tmp/${TITLE}${FILE_SUFFIX}.pdf.wkhtmltopdf"
-fi
-
-if [ -z "$DOC" ] || [ "$DOC" = "tools" ]; then
-TITLE="Yamcs Client Tools Guide"
-compose_pdf "$DOCSURL/tools" "$TITLE"
-exiftool \
-    -Author="Space Applications Services" \
-    -Subject="User Guide" \
-    -keywords="yamcs" \
-    -keywords="client" \
-    -keywords="tools" \
     -keywords="mission" \
     -keywords="control" \
     -keywords="system" \

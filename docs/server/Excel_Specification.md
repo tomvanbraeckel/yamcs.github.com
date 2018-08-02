@@ -719,8 +719,6 @@ These algorithms have to implement the interface org.yamcs.xtceproc.DataDecoder.
 ### Alarms Sheet
 This sheet must be named "Alarms", and the columns described must not be reordered. The sheet defines how the monitoring results of a parameter should be derived. E.g. if a parameter exceeds some pre-defined value, this parameter's state changes to <tt>CRITICAL</tt>.
 
-When monitoring results change, events are generated and can be followed in the Yamcs Event Viewer.
-
 <table class="inline">
 	<tr>
 		<th>parameter name</th>

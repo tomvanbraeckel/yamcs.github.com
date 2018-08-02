@@ -13,5 +13,3 @@ To load events for an earlier time range, select ![Import](/assets/studio/icons/
 Clear your view by clicking ![Import](/assets/studio/icons/clear.png){: .inline-image} **Clear**. You can always re-import events again at a later moment.
 
 When Yamcs Studio becomes aware of a new event, it will automatically select and reveal it. You can prevent this default behaviour by toggling the ![Scroll Lock](/assets/studio/icons/lock_co.png){: .inline-image} **Scroll Lock**.
-
-In a next iteration we plan to add features for exporting to CSV, adding a property view, and for filtering events, similar to the features of the standalone [Event Viewer](/docs/tools/Event_Viewer/) tool used in operations today.
