@@ -9,7 +9,7 @@ Yamcs is a cost-efficient suite of tools for spacecraft, payload and ground segm
 
 For development purposes, all the software can run on a developer's computer or laptop.
 
-For more information on the Yamcs suite of tools, head over to the [Yamcs Docs](/docs/). For a quick test-run of core functionality, have a look at [Up & Running](/running/).
+For more information on the Yamcs suite of tools, head over to the [Yamcs Docs](/docs/).
 
 ### Sponsored by Space Applications Services
 

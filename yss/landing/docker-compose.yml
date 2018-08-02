@@ -1,9 +1,0 @@
-version: '2'
-services:
-   yamcs:
-      build: "."
-      ports:
-         - "8090:8090"
-   simulator:
-      image: "yamcs/simulator:3.1.0"
-      restart: always
