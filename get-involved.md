@@ -24,7 +24,7 @@ The GitHub repository is at [https://github.com/yamcs/yamcs](https://github.com/
 
 **Yamcs Studio**
 
-Start by reading [https://github.com/yamcs/yamcs-studio/blob/master/notes/Contributing.md](https://github.com/yamcs/yamcs-studio/blob/master/notes/Contributing.md)
+The GitHub repository is at [https://github.com/yamcs/yamcs-studio](https://github.com/yamcs/yamcs-studio/).
 
 <p>&nbsp;</p>
 
