@@ -81,6 +81,5 @@ message CommandQueueInfo {
   required int32 nbRejectedCommands = 6;
   optional int32 stateExpirationTimeS = 7;
   repeated CommandQueueEntry entry = 8;
-  optional string url = 9;
 }
 ```

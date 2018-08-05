@@ -35,7 +35,7 @@ List all containers defined in the Mission Database for the given Yamcs instance
 
 The `q` parameter supports searching on the namespace or name. For example:
 
-    /api/mdb/simulator/containers?q=yss+dhs&pretty
+    /api/mdb/simulator/containers?q=yss+dhs
 
 
 ### Response

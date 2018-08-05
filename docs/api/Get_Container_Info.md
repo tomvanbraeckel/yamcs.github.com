@@ -174,6 +174,5 @@ message ContainerInfo {
   optional ContainerInfo baseContainer = 8;
   repeated ComparisonInfo restrictionCriteria = 9;
   repeated SequenceEntryInfo entry = 10;
-  optional string url = 11;
 }
 ```

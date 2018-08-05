@@ -57,7 +57,7 @@ List all parameters defined in the Mission Database for the given Yamcs instance
 
 The `q` parameter supports searching on namespace or name. For example:
 
-    /api/mdb/simulator/parameters?q=ccsds+yss&pretty 
+    /api/mdb/simulator/parameters?q=ccsds+yss
 
 
 ### Response

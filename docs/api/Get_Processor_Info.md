@@ -47,10 +47,5 @@ message ProcessorInfo {
   optional ServiceState state = 7;
   optional yamcs.ReplayRequest replayRequest = 8;
   optional yamcs.ReplayStatus.ReplayState replayState = 9;
-  optional string url = 10;
-  optional string clientsUrl = 11;
-  optional string parametersUrl = 12;
-  optional string commandsUrl = 13;
-  optional string commandQueuesUrl = 14;
 }
 ```

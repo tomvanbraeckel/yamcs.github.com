@@ -35,7 +35,7 @@ List all commands defined in the Mission Database for the given Yamcs instance:
 
 The `q` parameter supports searching on namespace or name. For example:
 
-    /api/mdb/simulator/commands?q=volt+on&pretty 
+    /api/mdb/simulator/commands?q=volt+on
 
 
 ### Response

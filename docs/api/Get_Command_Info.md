@@ -114,6 +114,5 @@ message CommandInfo {
   repeated ArgumentAssignmentInfo argumentAssignment = 9;
   optional SignificanceInfo significance = 10;
   repeated TransmissionConstraintInfo constraint = 11;
-  optional string url = 12;
 }
 ```

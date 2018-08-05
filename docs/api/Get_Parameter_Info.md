@@ -105,7 +105,6 @@ message ParameterInfo {
   repeated yamcs.NamedObjectId alias = 5;
   optional ParameterTypeInfo type = 6;
   optional DataSourceType dataSource = 7;
-  optional string url = 8;
 }
 ```
 

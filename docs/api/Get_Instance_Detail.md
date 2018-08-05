@@ -58,9 +58,5 @@ message YamcsInstance {
   required string name = 1;
   optional MissionDatabase missionDatabase = 3;
   repeated ProcessorInfo processor = 4;
-  optional string url = 5;
-  optional string clientsUrl = 6;
-  optional string commandQueuesUrl = 7;
-  optional string eventsUrl = 8;
 }
 ```

@@ -64,9 +64,5 @@ message MissionDatabase {
   required string name = 2;
   optional string version = 3;
   repeated SpaceSystemInfo spaceSystem = 4;
-  optional string url = 5;
-  optional string parametersUrl = 6;
-  optional string containersUrl = 7;
-  optional string commandsUrl = 8;
 }
 ```
