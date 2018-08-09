@@ -38,8 +38,7 @@ After validating the input parameters, the command will be added to the appropri
     <td class="code">assignment</td>
     <td class="code">array&nbsp;of<br>string&nbsp;pairs</td>
     <td>
-      <p>The name/value assignments for this command.</p>
-      <p><strong>Note:</strong>It is also possible to provide assignments in the query string in the format <tt>name=value</tt>. However, you may want to use the request body instead to prevent any potential naming collisions with other URI parameters.</p>
+      The name/value assignments for this command.
     </td>
   </tr>
   <tr>
