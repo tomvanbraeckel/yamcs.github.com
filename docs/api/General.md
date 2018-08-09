@@ -4,7 +4,7 @@ permalink: /docs/api/General/
 sidebar: yes
 ---
 
-Yamcs provides a RESTful web service allowing remote tools to interface with a growing set of internals. All operations accept both JSON and Protobuf as a media type. These pages document the use of the common JSON format.
+Yamcs provides a Web api allowing tools to interface with Yamcs resources. By default the Web API uses JSON over HTTP. It is also possible to do Protobuf over HTTP. These pages illustrate all operations via the more common JSON format.
 
 ### HTTP Verbs
 The supported verbs in the REST API are:
@@ -28,18 +28,14 @@ The supported verbs in the REST API are:
     </tr>
 </table>
 
-Many HTTP clients (including Java's <tt>HttpsUrlConnection</tt>) are not able to send request bodies over <tt>GET</tt>. Therefore whenever an operation documents a <tt>GET</tt> request body, it will accept both <tt>GET</tt> and <tt>POST</tt> requests.
-
-In addition, since the use of the HTTP <tt>PATCH</tt> method is not as widespread as it ought to be, Yamcs accepts both <tt>PUT</tt> or <tt>POST</tt> to be used instead. 
-
 ### Time
-All timestamps are returned as UTC and formatted according to ISO 8601. E.g.
+All timestamps are returned as UTC and formatted according to ISO 8601. For example:
     
     2015-08-26T08:08:40.724Z
     2015-08-26
     
 ### Namespaces
-Mission Database resources like parameters and containers are available under different namespaces. When an operation documents the use of <tt>/:namespace/:name</tt> in the URI, the namespace segment can be repeated for every subsystem in case of hierarchical XTCE names. For example, these resources evaluate to the same parameter resource:
+Mission Database entries like parameters and containers may be available under different namespaces. When an operation documents the use of <tt>/:namespace/:name</tt> in the URI, the namespace segment can be repeated for every subsystem in case of hierarchical XTCE names. For example, these resources evaluate to the same parameter resource:
 
     /api/mdb/simulator/parameters/MDB%3AOPS+Name/SIMULATOR_BatteryVoltage2
     /api/mdb/simulator/parameters/YSS/SIMULATOR/BatteryVoltage2
@@ -62,9 +58,9 @@ Clients of the REST API should check on whether the status code is between 200 a
 
 ### CORS
 
-Cross-origin Resource Sharing (CORS) allows access to the Yamcs REST API from a remotely hosted web page. This is the HTML5 way of bypassing the self-origin policy typically enforced by browsers. With CORS, the browser will issue a preflight request to Yamcs to verify that it allows ajax requests from the originating web page.
+Cross-origin Resource Sharing (CORS) allows access to the Yamcs REST API from a remotely hosted web page. This is the HTML5 way of bypassing the self-origin policy typically enforced by browsers. With CORS, the browser will issue a preflight request to Yamcs to verify that it allows browser requests from the originating web page.
 
-CORS is enabled by default on Yamcs Server, but this is configurable or limitable by your site administrator. Authorization headers can be forwarded from the originating web page to Yamcs, should the same authentication mechanism be employed. 
+CORS is off by default on Yamcs Server, but this is configurable by your site administrator.
 
 ### Protobuf
 
