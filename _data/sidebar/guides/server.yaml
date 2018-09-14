@@ -43,9 +43,10 @@
         - url: /docs/server/Artemis_Parameter_Data_Link/
         - url: /docs/server/Artemis_TM_Data_Link/
         - url: /docs/server/File_Polling_TM_Data_Link/
-        - url: /docs/server/Simulated_Parameter_Data_Link/
+        #- url: /docs/server/Simulated_Parameter_Data_Link/  # not in main RPM
         - url: /docs/server/TCP_TC_Data_Link/
         - url: /docs/server/TCP_TM_Data_Link/
+        - url: /docs/server/UDP_Parameter_Data_Link/
         - url: /docs/server/UDP_TM_Data_Link/
     - url: /docs/server/Event_Recorder/
     - url: /docs/server/Index_Server/
