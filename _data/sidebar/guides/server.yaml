@@ -29,6 +29,8 @@
   items:
     - url: /docs/server/Artemis_Server/
     - url: /docs/server/HTTP_Server/
+    - url: /docs/server/Process_Runner/
+    - url: /docs/server/TSE_Commander/
 
 - url: /docs/server/Instance_Services/
   items:
