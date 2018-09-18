@@ -20,6 +20,11 @@ The XML scenario file allows to describe the parameters sent, their generation t
     <th>Description</th>
   </tr>
   <tr>
+    <td class="code">stream</td>
+    <td class="code">string</td>
+    <td><b>Required.</b> The stream where data is emitted</td>
+  </tr>
+  <tr>
     <td class="code">simulationDataPath</td>
     <td class="code">string</td>
     <td><b>Required.</b> Path to the XML file containing further configuration</td>

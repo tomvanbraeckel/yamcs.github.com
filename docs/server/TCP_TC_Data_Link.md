@@ -19,6 +19,11 @@ Sends telecommands via TCP.
     <th>Description</th>
   </tr>
   <tr>
+    <td class="code">stream</td>
+    <td class="code">string</td>
+    <td><b>Required.</b> The stream where command instructions are received</td>
+  </tr>
+  <tr>
     <td class="code">host</td>
     <td class="code">string</td>
     <td><strong>Required.</strong> The host of the TC provider</td>

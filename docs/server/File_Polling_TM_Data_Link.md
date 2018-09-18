@@ -18,6 +18,11 @@ Reads data from files in a directory, importing it into the configured stream. T
     <th>Description</th>
   </tr>
   <tr>
+    <td class="code">stream</td>
+    <td class="code">string</td>
+    <td><b>Required.</b> The stream where data is emitted</td>
+  </tr>
+  <tr>
     <td class="code">incomingDir</td>
     <td class="code">string</td>
     <td>

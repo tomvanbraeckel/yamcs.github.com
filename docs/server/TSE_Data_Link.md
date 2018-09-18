@@ -31,11 +31,11 @@ Sends telecommands to a configured [TSE Commander](/docs/server/TSE_Commander/) 
   <tr>
     <td class="code">tcStream</td>
     <td class="code">string</td>
-    <td>Stream on which to receive command instructions. Default: <tt>tc_tse</tt></td>
+    <td>Stream where command instructions are received. Default: <tt>tc_tse</tt></td>
   </tr>
   <tr>
     <td class="code">ppStream</td>
     <td class="code">string</td>
-    <td>Stream on which to output received parameters. Default: <tt>pp_tse</tt></td>
+    <td>Stream where to emit received parameters. Default: <tt>pp_tse</tt></td>
   </tr>
 </table>

@@ -30,6 +30,11 @@ In case the TCP connection with the telemetry server cannot be opened or is brok
     <td><b>Required.</b> The TCP port to connect to</td>
   </tr>
   <tr>
+    <td class="code">stream</td>
+    <td class="code">string</td>
+    <td><b>Required.</b> The stream where data is emitted</td>
+  </tr>
+  <tr>
     <td class="code">packetInputStreamClassName</td>
     <td class="code">string</td>
     <td>

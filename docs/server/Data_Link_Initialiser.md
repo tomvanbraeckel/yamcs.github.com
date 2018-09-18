@@ -26,30 +26,30 @@ services:
 dataLinks:
   - name: tm_realtime
     class: org.yamcs.tctm.TcpTmDataLink
-    stream: tm_realtime
     args:
+      stream: tm_realtime
       host: localhost
       port: 10015
   - name: tm_dump
     class: org.yamcs.tctm.TcpTmDataLink
-    stream: tm_dump
     args:
+      stream: tm_dump
       host: localhost
       port: 10115
   - name: udp_realtime
     class: org.yamcs.tctm.UdpTmDataLink
-    stream: tm_realtime
     args: 
+      stream: tm_realtime
       port: 5900
       maxLength: 2048
   - name: tc_realtime
     class: org.yamcs.tctm.TcpTcDataLink
-    stream: tc_realtime
     args:
+      stream: tc_realtime
       host: localhost
       port: 10025
 ```
 
-Each link is defined in terms of an identifying name, a class (the java class instantiated by Yamcs to load the provider) and the name of the stream where the data will be injected. There is also a property <tt>enabledAtStartup</tt> which allows to enable (default) or disable the TM provider for connecting to the external data source at the server start-up.
+Each link is defined in terms of an identifying name and a class. There is also a property <tt>enabledAtStartup</tt> which allows to enable (default) or disable the TM provider for connecting to the external data source at the server start-up.
 
-Specific TM Data Links may support additional arbitrary configuration options via the <tt>args</tt> key.
+Specific data links may support additional arbitrary configuration options via the <tt>args</tt> key.

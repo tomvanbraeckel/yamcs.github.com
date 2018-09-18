@@ -19,6 +19,11 @@ Listens on a UDP port for datagrams containing Protobuf encoded messages. One da
     <th>Description</th>
   </tr>
   <tr>
+    <td class="code">stream</td>
+    <td class="code">string</td>
+    <td><b>Required.</b> The stream where data is emitted</td>
+  </tr>
+  <tr>
     <td class="code">port</td>
     <td class="code">integer</td>
     <td><b>Required.</b> The UDP port to listen on</td>
