@@ -31,13 +31,13 @@ services:
   </tr>
   <tr>
     <td class="code">command</td>
-    <td class="code">string</td>
-    <td><strong>Required. </strong> Command to run.</td>
+    <td class="code">string or string[]</td>
+    <td><strong>Required. </strong> Command (and optional arguments) to run.</td>
   </tr>
   <tr>
     <td class="code">directory</td>
     <td class="code">string</td>
-    <td>Directory where to run the command from. If unspecified, this defaults to the cwd of Yamcs.</td>
+    <td>Set the working directory of the started subprocess. If unspecified, this defaults to the cwd of Yamcs.</td>
   </tr>
   <tr>
     <td class="code">logLevel</td>

@@ -21,11 +21,34 @@ services:
 
 ### Configuration Options
 
-This service reads its configuration from a configuration file <tt>etc/tse.yaml</tt>. This file defines all the instruments that can be commanded.
+<table class="inline">
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td class="code">telnet</td>
+    <td class="code">map</td>
+    <td><strong>Required. </strong> Configure Telnet properties.<br>Example: <tt>{ port: 8023 }</tt></td>
+  </tr>
+  <tr>
+    <td class="code">tc</td>
+    <td class="code">map</td>
+    <td><strong>Required. </strong> Configure properties of the TC link.<br>Example: <tt>{ port: 8135 }</tt></td>
+  </tr>
+  <tr>
+    <td class="code">tm</td>
+    <td class="code">map</td>
+    <td><strong>Required. </strong> Configure properties of the TM link.<br>Example: <tt>{ host: localhost, port: 31002 }</tt></td>
+  </tr>
+</table>
+
+This service reads further configuration options from a file <tt>etc/tse.yaml</tt>. This file defines all the instruments that can be commanded.
 
 ### Telnet Interface
 
-For debugging purposes, this service also starts a telnet server that allows to directly relay text-based commands to the configured instruments. This bypasses the TM/TC processing chain. Access this interface with an interactive TCP client such as <tt>telnet</tt> or <tt>netcat</tt>.
+For debugging purposes, this service starts a telnet server that allows to directly relay text-based commands to the configured instruments. This bypasses the TM/TC processing chain. Access this interface with an interactive TCP client such as <tt>telnet</tt> or <tt>netcat</tt>.
 
 The server adds additional SCPI-like commands which allow to switch to any of the configured instruments in a single session. This is best explained via an example:
 

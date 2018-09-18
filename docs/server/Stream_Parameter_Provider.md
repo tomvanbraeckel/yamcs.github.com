@@ -31,8 +31,8 @@ realtime:
     <th>Description</th>
   </tr>
   <tr>
-    <td class="code">stream</td>
-    <td class="code">string</td>
-    <td><strong>Required.</strong> The stream to read.</td>
+    <td class="code">streams</td>
+    <td class="code">list of strings</td>
+    <td><strong>Required.</strong> The streams to read.</td>
   </tr>
 </table>
