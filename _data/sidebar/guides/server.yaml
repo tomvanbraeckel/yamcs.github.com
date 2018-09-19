@@ -16,6 +16,7 @@
     - url: /docs/server/Packet_Telemetry/
     - url: /docs/server/Algorithms/
     - url: /docs/server/Alarms/
+    #- url: /docs/server/Processor_Configuration/  # Needs improvement
 
 - url: /docs/server/Commanding/
 
