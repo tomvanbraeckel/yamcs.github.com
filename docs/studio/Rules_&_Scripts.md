@@ -92,5 +92,3 @@ The exact form that the **Output Value** column adopts depends on the type of th
 For more advanced dynamic runtime behaviour, we can write scripts (actually Rules are a thin layer on top of scripts). With scripts we can write arbitrary logic that can dynamically manipulate just about any combination of properties for a widget.
 
 Yamcs Studio supports two dynamic languages: JavaScript and Python. Both languages can be used to the same effect, and are available without any external dependencies. As of now, there is no advanced editor support bundled with Yamcs Studio though, so scripts are edited with a plain text editor.
-
-Documentation of the available functions is forthcoming until we stabilise our libraries. Until then, please have a look at the scripts in the sample projects to get an idea of the sort of manipulations that can be achieved.
