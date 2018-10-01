@@ -46,7 +46,8 @@
     - url: /docs/studio/Yamcs_Clients/
     - url: /docs/studio/Data_Links/
 
-- url: /docs/studio/Administration/
+- url: /docs/studio/Tuning/
   items:
     - url: /docs/studio/Command_Options/
     - url: /docs/studio/Capturing_Log_Output/
+    - url: /docs/studio/Preference_Defaults/

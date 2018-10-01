@@ -2,6 +2,6 @@
 layout: default
 sidebar: yes
 chapter: yes
-permalink: /docs/studio/Administration/
+permalink: /docs/studio/Tuning/
 ---
 

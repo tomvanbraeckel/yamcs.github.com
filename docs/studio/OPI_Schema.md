@@ -18,12 +18,12 @@ Save your changes. Then right-click your file and select **Use as OPI Schema**.
 
 ![OPI Schema](/assets/studio/mark-opi-schema.png){: .center-image }
 
-Notice your schema file now shows a small decorator in the **Explorer** view:
+Notice your schema file now shows a small decorator in the [Explorer](/docs/studio/Explorer/) view:
 
 ![Schema Decorator](/assets/studio/schema-decorator.png){: .center-image }
 
 Whenever you add a new LED to any display, it will now by red and big by default. The same principle can be applied to any other properties of any of the available widgets.
 
-A schema may contain multiple widgets, however if there are multiple widgets of the same type, only the first occurrence is considered. This is the widget that appears the highest in the **Outline** view.
+A schema may contain multiple widgets, however if there are multiple widgets of the same type, only the first occurrence is considered. This is the widget that appears the highest in the [Outline](/docs/studio/Outline/) view .
 
-Only one OPI Schema can be active at a time. To unset the active schema, Right-click it in the **Explorer** view and untick **Use as OPI Schema**. This will return Display Builder to its default behaviour.
+Only one OPI Schema can be active at a time. To unset the active schema, Right-click it in the  [Explorer](/docs/studio/Explorer/) view and untick **Use as OPI Schema**. This will return Display Builder to its default behaviour.
