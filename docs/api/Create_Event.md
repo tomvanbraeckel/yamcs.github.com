@@ -6,14 +6,9 @@ sidebar: yes
 
 Create an event for the given Yamcs instance:
 
-    POST /api/archive/:instance/events2/
+    POST /api/archive/:instance/events/
 
-<div class="hint">
-    This endpoint shall be renamed to <tt>/api/archive/:instance/events/</tt> in the near future.
-    That URL is currently still in use for an old version of the event creation API.
-</div>
-    
-  
+
 ### Parameters
 
 <table class="inline">
@@ -103,5 +98,7 @@ message CreateEventRequest {
   optional string message = 2;
   optional string severity = 3;
   optional string time = 4;
+  optional string source = 5;
+  optional int32 sequenceNumber = 6;
 }
 ```
