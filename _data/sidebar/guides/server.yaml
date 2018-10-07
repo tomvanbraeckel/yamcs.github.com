@@ -80,6 +80,17 @@
     - url: /docs/server/LDAP_AuthModule/
     - url: /docs/server/SPNEGO_AuthModule/
 
+- url: /docs/server/Programs/
+  items:
+    - url: /docs/server/yamcsadmin/
+      items:
+        - url: /docs/server/yamcsadmin_backup/
+        - url: /docs/server/yamcsadmin_confcheck/
+        - url: /docs/server/yamcsadmin_parchive/
+        - url: /docs/server/yamcsadmin_password-hash/
+        - url: /docs/server/yamcsadmin_rocksdb/
+        - url: /docs/server/yamcsadmin_xtcedb/
+
 - url: /docs/server/Web_Interface/
   items:
     - url: /docs/server/Monitor/
