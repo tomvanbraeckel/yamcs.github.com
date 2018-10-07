@@ -1,6 +1,6 @@
 - url: /docs/http/General/
   items:
-    - url: /docs/http/WebSocket_API/
+    - url: /docs/http/WebSocket/
     - url: /docs/http/Management_Updates/
 - url: /docs/http/Alarms/
   items:

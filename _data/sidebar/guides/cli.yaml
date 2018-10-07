@@ -1,0 +1,68 @@
+- url: /docs/cli/Overview/
+- url: /docs/cli/yamcs_algorithms/
+  items:
+    - url: /docs/cli/yamcs_algorithms_list/
+    - url: /docs/cli/yamcs_algorithms_describe/
+- url: /docs/cli/yamcs_clients/
+  items:
+    - url: /docs/cli/yamcs_clients_list/
+- url: /docs/cli/yamcs_commands/
+  items:
+    - url: /docs/cli/yamcs_commands_list/
+    - url: /docs/cli/yamcs_commands_describe/
+- url: /docs/cli/yamcs_config/
+  items:
+    - url: /docs/cli/yamcs_config_get/
+    - url: /docs/cli/yamcs_config_list/
+    - url: /docs/cli/yamcs_config_set/
+    - url: /docs/cli/yamcs_config_unset/
+- url: /docs/cli/yamcs_containers/
+  items:
+    - url: /docs/cli/yamcs_containers_list/
+    - url: /docs/cli/yamcs_containers_describe/
+- url: /docs/cli/yamcs_dbshell/
+- url: /docs/cli/yamcs_instances/
+  items:
+    - url: /docs/cli/yamcs_instances_list/
+    - url: /docs/cli/yamcs_instances_start/
+    - url: /docs/cli/yamcs_instances_stop/
+- url: /docs/cli/yamcs_links/
+  items:
+    - url: /docs/cli/yamcs_links_list/
+    - url: /docs/cli/yamcs_links_enable/
+    - url: /docs/cli/yamcs_links_disable/
+    - url: /docs/cli/yamcs_links_describe/
+- url: /docs/cli/yamcs_parameters/
+  items:
+    - url: /docs/cli/yamcs_parameters_list/
+    - url: /docs/cli/yamcs_parameters_describe/
+- url: /docs/cli/yamcs_processors/
+  items:
+    - url: /docs/cli/yamcs_processors_list/
+- url: /docs/cli/yamcs_services/
+  items:
+    - url: /docs/cli/yamcs_services_list/
+    - url: /docs/cli/yamcs_services_start/
+    - url: /docs/cli/yamcs_services_stop/
+- url: /docs/cli/yamcs_space-systems/
+  items:
+    - url: /docs/cli/yamcs_space-systems_list/
+    - url: /docs/cli/yamcs_space-systems_describe/
+- url: /docs/cli/yamcs_storage/
+  items:
+    - url: /docs/cli/yamcs_storage_ls/
+    - url: /docs/cli/yamcs_storage_mb/
+    - url: /docs/cli/yamcs_storage_rb/
+    - url: /docs/cli/yamcs_storage_cat/
+    - url: /docs/cli/yamcs_storage_cp/
+    - url: /docs/cli/yamcs_storage_mv/
+- url: /docs/cli/yamcs_streams/
+  items:
+    - url: /docs/cli/yamcs_streams_list/
+    - url: /docs/cli/yamcs_streams_describe/
+- url: /docs/cli/yamcs_tables/
+  items:
+    - url: /docs/cli/yamcs_tables_list/
+    - url: /docs/cli/yamcs_tables_describe/
+    - url: /docs/cli/yamcs_tables_dump/
+    - url: /docs/cli/yamcs_tables_load/

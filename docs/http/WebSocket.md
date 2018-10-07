@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /docs/http/WebSocket_API/
+permalink: /docs/http/WebSocket/
 sidebar: yes
 chapter: yes
 ---
