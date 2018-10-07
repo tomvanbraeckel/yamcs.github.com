@@ -37,6 +37,16 @@ Create an event for the given Yamcs instance:
     <td class="code">string</td>
     <td>Time associated with the event. Must be a date string in ISO 8601 format. If unspecified, this will default to the current mission time.</td>
   </tr>
+  <tr>
+    <td class="code">source</td>
+    <td class="code">string</td>
+    <td>Source of the event. Useful for grouping events in the archive. Default is <tt>User</tt>.</td>
+  </tr>
+  <tr>
+    <td class="code">sequence_number</td>
+    <td class="code">int</td>
+    <td>Sequence number of this event. This is primarily used to determine unicity of events coming from the same source. If not set Yamcs will automatically assign a sequential number as if every submitted event is unique.</td>
+  </tr>
 </table>
 
 

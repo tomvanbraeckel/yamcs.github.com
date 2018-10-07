@@ -32,6 +32,11 @@ Sample the history of values for the specified parameter:
         <td>Filter the upper bound of the parameter's generation time. Specify a date string in ISO 8601 format</td>
     </tr>
     <tr>
+        <td class="code">count</td>
+        <td class="code">int</td>
+        <td>Number of returned samples. Default: <tt>500</tt></td>
+    </tr>
+    <tr>
         <td class="code">order</td>
         <td class="code">string</td>
         <td>The order of the returned results. Can be either <tt>asc</tt> or <tt>desc</tt>. Default: <tt>asc</tt></td>
