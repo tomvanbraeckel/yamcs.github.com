@@ -1,0 +1,137 @@
+- url: /docs/http/REST_API/
+  items:
+    - url: /docs/http/General/
+    - url: /docs/http/Alarms/
+      items:
+        - url: /docs/http/List_Alarms/
+        - url: /docs/http/Edit_Alarm/
+    - url: /docs/http/Buckets/
+      items:
+         - url: /docs/http/Create_Bucket/
+         - url: /docs/http/List_Buckets/
+         - url: /docs/http/Delete_Bucket/
+         - url: /docs/http/Upload_Object/
+         - url: /docs/http/List_Objects/
+         - url: /docs/http/Get_Object/
+         - url: /docs/http/Delete_Object/
+    - url: /docs/http/Clients/
+      items:
+        - url: /docs/http/List_Clients/
+        - url: /docs/http/Edit_Client/
+    - url: /docs/http/Commanding/
+      items:
+        - url: /docs/http/Issue_Command/
+        - url: /docs/http/List_Commands/
+        - url: /docs/http/Download_Commands/
+        - url: /docs/http/List_Command_Queues/
+        - url: /docs/http/Get_Command_Queue/
+        - url: /docs/http/Edit_Command_Queue/
+        - url: /docs/http/List_Queued_Commands/
+        - url: /docs/http/Edit_Queued_Command/
+    - url: /docs/http/Events/
+      items:
+        - url: /docs/http/List_Events/
+        - url: /docs/http/Download_Events/
+        - url: /docs/http/Create_Event/
+    - url: /docs/http/Indexes/
+      items:
+        - url: /docs/http/Get_Packet_Index/
+        - url: /docs/http/Download_Packet_Index/
+        - url: /docs/http/Download_PP_Index/
+        - url: /docs/http/Download_Event_Index/
+        - url: /docs/http/Download_Command_Index/
+        - url: /docs/http/Download_Completeness_Index/
+        - url: /docs/http/Download_Bulk_Indexes/
+    - url: /docs/http/Instances/
+      items:
+        - url: /docs/http/List_Instances/
+        - url: /docs/http/Get_Instance_Detail/
+    - url: /docs/http/Links/
+      items:
+        - url: /docs/http/List_Links/
+        - url: /docs/http/Get_Link/
+        - url: /docs/http/Edit_Link/
+    - url: /docs/http/Mission_Database/
+      items:
+        - url: /docs/http/Get_MDB_Detail/
+        - url: /docs/http/List_Container_Info/
+        - url: /docs/http/Get_Container_Info/
+        - url: /docs/http/List_Parameter_Info/
+        - url: /docs/http/Get_Parameter_Info/
+        - url: /docs/http/List_Command_Info/
+        - url: /docs/http/Get_Command_Info/
+    - url: /docs/http/Packets/
+      items:
+        - url: /docs/http/List_Packets/
+        - url: /docs/http/Get_Packet/
+        - url: /docs/http/Download_Packets/
+    - url: /docs/http/Parameter_Archive/
+      items:
+         - url: /docs/http/Parameter_Archive_Rebuild/
+         - url: /docs/http/Delete_Partitions/
+    - url: /docs/http/Parameter_Values/
+      items:
+        - url: /docs/http/Get_Parameter_Value/
+        - url: /docs/http/Set_Parameter_Value/
+        - url: /docs/http/Get_Parameter_Samples/
+        - url: /docs/http/Get_Parameter_Ranges/
+        - url: /docs/http/List_Parameter_Data/
+        - url: /docs/http/Download_Parameter_Data/
+    - url: /docs/http/Processors/
+      items:
+        - url: /docs/http/List_Processors/
+        - url: /docs/http/Get_Processor_Info/
+        - url: /docs/http/Create_Processor/
+        - url: /docs/http/Edit_Processor/
+        - url: /docs/http/Delete_Processor/
+    - url: /docs/http/RocksDB/
+      items:
+         - url: /docs/http/RocksDB_List/
+         - url: /docs/http/RocksDB_Properties/
+#    - url: /docs/http/Simulation_Time/
+    - url: /docs/http/Services/
+      items:
+         - url: /docs/http/List_Services/
+         - url: /docs/http/Edit_Service/
+    - url: /docs/http/Streams/
+      items:
+        - url: /docs/http/List_Streams/
+        - url: /docs/http/Get_Stream_Info/
+    - url: /docs/http/Tables/
+      items:
+        - url: /docs/http/List_Tables/
+        - url: /docs/http/Get_Table_Info/
+        - url: /docs/http/List_Table_Data/
+        - url: /docs/http/Download_Table_Data/
+        - url: /docs/http/Load_Table_Data/
+    - url: /docs/http/Tags/
+      items:
+        - url: /docs/http/List_Tags/
+        - url: /docs/http/Get_Tag/
+        - url: /docs/http/Create_Tag/
+        - url: /docs/http/Edit_Tag/
+        - url: /docs/http/Delete_Tag/
+    - url: /docs/http/User/
+- url: /docs/http/WebSocket_API/
+  items:
+    - url: /docs/http/Alarm_Notices/
+    - url: /docs/http/Command_History_Updates/
+    - url: /docs/http/Command_Queues_Updates/
+    - url: /docs/http/Event_Updates/
+    - url: /docs/http/Link_Updates/
+    - url: /docs/http/Management_Updates/
+    - url: /docs/http/Packet_Updates/
+    - url: /docs/http/Parameter_Updates/
+    - url: /docs/http/Stream_Updates/
+
+- url: /docs/http/Proto_Files/
+  items:
+    - url: /docs/http/alarms.proto/
+    - url: /docs/http/archive.proto/
+    - url: /docs/http/commanding.proto/
+    - url: /docs/http/mdb.proto/
+    - url: /docs/http/pvalue.proto/
+    - url: /docs/http/rest.proto/
+    - url: /docs/http/web.proto/
+    - url: /docs/http/yamcs.proto/
+    - url: /docs/http/yamcsManagement.proto/

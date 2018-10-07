@@ -4,8 +4,8 @@
 
 
 
-  {% assign documents = "server,studio,tools,api" | split: ',' %}
-  {% assign titles = "x,Yamcs Server Manual,Yamcs Studio User Guide,Yamcs Client Tools Guide,Yamcs Server API" | split: ',' %}
+  {% assign documents = "server,studio,http,cli" | split: ',' %}
+  {% assign titles = "x,Yamcs Server Manual,Yamcs Studio User Guide,Yamcs HTTP API,Yamcs Command-Line Interface" | split: ',' %}
 
   {% for document in documents %}
       {% capture url %}/docs/{{ document }}/{% endcapture %}

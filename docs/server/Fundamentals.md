@@ -24,7 +24,7 @@ Typically there is a stream for realtime telemetry called <tt>tm_realtime</tt>, 
 Streams can be made 'visible' to the external word by two means:
 * Apache ActiveMQ Artemis wrappers. There are several services that can take data from streams and publish them to Artemis addresses. Unlike the Yamcs streams which are synchronous and lightweight, Artemis addresses are asynchronous and involve more overhead. Care has to be taken with Artemis for not filling up the memory if clients are slow to read messages from the queue.
 
-* WebSocket subscription. This can be done using the Server API documented separately at [https://www.yamcs.org/docs/api/](https://www.yamcs.org/docs/api/).
+* WebSocket subscription. This can be done using the HTTP API documented separately at [https://www.yamcs.org/docs/http/](https://www.yamcs.org/docs/http/).
 
 
 ### Processors
