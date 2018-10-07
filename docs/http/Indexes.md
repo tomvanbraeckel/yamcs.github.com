@@ -1,6 +1,6 @@
 ---
 layout: default
 permalink: /docs/http/Indexes/
-section: yes
+chapter: yes
 sidebar: yes
 ---

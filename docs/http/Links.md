@@ -1,6 +1,6 @@
 ---
 layout: default
 permalink: /docs/http/Links/
-section: yes
+chapter: yes
 sidebar: yes
 ---

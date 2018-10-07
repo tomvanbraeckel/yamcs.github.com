@@ -1,6 +1,6 @@
 ---
 layout: default
 permalink: /docs/http/Mission_Database/
-section: yes
+chapter: yes
 sidebar: yes
 ---

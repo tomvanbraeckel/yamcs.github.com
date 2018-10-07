@@ -1,6 +1,6 @@
 ---
 layout: default
 permalink: /docs/http/Parameter_Archive/
-section: yes
+chapter: yes
 sidebar: yes
 ---

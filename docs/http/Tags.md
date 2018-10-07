@@ -1,6 +1,6 @@
 ---
 layout: default
 permalink: /docs/http/Tags/
-section: yes
+chapter: yes
 sidebar: yes
 ---

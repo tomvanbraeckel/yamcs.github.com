@@ -1,6 +1,6 @@
 ---
 layout: default
 permalink: /docs/http/Services/
-section: yes
+chapter: yes
 sidebar: yes
 ---

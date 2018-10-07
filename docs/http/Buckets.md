@@ -1,7 +1,7 @@
 ---
 layout: default
 permalink: /docs/http/Buckets/
-section: yes
+chapter: yes
 sidebar: yes
 ---
 
