@@ -91,6 +91,7 @@
         - url: /docs/server/yamcsadmin_rocksdb/
         - url: /docs/server/yamcsadmin_xtcedb/
     - url: /docs/server/yamcsd/
+    - url: /docs/server/yamcs-server_init_script/
 
 - url: /docs/server/Web_Interface/
   items:
