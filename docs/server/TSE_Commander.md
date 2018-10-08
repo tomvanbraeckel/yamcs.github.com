@@ -61,10 +61,12 @@ RIGOL TECHNOLOGIES,DS2302A,DS2D155201382,00.03.00
 2018,09,14;21,33,41
 :tse:instrument tenma
 *IDN?
-TODO
+TENMA72-2540V2.0
+VOUT1?
+00.00
 :tse:output:mode hex
-:STATUS?
-TODO
+VOUT1?
+30302E3030
 ```
 
 In this session we interacted with two different instruments (named <tt>rigol</tt> and <tt>tenma</tt>). The commands starting with <tt>:tse</tt> were directly interpreted by the TSE Commander, everything else was sent to the selected instrument.

@@ -60,6 +60,7 @@
   items:
     - url: /docs/cli/yamcs_streams_list/
     - url: /docs/cli/yamcs_streams_describe/
+    - url: /docs/cli/yamcs_streams_subscribe/
 - url: /docs/cli/yamcs_tables/
   items:
     - url: /docs/cli/yamcs_tables_list/

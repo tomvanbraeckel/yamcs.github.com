@@ -21,5 +21,7 @@ sidebar: yes
         <dd>List streams</dd>
         <dt><a href="/docs/cli/yamcs_streams_describe/">describe</a></dt>
         <dd>Describe a stream</dd>
+        <dt><a href="/docs/cli/yamcs_streams_subscribe/">subscribe</a></dt>
+        <dd>Subscribe to a stream</dd>
     </dl>
 </div>
