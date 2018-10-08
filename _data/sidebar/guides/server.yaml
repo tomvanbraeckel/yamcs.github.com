@@ -90,6 +90,7 @@
         - url: /docs/server/yamcsadmin_password-hash/
         - url: /docs/server/yamcsadmin_rocksdb/
         - url: /docs/server/yamcsadmin_xtcedb/
+    - url: /docs/server/yamcsd/
 
 - url: /docs/server/Web_Interface/
   items:
