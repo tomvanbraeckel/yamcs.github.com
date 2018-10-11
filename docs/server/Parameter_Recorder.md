@@ -11,7 +11,7 @@ Records parameters. This service stores the data coming from one or more streams
 </div>
 
 ### Class Name
-[<tt>org.yamcs.archive.ParameterRecorder</tt>](https://javadoc.io/page/org.yamcs/yamcs-core/latest/org/yamcs/archive/ParameterRecorder.html)
+[<tt>org.yamcs.archive.ParameterRecorder</tt>](https://www.yamcs.org/yamcs/javadoc/org/yamcs/archive/ParameterRecorder.html)
 
 ### Configuration
 

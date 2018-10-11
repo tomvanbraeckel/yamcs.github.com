@@ -7,7 +7,7 @@ sidebar: yes
 Sends telecommands via TCP.
 
 ### Class Name
-[<tt>org.yamcs.tctm.TcpTcDataLink</tt>](https://javadoc.io/page/org.yamcs/yamcs-core/latest/org/yamcs/tctm/TcpTcDataLink.html)
+[<tt>org.yamcs.tctm.TcpTcDataLink</tt>](https://www.yamcs.org/yamcs/javadoc/org/yamcs/tctm/TcpTcDataLink.html)
 
 
 ### Configuration Options
@@ -51,7 +51,7 @@ Sends telecommands via TCP.
     <td class="code">commandPostprocessorClassName</td>
     <td class="code">string</td>
     <td>
-      Class name of a <a href="https://javadoc.io/page/org.yamcs/yamcs-core/latest/org/yamcs/tctm/CommandPostprocessor.html">CommandPostprocessor</a> implementation. Default is <a href="https://javadoc.io/page/org.yamcs/yamcs-core/latest/org/yamcs/tctm/IssCommandPostprocessor.html"><tt>org.yamcs.tctm.IssCommandPostProcessor</tt></a> which applies ISS conventions.
+      Class name of a <a href="https://www.yamcs.org/yamcs/javadoc/org/yamcs/tctm/CommandPostprocessor.html">CommandPostprocessor</a> implementation. Default is <a href="https://www.yamcs.org/yamcs/javadoc/org/yamcs/tctm/IssCommandPostprocessor.html"><tt>org.yamcs.tctm.IssCommandPostProcessor</tt></a> which applies ISS conventions.
     </td>
   </tr>
 

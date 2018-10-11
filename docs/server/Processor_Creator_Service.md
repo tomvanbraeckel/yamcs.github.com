@@ -7,7 +7,7 @@ sidebar: yes
 Creates persistent processors owned by the system user.
 
 ### Class Name
-[<tt>org.yamcs.ProcessorCreatorService</tt>](https://javadoc.io/page/org.yamcs/yamcs-core/latest/org/yamcs/ProcessorCreatorService.html)
+[<tt>org.yamcs.ProcessorCreatorService</tt>](https://www.yamcs.org/yamcs/javadoc/org/yamcs/ProcessorCreatorService.html)
 
 ### Configuration
 

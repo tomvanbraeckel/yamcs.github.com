@@ -7,7 +7,7 @@ sidebar: yes
 Publish <tt>tm</tt> stream data to an Artemis broker.
 
 ### Class Name
-[<tt>org.yamcs.artemis.ArtemisTmService</tt>](https://javadoc.io/page/org.yamcs/yamcs-artemis/latest/org/yamcs/artemis/ArtemisTmService.html)
+[<tt>org.yamcs.artemis.ArtemisTmService</tt>](https://www.yamcs.org/yamcs/javadoc/org/yamcs/artemis/ArtemisTmService.html)
 
 ### Configuration
 

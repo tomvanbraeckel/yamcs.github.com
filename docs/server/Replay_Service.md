@@ -7,7 +7,7 @@ sidebar: yes
 Provides telemetry packets and processed parameters from the archive.
 
 ### Class Name
-[<tt>org.yamcs.tctm.ReplayService</tt>](https://javadoc.io/page/org.yamcs/yamcs-core/latest/org/yamcs/tctm/ReplayService.html)
+[<tt>org.yamcs.tctm.ReplayService</tt>](https://www.yamcs.org/yamcs/javadoc/org/yamcs/tctm/ReplayService.html)
 
 ### Configuration
 
