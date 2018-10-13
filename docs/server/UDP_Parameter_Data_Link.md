@@ -4,11 +4,12 @@ permalink: /docs/server/UDP_Parameter_Data_Link/
 sidebar: yes
 ---
 
-Listens on a UDP port for datagrams containing Protobuf encoded messages. One datagram is equivalent to a message of type [<tt>org.yamcs.protobuf.Pvalue.ParameterData</tt>](https://www.yamcs.org/yamcs/javadoc/org/yamcs/protobuf/Pvalue.ParameterData.html)
-.
+Listens on a UDP port for datagrams containing Protobuf encoded messages. One datagram is equivalent to a message of
+type
+[<tt>org.yamcs.protobuf.Pvalue.ParameterData</tt>](https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/protobuf/Pvalue.ParameterData.html)
 
 ### Class Name
-[<tt>org.yamcs.tctm.UdpParameterDataLink</tt>](https://www.yamcs.org/yamcs/javadoc/org/yamcs/tctm/UdpParameterDataLink.html)
+[<tt>org.yamcs.tctm.UdpParameterDataLink</tt>](https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/tctm/UdpParameterDataLink.html)
 
 ### Configuration Options
 

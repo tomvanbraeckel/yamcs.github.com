@@ -18,7 +18,7 @@ The algorithm used to build the list of user privileges is as follows:
 </div>
 
 ### Class Name
-[<tt>org.yamcs.security.LdapAuthModule</tt>](https://www.yamcs.org/yamcs/javadoc/org/yamcs/security/LdapAuthModule.html)
+[<tt>org.yamcs.security.LdapAuthModule</tt>](https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/security/LdapAuthModule.html)
 
 ### Configuration Options
 

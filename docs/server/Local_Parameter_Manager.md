@@ -7,7 +7,7 @@ sidebar: yes
 Manages and provides local parameters.
 
 ### Class Name
-[<tt>org.yamcs.parameter.LocalParameterManager</tt>](https://www.yamcs.org/yamcs/javadoc/org/yamcs/parameter/LocalParameterManager.html)
+[<tt>org.yamcs.parameter.LocalParameterManager</tt>](https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/parameter/LocalParameterManager.html)
 
 ### Configuration
 

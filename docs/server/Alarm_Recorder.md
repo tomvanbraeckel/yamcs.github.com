@@ -7,7 +7,7 @@ sidebar: yes
 Records alarms. This service stores the data coming from one or more streams into a table <tt>alarms</tt>.
 
 ### Class Name
-[<tt>org.yamcs.archive.AlarmRecorder</tt>](https://www.yamcs.org/yamcs/javadoc/org/yamcs/archive/AlarmRecorder.html)
+[<tt>org.yamcs.archive.AlarmRecorder</tt>](https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/archive/AlarmRecorder.html)
 
 ### Configuration
 

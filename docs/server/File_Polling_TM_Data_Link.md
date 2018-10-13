@@ -7,7 +7,7 @@ sidebar: yes
 Reads data from files in a directory, importing it into the configured stream. The directory is polled regularly for new files and the files are imported one by one. After the import, the file is removed.
 
 ### Class Name
-[<tt>org.yamcs.tctm.FilePollingTmDataLink</tt>](https://www.yamcs.org/yamcs/javadoc/org/yamcs/tctm/FilePollingTmDataLink.html)
+[<tt>org.yamcs.tctm.FilePollingTmDataLink</tt>](https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/tctm/FilePollingTmDataLink.html)
 
 ### Configuration Options
 
@@ -43,7 +43,7 @@ Reads data from files in a directory, importing it into the configured stream. T
     <td class="code">packetPreprocessorClassName</td>
     <td class="code">string</td>
     <td>
-      Class name of a <a href="https://www.yamcs.org/yamcs/javadoc/org/yamcs/tctm/PacketPreprocessor.html">PacketPreprocessor</a> implementation. Default is <a href="https://www.yamcs.org/yamcs/javadoc/org/yamcs/tctm/IssPacketPreprocessor.html"><tt>org.yamcs.tctm.IssPacketPreprocessor</tt></a> which applies ISS conventions.
+      Class name of a <a href="https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/tctm/PacketPreprocessor.html">PacketPreprocessor</a> implementation. Default is <a href="https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/tctm/IssPacketPreprocessor.html"><tt>org.yamcs.tctm.IssPacketPreprocessor</tt></a> which applies ISS conventions.
     </td>
   </tr>
   <tr>

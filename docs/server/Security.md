@@ -139,7 +139,7 @@ The default set of AuthModules include:
 AuthModules have an order. When a login attempt is made, AuthModules are iterated a first time in this order. Each AuthModule is asked if it can authenticate with the provided credentials. The first matching AuthModule contributes the user principal. A second iteration is done to then contribute privileges to the identified user. During both iterations, AuthModules reserve the right to halt the global login process for any reason.
 
 <div class="hint">
-  A special note on <i>roles</i>. Yamcs itself does not require roles nor does it keep track of roles on the <a href="https://www.yamcs.org/yamcs/javadoc/org/yamcs/security/User.html"><tt>User</tt></a> object. Permissions are always verified via user privileges. Specific AuthModules may however introduce roles as a convenience to group sets of privileges together.
+  A special note on <i>roles</i>. Yamcs itself does not require roles nor does it keep track of roles on the <a href="https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/security/User.html"><tt>User</tt></a> object. Permissions are always verified via user privileges. Specific AuthModules may however introduce roles as a convenience to group sets of privileges together.
 </div>
 
 ### Configuration

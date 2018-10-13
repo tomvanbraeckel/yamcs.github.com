@@ -9,7 +9,7 @@ Provides packets received via plain TCP sockets.
 In case the TCP connection with the telemetry server cannot be opened or is broken, it retries to connect each 10 seconds.
 
 ### Class Name
-[<tt>org.yamcs.tctm.TcpTmDataLink</tt>](https://www.yamcs.org/yamcs/javadoc/org/yamcs/tctm/TcpTmDataLink.html)
+[<tt>org.yamcs.tctm.TcpTmDataLink</tt>](https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/tctm/TcpTmDataLink.html)
 
 ### Configuration Options
 
@@ -38,7 +38,7 @@ In case the TCP connection with the telemetry server cannot be opened or is brok
     <td class="code">packetInputStreamClassName</td>
     <td class="code">string</td>
     <td>
-      Class name of a <a href="https://www.yamcs.org/yamcs/javadoc/org/yamcs/tctm/PacketInputStream.html">PacketInputStream</a> implementation. Default is <a href="https://www.yamcs.org/yamcs/javadoc/org/yamcs/tctm/CcsdsPacketInputStream.html"><tt>org.yamcs.tctm.CcsdsPacketInputStream</tt></a> which reads CCSDS Packets.
+      Class name of a <a href="https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/tctm/PacketInputStream.html">PacketInputStream</a> implementation. Default is <a href="https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/tctm/CcsdsPacketInputStream.html"><tt>org.yamcs.tctm.CcsdsPacketInputStream</tt></a> which reads CCSDS Packets.
     </td>
   </tr>
   <tr>
@@ -52,7 +52,7 @@ In case the TCP connection with the telemetry server cannot be opened or is brok
     <td class="code">packetPreprocessorClassName</td>
     <td class="code">string</td>
     <td>
-      Class name of a <a href="https://www.yamcs.org/yamcs/javadoc/org/yamcs/tctm/PacketPreprocessor.html">PacketPreprocessor</a> implementation. Default is <a href="https://www.yamcs.org/yamcs/javadoc/org/yamcs/tctm/IssPacketPreprocessor.html"><tt>org.yamcs.tctm.IssPacketPreprocessor</tt></a> which applies ISS conventions.
+      Class name of a <a href="https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/tctm/PacketPreprocessor.html">PacketPreprocessor</a> implementation. Default is <a href="https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/tctm/IssPacketPreprocessor.html"><tt>org.yamcs.tctm.IssPacketPreprocessor</tt></a> which applies ISS conventions.
     </td>
   </tr>
   <tr>

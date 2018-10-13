@@ -7,7 +7,7 @@ sidebar: yes
 Runs an external process. If this process goes down, a new process instance is started.
 
 ### Class Name
-[<tt>org.yamcs.server.ProcessRunner</tt>](https://www.yamcs.org/yamcs/javadoc/org/yamcs/server/ProcessRunner.html)
+[<tt>org.yamcs.server.ProcessRunner</tt>](https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/server/ProcessRunner.html)
 
 ### Configuration
 

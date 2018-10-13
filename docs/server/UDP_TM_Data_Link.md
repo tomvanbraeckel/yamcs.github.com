@@ -7,7 +7,7 @@ sidebar: yes
 Listens on a UDP port for datagrams containing CCSDS packets. One datagram is equivalent to one packet.
 
 ### Class Name
-[<tt>org.yamcs.tctm.UdpTmDataLink</tt>](https://www.yamcs.org/yamcs/javadoc/org/yamcs/tctm/UdpTmDataLink.html)
+[<tt>org.yamcs.tctm.UdpTmDataLink</tt>](https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/tctm/UdpTmDataLink.html)
 
 ### Configuration Options
 
@@ -36,7 +36,7 @@ Listens on a UDP port for datagrams containing CCSDS packets. One datagram is eq
     <td class="code">packetPreprocessorClassName</td>
     <td class="code">string</td>
     <td>
-      Class name of a <a href="https://www.yamcs.org/yamcs/javadoc/org/yamcs/tctm/PacketPreprocessor.html">PacketPreprocessor</a> implementation. Default is <a href="https://www.yamcs.org/yamcs/javadoc/org/yamcs/tctm/IssPacketPreprocessor.html"><tt>org.yamcs.tctm.IssPacketPreprocessor</tt></a> which applies ISS conventions.
+      Class name of a <a href="https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/tctm/PacketPreprocessor.html">PacketPreprocessor</a> implementation. Default is <a href="https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/tctm/IssPacketPreprocessor.html"><tt>org.yamcs.tctm.IssPacketPreprocessor</tt></a> which applies ISS conventions.
     </td>
   </tr>
   <tr>

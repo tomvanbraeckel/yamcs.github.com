@@ -7,7 +7,7 @@ sidebar: yes
 The YAML AuthModule supports authentication and authorization of users via YAML files available directly in the <tt>etc/</tt> folder.
 
 ### Class Name
-[<tt>org.yamcs.security.YamlAuthModule</tt>](https://www.yamcs.org/yamcs/javadoc/org/yamcs/security/YamlAuthModule.html)
+[<tt>org.yamcs.security.YamlAuthModule</tt>](https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/security/YamlAuthModule.html)
 
 ### Configuration Options
 
@@ -23,7 +23,7 @@ The YAML AuthModule supports authentication and authorization of users via YAML 
     <td>
       Hasher class that can be used to verify if a password is correct without actually storing the password. When omitted, passwords in <tt>users.yaml</tt> should be defined in clear text. Possible values are:
       <ul>
-      <li><a href="https://www.yamcs.org/yamcs/javadoc/org/yamcs/security/PBKDF2PasswordHasher.html"><tt>org.yamcs.security.PBKDF2PasswordHasher</tt></a></li>
+      <li><a href="https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/security/PBKDF2PasswordHasher.html"><tt>org.yamcs.security.PBKDF2PasswordHasher</tt></a></li>
       </ul>
     </td>
   </tr>
