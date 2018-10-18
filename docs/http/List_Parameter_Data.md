@@ -47,6 +47,21 @@ List the history of values for the specified parameter:
         <td class="code">string</td>
         <td>The order of the returned results. Can be either <tt>asc</tt> or <tt>desc</tt>. Default: <tt>desc</tt></td>
     </tr>
+    <tr>
+        <td class="code">norealtime</td>
+        <td class="code">boolean</td>
+        <td>Disable loading of parameters from the parameter cache. Default: <tt>false</tt></td>
+    </tr>
+    <tr>
+        <td class="code">processor</td>
+        <td class="code">string</td>
+        <td>The name of the processor from which to use the parameter cache. Default: <tt>realtime</tt></td>
+    </tr>
+    <tr>
+        <td class="code">source</td>
+        <td class="code">string</td>
+        <td>Specifies how to retrieve the parameters. Either <tt>ParameterArchive</tt> or <tt>replay</tt>. If <tt>replay</tt> is specified, a replay processor will be created and data will be processed with the active XTCEDB. Note that this is much slower than receiving data from the ParameterArchive.<br>Default: <tt>ParameterArchive</tt></td>
+    </tr>
 </table>
 
 The <tt>pos</tt> and <tt>limit</tt> allow for pagination. Keep in mind that in-between two requests extra data may have been recorded, causing a shift of the results. This generic stateless operation does not provide a reliable mechanism against that, so address it by overlapping your <tt>pos</tt> parameter with rows of the previous query. In this example we overlap by 4:
