@@ -11,7 +11,7 @@ sidebar: yes
 
 <div class="man-title">SYNOPSIS</div>
 <div class="man-synopsis">
-    yamcs instances stop INSTANCE
+    yamcs instances stop INSTANCE ...
 </div>
 
 <div class="man-title">POSITIONAL ARGUMENTS</div>
