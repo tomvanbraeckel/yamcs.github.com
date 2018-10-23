@@ -12,7 +12,8 @@ Yamcs open-source software is available via different package formats. Visit the
 * [Yamcs Studio](/docs/studio/)
 -->
 
-### Yamcs Server
+{% assign latest = site.data.releases.yamcs.master[0] %}
+### Yamcs Server {{ latest.tag_name | replace: 'yamcs-','v' }}
 
 <table style="width: 100%;">
     <tr>
@@ -29,8 +30,8 @@ Yamcs open-source software is available via different package formats. Visit the
     </tr>
     <tr>
         <td style="text-align: center">
-            <a href="https://github.com/yamcs/yamcs/releases/download/yamcs-4.7.1/yamcs-4.7.1-1.10e296a2.noarch.rpm">.rpm</a>&nbsp;&nbsp;
-            <a href="https://github.com/yamcs/yamcs/releases/download/yamcs-4.7.1/yamcs-4.7.1.tar.gz">.tar.gz</a>
+            <a href="{{ latest.rpm.url }}">.rpm</a>&nbsp;&nbsp;
+            <a href="{{ latest.tgz.url }}">.tar.gz</a>
         </td>
         <td></td>
         <td></td>
@@ -39,11 +40,8 @@ Yamcs open-source software is available via different package formats. Visit the
 
 <p>&nbsp;</p>
 
-Past releases are available at GitHub: [https://github.com/yamcs/yamcs/releases](https://github.com/yamcs/yamcs/releases)
-
-<p>&nbsp;</p>
-
-### Yamcs Studio
+{% assign latest = site.data.releases['yamcs-studio'].master[0] %}
+### Yamcs Studio {{ latest.name }}
 
 <table style="width: 100%;">
     <tr>
@@ -58,15 +56,15 @@ Past releases are available at GitHub: [https://github.com/yamcs/yamcs/releases]
         </td>
     </tr>
     <tr>
-        <td style="text-align: center"><a href="https://github.com/yamcs/yamcs-studio/releases/download/v1.2.0/yamcs-studio-1.2.0-win32.win32.x86_64.zip">Windows x64</a></td>
+        <td style="text-align: center"><a href="{{ latest.windows.url }}">Windows x64</a></td>
         <td style="text-align: center">Linux x64</td>
-        <td style="text-align: center"><a href="https://github.com/yamcs/yamcs-studio/releases/download/v1.2.0/yamcs-studio-1.2.0-macosx.cocoa.x86_64.zip">macOS</a></td>
+        <td style="text-align: center"><a href="{{ latest.macos.url }}">macOS</a></td>
     </tr>
     <tr>
         <td></td>
         <td style="text-align: center">
             <a href="https://nexus.spaceapplications.com/repository/yamcs/rpm/stable/x86_64/yamcs-studio-1.2.0-1.x86_64.rpm">.rpm</a>&nbsp;&nbsp;
-            <a href="https://github.com/yamcs/yamcs-studio/releases/download/v1.2.0/yamcs-studio-1.2.0-linux.gtk.x86_64.tar.gz">.tar.gz</a>
+            <a href="{{ latest.linux.url }}">.tar.gz</a>
         </td>
         <td></td>
     </tr>
@@ -74,13 +72,9 @@ Past releases are available at GitHub: [https://github.com/yamcs/yamcs/releases]
 
 <p>&nbsp;</p>
 
-Past releases are available at GitHub: [https://github.com/yamcs/yamcs-studio/releases](https://github.com/yamcs/yamcs-studio/releases)
-
-<p>&nbsp;</p>
-
 ### Linux Signing Key
 
-Yamcs Linux packages are manually signed with GNU Privacy Guard (GPG).
+Yamcs RPM and Debian packages are signed with GNU Privacy Guard (GPG).
 
 * Download: [https://nexus.spaceapplications.com/repository/yamcs/keys/yamcs.asc](https://nexus.spaceapplications.com/repository/yamcs/keys/yamcs.asc)
 * Name: Yamcs Team

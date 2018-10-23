@@ -1,0 +1,24 @@
+[
+  {
+    "name": "v1.0.0",
+    "tag_name": "v1.0.0",
+    "created_at": "2018-03-26 06:28:55 UTC",
+    "published_at": "2018-03-26 06:39:32 UTC",
+    "body": "* Compatible with both Yamcs v3.4.x and v4.x\r\n* By default, Yamcs Studio wil now open in Editor mode (on a new or reset workspace)\r\n* The perspective switcher in the top-right toolbar was removed. Instead the Editor and the Runtime operate in distinct windows. Switching between the two types of windows can be done via a new button in the main toolbar.\r\n* The ‘Navigator’ tree view was replaced with an identical looking ‘Explorer’ view. This Explorer view has better default open actions. In a Runtime window, double clicking will open an OPI file in runtime mode. In an Editor window, double clicking will open an OPI file in editor mode.\r\n* Plot series max count was increased from 20 to 30.\r\n* An issue was fixed where plots with formulas would not show data when replaying past data.\r\n* The right-click “Show PV Info” popup was updated to show raw parameter values\r\n* The right-click “Show PV Info” popup will now update its content as new parameter values are incoming (note that for non-parameter PVs the data will not currently update).\r\n* The Probe popup (also available via the right-click menu of any PV widget) was refactored and now uses the MDB static alarm ranges (where applicable) to show a more meaningful meter.\r\n* Yamcs Studio will now attempt auto-reconnection when connection to Yamcs is lost.\r\n* Logging was refactored. Only INFO or worse are visible directly inside Yamcs Studio via the Console view. Debug logging (including stacktraces) are available via stdout/err.\r\n* PV autocomplete suggestions will now also include yamcs-‘local’ parameters, such as system parameters.\r\n* The event log uses different icons to be compatible with a recent change in Yamcs. The 3 old levels INFO, WARNING and ERROR are replaced by the new levels INFO, WATCH, WARNING, DISTRESS, CRITICAL and SEVERE. The ERROR state is matched to SEVERE.",
+    "linux": {
+      "name": "yamcs-studio-1.0.0-SNAPSHOT-linux.gtk.x86_64.tar.gz",
+      "size": 108844906,
+      "url": "https://github.com/yamcs/yamcs-studio/releases/download/v1.0.0-beta.30/yamcs-studio-1.0.0-SNAPSHOT-linux.gtk.x86_64.tar.gz"
+    },
+    "macos": {
+      "name": "yamcs-studio-1.0.0-SNAPSHOT-macosx.cocoa.x86_64.zip",
+      "size": 120445896,
+      "url": "https://github.com/yamcs/yamcs-studio/releases/download/v1.0.0-beta.30/yamcs-studio-1.0.0-SNAPSHOT-macosx.cocoa.x86_64.zip"
+    },
+    "windows": {
+      "name": "yamcs-studio-1.0.0-SNAPSHOT-win32.win32.x86_64.zip",
+      "size": 120168559,
+      "url": "https://github.com/yamcs/yamcs-studio/releases/download/v1.0.0-beta.30/yamcs-studio-1.0.0-SNAPSHOT-win32.win32.x86_64.zip"
+    }
+  }
+]
