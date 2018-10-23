@@ -14,7 +14,7 @@ Java 8 or higher must be installed. We currently recommend the latest [Oracle JD
 
 ### Install from Repository
 
-On Linux distributions you can install the open-source version of Yamcs Studio via a package repository. Configure the Yamcs repository appropriate to your distribution following the [repository instructions](/downloads/Yum_Repository/).
+On Linux distributions you can install the open-source version of Yamcs Studio via a package repository. Configure the Yamcs repository appropriate to your distribution following the [repository instructions](/downloads/).
 
 #### RPM (RHEL, Fedora, CentOS)
 
@@ -28,10 +28,12 @@ Install via <tt>dnf</tt> (or <tt>yum</tt> on older distributions)
     $ sudo zypper refresh
     $ sudo zypper install yamcs-studio
 
+<!--
 #### APT (Debian, Ubuntu)
 
     $ sudo apt-get update
     $ sudo apt-get install yamcs-studio
+-->
 
 
 ### Troubleshooting

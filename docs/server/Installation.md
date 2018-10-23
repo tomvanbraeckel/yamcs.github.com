@@ -39,7 +39,7 @@ Note that this will also remove the <tt>yamcs</tt> user.
 
 ### Install from Repository
 
-Yamcs Server packages are distributed via yum and APT. Configure the Yamcs repository appropriate to your distribution following the [repository instructions](/downloads/Yum_Repository/).
+Yamcs Server packages are distributed via yum and APT. Configure the Yamcs repository appropriate to your distribution following the [repository instructions](/downloads/).
 
 #### RPM (RHEL, Fedora, CentOS)
 
@@ -53,10 +53,12 @@ Install via <tt>dnf</tt> (or <tt>yum</tt> on older distributions)
     $ sudo zypper refresh
     $ sudo zypper install yamcs
 
+<!--
 #### APT (Debian, Ubuntu)
 
     $ sudo apt-get update
     $ sudo apt-get install yamcs
+-->
 
 ### File Layout
     
