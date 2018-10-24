@@ -9,13 +9,30 @@ def pull_repo_info(client, repo)
         release = {
             'name': r.name,
             'tag_name': r.tag_name,
+            'version': r.tag_name.gsub(/[^0-9.]+/, ''),
             'created_at': r.created_at,
             'published_at': r.published_at,
             'body': r.body,
         }
 
-        if not releases_by_target[r.target_commitish] then
-            releases_by_target[r.target_commitish] = []
+        target = 'master'
+
+        if repo == 'yamcs' then
+            if release[:version].start_with? '4.' then
+                target = 'master'
+            elsif release[:version].start_with? '3.' then
+                target = 'legacy'
+            else
+                next
+            end
+        end
+
+        if repo == 'yamcs-studio' and release[:version].start_with? '1.0.' then
+            target = 'legacy'
+        end
+
+        if not releases_by_target[target] then
+            releases_by_target[target] = []
         end
 
         for a in r.assets do
@@ -33,7 +50,7 @@ def pull_repo_info(client, repo)
             end
         end
     
-        releases_by_target[r.target_commitish].push(release)
+        releases_by_target[target].push(release)
     end
     
     Dir.mkdir("_data/releases/#{repo}") unless File.directory?("_data/releases/#{repo}")

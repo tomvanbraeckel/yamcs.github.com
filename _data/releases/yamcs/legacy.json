@@ -1,0 +1,184 @@
+[
+  {
+    "name": "Yamcs 3.4.6",
+    "tag_name": "yamcs-3.4.6",
+    "version": "3.4.6",
+    "created_at": "2018-10-01 12:34:29 UTC",
+    "published_at": "2018-10-01 13:30:17 UTC",
+    "body": "- added a workaround for a bug where the data is not garbage collected after a\r\nparameter archive refill happens\r\n",
+    "rpm": {
+      "name": "yamcs-3.4.6+r3021dbc6-10.noarch.rpm",
+      "size": 26140619,
+      "url": "https://github.com/yamcs/yamcs/releases/download/yamcs-3.4.6/yamcs-3.4.6%2Br3021dbc6-10.noarch.rpm"
+    }
+  },
+  {
+    "name": "Yamcs 3.4.5",
+    "tag_name": "yamcs-3.4.5",
+    "version": "3.4.5",
+    "created_at": "2018-07-11 13:02:04 UTC",
+    "published_at": "2018-07-11 13:14:13 UTC",
+    "body": "- fixed the replay service to always take into account the parameter group exclusion\r\noption implemented in 3.4.4\r\n",
+    "rpm": {
+      "name": "yamcs-3.4.5.r2c8ffebe-10.noarch.rpm",
+      "size": 26140670,
+      "url": "https://github.com/yamcs/yamcs/releases/download/yamcs-3.4.5/yamcs-3.4.5.r2c8ffebe-10.noarch.rpm"
+    }
+  },
+  {
+    "name": "Yamcs 3.4.4",
+    "tag_name": "yamcs-3.4.4",
+    "version": "3.4.4",
+    "created_at": "2018-05-09 08:27:15 UTC",
+    "published_at": "2018-05-09 08:33:17 UTC",
+    "body": "- added the possibility to exclude parameter groups from replays",
+    "rpm": {
+      "name": "yamcs-3.4.4.r1958cb93-10.noarch.rpm",
+      "size": 26141271,
+      "url": "https://github.com/yamcs/yamcs/releases/download/yamcs-3.4.4/yamcs-3.4.4.r1958cb93-10.noarch.rpm"
+    }
+  },
+  {
+    "name": "Yamcs 3.4.3",
+    "tag_name": "yamcs-3.4.3",
+    "version": "3.4.3",
+    "created_at": "2018-03-28 08:13:16 UTC",
+    "published_at": "2018-03-28 08:58:36 UTC",
+    "body": " - fixed the replay not starting at the correct time\r\n - change the serialized XTCEDB filename to limit its length (use SHA-1 of the old name)\r\n",
+    "rpm": {
+      "name": "yamcs-3.4.3.r2654bd2-10.noarch.rpm",
+      "size": 26073907,
+      "url": "https://github.com/yamcs/yamcs/releases/download/yamcs-3.4.3/yamcs-3.4.3.r2654bd2-10.noarch.rpm"
+    }
+  },
+  {
+    "name": "Yamcs 3.4.2",
+    "tag_name": "yamcs-3.4.2",
+    "version": "3.4.2",
+    "created_at": "2018-02-12 11:13:24 UTC",
+    "published_at": "2018-02-12 11:31:49 UTC",
+    "body": " - fixed Artemis data links\r\n - the parameter select dialog from the Archive Browser will show now also parameters that are not part of containers\r\n",
+    "rpm": {
+      "name": "yamcs-3.4.2.rc6cbdf6-10.noarch.rpm",
+      "size": 26072949,
+      "url": "https://github.com/yamcs/yamcs/releases/download/yamcs-3.4.2/yamcs-3.4.2.rc6cbdf6-10.noarch.rpm"
+    }
+  },
+  {
+    "name": "Yamcs 3.4.0",
+    "tag_name": "yamcs-3.4.0",
+    "version": "3.4.0",
+    "created_at": "2017-12-06 14:02:24 UTC",
+    "published_at": "2017-12-06 15:31:10 UTC",
+    "body": "- moved artemis into a separate source project which yamcs-core does not depend on. \r\n  Allow to connect to an external Artemis server by specifying artemisUrl: \"tcp://...\" into yamcs.<instance>.yaml or yamcs.yaml\r\n- added the possibility to restart instances and send information about current connected instance/processor via websocket\r\n- added command history cascading via Artemis\r\n- TcpTcDataLink: added an option to limit the rate of commands sent\r\n- make an rpm for yamcs-simulation which can be used together with the yamcs rpm to get a yamcs sistem runing.",
+    "rpm": {
+      "name": "yamcs-3.4.0.r3d069bc-10.noarch.rpm",
+      "size": 26069469,
+      "url": "https://github.com/yamcs/yamcs/releases/download/yamcs-3.4.0/yamcs-3.4.0.r3d069bc-10.noarch.rpm"
+    }
+  },
+  {
+    "name": "Yamcs 3.3.1",
+    "tag_name": "yamcs-3.3.1",
+    "version": "3.3.1",
+    "created_at": "2017-11-13 17:26:01 UTC",
+    "published_at": "2017-11-13 17:40:18 UTC",
+    "body": "- Moved the MulticastTmDataLink out of the yamcs-core (into yamcs-dass) because it's DaSS specific\r\n- Added a new UdpTmDataLink to replace the removed multiacst functionality. Contrary to the multicast service, the UDP one receives packets as CCSDS packets without any extra header\r\n",
+    "rpm": {
+      "name": "yamcs-3.3.1.rad90800-10.noarch.rpm",
+      "size": 26031571,
+      "url": "https://github.com/yamcs/yamcs/releases/download/yamcs-3.3.1/yamcs-3.3.1.rad90800-10.noarch.rpm"
+    }
+  },
+  {
+    "name": "Yamcs 3.3.0",
+    "tag_name": "yamcs-3.3.0",
+    "version": "3.3.0",
+    "created_at": "2017-10-24 03:56:20 UTC",
+    "published_at": "2017-10-24 06:01:21 UTC",
+    "body": "- Support index requests with request parameters encoded in the HTTP request body in order to allow a large number of packets to be specified (otherwise, the request would exceed maximum URI size).\r\n- Allow alias parameter name  references in the MDB SpreadSheets (including in the Alarm sheet which didn't allow any reference at all)\r\n- Fixed the reading of ranges (inclusive vs exclusive) from XTCE XML files\r\n- Added two options to websocket parameter subscription: \r\n  - send an update when parameters are expiring (by default false)\r\n  - send the first value from cache if available (by default true)\r\n- Change the expirationTime (absolute time) to expireMillis (relative time) in the ParameterValue.\r\n- Implemented parameter expiration in the USS web displays\r\n- Allow to specify custom decoders to be used in container(packet) processing\r\n- Added binary data encoding with leading size specified (similar to string)\r\n- Changed the spreadsheet to make clearer the difference between raw value, encoding (how to decode the raw value from the binary) and engineering value (raw value passed through a calibration function)\r\n- For standalone parameters (i.e. not extracted from XTCE packets) coming without an engineering value, \r\n  calibrate (raw->eng value) them inside the processor rather than before being injected in the stream.\r\n  This means the parameters are stored in the stream archive also in the initial form (could be raw+eng, only raw or only eng) and they are calibrated (using the current MDB) for each replay\r\n  Of course ParameterArchive will store them calibrated.\r\n- Added a command \"yamcs confcheck\" to check a complete yamcs configuration by loading the services without starting them\r\n  \r\n",
+    "rpm": {
+      "name": "yamcs-3.3.0.r227c192-10.noarch.rpm",
+      "size": 26032313,
+      "url": "https://github.com/yamcs/yamcs/releases/download/yamcs-3.3.0/yamcs-3.3.0.r227c192-10.noarch.rpm"
+    }
+  },
+  {
+    "name": "Yamcs 3.2.2",
+    "tag_name": "yamcs-3.2.2",
+    "version": "3.2.2",
+    "created_at": "2017-05-17 09:10:41 UTC",
+    "published_at": "2017-05-17 09:21:56 UTC",
+    "body": "- Fixed tag handling in Yamcs Monitor/Archive Browser",
+    "rpm": {
+      "name": "yamcs-3.2.2.re915395-10.noarch.rpm",
+      "size": 25978527,
+      "url": "https://github.com/yamcs/yamcs/releases/download/yamcs-3.2.2/yamcs-3.2.2.re915395-10.noarch.rpm"
+    }
+  },
+  {
+    "name": "Yamcs 3.2.1",
+    "tag_name": "yamcs-3.2.1",
+    "version": "3.2.1",
+    "created_at": "2017-05-15 16:12:36 UTC",
+    "published_at": "2017-05-15 16:27:53 UTC",
+    "body": "- Added an option to \"yamcs rocksdb compact\"  to specify the target file size and changed the default size from 64MB to 256MB\r\n- Java expressions can be used for raw->engineering value calibration (in addition to polynomial and spline). This allow to use mathematical expressions such as logarithms and trigonometric functions.\r\n- fixed seek in replays\r\n- Fix in Yamcs Monitor: remove closed processors from the list\r\n- RocksDB: set by default the table block cache to 8MB (previously it was disabled)\r\n",
+    "rpm": {
+      "name": "yamcs-3.2.1.r4429eba-10.noarch.rpm",
+      "size": 25979620,
+      "url": "https://github.com/yamcs/yamcs/releases/download/yamcs-3.2.1/yamcs-3.2.1.r4429eba-10.noarch.rpm"
+    }
+  },
+  {
+    "name": "Yamcs 3.2.0",
+    "tag_name": "yamcs-3.2.0",
+    "version": "3.2.0",
+    "created_at": "2017-04-18 13:57:11 UTC",
+    "published_at": "2017-04-18 14:29:36 UTC",
+    "body": "- Improved the yamcs command line with several new sub-commands (xtcedb, parchive)\r\n- Removed Artemis based replays and management (control processors)\r\n- Added a new yatch(table/stream) data type PARAMETER_VALUE to replace PROTOBUF(ParameterValue) for more flexibility\r\n",
+    "rpm": {
+      "name": "yamcs-3.2.0.ra3488ca-10.noarch.rpm",
+      "size": 25977114,
+      "url": "https://github.com/yamcs/yamcs/releases/download/yamcs-3.2.0/yamcs-3.2.0.ra3488ca-10.noarch.rpm"
+    }
+  },
+  {
+    "name": "Yamcs 3.1.1",
+    "tag_name": "yamcs-3.1.1",
+    "version": "3.1.1",
+    "created_at": "2017-03-14 23:20:20 UTC",
+    "published_at": "2017-03-14 23:25:17 UTC",
+    "body": "- fixed a bug in the RestClient causing the Swing client tools (Yamcs Monitor &co) to NPE when doing File -> Connect to Yamcs (connection by specifying the http url in the command line still worked)",
+    "rpm": {
+      "name": "yamcs-3.1.1.r72031a1-10.noarch.rpm",
+      "size": 25853684,
+      "url": "https://github.com/yamcs/yamcs/releases/download/yamcs-3.1.1/yamcs-3.1.1.r72031a1-10.noarch.rpm"
+    }
+  },
+  {
+    "name": "Yamcs 3.1.0",
+    "tag_name": "yamcs-3.1.0",
+    "version": "3.1.0",
+    "created_at": "2017-03-13 21:22:44 UTC",
+    "published_at": "2017-03-14 13:35:20 UTC",
+    "body": "Changelog\r\n- MDB: allow parameters without raw types if they are not part of a container\r\n- REST Api: add option to get the details of parameters in 'list parameter'\r\n- Ease extension of the FilePollingTmDatalink and TmFileReader.\r\n- if processor -> cacheall is disabled, retrieve at least all parameters that have alarms associated\r\n- allow algorithm manager to be usable in replays\r\n- Improved XTCE XML parsing support:\r\n      - read alarms\r\n      - read string parameters\r\n      - read multiple space systems    \r\n- Removed the name from the DataEncoding classes (in XTCE DataEncodings are not named)    \r\n- allow to remove a parameter from the XtceDB (to be used in a controlled way only)\r\n- Changed the order of starting the services:\r\n    1. All global services are created\r\n    2. All instance services are created\r\n    3. All global services are started\r\n    4. All instance services are started\r\n    \r\n    Used to be 1,3,(2,4)+ - and this makes for example the HttpServer to be started before the instances are created and some methods (like subscribe event,time,etc) will fail at first because the processor is not available.\r\n- updated to RocksDB 5.1.2",
+    "rpm": {
+      "name": "yamcs-3.1.0.rfffdba3-10.noarch.rpm",
+      "size": 25853547,
+      "url": "https://github.com/yamcs/yamcs/releases/download/yamcs-3.1.0/yamcs-3.1.0.rfffdba3-10.noarch.rpm"
+    }
+  },
+  {
+    "name": "Yamcs 3.0.0",
+    "tag_name": "yamcs-3.0.0",
+    "version": "3.0.0",
+    "created_at": "2017-01-12 12:42:35 UTC",
+    "published_at": "2017-01-12 13:07:01 UTC",
+    "body": "This is the first non-zero (0.x.y) release of Yamcs after almost 10 years of development and 4 years after making it open-source.\nWe call it 3.0 instead of 1.0 because internally at Space Applications we have already defined Yamcs 1 and 2 for the versions used in actual Control Centres.\n\nChangelog \n- there is no difference between version 3.0 and 0.30.0 except the version number.\n",
+    "rpm": {
+      "name": "yamcs-3.0.0.r5fcc6ce-10.noarch.rpm",
+      "size": 25782132,
+      "url": "https://github.com/yamcs/yamcs/releases/download/yamcs-3.0.0/yamcs-3.0.0.r5fcc6ce-10.noarch.rpm"
+    }
+  }
+]

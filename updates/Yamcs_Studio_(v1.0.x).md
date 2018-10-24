@@ -1,11 +1,15 @@
 ---
 layout: default
-permalink: /updates/Yamcs_Studio/
+permalink: /updates/Yamcs_Studio_(v1.0.x)/
 sidebar: yes
-title: Yamcs Studio Updates
+title: Yamcs Studio Updates (v1.0.x)
 ---
 
-{% for release in site.data.releases['yamcs-studio'].master limit:20 %}
+<div class="hint">
+  v1.0.x releases should only be used to run against legacy versions of Yamcs Server (v3.x.x).
+</div>
+
+{% for release in site.data.releases['yamcs-studio'].legacy limit:20 %}
   <h2>
     Yamcs Studio {{ release.version }}<span style="font-size: 10pt">{% if release.windows %}&nbsp;&nbsp;[<a href="{{ release.windows.url }}">Windows x64</a>]{% endif %}{% if release.linux %}&nbsp;&nbsp;[<a href="{{ release.linux.url }}">Linux x64</a>]{% endif %}{% if release.linux %}&nbsp;&nbsp;[<a href="{{ release.macos.url }}">macOS</a>]{% endif %}</span>
     <span style="font-size: small; float: right">{{ release.published_at | date: "%b %d, %y" }}</span>
