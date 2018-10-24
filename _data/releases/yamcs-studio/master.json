@@ -4,7 +4,7 @@
     "tag_name": "v1.2.0",
     "created_at": "2018-10-01 09:15:43 UTC",
     "published_at": "2018-10-01 15:28:01 UTC",
-    "body": "### Features\r\n* The looks of the Event Log can be changed using custom rules\r\n* An OPI file can be marked as the active 'schema'. Properties of this schema's widgets become defaults while editing other displays.\r\n* Named OPI fonts/colors are now stored to user preferences. The initial list of named colors is less opinionated. Liberation Sans is the new default font.\r\n* Yamcs Studio no longer auto-creates an example project. Instead examples can be manually added to your workspace via `File > New > Example...`\r\n* Replay options have been extended to support range limiting, step-by-step replay and arbitrary speed factors.\r\n* Application logs are now automatically persisted to `~/.config/yamcs-studio/logs` (rotated)\r\n* Column changes in Command History and Event Log are saved to user preferences.\r\n* When opening Yamcs Studio, the last used workspace is reopened.\r\n* The Links view now indicates IN and OUT data counters in different columns, as introduced in Yamcs v4.7.\r\n\r\n### Bug fixes\r\n* Fix importPackage support in Action scripts\r\n",
+    "body": "* New\r\n  * The looks of the Event Log can be changed using custom rules\r\n  * An OPI file can be marked as the active 'schema'. Properties of this schema's widgets become defaults while editing other displays.\r\n  * Named OPI fonts/colors are now stored to user preferences. The initial list of named colors is less opinionated. Liberation Sans is the new default font.\r\n  * Yamcs Studio no longer auto-creates an example project. Instead examples can be manually added to your workspace via `File > New > Example...`\r\n  * Replay options have been extended to support range limiting, step-by-step replay and arbitrary speed factors.\r\n  * Application logs are now automatically persisted to `~/.config/yamcs-studio/logs` (rotated)\r\n  * Column changes in Command History and Event Log are saved to user preferences.\r\n  * When opening Yamcs Studio, the last used workspace is reopened.\r\n  * The Links view now indicates IN and OUT data counters in different columns, as introduced in Yamcs v4.7.\r\n\r\n* Bug fixes\r\n  * Fix importPackage support in Action scripts\r\n",
     "linux": {
       "name": "yamcs-studio-1.2.0-linux.gtk.x86_64.tar.gz",
       "size": 105157028,
@@ -22,11 +22,11 @@
     }
   },
   {
-    "name": "v1.1.0 (Yamcs v4)",
+    "name": "v1.1.0 (for Yamcs v4)",
     "tag_name": "v1.1.0",
     "created_at": "2018-07-20 14:52:55 UTC",
     "published_at": "2018-07-20 15:12:04 UTC",
-    "body": "### Features\r\n* Parameter with datasource EXTERNAL1-3 support writes\r\n* Boolean widgets of type Enum compare string value of On/Off State property to determine state\r\n\r\n### Bug fixes\r\n* Fix issue with wrong workspace selection\r\n* Fixes automatic opening of Displays to always open in Display Runner window\r\n* Loads parameters over multiple requests for large MDBs\r\n",
+    "body": "* New\r\n  * Parameter with datasource EXTERNAL1-3 support writes\r\n  * Boolean widgets of type Enum compare string value of On/Off State property to determine state\r\n\r\n* Bug fixes\r\n  * Fix issue with wrong workspace selection\r\n  * Fixes automatic opening of Displays to always open in Display Runner window\r\n  * Loads parameters over multiple requests for large MDBs\r\n",
     "linux": {
       "name": "yamcs-studio-1.1.0-linux.gtk.x86_64.tar.gz",
       "size": 103955619,
@@ -48,7 +48,7 @@
     "tag_name": "v1.0.3",
     "created_at": "2018-06-26 05:35:16 UTC",
     "published_at": "2018-06-26 05:57:10 UTC",
-    "body": "### Features\r\n* Add support for Yamcs `timestamp` datatype\r\n* #54 Add static entries in Window menu for directly opening Display Builder or Display Runner\r\n* Use qualified names in command tree\r\n* Use nashorn instead of rhino for JavaScript execution (under review)\r\n* Improved consistency in the formatting of timestamps\r\n\r\n### Bug fixes\r\n* Fixes an issue with writing to Yamcs local parameters\r\n* Print error causes directly in studio log (no stacktrace)\r\n* Fix issue where a runner window could end up being duplicated\r\n* Fix issue with assigning argument of parent command containers\r\n* By default, hide default command arguments",
+    "body": "* New\r\n  * Add support for Yamcs `timestamp` datatype\r\n  * #54 Add static entries in Window menu for directly opening Display Builder or Display Runner\r\n  * Use qualified names in command tree\r\n  * Use nashorn instead of rhino for JavaScript execution (under review)\r\n  * Improved consistency in the formatting of timestamps\r\n\r\n* Bug fixes\r\n  * Fixes an issue with writing to Yamcs local parameters\r\n  * Print error causes directly in studio log (no stacktrace)\r\n  * Fix issue where a runner window could end up being duplicated\r\n  * Fix issue with assigning argument of parent command containers\r\n  * By default, hide default command arguments",
     "linux": {
       "name": "yamcs-studio-1.0.3-linux.gtk.x86_64.tar.gz",
       "size": 101619355,
@@ -116,129 +116,19 @@
     "published_at": "2018-03-26 06:39:32 UTC",
     "body": "* Compatible with both Yamcs v3.4.x and v4.x\r\n* By default, Yamcs Studio wil now open in Editor mode (on a new or reset workspace)\r\n* The perspective switcher in the top-right toolbar was removed. Instead the Editor and the Runtime operate in distinct windows. Switching between the two types of windows can be done via a new button in the main toolbar.\r\n* The ‘Navigator’ tree view was replaced with an identical looking ‘Explorer’ view. This Explorer view has better default open actions. In a Runtime window, double clicking will open an OPI file in runtime mode. In an Editor window, double clicking will open an OPI file in editor mode.\r\n* Plot series max count was increased from 20 to 30.\r\n* An issue was fixed where plots with formulas would not show data when replaying past data.\r\n* The right-click “Show PV Info” popup was updated to show raw parameter values\r\n* The right-click “Show PV Info” popup will now update its content as new parameter values are incoming (note that for non-parameter PVs the data will not currently update).\r\n* The Probe popup (also available via the right-click menu of any PV widget) was refactored and now uses the MDB static alarm ranges (where applicable) to show a more meaningful meter.\r\n* Yamcs Studio will now attempt auto-reconnection when connection to Yamcs is lost.\r\n* Logging was refactored. Only INFO or worse are visible directly inside Yamcs Studio via the Console view. Debug logging (including stacktraces) are available via stdout/err.\r\n* PV autocomplete suggestions will now also include yamcs-‘local’ parameters, such as system parameters.\r\n* The event log uses different icons to be compatible with a recent change in Yamcs. The 3 old levels INFO, WARNING and ERROR are replaced by the new levels INFO, WATCH, WARNING, DISTRESS, CRITICAL and SEVERE. The ERROR state is matched to SEVERE.",
     "linux": {
-      "name": "yamcs-studio-1.0.0-SNAPSHOT-linux.gtk.x86_64.tar.gz",
-      "size": 108844906,
-      "url": "https://github.com/yamcs/yamcs-studio/releases/download/v1.0.0-beta.30/yamcs-studio-1.0.0-SNAPSHOT-linux.gtk.x86_64.tar.gz"
+      "name": "yamcs-studio-1.0.0-linux.gtk.x86_64.tar.gz",
+      "size": 101222879,
+      "url": "https://github.com/yamcs/yamcs-studio/releases/download/v1.0.0/yamcs-studio-1.0.0-linux.gtk.x86_64.tar.gz"
     },
     "macos": {
-      "name": "yamcs-studio-1.0.0-SNAPSHOT-macosx.cocoa.x86_64.zip",
-      "size": 120445896,
-      "url": "https://github.com/yamcs/yamcs-studio/releases/download/v1.0.0-beta.30/yamcs-studio-1.0.0-SNAPSHOT-macosx.cocoa.x86_64.zip"
+      "name": "yamcs-studio-1.0.0-macosx.cocoa.x86_64.zip",
+      "size": 113103654,
+      "url": "https://github.com/yamcs/yamcs-studio/releases/download/v1.0.0/yamcs-studio-1.0.0-macosx.cocoa.x86_64.zip"
     },
     "windows": {
-      "name": "yamcs-studio-1.0.0-SNAPSHOT-win32.win32.x86_64.zip",
-      "size": 120168559,
-      "url": "https://github.com/yamcs/yamcs-studio/releases/download/v1.0.0-beta.30/yamcs-studio-1.0.0-SNAPSHOT-win32.win32.x86_64.zip"
-    }
-  },
-  {
-    "name": "v1.0.0",
-    "tag_name": "v1.0.0",
-    "created_at": "2018-03-26 06:28:55 UTC",
-    "published_at": "2018-03-26 06:39:32 UTC",
-    "body": "* Compatible with both Yamcs v3.4.x and v4.x\r\n* By default, Yamcs Studio wil now open in Editor mode (on a new or reset workspace)\r\n* The perspective switcher in the top-right toolbar was removed. Instead the Editor and the Runtime operate in distinct windows. Switching between the two types of windows can be done via a new button in the main toolbar.\r\n* The ‘Navigator’ tree view was replaced with an identical looking ‘Explorer’ view. This Explorer view has better default open actions. In a Runtime window, double clicking will open an OPI file in runtime mode. In an Editor window, double clicking will open an OPI file in editor mode.\r\n* Plot series max count was increased from 20 to 30.\r\n* An issue was fixed where plots with formulas would not show data when replaying past data.\r\n* The right-click “Show PV Info” popup was updated to show raw parameter values\r\n* The right-click “Show PV Info” popup will now update its content as new parameter values are incoming (note that for non-parameter PVs the data will not currently update).\r\n* The Probe popup (also available via the right-click menu of any PV widget) was refactored and now uses the MDB static alarm ranges (where applicable) to show a more meaningful meter.\r\n* Yamcs Studio will now attempt auto-reconnection when connection to Yamcs is lost.\r\n* Logging was refactored. Only INFO or worse are visible directly inside Yamcs Studio via the Console view. Debug logging (including stacktraces) are available via stdout/err.\r\n* PV autocomplete suggestions will now also include yamcs-‘local’ parameters, such as system parameters.\r\n* The event log uses different icons to be compatible with a recent change in Yamcs. The 3 old levels INFO, WARNING and ERROR are replaced by the new levels INFO, WATCH, WARNING, DISTRESS, CRITICAL and SEVERE. The ERROR state is matched to SEVERE.",
-    "linux": {
-      "name": "yamcs-studio-1.0.0-SNAPSHOT-linux.gtk.x86_64.tar.gz",
-      "size": 108844906,
-      "url": "https://github.com/yamcs/yamcs-studio/releases/download/v1.0.0-beta.30/yamcs-studio-1.0.0-SNAPSHOT-linux.gtk.x86_64.tar.gz"
-    },
-    "macos": {
-      "name": "yamcs-studio-1.0.0-SNAPSHOT-macosx.cocoa.x86_64.zip",
-      "size": 120445896,
-      "url": "https://github.com/yamcs/yamcs-studio/releases/download/v1.0.0-beta.30/yamcs-studio-1.0.0-SNAPSHOT-macosx.cocoa.x86_64.zip"
-    },
-    "windows": {
-      "name": "yamcs-studio-1.0.0-SNAPSHOT-win32.win32.x86_64.zip",
-      "size": 120168559,
-      "url": "https://github.com/yamcs/yamcs-studio/releases/download/v1.0.0-beta.30/yamcs-studio-1.0.0-SNAPSHOT-win32.win32.x86_64.zip"
-    }
-  },
-  {
-    "name": "v1.0.0",
-    "tag_name": "v1.0.0",
-    "created_at": "2018-03-26 06:28:55 UTC",
-    "published_at": "2018-03-26 06:39:32 UTC",
-    "body": "* Compatible with both Yamcs v3.4.x and v4.x\r\n* By default, Yamcs Studio wil now open in Editor mode (on a new or reset workspace)\r\n* The perspective switcher in the top-right toolbar was removed. Instead the Editor and the Runtime operate in distinct windows. Switching between the two types of windows can be done via a new button in the main toolbar.\r\n* The ‘Navigator’ tree view was replaced with an identical looking ‘Explorer’ view. This Explorer view has better default open actions. In a Runtime window, double clicking will open an OPI file in runtime mode. In an Editor window, double clicking will open an OPI file in editor mode.\r\n* Plot series max count was increased from 20 to 30.\r\n* An issue was fixed where plots with formulas would not show data when replaying past data.\r\n* The right-click “Show PV Info” popup was updated to show raw parameter values\r\n* The right-click “Show PV Info” popup will now update its content as new parameter values are incoming (note that for non-parameter PVs the data will not currently update).\r\n* The Probe popup (also available via the right-click menu of any PV widget) was refactored and now uses the MDB static alarm ranges (where applicable) to show a more meaningful meter.\r\n* Yamcs Studio will now attempt auto-reconnection when connection to Yamcs is lost.\r\n* Logging was refactored. Only INFO or worse are visible directly inside Yamcs Studio via the Console view. Debug logging (including stacktraces) are available via stdout/err.\r\n* PV autocomplete suggestions will now also include yamcs-‘local’ parameters, such as system parameters.\r\n* The event log uses different icons to be compatible with a recent change in Yamcs. The 3 old levels INFO, WARNING and ERROR are replaced by the new levels INFO, WATCH, WARNING, DISTRESS, CRITICAL and SEVERE. The ERROR state is matched to SEVERE.",
-    "linux": {
-      "name": "yamcs-studio-1.0.0-SNAPSHOT-linux.gtk.x86_64.tar.gz",
-      "size": 108844906,
-      "url": "https://github.com/yamcs/yamcs-studio/releases/download/v1.0.0-beta.30/yamcs-studio-1.0.0-SNAPSHOT-linux.gtk.x86_64.tar.gz"
-    },
-    "macos": {
-      "name": "yamcs-studio-1.0.0-SNAPSHOT-macosx.cocoa.x86_64.zip",
-      "size": 120445896,
-      "url": "https://github.com/yamcs/yamcs-studio/releases/download/v1.0.0-beta.30/yamcs-studio-1.0.0-SNAPSHOT-macosx.cocoa.x86_64.zip"
-    },
-    "windows": {
-      "name": "yamcs-studio-1.0.0-SNAPSHOT-win32.win32.x86_64.zip",
-      "size": 120168559,
-      "url": "https://github.com/yamcs/yamcs-studio/releases/download/v1.0.0-beta.30/yamcs-studio-1.0.0-SNAPSHOT-win32.win32.x86_64.zip"
-    }
-  },
-  {
-    "name": "v1.0.0",
-    "tag_name": "v1.0.0",
-    "created_at": "2018-03-26 06:28:55 UTC",
-    "published_at": "2018-03-26 06:39:32 UTC",
-    "body": "* Compatible with both Yamcs v3.4.x and v4.x\r\n* By default, Yamcs Studio wil now open in Editor mode (on a new or reset workspace)\r\n* The perspective switcher in the top-right toolbar was removed. Instead the Editor and the Runtime operate in distinct windows. Switching between the two types of windows can be done via a new button in the main toolbar.\r\n* The ‘Navigator’ tree view was replaced with an identical looking ‘Explorer’ view. This Explorer view has better default open actions. In a Runtime window, double clicking will open an OPI file in runtime mode. In an Editor window, double clicking will open an OPI file in editor mode.\r\n* Plot series max count was increased from 20 to 30.\r\n* An issue was fixed where plots with formulas would not show data when replaying past data.\r\n* The right-click “Show PV Info” popup was updated to show raw parameter values\r\n* The right-click “Show PV Info” popup will now update its content as new parameter values are incoming (note that for non-parameter PVs the data will not currently update).\r\n* The Probe popup (also available via the right-click menu of any PV widget) was refactored and now uses the MDB static alarm ranges (where applicable) to show a more meaningful meter.\r\n* Yamcs Studio will now attempt auto-reconnection when connection to Yamcs is lost.\r\n* Logging was refactored. Only INFO or worse are visible directly inside Yamcs Studio via the Console view. Debug logging (including stacktraces) are available via stdout/err.\r\n* PV autocomplete suggestions will now also include yamcs-‘local’ parameters, such as system parameters.\r\n* The event log uses different icons to be compatible with a recent change in Yamcs. The 3 old levels INFO, WARNING and ERROR are replaced by the new levels INFO, WATCH, WARNING, DISTRESS, CRITICAL and SEVERE. The ERROR state is matched to SEVERE.",
-    "linux": {
-      "name": "yamcs-studio-1.0.0-SNAPSHOT-linux.gtk.x86_64.tar.gz",
-      "size": 108844906,
-      "url": "https://github.com/yamcs/yamcs-studio/releases/download/v1.0.0-beta.30/yamcs-studio-1.0.0-SNAPSHOT-linux.gtk.x86_64.tar.gz"
-    },
-    "macos": {
-      "name": "yamcs-studio-1.0.0-SNAPSHOT-macosx.cocoa.x86_64.zip",
-      "size": 120445896,
-      "url": "https://github.com/yamcs/yamcs-studio/releases/download/v1.0.0-beta.30/yamcs-studio-1.0.0-SNAPSHOT-macosx.cocoa.x86_64.zip"
-    },
-    "windows": {
-      "name": "yamcs-studio-1.0.0-SNAPSHOT-win32.win32.x86_64.zip",
-      "size": 120168559,
-      "url": "https://github.com/yamcs/yamcs-studio/releases/download/v1.0.0-beta.30/yamcs-studio-1.0.0-SNAPSHOT-win32.win32.x86_64.zip"
-    }
-  },
-  {
-    "name": "v1.0.0",
-    "tag_name": "v1.0.0",
-    "created_at": "2018-03-26 06:28:55 UTC",
-    "published_at": "2018-03-26 06:39:32 UTC",
-    "body": "* Compatible with both Yamcs v3.4.x and v4.x\r\n* By default, Yamcs Studio wil now open in Editor mode (on a new or reset workspace)\r\n* The perspective switcher in the top-right toolbar was removed. Instead the Editor and the Runtime operate in distinct windows. Switching between the two types of windows can be done via a new button in the main toolbar.\r\n* The ‘Navigator’ tree view was replaced with an identical looking ‘Explorer’ view. This Explorer view has better default open actions. In a Runtime window, double clicking will open an OPI file in runtime mode. In an Editor window, double clicking will open an OPI file in editor mode.\r\n* Plot series max count was increased from 20 to 30.\r\n* An issue was fixed where plots with formulas would not show data when replaying past data.\r\n* The right-click “Show PV Info” popup was updated to show raw parameter values\r\n* The right-click “Show PV Info” popup will now update its content as new parameter values are incoming (note that for non-parameter PVs the data will not currently update).\r\n* The Probe popup (also available via the right-click menu of any PV widget) was refactored and now uses the MDB static alarm ranges (where applicable) to show a more meaningful meter.\r\n* Yamcs Studio will now attempt auto-reconnection when connection to Yamcs is lost.\r\n* Logging was refactored. Only INFO or worse are visible directly inside Yamcs Studio via the Console view. Debug logging (including stacktraces) are available via stdout/err.\r\n* PV autocomplete suggestions will now also include yamcs-‘local’ parameters, such as system parameters.\r\n* The event log uses different icons to be compatible with a recent change in Yamcs. The 3 old levels INFO, WARNING and ERROR are replaced by the new levels INFO, WATCH, WARNING, DISTRESS, CRITICAL and SEVERE. The ERROR state is matched to SEVERE.",
-    "linux": {
-      "name": "yamcs-studio-1.0.0-SNAPSHOT-linux.gtk.x86_64.tar.gz",
-      "size": 108844906,
-      "url": "https://github.com/yamcs/yamcs-studio/releases/download/v1.0.0-beta.30/yamcs-studio-1.0.0-SNAPSHOT-linux.gtk.x86_64.tar.gz"
-    },
-    "macos": {
-      "name": "yamcs-studio-1.0.0-SNAPSHOT-macosx.cocoa.x86_64.zip",
-      "size": 120445896,
-      "url": "https://github.com/yamcs/yamcs-studio/releases/download/v1.0.0-beta.30/yamcs-studio-1.0.0-SNAPSHOT-macosx.cocoa.x86_64.zip"
-    },
-    "windows": {
-      "name": "yamcs-studio-1.0.0-SNAPSHOT-win32.win32.x86_64.zip",
-      "size": 120168559,
-      "url": "https://github.com/yamcs/yamcs-studio/releases/download/v1.0.0-beta.30/yamcs-studio-1.0.0-SNAPSHOT-win32.win32.x86_64.zip"
-    }
-  },
-  {
-    "name": "v1.0.0",
-    "tag_name": "v1.0.0",
-    "created_at": "2018-03-26 06:28:55 UTC",
-    "published_at": "2018-03-26 06:39:32 UTC",
-    "body": "* Compatible with both Yamcs v3.4.x and v4.x\r\n* By default, Yamcs Studio wil now open in Editor mode (on a new or reset workspace)\r\n* The perspective switcher in the top-right toolbar was removed. Instead the Editor and the Runtime operate in distinct windows. Switching between the two types of windows can be done via a new button in the main toolbar.\r\n* The ‘Navigator’ tree view was replaced with an identical looking ‘Explorer’ view. This Explorer view has better default open actions. In a Runtime window, double clicking will open an OPI file in runtime mode. In an Editor window, double clicking will open an OPI file in editor mode.\r\n* Plot series max count was increased from 20 to 30.\r\n* An issue was fixed where plots with formulas would not show data when replaying past data.\r\n* The right-click “Show PV Info” popup was updated to show raw parameter values\r\n* The right-click “Show PV Info” popup will now update its content as new parameter values are incoming (note that for non-parameter PVs the data will not currently update).\r\n* The Probe popup (also available via the right-click menu of any PV widget) was refactored and now uses the MDB static alarm ranges (where applicable) to show a more meaningful meter.\r\n* Yamcs Studio will now attempt auto-reconnection when connection to Yamcs is lost.\r\n* Logging was refactored. Only INFO or worse are visible directly inside Yamcs Studio via the Console view. Debug logging (including stacktraces) are available via stdout/err.\r\n* PV autocomplete suggestions will now also include yamcs-‘local’ parameters, such as system parameters.\r\n* The event log uses different icons to be compatible with a recent change in Yamcs. The 3 old levels INFO, WARNING and ERROR are replaced by the new levels INFO, WATCH, WARNING, DISTRESS, CRITICAL and SEVERE. The ERROR state is matched to SEVERE.",
-    "linux": {
-      "name": "yamcs-studio-1.0.0-SNAPSHOT-linux.gtk.x86_64.tar.gz",
-      "size": 108844906,
-      "url": "https://github.com/yamcs/yamcs-studio/releases/download/v1.0.0-beta.30/yamcs-studio-1.0.0-SNAPSHOT-linux.gtk.x86_64.tar.gz"
-    },
-    "macos": {
-      "name": "yamcs-studio-1.0.0-SNAPSHOT-macosx.cocoa.x86_64.zip",
-      "size": 120445896,
-      "url": "https://github.com/yamcs/yamcs-studio/releases/download/v1.0.0-beta.30/yamcs-studio-1.0.0-SNAPSHOT-macosx.cocoa.x86_64.zip"
-    },
-    "windows": {
-      "name": "yamcs-studio-1.0.0-SNAPSHOT-win32.win32.x86_64.zip",
-      "size": 120168559,
-      "url": "https://github.com/yamcs/yamcs-studio/releases/download/v1.0.0-beta.30/yamcs-studio-1.0.0-SNAPSHOT-win32.win32.x86_64.zip"
+      "name": "yamcs-studio-1.0.0-win32.win32.x86_64.zip",
+      "size": 112000212,
+      "url": "https://github.com/yamcs/yamcs-studio/releases/download/v1.0.0/yamcs-studio-1.0.0-win32.win32.x86_64.zip"
     }
   }
 ]

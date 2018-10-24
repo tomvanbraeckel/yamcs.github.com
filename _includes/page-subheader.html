@@ -1,4 +1,4 @@
-{% if page.url contains '/downloads' %}
+{% if page.url contains '/updates' %}
 {% else %}
   <div class="page-subheader">
     {% assign structure=false %}
@@ -13,7 +13,7 @@
         {% if page.url == docurl %}
           {{title}}
         {% else %}
-          {% assign structure=site.data.sidebar.guides[document] %}
+          {% assign structure=site.data.sidebar[document] %}
           <a href="{{docurl}}">{{title}}</a>
         {% endif %}
       {% endif %}

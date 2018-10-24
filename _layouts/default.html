@@ -20,15 +20,15 @@
           {% if page.sidebar %}
             {% if page.url contains docurl %}
               {% assign title = titles[forloop.index] %}
-              {% assign structure=site.data.sidebar.guides[document] %}
+              {% assign structure=site.data.sidebar[document] %}
             {% endif %}
           {% endif %}
         {% endfor %}
 
         {% if page.sidebar %}
-          {% if page.url contains '/downloads' %}
-            {% assign title = '' %}
-            {% assign structure=site.data.sidebar.guides['downloads'] %}
+          {% if page.url contains '/updates' %}
+            {% assign title = 'Release Notes' %}
+            {% assign structure=site.data.sidebar.updates %}
           {% endif %}
         {% endif %}
 

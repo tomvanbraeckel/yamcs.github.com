@@ -4,15 +4,15 @@ require 'json'
 def pull_repo_info(client, repo)
     releases_by_target = {}
     for r in client.releases "yamcs/#{repo}" do
-        if not r.prerelease and not r.draft then
-            release = {
-                'name': r.name,
-                'tag_name': r.tag_name,
-                'created_at': r.created_at,
-                'published_at': r.published_at,
-                'body': r.body,
-            }
-        end
+        next if r.prerelease or r.draft
+
+        release = {
+            'name': r.name,
+            'tag_name': r.tag_name,
+            'created_at': r.created_at,
+            'published_at': r.published_at,
+            'body': r.body,
+        }
 
         if not releases_by_target[r.target_commitish] then
             releases_by_target[r.target_commitish] = []

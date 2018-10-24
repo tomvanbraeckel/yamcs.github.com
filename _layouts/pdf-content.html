@@ -25,7 +25,7 @@
     <div id="content">
       <div class="container">
         <div class="main">
-          {% for chapter in site.data.sidebar.guides[page.guide] %}
+          {% for chapter in site.data.sidebar[page.guide] %}
             <h1 class="toc{% if forloop.first == false %} newpage{% endif %}">
               {% if chapter.title %}
                 {{ chapter.title }}
