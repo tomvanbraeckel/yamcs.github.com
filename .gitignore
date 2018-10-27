@@ -1,5 +1,7 @@
 _site
+.bundle/
 .jekyll-metadata
-.sass-cache
+.sass-cache/
 serve/
+vendor/
 /*.pdf

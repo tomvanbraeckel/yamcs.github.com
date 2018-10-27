@@ -6,7 +6,7 @@ rvm:
   - 2.5.3
 
 script:
-  - ruby update-release-info.rb
+  - bundle exec ruby update-release-info.rb
   - bundle exec jekyll build
   - touch _site/.nojekyll
 
