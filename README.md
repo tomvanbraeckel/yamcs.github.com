@@ -1,4 +1,4 @@
-This site uses Jekyll and is served by GitHub Pages.
+This site uses Jekyll, is built on Travis and served by GitHub Pages.
 
 For local development, use bundler:
 

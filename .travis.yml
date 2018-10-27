@@ -2,13 +2,27 @@ language: ruby
 sudo: false
 cache: bundler
 
-rvm:
-  - 2.5.3
+addons:
+  apt:
+    packages:
+      - ghostscript
+      - libimage-exiftool-perl
+
+before_install:
+  - wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.3/wkhtmltox-0.12.3_linux-generic-amd64.tar.xz
+    -P /tmp
+  - tar xf /tmp/wkhtmltox-0.12.3_linux-generic-amd64.tar.xz -C /home/travis
+  - export PATH="/home/travis/wkhtmltox/bin:$PATH"
 
 script:
   - bundle exec ruby update-release-info.rb
   - bundle exec jekyll build
   - touch _site/.nojekyll
+
+  - ruby -run -e httpd _site -p 4000 > /dev/null 2>&1 &
+  - sleep 3  # Give httpd some time to start
+  - ./make-pdf.sh
+  - mv *.pdf _site/assets/pdf/
 
 deploy:
   provider: pages
