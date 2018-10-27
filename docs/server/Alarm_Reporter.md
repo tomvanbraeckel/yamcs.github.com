@@ -7,7 +7,7 @@ sidebar: yes
 Generates events for changes in the alarm state of any parameter on the specific processor. Note that this is independent from the actual alarm checking.
 
 ### Class Name
-[<tt>org.yamcs.alarms.AlarmReporter</tt>](https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/alarms/AlarmReporter.html)
+{% javadoc 'org/yamcs/alarms/AlarmReporter' %}
 
 ### Configuration
 

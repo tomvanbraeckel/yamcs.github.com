@@ -7,7 +7,7 @@ sidebar: yes
 Publish <tt>cmdhist</tt> stream data to an Artemis broker.
 
 ### Class Name
-[<tt>org.yamcs.artemis.ArtemisCmdHistoryService</tt>](https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/artemis/ArtemisCmdHistoryService.html)
+{% javadoc 'org/yamcs/artemis/ArtemisCmdHistoryService' %}
 
 ### Configuration
 

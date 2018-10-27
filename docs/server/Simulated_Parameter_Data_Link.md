@@ -9,7 +9,7 @@ Some tests require parameter data to be simulated without using a packet source.
 The XML scenario file allows to describe the parameters sent, their generation time, reception time, engineering value and monitoring value. Parameters are organized in a sequence that can be repeated to allow more complex scenarios. The speed of the simulation can be defined by setting the duration of a simulation step.
 
 ### Class Name
-[<tt>org.yamcs.simulation.SimulationPpProvider</tt>](https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/simulation/SimulationPpProvider.html)
+{% javadoc 'org/yamcs/simulation/SimulationPpProvider' %}
 
 ### Configuration Options
 

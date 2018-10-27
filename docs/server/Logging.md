@@ -27,6 +27,6 @@ The logging properties of Yamcs Server may be adjusted to your specific situatio
 
 Yamcs comes with different log formatters that can be useful in different situations:
 
-* [<tt>org.yamcs.CompactFormatter</tt>](https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/CompactFormatter.html) outputs one line per log entry and contains detailed datetime information, thread id, severity, logger name (typically the class of the originating component), a log message and finally an optional stack trace.
+* {% javadoc 'org/yamcs/CompactFormatter' %} outputs one line per log entry and contains detailed datetime information, thread id, severity, logger name (typically the class of the originating component), a log message and finally an optional stack trace.
 
-* [<tt>org.yamcs.ConsoleFormatter</tt>](https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/ConsoleFormatter.html) outputs one line per log entry and is actually more compact than `CompactFormatter`. It is especially suited for development of Yamcs or its extensions. Each log entry contains short time information, thread id, short class name, a log message and optionally a stack trace. Some entry fields make use of ANSI color codes for colorized display inside the developer's terminal.
+* {% javadoc 'org/yamcs/ConsoleFormatter' %} outputs one line per log entry and is actually more compact than `CompactFormatter`. It is especially suited for development of Yamcs or its extensions. Each log entry contains short time information, thread id, short class name, a log message and optionally a stack trace. Some entry fields make use of ANSI color codes for colorized display inside the developer's terminal.

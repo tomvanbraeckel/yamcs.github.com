@@ -7,7 +7,7 @@ sidebar: yes
 Supports retrieval of archive indexes and tags.
 
 ### Class Name
-[<tt>org.yamcs.archive.IndexServer</tt>](https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/archive/IndexServer.html)
+{% javadoc 'org/yamcs/archive/IndexServer' %}
 
 ### Configuration
 
@@ -31,7 +31,7 @@ services:
     <td class="code">tmIndexer</td>
     <td class="code">string</td>
     <td>
-      Class name of a <a href="https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/archive/TmIndex.html">TmIndex</a> implementation. Default is <a href="https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/archive/CcsdsTmIndex.html"><tt>org.yamcs.archive.CcsdsTmIndex</tt></a> which applies CCSDS conventions.
+      Class name of a <a href="https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/archive/TmIndex.html"><tt>TmIndex</tt></a> implementation. Default is <a href="https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/archive/CcsdsTmIndex.html"><tt>org.yamcs.archive.CcsdsTmIndex</tt></a> which applies CCSDS conventions.
     </td>
   </tr>
 </table>

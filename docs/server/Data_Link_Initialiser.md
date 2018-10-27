@@ -12,7 +12,7 @@ Data Links represent data connections to external sources. These connections may
 Note that any Yamcs Service can connect to external sources and inject data in the streams. Data links however, can report on their status using a predefined interface and can also be controlled to connect or disconnect from their data source.
 
 ### Class Name
-[<tt>org.yamcs.tctm.DataLinkInitialiser</tt>](https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/tctm/DataLinkInitialiser.html)
+{% javadoc 'org/yamcs/tctm/DataLinkInitialiser' %}
 
 ### Configuration
 

@@ -7,7 +7,7 @@ sidebar: yes
 This service handles replay requests of archived data. Each replay runs with a separate processor that runs in parallel to the realtime processing.
 
 ### Class Name
-[<tt>org.yamcs.archive.ReplayServer</tt>](https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/archive/ReplayServer.html)
+{% javadoc 'org/yamcs/archive/ReplayServer' %}
 
 ### Configuration
 

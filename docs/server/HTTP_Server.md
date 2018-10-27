@@ -14,7 +14,7 @@ The HTTP Server is tightly integrated with the security system of Yamcs and serv
 The HTTP Server can be disabled when its functionality is not needed. Note that in this case also official external clients such as Yamcs Studio will not be able to connect to Yamcs.
 
 ### Class Name
-[<tt>org.yamcs.web.HttpServer</tt>](https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/web/HttpServer.html)
+{% javadoc 'org/yamcs/web/HttpServer' %}
 
 ### Configuration
 

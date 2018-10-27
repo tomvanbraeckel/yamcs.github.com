@@ -7,7 +7,7 @@ sidebar: yes
 Initializes and starts an embedded instance of the Artemis messaging server. This can be used to connect streams across Yamcs installations.
 
 ### Class Name
-[<tt>org.yamcs.artemis.ArtemisServer</tt>](https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/artemis/ArtemisServer.html)
+{% javadoc 'org/yamcs/artemis/ArtemisServer' %}
 
 ### Configuration
 
