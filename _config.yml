@@ -1,7 +1,13 @@
 title: Yamcs
 url: "https://www.yamcs.org"
 
-exclude: [vendor]
+exclude:
+  - vendor
+  - "*.rb"
+  - "*.sh"
+  - README.md
+  - Gemfile
+  - Gemfile.lock
 
 markdown: kramdown
 
