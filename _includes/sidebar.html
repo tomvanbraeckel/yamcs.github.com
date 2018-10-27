@@ -32,12 +32,8 @@
     {% endif %}
 
     <div class="sidebar-item {% if active %}active{% endif %} {% if expand %}expanded{% else %}collapsed{% endif %}">
-      {% for p in site.pages %}
-        {% if p.url == chapter.url %}
-          <a class="sidebar-item-hdr" href="{{ p.url }}">{{ p.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}</a>
-          {% break %}
-        {% endif %}
-      {% endfor %}
+      {% assign_page p = chapter.url %}
+      <a class="sidebar-item-hdr" href="{{ p.url }}">{{ p.name | remove:'.md' | remove: '.html' | replace: '_',' ' }}</a>
 
       {% include sidebar-items.html items=chapter.items %}
     </div>
