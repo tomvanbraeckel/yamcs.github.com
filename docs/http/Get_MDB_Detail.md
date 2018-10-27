@@ -47,7 +47,7 @@ Use HTTP header:
 
     Accept: application/x-java-serialized-object
     
-This returns a full java-serialized binary dump of the <tt>XtceDb</tt>. You will need a dependency on the LGPL <tt>yamcs-api</tt> jar if you want to interpret it. In general it is recommended to use other REST operations where possible, but sometimes having access to the full <tt>XtceDb</tt> is just very convenient.
+This returns a full java-serialized binary dump of the <tt>XtceDb</tt>. You will need a dependency on the LGPL <tt>yamcs-api</tt> jar if you want to interpret it.
 
 #### Protobuf
 

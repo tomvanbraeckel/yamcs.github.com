@@ -4,7 +4,6 @@ permalink: /docs/http/Command_Queues_Updates/
 sidebar: yes
 ---
 The `cqueues` resource type within the WebSocket API allows subscribing to commanding queue updates. Information will be received when new commands are added into the queues, commands are removed from the queues as well as when the queues state changes (between BLOCKED, ENABLED, DISABLED).
-To control the queues, please consider the REST interface for [Commanding](/docs/http/Commanding/).
 
 ### Subscribe
 Within the WebSocket request envelope use these values:

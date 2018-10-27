@@ -6,8 +6,7 @@ sidebar: yes
 
 Embedded HTTP server that provides these functionalities:
 
-* Serve REST API
-* Serve WebSocket API
+* Serve HTTP API (REST and WebSocket)
 * Serve the Yamcs web interface
 
 The HTTP Server is tightly integrated with the security system of Yamcs and serves as the default interface for external tooling wanting to integrate. This covers both server-to-server and server-to-user communication patterns.
@@ -69,7 +68,7 @@ services:
   <tr>
     <td class="code">cors</td>
     <td class="code">map</td>
-    <td>Configure cross-origin resource sharing for the REST API. Detailed below. If unset, CORS is not supported.</td>
+    <td>Configure cross-origin resource sharing for the HTTP API. Detailed below. If unset, CORS is not supported.</td>
   </tr>
 </table>
 
@@ -104,7 +103,7 @@ services:
 
 CORS (cross-origin resource sharing) facilitates use of the API in client-side applications that run in the browser. CORS is a W3C specification enforced by all major browsers. Details are described at <a href="https://www.w3.org/TR/cors/">https://www.w3.org/TR/cors/</a>. Yamcs simply adds configurable support for some of the CORS preflight response headers.
 
-Note that the embedded web interface of Yamcs does not need CORS, since it shares the same origin as the REST API.
+Note that the embedded web interface of Yamcs does not need CORS enabled, because it shares the same origin as the HTTP API.
 
 <table class="inline">
   <tr>
