@@ -29,7 +29,7 @@ Use HTTP header:
     
 Response is of type:
 
-<pre class="r header"><a href="/docs/http/yamcsManagement.proto/">yamcsManagement.proto</a></pre>
+<pre class="r header"><a href="{{ site.proto }}/yamcsManagement/yamcsManagement.proto">yamcsManagement.proto</a></pre>
 ```proto
 message UserInfo {
   optional string login = 1;

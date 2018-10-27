@@ -95,7 +95,7 @@ Use these HTTP headers:
     
 Response is of type:
 
-<pre class="r header"><a href="/docs/http/mdb.proto/">mdb.proto</a></pre>
+<pre class="r header"><a href="{{ site.proto }}/mdb/mdb.proto">mdb.proto</a></pre>
 ```proto
 message ParameterInfo {
   optional string name = 1;
@@ -110,7 +110,7 @@ message ParameterInfo {
 
 Bulk request is of type:
 
-<pre class="r header"><a href="/docs/http/rest.proto/">rest.proto</a></pre>
+<pre class="r header"><a href="{{ site.proto }}/rest/rest.proto">rest.proto</a></pre>
 ```proto
 message BulkGetParameterRequest {
   repeated yamcs.NamedObjectId id = 1;
@@ -119,7 +119,7 @@ message BulkGetParameterRequest {
 
 Bulk response is of type:
 
-<pre class="r header"><a href="/docs/http/rest.proto/">rest.proto</a></pre>
+<pre class="r header"><a href="{{ site.proto }}/rest/rest.proto">rest.proto</a></pre>
 ```proto
 message BulkGetParameterResponse {
   message GetParameterResponse {

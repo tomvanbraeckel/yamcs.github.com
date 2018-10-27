@@ -121,7 +121,7 @@ Use these HTTP headers:
     
 Request is of type:
 
-<pre class="r header"><a href="/docs/http/pvalue.proto/">pvalue.proto</a></pre>
+<pre class="r header"><a href="{{ site.proto }}/pvalue/pvalue.proto">pvalue.proto</a></pre>
 ```proto
 message ParameterValue {
   optional yamcs.NamedObjectId id = 1;
@@ -145,7 +145,7 @@ message ParameterValue {
 
 Bulk request is of type:
 
-<pre class="r header"><a href="/docs/http/rest.proto/">rest.proto</a></pre>
+<pre class="r header"><a href="{{ site.proto }}/rest/rest.proto">rest.proto</a></pre>
 ```proto
 message BulkGetParameterValueRequest {
   repeated yamcs.NamedObjectId id = 1;
@@ -156,7 +156,7 @@ message BulkGetParameterValueRequest {
 
 Bulk response is of type:
 
-<pre class="r header"><a href="/docs/http/rest.proto/">rest.proto</a></pre>
+<pre class="r header"><a href="{{ site.proto }}/rest/rest.proto">rest.proto</a></pre>
 ```proto
 message BulkGetParameterValueResponse {
   repeated pvalue.ParameterValue value = 1;

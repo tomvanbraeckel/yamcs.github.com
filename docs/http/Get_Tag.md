@@ -33,7 +33,7 @@ Use HTTP header:
     
 Response is of type:
 
-<pre class="r header"><a href="/docs/http/yamcs.proto/">yamcs.proto</a></pre>
+<pre class="r header"><a href="{{ site.proto }}/yamcs.proto">yamcs.proto</a></pre>
 ```proto
 message ArchiveTag {
   optional int32 id = 1;

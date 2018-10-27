@@ -61,7 +61,7 @@ Use these HTTP headers:
     
 Request is of type:
 
-<pre class="r header"><a href="/docs/http/rest.proto/">rest.proto</a></pre>
+<pre class="r header"><a href="{{ site.proto }}/rest/rest.proto">rest.proto</a></pre>
 ```proto
 message EditCommandQueueRequest {
   optional string state = 1;
@@ -70,7 +70,7 @@ message EditCommandQueueRequest {
 
 Response is of type:
 
-<pre class="r header"><a href="/docs/http/commanding.proto/">commanding.proto</a></pre>
+<pre class="r header"><a href="{{ site.proto }}/commanding/commanding.proto">commanding.proto</a></pre>
 ```proto
 message CommandQueueInfo {
   required string instance = 1;

@@ -60,7 +60,7 @@ Use HTTP header:
     
 If non dump format is requested, response is of type:
 
-<pre class="r header"><a href="/docs/http/archive.proto/">archive.proto</a></pre>
+<pre class="r header"><a href="{{ site.proto }}/archive/archive.proto">archive.proto</a></pre>
 ```proto
 message TableData {
   message TableRecord {
@@ -77,7 +77,7 @@ Each row has an optional associated list of <tt>ColumnInfo</tt> messages that de
 The dumped data does not contain information on any table characteristics such as (primary) key, partitioning or other storage options.
 
 
-<pre class="r header"><a href="/docs/http/table.proto/">table.proto</a></pre>
+<pre class="r header"><a href="{{ site.proto }}/table/table.proto">table.proto</a></pre>
 ```proto
 message ColumnInfo {
   optional uint32 id = 1;

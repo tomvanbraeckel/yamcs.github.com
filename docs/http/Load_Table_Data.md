@@ -21,7 +21,7 @@ The table has to exist in order to load data into it.
 Chuncked data encoding can be used to send a large number of rows without knowing the total size in advance.
 
 
-<pre class="r header"><a href="/docs/http/table.proto/">table.proto</a></pre>
+<pre class="r header"><a href="{{ site.proto }}/table/table.proto">table.proto</a></pre>
 ```proto
 message ColumnInfo {
   optional uint32 id = 1;
@@ -48,7 +48,7 @@ message Row {
 Response can be PROTOBUF or JSON depending on the "Accept" header of the request.
 
 <pre class="header">Status: 200 OK</pre>
-<pre class="r header"><a href="/docs/http/table.proto/">table.proto</a></pre>
+<pre class="r header"><a href="{{ site.proto }}/table/table.proto">table.proto</a></pre>
 ```proto
 
 message TableLoadResponse {

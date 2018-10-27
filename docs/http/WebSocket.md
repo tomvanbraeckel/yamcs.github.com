@@ -58,7 +58,3 @@ Where:
 </table>
 
 The <tt>request-type</tt> and <tt>request</tt> criteria vary for every type of resource, and are each time indicated in further pages.
-
-### Java Client
-
-If you are developing a Java application integrated with Yamcs, we recommend using the LGPL Java WebSocket client distributed as part of the <tt>yamcs-api</tt> jar.

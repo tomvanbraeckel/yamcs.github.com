@@ -94,7 +94,7 @@ Use HTTP header:
     
 Response is of type:
 
-<pre class="r header"><a href="/docs/http/pvalue.proto/">pvalue.proto</a></pre>
+<pre class="r header"><a href="{{ site.proto }}/pvalue/pvalue.proto">pvalue.proto</a></pre>
 ```proto
 message Ranges {
    message Range {

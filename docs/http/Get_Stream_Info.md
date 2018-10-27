@@ -46,7 +46,7 @@ Use HTTP header:
 
 Response if of type:
 
-<pre class="r header"><a href="/docs/http/archive.proto/">archive.proto</a></pre>
+<pre class="r header"><a href="{{ site.proto }}/archive/archive.proto">archive.proto</a></pre>
 ```proto
 message StreamInfo {
   optional string name = 1;

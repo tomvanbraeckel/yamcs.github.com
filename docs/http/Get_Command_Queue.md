@@ -48,7 +48,7 @@ Use HTTP header:
     
 Response is of type:
 
-<pre class="r header"><a href="/docs/http/commanding.proto/">commanding.proto</a></pre>
+<pre class="r header"><a href="{{ site.proto }}/commanding/commanding.proto">commanding.proto</a></pre>
 ```proto
 message CommandQueueInfo {
   required string instance = 1;

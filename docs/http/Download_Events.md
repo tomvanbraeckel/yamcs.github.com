@@ -99,7 +99,7 @@ Use HTTP header:
 
 The response is a stream of individual Protobuf messages delimited by a <tt>VarInt</tt>. Messages are of type:
 
-<pre class="r header"><a href="/docs/http/yamcs.proto/">yamcs.proto</a></pre>
+<pre class="r header"><a href="{{ site.proto }}/yamcs.proto">yamcs.proto</a></pre>
 ```proto
 message Event {
   enum EventSeverity {

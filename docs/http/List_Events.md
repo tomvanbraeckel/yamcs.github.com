@@ -128,7 +128,7 @@ Use HTTP header:
 
 Responses are of type:
 
-<pre class="r header"><a href="/docs/http/rest.proto/">rest.proto</a></pre>
+<pre class="r header"><a href="{{ site.proto }}/rest/rest.proto">rest.proto</a></pre>
 ```proto
 message ListEventsResponse {
   repeated yamcs.Event event = 1;

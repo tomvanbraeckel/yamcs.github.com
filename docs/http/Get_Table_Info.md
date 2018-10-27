@@ -51,7 +51,7 @@ Use HTTP header:
     
 Response is of type:
 
-<pre class="r header"><a href="/docs/http/archive.proto/">archive.proto</a></pre>
+<pre class="r header"><a href="{{ site.proto }}/archive/archive.proto">archive.proto</a></pre>
 ```proto
 message TableInfo {
   optional string name = 1;

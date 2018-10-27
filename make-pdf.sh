@@ -12,8 +12,6 @@ set -e
 #
 #  If the optional arguments are provided, generate the pdf document for the requested document with the requested version.
 #  Output name is <title>-<version>.pdf
-#
-#  PDF documents are stored in Nexus. This part is not automated.
 
 DOC=$1
 VERSION=$2

@@ -51,7 +51,7 @@ Use HTTP header:
     
 Response is of type:
 
-<pre class="r header"><a href="/docs/http/rest.proto/">rest.proto</a></pre>
+<pre class="r header"><a href="{{ site.proto }}/rest/rest.proto">rest.proto</a></pre>
 ```proto
 message ListServiceInfoResponse {
   repeated yamcsManagement.ServiceInfo service = 1;

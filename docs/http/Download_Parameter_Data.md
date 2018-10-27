@@ -131,7 +131,7 @@ Use HTTP header:
 
 Bulk request is of type:
 
-<pre class="r header"><a href="/docs/http/rest.proto/">rest.proto</a></pre>
+<pre class="r header"><a href="{{ site.proto }}/rest/rest.proto">rest.proto</a></pre>
 ```proto
 message BulkDownloadParameterValueRequest {
   optional string start = 1;
@@ -142,7 +142,7 @@ message BulkDownloadParameterValueRequest {
 ```
 
 The response is a stream of self-standing <tt>VarInt</tt> delimited messages of type:
-<pre class="r header"><a href="/docs/http/pvalue.proto/">pvalue.proto</a></pre>
+<pre class="r header"><a href="{{ site.proto }}/pvalue/pvalue.proto">pvalue.proto</a></pre>
 ```proto
 message ParameterData {
   repeated ParameterValue parameter = 1;

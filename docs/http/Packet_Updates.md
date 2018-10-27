@@ -39,7 +39,7 @@ Further messages will be marked as type <tt>TM_PACKET</tt>. The data of the prov
 
 The response is a stream of self-standing <tt>VarInt</tt> delimited messages of type:
 
-<pre class="r header"><a href="/docs/http/yamcs.proto/">yamcs.proto</a></pre>
+<pre class="r header"><a href="{{ site.proto }}/yamcs.proto">yamcs.proto</a></pre>
 ```proto
 message TmPacketData {
   required int64 receptionTime = 1;
