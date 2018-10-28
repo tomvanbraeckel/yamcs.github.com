@@ -6,9 +6,9 @@ sidebar: yes
 
 Yamcs provides an HTTP API allowing external tools to integrate with Yamcs resources. Most HTTP endpoints send and expect JSON messages.
 
-<div class="hint">
-    If you develop in Python consider using the <a href="https://www.yamcs.org/yamcs-python/yamcs-client/">Python Client</a> which provides an idiomatic mapping for most of the operations documented here.
-</div>
+{% hint %}
+If you develop in Python consider using the (Python Client)[https://www.yamcs.org/yamcs-python/yamcs-client/] which provides an idiomatic mapping for most of the operations documented here.
+{% endhint %}
 
 ### HTTP Verbs
 The supported HTTP verbs are:

@@ -8,9 +8,9 @@ List all streams for the given instance:
 
     GET /api/archive/:instance/streams
     
-<div class="hint">
-    This is low-level API for those cases where access to the internal streams of Yamcs is wanted. It is recommended to use other API operations for any of the default built-in streams.
-</div>
+{% hint %}
+  This is low-level API for those cases where access to the internal streams of Yamcs is wanted. It is recommended to use other API operations for any of the default built-in streams.
+{% endhint %}
 
 
 ### Example

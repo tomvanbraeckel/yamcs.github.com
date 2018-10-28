@@ -8,9 +8,9 @@ Download command history:
 
     GET /api/archive/:instance/downloads/commands
     
-<div class="hint">
+{% hint %}
 This operation will possibly download a very large file.
-</div>
+{% endhint %}
 
 
 ### Parameters

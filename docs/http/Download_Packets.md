@@ -8,9 +8,9 @@ Download archived packets:
 
     GET /api/archive/:instance/downloads/packets
 
-<div class="hint">
-This operation will possibly download a very large file. If you worry about size for your application, check out the support for <a href="/docs/http/List_Packets/">paged packet retrievals</a> instead.
-</div>
+{% hint %}
+This operation will possibly download a very large file. If you worry about size for your application, check out the support for [paged packet retrievals](/docs/http/List_Packets/) instead.
+{% endhint %}
 
 
 ### Parameters

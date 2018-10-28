@@ -35,9 +35,9 @@ If this is the first time you have opened Yamcs Studio on your workstation, you 
 
 You need to choose which index data you actually want to display in your view. If there is data available for a zone, you can right-click it to bring up a pop-up menu where you select **Add Packets > ... > All Packets**. Your view will then update to show the selected packets.
 
-<div class="hint">
-    We say <em>packets</em> since this is typically what we are interested in when browsing the Archive, but any recorded data can in reality be displayed through the Archive view.
-</div>
+{% hint %}
+  We say <em>packets</em> since this is typically what we are interested in when browsing the Archive, but any recorded data can in reality be displayed through the Archive view.
+{% endhint %}
 
 ![Archive](/assets/studio/archive.png){: .center-image }
 

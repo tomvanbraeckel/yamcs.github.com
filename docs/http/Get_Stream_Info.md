@@ -8,9 +8,9 @@ Get info on a Yamcs stream:
 
     GET /api/archive/:instance/streams/:name
     
-<div class="hint">
-    This is low-level API for those cases where access to an internal stream of Yamcs is wanted. It is recommended to use other API operations for any of the default built-in streams.
-</div>
+{% hint %}
+This is low-level API for those cases where access to an internal stream of Yamcs is wanted. It is recommended to use other API operations for any of the default built-in streams.
+{% endhint %}
 
 ### Response
 

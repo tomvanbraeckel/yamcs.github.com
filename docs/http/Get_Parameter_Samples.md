@@ -8,9 +8,9 @@ Sample the history of values for the specified parameter:
 
     GET /api/archive/:instance/parameters/:namespace/:name/samples   
 
-<div class="hint">
-    By default this operation fetches data from the parameter archive and/or parameter cache. If these services are not configured, you can still get correct results by specifying the option <tt>source=replay</tt> as detailed below.
-</div>
+{% hint %}
+By default this operation fetches data from the parameter archive and/or parameter cache. If these services are not configured, you can still get correct results by specifying the option <tt>source=replay</tt> as detailed below.
+{% endhint %}
 
 
 ### Parameters

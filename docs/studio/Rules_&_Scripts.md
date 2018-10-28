@@ -64,7 +64,6 @@ In addition, you can access the numeric alarm state of an input PV.
     <tr>
         <td>Invalid</td>
         <td class="code">pvSev0 == -1</td>
-        
     </tr>
     <tr>
         <td style="white-space: nowrap">No Alarm</td>
@@ -80,9 +79,9 @@ In addition, you can access the numeric alarm state of an input PV.
     </tr>
 </table>
 
-<div class="hint">
-    If you wish to set a property value that always applies, use <tt>true</tt> (or <tt>1==1</tt>) as the Boolean Expression.
-</div>
+{% hint %}
+  If you wish to set a property value that always applies, use <tt>true</tt> (or <tt>1==1</tt>) as the Boolean Expression.
+{% endhint %}
 
 #### Output Value
 The exact form that the **Output Value** column adopts depends on the type of the property. Some properties are colors, so you would see a color picker, other properties expect text, and the above example was a boolean yes/no, so we got a checkbox.

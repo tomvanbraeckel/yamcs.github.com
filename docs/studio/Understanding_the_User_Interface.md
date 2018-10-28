@@ -14,9 +14,9 @@ Views all share the same user interface organization. On the left you see a tab 
 
 ![A View](/assets/studio/a-view.png){: .center-image }
 
-<div class="hint">
-    To reopen a view which you closed earlier, or to open another view choose <strong>Window &gt; Show View</strong>.
-</div>
+{% hint %}
+  To reopen a view which you closed earlier, or to open another view choose **Window > Show View**.
+{% endhint %}
 
 Views can be resized, moved and stacked. This allows you to customize your workspace to your own personal preference.
 
@@ -40,9 +40,9 @@ As you try dragging to different locations, you will notice that Yamcs Studio ha
 
 When you close Yamcs Studio and later reopen it, your last view and window arrangement will be restored.
 
-<div class="hint">
-    Yamcs Studio stores the information about your view arrangement in a <tt>.metadata</tt> folder inside your workspace. This is how it knows how to restore this information through restarts. If you share your workspace with other users through a version control system, you should consider <em>not</em> committing this <tt>.metadata</tt> folder. This way everybody can have his own preferred arrangement without colliding with each other. 
-</div>
+{% hint %}
+  Yamcs Studio stores the information about your view arrangement in a <tt>.metadata</tt> folder inside your workspace. This is how it knows how to restore this information through restarts. If you share your workspace with other users through a version control system, you should consider <em>not</em> committing this <tt>.metadata</tt> folder. This way everybody can have his own preferred arrangement without colliding with each other. 
+{% endhint %}
 
 ### Windows
 Yamcs Studio uses two special windows that serve a different purpose:

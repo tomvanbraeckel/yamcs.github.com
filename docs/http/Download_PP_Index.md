@@ -8,9 +8,9 @@ Download the index of stored processed parameter groups for the given instance:
 
     GET /api/archive/:instance/indexes/pp
 
-<div class="hint">
+{% hint %}
 This operation will possibly download a very large file.
-</div>
+{% endhint %}
 
 ### Parameters
 

@@ -8,9 +8,9 @@ Download the completeness index records for the given instance:
 
     GET /api/archive/:instance/indexes/completeness
 
-<div class="hint">
+{% hint %}
 This operation will possibly download a very large file.
-</div>
+{% endhint %}
 
 ### Parameters
 

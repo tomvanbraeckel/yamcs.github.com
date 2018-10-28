@@ -17,9 +17,9 @@ To create a new project, choose **File > New Project**, or right-click in the ex
 #### Importing Existing Projects
 To import an existing project, select **File > Import** and choose **Existing Projects into Workspace**. Navigate to the project's folder, and if Yamcs Studio recognizes it as a project you will be able to import it.
 
-<div class="hint">
-    Projects are just directories on your disk (usually under version control). Yamcs Studio recognizes existing projects by the metadata which is added under the hidden <tt>.metadata</tt> folder. This metadata includes project-specific preferences, as well as for example the name of the project.
-</div>
+{% hint %}
+  Projects are just directories on your disk (usually under version control). Yamcs Studio recognizes existing projects by the metadata which is added under the hidden <tt>.metadata</tt> folder. This metadata includes project-specific preferences, as well as for example the name of the project.
+{% endhint %}
 
 ### Resources
 Any file can be added to a project or a contained directory. To do so right-click on the desired node to open the popup menu, and choose your desired file type under the **New** item.

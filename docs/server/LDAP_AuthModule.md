@@ -13,9 +13,9 @@ The algorithm used to build the list of user privileges is as follows:
 * From the path configured by <tt>rolePath</tt> find all the roles associated to the user. The roles defined in LDAP must contain references using the member attribute to objects <tt>member=uid=username</tt> from the <tt>userPath</tt>.
 * For each role found previously, do a search in the corresponding system, tc, tm packet or tm parameter path using the match <tt>member=cn=role_name</tt>. The cn of the matching entries is used to build the list of privileges that the user has.
 
-<div class="hint">
+{% hint %}
   This class can be stacked with other AuthModules such that it is responsible for either authentication or authorization. In the case of authorization read-only access to the LDAP database is assumed.
-</div>
+{% endhint %}
 
 ### Class Name
 {% javadoc 'org/yamcs/security/LdapAuthModule' %}

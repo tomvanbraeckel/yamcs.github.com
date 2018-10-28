@@ -8,6 +8,6 @@ Delete a processor:
 
     DELETE /api/processors/:instance/:name
 
-<div class="hint">
+{% hint %}
   Only replay processors can be removed.
-</div>
+{% endhint %}

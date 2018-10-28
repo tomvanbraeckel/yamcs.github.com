@@ -67,13 +67,3 @@ If there is an error during the load, the HTTP status will be 4xy or 5xy and the
 As the data is streamed to the server, if there is an error, there would have been certanly more data sent after the bad row, so the error is not about the last row sent. The numRowsLoaded response parameter can be used to know how many rows have been successfully loaded (the bad row is the numRowsLoaded+1 in the stream).
 
 Note that if the server detects an error, it will send back the error message and close the connection regardless of the Keep-Alive option in the request header.
-
-
-
-<div class="hint">
-The following command line can be used to dump the content of one ore more tables in a gzipped compressed file:
-<pre>yamcs -y yamcsUrl table dump tbl1 tbl2...</pre>
-
-The corresponding command load command can be used to load the dump back into the table (or in another table if the dump file is renamed):
-<pre>yamcs -y yamcsUrl table load tbl1 tbl2...</pre>
-

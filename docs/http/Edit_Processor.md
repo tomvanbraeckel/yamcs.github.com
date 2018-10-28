@@ -8,9 +8,9 @@ Edit a processor:
 
     PATCH /api/processors/:instance/:name
 
-<div class="hint">
+{% hint %}
   Only replay processors can be edited.
-</div>
+{% endhint %}
 
 
 ### Parameters

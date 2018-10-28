@@ -12,9 +12,9 @@ The term PV is used to indicate both the name of a specific data source definiti
 
 A PV is considered <em>connected</em> if the data source is available, and at least one widget within Yamcs Studio is subscribing to it. As soon as no more widgets are connected to a PV, the PV gets <em>disconnected</em>.
 
-<div class="hint">
-    A side effect of this last property, is that widgets with memory, such as chart widgets, lose their history when closing and reopening the display. We are aware of this, and are taking care of this shortcoming.
-</div>
+{% hint %}
+  A side effect of this last property, is that widgets with memory, such as chart widgets, lose their history when closing and reopening the display. We are aware of this, and are taking care of this shortcoming.
+{% endhint %}
 
 There are different types of PVs:
 

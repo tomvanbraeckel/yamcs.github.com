@@ -8,9 +8,9 @@ List the most recent data of a Yamcs table:
 
     GET /api/archive/:instance/tables/:table/data
 
-<div class="hint">
-    This is low-level API for those cases where access to an internal key/value table of Yamcs is wanted. It is recommended to use other API operations for any of the default built-in tables.
-</div>
+{% hint %}
+  This is low-level API for those cases where access to an internal key/value table of Yamcs is wanted. It is recommended to use other API operations for any of the default built-in tables.
+{% endhint %}
 
 ### Parameters
 

@@ -8,9 +8,9 @@ Download multiple indexes at the same time for the given instance:
 
     GET /api/archive/:instance/indexes
 
-<div class="hint">
+{% hint %}
 This operation will possibly download a very large file.
-</div>
+{% endhint %}
 
 ### Parameters
 

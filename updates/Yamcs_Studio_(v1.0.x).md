@@ -5,9 +5,9 @@ sidebar: yes
 title: Yamcs Studio Updates (v1.0.x)
 ---
 
-<div class="hint">
+{% hint %}
   v1.0.x releases should only be used to run against legacy versions of Yamcs Server (v3.x.x).
-</div>
+{% endhint %}
 
 {% for release in site.data.releases['yamcs-studio'].legacy limit:20 %}
   <h2>

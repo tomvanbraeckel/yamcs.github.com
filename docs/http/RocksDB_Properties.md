@@ -10,9 +10,9 @@ Get the properties of an open RocksDB database:
  
 dbpath is the absolute path of the database on disk.
 
-<div class="hint">
+{% hint %}
 This operation can be used to debug the inner workings of RocksDB database. For example the property rocksdb.estimate-table-readers-mem will provide an estimation of how much memory is used by the index and filter cache of RocksDB (note that the memory used by RocksDB is outside the java heap space).
-</div>
+{% endhint %}
 A description of various RocksDB properties can be found [here](https://github.com/facebook/rocksdb/blob/master/include/rocksdb/db.h).
 
 ### Example

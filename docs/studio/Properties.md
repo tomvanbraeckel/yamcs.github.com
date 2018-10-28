@@ -10,9 +10,9 @@ Select a widget to see its properties in the Properties view. The contents of th
 
 ![Properties](/assets/studio/properties.png){: .center-image }
 
-<div class="hint">
-    Changes are not saved automatically. Remember to select <strong>File > Save All</strong> before you refresh a runtime OPI. 
-</div>
+{% hint %}
+  Changes are not saved automatically. Remember to select **File > Save All** before you refresh a runtime OPI. 
+{% endhint %}
 
 Depending on the types of involved widgets, it may be possible to batch-edit some properties by selecting multiple different widgets.
 
@@ -23,7 +23,7 @@ Different widgets have different properties, but many of those properties are sh
 <table class="inline">
     <tr>
         <th class="code">Name</th>
-        <td>A name that identifies this widget in the  [Outline](/docs/studio/Outline/) view. There is no constraint on uniqueness, but when not specified by the user, Yamcs Studio will try to determine a unique name by concatenating the widget type with a sequential number.</td>
+        <td>A name that identifies this widget in the <a href="/docs/studio/Outline/">Outline</a> view. There is no constraint on uniqueness, but when not specified by the user, Yamcs Studio will try to determine a unique name by concatenating the widget type with a sequential number.</td>
     </tr>
     <tr>
         <th class="code">X<br>Y<br>Width<br>Height</th>

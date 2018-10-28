@@ -67,9 +67,9 @@ A system privilege is the right to perform a particular action or to perform an 
   </tr>
 </table>
 
-<div class="hint">
+{% hint %}
 	Yamcs extensions may support additional system privileges.
-</div>
+{% endhint %}
 
 ### Object Privileges
 An object privilege is the right to perform a particular action on an object. The object is assumed to be identifiable by a single string. The object may also be expressed as a regular expression, in which case Yamcs will perform pattern matching when doing authorization checks.
@@ -109,9 +109,9 @@ An object privilege is the right to perform a particular action on an object. Th
   </tr>
 </table>
 
-<div class="hint">
+{% hint %}
 	Yamcs extensions may support additional object privileges.
-</div>
+{% endhint %}
 
 ### Superuser
 A user may have the attribute <tt>superuser</tt>. Such a user is not subject to privilege checking. Any check of any kind will automatically pass. An example of such a user is the <tt>System</tt> user which is used internally by Yamcs on some actions that cannot be tied to a specific user. The <tt>superuser</tt> attribute may also be assigned to end users if the AuthModule supports it.
@@ -138,9 +138,9 @@ The default set of AuthModules include:
 
 AuthModules have an order. When a login attempt is made, AuthModules are iterated a first time in this order. Each AuthModule is asked if it can authenticate with the provided credentials. The first matching AuthModule contributes the user principal. A second iteration is done to then contribute privileges to the identified user. During both iterations, AuthModules reserve the right to halt the global login process for any reason.
 
-<div class="hint">
-  A special note on <i>roles</i>. Yamcs itself does not require roles nor does it keep track of roles on the <a href="https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/security/User.html"><tt>User</tt></a> object. Permissions are always verified via user privileges. Specific AuthModules may however introduce roles as a convenience to group sets of privileges together.
-</div>
+{% hint %}
+  A special note on <i>roles</i>. Yamcs itself does not require roles nor does it keep track of roles on the (User)[https://www.yamcs.org/yamcs/javadoc/index.html?org/yamcs/security/User.html] object. Permissions are always verified via user privileges. Specific AuthModules may however introduce roles as a convenience to group sets of privileges together.
+{% endhint %}
 
 ### Configuration
 

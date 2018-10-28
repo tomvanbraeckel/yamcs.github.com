@@ -8,9 +8,9 @@ Download archived table data:
 
     GET /api/archive/:instance/downloads/tables/:table
     
-<div class="hint">
-This operation will possibly download a very large file. If you worry about size for your application, check out the support for <a href="/docs/http/List_Table_Data/">paged table data</a> instead.
-</div>
+{% hint %}
+This operation will possibly download a very large file. If you worry about size for your application, check out the support for [paged table data](/docs/http/List_Table_Data/) instead.
+{% endhint %}
 
 
 ### Parameters
@@ -96,14 +96,3 @@ message Row {
   repeated Cell cell = 2;
 }
 {% endproto %}
-
-
-<div class="hint">
-The following command line can be used to dump the content of a table in a gzipped compressed file:
-<pre>yamcs -y yamcsUrl table dump tbl1 tbl2...</pre>
-
-The corresponding command load command can be used to load the dump back into the table (or in another table):
-<pre>yamcs -y yamcsUrl table load tbl1 tbl2...</pre>
-
-
-</div>

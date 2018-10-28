@@ -106,8 +106,8 @@ The view can be panned by grabbing the canvas. For long distances you can jump t
 
 This view shows the current mission time with a vertical locator.
 
-<div class="hint">
+{% hint %}
   While the now locator follows mission time, the rendered blocks do not follow realtime. You can force a refresh by panning the canvas or refreshing your browser window.
-</div>
+{% endhint %}
 
 In the top toolbar there are a few actions that only become active once you make a horizontal range selection. To make such a selection you can start a selection on the timescale band. Alternatively you may also select a range by simply clicking an index block. Selecting a range allows you to start a replay for that range, or to download raw packet data.

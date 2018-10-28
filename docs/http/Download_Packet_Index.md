@@ -8,9 +8,9 @@ Download the index of stored packets for the given instance:
 
     GET /api/archive/:instance/indexes/packets
 
-<div class="hint">
+{% hint %}
 This operation will possibly download a very large file.
-</div>
+{% endhint %}
 
 ### Parameters
 

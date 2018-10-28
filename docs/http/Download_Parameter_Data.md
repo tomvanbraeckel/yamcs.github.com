@@ -9,9 +9,9 @@ Download archived parameters:
     GET /api/archive/:instance/downloads/parameters/:namespace/:name
 
 
-<div class="hint">
-This operation will possibly download a very large file. If you worry about size for your application, check out the support for <a href="/docs/http/List_Parameter_Data/">paged parameter retrievals</a> instead.
-</div>
+{% hint %}
+This operation will possibly download a very large file. If you worry about size for your application, check out the support for [paged parameter retrievals](/docs/http/List_Parameter_Data/) instead.
+{% endhint %}
 
 
 ### Parameters

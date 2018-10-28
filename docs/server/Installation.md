@@ -112,9 +112,9 @@ In addition to the default Yamcs package, there are other proprietary extensions
     Provides the modules required to use [SPELL](https://sourceforge.net/projects/spell-sat/) with Yamcs. SPELL is a procedure execution environment developed by [SES](www.ses.com). 
     
         
-<div class="hint">
-    The extensions are not part of the Yamcs open-source release. If you are interested in using them, please contact Space Applications Services.
-</div>
+{% hint %}
+  The extensions are not part of the Yamcs open-source release. If you are interested in using them, please contact Space Applications Services.
+{% endhint %}
 
 ### Configuration
 Yamcs configuration files are written in YAML format. This format allows to encode in a human friendly way the most common data types: numbers, strings, lists and maps. For detailed syntax rules, please see [https://www.yaml.org](https://www.yaml.org).

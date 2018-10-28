@@ -8,9 +8,9 @@ Download archived events:
 
     GET /api/archive/:instance/downloads/events
     
-<div class="hint">
-This operation will possibly download a very large file. If you worry about size for your application, check out the support for <a href="/docs/http/List_Events/">paged event retrievals</a> instead.
-</div>
+{% hint %}
+This operation will possibly download a very large file. If you worry about size for your application, check out the support for [paged event retrievals](/docs/http/List_Events/) instead.
+{% endhint %}
 
 
 ### Parameters
