@@ -161,8 +161,7 @@ Use HTTP header:
     
 Response is of type:
 
-<pre class="r header"><a href="{{ site.proto }}/mdb/mdb.proto">mdb.proto</a></pre>
-```proto
+{% proto mdb/mdb.proto %}
 message ContainerInfo {
   optional string name = 1;
   optional string qualifiedName = 2;
@@ -175,4 +174,4 @@ message ContainerInfo {
   repeated ComparisonInfo restrictionCriteria = 9;
   repeated SequenceEntryInfo entry = 10;
 }
-```
+{% endproto %}

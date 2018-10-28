@@ -102,9 +102,8 @@ Use HTTP header:
     
 Response is of type:
 
-<pre class="r header"><a href="{{ site.proto }}/rest/rest.proto">rest.proto</a></pre>
-```proto
+{% proto rest/rest.proto %}
 message ListPacketsResponse {
   repeated yamcs.TmPacketData packet = 1;
 }
-```
+{% endproto %}

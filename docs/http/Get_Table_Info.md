@@ -51,11 +51,10 @@ Use HTTP header:
     
 Response is of type:
 
-<pre class="r header"><a href="{{ site.proto }}/archive/archive.proto">archive.proto</a></pre>
-```proto
+{% proto archive/archive.proto %}
 message TableInfo {
   optional string name = 1;
   repeated ColumnInfo keyColumn = 2;
   repeated ColumnInfo valueColumn = 3;
 }
-```
+{% endproto %}

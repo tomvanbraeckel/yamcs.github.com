@@ -51,12 +51,10 @@ Use HTTP header:
     
 Response is of type:
 
-<pre class="r header"><a href="{{ site.proto }}/yamcsManagement/yamcsManagement.proto">yamcsManagement.proto</a></pre>
-
-```proto
+{% proto yamcsManagement/yamcsManagement.proto %}
 message YamcsInstance {
   required string name = 1;
   optional MissionDatabase missionDatabase = 3;
   repeated ProcessorInfo processor = 4;
 }
-```
+{% endproto %}

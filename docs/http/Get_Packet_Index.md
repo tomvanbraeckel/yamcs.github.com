@@ -102,9 +102,8 @@ Use HTTP header:
 
 Response is of type:
 
-<pre class="r header"><a href="{{ site.proto }}/archive/archive.proto">archive.proto</a></pre>
-```proto
+{% proto archive/archive.proto %}
 message IndexResponse {
   repeated IndexGroup group = 1;
 }
-```
+{% endproto %}

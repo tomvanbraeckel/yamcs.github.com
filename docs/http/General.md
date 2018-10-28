@@ -76,6 +76,6 @@ If you also want to server to respond with Protobuf messages, add the <tt>Accept
 
     Accept: application/protobuf
 
-The proto files are [available at GitHub]({{ site.proto }}). Using the <tt>protoc</tt> compiler, client code can be generated for Java, Python, C++ and more.
+The proto files are [available at GitHub](https://github.com/yamcs/yamcs/blob/master/yamcs-api/src/main/proto/yamcs/protobuf). Using the <tt>protoc</tt> compiler, client code can be generated for Java, Python, C++ and more.
 
 The applicable top-level Protobuf messages are documented for every operation separately. If the response status is not between <tt>200</tt> and <tt>299</tt>, deserialize the response as of type <tt>RestExceptionMessage</tt>.

@@ -35,8 +35,7 @@ Use HTTP header:
     
 Response is of type:
 
-<pre class="r header"><a href="{{ site.proto }}/yamcsManagement/yamcsManagement.proto">yamcsManagement.proto</a></pre>
-```proto
+{% proto yamcsManagement/yamcsManagement.proto %}
 message ProcessorInfo {
   optional string instance = 1;
   optional string name = 2;
@@ -48,4 +47,4 @@ message ProcessorInfo {
   optional yamcs.ReplayRequest replayRequest = 8;
   optional yamcs.ReplayStatus.ReplayState replayState = 9;
 }
-```
+{% endproto %}

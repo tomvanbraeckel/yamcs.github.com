@@ -39,8 +39,7 @@ Further messages will be marked as type <tt>TM_PACKET</tt>. The data of the prov
 
 The response is a stream of self-standing <tt>VarInt</tt> delimited messages of type:
 
-<pre class="r header"><a href="{{ site.proto }}/yamcs.proto">yamcs.proto</a></pre>
-```proto
+{% proto yamcs.proto %}
 message TmPacketData {
   required int64 receptionTime = 1;
   required bytes packet = 2;
@@ -48,7 +47,7 @@ message TmPacketData {
   optional int32 sequenceNumber = 4;
   optional NamedObjectId id = 5;
 }
-```
+{% endproto %}
 
 Note: as the messages are received from a stream, the NamedObjectId (which is the identifier of the packet) will not be filled in. The future processor subscriptions may provide the packet identifiers.
 

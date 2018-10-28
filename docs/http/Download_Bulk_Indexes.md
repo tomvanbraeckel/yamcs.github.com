@@ -108,15 +108,14 @@ Use HTTP header:
 
 The request is the same but without parameters. The parameters are encoded in the body and they are of type:
 
-<pre class="r header"><a href="{{ site.proto }}/rest/rest.proto">rest.proto</a></pre>
-```proto
+{% proto rest/rest.proto %}
 message BulkGetIndexRequest {
   optional string start = 1;
   optional string stop = 2;
   repeated string filter = 3;
   repeated string packetname = 4;
 }
-```
+{% endproto %}
 
 #### Protobuf response
 
@@ -127,8 +126,7 @@ Use HTTP header:
 
 The response is a stream of individual Protobuf messages delimited with a <tt>VarInt</tt>. Every message is of type:
 
-<pre class="r header"><a href="{{ site.proto }}/yamcs.proto">yamcs.proto</a></pre>
-```proto
+{% proto yamcs.proto %}
 message IndexResult {
   required string instance = 1;
   repeated ArchiveRecord records = 2;
@@ -137,5 +135,5 @@ message IndexResult {
   //if type=histogram, the tableName is the table for which the histogram is sent
   optional string tableName = 4;
 }
-```
+{% endproto %}
 

@@ -60,15 +60,14 @@ Use HTTP header:
     
 If non dump format is requested, response is of type:
 
-<pre class="r header"><a href="{{ site.proto }}/archive/archive.proto">archive.proto</a></pre>
-```proto
+{% proto archive/archive.proto %}
 message TableData {
   message TableRecord {
     repeated ColumnData column = 1;
   }
   repeated TableRecord record = 1;
 }
-```
+{% endproto %}
 
 If <tt>format=dump</tt> parameter is used, the response is a series of <tt>Row</tt>s, each <tt>Row</tt> being composed of a list of <tt>Cell</tt>s.
 
@@ -77,8 +76,7 @@ Each row has an optional associated list of <tt>ColumnInfo</tt> messages that de
 The dumped data does not contain information on any table characteristics such as (primary) key, partitioning or other storage options.
 
 
-<pre class="r header"><a href="{{ site.proto }}/table/table.proto">table.proto</a></pre>
-```proto
+{% proto table/table.proto %}
 message ColumnInfo {
   optional uint32 id = 1;
   optional string name = 2;
@@ -97,7 +95,7 @@ message Row {
   repeated ColumnInfo column = 1; 
   repeated Cell cell = 2;
 }
-```
+{% endproto %}
 
 
 <div class="hint">

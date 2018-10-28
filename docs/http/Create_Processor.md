@@ -138,8 +138,7 @@ Use these HTTP headers:
     
 Request is of type:
 
-<pre class="r header"><a href="{{ site.proto }}/rest/rest.proto">rest.proto</a></pre>
-```proto
+{% proto rest/rest.proto %}
 message CreateProcessorRequest {
   optional string name = 1;
   repeated int32 clientId = 6;
@@ -147,4 +146,4 @@ message CreateProcessorRequest {
   optional string type = 12;
   optional string config = 13;
 }
-```
+{% endproto %}

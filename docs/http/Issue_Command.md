@@ -88,8 +88,7 @@ Use these HTTP headers:
     
 Request is of type:
 
-<pre class="r header"><a href="{{ site.proto }}/rest/rest.proto">rest.proto</a></pre>
-```proto
+{% proto rest/rest.proto %}
 message IssueCommandRequest {
   message Assignment {
     optional string name = 1;
@@ -100,16 +99,15 @@ message IssueCommandRequest {
   optional int32 sequenceNumber = 3;
   optional bool dryRun = 4;
 }
-```
+{% endproto %}
 
 #### Response
 
-<pre class="r header"><a href="{{ site.proto }}/rest/rest.proto">rest.proto</a></pre>
-```proto
+{% proto rest/rest.proto %}
 message IssueCommandResponse {
   optional string queue = 1;
   optional string source = 2;
   optional string hex = 3;
   optional bytes binary = 4;
 }
-```
+{% endproto %}

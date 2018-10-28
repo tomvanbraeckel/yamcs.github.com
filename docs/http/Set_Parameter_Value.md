@@ -49,8 +49,7 @@ Use these HTTP headers:
     
 Request is of type:
 
-<pre class="r header"><a href="{{ site.proto }}/yamcs.proto">yamcs.proto</a></pre>
-```proto
+{% proto yamcs.proto %}
 message Value {
   enum Type {
     FLOAT = 0;
@@ -76,12 +75,11 @@ message Value {
   optional sint64 sint64Value = 10;
   optional bool booleanValue = 11;
 }
-```
+{% endproto %}
 
 Bulk request is of type:
 
-<pre class="r header"><a href="{{ site.proto }}/rest/rest.proto">rest.proto</a></pre>
-```proto
+{% proto rest/rest.proto %}
 message BulkSetParameterValueRequest {
   message SetParameterValueRequest {
     optional yamcs.NamedObjectId id = 1;
@@ -89,4 +87,4 @@ message BulkSetParameterValueRequest {
   }
   repeated SetParameterValueRequest request = 1;
 }
-```
+{% endproto %}

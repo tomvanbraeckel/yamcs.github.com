@@ -15,5 +15,3 @@ kramdown:
   input: GFM
 
 highlighter: rouge
-
-proto: https://github.com/yamcs/yamcs/blob/master/yamcs-api/src/main/proto/yamcs/protobuf

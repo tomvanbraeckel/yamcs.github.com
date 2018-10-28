@@ -61,17 +61,15 @@ Use these HTTP headers:
     
 Request is of type:
 
-<pre class="r header"><a href="{{ site.proto }}/rest/rest.proto">rest.proto</a></pre>
-```proto
+{% proto rest/rest.proto %}
 message EditCommandQueueRequest {
   optional string state = 1;
 }
-```
+{% endproto %}
 
 Response is of type:
 
-<pre class="r header"><a href="{{ site.proto }}/commanding/commanding.proto">commanding.proto</a></pre>
-```proto
+{% proto commanding/commanding.proto %}
 message CommandQueueInfo {
   required string instance = 1;
   required string processorName = 2;
@@ -82,4 +80,4 @@ message CommandQueueInfo {
   optional int32 stateExpirationTimeS = 7;
   repeated CommandQueueEntry entry = 8;
 }
-```
+{% endproto %}

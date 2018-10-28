@@ -99,8 +99,7 @@ Use HTTP header:
 
 The response is a stream of individual Protobuf messages delimited by a <tt>VarInt</tt>. Messages are of type:
 
-<pre class="r header"><a href="{{ site.proto }}/yamcs.proto">yamcs.proto</a></pre>
-```proto
+{% proto yamcs.proto %}
 message Event {
   enum EventSeverity {
     INFO = 0;
@@ -120,4 +119,4 @@ message Event {
 
   extensions 100 to 10000;
 }
-```
+{% endproto %}

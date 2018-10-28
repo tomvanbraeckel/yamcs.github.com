@@ -75,8 +75,7 @@ Use HTTP header:
 
 The response is a stream of individual Protobuf messages delimited with a <tt>VarInt</tt>. Every message is of type:
 
-<pre class="r header"><a href="{{ site.proto }}/yamcs.proto">yamcs.proto</a></pre>
-```proto
+{% proto yamcs.proto %}
 message ArchiveRecord {
   required NamedObjectId id = 1;
   required int64 first = 2;
@@ -84,4 +83,4 @@ message ArchiveRecord {
   required int32 num = 4;
   optional string info = 5;
 }
-```
+{% endproto %}

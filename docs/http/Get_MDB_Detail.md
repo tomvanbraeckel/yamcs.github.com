@@ -57,12 +57,11 @@ Use HTTP header:
     
 Response is of type:
 
-<pre class="r header"><a href="{{ site.proto }}/yamcsManagement/yamcsManagement.proto">yamcsManagement.proto</a></pre>
-```proto
+{% proto yamcsManagement/yamcsManagement.proto %}
 message MissionDatabase {
   required string configName = 1;
   required string name = 2;
   optional string version = 3;
   repeated SpaceSystemInfo spaceSystem = 4;
 }
-```
+{% endproto %}

@@ -84,11 +84,10 @@ Use these HTTP headers:
     
 Request is of type:
 
-<pre class="r header"><a href="{{ site.proto }}/rest/rest.proto">rest.proto</a></pre>
-```proto
+{% proto rest/rest.proto %}
 message EditProcessorRequest {
   optional string state = 1;
   optional string seek = 2;
   optional string speed = 3;
 }
-```
+{% endproto %}

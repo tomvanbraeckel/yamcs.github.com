@@ -69,8 +69,7 @@ Use these HTTP headers:
     
 Request is of type:
 
-<pre class="r header"><a href="{{ site.proto }}/rest/rest.proto">rest.proto</a></pre>
-```proto
+{% proto rest/rest.proto %}
 message CreateTagRequest {
   optional string name = 1;
   optional string start = 2;
@@ -78,4 +77,4 @@ message CreateTagRequest {
   optional string description = 4;
   optional string color = 5;
 }
-```
+{% endproto %}

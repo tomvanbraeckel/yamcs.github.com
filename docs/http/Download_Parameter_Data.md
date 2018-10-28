@@ -131,20 +131,19 @@ Use HTTP header:
 
 Bulk request is of type:
 
-<pre class="r header"><a href="{{ site.proto }}/rest/rest.proto">rest.proto</a></pre>
-```proto
+{% proto rest/rest.proto %}
 message BulkDownloadParameterValueRequest {
   optional string start = 1;
   optional string stop = 2;
   repeated yamcs.NamedObjectId id = 3;
   optional string namespace = 4;
 }
-```
+{% endproto %}
 
 The response is a stream of self-standing <tt>VarInt</tt> delimited messages of type:
-<pre class="r header"><a href="{{ site.proto }}/pvalue/pvalue.proto">pvalue.proto</a></pre>
-```proto
+
+{% proto pvalue/pvalue.proto %}
 message ParameterData {
   repeated ParameterValue parameter = 1;
 }
-```
+{% endproto %}

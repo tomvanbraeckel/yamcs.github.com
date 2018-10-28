@@ -54,8 +54,7 @@ Use HTTP header:
 
 The response is a stream of individual Protobuf messages delimited by a <tt>VarInt</tt>. Messages are of type:
 
-<pre class="r header"><a href="{{ site.proto }}/commanding/commanding.proto">commanding.proto</a></pre>
-```proto
+{% proto commanding/commanding.proto %}
 message CommandHistoryAttribute {
   optional string name = 1;
   optional yamcs.Value value = 2;
@@ -66,4 +65,4 @@ message CommandHistoryEntry {
   required CommandId commandId = 1;
   repeated CommandHistoryAttribute attr = 3;
 }
-```
+{% endproto %}

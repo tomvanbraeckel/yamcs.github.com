@@ -48,8 +48,7 @@ Use HTTP header:
     
 Response is of type:
 
-<pre class="r header"><a href="{{ site.proto }}/commanding/commanding.proto">commanding.proto</a></pre>
-```proto
+{% proto commanding/commanding.proto %}
 message CommandQueueInfo {
   required string instance = 1;
   required string processorName = 2;
@@ -59,4 +58,4 @@ message CommandQueueInfo {
   required int32 nbRejectedCommands = 6;
   optional int32 stateExpirationTimeS = 7;
 }
-```
+{% endproto %}

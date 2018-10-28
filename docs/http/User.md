@@ -29,8 +29,7 @@ Use HTTP header:
     
 Response is of type:
 
-<pre class="r header"><a href="{{ site.proto }}/yamcsManagement/yamcsManagement.proto">yamcsManagement.proto</a></pre>
-```proto
+{% proto yamcsManagement/yamcsManagement.proto %}
 message UserInfo {
   optional string login = 1;
   repeated ClientInfo clientInfo = 2;
@@ -38,4 +37,4 @@ message UserInfo {
   repeated ObjectPrivilegeInfo objectPrivilege = 12;
   optional bool superuser = 13;
 }
-```
+{% endproto %}

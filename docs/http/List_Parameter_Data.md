@@ -173,9 +173,8 @@ Use HTTP header:
 
 Response is of type:
 
-<pre class="r header"><a href="{{ site.proto }}/pvalue/pvalue.proto">pvalue.proto</a></pre>
-```proto
+{% proto pvalue/pvalue.proto %}
 message ParameterData {
   repeated ParameterValue parameter = 1;
 }
-```
+{% endproto %}

@@ -74,8 +74,7 @@ Use HTTP header:
 
 The response is a stream of self-standing <tt>VarInt</tt> delimited messages of type:
 
-<pre class="r header"><a href="{{ site.proto }}/yamcs.proto">yamcs.proto</a></pre>
-```proto
+{% proto yamcs.proto %}
 message TmPacketData {
   required int64 receptionTime = 1;
   required bytes packet = 2;
@@ -83,4 +82,4 @@ message TmPacketData {
   optional int32 sequenceNumber = 4;
   optional NamedObjectId id = 5;
 }
-```
+{% endproto %}

@@ -21,8 +21,7 @@ The table has to exist in order to load data into it.
 Chuncked data encoding can be used to send a large number of rows without knowing the total size in advance.
 
 
-<pre class="r header"><a href="{{ site.proto }}/table/table.proto">table.proto</a></pre>
-```proto
+{% proto table/table.proto %}
 message ColumnInfo {
   optional uint32 id = 1;
   optional string name = 2;
@@ -41,29 +40,27 @@ message Row {
   repeated ColumnInfo column = 1; 
   repeated Cell cell = 2;
 }
-```
+{% endproto %}
 
 
 ### Response
 Response can be PROTOBUF or JSON depending on the "Accept" header of the request.
 
 <pre class="header">Status: 200 OK</pre>
-<pre class="r header"><a href="{{ site.proto }}/table/table.proto">table.proto</a></pre>
-```proto
-
+{% proto table/table.proto %}
 message TableLoadResponse {
    optional uint32 numRowsLoaded = 1;  
 }
-```
-<pre class="header">Status: 400 BAD_REQUEST</pre>
-```proto
+{% endproto %}
 
+<pre class="header">Status: 400 BAD_REQUEST</pre>
+{% proto rest/rest.proto %}
 message RestExceptionMessage {
    optional string type = 1;
    optional string msg = 2;
    optional uint32 numRowsLoaded = 100;
 }
-```
+{% endproto %}
 
 If there is an error during the load, the HTTP status will be 4xy or 5xy and the <tt>msg</tt> will contain more information about the error. One possible error could be that the table has defined a (primary) key and one of the loaded rows contains no value for one of the columns of the key.
 

@@ -46,10 +46,9 @@ Use HTTP header:
 
 Response if of type:
 
-<pre class="r header"><a href="{{ site.proto }}/archive/archive.proto">archive.proto</a></pre>
-```proto
+{% proto archive/archive.proto %}
 message StreamInfo {
   optional string name = 1;
   repeated ColumnInfo column = 2;
 }
-```
+{% endproto %}

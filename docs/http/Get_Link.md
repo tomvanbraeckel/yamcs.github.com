@@ -35,8 +35,7 @@ Use HTTP header:
     
 Response is of type:
 
-<pre class="r header"><a href="{{ site.proto }}/yamcsManagement/yamcsManagement.proto">yamcsManagement.proto</a></pre>
-```proto
+{% proto yamcsManagement/yamcsManagement.proto %}
 message LinkInfo {
   required string instance = 1;
   required string name = 2;
@@ -48,4 +47,4 @@ message LinkInfo {
   optional int64 dataCount = 8;
   optional string detailedStatus = 9;
 }
-```
+{% endproto %}

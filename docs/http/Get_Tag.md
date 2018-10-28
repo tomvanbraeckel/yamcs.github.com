@@ -33,8 +33,7 @@ Use HTTP header:
     
 Response is of type:
 
-<pre class="r header"><a href="{{ site.proto }}/yamcs.proto">yamcs.proto</a></pre>
-```proto
+{% proto yamcs.proto %}
 message ArchiveTag {
   optional int32 id = 1;
   required string name = 2;
@@ -43,4 +42,4 @@ message ArchiveTag {
   optional string description = 5;
   optional string color = 6;
 }
-```
+{% endproto %}

@@ -62,8 +62,7 @@ Use HTTP header:
     
 Response is of type:
 
-<pre class="r header"><a href="{{ site.proto }}/rest/rest.proto">rest.proto</a></pre>
-```proto
+{% proto rest/rest.proto %}
 message ObjectInfo {
   optional string name = 1;
   optional string created  = 2; //time in UTC format
@@ -75,4 +74,4 @@ message ListObjectsResponse {
    repeated string prefix = 1;
    repeated ObjectInfo object = 2;
 }
-```
+{% endproto %}

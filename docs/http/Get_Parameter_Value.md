@@ -121,8 +121,7 @@ Use these HTTP headers:
     
 Request is of type:
 
-<pre class="r header"><a href="{{ site.proto }}/pvalue/pvalue.proto">pvalue.proto</a></pre>
-```proto
+{% proto pvalue/pvalue.proto %}
 message ParameterValue {
   optional yamcs.NamedObjectId id = 1;
   optional yamcs.Value rawValue = 2;
@@ -141,24 +140,22 @@ message ParameterValue {
 
   repeated mdb.AlarmRange alarmRange = 25;
 }
-```
+{% endproto %}
 
 Bulk request is of type:
 
-<pre class="r header"><a href="{{ site.proto }}/rest/rest.proto">rest.proto</a></pre>
-```proto
+{% proto rest/rest.proto %}
 message BulkGetParameterValueRequest {
   repeated yamcs.NamedObjectId id = 1;
   optional bool fromCache = 2;
   optional uint64 timeout = 3; //if not fromCache, wait this time (in milliseconds) to receive the parameter
 }
-```
+{% endproto %}
 
 Bulk response is of type:
 
-<pre class="r header"><a href="{{ site.proto }}/rest/rest.proto">rest.proto</a></pre>
-```proto
+{% proto rest/rest.proto %}
 message BulkGetParameterValueResponse {
   repeated pvalue.ParameterValue value = 1;
 }
-```
+{% endproto %}

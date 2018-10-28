@@ -101,8 +101,7 @@ Use these HTTP headers:
     
 Request is of type:
 
-<pre class="r header"><a href="{{ site.proto }}/rest/rest.proto">rest.proto</a></pre>
-```proto
+{% proto rest/rest.proto %}
 message CreateEventRequest {
   optional string type = 1;
   optional string message = 2;
@@ -111,4 +110,4 @@ message CreateEventRequest {
   optional string source = 5;
   optional int32 sequenceNumber = 6;
 }
-```
+{% endproto %}
