@@ -13,8 +13,7 @@ Records XTCE TM sequence containers. This service stores the data coming from on
 
 This service is defined in <tt>etc/yamcs.(instance).yaml</tt>. Example from a typical deployment:
 
-<pre class="r header">yamcs.simulator.yaml</pre>
-```yaml
+{% yaml yamcs.simulator.yaml %}
 services:
   - class: org.yamcs.archive.XtceTmRecorder
 
@@ -22,7 +21,7 @@ streamConfig:
   tm:
     - tm_realtime
     - tm_dump
-```
+{% endyaml %}
 
 With this configuration containers coming from both the tm_realtime and tm_dump streams are stored into the table <tt>tm</tt>.
 

@@ -13,14 +13,13 @@ Provides parameters received from the configured <tt>param</tt> stream.
 
 This service is defined in <tt>etc/processor.yaml</tt>. Example:
 
-<pre class="r header">processor.yaml</pre>
-```yaml
+{% yaml processor.yaml %}
 realtime:
   services:
     - class: org.yamcs.tctm.StreamParameterProvider
       args:
         stream: "pp_realtime"
-```
+{% endyaml %}
 
 ### Configuration Options
 

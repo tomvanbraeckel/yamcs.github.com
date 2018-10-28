@@ -18,8 +18,7 @@ Note that any Yamcs Service can connect to external sources and inject data in t
 
 This service is defined in <tt>etc/yamcs.(instance).yaml</tt>. Example from a typical deployment:
 
-<pre class="r header">yamcs.simulator.yaml</pre>
-```yaml
+{% yaml yamcs.simulator.yaml %}
 services:
   - class: org.yamcs.tctm.DataLinkInitialiser
 
@@ -48,7 +47,7 @@ dataLinks:
       stream: tc_realtime
       host: localhost
       port: 10025
-```
+{% endyaml %}
 
 Each link is defined in terms of an identifying name and a class. There is also a property <tt>enabledAtStartup</tt> which allows to enable (default) or disable the TM provider for connecting to the external data source at the server start-up.
 

@@ -16,8 +16,7 @@ For faster access, the database is cached serialized on disk in the cache direct
  
 Different loaders are possible for each database source type.
 
-<pre class="r header">mdb.yaml</pre>
-```yaml
+{% yaml mdb.yaml %}
 refmdb:
   - type: "sheet"
     spec: "mdb/refmdb-ccsds.xls"
@@ -31,4 +30,4 @@ simulator:
     subLoaders:
       - type: "sheet"
         spec: "mdb/simulator-tmtc.xls"
-```
+{% endyaml %}

@@ -6,7 +6,7 @@ sidebar: yes
 
 Processors can be of different types which are configured in `processor.yaml`. Usually there is a type called "realtime" which configures the processor with the same name.
 
-```yaml
+{% yaml processor.yaml %}
  realtime:
     telemetryProvider:
        class: org.yamcs.tctm.YarchTmPacketProvider
@@ -32,7 +32,7 @@ Processors can be of different types which are configured in `processor.yaml`. U
         parameterCache:
             enabled: true
             cacheAll: true
-```
+{% endyaml %}
 
 ### Parameter Cache
 The parameterCache options can be used to enable or disable the cache. For a realtime channel the cache is a good idea. For a retrieval channel, the cache is usually disabled for attaining better performance (because only some parameters have to be extracted from packets).

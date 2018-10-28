@@ -13,13 +13,12 @@ Collects system parameters from any Yamcs component at a frequency of 1Hz. Param
 
 This service is defined in <tt>etc/yamcs.(instance).yaml</tt>. Example from a typical deployment:
 
-<pre class="r header">yamcs.simulator.yaml</pre>
-```yaml
+{% yaml yamcs.simulator.yaml %}
 services:
   - class: org.yamcs.parameter.SystemParametersCollector
     args:
       provideJvmVariables: true
-```
+{% endyaml %}
 
 ### Configuration Options
 

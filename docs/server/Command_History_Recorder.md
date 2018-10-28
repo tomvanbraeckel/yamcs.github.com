@@ -13,8 +13,7 @@ Records command history entries. This service stores the data coming from one or
 
 This service is defined in <tt>etc/yamcs.(instance).yaml</tt>. Example from a typical deployment:
 
-<pre class="r header">yamcs.simulator.yaml</pre>
-```yaml
+{% yaml yamcs.simulator.yaml %}
 services:
   - class: org.yamcs.archive.CommandHistoryRecorder
 
@@ -22,6 +21,6 @@ streamConfig:
   event:
     - cmdhist_realtime
     - cmdhist_dump
-```
+{% endyaml %}
 
 With this configuration events emitted to the <tt>cmdhist_realtime</tt> or <tt>cmdhist_dump</tt> stream are stored into the table <tt>cmdhist</tt>.

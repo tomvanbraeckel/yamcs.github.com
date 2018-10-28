@@ -13,12 +13,11 @@ Generates events for changes in the alarm state of any parameter on the specific
 
 This service is defined in <tt>etc/processor.yaml</tt>. Example from a typical deployment:
 
-<pre class="r header">processor.yaml</pre>
-```yaml
+{% yaml processor.yaml %}
 realtime:
   services:
     - class: org.yamcs.alarms.AlarmReporter
-```
+{% endyaml %}
 
 ### Configuration Options
 

@@ -42,8 +42,7 @@ The YAML AuthModule reads further configuration from two additional YAML files: 
 
 This file defines users, passwords and user roles. Note that Yamcs itself does not use roles, it is however used as a convenience in the YAML AuthModule to reduce the verbosity of user-specific privilege assignments.
 
-<pre class="r header">users.yaml</pre>
-```yaml
+{% yaml users.yaml %}
 admin:
   password: somepassword
   superuser: true
@@ -51,7 +50,7 @@ admin:
 someuser:
   password: somepassword
   roles: [ Operator ]
-```
+{% endyaml %}
 
 The <tt>password</tt> key may be omitted if the YAML AuthModule is not used for authentication.
 
@@ -65,8 +64,7 @@ This command prompts for the password and outputs a randomly salted PBKDF2 hash.
 
 This file defines which privileges belong to which roles.
 
-<pre class="r header">roles.yaml</pre>
-```yaml
+{% yaml roles.yaml %}
 Operator:
   ReadParameter: [".*"]
   WriteParameter: []
@@ -80,7 +78,7 @@ Operator:
     - Command
     - GetMissionDatabase
     - ControlArchiving
-```
+{% endyaml %}
 
 This example specifies one role <tt>Operator</tt>. It also demonstrates the use of regular expressions to grant a set of object privileges.
 
@@ -88,7 +86,6 @@ System privileges must be defined under the key <tt>System</tt>. System privileg
 
 All keys are optional so the simplest role definition is simply:
 
-<pre class="r header">roles.yaml</pre>
-```yaml
+{% yaml roles.yaml %}
 EmptyRole:
-```
+{% endyaml %}

@@ -17,8 +17,7 @@ Records parameters. This service stores the data coming from one or more streams
 
 This service is defined in <tt>etc/yamcs.(instance).yaml</tt>. Example from a typical deployment:
 
-<pre class="r header">yamcs.simulator.yaml</pre>
-```yaml
+{% yaml yamcs.simulator.yaml %}
 services:
   - class: org.yamcs.archive.ParameterRecorder
 
@@ -26,7 +25,7 @@ streamConfig:
   param:
     - pp_realtime
     - sys_param
-```
+{% endyaml %}
 
 With this configuration both system parameters and processed parameters coming from the <tt>pp_realtime</tt> stream are stored into the table <tt>pp</tt>.
 

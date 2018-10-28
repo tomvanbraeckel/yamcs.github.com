@@ -13,13 +13,12 @@ Runs an external process. If this process goes down, a new process instance is s
 
 This is a global service defined in <tt>etc/yamcs.yaml</tt>. Example from a typical deployment:
 
-<pre class="r header">yamcs.yaml</pre>
-```yaml
+{% yaml yamcs.yaml %}
 services:
   - class: org.yamcs.server.ProcessRunner
     args:
       command: "bin/simulator.sh"
-```
+{% endyaml %}
 
 ### Configuration Options
 

@@ -146,8 +146,7 @@ AuthModules have an order. When a login attempt is made, AuthModules are iterate
 
 Example from a typical deployment:
 
-<pre class="r header">security.yaml</pre>
-```yaml
+{% yaml security.yaml %}
 enabled: true
 
 # Implicit user when security is _not_ enabled
@@ -159,7 +158,7 @@ authModules:
   - class: org.yamcs.security.YamlAuthModule
     config:
       hasher: org.yamcs.security.PBKDF2PasswordHasher
-```
+{% endyaml %}
 
 These options are supported:
 

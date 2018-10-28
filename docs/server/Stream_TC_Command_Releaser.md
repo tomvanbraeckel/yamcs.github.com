@@ -13,14 +13,13 @@ Sends commands to the configured <tt>tc</tt> stream.
 
 This service is defined in <tt>etc/processor.yaml</tt>. Example:
 
-<pre class="r header">processor.yaml</pre>
-```yaml
+{% yaml processor.yaml %}
 realtime:
   services:
     - class: org.yamcs.StreamTcCommandReleaser
       args:
         stream: "tc_realtime"
-```
+{% endyaml %}
 
 ### Configuration Options
 

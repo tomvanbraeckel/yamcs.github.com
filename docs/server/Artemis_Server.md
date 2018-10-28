@@ -13,11 +13,10 @@ Initializes and starts an embedded instance of the Artemis messaging server. Thi
 
 This is a global service defined in <tt>etc/yamcs.yaml</tt>. Example from a typical deployment:
 
-<pre class="r header">yamcs.yaml</pre>
-```yaml
+{% yaml yamcs.yaml %}
 services:
   - class: org.yamcs.artemis.ArtemisServer
-```
+{% endyaml %}
 
 ### Configuration Options
 

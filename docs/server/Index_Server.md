@@ -13,11 +13,10 @@ Supports retrieval of archive indexes and tags.
 
 This service is defined in <tt>etc/yamcs.(instance).yaml</tt>. Example from a typical deployment:
 
-<pre class="r header">yamcs.simulator.yaml</pre>
-```yaml
+{% yaml yamcs.simulator.yaml %}
 services:
   - class: org.yamcs.archive.IndexServer
-```
+{% endyaml %}
 
 ### Configuration Options
 

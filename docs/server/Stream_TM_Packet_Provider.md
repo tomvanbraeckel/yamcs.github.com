@@ -15,14 +15,13 @@ This respects the root container defined as part of the <tt>streamConfig</tt> in
 
 This service is defined in <tt>etc/processor.yaml</tt>. Example:
 
-<pre class="r header">processor.yaml</pre>
-```yaml
+{% yaml processor.yaml %}
 realtime:
   services:
     - class: org.yamcs.StreamTmPacketProvider
       args:
         streams: ["tm_realtime", "tm_dump"]
-```
+{% endyaml %}
 
 ### Configuration Options
 

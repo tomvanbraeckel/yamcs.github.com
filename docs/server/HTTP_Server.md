@@ -20,8 +20,7 @@ The HTTP Server can be disabled when its functionality is not needed. Note that 
 
 This is a global service defined in <tt>etc/yamcs.yaml</tt>. Example from a typical deployment:
 
-<pre class="r header">yamcs.yaml</pre>
-```yaml
+{% yaml yamcs.yaml %}
 services:
   - class: org.yamcs.web.HttpServer
     args:
@@ -35,7 +34,7 @@ services:
       cors:
         allowOrigin: "*"
         allowCredentials: false
-```
+{% endyaml %}
 
 ### Configuration Options
 

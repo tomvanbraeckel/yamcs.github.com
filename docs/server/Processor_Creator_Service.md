@@ -13,14 +13,13 @@ Creates persistent processors owned by the system user.
 
 This service is defined in <tt>etc/yamcs.(instance).yaml</tt>. Example from a typical deployment:
 
-<pre class="r header">yamcs.simulator.yaml</pre>
-```yaml
+{% yaml yamcs.simulator.yaml %}
 services:
   - class: org.yamcs.ProcessorCreatorService
     args:
       name: realtime
       type: realtime
-```
+{% endyaml %}
 
 ### Configuration Options
 

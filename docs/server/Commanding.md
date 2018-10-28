@@ -26,8 +26,7 @@ When a command is sent by an external user, it goes first into a queue. Privileg
 
 The available queues are defined in the file <tt>etc/command-queue.yaml</tt>.
 
-<pre class="r header">command-queue.yaml</pre>
-```yaml
+{% yaml command-queue.yaml %}
 ops:
   state: enabled
   significances: [none]
@@ -36,7 +35,7 @@ ops-critic:
   state: enabled
   significances: [watch, warning, distress, critical, severe]
   stateExpirationTimeS: 300
-```
+{% endyaml %}
 
 Each queue has a name, a default state and a list of roles. The commands of a user logging in with a given role will be put in the first queue for which the user has privileges. A queue can be in three different states:
 
@@ -69,5 +68,6 @@ The transmission constraints can be defined in the Excel Spreadsheet in the Comm
 
 Currently it is only possible to specify the transmission constraints based on parameter verification. This corresponds to  Comparison and ComparisonList in XTCE. In the future it will be possible to specify transmission constraints based on algorithms. That will allow for example to check for specific values of arguments (i.e. allow a command to be sent if cmdArgX &gt; 3).
 
-
+{% comment %}
 ### Command Verifiers
+{% endcomment %}

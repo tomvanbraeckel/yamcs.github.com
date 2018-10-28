@@ -13,9 +13,8 @@ Manages and provides local parameters.
 
 This service is defined in <tt>etc/processor.yaml</tt>. Example:
 
-<pre class="r header">processor.yaml</pre>
-```yaml
+{% yaml processor.yaml %}
 realtime:
   services:
     - class: org.yamcs.parameter.LocalParameterManager
-```
+{% endyaml %}

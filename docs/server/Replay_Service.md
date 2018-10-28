@@ -13,12 +13,11 @@ Provides telemetry packets and processed parameters from the archive.
 
 This service is defined in <tt>etc/processor.yaml</tt>. Example:
 
-<pre class="r header">processor.yaml</pre>
-```yaml
+{% yaml processor.yaml %}
 Archive:
   services:
     - class: org.yamcs.tctm.ReplayService
-```
+{% endyaml %}
 
 ### Configuration Options
 
