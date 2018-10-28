@@ -9,7 +9,7 @@ Receives packets from <tt>tm</tt> streams and sends them to the processor for ex
 This respects the root container defined as part of the <tt>streamConfig</tt> in `yamcs.yaml`.
 
 ### Class Name
-{% javadoc 'org/yamcs/StreamTmPacketProvider' %}
+{% javadoc org/yamcs/StreamTmPacketProvider %}
 
 ### Configuration
 

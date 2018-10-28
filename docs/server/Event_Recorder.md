@@ -7,7 +7,7 @@ sidebar: yes
 Records events. This service stores the data coming from one or more streams into a table <tt>events</tt>.
 
 ### Class Name
-{% javadoc 'org/yamcs/archive/EventRecorder' %}
+{% javadoc org/yamcs/archive/EventRecorder %}
 
 ### Configuration
 

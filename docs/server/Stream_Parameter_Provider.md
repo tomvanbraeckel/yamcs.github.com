@@ -7,7 +7,7 @@ sidebar: yes
 Provides parameters received from the configured <tt>param</tt> stream.
 
 ### Class Name
-{% javadoc 'org/yamcs/tctm/StreamParameterProvider' %}
+{% javadoc org/yamcs/tctm/StreamParameterProvider %}
 
 ### Configuration
 

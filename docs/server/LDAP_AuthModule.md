@@ -18,7 +18,7 @@ The algorithm used to build the list of user privileges is as follows:
 {% endhint %}
 
 ### Class Name
-{% javadoc 'org/yamcs/security/LdapAuthModule' %}
+{% javadoc org/yamcs/security/LdapAuthModule %}
 
 ### Configuration Options
 

@@ -7,7 +7,7 @@ sidebar: yes
 Executes algorithms and provides output parameters.
 
 ### Class Name
-{% javadoc 'org/yamcs/algorithms/AlgorithmManager' %}
+{% javadoc org/yamcs/algorithms/AlgorithmManager %}
 
 ### Configuration
 

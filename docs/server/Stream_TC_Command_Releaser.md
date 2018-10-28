@@ -7,7 +7,7 @@ sidebar: yes
 Sends commands to the configured <tt>tc</tt> stream.
 
 ### Class Name
-{% javadoc 'org/yamcs/StreamTcCommandReleaser' %}
+{% javadoc org/yamcs/StreamTcCommandReleaser %}
 
 ### Configuration
 

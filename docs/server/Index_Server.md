@@ -7,7 +7,7 @@ sidebar: yes
 Supports retrieval of archive indexes and tags.
 
 ### Class Name
-{% javadoc 'org/yamcs/archive/IndexServer' %}
+{% javadoc org/yamcs/archive/IndexServer %}
 
 ### Configuration
 

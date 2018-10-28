@@ -7,7 +7,7 @@ sidebar: yes
 Reads <tt>param</tt> data from an Artemis queue and publishes it to the configured stream.
 
 ### Class Name
-{% javadoc 'org/yamcs/tctm/ArtemisParameterDataLink' %}
+{% javadoc org/yamcs/tctm/ArtemisParameterDataLink %}
 
 ### Configuration Options
 

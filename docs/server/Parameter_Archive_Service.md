@@ -6,7 +6,7 @@ sidebar: yes
 The Parameter Archive stores time ordered parameter values. The parameter archive is column-oriented and is optimized for accessing a (relatively small) number of parameters over longer periods of time.
 
 ### Class Name
-{% javadoc 'org/yamcs/parameterarchive/ParameterArchive' %}
+{% javadoc org/yamcs/parameterarchive/ParameterArchive %}
 
 ### Configuration
 

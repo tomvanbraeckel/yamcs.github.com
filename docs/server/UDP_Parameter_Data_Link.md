@@ -5,10 +5,10 @@ sidebar: yes
 ---
 
 Listens on a UDP port for datagrams containing Protobuf encoded messages. One datagram is equivalent to a message of
-type {% javadoc 'org/yamcs/protobuf/Pvalue.ParameterData' %}
+type {% javadoc org/yamcs/protobuf/Pvalue.ParameterData %}
 
 ### Class Name
-{% javadoc 'org/yamcs/tctm/UdpParameterDataLink' %}
+{% javadoc org/yamcs/tctm/UdpParameterDataLink %}
 
 ### Configuration Options
 

@@ -7,7 +7,7 @@ sidebar: yes
 Records XTCE TM sequence containers. This service stores the data coming from one or more streams into a table <tt>tm</tt>.
 
 ### Class Name
-{% javadoc 'org/yamcs/archive/XtceTmRecorder' %}
+{% javadoc org/yamcs/archive/XtceTmRecorder %}
 
 ### Configuration
 

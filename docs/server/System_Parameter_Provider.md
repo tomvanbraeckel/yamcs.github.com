@@ -7,7 +7,7 @@ sidebar: yes
 Provides parameters received from the <tt>sys_param</tt> stream.
 
 ### Class Name
-{% javadoc 'org/yamcs/parameter/SystemParametersProvider' %}
+{% javadoc org/yamcs/parameter/SystemParametersProvider %}
 
 ### Configuration
 

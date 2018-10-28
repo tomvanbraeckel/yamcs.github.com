@@ -7,7 +7,7 @@ sidebar: yes
 Collects system parameters from any Yamcs component at a frequency of 1Hz. Parameter values are emitted to the <tt>sys_var</tt> stream.
 
 ### Class Name
-{% javadoc 'org/yamcs/parameter/SystemParametersCollector' %}
+{% javadoc org/yamcs/parameter/SystemParametersCollector %}
 
 ### Configuration
 

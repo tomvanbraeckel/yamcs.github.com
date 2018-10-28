@@ -7,7 +7,7 @@ sidebar: yes
 Sends telecommands to a configured [TSE Commander](/docs/server/TSE_Commander/) and reads back output as processed parameters.
 
 ### Class Name
-{% javadoc 'org/yamcs/tctm/TseDataLink' %}
+{% javadoc org/yamcs/tctm/TseDataLink %}
 
 
 ### Configuration Options

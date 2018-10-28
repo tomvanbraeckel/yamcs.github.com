@@ -7,7 +7,7 @@ sidebar: yes
 The YAML AuthModule supports authentication and authorization of users via YAML files available directly in the <tt>etc/</tt> folder.
 
 ### Class Name
-{% javadoc 'org/yamcs/security/YamlAuthModule' %}
+{% javadoc org/yamcs/security/YamlAuthModule %}
 
 ### Configuration Options
 

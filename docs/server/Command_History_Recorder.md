@@ -7,7 +7,7 @@ sidebar: yes
 Records command history entries. This service stores the data coming from one or more streams into a table <tt>cmdhist</tt>.
 
 ### Class Name
-{% javadoc 'org/yamcs/archive/CommandHistoryRecorder' %}
+{% javadoc org/yamcs/archive/CommandHistoryRecorder %}
 
 ### Configuration
 

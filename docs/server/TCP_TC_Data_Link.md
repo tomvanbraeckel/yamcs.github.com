@@ -7,7 +7,7 @@ sidebar: yes
 Sends telecommands via TCP.
 
 ### Class Name
-{% javadoc 'org/yamcs/tctm/TcpTcDataLink' %}
+{% javadoc org/yamcs/tctm/TcpTcDataLink %}
 
 
 ### Configuration Options

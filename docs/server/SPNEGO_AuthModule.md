@@ -7,7 +7,7 @@ sidebar: yes
 The SPNEGO AuthModule supports authentication of users via an external Kerberos server. It does not support authorization and must therefore be stacked together with another AuthModule.
 
 ### Class Name
-{% javadoc 'org/yamcs/security/SpnegoAuthModule' %}
+{% javadoc org/yamcs/security/SpnegoAuthModule %}
 
 
 ### Configuration Options

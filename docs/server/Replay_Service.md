@@ -7,7 +7,7 @@ sidebar: yes
 Provides telemetry packets and processed parameters from the archive.
 
 ### Class Name
-{% javadoc 'org/yamcs/tctm/ReplayService' %}
+{% javadoc org/yamcs/tctm/ReplayService %}
 
 ### Configuration
 

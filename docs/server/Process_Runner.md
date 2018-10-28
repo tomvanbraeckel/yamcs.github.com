@@ -7,7 +7,7 @@ sidebar: yes
 Runs an external process. If this process goes down, a new process instance is started.
 
 ### Class Name
-{% javadoc 'org/yamcs/server/ProcessRunner' %}
+{% javadoc org/yamcs/server/ProcessRunner %}
 
 ### Configuration
 

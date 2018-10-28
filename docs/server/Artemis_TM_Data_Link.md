@@ -7,7 +7,7 @@ sidebar: yes
 Reads <tt>tm</tt> data from an Artemis queue and publishes it to the configured stream.
 
 ### Class Name
-{% javadoc 'org/yamcs/tctm/ArtemisTmDataLink' %}
+{% javadoc org/yamcs/tctm/ArtemisTmDataLink %}
 
 ### Configuration Options
 

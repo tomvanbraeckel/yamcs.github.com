@@ -7,7 +7,7 @@ sidebar: yes
 Publish <tt>event</tt> stream data to an Artemis broker.
 
 ### Class Name
-{% javadoc 'org/yamcs/artemis/ArtemisEventService' %}
+{% javadoc org/yamcs/artemis/ArtemisEventService %}
 
 ### Configuration
 

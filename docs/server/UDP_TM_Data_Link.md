@@ -7,7 +7,7 @@ sidebar: yes
 Listens on a UDP port for datagrams containing CCSDS packets. One datagram is equivalent to one packet.
 
 ### Class Name
-{% javadoc 'org/yamcs/tctm/UdpTmDataLink' %}
+{% javadoc org/yamcs/tctm/UdpTmDataLink %}
 
 ### Configuration Options
 

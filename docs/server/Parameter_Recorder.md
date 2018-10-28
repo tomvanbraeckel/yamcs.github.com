@@ -11,7 +11,7 @@ Records parameters. This service stores the data coming from one or more streams
 {% endhint %}
 
 ### Class Name
-{% javadoc 'org/yamcs/archive/ParameterRecorder' %}
+{% javadoc org/yamcs/archive/ParameterRecorder %}
 
 ### Configuration
 

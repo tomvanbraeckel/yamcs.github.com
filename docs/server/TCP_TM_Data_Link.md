@@ -9,7 +9,7 @@ Provides packets received via plain TCP sockets.
 In case the TCP connection with the telemetry server cannot be opened or is broken, it retries to connect each 10 seconds.
 
 ### Class Name
-{% javadoc 'org/yamcs/tctm/TcpTmDataLink' %}
+{% javadoc org/yamcs/tctm/TcpTmDataLink %}
 
 ### Configuration Options
 

@@ -7,7 +7,7 @@ sidebar: yes
 Reads data from files in a directory, importing it into the configured stream. The directory is polled regularly for new files and the files are imported one by one. After the import, the file is removed.
 
 ### Class Name
-{% javadoc 'org/yamcs/tctm/FilePollingTmDataLink' %}
+{% javadoc org/yamcs/tctm/FilePollingTmDataLink %}
 
 ### Configuration Options
 

@@ -7,7 +7,7 @@ sidebar: yes
 This service allows dispatching commands to Test Support Equipment (TSE). The instrument must have a remote control interface (Serial, TCP/IP) and should support a text-based command protocol such as SCPI.
 
 ### Class Name
-{% javadoc 'org/yamcs/tse/TseCommander' %}
+{% javadoc org/yamcs/tse/TseCommander %}
 
 ### Configuration
 
