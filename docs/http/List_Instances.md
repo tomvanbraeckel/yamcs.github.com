@@ -8,6 +8,29 @@ List all configured Yamcs instances:
 
     GET /api/instances
 
+### Parameters
+<table class="inline">
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td class="code">filter</td>
+    <td class="code">string</td>
+    <td>Filter the instances listed in the response. The parameter can be specified multiple times filter on multiple conditions (which have all to be true).
+    <br>
+    Each fitler has the form <code>key &lt;operator&gt; value </code> and the operator can be either = or !=.
+    <br>
+    Supported keys are:
+    <ul>
+     <li><code>state</code> - filter instances with a specific state (OFFLINE, RUNNING or FAILED). </li>
+     <li><code>tag:&lt;tag-name&gt;</code> - filter instances with specific tags set to the given value.</li>
+    </ul>
+    </td>
+  </tr>
+</table>
+
 
 ### Response
 
