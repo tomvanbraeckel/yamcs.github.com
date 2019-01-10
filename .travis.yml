@@ -16,6 +16,7 @@ before_install:
 
   # Avoid rate limit exceptions when using octokit from Travis
   - echo -e "machine api.github.com\n  login $GITHUB_TOKEN" > ~/.netrc
+  - chmod 600 ~/.netrc
 
 script:
   - bundle exec ruby update-release-info.rb
