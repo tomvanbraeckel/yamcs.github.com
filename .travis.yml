@@ -14,6 +14,9 @@ before_install:
   - tar xf /tmp/wkhtmltox-0.12.3_linux-generic-amd64.tar.xz -C /home/travis
   - export PATH="/home/travis/wkhtmltox/bin:$PATH"
 
+  # Avoid rate limit exceptions when using octokit from Travis
+  - echo -e "machine api.github.com\n  login $GITHUB_TOKEN" > ~/.netrc
+
 script:
   - bundle exec ruby update-release-info.rb
   - bundle exec jekyll build
