@@ -63,9 +63,8 @@ def pull_repo_info(client, repo)
 end
 
 # Login to avoid rate limit exceptions when running from Travis
-client = Octokit::Client.new(:netrc => true)
+client = Octokit::Client.new(:access_token => ENV['GITHUB_TOKEN'])
 client.auto_paginate = true
-client.login
 
 pull_repo_info client, 'yamcs'
 pull_repo_info client, 'yamcs-studio'
