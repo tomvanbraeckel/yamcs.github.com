@@ -6,10 +6,11 @@
 
 - url: /docs/server/Mission_Database/
   items:
-    - url: /docs/server/TM_Loaders/
-    - url: /docs/server/PP_Loaders/
-    - url: /docs/server/TC_Loaders/
-    - url: /docs/server/Excel_Specification/
+    - url: /docs/server/Spreadsheet_Loader/
+    - url: /docs/server/XTCE_Loader/
+    - url: /docs/server/Empty_Node/
+    - url: /docs/server/SCOS2K_Loader/
+    - url: /docs/server/CDMCS_MDB_Loader/
 
 - url: /docs/server/Telemetry_Processing/
   items:
