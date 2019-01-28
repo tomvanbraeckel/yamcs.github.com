@@ -20,8 +20,10 @@ scos-mib:
 
 
 # Known problems and limitations
+The SCOS-2K loader has been implemented as a proof of concept and only subjected to limited testing by loading a [TERMA TSC](https://ccs.terma.com/) test database and comparing the TM/TC decoding/encoding with the TSC. A number of known limitations are documented below.
 
-To be fixed as soon as someone shows some interest in using this project:
+
+To be fixed as soon as someone shows some interest in this project (please submit an [issue](https://github.com/yamcs/yamcs-scos2k/issues/new) if you want this fixed):
 
 * the loader does not detect when the files have changed and does not reload the database. This is because it looks at the date  of the ASCII directory. As a workaround you can either remove the serialized MDB from ~/.yamcs or /opt/yamcs/cache or run "touch ASCII" to change the date of the directory.
 
