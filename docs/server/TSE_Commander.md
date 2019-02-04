@@ -94,11 +94,6 @@ There are two types of drivers. Both drivers support these base arguments:
     <td class="code">integer</td>
     <td>Timeout in milliseconds for a response to arrive. Default: <tt>3000</tt></td>
   </tr>
-  <tr>
-    <td class="code">commandSeparation</td>
-    <td class="code">integer</td>
-    <td>Timeout in milliseconds for a response to arrive. Default: <tt>3000</tt></td>
-  </tr>
 </table>
 
 In addition each driver supports driver-specific arguments:
