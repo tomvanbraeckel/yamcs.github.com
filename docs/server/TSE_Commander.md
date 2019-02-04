@@ -71,6 +71,88 @@ instruments:
       responseTermination: "\n"
 {% endyaml %}
 
+There are two types of drivers. Both drivers support these base arguments:
+
+<table class="inline">
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td class="code">responseTermination</td>
+    <td class="code">string</td>
+    <td>The character(s) by which the instrument delimits distinct responses. Typicall <tt>\n</tt> or <tt>\r\n</tt>. This may be left unspecified if the instrument does not delimit responses.</td>
+  </tr>
+  <tr>
+    <td class="code">commandSeparation</td>
+    <td class="code">string</td>
+    <td>The character(s) that indicates when the command will generate multiple <em>distinct</em> responses (delimited by <tt>responseTermination</tt>). For most instruments this should be left unspecified.</td>
+  </tr>
+  <tr>
+    <td class="code">responseTimeout</td>
+    <td class="code">integer</td>
+    <td>Timeout in milliseconds for a response to arrive. Default: <tt>3000</tt></td>
+  </tr>
+  <tr>
+    <td class="code">commandSeparation</td>
+    <td class="code">integer</td>
+    <td>Timeout in milliseconds for a response to arrive. Default: <tt>3000</tt></td>
+  </tr>
+</table>
+
+In addition each driver supports driver-specific arguments:
+
+#### TCP/IP
+
+<table class="inline">
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td class="code">host</td>
+    <td class="code">string</td>
+    <td><strong>Required. </strong> The host of the instrument.</td>
+  </tr>
+  <tr>
+    <td class="code">port</td>
+    <td class="code">integer</td>
+    <td><strong>Required. </strong> The TCP port to connect to.</td>
+  </tr>
+</table>
+
+#### Serial Port
+
+<table class="inline">
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td class="code">path</td>
+    <td class="code">string</td>
+    <td><strong>Required. </strong> Path to the device.</td>
+  </tr>
+  <tr>
+    <td class="code">baudrate</td>
+    <td class="code">number</td>
+    <td>The baud rate for this serial port. Default: 9600</td>
+  </tr>
+  <tr>
+    <td class="code">dataBits</td>
+    <td class="code">number</td>
+    <td>The number of data bits per word. Default: 8</td>
+  </tr>
+  <tr>
+    <td class="code">parity</td>
+    <td class="code">string</td>
+    <td>The parity error-detection scheme. One of <tt>odd</tt> or <tt>even</tt>. By default parity is not set.</td>
+  </tr>
+</table>
+
 ### Mission Database
 
 The definition of TSE string commands is done in XTCE space systems resorting under <tt>/TSE</tt>. The <tt>/TSE</tt> node is added by defining {% javadoc org/yamcs/xtce/TseLoader %} in the MDB loader tree. Example:
@@ -145,6 +227,10 @@ The next example shows the definition of a TSE command that uses a dynamic argum
 </table>
 
 When issued with the argument <tt>2</tt>, Yamcs will send the string <tt>:BATTERY2:VOLTAGE?</tt> to the remote instrument and read back the response into the parameter <tt>/TSE/simulator/battery_voltage2</tt>. In this simple case you could alternatively have defined three distinct commands without arguments (one for each battery).
+
+{% hint %}
+When using the option <tt>commandSeparation</tt>, the <tt>response</tt> argument of the command template should use the same separator between the expected responses. For example a query of <tt>:DATE?;:TIME?</tt> with command separator <tt>;</tt> may be matched in the MDB using the pattern: <tt>&#96;date_param&#96;;&#96;time_param&#96;</tt> (regardless of the termination character).
+{% endhint %}
 
 ### Telnet Interface
 
